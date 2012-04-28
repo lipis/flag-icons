@@ -1,0 +1,10 @@
+{
+  "name": "main",
+  "version": "0.0.1",
+  "dependencies": {
+    "coffee-script": ">= 1.1.1",
+    "less": ">= 1.3.0",
+    "uglify-js": ">= 1.2.6",
+    "express": ">= 2.5.5"
+  }
+}

@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="hero-unit">
+    <h1>
+      GAE Init
+      <small>
+
+      </small>
+    </h1>
+    <p>The easiest way to start new applications on Google App Engine.</p>
+    <p>What you see here is exactly what you get!</p>
+    <p>
+      <a class="btn btn-primary btn-large" href="http://code.google.com/p/gae-init/">
+        Visit GAE Init Project page &raquo;
+      </a>
+    </p>
+  </div>
+
+  <div class="row">
+    <div class="span4">
+      <h2>Tech Stack for the App</h2>
+      <ul>
+        <li><a href="https://developers.google.com/appengine/">Google App Engine</a></li>
+        <li><a href="https://developers.google.com/appengine/docs/python/python27/using27">Python 2.7</a></li>
+        <li><a href="https://developers.google.com/appengine/docs/python/ndb/">NDB</a></li>
+        <li><a href="http://jinja.pocoo.org/docs/">Jinja2</a></li>
+        <li><a href="http://flask.pocoo.org/">Flask</a></li>
+        <li><a href="http://coffeescript.org/">CoffeeScript</a></li>
+        <li><a href="http://lesscss.org/">LessCSS</a></li>
+        <li><a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></li>
+      </ul>
+      <h3>Login Options</h3>
+        <p>
+          <a href="{{url_for('login_google')}}" class="btn">
+            <img src="http://www.google.com/favicon.ico" alt="Google favicon.ico">
+            Google
+          </a>
+          <a href="{{url_for('login_facebook')}}" class="btn">
+            <img src="http://www.facebook.com/favicon.ico" alt="Facebook favicon.ico">
+            Facebook
+          </a>
+          <a href="{{url_for('login_twitter')}}" class="btn">
+            <img src="http://www.twitter.com/favicon.ico" alt="Twitter favicon.ico">
+            Twitter
+          </a>
+        </p>
+    </div>
+    <div class="span4">
+      <h2>Features</h2>
+      <ul>
+        <li>
+          Automatic redirect back to where you were after login.
+        </li>
+        <li>
+          Force redirect by providing <strong>&amp;next</strong> argument to the login URL.
+        </li>
+        <li>
+          JSON services with more URL, limits, filter & orders.
+        </li>
+        <li>Global notifications</li>
+      </ul>
+    </div>
+    <div class="span4">
+      <h2>For developers</h2>
+
+      <ul>
+        <li>
+          <a href="http://www.sublimetext.com/2">Sublime Text 2</a>
+        </li>
+        <li>
+          <a href="https://chrome.google.com/webstore/detail/chklaanhfefbnpoihckbnefhakgolnmc">JSONView</a> (Chrome Extension)
+        </li>
+      </ul>
+    </div>
+  </div>
+{% endblock %}

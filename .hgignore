@@ -1,0 +1,12 @@
+#use glob syntax
+syntax: glob
+
+.DS_Store
+
+*.pyc
+*.pyo
+node_modules
+download
+.git
+public/dst
+public/min

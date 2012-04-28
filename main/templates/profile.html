@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="page-header">
+    <h1>
+      {{user_db.name}}
+      <small title="Username">{{user_db.username}}</small>
+      {% include 'bit/view_in_json_btn.html' %}
+    </h1>
+  </div>
+  <div class="row">
+    <div class="span2">
+      <a class="thumbnail" href="http://gravatar.com" target="_blank">
+        <img src="{{user_db.avatar_url}}&amp;s=130" alt="Gravatar photo of {{user_db.name}}">
+      </a>
+    </div>
+    <div class="span6">
+      <form class="form-horizontal" method="POST" action=".">
+        <fieldset>
+          {{form.csrf}}
+          <div class='control-group {% if form.name.errors %}error{% endif %}'>
+            {{form.name.label(class='control-label')}}
+            <div class='controls'>
+              {{form.name(class='span4')}}
+              {% for error in form.name.errors %}
+                <span class='help-inline'>{{error}}</span>
+              {% endfor %}
+            </div>
+          </div>
+          <div class='control-group {% if form.email.errors %}error{% endif %}'>
+            {{form.email.label(class='control-label')}}
+            <div class='controls'>
+              {{form.email(class='span4')}}
+              {% for error in form.email.errors %}
+                <span class='help-inline'>{{error}}</span>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+{% endblock %}

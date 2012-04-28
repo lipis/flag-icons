@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="page-header">
+    <h1>
+      {{title}}
+      <small>
+        Just an example for filters, orders, limits, JSON, more URL...
+      </small>
+      {% include 'bit/view_in_json_btn.html' %}
+    </h1>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <div class="well">
+        <div class="btn-toolbar">
+          <div class="btn-group">
+            <a class="btn btn-success disabled">
+              Limit
+            </a>
+            <a class="btn {% if not request.args.get('limit')%} active {% endif %}" href="{{url_for('user_list')}}">
+              All
+            </a>
+            <a class="btn {% if request.args.get('limit') == '2' %} active {% endif %}" href="{{url_for('user_list', limit=2)}}">
+              2
+            </a>
+            <a class="btn {% if request.args.get('limit') == '4' %} active {% endif %}" href="{{url_for('user_list', limit=4)}}">
+              4
+            </a>
+            <a class="btn {% if request.args.get('limit') == '8' %} active {% endif %}" href="{{url_for('user_list', limit=8)}}">
+              8
+            </a>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-primary disabled">
+              Order by
+            </a>
+            <a class="btn {% if not request.args.get('order')%} active {% endif %}" href="{{url_for('user_list')}}">
+              None
+            </a>
+            <a class="btn {% if request.args.get('order') == 'name' %} active {% endif %}" href="{{url_for('user_list', order='name')}}">
+              Name
+            </a>
+            <a class="btn {% if request.args.get('order') == '-created' %} active {% endif %}" href="{{url_for('user_list', order='-created')}}">
+              Created
+            </a>
+            <a class="btn {% if request.args.get('order') == '-modified' %} active {% endif %}" href="{{url_for('user_list', order='-modified')}}">
+              Modified
+            </a>
+          </div>
+          <div class="btn-group">
+            <a class="btn btn-danger disabled">
+              Filter name by
+            </a>
+            <a class="btn {% if not request.args.get('name')%} active {% endif %}" href="{{url_for('user_list')}}">
+              All
+            </a>
+            <a class="btn {% if request.args.get('name') == 'Lipis' %} active {% endif %}" href="{{url_for('user_list', name='Lipis')}}">
+              Lipis
+            </a>
+            <a class="btn {% if request.args.get('name') == 'Chris' %} active {% endif %}" href="{{url_for('user_list', name='Chris')}}">
+              Chris
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="span12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="span1">ID</th>
+            <th class="span1">Gravatar</th>
+            <th class="span4">Name</th>
+            <th class="span3">Created</th>
+            <th class="span3">Modified</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user_db in user_dbs %}
+            <tr>
+              <td>{{user_db.key.id()}}</td>
+              <td>
+                <img src="{{user_db.avatar_url}}&amp;s=24" alt="Gravatar for {{user_db.name}}">
+              </td>
+              <td>{{user_db.name}}</td>
+              <td>
+                <abbr title="{{user_db.created_utc}}">
+                  {{user_db.created_ago}}
+                </abbr>
+              </td>
+              <td>
+                <abbr title="{{user_db.modified_utc}}">
+                  {{user_db.modified_ago}}
+                </abbr>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  {% if more_url %}
+    <div class="row">
+      <div class="span12">
+        <ul class="pager">
+          <li>
+            <a href="{{more_url}}">Load More</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

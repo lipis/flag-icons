@@ -1,0 +1,34 @@
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+      <ul class="nav">
+        <li>
+          <a class="brand" href="{{url_for('welcome')}}">
+            {{config.BRAND_NAME}}
+          </a>
+        </li>
+        <li class="divider-vertical"></li>
+        <li>
+          <a href="{{url_for('user_list')}}">User List</a>
+        </li>
+        <li class="divider-vertical"></li>
+      </ul>
+      <ul class="nav pull-right">
+        {% if current_user.id > 0 %}
+          <li class="divider-vertical"></li>
+          <li class="">
+            <a href="{{url_for('profile')}}">{{current_user.name}}</a>
+          </li>
+          <li class="divider-vertical"></li>
+          <li class="">
+            <a href="{{url_for('logout')}}">Logout</a>
+          </li>
+        {% else %}
+          <li class="">
+            <a href="{{url_for('login')}}">Login</a>
+          </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+</div>

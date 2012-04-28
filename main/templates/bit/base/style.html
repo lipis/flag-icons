@@ -1,0 +1,5 @@
+{% if config.DEVELOPMENT %}
+  <link rel="stylesheet" type="text/css" href="/p/dst/style/style.css?{{config.CURRENT_VERSION_ID}}">
+{% else %}
+  <link rel="stylesheet" type="text/css" href="/p/min/style.min.css?{{config.CURRENT_VERSION_ID}}">
+{% endif %}

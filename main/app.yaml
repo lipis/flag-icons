@@ -1,0 +1,40 @@
+application: gae-init
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+builtins:
+- remote_api: on
+- deferred: on
+- appstats: on
+
+libraries:
+- name: jinja2
+  version: latest
+
+handlers:
+- url: /(favicon\.ico|robots\.txt)
+  static_files: public/\1
+  upload: public/(.*)
+
+- url: /p/
+  static_dir: public/
+  expiration: 1000d
+
+- url: /.*
+  script: main.app
+
+skip_files:
+- ^(.*/)?app\.yaml
+- ^(.*/)?app\.yml
+- ^(.*/)?index\.yaml
+- ^(.*/)?index\.yml
+- ^(.*/)?#.*#
+- ^(.*/)?.*~
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?\..*
+- ^(.*/)?.*\.bak$
+- ^public/src/.*
+- ^public/lib/.*

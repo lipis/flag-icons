@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html {% if html_class %} class="{{html_class}}" {% endif %} lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% block title %}
+        {% if title %}
+          {{title}} |
+        {% endif %}
+      {% endblock %}
+      {{config.BRAND_NAME}}
+    </title>
+
+    {% include 'bit/base/style.html' %}
+    {% block head %}{% endblock %}
+    {% include 'bit/base/analytics.html' %}
+  </head>
+
+  <body>
+    {% include 'bit/base/top_bar.html' %}
+    {% include 'bit/base/bottom_bar.html' %}
+
+    <div class="container">
+      {% include 'bit/base/notifications.html' %}
+      {% block content %}{% endblock %}
+    </div>
+
+    {% include 'bit/base/script.html' %}
+    {% block scripts %}{% endblock %}
+  </body>
+</html>
