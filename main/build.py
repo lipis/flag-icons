@@ -69,10 +69,12 @@ if options.watch or options.clean:
       for source in config.SCRIPTS[module]:
         compile_coffee('public/%s' % source, 'dst')
   compile_all()
-  print 'DONE, watching for changes'
-  while True:
-    time.sleep(0.5)
-    compile_all()
+  print 'DONE',
+  if options.watch:
+    print 'and watching for changes (ctrl+c to stop).'
+    while True:
+      time.sleep(0.5)
+      compile_all()
 
 else:
   system("rm -rf public/min")
