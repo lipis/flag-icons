@@ -1,4 +1,5 @@
 User-agent: *
 Disallow: /login/
 Disallow: /logout/
-Dissalow: /_s/
+Disallow: /_s/
+Disallow: /_ah/
