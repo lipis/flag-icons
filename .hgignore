@@ -2,11 +2,10 @@
 syntax: glob
 
 .DS_Store
-
 *.pyc
 *.pyo
 node_modules
-download
-.git
-public/dst
-public/min
+
+#Include these two out if you don't want the compiled *.css, .js in the repo
+#public/dst
+#public/min
