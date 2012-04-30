@@ -3,9 +3,7 @@ import optparse
 import os
 import config
 import time
-from datetime import date
 from datetime import datetime
-
 
 
 parser = optparse.OptionParser()
@@ -15,7 +13,7 @@ parser.add_option('-c', '--clean', dest='clean', action='store_true')
 
 
 def print_out(script, filename=''):
-  timestamp = datetime.now().strftime('%H:%m:%S')
+  timestamp = datetime.now().strftime('%H:%M:%S')
   print '[%s] %12s %s' % (timestamp, script, filename)
 
 
