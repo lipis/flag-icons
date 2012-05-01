@@ -85,3 +85,41 @@ def user_list():
       user_dbs=user_dbs,
       more_url=util.generate_more_url(more_cursor),
     )
+
+
+################################################################################
+# Extras
+################################################################################
+@app.route('/_s/extras/', endpoint='extras_service')
+@app.route('/extras/', endpoint='extras')
+def extras():
+  country = None
+  region = None
+  city = None
+  city_lat_long = None
+  if 'X-AppEngine-Country' in flask.request.headers:
+    country = flask.request.headers['X-AppEngine-Country']
+  if 'X-AppEngine-Region' in flask.request.headers:
+    region = flask.request.headers['X-AppEngine-Region']
+  if 'X-AppEngine-City' in flask.request.headers:
+    city = flask.request.headers['X-AppEngine-City']
+  if 'X-AppEngine-CityLatLong' in flask.request.headers:
+    city_lat_long = flask.request.headers['X-AppEngine-CityLatLong']
+
+  extra_info = {
+    'Country': country,
+    'Region': region,
+    'City': city,
+    'CityLatLong': city_lat_long,
+    'User-Agent': flask.request.headers['User-Agent'],
+  }
+
+  if flask.request.path.startswith('/_s/'):
+    return flask.jsonify(extra_info)
+
+  return flask.render_template(
+      'extras.html',
+      html_class='extras',
+      title='Extras',
+      extra_info=extra_info,
+    )
