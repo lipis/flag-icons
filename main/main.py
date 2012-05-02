@@ -107,11 +107,11 @@ def extras():
     city_lat_long = flask.request.headers['X-AppEngine-CityLatLong']
 
   extra_info = {
-    'Country': country,
-    'Region': region,
-    'City': city,
-    'CityLatLong': city_lat_long,
-    'User-Agent': flask.request.headers['User-Agent'],
+    'country': country,
+    'region': region,
+    'city': city,
+    'city_lat_long': city_lat_long,
+    'user_agent': flask.request.headers['User-Agent'],
   }
 
   if flask.request.path.startswith('/_s/'):

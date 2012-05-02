@@ -16,7 +16,7 @@
         <tbody>
           {% for extra in extra_info %}
             <tr>
-              <th>{{extra}}</th>
+              <th class="span2">{{extra.replace('_', ' ').title()}}</th>
               <td>{{extra_info[extra] or '-'}}</td>
             </tr>
           {% endfor %}
@@ -25,8 +25,8 @@
     </div>
     <div class="span6">
       {% set map_lat_long = '55.693403,12.583046' %}
-      {% if extra_info['CityLatLong'] %}
-        {% set map_lat_long = extra_info['CityLatLong'] %}
+      {% if extra_info['city_lat_long'] %}
+        {% set map_lat_long = extra_info['city_lat_long'] %}
       {% endif %}
       <div class="thumbnail">
         <a href="http://maps.google.com/maps?q={{map_lat_long}}" target="_blank">
