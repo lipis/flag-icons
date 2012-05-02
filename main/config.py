@@ -34,12 +34,12 @@ DEFAULT_DB_LIMIT = 64
 ################################################################################
 # CLient modules, also used by the build.py script.
 ################################################################################
+STYLES = set(['src/style/style.less'])
+
 SCRIPTS_MODULES = [
     'libs',
     'site',
   ]
-
-STYLES = set(['src/style/style.less'])
 
 SCRIPTS = {
   'libs': [
