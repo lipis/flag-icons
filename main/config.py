@@ -45,10 +45,12 @@ SCRIPTS = {
   'libs': [
     'lib/jquery.js',
     'lib/bootstrap/js/bootstrap-alert.js',
+    'lib/bootstrap/js/bootstrap-button.js',
   ],
   'site': [
     'src/common/util.coffee',
     'src/common/service.coffee',
     'src/site/app.coffee',
+    'src/site/profile.coffee',
   ],
 }

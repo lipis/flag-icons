@@ -11,4 +11,10 @@
     });
   });
 
+  $(function() {
+    return $('html.profile').each(function() {
+      return init_profile();
+    });
+  });
+
 }).call(this);
