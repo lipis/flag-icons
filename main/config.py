@@ -50,6 +50,8 @@ SCRIPTS = {
   'site': [
     'src/common/util.coffee',
     'src/common/service.coffee',
+    'src/common/common.coffee',
+
     'src/site/app.coffee',
     'src/site/profile.coffee',
   ],

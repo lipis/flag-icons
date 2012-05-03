@@ -2,9 +2,7 @@
 (function() {
 
   window.init_profile = function() {
-    return $('#update-profile').click(function() {
-      return $(this).button('loading');
-    });
+    return init_loading_button();
   };
 
 }).call(this);
