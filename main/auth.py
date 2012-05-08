@@ -282,7 +282,9 @@ def login_user_db(user_db):
 
   flask_user_db = FlaskUser(user_db)
   if flaskext.login.login_user(flask_user_db):
-    flask.flash('Welcome on GAE-Init %s!!!' % user_db.name, category='success')
+    flask.flash('Welcome on %s %s!!!' % (
+        config.BRAND_NAME, user_db.name
+      ), category='success')
     return flask.redirect(util.get_next_url())
   else:
     flask.flash('Sorry, but you could not log in.', category='danger')
