@@ -53,6 +53,7 @@ class ConfigX:
 
 class UserX():
   avatar_url = ndb.ComputedProperty(
-      lambda self: 'http://www.gravatar.com/avatar/%s?d=identicon' % \
-      md5.new(self.email or self.name).hexdigest().lower()
+      lambda self: 'http://www.gravatar.com/avatar/%s?d=identicon&r=x' % (
+          md5.new(self.email or self.name).hexdigest().lower()
+        )
     )
