@@ -1,3 +1,4 @@
+import os
 from google.appengine.ext import ndb
 import modelx
 
@@ -16,6 +17,7 @@ class Config(Base, modelx.ConfigX):
   facebook_app_secret = ndb.StringProperty(default='')
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
+  flask_secret_key = ndb.StringProperty(default='%r' % os.urandom(24))
 
 
 class User(Base, modelx.UserX):

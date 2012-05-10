@@ -8,6 +8,7 @@ try:
   FACEBOOK_APP_SECRET = model.Config.get_master_db().facebook_app_secret
   TWITTER_CONSUMER_KEY = model.Config.get_master_db().twitter_consumer_key
   TWITTER_CONSUMER_SECRET = model.Config.get_master_db().twitter_consumer_secret
+  SECRET_KEY = model.Config.get_master_db().flask_secret_key
 except:
   pass
 
@@ -22,10 +23,6 @@ PRODUCTION = not DEVELOPMENT
 DEBUG = DEVELOPMENT
 
 BRAND_NAME = 'GAE Init'
-#This is for Flask Sessions (read more http://goo.gl/rXrMk)
-SECRET_KEY = '908e41b104d5c1e023d4747165db4ba7'
-
-#default limit for services
 DEFAULT_DB_LIMIT = 64
 
 ################################################################################
