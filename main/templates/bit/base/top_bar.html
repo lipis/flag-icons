@@ -9,7 +9,7 @@
         </li>
         <li class="divider-vertical"></li>
         <li>
-          <a href="{{url_for('user_list')}}">User List</a>
+          <a href="{{url_for('user_list', limit=8, order='-created')}}">User List</a>
         </li>
         <li class="divider-vertical"></li>
         <li>
