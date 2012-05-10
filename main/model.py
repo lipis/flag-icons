@@ -10,6 +10,14 @@ class Base(ndb.Model, modelx.BaseX):
     ])
 
 
+class Config(Base, modelx.ConfigX):
+  analytics_id = ndb.StringProperty(default='')
+  facebook_app_id = ndb.StringProperty(default='')
+  facebook_app_secret = ndb.StringProperty(default='')
+  twitter_consumer_key = ndb.StringProperty(default='')
+  twitter_consumer_secret = ndb.StringProperty(default='')
+
+
 class User(Base, modelx.UserX):
   name = ndb.StringProperty(indexed=True, required=True)
   username = ndb.StringProperty(indexed=True, required=True)

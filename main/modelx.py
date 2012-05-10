@@ -45,6 +45,12 @@ class BaseX:
     )
 
 
+class ConfigX:
+  @classmethod
+  def get_master_db(cls):
+    return cls.get_or_insert('master')
+
+
 class UserX():
   avatar_url = ndb.ComputedProperty(
       lambda self: 'http://www.gravatar.com/avatar/%s?d=identicon' % \

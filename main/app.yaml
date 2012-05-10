@@ -38,3 +38,4 @@ skip_files:
 - ^(.*/)?.*\.bak$
 - ^public/src/.*
 - ^public/lib/.*
+- ^public/dst/.*

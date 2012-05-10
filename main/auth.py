@@ -94,9 +94,13 @@ def login_required(f):
 ################################################################################
 @app.route('/login/')
 def login():
-  google_login_url = flask.url_for('login_google', next=util.get_next_url())
-  twitter_login_url = flask.url_for('login_twitter', next=util.get_next_url())
-  facebook_login_url = flask.url_for('login_facebook', next=util.get_next_url())
+  next_url = util.get_next_url()
+  if flask.url_for('login') in next_url:
+    next_url = flask.url_for('welcome')
+
+  google_login_url = flask.url_for('login_google', next=next_url)
+  twitter_login_url = flask.url_for('login_twitter', next=next_url)
+  facebook_login_url = flask.url_for('login_facebook', next=next_url)
 
   return flask.render_template(
       'login.html',
@@ -105,7 +109,7 @@ def login():
       google_login_url=google_login_url,
       twitter_login_url=twitter_login_url,
       facebook_login_url=facebook_login_url,
-      next_url=util.get_next_url(),
+      next_url=next_url,
     )
 
 
@@ -192,8 +196,17 @@ def get_twitter_token():
 @app.route('/login/twitter/')
 def login_twitter():
   flask.session.pop('oauth_token', None)
-  return twitter.authorize(callback=flask.url_for('twitter_oauth_authorized',
-    next=util.get_next_url()))
+  try:
+    return twitter.authorize(
+        callback=flask.url_for('twitter_oauth_authorized',
+        next=util.get_next_url()),
+      )
+  except:
+    flask.flash(
+        'Something went terribly wrong with Twitter login. Please try again.',
+        category='danger',
+      )
+    return flask.redirect(flask.url_for('login', next=util.get_next_url()))
 
 
 def retrieve_user_from_twitter(response):

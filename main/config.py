@@ -1,35 +1,32 @@
-import os
+try:
+  # This part is surrounded in try/except because the this config.py file is
+  # also used in the build.py script which is used to compile/minify the client
+  # side files (*.less, *.coffee, *.js) and is not aware of the GAE
+  import model
+  ANALYTICS_ID = model.Config.get_master_db().analytics_id
+  FACEBOOK_APP_ID = model.Config.get_master_db().facebook_app_id
+  FACEBOOK_APP_SECRET = model.Config.get_master_db().facebook_app_secret
+  TWITTER_CONSUMER_KEY = model.Config.get_master_db().twitter_consumer_key
+  TWITTER_CONSUMER_SECRET = model.Config.get_master_db().twitter_consumer_secret
+except:
+  pass
 
+import os
 CURRENT_VERSION_ID = os.environ.get('CURRENT_VERSION_ID', None)
 if os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Engine'):
   DEVELOPMENT = False
 else:
   DEVELOPMENT = True
 
-DEBUG = DEVELOPMENT
 PRODUCTION = not DEVELOPMENT
+DEBUG = DEVELOPMENT
 
 BRAND_NAME = 'GAE Init'
 #This is for Flask Sessions (read more http://goo.gl/rXrMk)
 SECRET_KEY = '908e41b104d5c1e023d4747165db4ba7'
 
-#External providers on dev environment. Please change.
-ANALYTICS_ID = ''
-FACEBOOK_APP_ID = ''
-FACEBOOK_APP_SECRET = ''
-
-TWITTER_CONSUMER_KEY = ''
-TWITTER_CONSUMER_SECRET = ''
-
-#To use these variables on production. Please change.
-if PRODUCTION:
-  FACEBOOK_APP_ID = ''
-  FACEBOOK_APP_SECRET = ''
-  ANALYTICS_ID = ''
-
 #default limit for services
 DEFAULT_DB_LIMIT = 64
-
 
 ################################################################################
 # CLient modules, also used by the build.py script.
