@@ -19,6 +19,12 @@
       </ul>
       <ul class="nav pull-right">
         {% if current_user.id > 0 %}
+          {% if current_user.admin %}
+            <li class="divider-vertical"></li>
+            <li class="">
+              <a href="{{url_for('admin_config_update')}}">Config</a>
+            </li>
+          {% endif %}
           <li class="divider-vertical"></li>
           <li class="">
             <a href="{{url_for('profile')}}">{{current_user.name}}</a>

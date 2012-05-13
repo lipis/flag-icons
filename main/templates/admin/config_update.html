@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="page-header">
+    <h1>
+      {{title}}
+      {% include 'bit/view_in_json_btn.html' %}
+    </h1>
+  </div>
+  <div class="row">
+    <div class="span6">
+      <form class="form-horizontal" method="POST" action=".">
+        <fieldset>
+          {{form.csrf}}
+
+          {% set form_field = form.analytics_id %}
+          {% include 'bit/form_text_field.html' %}
+
+          {% set form_field = form.facebook_app_id %}
+          {% include 'bit/form_text_field.html' %}
+
+          {% set form_field = form.facebook_app_secret %}
+          {% include 'bit/form_text_field.html' %}
+
+          {% set form_field = form.twitter_consumer_key %}
+          {% include 'bit/form_text_field.html' %}
+
+          {% set form_field = form.twitter_consumer_secret %}
+          {% include 'bit/form_text_field.html' %}
+
+          {% set form_field = form.flask_secret_key %}
+          {% include 'bit/form_text_field.html' %}
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Updating Config..">
+              Update Config
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="span6">
+      <div class="alert">
+        Please note that these settings are not intended to change
+        often and since they are cached (using NDB), they will be updated
+        randomly or with the next deploy of your application.
+      </div>
+    </div>
+  </div>
+{% endblock %}

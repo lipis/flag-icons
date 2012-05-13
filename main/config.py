@@ -3,14 +3,20 @@ try:
   # also used in the build.py script which is used to compile/minify the client
   # side files (*.less, *.coffee, *.js) and is not aware of the GAE
   import model
-  ANALYTICS_ID = model.Config.get_master_db().analytics_id
-  FACEBOOK_APP_ID = model.Config.get_master_db().facebook_app_id
-  FACEBOOK_APP_SECRET = model.Config.get_master_db().facebook_app_secret
-  TWITTER_CONSUMER_KEY = model.Config.get_master_db().twitter_consumer_key
-  TWITTER_CONSUMER_SECRET = model.Config.get_master_db().twitter_consumer_secret
-  SECRET_KEY = model.Config.get_master_db().flask_secret_key
+  config_db = model.Config.get_master_db()
+  ANALYTICS_ID = config_db.analytics_id
+  FACEBOOK_APP_ID = config_db.facebook_app_id
+  FACEBOOK_APP_SECRET = config_db.facebook_app_secret
+  TWITTER_CONSUMER_KEY = config_db.twitter_consumer_key
+  TWITTER_CONSUMER_SECRET = config_db.twitter_consumer_secret
+  SECRET_KEY = config_db.flask_secret_key
 except:
-  pass
+  ANALYTICS_ID = ''
+  FACEBOOK_APP_ID = ''
+  FACEBOOK_APP_SECRET = ''
+  TWITTER_CONSUMER_KEY = ''
+  TWITTER_CONSUMER_SECRET = ''
+  SECRET_KEY = 'not safe'
 
 import os
 CURRENT_VERSION_ID = os.environ.get('CURRENT_VERSION_ID', None)
@@ -48,5 +54,6 @@ SCRIPTS = {
 
     'src/site/app.coffee',
     'src/site/profile.coffee',
+    'src/site/admin.coffee',
   ],
 }

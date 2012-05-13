@@ -12,6 +12,7 @@ app.config.from_object(config)
 import auth
 import util
 import model
+import admin
 
 
 @app.route('/')
@@ -79,7 +80,7 @@ def user_list():
     return util.jsonify_model_dbs(user_dbs, more_cursor)
 
   return flask.render_template(
-      'user.html',
+      'user_list.html',
       html_class='user',
       title='User List',
       user_dbs=user_dbs,

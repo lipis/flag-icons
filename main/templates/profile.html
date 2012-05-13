@@ -18,24 +18,13 @@
       <form class="form-horizontal" method="POST" action=".">
         <fieldset>
           {{form.csrf}}
-          <div class='control-group {% if form.name.errors %}error{% endif %}'>
-            {{form.name.label(class='control-label')}}
-            <div class='controls'>
-              {{form.name(class='span4')}}
-              {% for error in form.name.errors %}
-                <span class='help-inline'>{{error}}</span>
-              {% endfor %}
-            </div>
-          </div>
-          <div class='control-group {% if form.email.errors %}error{% endif %}'>
-            {{form.email.label(class='control-label')}}
-            <div class='controls'>
-              {{form.email(class='span4')}}
-              {% for error in form.email.errors %}
-                <span class='help-inline'>{{error}}</span>
-              {% endfor %}
-            </div>
-          </div>
+
+          {% set form_field = form.name %}
+          {% include 'bit/form_text_field.html' %}
+
+          {% set form_field = form.email %}
+          {% include 'bit/form_text_field.html' %}
+
           <div class="form-actions">
             <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Updating Profile..">
               Update Profile

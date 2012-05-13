@@ -17,4 +17,10 @@
     });
   });
 
+  $(function() {
+    return $('html.admin-config').each(function() {
+      return init_admin_config();
+    });
+  });
+
 }).call(this);

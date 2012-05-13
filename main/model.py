@@ -18,6 +18,14 @@ class Config(Base, modelx.ConfigX):
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default='%r' % os.urandom(24))
+  _PROPERTIES = Base._PROPERTIES.union(set([
+      'analytics_id',
+       'facebook_app_id',
+       'facebook_app_secret',
+       'twitter_consumer_key',
+       'twitter_consumer_secret',
+       'flask_secret_key',
+    ]))
 
 
 class User(Base, modelx.UserX):

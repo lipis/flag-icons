@@ -6,3 +6,6 @@ $ -> $('html.welcome').each ->
 
 $ -> $('html.profile').each ->
   init_profile()
+
+$ -> $('html.admin-config').each ->
+  init_admin_config()
