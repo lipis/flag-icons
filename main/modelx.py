@@ -4,7 +4,7 @@ import md5
 import util
 
 
-class BaseX:
+class BaseX(object):
   @classmethod
   def retrieve_by_key_safe(cls, key_urlsafe):
     try:
@@ -45,13 +45,13 @@ class BaseX:
     )
 
 
-class ConfigX:
+class ConfigX(object):
   @classmethod
   def get_master_db(cls):
     return cls.get_or_insert('master')
 
 
-class UserX():
+class UserX(object):
   avatar_url = ndb.ComputedProperty(
       lambda self: 'http://www.gravatar.com/avatar/%s?d=identicon&r=x' % (
           md5.new(self.email or self.name).hexdigest().lower()
