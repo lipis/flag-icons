@@ -28,7 +28,7 @@ else:
 PRODUCTION = not DEVELOPMENT
 DEBUG = DEVELOPMENT
 
-BRAND_NAME = 'GAE Init'
+BRAND_NAME = 'GAE init'
 DEFAULT_DB_LIMIT = 64
 
 ################################################################################
