@@ -4,7 +4,6 @@ from flaskext import wtf
 import auth
 import util
 import model
-import config
 
 from main import app
 
@@ -52,7 +51,6 @@ def admin_config_update():
     config_db.flask_secret_key = form.flask_secret_key.data
     config_db.put()
     flask.flash('Your Config settings have been saved', category='success')
-    app.config.from_object(config)
     return flask.redirect(flask.url_for('welcome'))
   if not form.errors:
     form.brand_name.data = config_db.brand_name
