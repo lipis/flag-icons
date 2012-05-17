@@ -20,6 +20,7 @@ def welcome():
   return flask.render_template(
       'welcome.html',
       html_class='welcome',
+      config_db=model.Config.get_master_db(),
     )
 
 

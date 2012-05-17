@@ -13,6 +13,9 @@
         <fieldset>
           {{form.csrf}}
 
+          {% set form_field = form.brand_name %}
+          {% include 'bit/form_text_field.html' %}
+
           {% set form_field = form.analytics_id %}
           {% include 'bit/form_text_field.html' %}
 
@@ -42,8 +45,7 @@
     <div class="span6">
       <div class="alert">
         Please note that these settings are not intended to change
-        often and since they are cached (using NDB), they will be updated
-        randomly or with the next deploy of your application.
+        often and you might have to redeploy your application.
       </div>
     </div>
   </div>

@@ -12,6 +12,7 @@ class Base(ndb.Model, modelx.BaseX):
 
 
 class Config(Base, modelx.ConfigX):
+  brand_name = ndb.StringProperty(default='GAE Init')
   analytics_id = ndb.StringProperty(default='')
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
@@ -19,12 +20,13 @@ class Config(Base, modelx.ConfigX):
   twitter_consumer_secret = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default='%r' % os.urandom(24))
   _PROPERTIES = Base._PROPERTIES.union(set([
+      'brand_name',
       'analytics_id',
-       'facebook_app_id',
-       'facebook_app_secret',
-       'twitter_consumer_key',
-       'twitter_consumer_secret',
-       'flask_secret_key',
+      'facebook_app_id',
+      'facebook_app_secret',
+      'twitter_consumer_key',
+      'twitter_consumer_secret',
+      'flask_secret_key',
     ]))
 
 

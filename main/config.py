@@ -4,6 +4,7 @@ try:
   # side files (*.less, *.coffee, *.js) and is not aware of the GAE
   import model
   config_db = model.Config.get_master_db()
+  BRAND_NAME = config_db.brand_name
   ANALYTICS_ID = config_db.analytics_id
   FACEBOOK_APP_ID = config_db.facebook_app_id
   FACEBOOK_APP_SECRET = config_db.facebook_app_secret
@@ -11,6 +12,7 @@ try:
   TWITTER_CONSUMER_SECRET = config_db.twitter_consumer_secret
   SECRET_KEY = config_db.flask_secret_key
 except:
+  BRAND_NAME = 'GAE Init'
   ANALYTICS_ID = ''
   FACEBOOK_APP_ID = ''
   FACEBOOK_APP_SECRET = ''
@@ -28,7 +30,6 @@ else:
 PRODUCTION = not DEVELOPMENT
 DEBUG = DEVELOPMENT
 
-BRAND_NAME = 'GAE init'
 DEFAULT_DB_LIMIT = 64
 
 ################################################################################
