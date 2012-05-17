@@ -11,21 +11,21 @@
       {{config.BRAND_NAME}}
     </title>
 
-    {% include 'bit/base/style.html' %}
+    {% include 'bit/style.html' %}
     {% block head %}{% endblock %}
-    {% include 'bit/base/analytics.html' %}
+    {% include 'bit/analytics.html' %}
   </head>
 
   <body>
-    {% include 'bit/base/top_bar.html' %}
-    {% include 'bit/base/bottom_bar.html' %}
+    {% include 'bit/top_bar.html' %}
+    {% include 'bit/bottom_bar.html' %}
 
     <div class="container">
-      {% include 'bit/base/notifications.html' %}
+      {% include 'bit/notifications.html' %}
       {% block content %}{% endblock %}
     </div>
 
-    {% include 'bit/base/script.html' %}
+    {% include 'bit/script.html' %}
     {% block scripts %}{% endblock %}
   </body>
 </html>
