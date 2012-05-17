@@ -6,11 +6,11 @@
 {% if config.DEVELOPMENT %}
   {% for module in config.SCRIPTS_MODULES %}
     {% for script in config.SCRIPTS[module] %}
-      <script type='text/javascript' src="/p/{{script|replace('.coffee', '.js')|replace('src/', 'dst/')}}?{{config.CURRENT_VERSION_ID}}"></script>
+      <script type='text/javascript' src="/p/{{script|replace('.coffee', '.js')|replace('src/coffee', 'dst/js')}}?{{config.CURRENT_VERSION_ID}}"></script>
     {% endfor %}
   {% endfor %}
 {% else %}
   {% for module in config.SCRIPTS_MODULES %}
-    <script type='text/javascript' src="/p/min/{{module}}.min.js?{{config.CURRENT_VERSION_ID}}"></script>
+    <script type='text/javascript' src="/p/min/js/{{module}}.min.js?{{config.CURRENT_VERSION_ID}}"></script>
   {% endfor %}
 {% endif %}

@@ -15,11 +15,11 @@ libraries:
 
 handlers:
 - url: /(favicon\.ico|robots\.txt)
-  static_files: public/\1
-  upload: public/(.*)
+  static_files: static/\1
+  upload: static/(.*)
 
 - url: /p/
-  static_dir: public/
+  static_dir: static/
   expiration: 1000d
 
 - url: /.*

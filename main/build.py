@@ -18,7 +18,7 @@ def print_out(script, filename=''):
 
 
 def compile_coffee(source, to):
-  target = source.replace('/src/', '/%s/' % to).replace('.coffee', '.js')
+  target = source.replace('/src/', '/%s/' % to).replace('coffee', 'js')
   if not is_dirty(source, target):
     return
   os.system('mkdir -p %s' % os.path.dirname(target))
@@ -31,7 +31,7 @@ def compile_coffee(source, to):
 
 
 def compile_less(source, to, check_modified=False):
-  target = source.replace('/src/', '/%s/' % to).replace('.less', '.css')
+  target = source.replace('/src/', '/%s/' % to).replace('less', 'css')
   minified = ''
   if not source.endswith('.less'):
     return
@@ -46,7 +46,6 @@ def compile_less(source, to, check_modified=False):
     print_out('LESS', source)
 
   os.system('mkdir -p %s' % os.path.dirname(target))
-
   os.system('node_modules/.bin/lessc %s %s > %s' % (minified, source, target))
 
 
@@ -57,25 +56,24 @@ def is_dirty(source, target):
 
 
 def is_less_modified(target):
-  for folder, folders, files in os.walk('public/src'):
+  for folder, folders, files in os.walk('static/src'):
     for file_ in files:
       path = os.path.join(folder, file_)
       if path.endswith('.less') and is_dirty(path, target):
         return True
   return False
 
-
 if options.watch or options.clean:
   if options.clean:
-    os.system("rm -rf public/dst")
-  os.system("mkdir -p public/dst")
+    os.system("rm -rf static/dst")
+  os.system("mkdir -p static/dst")
 
   def compile_all():
     for source in config.STYLES:
-      compile_less('public/%s' % source, 'dst', True)
+      compile_less('static/%s' % source, 'dst', True)
     for module in config.SCRIPTS:
       for source in config.SCRIPTS[module]:
-        compile_coffee('public/%s' % source, 'dst')
+        compile_coffee('static/%s' % source, 'dst')
   compile_all()
   if options.watch:
     print_out('DONE', 'and watching for changes (ctrl+c to stop).')
@@ -86,22 +84,22 @@ if options.watch or options.clean:
     print_out('DONE')
 
 else:
-  os.system("rm -rf public/min")
-  os.system("mkdir -p public/min")
+  os.system("rm -rf static/min")
+  os.system("mkdir -p static/min/js")
   for source in config.STYLES:
-    compile_less('public/%s' % source, 'min', )
+    compile_less('static/%s' % source, 'min')
   for module in config.SCRIPTS:
-    coffees = ' '.join(['public/%s' % script
+    coffees = ' '.join(['static/%s' % script
       for script in config.SCRIPTS[module]
       if script.endswith('.coffee')
     ])
     print_out('COFFEE MIN', '%s.js' % module)
     if len(coffees):
-      os.system('node_modules/.bin/coffee --join -c -p %s >> public/min/%s.js' % (coffees, module))
+      os.system('node_modules/.bin/coffee --join -c -p %s >> static/min/js/%s.js' % (coffees, module))
     for script in config.SCRIPTS[module]:
       if not script.endswith('.js'):
         continue
-      os.system('cat public/%s >> public/min/%s.js' % (script, module))
+      os.system('cat static/%s >> static/min/js/%s.js' % (script, module))
 
-    os.system('node_modules/.bin/uglifyjs -nc public/min/%s.js > public/min/%s.min.js' % (module, module))
-    os.system('rm public/min/%s.js' % module)
+    os.system('node_modules/.bin/uglifyjs -nc static/min/js/%s.js > static/min/js/%s.min.js' % (module, module))
+    os.system('rm static/min/js/%s.js' % module)

@@ -8,5 +8,5 @@ node_modules
 lib
 
 #Include these two out if you don't want the compiled *.css, .js in the repo
-#public/dst
-#public/min
+#static/dst
+#static/min

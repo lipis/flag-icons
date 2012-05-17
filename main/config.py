@@ -35,7 +35,9 @@ DEFAULT_DB_LIMIT = 64
 ################################################################################
 # CLient modules, also used by the build.py script.
 ################################################################################
-STYLES = set(['src/style/style.less'])
+STYLES = [
+    'src/less/style.less',
+  ]
 
 SCRIPTS_MODULES = [
     'libs',
@@ -49,12 +51,12 @@ SCRIPTS = {
     'lib/bootstrap/js/bootstrap-button.js',
   ],
   'site': [
-    'src/common/util.coffee',
-    'src/common/service.coffee',
-    'src/common/common.coffee',
+    'src/coffee/common/util.coffee',
+    'src/coffee/common/service.coffee',
+    'src/coffee/common/common.coffee',
 
-    'src/site/app.coffee',
-    'src/site/profile.coffee',
-    'src/site/admin.coffee',
+    'src/coffee/site/app.coffee',
+    'src/coffee/site/profile.coffee',
+    'src/coffee/site/admin.coffee',
   ],
 }
