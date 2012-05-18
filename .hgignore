@@ -4,8 +4,8 @@ syntax: glob
 .DS_Store
 *.pyc
 *.pyo
-node_modules
-lib
+main/node_modules
+
 
 #Include these two out if you don't want the compiled *.css, .js in the repo
 #static/dst
