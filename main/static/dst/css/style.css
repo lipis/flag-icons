@@ -4177,4 +4177,11 @@ a.badge:hover {
 body {
   padding-top: 60px;
   padding-bottom: 40px;
+  background: url(/p/img/background.png);
+}
+.well {
+  background-color: rgba(245, 245, 245, 0.5);
+}
+.hero-unit {
+  background-color: rgba(220, 220, 220, 0.5);
 }
