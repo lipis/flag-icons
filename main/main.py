@@ -20,6 +20,7 @@ def welcome():
   return flask.render_template(
       'welcome.html',
       html_class='welcome',
+      channel_name='welcome',
     )
 
 
@@ -124,3 +125,14 @@ def extras():
       title='Extras',
       extra_info=extra_info,
     )
+
+
+@app.route('/chat/')
+def chat():
+  return flask.render_template(
+      'chat.html',
+      title='Chat',
+      html_class='chat',
+      channel_name='chat',
+    )
+

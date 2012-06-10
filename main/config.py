@@ -7,6 +7,8 @@ try:
   BRAND_NAME = config_db.brand_name
   ANALYTICS_ID = config_db.analytics_id
   SECRET_KEY = config_db.flask_secret_key
+  PUBNUB_PUBLISH = config_db.pubnub_publish
+  PUBNUB_SUBSCRIBE = config_db.pubnub_subscribe
 except:
   pass
 
@@ -37,6 +39,7 @@ SCRIPTS_MODULES = [
 SCRIPTS = {
   'libs': [
     'lib/jquery.js',
+    'lib/pubnub.js',
     'lib/bootstrap/js/bootstrap-alert.js',
     'lib/bootstrap/js/bootstrap-button.js',
   ],
@@ -44,9 +47,11 @@ SCRIPTS = {
     'src/coffee/common/util.coffee',
     'src/coffee/common/service.coffee',
     'src/coffee/common/common.coffee',
+    'src/coffee/common/channel.coffee',
 
     'src/coffee/site/app.coffee',
     'src/coffee/site/profile.coffee',
     'src/coffee/site/admin.coffee',
+    'src/coffee/site/chat.coffee',
   ],
 }

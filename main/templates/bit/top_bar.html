@@ -16,6 +16,10 @@
           <a href="{{url_for('extras')}}">Extras</a>
         </li>
         <li class="divider-vertical"></li>
+        <li>
+          <a href="{{url_for('chat')}}">Chat</a>
+        </li>
+        <li class="divider-vertical"></li>
       </ul>
       <ul class="nav pull-right">
         {% if current_user.id > 0 %}

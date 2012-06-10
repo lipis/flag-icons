@@ -31,9 +31,17 @@
           {% set form_field = form.twitter_consumer_secret %}
           {% include 'bit/form_text_field.html' %}
 
-          {% set form_field = form.flask_secret_key %}
+          {% set form_field = form.pubnub_publish %}
           {% include 'bit/form_text_field.html' %}
 
+          {% set form_field = form.pubnub_subscribe %}
+          {% include 'bit/form_text_field.html' %}
+
+          {% set form_field = form.pubnub_secret %}
+          {% include 'bit/form_text_field.html' %}
+
+          {% set form_field = form.flask_secret_key %}
+          {% include 'bit/form_text_field.html' %}
           <div class="form-actions">
             <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Updating Config..">
               Update Config

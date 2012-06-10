@@ -19,6 +19,9 @@ class Config(Base, modelx.ConfigX):
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default='%r' % os.urandom(24))
+  pubnub_publish = ndb.StringProperty(default='')
+  pubnub_subscribe = ndb.StringProperty(default='')
+  pubnub_secret = ndb.StringProperty(default='')
   _PROPERTIES = Base._PROPERTIES.union(set([
       'brand_name',
       'analytics_id',
@@ -27,6 +30,9 @@ class Config(Base, modelx.ConfigX):
       'twitter_consumer_key',
       'twitter_consumer_secret',
       'flask_secret_key',
+      'pubnub_publish',
+      'pubnub_subscribe',
+      'pubnub_secret',
     ]))
 
 

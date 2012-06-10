@@ -1,3 +1,4 @@
+#JS enabled pages
 $ ->
   LOG('app init')
 
@@ -9,3 +10,11 @@ $ -> $('html.profile').each ->
 
 $ -> $('html.admin-config').each ->
   init_admin_config()
+
+
+#Channel Enabled pages
+$ ->
+  channel_name = $('html').data('channel-name')
+
+  if channel_name == 'chat'
+    subscribe_chat()

@@ -23,4 +23,12 @@
     });
   });
 
+  $(function() {
+    var channel_name;
+    channel_name = $('html').data('channel-name');
+    if (channel_name === 'chat') {
+      return subscribe_chat();
+    }
+  });
+
 }).call(this);
