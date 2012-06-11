@@ -6,6 +6,7 @@
     var channel;
     channel = $('html').data('channel-name');
     subscribe_channel(channel, on_chat_message_received);
+    channel_history(channel, 16, on_chat_history);
     $('.chat-message').select();
     $('body').on('click', '.chat-send', function() {
       return send_chat_message();
@@ -36,6 +37,16 @@
     time = new Date(message.time);
     timestamp = "" + (leading_zero(time.getHours())) + ":" + (leading_zero(time.getMinutes())) + ":" + (leading_zero(time.getSeconds()));
     return $('.chat-log').prepend("<hr>\n<h3>" + message.name + " <small> @ " + timestamp + "</small></h3>\n<h4>" + message.message + "</h4>");
+  };
+
+  window.on_chat_history = function(messages) {
+    var message, _i, _len, _results;
+    _results = [];
+    for (_i = 0, _len = messages.length; _i < _len; _i++) {
+      message = messages[_i];
+      _results.push(on_chat_message_received(message));
+    }
+    return _results;
   };
 
   leading_zero = function(number) {

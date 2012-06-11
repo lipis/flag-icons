@@ -1,6 +1,7 @@
 window.subscribe_chat = () ->
   channel = $('html').data('channel-name')
   subscribe_channel(channel, on_chat_message_received)
+  channel_history(channel, 16, on_chat_history)
 
   $('.chat-message').select()
 
@@ -29,6 +30,10 @@ window.on_chat_message_received = (message) ->
     <h3>#{message.name} <small> @ #{timestamp}</small></h3>
     <h4>#{message.message}</h4>
   """
+
+window.on_chat_history = (messages) ->
+  for message in messages
+    on_chat_message_received(message)
 
 leading_zero = (number) ->
   if number < 10

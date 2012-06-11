@@ -16,6 +16,7 @@
   window.subscribe_channel = function(channel, callback) {
     var pubnub;
     pubnub = channel_get();
+    LOG('sdf', pubnub);
     if (pubnub) {
       pubnub.subscribe({
         channel: channel,
@@ -39,6 +40,17 @@
       return true;
     }
     return false;
+  };
+
+  window.channel_history = function(channel, limit, callback) {
+    var pubnub;
+    pubnub = channel_get();
+    if (pubnub) {
+      return pubnub.history({
+        channel: channel,
+        limit: limit
+      }, callback || null);
+    }
   };
 
 }).call(this);
