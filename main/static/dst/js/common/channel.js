@@ -19,7 +19,16 @@
     if (pubnub) {
       pubnub.subscribe({
         channel: channel,
-        connect: null,
+        restore: true,
+        connect: function() {
+          return LOG('Connected to', channel);
+        },
+        disconnect: function() {
+          return LOG('Disconnected from', channel);
+        },
+        reconnect: function() {
+          return LOG('Reconnected to', channel);
+        },
         callback: callback || null
       });
       return true;

@@ -12,7 +12,13 @@ window.subscribe_channel = (channel, callback) ->
   if pubnub
     pubnub.subscribe
         channel: channel
-        connect: null
+        restore: true
+        connect: () ->
+          LOG('Connected to', channel)
+        disconnect: () ->
+          LOG('Disconnected from', channel)
+        reconnect: () ->
+          LOG('Reconnected to', channel)
         callback: callback or null
     return true
   return false
