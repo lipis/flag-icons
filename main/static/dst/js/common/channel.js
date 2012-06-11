@@ -16,7 +16,6 @@
   window.subscribe_channel = function(channel, callback) {
     var pubnub;
     pubnub = channel_get();
-    LOG('sdf', pubnub);
     if (pubnub) {
       pubnub.subscribe({
         channel: channel,

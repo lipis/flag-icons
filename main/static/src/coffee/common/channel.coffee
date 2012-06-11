@@ -9,7 +9,6 @@ window.channel_get = () ->
 
 window.subscribe_channel = (channel, callback) ->
   pubnub = channel_get()
-  LOG('sdf', pubnub)
   if pubnub
     pubnub.subscribe
         channel: channel

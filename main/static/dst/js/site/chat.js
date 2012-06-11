@@ -6,7 +6,7 @@
     var channel;
     channel = $('html').data('channel-name');
     subscribe_channel(channel, on_chat_message_received);
-    channel_history(channel, 16, on_chat_history);
+    channel_history(channel, 8, on_chat_history);
     $('.chat-message').select();
     $('body').on('click', '.chat-send', function() {
       return send_chat_message();
