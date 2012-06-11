@@ -23,9 +23,8 @@ window.service_call = (method, url, params, data, callback, progress) ->
     success: (response) ->
       if response.status == 'success'
         more = undefined
-        if response.more_cursor
-          params.cursor = response.more_cursor
-          more = (callback) -> service_call(method, url, params, callback)
+        if response.more_url
+          more = (callback) -> service_call(method, response.more_url, {}, callback)
         callback undefined, response.result, more
       else
         callback response

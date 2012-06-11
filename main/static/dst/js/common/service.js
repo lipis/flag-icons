@@ -35,10 +35,9 @@
         var more;
         if (response.status === 'success') {
           more = void 0;
-          if (response.more_cursor) {
-            params.cursor = response.more_cursor;
+          if (response.more_url) {
             more = function(callback) {
-              return service_call(method, url, params, callback);
+              return service_call(method, response.more_url, {}, callback);
             };
           }
           return callback(void 0, response.result, more);
