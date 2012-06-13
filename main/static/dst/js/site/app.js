@@ -18,6 +18,12 @@
   });
 
   $(function() {
+    return $('html.feedback').each(function() {
+      return init_loading_button();
+    });
+  });
+
+  $(function() {
     return $('html.admin-config').each(function() {
       return init_admin_config();
     });

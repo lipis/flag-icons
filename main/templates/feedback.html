@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="page-header">
+    <h1>
+      {{title}}
+      <small>Any questions or suggestions are welcome</small>
+      {% include 'bit/view_in_json_btn.html' %}
+    </h1>
+  </div>
+  <div class="row">
+    <div class="span6">
+      <form class="form-horizontal" method="POST" action=".">
+        <fieldset>
+          {{form.csrf}}
+
+          {% set form_field = form.subject %}
+          {% include 'bit/form_text_field.html' %}
+
+          {% set form_field = form.feedback %}
+          {% include 'bit/form_textarea_field.html' %}
+
+          {% set form_field = form.email %}
+          {% include 'bit/form_text_field.html' %}
+
+          <div class="form-actions">
+            <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Sending Feedback..">
+              Send Feedback
+            </button>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="span6">
+      <div class="well">
+        <p>
+          The feedback form is sending an email if you set the <strong>Feedback Email</strong>
+          in the admin console.
+        </p>
+        <p>
+          The <strong>email</strong> in this form is optional and provide it if
+          you would like a reply from us.
+        </p>
+
+      </div>
+    </div>
+  </div>
+{% endblock %}

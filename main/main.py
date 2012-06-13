@@ -9,6 +9,8 @@ import config
 app = flask.Flask(__name__)
 app.config.from_object(config)
 
+from google.appengine.api import mail
+
 import auth
 import util
 import model
@@ -59,6 +61,43 @@ def profile():
       html_class='profile',
       form=form,
       user_db=user_db,
+    )
+
+
+################################################################################
+# Feedback
+################################################################################
+class FeedbackForm(wtf.Form):
+  subject = wtf.TextField('Subject', [wtf.validators.required()])
+  feedback = wtf.TextAreaField('Feedback', [wtf.validators.required()])
+  email = wtf.TextField('Email (optional)', [
+      wtf.validators.optional(),
+      wtf.validators.email("That doesn't look like an email"),
+    ])
+
+
+@app.route('/feedback/', methods=['GET', 'POST'])
+@auth.login_required
+def feedback():
+  form = FeedbackForm()
+  if form.validate_on_submit():
+    mail.send_mail(
+        sender=model.Config.get_master_db().feedback_email,
+        to=model.Config.get_master_db().feedback_email,
+        subject='[%s] %s' % (
+            model.Config.get_master_db().brand_name,
+            form.subject.data,
+          ),
+        reply_to=form.email.data or model.Config.get_master_db().feedback_email,
+        body=form.feedback.data,
+      )
+    flask.flash('Thank you for your feedback!', category='success')
+    return flask.redirect(flask.url_for('welcome'))
+  return flask.render_template(
+      'feedback.html',
+      title='Feedback',
+      html_class='feedback',
+      form=form,
     )
 
 

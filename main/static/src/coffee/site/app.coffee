@@ -8,9 +8,11 @@ $ -> $('html.welcome').each ->
 $ -> $('html.profile').each ->
   init_profile()
 
+$ -> $('html.feedback').each ->
+  init_loading_button()
+
 $ -> $('html.admin-config').each ->
   init_admin_config()
-
 
 #Channel Enabled pages
 $ ->

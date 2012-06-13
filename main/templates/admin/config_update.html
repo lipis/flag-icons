@@ -16,6 +16,9 @@
           {% set form_field = form.brand_name %}
           {% include 'bit/form_text_field.html' %}
 
+          {% set form_field = form.feedback_email %}
+          {% include 'bit/form_text_field.html' %}
+
           {% set form_field = form.analytics_id %}
           {% include 'bit/form_text_field.html' %}
 
@@ -42,6 +45,7 @@
 
           {% set form_field = form.flask_secret_key %}
           {% include 'bit/form_text_field.html' %}
+
           <div class="form-actions">
             <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Updating Config..">
               Update Config

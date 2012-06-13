@@ -21,6 +21,10 @@ class ConfigUpdateForm(wtf.Form):
   facebook_app_secret = wtf.TextField(
       'Facebook Secret', [wtf.validators.optional()]
     )
+  feedback_email = wtf.TextField('Feedback Email', [
+        wtf.validators.optional(),
+        wtf.validators.email("That doesn't look like an email"),
+      ])
   twitter_consumer_key = wtf.TextField(
       'Twitter Key', [wtf.validators.optional()]
     )
@@ -51,31 +55,33 @@ def admin_config_update():
 
   config_db = model.Config.get_master_db()
   if form.validate_on_submit():
-    config_db.brand_name = form.brand_name.data
     config_db.analytics_id = form.analytics_id.data
+    config_db.brand_name = form.brand_name.data
     config_db.facebook_app_id = form.facebook_app_id.data
     config_db.facebook_app_secret = form.facebook_app_secret.data
+    config_db.feedback_email = form.feedback_email.data
+    config_db.flask_secret_key = form.flask_secret_key.data
+    config_db.pubnub_publish = form.pubnub_publish.data
+    config_db.pubnub_secret = form.pubnub_secret.data
+    config_db.pubnub_subscribe = form.pubnub_subscribe.data
     config_db.twitter_consumer_key = form.twitter_consumer_key.data
     config_db.twitter_consumer_secret = form.twitter_consumer_secret.data
-    config_db.pubnub_publish = form.pubnub_publish.data
-    config_db.pubnub_subscribe = form.pubnub_subscribe.data
-    config_db.pubnub_secret = form.pubnub_secret.data
-    config_db.flask_secret_key = form.flask_secret_key.data
     config_db.put()
     update_config_variables(config_db)
     flask.flash('Your Config settings have been saved', category='success')
     return flask.redirect(flask.url_for('welcome'))
   if not form.errors:
-    form.brand_name.data = config_db.brand_name
     form.analytics_id.data = config_db.analytics_id
+    form.brand_name.data = config_db.brand_name
     form.facebook_app_id.data = config_db.facebook_app_id
     form.facebook_app_secret.data = config_db.facebook_app_secret
+    form.feedback_email.data = config_db.feedback_email
+    form.flask_secret_key.data = config_db.flask_secret_key
+    form.pubnub_publish.data = config_db.pubnub_publish
+    form.pubnub_secret.data = config_db.pubnub_secret
+    form.pubnub_subscribe.data = config_db.pubnub_subscribe
     form.twitter_consumer_key.data = config_db.twitter_consumer_key
     form.twitter_consumer_secret.data = config_db.twitter_consumer_secret
-    form.pubnub_publish.data = config_db.pubnub_publish
-    form.pubnub_subscribe.data = config_db.pubnub_subscribe
-    form.pubnub_secret.data = config_db.pubnub_secret
-    form.flask_secret_key.data = config_db.flask_secret_key
 
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_db(config_db)

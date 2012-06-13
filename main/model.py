@@ -12,27 +12,28 @@ class Base(ndb.Model, modelx.BaseX):
 
 
 class Config(Base, modelx.ConfigX):
-  brand_name = ndb.StringProperty(default='GAE Init')
   analytics_id = ndb.StringProperty(default='')
+  brand_name = ndb.StringProperty(default='GAE Init')
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
-  twitter_consumer_key = ndb.StringProperty(default='')
-  twitter_consumer_secret = ndb.StringProperty(default='')
+  feedback_email = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default='%r' % os.urandom(24))
   pubnub_publish = ndb.StringProperty(default='')
-  pubnub_subscribe = ndb.StringProperty(default='')
   pubnub_secret = ndb.StringProperty(default='')
+  pubnub_subscribe = ndb.StringProperty(default='')
+  twitter_consumer_key = ndb.StringProperty(default='')
+  twitter_consumer_secret = ndb.StringProperty(default='')
   _PROPERTIES = Base._PROPERTIES.union(set([
-      'brand_name',
       'analytics_id',
+      'brand_name',
       'facebook_app_id',
       'facebook_app_secret',
-      'twitter_consumer_key',
-      'twitter_consumer_secret',
+      'feedback_email',
       'flask_secret_key',
       'pubnub_publish',
       'pubnub_subscribe',
-      'pubnub_secret',
+      'twitter_consumer_key',
+      'twitter_consumer_secret',
     ]))
 
 
