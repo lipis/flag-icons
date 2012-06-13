@@ -77,7 +77,6 @@ class FeedbackForm(wtf.Form):
 
 
 @app.route('/feedback/', methods=['GET', 'POST'])
-@auth.login_required
 def feedback():
   form = FeedbackForm()
   if form.validate_on_submit():
