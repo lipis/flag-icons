@@ -92,6 +92,9 @@ def feedback():
       )
     flask.flash('Thank you for your feedback!', category='success')
     return flask.redirect(flask.url_for('welcome'))
+  if not form.errors and auth.current_user_id() > 0:
+    form.email.data = auth.current_user_db().email
+
   return flask.render_template(
       'feedback.html',
       title='Feedback',
