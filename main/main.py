@@ -88,7 +88,7 @@ def feedback():
             form.subject.data,
           ),
         reply_to=form.email.data or model.Config.get_master_db().feedback_email,
-        body=form.feedback.data,
+        body='%s\n\n%s' % (form.feedback.data, form.email.data)
       )
     flask.flash('Thank you for your feedback!', category='success')
     return flask.redirect(flask.url_for('welcome'))
