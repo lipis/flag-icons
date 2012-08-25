@@ -27,8 +27,8 @@ window.on_chat_message_received = (message) ->
   timestamp = "#{leading_zero(time.getHours())}:#{leading_zero(time.getMinutes())}:#{leading_zero(time.getSeconds())}"
   $('.chat-log').prepend """
     <hr>
-    <h3>#{message.name} <small> @ #{timestamp}</small></h3>
-    <h4>#{message.message}</h4>
+    <h4>#{message.name} <small> @ #{timestamp}</small></h4>
+    <h5>#{message.message}</h5>
   """
 
 window.on_chat_history = (messages) ->

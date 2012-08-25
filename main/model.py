@@ -1,6 +1,6 @@
-import os
 from google.appengine.ext import ndb
 import modelx
+from uuid import uuid4
 
 
 class Base(ndb.Model, modelx.BaseX):
@@ -17,7 +17,7 @@ class Config(Base, modelx.ConfigX):
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
   feedback_email = ndb.StringProperty(default='')
-  flask_secret_key = ndb.StringProperty(default='%r' % os.urandom(24))
+  flask_secret_key = ndb.StringProperty(default=str(uuid4()).replace('-', ''))
   pubnub_publish = ndb.StringProperty(default='')
   pubnub_secret = ndb.StringProperty(default='')
   pubnub_subscribe = ndb.StringProperty(default='')

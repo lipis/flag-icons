@@ -20,7 +20,7 @@
 
   <div class="row">
     <div class="span4">
-      <h2>Tech Stack for the App</h2>
+      <h3>Tech Stack for the App</h3>
       <ul>
         <li><a href="https://developers.google.com/appengine/">Google App Engine</a></li>
         <li><a href="https://developers.google.com/appengine/docs/python/python27/using27">Python 2.7</a></li>
@@ -31,25 +31,15 @@
         <li><a href="http://lesscss.org/">LessCSS</a></li>
         <li><a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a></li>
         <li><a href="http://www.pubnub.com">PubNub</a></li>
+        <li> OpenID Logins
+          (<a href="{{url_for('login_google')}}">Google</a>,
+          <a href="{{url_for('login_facebook')}}">Facebook</a>,
+          <a href="{{url_for('login_twitter')}}">Twitter</a>)
+        </li>
       </ul>
-      <h3>Login Options</h3>
-        <p>
-          <a href="{{url_for('login_google')}}" class="btn">
-            <img src="http://www.google.com/favicon.ico" alt="Google favicon.ico">
-            Google
-          </a>
-          <a href="{{url_for('login_facebook')}}" class="btn">
-            <img src="http://www.facebook.com/favicon.ico" alt="Facebook favicon.ico">
-            Facebook
-          </a>
-          <a href="{{url_for('login_twitter')}}" class="btn">
-            <img src="http://www.twitter.com/favicon.ico" alt="Twitter favicon.ico">
-            Twitter
-          </a>
-        </p>
     </div>
     <div class="span4">
-      <h2>Features</h2>
+      <h3>Features</h3>
       <ul>
         <li>Open ID Logins</li>
         <li>
@@ -69,7 +59,7 @@
       </ul>
     </div>
     <div class="span4">
-      <h2>For developers</h2>
+      <h3>For developers</h3>
       <ul>
         <li>
           <a href="http://www.sublimetext.com/2" target="_blank">
@@ -83,7 +73,7 @@
         </li>
       </ul>
       <div class="alert alert-success">
-        <h2>Live Examples</h2>
+        <h3>Live Examples</h3>
         <ul>
           <li>
             <a href="http://www.remby.com" target="_blank">Remby</a>
@@ -95,8 +85,7 @@
           </li>
         </ul>
         <p>
-          Do you have something to show or ask?<br>
-          Send suggestions, questions, links via the <a href="{{feedback}}">feedback</a>
+          Send suggestions & questions via the <a href="{{feedback}}">feedback</a>
           form.
         </p>
       </div>

@@ -6,7 +6,7 @@ try:
   config_db = model.Config.get_master_db()
   BRAND_NAME = config_db.brand_name
   ANALYTICS_ID = config_db.analytics_id
-  SECRET_KEY = config_db.flask_secret_key
+  SECRET_KEY = config_db.flask_secret_key.encode('ascii')
   PUBNUB_PUBLISH = config_db.pubnub_publish
   PUBNUB_SUBSCRIBE = config_db.pubnub_subscribe
 except:
