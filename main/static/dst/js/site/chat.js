@@ -36,7 +36,7 @@
     var time, timestamp;
     time = new Date(message.time);
     timestamp = "" + (leading_zero(time.getHours())) + ":" + (leading_zero(time.getMinutes())) + ":" + (leading_zero(time.getSeconds()));
-    return $('.chat-log').prepend("<hr>\n<h3>" + message.name + " <small> @ " + timestamp + "</small></h3>\n<h4>" + message.message + "</h4>");
+    return $('.chat-log').prepend("<hr>\n<h4>" + message.name + " <small> @ " + timestamp + "</small></h4>\n<h5>" + message.message + "</h5>");
   };
 
   window.on_chat_history = function(messages) {
