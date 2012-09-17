@@ -18,13 +18,13 @@
 
   <body>
     {% include 'bit/top_bar.html' %}
-    {% include 'bit/bottom_bar.html' %}
 
     <div class="container">
       {% include 'bit/notifications.html' %}
       {% block content %}{% endblock %}
     </div>
 
+    {% include 'bit/footer.html' %}
     {% include 'bit/script.html' %}
     {% block scripts %}{% endblock %}
   </body>
