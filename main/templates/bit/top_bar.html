@@ -1,11 +1,11 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
+      <a class="brand" href="{{url_for('welcome')}}">
+        {{config.BRAND_NAME}}
+      </a>
       <ul class="nav">
         <li>
-          <a class="brand" href="{{url_for('welcome')}}">
-            {{config.BRAND_NAME}}
-          </a>
         </li>
         <li class="{% if html_class == 'user' %} active {%endif%}">
           <a href="{{url_for('user_list', limit=8, order='-created')}}">User List</a>
