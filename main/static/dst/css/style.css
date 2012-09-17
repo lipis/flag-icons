@@ -1169,7 +1169,7 @@ select:focus:required:invalid:focus {
   padding: 19px 20px 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: #f5f5f5;
+  background-color: rgba(238, 238, 238, 0.5);
   border-top: 1px solid #e5e5e5;
   *zoom: 1;
 }
@@ -2320,8 +2320,8 @@ table .span24 {
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: #f5f5f5;
-  border: 1px solid #e3e3e3;
+  background-color: rgba(238, 238, 238, 0.5);
+  border: 1px solid rgba(220, 220, 220, 0.5);
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -4712,7 +4712,7 @@ a.badge:hover {
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
-  background-color: #eeeeee;
+  background-color: rgba(222, 222, 222, 0.5);
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -4749,14 +4749,12 @@ a.badge:hover {
   position: fixed;
 }
 body {
-  padding-top: 60px;
-  padding-bottom: 40px;
   background: url(/p/img/background.png);
+  padding-top: 60px;
   overflow-y: scroll;
 }
-.well {
-  background-color: rgba(245, 245, 245, 0.5);
-}
-.hero-unit {
-  background-color: rgba(220, 220, 220, 0.5);
+.footer {
+  border-top: 1px solid #eeeeee;
+  padding: 32px 0;
+  margin-top: 32px;
 }

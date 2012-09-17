@@ -10,7 +10,6 @@
       {% endblock %}
       {{config.BRAND_NAME}}
     </title>
-
     {% include 'bit/style.html' %}
     {% block head %}{% endblock %}
     {% include 'bit/analytics.html' %}
@@ -18,12 +17,10 @@
 
   <body>
     {% include 'bit/top_bar.html' %}
-
     <div class="container">
       {% include 'bit/notifications.html' %}
       {% block content %}{% endblock %}
     </div>
-
     {% include 'bit/footer.html' %}
     {% include 'bit/script.html' %}
     {% block scripts %}{% endblock %}
