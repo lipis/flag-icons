@@ -7,27 +7,27 @@
       <ul class="nav">
         <li>
         </li>
-        <li class="{% if html_class == 'user' %} active {%endif%}">
+        <li class="{% if html_class == 'user' %} active {% endif %}">
           <a href="{{url_for('user_list', limit=8, order='-created')}}">User List</a>
         </li>
-        <li class="{% if html_class == 'extras' %} active {%endif%}">
+        <li class="{% if html_class == 'extras' %} active {% endif %}">
           <a href="{{url_for('extras')}}">Extras</a>
         </li>
-        <li class="{% if html_class == 'chat' %} active {%endif%}">
+        <li class="{% if html_class == 'chat' %} active {% endif %}">
           <a href="{{url_for('chat')}}">Chat</a>
         </li>
-        <li class="{% if html_class == 'feedback' %} active {%endif%}">
+        <li class="{% if html_class == 'feedback' %} active {% endif %}">
           <a href="{{url_for('feedback')}}">Feedback</a>
         </li>
       </ul>
       <ul class="nav pull-right">
         {% if current_user.id > 0 %}
           {% if current_user.admin %}
-            <li class="{% if html_class == 'admin-config' %} active {%endif%}">
+            <li class="{% if html_class == 'admin-config' %} active {% endif %}">
               <a href="{{url_for('admin_config_update')}}">Config</a>
             </li>
           {% endif %}
-          <li class="{% if html_class == 'profile' %} active {%endif%}">
+          <li class="{% if html_class == 'profile' %} active {% endif %}">
             <a href="{{url_for('profile')}}">{{current_user.name}}</a>
           </li>
           <li>
