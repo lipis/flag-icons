@@ -1,9 +1,8 @@
 <script type="text/javascript">
-  window.USER_ID = {{current_user.id}};
+  // Global variables for the scripts
   window.HOST_URL = '{{request.host_url[:-1]}}';
   window.PUBNUB_PUBLISH = '{{config.PUBNUB_PUBLISH}}';
   window.PUBNUB_SUBSCRIBE = '{{config.PUBNUB_SUBSCRIBE}}';
-  window.HOST_URL = '{{request.host_url[:-1]}}';
 </script>
 
 {% if config.DEVELOPMENT %}
