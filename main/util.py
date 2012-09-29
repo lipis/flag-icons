@@ -130,6 +130,8 @@ def model_db_to_object(model_db, now=None):
       model_db_object[prop] = format_datetime_utc(value)
     elif type(value) == ndb.Key:
       model_db_object[prop] = value.urlsafe()
+    elif type(value) == ndb.GeoPt:
+      model_db_object[prop] = '%s,%s' % (value.lat, value.lon)
     elif value is not None:
       model_db_object[prop] = value
   return model_db_object
