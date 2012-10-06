@@ -1,3 +1,4 @@
+from google.appengine.ext import ndb
 from google.appengine.api import users
 
 import functools
@@ -53,7 +54,7 @@ class FlaskUser(AnonymousUser):
 
 @login_manager.user_loader
 def load_user(key):
-  user_db = model.User.retrieve_by_key_safe(key)
+  user_db = ndb.Key(urlsafe=key).get()
   if user_db:
     return FlaskUser(user_db)
   return None
