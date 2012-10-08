@@ -181,9 +181,21 @@ def chat():
 ################################################################################
 # Error Handling
 ################################################################################
+@app.errorhandler(400)
+@app.errorhandler(401)
+@app.errorhandler(403)
 @app.errorhandler(404)
+@app.errorhandler(410)
+@app.errorhandler(418)
 @app.errorhandler(500)
 def error_handler(e):
+  try:
+    e.code
+  except:
+    class e(object):
+      code = 500
+      name = 'Internal Server Error'
+
   if flask.request.path.startswith('/_s/'):
     return flask.jsonify({
         'status': 'error',
