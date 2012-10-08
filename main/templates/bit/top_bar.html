@@ -5,8 +5,6 @@
         {{config.BRAND_NAME}}
       </a>
       <ul class="nav">
-        <li>
-        </li>
         <li class="{% if html_class == 'user' %} active {% endif %}">
           <a href="{{url_for('user_list', limit=8, order='-created')}}">User List</a>
         </li>
