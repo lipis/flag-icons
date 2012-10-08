@@ -1,6 +1,9 @@
 <div class="footer">
   <div class="container">
     <p class="pull-right">version: {{config.CURRENT_VERSION_ID}}</p>
-    <p>&copy; 2012 - {{config.BRAND_NAME}}</p>
+    <p>
+      &copy; 2012 - {{config.BRAND_NAME}}
+      | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">View in JSON</a>
+    </p>
   </div>
 </div>

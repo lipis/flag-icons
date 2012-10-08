@@ -177,3 +177,23 @@ def chat():
       channel_name='chat',
     )
 
+
+################################################################################
+# Error Handling
+################################################################################
+@app.errorhandler(404)
+@app.errorhandler(500)
+def error_handler(e):
+  if flask.request.path.startswith('/_s/'):
+    return flask.jsonify({
+        'status': 'error',
+        'error_code': e.code,
+        'error_name': e.name.lower().replace(' ', '_'),
+        'error_message': e.name,
+      })
+
+  return flask.render_template(
+      'error.html',
+      title='%s!!1' % (e.name),
+      error=e,
+    ), e.code
