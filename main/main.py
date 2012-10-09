@@ -207,5 +207,6 @@ def error_handler(e):
   return flask.render_template(
       'error.html',
       title='%s!!1' % (e.name),
+      html_class='error-page',
       error=e,
     ), e.code
