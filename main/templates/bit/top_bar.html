@@ -13,7 +13,7 @@
         <ul class="nav">
           {% if current_user.admin %}
             <li class="{% if html_class == 'user' %} active {% endif %}">
-              <a href="{{url_for('user_list', limit=8, order='-created')}}">User List</a>
+              <a href="{{url_for('user_list', order='-created')}}">User List</a>
             </li>
           {% endif %}
           {% if config.CONFIG_DB.feedback_email %}
