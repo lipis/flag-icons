@@ -4,6 +4,8 @@ try:
   # side files (*.less, *.coffee, *.js) and is not aware of the GAE
   import model
   config_db = model.Config.get_master_db()
+
+  CONFIG_DB = config_db
   BRAND_NAME = config_db.brand_name
   ANALYTICS_ID = config_db.analytics_id
   SECRET_KEY = config_db.flask_secret_key.encode('ascii')
@@ -42,6 +44,7 @@ SCRIPTS = {
     'lib/pubnub.js',
     'lib/bootstrap/js/bootstrap-alert.js',
     'lib/bootstrap/js/bootstrap-button.js',
+    'lib/bootstrap/js/bootstrap-collapse.js',
   ],
   'site': [
     'src/coffee/common/util.coffee',

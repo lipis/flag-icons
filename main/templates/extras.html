@@ -10,7 +10,7 @@
     </h1>
   </div>
   <div class="row">
-    <div class="span6">
+    <div class="span12">
       <table class="table table-bordered">
         <tbody>
           {% for extra in extra_info %}
@@ -21,18 +21,6 @@
           {% endfor %}
         </tbody>
       </table>
-    </div>
-    <div class="span6">
-      {% set map_lat_long = '55.693403,12.583046' %}
-      {% if extra_info['city_lat_long'] %}
-        {% set map_lat_long = extra_info['city_lat_long'] %}
-      {% endif %}
-      <div class="thumbnail">
-        <a href="http://maps.google.com/maps?q={{map_lat_long}}" target="_blank">
-          <img src="https://maps.googleapis.com/maps/api/staticmap?center={{map_lat_long}}&amp;zoom=12&amp;size=460x328&amp;sensor=false"
-                alt="Map of the location">
-        </a>
-      </div>
     </div>
   </div>
 {% endblock %}

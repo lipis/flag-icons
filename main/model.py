@@ -13,7 +13,7 @@ class Base(ndb.Model, modelx.BaseX):
 
 class Config(Base, modelx.ConfigX):
   analytics_id = ndb.StringProperty(default='')
-  brand_name = ndb.StringProperty(default='gae-init')
+  brand_name = ndb.StringProperty(default='gae-init-pro')
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
   feedback_email = ndb.StringProperty(default='')

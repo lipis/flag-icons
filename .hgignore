@@ -5,7 +5,5 @@ syntax: glob
 *.pyo
 main/node_modules
 main/lib
-
-#Include these two out if you don't want the compiled *.css, .js in the repo
-#main/static/dst
-#main/static/min
+main/static/dst
+main/static/min
