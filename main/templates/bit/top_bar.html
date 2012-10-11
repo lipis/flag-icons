@@ -16,12 +16,6 @@
               <a href="{{url_for('user_list', limit=8, order='-created')}}">User List</a>
             </li>
           {% endif %}
-          <li class="{% if html_class == 'extras' %} active {% endif %}">
-            <a href="{{url_for('extras')}}">Extras</a>
-          </li>
-          <li class="{% if html_class == 'chat' %} active {% endif %}">
-            <a href="{{url_for('chat')}}">Chat</a>
-          </li>
           {% if config.CONFIG_DB.feedback_email %}
             <li class="{% if html_class == 'feedback' %} active {% endif %}">
               <a href="{{url_for('feedback')}}">Feedback</a>
