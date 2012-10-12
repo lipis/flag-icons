@@ -3,12 +3,8 @@ try:
   # also used in the build.py script which is used to compile/minify the client
   # side files (*.less, *.coffee, *.js) and is not aware of the GAE
   import model
-  config_db = model.Config.get_master_db()
-  BRAND_NAME = config_db.brand_name
-  ANALYTICS_ID = config_db.analytics_id
-  SECRET_KEY = config_db.flask_secret_key.encode('ascii')
-  PUBNUB_PUBLISH = config_db.pubnub_publish
-  PUBNUB_SUBSCRIBE = config_db.pubnub_subscribe
+  CONFIG_DB = model.Config.get_master_db()
+  SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
 except:
   pass
 

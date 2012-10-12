@@ -1,7 +1,7 @@
-{% if not current_user.admin and config.ANALYTICS_ID %}
+{% if not current_user.admin and config.CONFIG_DB.analytics_id %}
   <script type="text/javascript">
     var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', '{{config.ANALYTICS_ID}}']);
+    _gaq.push(['_setAccount', '{{config.CONFIG_DB.analytics_id}}']);
     _gaq.push(['_trackPageview']);
 
     (function() {

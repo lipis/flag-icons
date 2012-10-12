@@ -1,8 +1,8 @@
 <script type="text/javascript">
   // Global variables for the scripts
-  window.HOST_URL = '{{request.host_url[:-1]}}';
-  window.PUBNUB_PUBLISH = '{{config.PUBNUB_PUBLISH}}';
-  window.PUBNUB_SUBSCRIBE = '{{config.PUBNUB_SUBSCRIBE}}';
+  window.HOST_URL = {{request.url_root|tojson|safe}};
+  window.PUBNUB_PUBLISH = {{config.CONFIG_DB.pubnub_publish|tojson|safe}};
+  window.PUBNUB_SUBSCRIBE = {{config.CONFIG_DB.pubnub_subscribe|tojson|safe}};
 </script>
 
 {% if config.DEVELOPMENT %}

@@ -126,6 +126,7 @@ def login():
 @app.route('/logout/')
 def logout():
   flaskext.login.logout_user()
+  flask.flash(u'You have been signed out.')
   return flask.redirect(flask.url_for('welcome'))
 
 
@@ -305,8 +306,8 @@ def login_user_db(user_db):
 
   flask_user_db = FlaskUser(user_db)
   if flaskext.login.login_user(flask_user_db):
-    flask.flash('Welcome on %s %s!!!' % (
-        model.Config.get_master_db().brand_name, user_db.name
+    flask.flash('Hello %s, welcome to %s!!!' % (
+        user_db.name, model.Config.get_master_db().brand_name,
       ), category='success')
     return flask.redirect(util.get_next_url())
   else:

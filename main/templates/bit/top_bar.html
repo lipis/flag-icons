@@ -2,7 +2,7 @@
   <div class="navbar-inner">
     <div class="container">
       <a class="brand" href="{{url_for('welcome')}}">
-        {{config.BRAND_NAME}}
+        {{config.CONFIG_DB.brand_name}}
       </a>
       <ul class="nav">
         <li class="{% if html_class == 'user' %} active {% endif %}">
