@@ -97,7 +97,6 @@ def admin_config_update():
 
 def update_config_variables(config_db):
   app.config.update(
-      BRAND_NAME=config_db.brand_name,
-      ANALYTICS_ID=config_db.analytics_id,
+      CONFIG_DB=config_db,
       SECRETE_KEY=config_db.flask_secret_key,
     )
