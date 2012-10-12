@@ -15,10 +15,17 @@ body {
 .footer {
   background-color: @wellBackground;
   border-top: 1px solid @grayLighter;
-  padding: 32px 20px;
+  padding: 32px 0px;
   margin-top: 32px;
-  margin-left: -20px;
-  margin-right: -20px;
+}
+
+@media (max-width: 767px) {
+ .footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 
 .img-error {
