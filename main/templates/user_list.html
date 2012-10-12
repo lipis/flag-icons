@@ -13,9 +13,10 @@
           <tr>
             <th class="span1">ID</th>
             <th class="span1">Photo</th>
-            <th class="span4">Name</th>
-            <th class="span3">Created</th>
-            <th class="span3">Modified</th>
+            <th class="span3">Name</th>
+            <th class="span3">Email</th>
+            <th class="span2">Created</th>
+            <th class="span2">Modified</th>
           </tr>
         </thead>
         <tbody>
@@ -26,6 +27,7 @@
                 <img src="{{user_db.avatar_url}}&amp;s=24" alt="Gravatar for {{user_db.name}}">
               </td>
               <td>{{user_db.name}}</td>
+              <td>{{user_db.email}}</td>
               <td>
                 <abbr title="{{user_db.created_utc}}">
                   {{user_db.created_ago}}
