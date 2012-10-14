@@ -8,6 +8,13 @@
   </div>
   <div class="row">
     <div class="span4">
+      <div class="alert">
+        <strong>Heads Up!</strong>
+        For most of the settings you will have to restart the
+        <a href="https://developers.google.com/appengine/docs/adminconsole/instances" target="_blank">
+          instances.
+        </a>
+      </div>
       <form class="form" method="POST" action=".">
         <fieldset>
           {{form.csrf}}
@@ -50,9 +57,6 @@
           </button>
         </fieldset>
       </form>
-      <div class="alert">
-        <strong>Heads Up!</strong> For some of the settings you need to restart the instance.
-      </div>
     </div>
   </div>
 {% endblock %}

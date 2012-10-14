@@ -68,7 +68,7 @@ def admin_config_update():
     config_db.twitter_consumer_secret = form.twitter_consumer_secret.data
     config_db.put()
     update_config_variables(config_db)
-    flask.flash('Your Config settings have been saved', category='success')
+    flask.flash('Your config settings have been saved', category='success')
     return flask.redirect(flask.url_for('welcome'))
   if not form.errors:
     form.analytics_id.data = config_db.analytics_id
