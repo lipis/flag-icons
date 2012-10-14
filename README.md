@@ -25,8 +25,8 @@ To test it visit `http://localhost:8080/` in your browser.
 Running the Development Environment
 ===================================
 
-To watch for changes of your `*.less` and `*.coffee` files, run the
-`./build.py -wc` from the `main` folder:
+To watch for changes of your `*.less` and `*.coffee` files and compile them
+automatically to `*.css` and `*.js` respectively:
 
     $ cd /path/to/project-name/main
     $ ./build.py -wc
