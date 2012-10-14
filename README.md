@@ -1,10 +1,14 @@
+gae-init
+========
+*gae-init* is the easiest way to start new applications on Google App Engine.
+
 Demo Page
-=========
+---------
 
 The latest version is always accessible from: [http://gae-init.appspot.com][gaeinit]
 
 Getting the code and running the application
-============================================
+--------------------------------------------
 
     $ hg clone https://bitbucket.org/Lipis/gae-init project-name
     $ dev_appserver.py /path/to/project-name/main
@@ -13,7 +17,7 @@ Getting the code and running the application
 To test it visit `http://localhost:8080/` in your browser.
 
 Running the build.py script (first time)
-========================================
+----------------------------------------
 
     $ cd /path/to/project-name/main
     $ npm install
@@ -23,7 +27,7 @@ Running the build.py script (first time)
 To test it visit `http://localhost:8080/` in your browser.
 
 Running the Development Environment
-===================================
+-----------------------------------
 
 To watch for changes of your `*.less` and `*.coffee` files and compile them
 automatically to `*.css` and `*.js` respectively:
@@ -40,7 +44,7 @@ To run the actual server (in another bash):
 To test it visit `http://localhost:8080/` in your browser.
 
 Deploying on Google App Engine
-==============================
+------------------------------
 Before deploying make sure that the `app.yaml` and `config.py` are up to date.
 
     $ cd /path/to/project/main
@@ -49,7 +53,7 @@ Before deploying make sure that the `app.yaml` and `config.py` are up to date.
 
 
 Tech Stack
-==========
+----------
 
   - [Google App Engine][gae]
   - [Python 2.7][gaepython]
@@ -62,7 +66,7 @@ Tech Stack
   - [PubNub][]
 
 Requirements
-============
+------------
 
   - [Google App Engine SDK for Python][gaesdk]
   - [node.js][nodejs]
@@ -72,13 +76,13 @@ Requirements
 
 
 Examples
-========
+--------
 
   - [Remby][]
   - [The Smallest Creature][thesmallestcreature]
 
 Author
-======
+------
 [![Lipis flair on stackoverflow.com][lipisflair]][lipis]
 
 
