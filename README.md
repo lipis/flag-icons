@@ -1,12 +1,12 @@
 Demo Page
 =========
 
-The latest version is always accessible from: [http://gae-init.appspot.com][gaeinit]
+The latest version is always accessible from: [http://pro.gae-init.appspot.com][gaeinitpro]
 
 Getting the code and running the application
 ============================================
 
-    $ hg clone https://bitbucket.org/Lipis/gae-init project-name
+    $ hg clone https://bitbucket.org/Lipis/gae-init-pro project-name
     $ dev_appserver.py /path/to/project-name/main
 
 
@@ -83,6 +83,7 @@ Author
 
 
 [gaeinit]: http://gae-init.appspot.com
+[gaeinitpro]: http://pro.gae-init.appspot.com
 [gae]: https://developers.google.com/appengine/
 [gaepython]: https://developers.google.com/appengine/docs/python/python27/using27
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
