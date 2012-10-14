@@ -6,7 +6,7 @@ The latest version is always accessible from: [http://gae-init.appspot.com][gaei
 Getting the code and running the application
 ============================================
 
-    $ hg clone hg clone https://bitbucket.org/Lipis/gae-init project-name
+    $ hg clone https://bitbucket.org/Lipis/gae-init project-name
     $ dev_appserver.py /path/to/project-name/main
 
 
