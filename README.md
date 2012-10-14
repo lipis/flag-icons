@@ -79,7 +79,7 @@ Examples
 
 Author
 ======
-![Lipis account on StackOverflow.com](http://stackexchange.com/users/flair/5282.png)
+[![Lipis flair on stackoverflow.com][lipisflair]][lipis]
 
 
 [gaeinit]: http://gae-init.appspot.com
@@ -103,3 +103,6 @@ Author
 
 [remby]: http://www.remby.com
 [thesmallestcreature]: http://www.thesmallestcreature.com/
+
+[lipisflair]: http://stackexchange.com/users/flair/5282.png
+[lipis]: http://stackoverflow.com/users/8418/lipis
