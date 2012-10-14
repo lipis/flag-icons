@@ -3,9 +3,10 @@ syntax: glob
 .DS_Store
 *.pyc
 *.pyo
+main/index.yaml
 main/node_modules
-main/lib
 
-#Include these two out if you don't want the compiled *.css, .js in the repo
+#Include these lines if you don't want the compiled *.css, *.js, *.zip in the repo
 #main/static/dst
 #main/static/min
+#main/lib.zip

@@ -1,6 +1,6 @@
 gae-init
 ========
-*gae-init* is the easiest way to start new applications on Google App Engine.
+**gae-init** is the easiest way to start new applications on Google App Engine.
 
 Demo Page
 ---------

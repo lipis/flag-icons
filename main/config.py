@@ -21,7 +21,7 @@ DEBUG = DEVELOPMENT
 DEFAULT_DB_LIMIT = 64
 
 ################################################################################
-# CLient modules, also used by the build.py script.
+# Client modules, also used by the build.py script.
 ################################################################################
 STYLES = [
     'src/less/style.less',
