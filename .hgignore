@@ -3,7 +3,8 @@ syntax: glob
 .DS_Store
 *.pyc
 *.pyo
+main/index.yaml
 main/node_modules
-main/lib
 main/static/dst
 main/static/min
+main/lib.zip
