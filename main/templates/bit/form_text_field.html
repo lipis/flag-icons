@@ -5,5 +5,8 @@
     {% for error in form_field.errors %}
       <span class='help-inline'>{{error}}</span>
     {% endfor %}
+    {% if form_field.description %}
+      <span class="help-block">{{form_field.description}}</span>
+    {% endif %}
   </div>
 </div>
