@@ -13,9 +13,8 @@ The latest version is always accessible from:
 Getting the code and running the application
 --------------------------------------------
 
-    $ hg clone https://bitbucket.org/Lipis/gae-init-pro project-name
+    $ hg clone https://bitbucket.org/lipis/gae-init-pro project-name
     $ dev_appserver.py /path/to/project-name/main
-
 
 To test it visit `http://localhost:8080/` in your browser.
 
@@ -38,22 +37,20 @@ automatically to `*.css` and `*.js` respectively:
     $ cd /path/to/project-name/main
     $ ./build.py -wc
 
-
 To run the actual server (in another bash):
 
     $ dev_appserver.py /path/to/project-name/main
-
 
 To test it visit `http://localhost:8080/` in your browser.
 
 Deploying on Google App Engine
 ------------------------------
+
 Before deploying make sure that the `app.yaml` and `config.py` are up to date.
 
     $ cd /path/to/project/main
     $ ./build.py
     $ appcfg.py update .
-
 
 Tech Stack
 ----------
@@ -77,17 +74,24 @@ Requirements
   - [Mercurial][]
   - [Sublime][] (If you are a developer, you need that)
 
-
 Examples
 --------
 
   - [Remby][]
   - [The Smallest Creature][thesmallestcreature]
 
+Contributions and Ideas
+-----------------------
+
+  - [tzador][]
+  - [chris][]
+  - [ksymeon][]
+  - [gmist][]
+
 Author
 ------
-[![Lipis flair on stackoverflow.com][lipisflair]][lipis]
 
+[![Lipis flair on stackoverflow.com][lipisflair]][lipis]
 
 [gaeinit]: http://gae-init.appspot.com
 [gaeinitpro]: http://pro.gae-init.appspot.com
@@ -109,9 +113,13 @@ Author
 [mercurial]: http://mercurial.selenic.com/
 [sublime]: http://www.sublimetext.com/2
 
-
 [remby]: http://www.remby.com
 [thesmallestcreature]: http://www.thesmallestcreature.com/
+
+[tzador]: http://stackoverflow.com/users/165697/tzador
+[chris]: http://stackoverflow.com/users/226394/chris-top
+[ksymeon]: https://plus.google.com/102598378133436784997
+[gmist]: https://github.com/gmist
 
 [lipisflair]: http://stackexchange.com/users/flair/5282.png
 [lipis]: http://stackoverflow.com/users/8418/lipis
