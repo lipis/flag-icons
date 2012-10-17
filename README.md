@@ -11,7 +11,7 @@ The latest version is always accessible from: [http://gae-init.appspot.com][gaei
 Getting the code and running the application
 --------------------------------------------
 
-    $ hg clone https://bitbucket.org/Lipis/gae-init project-name
+    $ hg clone https://bitbucket.org/lipis/gae-init project-name
     $ dev_appserver.py /path/to/project-name/main
 
 To test it visit `http://localhost:8080/` in your browser.
@@ -82,7 +82,7 @@ Contributions and Ideas
 -----------------------
 
   - [tzador][]
-  - [Chris-Top][christop]
+  - [chris][]
   - [ksymeon][]
   - [gmist][]
 
@@ -113,7 +113,7 @@ Author
 [thesmallestcreature]: http://www.thesmallestcreature.com/
 
 [tzador]: http://stackoverflow.com/users/165697/tzador
-[christop]: http://stackoverflow.com/users/226394/chris-top
+[chris]: http://stackoverflow.com/users/226394/chris-top
 [ksymeon]: https://plus.google.com/102598378133436784997
 [gmist]: https://github.com/gmist
 
