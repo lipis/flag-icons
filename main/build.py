@@ -6,6 +6,19 @@ import time
 from datetime import datetime
 import shutil
 
+
+################################################################################
+# Options
+################################################################################
+parser = optparse.OptionParser()
+parser.add_option('-w', '--watch', dest='watch', action='store_true')
+parser.add_option('-c', '--clean', dest='clean', action='store_true')
+(options, args) = parser.parse_args()
+
+
+################################################################################
+# Directories
+################################################################################
 DIR_STATIC = 'static'
 DIR_SRC = 'src'
 DIR_LESS = 'less'
@@ -17,12 +30,28 @@ DIR_DST = 'dst'
 DIR_LIB = 'lib'
 FILE_ZIP = '%s.zip' % DIR_LIB
 
-parser = optparse.OptionParser()
-parser.add_option('-w', '--watch', dest='watch', action='store_true')
-parser.add_option('-c', '--clean', dest='clean', action='store_true')
-(options, args) = parser.parse_args()
+root = os.path.dirname(os.path.realpath(__file__))
+dir_static = os.path.join(root, DIR_STATIC)
+
+dir_src = os.path.join(dir_static, DIR_SRC)
+dir_src_coffee = os.path.join(dir_src, DIR_COFFEE)
+dir_src_less = os.path.join(dir_src, DIR_LESS)
+
+dir_dst = os.path.join(dir_static, DIR_DST)
+dir_dst_css = os.path.join(dir_dst, DIR_CSS)
+dir_dst_js = os.path.join(dir_dst, DIR_JS)
+
+dir_min = os.path.join(dir_static, DIR_MIN)
+dir_min_css = os.path.join(dir_min, DIR_CSS)
+dir_min_js = os.path.join(dir_min, DIR_JS)
+
+dir_lib = os.path.join(root, DIR_LIB)
+file_lib = os.path.join(root, FILE_ZIP)
 
 
+################################################################################
+# Helpers
+################################################################################
 def print_out(script, filename=''):
   timestamp = datetime.now().strftime('%H:%M:%S')
   print '[%s] %12s %s' % (timestamp, script, filename.replace(root, ''))
@@ -34,10 +63,16 @@ def make_dirs(directory):
 
 
 def clean_files():
-  print_out('CLEAN FILES', 'Remove "*.pyc" files')
-  os.system('find . -name "*.pyc" -print0 | xargs -0 rm -rf')
-  print_out('CLEAN FILES', 'Remove "*.*~" files')
-  os.system('find . -name "*.*~" -print0 | xargs -0 rm -rf')
+  bad_endings = ['pyc', '~']
+  print_out(
+      'CLEAN FILES',
+      'Removing files: %s' % ', '.join(['*%s' % e for e in bad_endings]),
+    )
+  for home, dirs, files in os.walk(root):
+    for f in files:
+      for b in bad_endings:
+        if f.endswith(b):
+          os.remove(os.path.join(home, f))
 
 
 def compile_coffee(source, to):
@@ -47,7 +82,7 @@ def compile_coffee(source, to):
   make_dirs(os.path.dirname(target))
   if not source.endswith('.coffee'):
     print_out('COPYING', source)
-    os.system('cp %s %s' % (source, target))
+    shutil.copy(source, target)
     return
   print_out('COFFEE', source)
   os.system('node_modules/.bin/coffee -c -p %s > %s' % (source, target))
@@ -104,14 +139,9 @@ def compile_all():
       compile_coffee(os.path.join(dir_static, source), dir_dst)
 
 
-root = os.path.dirname(os.path.realpath(__file__))
-dir_static = os.path.join(root, DIR_STATIC)
-dir_src = os.path.join(dir_static, DIR_SRC)
-dir_dst = os.path.join(dir_static, DIR_DST)
-dir_min = os.path.join(dir_static, DIR_MIN)
-dir_lib = os.path.join(root, DIR_LIB)
-file_lib = os.path.join(root, FILE_ZIP)
-
+################################################################################
+# Main
+################################################################################
 if options.watch or options.clean:
   if options.clean:
     if os.path.isdir(dir_dst):
@@ -135,7 +165,7 @@ else:
   make_lib_zip(force=True)
   if os.path.isdir(dir_min):
     shutil.rmtree(dir_min)
-  make_dirs(os.path.join(dir_min, DIR_JS))
+  make_dirs(dir_min_js)
 
   for source in config.STYLES:
     compile_less(os.path.join(dir_static, source), dir_min)
@@ -144,19 +174,16 @@ else:
     coffees = ' '.join([os.path.join(dir_static, script)
         for script in config.SCRIPTS[module] if script.endswith('.coffee')
       ])
-    print_out('COFFEE MIN', '%s.js' % module)
+
+    pretty_js = os.path.join(dir_min_js, '%s.js' % module)
+    ugly_js = os.path.join(dir_min_js, '%s.min.js' % module)
+    print_out('COFFEE MIN', ugly_js)
+
     if len(coffees):
-      os.system(
-          'node_modules/.bin/coffee --join -c -p %s >> static/min/js/%s.js' % (
-          coffees, module,
-        ))
+      os.system('node_modules/.bin/coffee --join -c -p %s >> %s' % (coffees, pretty_js))
     for script in config.SCRIPTS[module]:
       if not script.endswith('.js'):
         continue
       os.system('cat static/%s >> static/min/js/%s.js' % (script, module))
-
-    os.system(
-        'node_modules/.bin/uglifyjs -nc static/min/js/%s.js > static/min/js/%s.min.js' % (
-        module, module,
-      ))
-    os.system('rm static/min/js/%s.js' % module)
+    os.system('node_modules/.bin/uglifyjs -nc %s > %s' % (pretty_js, ugly_js))
+    os.remove(pretty_js)
