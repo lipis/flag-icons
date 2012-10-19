@@ -76,7 +76,7 @@ def clean_files():
 
 
 def compile_coffee(source, to):
-  target = source.replace(dir_src, to).replace('coffee', 'js')
+  target = source.replace(dir_src_coffee, to).replace('.coffee', '.js')
   if not is_dirty(source, target):
     return
   make_dirs(os.path.dirname(target))
@@ -89,14 +89,14 @@ def compile_coffee(source, to):
 
 
 def compile_less(source, to, check_modified=False):
-  target = source.replace(dir_src, to).replace('less', 'css')
+  target = source.replace(dir_src_less, to).replace('.less', '.css')
   minified = ''
   if not source.endswith('.less'):
     return
   if check_modified and not is_less_modified(target):
     return
 
-  if to == dir_min:
+  if to == dir_min_css:
     minified = '-x'
     target = target.replace('.css', '.min.css')
     print_out('LESS MIN', source)
@@ -133,10 +133,10 @@ def is_less_modified(target):
 
 def compile_all():
   for source in config.STYLES:
-    compile_less(os.path.join(dir_static, source), dir_dst, True)
+    compile_less(os.path.join(dir_static, source), dir_dst_css, True)
   for module in config.SCRIPTS:
     for source in config.SCRIPTS[module]:
-      compile_coffee(os.path.join(dir_static, source), dir_dst)
+      compile_coffee(os.path.join(dir_static, source), dir_dst_js)
 
 
 ################################################################################
@@ -168,7 +168,7 @@ else:
   make_dirs(dir_min_js)
 
   for source in config.STYLES:
-    compile_less(os.path.join(dir_static, source), dir_min)
+    compile_less(os.path.join(dir_static, source), dir_min_css)
 
   for module in config.SCRIPTS:
     coffees = ' '.join([os.path.join(dir_static, script)
