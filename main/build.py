@@ -75,8 +75,8 @@ def clean_files():
           os.remove(os.path.join(home, f))
 
 
-def compile_coffee(source, to):
-  target = source.replace(dir_src_coffee, to).replace('.coffee', '.js')
+def compile_coffee(source, target_dir):
+  target = source.replace(dir_src_coffee, target_dir).replace('.coffee', '.js')
   if not is_dirty(source, target):
     return
   make_dirs(os.path.dirname(target))
@@ -88,15 +88,15 @@ def compile_coffee(source, to):
   os.system('node_modules/.bin/coffee -c -p %s > %s' % (source, target))
 
 
-def compile_less(source, to, check_modified=False):
-  target = source.replace(dir_src_less, to).replace('.less', '.css')
+def compile_less(source, target_dir, check_modified=False):
+  target = source.replace(dir_src_less, target_dir).replace('.less', '.css')
   minified = ''
   if not source.endswith('.less'):
     return
   if check_modified and not is_less_modified(target):
     return
 
-  if to == dir_min_css:
+  if target_dir == dir_min_css:
     minified = '-x'
     target = target.replace('.css', '.min.css')
     print_out('LESS MIN', source)
@@ -184,6 +184,7 @@ else:
     for script in config.SCRIPTS[module]:
       if not script.endswith('.js'):
         continue
-      os.system('cat static/%s >> static/min/js/%s.js' % (script, module))
+      script_file = os.path.join(dir_static, script)
+      os.system('cat %s >> %s' % (script_file, pretty_js))
     os.system('node_modules/.bin/uglifyjs -nc %s > %s' % (pretty_js, ugly_js))
     os.remove(pretty_js)
