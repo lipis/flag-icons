@@ -28,7 +28,14 @@ DIR_JS = 'js'
 DIR_MIN = 'min'
 DIR_DST = 'dst'
 DIR_LIB = 'lib'
+DIR_NODE_MODULES = 'node_modules'
+DIR_BIN = '.bin'
 FILE_ZIP = '%s.zip' % DIR_LIB
+
+FILE_COFFEE = 'coffee'
+FILE_LESS = 'lessc'
+FILE_UGLIFYJS = 'uglifyjs'
+
 
 root = os.path.dirname(os.path.realpath(__file__))
 dir_static = os.path.join(root, DIR_STATIC)
@@ -47,6 +54,14 @@ dir_min_js = os.path.join(dir_min, DIR_JS)
 
 dir_lib = os.path.join(root, DIR_LIB)
 file_lib = os.path.join(root, FILE_ZIP)
+
+dir_bin = os.path.join(root, DIR_NODE_MODULES, DIR_BIN)
+file_coffee = os.path.join(dir_bin, FILE_COFFEE)
+file_less = os.path.join(dir_bin, FILE_LESS)
+file_uglifyjs = os.path.join(dir_bin, FILE_UGLIFYJS)
+
+SCRIPTS = config.SCRIPTS
+STYLES = config.STYLES
 
 
 ################################################################################
@@ -75,6 +90,18 @@ def clean_files():
           os.remove(os.path.join(home, f))
 
 
+def merge_files(source, target):
+  fout = open(target, 'a')
+  for line in open(source):
+    fout.write(line)
+  fout.close()
+
+
+def os_execute(executable, params, source, target, append=False):
+  operator = '>>' if append else '>'
+  os.system('"%s" %s %s %s %s' % (executable, params, source, operator, target))
+
+
 def compile_coffee(source, target_dir):
   target = source.replace(dir_src_coffee, target_dir).replace('.coffee', '.js')
   if not is_dirty(source, target):
@@ -85,7 +112,7 @@ def compile_coffee(source, target_dir):
     shutil.copy(source, target)
     return
   print_out('COFFEE', source)
-  os.system('node_modules/.bin/coffee -c -p %s > %s' % (source, target))
+  os_execute(file_coffee, '-cp', source, target)
 
 
 def compile_less(source, target_dir, check_modified=False):
@@ -104,7 +131,7 @@ def compile_less(source, target_dir, check_modified=False):
     print_out('LESS', source)
 
   make_dirs(os.path.dirname(target))
-  os.system('node_modules/.bin/lessc %s %s > %s' % (minified, source, target))
+  os_execute(file_less, minified, source, target)
 
 
 def make_lib_zip(force=False):
@@ -132,16 +159,30 @@ def is_less_modified(target):
 
 
 def compile_all():
-  for source in config.STYLES:
+  for source in STYLES:
     compile_less(os.path.join(dir_static, source), dir_dst_css, True)
   for module in config.SCRIPTS:
     for source in config.SCRIPTS[module]:
       compile_coffee(os.path.join(dir_static, source), dir_dst_js)
 
 
+def update_path_separators():
+  def fixit(path):
+    return path.replace('\\', '/').replace('/', os.sep)
+
+  for idx in xrange(len(STYLES)):
+    STYLES[idx] = fixit(STYLES[idx])
+
+  for module in SCRIPTS:
+    for idx in xrange(len(SCRIPTS[module])):
+      SCRIPTS[module][idx] = fixit(SCRIPTS[module][idx])
+
+
 ################################################################################
 # Main
 ################################################################################
+update_path_separators()
+
 if options.watch or options.clean:
   if options.clean:
     if os.path.isdir(dir_dst):
@@ -167,7 +208,7 @@ else:
     shutil.rmtree(dir_min)
   make_dirs(dir_min_js)
 
-  for source in config.STYLES:
+  for source in STYLES:
     compile_less(os.path.join(dir_static, source), dir_min_css)
 
   for module in config.SCRIPTS:
@@ -180,11 +221,11 @@ else:
     print_out('COFFEE MIN', ugly_js)
 
     if len(coffees):
-      os.system('node_modules/.bin/coffee --join -c -p %s >> %s' % (coffees, pretty_js))
+      os_execute(file_coffee, '--join -cp', coffees, pretty_js, append=True)
     for script in config.SCRIPTS[module]:
       if not script.endswith('.js'):
         continue
       script_file = os.path.join(dir_static, script)
-      os.system('cat %s >> %s' % (script_file, pretty_js))
-    os.system('node_modules/.bin/uglifyjs -nc %s > %s' % (pretty_js, ugly_js))
+      merge_files(script_file, pretty_js)
+    os_execute(file_uglifyjs, '-nc', pretty_js, ugly_js)
     os.remove(pretty_js)
