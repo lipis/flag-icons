@@ -68,7 +68,7 @@ Requirements
 
   - [Google App Engine SDK for Python][gaesdk]
   - [node.js][nodejs]
-  - [OSX][] or [Linux][]
+  - [OSX][] or [Linux][] or [Windows][]
   - [Mercurial][]
   - [Sublime][] (If you are a developer, you need that)
 
@@ -106,6 +106,7 @@ Author
 [nodejs]: http://nodejs.org/
 [osx]: http://www.apple.com/osx/
 [linux]: http://www.ubuntu.com
+[windows]: http://windows.microsoft.com/
 [mercurial]: http://mercurial.selenic.com/
 [sublime]: http://www.sublimetext.com/2
 

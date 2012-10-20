@@ -77,6 +77,11 @@ def make_dirs(directory):
     os.makedirs(directory)
 
 
+def remove_dir(directory):
+  if os.path.isdir(directory):
+    shutil.rmtree(directory)
+
+
 def clean_files():
   bad_endings = ['pyc', '~']
   print_out(
@@ -135,9 +140,8 @@ def compile_less(source, target_dir, check_modified=False):
 
 
 def make_lib_zip(force=False):
-  if force:
-    if os.path.isfile(file_lib):
-      os.remove(file_lib)
+  if force and os.path.isfile(file_lib):
+    os.remove(file_lib)
   if not os.path.isfile(file_lib):
     print_out('ZIP', file_lib)
     shutil.make_archive(DIR_LIB, 'zip', dir_lib)
@@ -158,7 +162,7 @@ def is_less_modified(target):
   return False
 
 
-def compile_all():
+def compile_all_dst():
   for source in STYLES:
     compile_less(os.path.join(dir_static, source), dir_dst_css, True)
   for module in config.SCRIPTS:
@@ -185,27 +189,23 @@ update_path_separators()
 
 if options.watch or options.clean:
   if options.clean:
-    if os.path.isdir(dir_dst):
-      shutil.rmtree(dir_dst)
+    remove_dir(dir_dst)
     make_lib_zip(force=True)
-  else:
-    make_lib_zip()
+
+  make_lib_zip()
   make_dirs(dir_dst)
 
-  compile_all()
+  compile_all_dst()
   if options.watch:
-    print_out('DONE', 'and watching for changes (ctrl+c to stop).')
+    print_out('DONE', 'and watching for changes (ctrl+c to stop)')
     while True:
       time.sleep(0.5)
-      compile_all()
-  else:
-    print_out('DONE')
+      compile_all_dst()
 
 else:
   clean_files()
   make_lib_zip(force=True)
-  if os.path.isdir(dir_min):
-    shutil.rmtree(dir_min)
+  remove_dir(dir_min)
   make_dirs(dir_min_js)
 
   for source in STYLES:
@@ -229,3 +229,5 @@ else:
       merge_files(script_file, pretty_js)
     os_execute(file_uglifyjs, '-nc', pretty_js, ugly_js)
     os.remove(pretty_js)
+
+print_out('DONE')
