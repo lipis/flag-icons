@@ -76,7 +76,7 @@ Examples
 --------
 
   - [Remby][]
-  - [The smallest Creature][thesmallestcreature] - Open Source - [lipis/less-bands][lessbands]
+  - [The smallest Creature][thesmallestcreature] ([open source][lessbands])
 
 Contributions and Ideas
 -----------------------
