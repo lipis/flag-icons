@@ -1,20 +1,29 @@
 #!/usr/bin/env python
-import optparse
+import argparse
 import os
 import config
 import time
 from datetime import datetime
 import shutil
-
+import sys
 
 ################################################################################
 # Options
 ################################################################################
-parser = optparse.OptionParser()
-parser.add_option('-w', '--watch', dest='watch', action='store_true')
-parser.add_option('-c', '--clean', dest='clean', action='store_true')
-(options, args) = parser.parse_args()
+if len(sys.argv) == 1:
+  sys.argv.append('-h')
 
+parser = argparse.ArgumentParser()
+parser.add_argument('-w', '--watch', dest='watch', action='store_true',
+    help='watch files for changes when running the development web server',
+  )
+parser.add_argument('-c', '--clean', dest='clean', action='store_true',
+    help='recompiles files when running the development web server',
+  )
+parser.add_argument('-m', '--minify', dest='minify', action='store_true',
+    help='compiles files into minified version before deploying',
+  )
+args = parser.parse_args()
 
 ################################################################################
 # Directories
@@ -60,15 +69,15 @@ file_coffee = os.path.join(dir_bin, FILE_COFFEE)
 file_less = os.path.join(dir_bin, FILE_LESS)
 file_uglifyjs = os.path.join(dir_bin, FILE_UGLIFYJS)
 
-SCRIPTS = config.SCRIPTS
-STYLES = config.STYLES
-
 
 ################################################################################
 # Helpers
 ################################################################################
 def print_out(script, filename=''):
   timestamp = datetime.now().strftime('%H:%M:%S')
+  if not filename:
+    filename = '-' * 41
+    script = script.rjust(12, '-')
   print '[%s] %12s %s' % (timestamp, script, filename.replace(root, ''))
 
 
@@ -185,24 +194,21 @@ def update_path_separators():
 ################################################################################
 # Main
 ################################################################################
+SCRIPTS = config.SCRIPTS
+STYLES = config.STYLES
+
 update_path_separators()
 
-if options.watch or options.clean:
-  if options.clean:
-    remove_dir(dir_dst)
-    make_lib_zip(force=True)
-
-  make_lib_zip()
+if args.clean:
+  print_out('CLEAN')
+  make_lib_zip(force=True)
+  remove_dir(dir_dst)
   make_dirs(dir_dst)
-
   compile_all_dst()
-  if options.watch:
-    print_out('DONE', 'and watching for changes (ctrl+c to stop)')
-    while True:
-      time.sleep(0.5)
-      compile_all_dst()
+  print_out('DONE')
 
-else:
+if args.minify:
+  print_out('MINIFY')
   clean_files()
   make_lib_zip(force=True)
   remove_dir(dir_min)
@@ -229,5 +235,15 @@ else:
       merge_files(script_file, pretty_js)
     os_execute(file_uglifyjs, '-nc', pretty_js, ugly_js)
     os.remove(pretty_js)
+  print_out('DONE')
 
-print_out('DONE')
+if args.watch:
+  print_out('WATCHING')
+  make_lib_zip()
+  make_dirs(dir_dst)
+
+  compile_all_dst()
+  print_out('DONE', 'and watching for changes (Ctrl+C to stop)')
+  while True:
+    time.sleep(0.5)
+    compile_all_dst()
