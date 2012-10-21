@@ -76,7 +76,7 @@ Examples
 --------
 
   - [Remby][]
-  - [The Smallest Creature][thesmallestcreature]
+  - [The smallest Creature][thesmallestcreature] - Open Source - [lipis/less-bands][lessbands]
 
 Contributions and Ideas
 -----------------------
@@ -92,6 +92,8 @@ Author
 [![Lipis flair on stackoverflow.com][lipisflair]][lipis]
 
 [gaeinit]: http://gae-init.appspot.com
+[lessbands]: https://bitbucket.org/lipis/less-bands
+
 [gae]: https://developers.google.com/appengine/
 [gaepython]: https://developers.google.com/appengine/docs/python/python27/using27
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
