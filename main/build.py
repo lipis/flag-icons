@@ -10,9 +10,6 @@ import sys
 ################################################################################
 # Options
 ################################################################################
-if len(sys.argv) == 1:
-  sys.argv.append('-h')
-
 parser = argparse.ArgumentParser()
 parser.add_argument('-w', '--watch', dest='watch', action='store_true',
     help='watch files for changes when running the development web server',
@@ -21,7 +18,8 @@ parser.add_argument('-c', '--clean', dest='clean', action='store_true',
     help='recompiles files when running the development web server',
   )
 parser.add_argument('-m', '--minify', dest='minify', action='store_true',
-    help='compiles files into minified version before deploying',
+    help='''compiles files into minified version before deploying, identical to
+    calling %s with no arguments''' % __file__,
   )
 args = parser.parse_args()
 
@@ -207,7 +205,7 @@ if args.clean:
   compile_all_dst()
   print_out('DONE')
 
-if args.minify:
+if args.minify or len(sys.argv) == 1:
   print_out('MINIFY')
   clean_files()
   make_lib_zip(force=True)

@@ -35,7 +35,7 @@ To watch for changes of your `*.less` and `*.coffee` files and compile them
 automatically to `*.css` and `*.js` respectively:
 
     $ cd /path/to/project-name/main
-    $ ./build.py -wc
+    $ ./build.py -w
 
 To run the actual server (in another bash):
 
@@ -49,7 +49,7 @@ Deploying on Google App Engine
 Before deploying make sure that the `app.yaml` and `config.py` are up to date.
 
     $ cd /path/to/project/main
-    $ ./build.py
+    $ ./build.py -m
     $ appcfg.py update .
 
 Tech Stack
@@ -78,7 +78,7 @@ Examples
 --------
 
   - [Remby][]
-  - [The Smallest Creature][thesmallestcreature]
+  - [The smallest Creature][thesmallestcreature] ([open source][lessbands])
 
 Contributions and Ideas
 -----------------------
@@ -96,6 +96,7 @@ Author
 [gaeinit]: http://gae-init.appspot.com
 [gaeinitpro]: http://pro.gae-init.appspot.com
 [gaeinitbit]: https://bitbucket.org/Lipis/gae-init
+[lessbands]: https://bitbucket.org/lipis/less-bands
 [gae]: https://developers.google.com/appengine/
 [gaepython]: https://developers.google.com/appengine/docs/python/python27/using27
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
