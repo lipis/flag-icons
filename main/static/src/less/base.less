@@ -19,6 +19,26 @@ body {
   margin-top: 32px;
 }
 
+.img-error {
+  .img-polaroid;
+  .size(270px, 485px);
+  margin: auto;
+  display: block;
+}
+
+/* Responsive
+-------------------------------------------------- */
+
+/* Desktop
+------------------------- */
+@media (max-width: 980px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+/* Tablet
+------------------------- */
 @media (max-width: 767px) {
  .footer {
     margin-left: -20px;
@@ -28,15 +48,10 @@ body {
   }
 }
 
+/* Landscape phones
+------------------------- */
 @media (max-width: 480px) {
   .footer .pull-right {
     float: none;
   }
-}
-
-.img-error {
-  .img-polaroid;
-  .size(270px, 485px);
-  margin: 0 auto;
-  display: block;
 }
