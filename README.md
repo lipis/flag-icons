@@ -8,13 +8,12 @@ Demo Page
 
 The latest version is always accessible from: [http://gae-init.appspot.com][gaeinit]
 
-Getting the code and running the application
---------------------------------------------
+Getting the code
+----------------
+The easiest way to get the code is to [fork it][fork] and then clone it.
+Or you can clone it directly using the command line:
 
     $ hg clone https://bitbucket.org/lipis/gae-init project-name
-    $ dev_appserver.py /path/to/project-name/main
-
-To test it visit `http://localhost:8080/` in your browser.
 
 Running the build.py script (first time)
 ----------------------------------------
@@ -93,6 +92,7 @@ Author
 
 [gaeinit]: http://gae-init.appspot.com
 [lessbands]: https://bitbucket.org/lipis/less-bands
+[fork]: https://bitbucket.org/lipis/gae-init/fork
 
 [gae]: https://developers.google.com/appengine/
 [gaepython]: https://developers.google.com/appengine/docs/python/python27/using27
