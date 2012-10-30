@@ -85,7 +85,7 @@ def login_required(f):
     if is_logged_in():
       return f(*args, **kws)
     else:
-      return flask.redirect(flask.url_for('login', next=flask.request.url))
+      return flask.redirect(flask.url_for('signin', next=flask.request.url))
   return decorated_function
 
 
@@ -100,31 +100,32 @@ def admin_required(f):
 
 
 ################################################################################
-# Login stuff
+# Sign in stuff
 ################################################################################
 @app.route('/login/')
-def login():
+@app.route('/signin/')
+def signin():
   next_url = util.get_next_url()
-  if flask.url_for('login') in next_url:
+  if flask.url_for('signin') in next_url:
     next_url = flask.url_for('welcome')
 
-  google_login_url = flask.url_for('login_google', next=next_url)
-  twitter_login_url = flask.url_for('login_twitter', next=next_url)
-  facebook_login_url = flask.url_for('login_facebook', next=next_url)
+  google_signin_url = flask.url_for('signin_google', next=next_url)
+  twitter_signin_url = flask.url_for('signin_twitter', next=next_url)
+  facebook_signin_url = flask.url_for('signin_facebook', next=next_url)
 
   return flask.render_template(
-      'login.html',
-      title='Login',
-      html_class='login',
-      google_login_url=google_login_url,
-      twitter_login_url=twitter_login_url,
-      facebook_login_url=facebook_login_url,
+      'signin.html',
+      title='Please sign in',
+      html_class='signin',
+      google_signin_url=google_signin_url,
+      twitter_signin_url=twitter_signin_url,
+      facebook_signin_url=facebook_signin_url,
       next_url=next_url,
     )
 
 
-@app.route('/logout/')
-def logout():
+@app.route('/signout/')
+def signout():
   flaskext.login.logout_user()
   flask.flash(u'You have been signed out.')
   return flask.redirect(flask.url_for('welcome'))
@@ -133,8 +134,8 @@ def logout():
 ################################################################################
 # Google
 ################################################################################
-@app.route('/login/google/')
-def login_google():
+@app.route('/signin/google/')
+def signin_google():
   google_url = users.create_login_url(
       flask.url_for('google_authorized', next=util.get_next_url())
     )
@@ -149,7 +150,7 @@ def google_authorized():
     return flask.redirect(util.get_next_url())
 
   user_db = retrieve_user_from_google(google_user)
-  return login_user_db(user_db)
+  return signin_user_db(user_db)
 
 
 def retrieve_user_from_google(google_user):
@@ -196,7 +197,7 @@ def twitter_oauth_authorized(resp):
     resp['oauth_token_secret']
   )
   user_db = retrieve_user_from_twitter(resp)
-  return login_user_db(user_db)
+  return signin_user_db(user_db)
 
 
 @twitter.tokengetter
@@ -204,8 +205,8 @@ def get_twitter_token():
   return flask.session.get('oauth_token')
 
 
-@app.route('/login/twitter/')
-def login_twitter():
+@app.route('/signin/twitter/')
+def signin_twitter():
   flask.session.pop('oauth_token', None)
   try:
     return twitter.authorize(
@@ -214,10 +215,10 @@ def login_twitter():
       )
   except:
     flask.flash(
-        'Something went terribly wrong with Twitter login. Please try again.',
+        'Something went terribly wrong with Twitter sign in. Please try again.',
         category='danger',
       )
-    return flask.redirect(flask.url_for('login', next=util.get_next_url()))
+    return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
 
 
 def retrieve_user_from_twitter(response):
@@ -261,7 +262,7 @@ def facebook_authorized(resp):
   flask.session['oauth_token'] = (resp['access_token'], '')
   me = facebook.get('/me')
   user_db = retrieve_user_from_facebook(me.data)
-  return login_user_db(user_db)
+  return signin_user_db(user_db)
 
 
 @facebook.tokengetter
@@ -269,8 +270,8 @@ def get_facebook_oauth_token():
   return flask.session.get('oauth_token')
 
 
-@app.route('/login/facebook/')
-def login_facebook():
+@app.route('/signin/facebook/')
+def signin_facebook():
   return facebook.authorize(callback=flask.url_for('facebook_authorized',
       next=util.get_next_url(),
       _external=True),
@@ -300,9 +301,9 @@ def retrieve_user_from_facebook(response):
 ################################################################################
 # Helpers
 ################################################################################
-def login_user_db(user_db):
+def signin_user_db(user_db):
   if not user_db:
-    return flask.redirect(flask.url_for('login'))
+    return flask.redirect(flask.url_for('signin'))
 
   flask_user_db = FlaskUser(user_db)
   if flaskext.login.login_user(flask_user_db):
@@ -311,8 +312,8 @@ def login_user_db(user_db):
       ), category='success')
     return flask.redirect(util.get_next_url())
   else:
-    flask.flash('Sorry, but you could not log in.', category='danger')
-    return flask.redirect(flask.url_for('login'))
+    flask.flash('Sorry, but you could not sign in.', category='danger')
+    return flask.redirect(flask.url_for('signin'))
 
 
 def strip_username_from_email(email):

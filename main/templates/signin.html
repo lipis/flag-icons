@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="page-header">
+    <h1>
+      {{title}}
+      <small>
+        It only takes 8 seconds
+      </small>
+    </h1>
+  </div>
+  <div class="row">
+    <div class="span4">
+      <div class="well">
+        <a class="btn btn-block" href="{{google_signin_url}}">
+          <img src="/p/img/signin/google-logo-large.png" alt="Google Logo ">
+        </a>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="well">
+        <a class="btn btn-block" href="{{facebook_signin_url}}">
+          <img src="/p/img/signin/facebook-logo-large.png" alt="Facebook Logo ">
+        </a>
+      </div>
+    </div>
+    <div class="span4">
+      <div class="well">
+        <a class="btn btn-block" href="{{twitter_signin_url}}">
+          <img src="/p/img/signin/twitter-logo-large.png" alt="Twitter Logo ">
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

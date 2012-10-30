@@ -1266,7 +1266,7 @@ select:focus:required:invalid:focus {
   padding: 19px 20px 20px;
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: rgba(238, 238, 238, 0.5);
+  background-color: #f5f5f5;
   border-top: 1px solid #e5e5e5;
   *zoom: 1;
 }
@@ -2444,8 +2444,8 @@ table th[class*="span"],
   min-height: 20px;
   padding: 19px;
   margin-bottom: 20px;
-  background-color: rgba(238, 238, 238, 0.5);
-  border: 1px solid rgba(220, 220, 220, 0.5);
+  background-color: #f5f5f5;
+  border: 1px solid #e3e3e3;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -4954,7 +4954,7 @@ a.badge:hover {
   font-weight: 200;
   line-height: 30px;
   color: inherit;
-  background-color: rgba(222, 222, 222, 0.5);
+  background-color: #eeeeee;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -4988,7 +4988,6 @@ a.badge:hover {
   position: fixed;
 }
 body {
-  background: url(/p/img/background.png);
   padding-top: 60px;
   overflow-y: scroll;
 }

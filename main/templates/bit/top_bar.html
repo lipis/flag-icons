@@ -29,11 +29,11 @@
             <a href="{{url_for('profile')}}">{{current_user.name}}</a>
           </li>
           <li>
-            <a href="{{url_for('logout')}}">Logout</a>
+            <a href="{{url_for('signout')}}">Sign out</a>
           </li>
         {% else %}
           <li>
-            <a href="{{url_for('login')}}">Login</a>
+            <a href="{{url_for('signin')}}">Sign in</a>
           </li>
         {% endif %}
       </ul>
