@@ -24,10 +24,11 @@ send_chat_message = () ->
 
 window.on_chat_message_received = (message) ->
   time = new Date(message.time)
+  datestamp = "#{time.getFullYear()}-#{leading_zero(time.getMonth())}-#{leading_zero(time.getDate())}"
   timestamp = "#{leading_zero(time.getHours())}:#{leading_zero(time.getMinutes())}:#{leading_zero(time.getSeconds())}"
   $('.chat-log').prepend """
     <hr>
-    <h4>#{message.name} <small> @ #{timestamp}</small></h4>
+    <h4>#{message.name} <small>#{datestamp} @ #{timestamp}</small></h4>
     <h5>#{message.message}</h5>
   """
 
