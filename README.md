@@ -3,12 +3,9 @@ gae-init
 
 **gae-init** is the easiest way to start new applications on Google App Engine.
 
-gae-init-pro
-============
-
-If you are already familiar with **gae-init**, then you might want to try the
+(If you are already familiar with **gae-init** then you might want to try the
 [gae-init-pro][gaeinitprobit], which is a stripped version of gae-init with a
-responsive design ([demo][gaeinitpro]).
+responsive design)
 
 
 Demo Page
