@@ -1,9 +1,9 @@
 {
   "name": "main",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "dependencies": {
-    "coffee-script": "= 1.x.x",
-    "less": "= 1.x.x",
-    "uglify-js": "= 1.x.x"
+    "coffee-script": "~1",
+    "less": "~1",
+    "uglify-js": "~1"
   }
 }
