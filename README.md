@@ -1,5 +1,5 @@
 gae-init-pro
-========
+============
 **gae-init-pro** is a stripped version of [gae-init][gaeinitbit] with a responsive
 design. If you're not familiar with [gae-init][gaeinitbit] then it's recommened
 to fork that version instead.
