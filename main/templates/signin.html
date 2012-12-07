@@ -17,19 +17,25 @@
         </a>
       </div>
     </div>
-    <div class="span4">
-      <div class="well">
-        <a class="btn btn-block" href="{{facebook_signin_url}}">
-          <img src="/p/img/signin/facebook-logo-large.png" alt="Facebook Logo ">
-        </a>
+
+    {% if config.CONFIG_DB.facebook_app_id and config.CONFIG_DB.facebook_app_secret %}
+      <div class="span4">
+        <div class="well">
+          <a class="btn btn-block" href="{{facebook_signin_url}}">
+            <img src="/p/img/signin/facebook-logo-large.png" alt="Facebook Logo ">
+          </a>
+        </div>
       </div>
-    </div>
-    <div class="span4">
-      <div class="well">
-        <a class="btn btn-block" href="{{twitter_signin_url}}">
-          <img src="/p/img/signin/twitter-logo-large.png" alt="Twitter Logo ">
-        </a>
+    {% endif %}
+
+    {% if config.CONFIG_DB.twitter_consumer_key and config.CONFIG_DB.twitter_consumer_secret %}
+      <div class="span4">
+        <div class="well">
+          <a class="btn btn-block" href="{{twitter_signin_url}}">
+            <img src="/p/img/signin/twitter-logo-large.png" alt="Twitter Logo ">
+          </a>
+        </div>
       </div>
-    </div>
+    {% endif %}
   </div>
 {% endblock %}
