@@ -156,6 +156,9 @@ def google_authorized():
 def retrieve_user_from_google(google_user):
   user_db = model.User.retrieve_one_by('federated_id', google_user.user_id())
   if user_db:
+    if not user_db.admin and users.is_current_user_admin():
+      user_db.admin = True
+      user_db.put()
     return user_db
   user_db = model.User(
       federated_id=google_user.user_id(),

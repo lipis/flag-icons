@@ -10,11 +10,11 @@
   <div class="row">
     <div class="span2">
       <a class="thumbnail" href="http://gravatar.com" target="_blank">
-        <img src="{{user_db.avatar_url}}&amp;s=130" alt="Gravatar photo of {{user_db.name}}">
+        <img src="{{user_db.avatar_url}}&amp;s=170" alt="Gravatar photo of {{user_db.name}}">
       </a>
     </div>
-    <div class="span6">
-      <form class="form-horizontal" method="POST" action=".">
+    <div class="span4">
+      <form class="form" method="POST" action=".">
         <fieldset>
           {{form.csrf}}
 
@@ -24,11 +24,9 @@
           {% set form_field = form.email %}
           {% include 'bit/form_text_field.html' %}
 
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Updating Profile..">
-              Update Profile
-            </button>
-          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Updating Profile..">
+            Update Profile
+          </button>
         </fieldset>
       </form>
     </div>

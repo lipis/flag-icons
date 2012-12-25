@@ -7,7 +7,7 @@
     </h1>
   </div>
   <div class="row">
-    <div class="span7">
+    <div class="span4">
       <div class="alert">
         <strong>Heads Up!</strong>
         For most of the settings you will have to restart the
@@ -15,7 +15,7 @@
           instances.
         </a>
       </div>
-      <form class="form-horizontal" method="POST" action=".">
+      <form class="form" method="POST" action=".">
         <fieldset>
           {{form.csrf}}
 
@@ -52,11 +52,9 @@
           {% set form_field = form.flask_secret_key %}
           {% include 'bit/form_text_field.html' %}
 
-          <div class="form-actions">
-            <button type="submit" class="btn btn-primary btn-loading" data-loading-text="Updating Config..">
-              Update Config
-            </button>
-          </div>
+          <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Updating Config..">
+            Update Config
+          </button>
         </fieldset>
       </form>
     </div>
