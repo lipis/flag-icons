@@ -30,9 +30,9 @@ DEFAULT_DB_LIMIT = 64
 
 # Languages: http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 # Countries: http://en.wikipedia.org/wiki/ISO_3166-1
-# To Add/Modify languages use the format:
+# To Add/Modify languages use one of the filenames in: libx/babel/localedata/
 LOCALE = {
-  'enss': u'English (US)',
+  'en': u'English (US)',
   'en_GB': u'English (UK)',
   'el': u'Ελληνικά',
   'pl': u'Polski',
