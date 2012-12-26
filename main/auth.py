@@ -9,6 +9,8 @@ import flaskext.oauth
 
 import util
 import model
+import config
+
 from main import app
 
 
@@ -183,8 +185,8 @@ twitter = twitter_oauth.remote_app(
     request_token_url='https://api.twitter.com/oauth/request_token',
     access_token_url='https://api.twitter.com/oauth/access_token',
     authorize_url='https://api.twitter.com/oauth/authenticate',
-    consumer_key=model.Config.get_master_db().twitter_consumer_key,
-    consumer_secret=model.Config.get_master_db().twitter_consumer_secret,
+    consumer_key=config.CONFIG_DB.twitter_consumer_key,
+    consumer_secret=config.CONFIG_DB.twitter_consumer_secret,
   )
 
 
@@ -248,8 +250,8 @@ facebook = facebook_oauth.remote_app(
     request_token_url=None,
     access_token_url='/oauth/access_token',
     authorize_url='https://www.facebook.com/dialog/oauth',
-    consumer_key=model.Config.get_master_db().facebook_app_id,
-    consumer_secret=model.Config.get_master_db().facebook_app_secret,
+    consumer_key=config.CONFIG_DB.facebook_app_id,
+    consumer_secret=config.CONFIG_DB.facebook_app_secret,
     request_token_params={'scope': 'email'},
   )
 
@@ -311,7 +313,7 @@ def signin_user_db(user_db):
   flask_user_db = FlaskUser(user_db)
   if flaskext.login.login_user(flask_user_db):
     flask.flash('Hello %s, welcome to %s!!!' % (
-        user_db.name, model.Config.get_master_db().brand_name,
+        user_db.name, config.CONFIG_DB.brand_name,
       ), category='success')
     return flask.redirect(util.get_next_url())
   else:

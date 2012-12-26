@@ -4,6 +4,7 @@ from flaskext import wtf
 import auth
 import util
 import model
+import config
 
 from main import app
 
@@ -67,7 +68,8 @@ def admin_config_update():
     config_db.twitter_consumer_key = form.twitter_consumer_key.data
     config_db.twitter_consumer_secret = form.twitter_consumer_secret.data
     config_db.put()
-    update_config_variables(config_db)
+    reload(config)
+    app.config.update(CONFIG_DB=config_db)
     flask.flash('Your config settings have been saved', category='success')
     return flask.redirect(flask.url_for('welcome'))
   if not form.errors:
@@ -92,11 +94,4 @@ def admin_config_update():
       html_class='admin-config',
       form=form,
       config_db=config_db,
-    )
-
-
-def update_config_variables(config_db):
-  app.config.update(
-      CONFIG_DB=config_db,
-      SECRETE_KEY=config_db.flask_secret_key,
     )

@@ -81,13 +81,13 @@ def feedback():
   form = FeedbackForm()
   if form.validate_on_submit():
     mail.send_mail(
-        sender=model.Config.get_master_db().feedback_email,
-        to=model.Config.get_master_db().feedback_email,
+        sender=config.CONFIG_DB.feedback_email,
+        to=config.CONFIG_DB.feedback_email,
         subject='[%s] %s' % (
-            model.Config.get_master_db().brand_name,
+            config.CONFIG_DB.brand_name,
             form.subject.data,
           ),
-        reply_to=form.email.data or model.Config.get_master_db().feedback_email,
+        reply_to=form.email.data or config.CONFIG_DB.feedback_email,
         body='%s\n\n%s' % (form.feedback.data, form.email.data)
       )
     flask.flash('Thank you for your feedback!', category='success')
