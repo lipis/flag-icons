@@ -43,12 +43,19 @@ def get_next_url():
   return flask.url_for('welcome')
 
 
+def set_locale(locale, response):
+  if not locale:
+    return response
+  response.set_cookie('locale', value=locale, path='/')
+  return response
+
+
 ################################################################################
 # Model manipulations
 ################################################################################
 def retrieve_dbs(model_class, query, order=None, limit=None, cursor=None,
                  **filters):
-  ''' Retrieves entities from datastore, by applying cursor pagindation
+  ''' Retrieves entities from datastore, by applying cursor pagination
   and equality filters. Returns dbs and more cursor value
   '''
   limit = limit or config.DEFAULT_DB_LIMIT
@@ -141,9 +148,6 @@ def json_value(value):
     return [json_value(v) for v in value]
   else:
     return value
-
-
-
 
 
 ################################################################################

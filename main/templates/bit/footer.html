@@ -1,8 +1,8 @@
 <div class="footer">
   <div class="container">
     <p class="muted pull-right">
-      version: {{config.CURRENT_VERSION_ID}}
-      | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">View in JSON</a>
+      {{_('version:')}} {{config.CURRENT_VERSION_ID}}
+      | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">{{_('View in JSON')}}</a>
     </p>
     <p class="muted">&copy; 2012 - {{config.CONFIG_DB.brand_name}}</p>
   </div>

@@ -13,11 +13,12 @@ class Base(ndb.Model, modelx.BaseX):
 
 class Config(Base, modelx.ConfigX):
   analytics_id = ndb.StringProperty(default='')
-  brand_name = ndb.StringProperty(default='gae-init-pro')
+  brand_name = ndb.StringProperty(default='gae-init-babel')
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
   feedback_email = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default=str(uuid4()).replace('-', ''))
+  locale = ndb.StringProperty(default='en')
   pubnub_publish = ndb.StringProperty(default='')
   pubnub_secret = ndb.StringProperty(default='')
   pubnub_subscribe = ndb.StringProperty(default='')
@@ -30,6 +31,7 @@ class Config(Base, modelx.ConfigX):
       'facebook_app_secret',
       'feedback_email',
       'flask_secret_key',
+      'locale',
       'pubnub_publish',
       'pubnub_subscribe',
       'twitter_consumer_key',
@@ -41,6 +43,7 @@ class User(Base, modelx.UserX):
   name = ndb.StringProperty(indexed=True, required=True)
   username = ndb.StringProperty(indexed=True, required=True)
   email = ndb.StringProperty(default='')
+  locale = ndb.StringProperty(default='')
 
   active = ndb.BooleanProperty(default=True)
   admin = ndb.BooleanProperty(default=False)
@@ -50,5 +53,5 @@ class User(Base, modelx.UserX):
   twitter_id = ndb.StringProperty(default='')
 
   _PROPERTIES = Base._PROPERTIES.union(set([
-      'name', 'username', 'avatar_url',
+      'name', 'username', 'avatar_url', 'locale',
     ]))

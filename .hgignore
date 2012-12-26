@@ -1,6 +1,7 @@
 syntax: glob
 
 .DS_Store
+*.orig
 *.pyc
 *.pyo
 main/index.yaml
@@ -8,3 +9,6 @@ main/node_modules
 main/static/dst
 main/static/min
 main/lib.zip
+
+*.mo
+translations/messages.pot

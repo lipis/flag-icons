@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 try:
   # This part is surrounded in try/except because the this config.py file is
   # also used in the build.py script which is used to compile/minify the client
@@ -5,10 +6,13 @@ try:
   import model
   CONFIG_DB = model.Config.get_master_db()
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
+  LOCALE_DEFAULT = CONFIG_DB.locale
 except:
   pass
 
 import os
+import operator
+
 CURRENT_VERSION_ID = os.environ.get('CURRENT_VERSION_ID', None)
 if os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Engine'):
   DEVELOPMENT = False
@@ -19,6 +23,22 @@ PRODUCTION = not DEVELOPMENT
 DEBUG = DEVELOPMENT
 
 DEFAULT_DB_LIMIT = 64
+
+################################################################################
+# i18n Stuff
+################################################################################
+
+# Languages: http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
+# Countries: http://en.wikipedia.org/wiki/ISO_3166-1
+# To Add/Modify languages use the format:
+LOCALE = {
+  'enss': u'English (US)',
+  'en_GB': u'English (UK)',
+  'el': u'Ελληνικά',
+  'pl': u'Polski',
+}
+
+LOCALE_SORTED = sorted(LOCALE.iteritems(), key=operator.itemgetter(1))
 
 ################################################################################
 # Client modules, also used by the build.py script.
@@ -38,6 +58,7 @@ SCRIPTS = {
     'lib/pubnub.js',
     'lib/bootstrap/js/bootstrap-alert.js',
     'lib/bootstrap/js/bootstrap-button.js',
+    'lib/bootstrap/js/bootstrap-dropdown.js',
     'lib/bootstrap/js/bootstrap-collapse.js',
   ],
   'site': [

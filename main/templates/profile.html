@@ -24,8 +24,11 @@
           {% set form_field = form.email %}
           {% include 'bit/form_text_field.html' %}
 
-          <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Updating Profile..">
-            Update Profile
+          {% set form_field = form.locale %}
+          {% include 'bit/form_select_field.html' %}
+
+          <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="{{_('Updating Profile..')}}">
+            {{_('Update Profile')}}
           </button>
         </fieldset>
       </form>

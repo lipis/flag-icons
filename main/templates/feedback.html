@@ -4,7 +4,7 @@
   <div class="page-header">
     <h1>
       {{title}}
-      <small>Any questions or suggestions are welcome</small>
+      <small>{{_('Any questions or suggestions are welcome')}}</small>
     </h1>
   </div>
   <div class="row">
@@ -22,8 +22,8 @@
           {% set form_field = form.email %}
           {% include 'bit/form_text_field.html' %}
 
-          <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Sending Feedback..">
-            Send Feedback
+          <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="{{_('Sending Feedback..')}}">
+            {{_('Send Feedback')}}
           </button>
         </fieldset>
       </form>

@@ -1,5 +1,6 @@
 import flask
 from flaskext import wtf
+from flaskext.babel import lazy_gettext as _
 
 import auth
 import util
@@ -11,38 +12,42 @@ from main import app
 
 class ConfigUpdateForm(wtf.Form):
   brand_name = wtf.TextField(
-      'Brand Name', [wtf.validators.required()]
+      _('Brand Name'), [wtf.validators.required()]
     )
   analytics_id = wtf.TextField(
-      'Analytics ID', [wtf.validators.optional()]
+      _('Analytics ID'), [wtf.validators.optional()]
     )
   facebook_app_id = wtf.TextField(
-      'Facebook ID', [wtf.validators.optional()]
+      _('Facebook ID'), [wtf.validators.optional()]
     )
   facebook_app_secret = wtf.TextField(
-      'Facebook Secret', [wtf.validators.optional()]
+      _('Facebook Secret'), [wtf.validators.optional()]
     )
-  feedback_email = wtf.TextField('Feedback Email', [
+  feedback_email = wtf.TextField(_('Feedback Email'), [
         wtf.validators.optional(),
-        wtf.validators.email("That doesn't look like an email"),
+        wtf.validators.email(_("That doesn't look like an email")),
       ])
   twitter_consumer_key = wtf.TextField(
-      'Twitter Key', [wtf.validators.optional()]
+      _('Twitter Key'), [wtf.validators.optional()]
     )
   twitter_consumer_secret = wtf.TextField(
-      'Twitter Secret', [wtf.validators.optional()]
+      _('Twitter Secret'), [wtf.validators.optional()]
     )
   pubnub_publish = wtf.TextField(
-      'PubNub Publish', [wtf.validators.optional()]
+      _('PubNub Publish'), [wtf.validators.optional()]
     )
   pubnub_subscribe = wtf.TextField(
-      'PubNub Subsrcibe', [wtf.validators.optional()]
+      _('PubNub Subsrcibe'), [wtf.validators.optional()]
     )
   pubnub_secret = wtf.TextField(
-      'PubNub Secret', [wtf.validators.optional()]
+      _('PubNub Secret'), [wtf.validators.optional()]
     )
   flask_secret_key = wtf.TextField(
-      'Flask Secret Key', [wtf.validators.required()]
+      _('Flask Secret Key'), [wtf.validators.required()]
+    )
+  locale = wtf.SelectField(
+      _('Default Locale'),
+      choices=config.LOCALE_SORTED,
     )
 
 
@@ -62,6 +67,7 @@ def admin_config_update():
     config_db.facebook_app_secret = form.facebook_app_secret.data
     config_db.feedback_email = form.feedback_email.data
     config_db.flask_secret_key = form.flask_secret_key.data
+    config_db.locale = form.locale.data
     config_db.pubnub_publish = form.pubnub_publish.data
     config_db.pubnub_secret = form.pubnub_secret.data
     config_db.pubnub_subscribe = form.pubnub_subscribe.data
@@ -70,7 +76,7 @@ def admin_config_update():
     config_db.put()
     reload(config)
     app.config.update(CONFIG_DB=config_db)
-    flask.flash('Your config settings have been saved', category='success')
+    flask.flash(_('Your config settings have been saved'), category='success')
     return flask.redirect(flask.url_for('welcome'))
   if not form.errors:
     form.analytics_id.data = config_db.analytics_id
@@ -79,6 +85,7 @@ def admin_config_update():
     form.facebook_app_secret.data = config_db.facebook_app_secret
     form.feedback_email.data = config_db.feedback_email
     form.flask_secret_key.data = config_db.flask_secret_key
+    form.locale.data = config_db.locale
     form.pubnub_publish.data = config_db.pubnub_publish
     form.pubnub_secret.data = config_db.pubnub_secret
     form.pubnub_subscribe.data = config_db.pubnub_subscribe
@@ -90,7 +97,7 @@ def admin_config_update():
 
   return flask.render_template(
       'admin/config_update.html',
-      title='Admin Config',
+      title=_('Config'),
       html_class='admin-config',
       form=form,
       config_db=config_db,
