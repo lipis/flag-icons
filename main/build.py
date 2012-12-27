@@ -294,14 +294,14 @@ if args.minify or len(sys.argv) == 1:
 if args.pybabel_extract:
   pybabel_extract()
 
+if args.init:
+  pybabel_init_missing()
+
 if args.pybabel_update:
   pybabel_update()
 
 if args.locale:
   pybabel_init(args.locale)
-
-if args.init:
-  pybabel_init_missing()
 
 if args.pybabel_compile:
   pybabel_compile()

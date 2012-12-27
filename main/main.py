@@ -20,6 +20,7 @@ import util
 import model
 import admin
 
+
 @app.route('/')
 def welcome():
   return flask.render_template(
