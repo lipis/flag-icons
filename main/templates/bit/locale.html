@@ -3,7 +3,7 @@
   <ul class="dropdown-menu" role="menu" >
     {% for locale in config.LOCALE_SORTED %}
       <li class="{% if request.locale == locale[0] %} disabled {% endif %}">
-        <a tabindex="-1" href="{{url_for('lang', locale=locale[0])}}">
+        <a tabindex="-1" href="{{url_for('set_locale', locale=locale[0])}}">
           {{locale[1]}}
         </a>
       </li>
