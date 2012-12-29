@@ -69,7 +69,7 @@ def profile():
 ################################################################################
 class FeedbackForm(wtf.Form):
   subject = wtf.TextField('Subject', [wtf.validators.required()])
-  feedback = wtf.TextAreaField('Feedback', [wtf.validators.required()])
+  message = wtf.TextAreaField('Message', [wtf.validators.required()])
   email = wtf.TextField('Email (optional)', [
       wtf.validators.optional(),
       wtf.validators.email("That doesn't look like an email"),
@@ -88,7 +88,7 @@ def feedback():
             form.subject.data,
           ),
         reply_to=form.email.data or config.CONFIG_DB.feedback_email,
-        body='%s\n\n%s' % (form.feedback.data, form.email.data)
+        body='%s\n\n%s' % (form.message.data, form.email.data)
       )
     flask.flash('Thank you for your feedback!', category='success')
     return flask.redirect(flask.url_for('welcome'))
