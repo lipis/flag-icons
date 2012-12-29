@@ -1,6 +1,5 @@
 import sys
-if not ('lib.zip' in sys.path):
-  sys.path.insert(0, 'lib.zip')
+sys.path.insert(0, 'lib.zip')
 
 import flask
 from flaskext import wtf
