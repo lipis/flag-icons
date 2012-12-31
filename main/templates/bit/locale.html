@@ -1,6 +1,8 @@
 <li class="dropdown">
-  <a class="dropdown-toggle" data-toggle="dropdown" href="#">{{config.LOCALE[request.locale]}} <b class="caret"></b></a>
-  <ul class="dropdown-menu" role="menu" >
+  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+    {{config.LOCALE[request.locale]}} <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
     {% for locale in config.LOCALE_SORTED %}
       <li class="{% if request.locale == locale[0] %} disabled {% endif %}">
         <a tabindex="-1" href="{{url_for('set_locale', locale=locale[0])}}">
