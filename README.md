@@ -11,10 +11,18 @@ The latest version is always accessible from:
 [http://babel.gae-init.appspot.com][gae-init-babel]
 
 
+Getting the code
+----------------
+The easiest way to get the code is to [fork it][fork] and then clone it.
+Or you can clone it directly using the command line:
+
+    $ hg clone https://bitbucket.org/lipis/gae-init-babel project-name
+
+
 Instructions
 ------------
-Run the `build.py` script from the `main` directory to get the new commands
-regarding babel.
+Run the `build.py` script with an argument `-h` from the `main` directory
+to get the new commands regarding [Babel][].
 
     $ cd /path/to/project-name/main
     $ ./build.py -h
@@ -23,8 +31,8 @@ regarding babel.
 Requirements
 ------------
 Being able to run [gae-init][] `build.py` script and [Babel][] should be
-installed to be able to run the [pybabel][] command line tool that is required
-in the `build.py` script.
+installed on the system to run the [pybabel][] command line tool that is
+required in the `build.py` script.
 
 
 Author
@@ -34,6 +42,7 @@ Author
 
   [gae-init]: https://bitbucket.org/lipis/gae-init
   [gae-init-babel]: http://babel.gae-init.appspot.com
+  [fork]: https://bitbucket.org/lipis/gae-init-babel/fork
   [babel]: http://babel.edgewall.org/wiki/Download
   [pybabel]: http://babel.edgewall.org/wiki/Documentation/cmdline.html
 
