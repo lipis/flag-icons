@@ -34,6 +34,13 @@ Being familiar with `build.py` script from [gae-init][] and [Babel][]
 should be installed on the system, to run the [pybabel][] command line tool.
 
 
+Contact & Support
+-----------------
+Due to lack of documentation if you run into any troubles, feel free to add an
+[issue][] or use the [feedback][] form and I'll be happy
+to improve or provide more info.
+
+
 Author
 ------
 [![Lipis flair on stackoverflow.com][lipis-flair]][lipis]
@@ -44,6 +51,9 @@ Author
   [fork]: https://bitbucket.org/lipis/gae-init-babel/fork
   [babel]: http://babel.edgewall.org/wiki/Download
   [pybabel]: http://babel.edgewall.org/wiki/Documentation/cmdline.html
+  [issue]: https://bitbucket.org/lipis/gae-init-babel/issues
+  [feedback]: http://babel.gae-init.appspot.com/feedback/
 
   [lipis-flair]: http://stackexchange.com/users/flair/5282.png
   [lipis]: http://stackoverflow.com/users/8418/lipis
+
