@@ -1,9 +1,9 @@
-<div class='control-group {% if form_field.errors %}error{% endif %}'>
+<div class="control-group {% if form_field.errors %} error {% endif %}">
   {{form_field.label(class='control-label')}}
-  <div class='controls'>
+  <div class="controls">
     {{form_field(class='span4', rows=8)}}
     {% for error in form_field.errors %}
-      <span class='help-inline'>{{error}}</span>
+      <span class="help-block">{{error}}</span>
     {% endfor %}
     {% if form_field.description %}
       <span class="help-block">{{form_field.description}}</span>
