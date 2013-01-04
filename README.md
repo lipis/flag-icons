@@ -30,9 +30,8 @@ to get the new commands regarding [Babel][].
 
 Requirements
 ------------
-Being able to run [gae-init][] `build.py` script and [Babel][] should be
-installed on the system to run the [pybabel][] command line tool that is
-required in the `build.py` script.
+Being familiar with `build.py` script from [gae-init][] and [Babel][]
+should be installed on the system, to run the [pybabel][] command line tool.
 
 
 Author
