@@ -57,7 +57,7 @@ def profile():
     user_db.locale = form.locale.data
     user_db.put()
     return flask.redirect(flask.url_for(
-        'lang', locale=user_db.locale, next=flask.url_for('welcome')
+        'set_locale', locale=user_db.locale, next=flask.url_for('welcome')
       ))
 
   if not form.errors:
