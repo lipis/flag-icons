@@ -31,17 +31,17 @@ def get_locale():
   return locale
 
 
+@flask.request_started.connect_via(app)
+def request_started(sender, **extra):
+  flask.request.locale = get_locale()
+  flask.request.locale_html = get_locale().replace('_', '-')
+
+
 @app.route('/l/<path:locale>/')
 def set_locale(locale):
   response = flask.redirect(util.get_next_url())
   util.set_locale(locale, response)
   return response
-
-
-@flask.request_started.connect_via(app)
-def request_started(sender, **extra):
-  flask.request.locale = get_locale()
-  flask.request.locale_html = get_locale().replace('_', '-')
 
 
 ################################################################################
