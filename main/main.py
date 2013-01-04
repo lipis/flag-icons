@@ -81,9 +81,15 @@ def profile():
 # Feedback
 ################################################################################
 class FeedbackForm(wtf.Form):
+<<<<<<< local
   subject = wtf.TextField(_('Subject'), [wtf.validators.required()])
   message = wtf.TextAreaField(_('Message'), [wtf.validators.required()])
   email = wtf.TextField(_('Email (optional)'), [
+=======
+  subject = wtf.TextField('Subject', [wtf.validators.required()])
+  message = wtf.TextAreaField('Message', [wtf.validators.required()])
+  email = wtf.TextField('Email (optional)', [
+>>>>>>> other
       wtf.validators.optional(),
       wtf.validators.email(_("That doesn't look like an email")),
     ])
@@ -172,7 +178,7 @@ def error_handler(e):
 
   return flask.render_template(
       'error.html',
-      title='%s!!1' % (e.name),
+      title='Error %d (%s)!!1' % (e.code, e.name),
       html_class='error-page',
       error=e,
     ), e.code

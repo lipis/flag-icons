@@ -251,6 +251,8 @@ def pybabel_compile():
 SCRIPTS = config.SCRIPTS
 STYLES = config.STYLES
 
+os.chdir(root)
+
 update_path_separators()
 
 if args.clean:
