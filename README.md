@@ -30,8 +30,9 @@ to get the new commands regarding [Babel][].
 
 Requirements
 ------------
-Being familiar with `build.py` script from [gae-init][] and [Babel][]
-should be installed on the system, to run the [pybabel][] command line tool.
+  - Being familiar with `build.py` like in [gae-init][]
+  - [Babel][] - `easy_install Babel`
+  - [Jinja2][] - `easy_install Jinja2`
 
 
 Contact & Support
@@ -51,9 +52,9 @@ Author
   [fork]: https://bitbucket.org/lipis/gae-init-babel/fork
   [babel]: http://babel.edgewall.org/wiki/Download
   [pybabel]: http://babel.edgewall.org/wiki/Documentation/cmdline.html
+  [jinja2]: http://jinja.pocoo.org/docs/intro/
   [issue]: https://bitbucket.org/lipis/gae-init-babel/issues
   [feedback]: http://babel.gae-init.appspot.com/feedback/
 
   [lipis-flair]: http://stackexchange.com/users/flair/5282.png
   [lipis]: http://stackoverflow.com/users/8418/lipis
-
