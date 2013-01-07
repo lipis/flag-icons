@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+# extends 'base.html'
 
-{% block content %}
+# block content
   <div class="page-header">
     <h1>
       {{title}}
@@ -78,7 +78,7 @@
           </tr>
         </thead>
         <tbody>
-          {% for user_db in user_dbs %}
+          # for user_db in user_dbs
             <tr>
               <td>{{user_db.key.id()}}</td>
               <td>
@@ -96,12 +96,12 @@
                 </abbr>
               </td>
             </tr>
-          {% endfor %}
+          # endfor
         </tbody>
       </table>
     </div>
   </div>
-  {% if more_url %}
+  # if more_url
     <div class="row">
       <div class="span12">
         <ul class="pager">
@@ -111,5 +111,5 @@
         </ul>
       </div>
     </div>
-  {% endif %}
-{% endblock %}
+  # endif
+# endblock

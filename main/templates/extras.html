@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+# extends 'base.html'
 
-{% block content %}
+# block content
   <div class="page-header">
     <h1>
       {{title}}
@@ -13,20 +13,20 @@
     <div class="span6">
       <table class="table table-bordered">
         <tbody>
-          {% for extra in extra_info %}
+          # for extra in extra_info
             <tr>
               <th class="span2">{{extra.replace('_', ' ').title()}}</th>
               <td>{{extra_info[extra] or '-'}}</td>
             </tr>
-          {% endfor %}
+          # endfor
         </tbody>
       </table>
     </div>
     <div class="span6">
-      {% set map_lat_long = '55.693403,12.583046' %}
-      {% if extra_info['city_lat_long'] %}
-        {% set map_lat_long = extra_info['city_lat_long'] %}
-      {% endif %}
+      # set map_lat_long = '55.693403,12.583046'
+      # if extra_info['city_lat_long']
+        # set map_lat_long = extra_info['city_lat_long']
+      # endif
       <div class="thumbnail">
         <a href="http://maps.google.com/maps?q={{map_lat_long}}" target="_blank">
           <img src="https://maps.googleapis.com/maps/api/staticmap?center={{map_lat_long}}&amp;zoom=12&amp;size=460x328&amp;sensor=false"
@@ -35,4 +35,4 @@
       </div>
     </div>
   </div>
-{% endblock %}
+# endblock
