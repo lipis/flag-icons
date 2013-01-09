@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+# extends 'base.html'
 
-{% block content %}
+# block content
   <div class="page-header">
     <h1>
       {{user_db.name}}
@@ -18,11 +18,11 @@
         <fieldset>
           {{form.csrf}}
 
-          {% set form_field = form.name %}
-          {% include 'bit/form_text_field.html' %}
+          # set form_field = form.name
+          # include 'bit/form_text_field.html'
 
-          {% set form_field = form.email %}
-          {% include 'bit/form_text_field.html' %}
+          # set form_field = form.email
+          # include 'bit/form_text_field.html'
 
           <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Updating Profile..">
             Update Profile
@@ -31,4 +31,4 @@
       </form>
     </div>
   </div>
-{% endblock %}
+# endblock

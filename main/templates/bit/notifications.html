@@ -1,8 +1,8 @@
-{% with messages = get_flashed_messages(with_categories=True) %}
-  {% for message in messages %}
+# with messages = get_flashed_messages(with_categories=True)
+  # for message in messages
     <div class="alert alert-{{message[0]}}">
       {{message[1]}}
       <a class="close" data-dismiss="alert" href="#">&times;</a>
     </div>
-  {% endfor %}
-{% endwith %}
+  # endfor
+# endwith

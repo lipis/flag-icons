@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+# extends 'base.html'
 
-{% block content %}
+# block content
   <div class="page-header">
     <h1>
       {{title}}
@@ -18,7 +18,7 @@
       </div>
     </div>
 
-    {% if config.CONFIG_DB.facebook_app_id and config.CONFIG_DB.facebook_app_secret %}
+    # if config.CONFIG_DB.facebook_app_id and config.CONFIG_DB.facebook_app_secret
       <div class="span4">
         <div class="well">
           <a class="btn btn-block" href="{{facebook_signin_url}}">
@@ -26,9 +26,9 @@
           </a>
         </div>
       </div>
-    {% endif %}
+    # endif
 
-    {% if config.CONFIG_DB.twitter_consumer_key and config.CONFIG_DB.twitter_consumer_secret %}
+    # if config.CONFIG_DB.twitter_consumer_key and config.CONFIG_DB.twitter_consumer_secret
       <div class="span4">
         <div class="well">
           <a class="btn btn-block" href="{{twitter_signin_url}}">
@@ -36,6 +36,6 @@
           </a>
         </div>
       </div>
-    {% endif %}
+    # endif
   </div>
-{% endblock %}
+# endblock

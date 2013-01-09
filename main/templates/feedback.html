@@ -1,6 +1,6 @@
-{% extends 'base.html' %}
+# extends 'base.html'
 
-{% block content %}
+# block content
   <div class="page-header">
     <h1>
       {{title}}
@@ -13,14 +13,14 @@
         <fieldset>
           {{form.csrf}}
 
-          {% set form_field = form.subject %}
-          {% include 'bit/form_text_field.html' %}
+          # set form_field = form.subject
+          # include 'bit/form_text_field.html'
 
-          {% set form_field = form.message %}
-          {% include 'bit/form_textarea_field.html' %}
+          # set form_field = form.message
+          # include 'bit/form_textarea_field.html'
 
-          {% set form_field = form.email %}
-          {% include 'bit/form_text_field.html' %}
+          # set form_field = form.email
+          # include 'bit/form_text_field.html'
 
           <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Sending Feedback..">
             Send Feedback
@@ -29,4 +29,4 @@
       </form>
     </div>
   </div>
-{% endblock %}
+# endblock
