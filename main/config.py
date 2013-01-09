@@ -50,6 +50,5 @@ SCRIPTS = {
       'src/coffee/site/app.coffee',
       'src/coffee/site/profile.coffee',
       'src/coffee/site/admin.coffee',
-      'src/coffee/site/chat.coffee',
     ],
   }
