@@ -1,18 +1,17 @@
-# if current_user.admin
-  <li class="{% if html_class == 'admin-config' %} active {% endif %}">
-    <a href="{{url_for('admin_config_update')}}">Config</a>
-  </li>
-# endif
-
 # if current_user.id > 0
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      {{current_user.name}} <b class="caret"></b>
+      {{current_user.name}}
+      <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li><a href="{{url_for('profile')}}">Change Profile</a></li>
-      <li class="divider"></li>
+      <li><a href="{{url_for('profile')}}">Profile Settings</a></li>
       <li><a href="{{url_for('signout')}}">Sign out</a></li>
+      # if current_user.admin
+        <li class="divider"></li>
+        <li class="nav-header">Admin Only</li>
+        <li><a href="{{url_for('admin_config_update')}}">Config</a></li>
+      # endif
     </ul>
   </li>
 # else
