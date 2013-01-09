@@ -19,23 +19,7 @@
         </li>
       </ul>
       <ul class="nav pull-right">
-        # if current_user.admin
-          <li class="{% if html_class == 'admin-config' %} active {% endif %}">
-            <a href="{{url_for('admin_config_update')}}">Config</a>
-          </li>
-        # endif
-        # if current_user.id > 0
-          <li class="{% if html_class == 'profile' %} active {% endif %}">
-            <a href="{{url_for('profile')}}">{{current_user.name}}</a>
-          </li>
-          <li>
-            <a href="{{url_for('signout')}}">Sign out</a>
-          </li>
-        # else
-          <li>
-            <a href="{{url_for('signin')}}">Sign in</a>
-          </li>
-        # endif
+        # include 'bit/user_menu.html'
       </ul>
     </div>
   </div>

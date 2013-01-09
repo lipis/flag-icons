@@ -29,25 +29,26 @@ STYLES = [
 
 SCRIPTS_MODULES = [
     'libs',
-    'site',
+    'scripts',
   ]
 
 SCRIPTS = {
-  'libs': [
-    'lib/jquery.js',
-    'lib/pubnub.js',
-    'lib/bootstrap/js/bootstrap-alert.js',
-    'lib/bootstrap/js/bootstrap-button.js',
-  ],
-  'site': [
-    'src/coffee/common/util.coffee',
-    'src/coffee/common/service.coffee',
-    'src/coffee/common/common.coffee',
-    'src/coffee/common/channel.coffee',
+    'libs': [
+      'lib/jquery.js',
+      'lib/pubnub.js',
+      'lib/bootstrap/js/bootstrap-alert.js',
+      'lib/bootstrap/js/bootstrap-button.js',
+      'lib/bootstrap/js/bootstrap-dropdown.js',
+    ],
+    'scripts': [
+      'src/coffee/common/util.coffee',
+      'src/coffee/common/service.coffee',
+      'src/coffee/common/common.coffee',
+      'src/coffee/common/channel.coffee',
 
-    'src/coffee/site/app.coffee',
-    'src/coffee/site/profile.coffee',
-    'src/coffee/site/admin.coffee',
-    'src/coffee/site/chat.coffee',
-  ],
-}
+      'src/coffee/site/app.coffee',
+      'src/coffee/site/profile.coffee',
+      'src/coffee/site/admin.coffee',
+      'src/coffee/site/chat.coffee',
+    ],
+  }
