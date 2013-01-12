@@ -1,0 +1,34 @@
+[class^="flag-"],
+[class*=" flag-"] {
+  display: inline-block;
+  width: 14 * 4 / 3px;
+  height: 14px;
+  line-height: 14px;
+  vertical-align: text-top;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  margin-top: 1px;
+  border-radius: 1px;
+  .box-shadow(0 0 3px @gray);
+}
+
+.disabled [class^="flag-"], [class*=" flag-"] {
+  opacity: .5;
+}
+
+.flag-en {
+  background-image: url(/p/img/locale/gb.svg);
+}
+
+.flag-el {
+  background-image: url(/p/img/locale/gr.svg);
+}
+
+.flag-pl {
+  background-image: url(/p/img/locale/pl.svg);
+}
+
+.flag-ru {
+  background-image: url(/p/img/locale/ru.svg);
+}

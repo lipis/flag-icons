@@ -31,11 +31,12 @@ DEFAULT_DB_LIMIT = 64
 # Languages: http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 # Countries: http://en.wikipedia.org/wiki/ISO_3166-1
 # To Add/Modify languages use one of the filenames in: libx/babel/localedata/
+# Examples with country included: en_GB, ru_RU, de_CH
 LOCALE = {
-  'en': u'English (US)',
-  'en_GB': u'English (UK)',
+  'en': u'English',
   'el': u'Ελληνικά',
   'pl': u'Polski',
+  'ru': u'Русский',
 }
 
 LOCALE_SORTED = sorted(LOCALE.iteritems(), key=operator.itemgetter(1))

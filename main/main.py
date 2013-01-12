@@ -10,6 +10,7 @@ import config
 
 app = flask.Flask(__name__)
 app.config.from_object(config)
+app.jinja_env.line_statement_prefix = '#'
 app.config['BABEL_DEFAULT_LOCALE'] = config.LOCALE_DEFAULT
 babel = Babel(app)
 
