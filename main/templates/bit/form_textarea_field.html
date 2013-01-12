@@ -2,11 +2,11 @@
   {{form_field.label(class='control-label')}}
   <div class="controls">
     {{form_field(class='span4', rows=8)}}
-    {% for error in form_field.errors %}
+    # for error in form_field.errors
       <span class="help-block">{{error}}</span>
-    {% endfor %}
-    {% if form_field.description %}
+    # endfor
+    # if form_field.description
       <span class="help-block">{{form_field.description}}</span>
-    {% endif %}
+    # endif
   </div>
 </div>
