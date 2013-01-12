@@ -59,7 +59,7 @@ SCRIPTS = {
       'lib/pubnub.js',
       'lib/bootstrap/js/bootstrap-alert.js',
       'lib/bootstrap/js/bootstrap-button.js',
-      'lib/bootstrap/js/bootstrap-collapse.js',
+      'lib/bootstrap/js/bootstrap-dropdown.js',
       'lib/bootstrap/js/bootstrap-collapse.js',
     ],
     'scripts': [
