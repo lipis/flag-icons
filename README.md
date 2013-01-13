@@ -3,10 +3,6 @@ gae-init
 
 **gae-init** is the easiest way to start new applications on Google App Engine.
 
-(If you are already familiar with **gae-init** then you might want to try the
-[gae-init-pro][gaeinitprobit], which is a stripped version of gae-init with a
-responsive design)
-
 
 Demo Page
 ---------
@@ -65,7 +61,6 @@ Tech Stack
   - [CoffeeScript][]
   - [LessCSS][]
   - [Twitter Bootstrap][bootstrap]
-  - [PubNub][]
 
 Requirements
 ------------
@@ -96,8 +91,6 @@ Author
 [![Lipis flair on stackoverflow.com][lipisflair]][lipis]
 
 [gaeinit]: http://gae-init.appspot.com
-[gaeinitpro]: http://pro.gae-init.appspot.com
-[gaeinitprobit]: https://bitbucket.org/lipis/gae-init-pro
 [lessbands]: https://bitbucket.org/lipis/less-bands
 [fork]: https://bitbucket.org/lipis/gae-init/fork
 
@@ -109,7 +102,6 @@ Author
 [coffeescript]: http://coffeescript.org/
 [lesscss]: http://lesscss.org/
 [bootstrap]: http://twitter.github.com/bootstrap/
-[pubnub]: http://www.pubnub.com
 
 [gaesdk]: https://developers.google.com/appengine/downloads
 [nodejs]: http://nodejs.org/
