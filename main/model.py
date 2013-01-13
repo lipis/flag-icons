@@ -19,9 +19,6 @@ class Config(Base, modelx.ConfigX):
   feedback_email = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default=str(uuid4()).replace('-', ''))
   locale = ndb.StringProperty(default='en')
-  pubnub_publish = ndb.StringProperty(default='')
-  pubnub_secret = ndb.StringProperty(default='')
-  pubnub_subscribe = ndb.StringProperty(default='')
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
   _PROPERTIES = Base._PROPERTIES.union(set([
@@ -32,8 +29,6 @@ class Config(Base, modelx.ConfigX):
       'feedback_email',
       'flask_secret_key',
       'locale',
-      'pubnub_publish',
-      'pubnub_subscribe',
       'twitter_consumer_key',
       'twitter_consumer_secret',
     ]))

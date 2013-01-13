@@ -1,9 +1,7 @@
-# if config.DEVELOPMENT
-  # for style in config.STYLES
-    <link rel="stylesheet" type="text/css" href="/p/{{style|replace('.less', '.css')|replace('src/less', 'dst/css')}}?{{config.CURRENT_VERSION_ID}}">
-  # endfor
-# else
-  # for style in config.STYLES
-    <link rel="stylesheet" type="text/css" href="/p/{{style|replace('.less', '.min.css')|replace('src/less', 'min/css')}}?{{config.CURRENT_VERSION_ID}}">
-  # endfor
-# endif
+# for style in config.STYLES
+  # if config.DEVELOPMENT
+    <link rel="stylesheet" type="text/css" href="/p/{{style.replace('.less', '.css').replace('src/less', 'dst/css')}}?{{config.CURRENT_VERSION_ID}}">
+  # else
+    <link rel="stylesheet" type="text/css" href="/p/{{style.replace('.less', '.min.css').replace('src/less', 'min/css')}}?{{config.CURRENT_VERSION_ID}}">
+  # endif
+# endfor

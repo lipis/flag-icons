@@ -1,9 +1,6 @@
-window.service_call = (method, url, params, data, callback, progress) ->
-  progress = progress || callback || data || params
+window.service_call = (method, url, params, data, callback) ->
   callback = callback || data || params
   data = data || params
-  if progress == callback
-    progress = undefined
   if arguments.length == 4
     data = undefined
   if arguments.length ==  3
@@ -19,15 +16,14 @@ window.service_call = (method, url, params, data, callback, progress) ->
     accepts: 'application/json'
     dataType: 'json'
     data: if data then JSON.stringify(data) else undefined
-    progress: progress
     success: (response) ->
       if response.status == 'success'
         more = undefined
         if response.more_url
           more = (callback) -> service_call(method, response.more_url, {}, callback)
-        callback undefined, response.result, more
+        callback?(undefined, response.result, more)
       else
-        callback response
+        callback?(response)
     error: (jqXHR, textStatus, errorThrown) ->
       error =
         error_code: 'ajax_error'
@@ -38,5 +34,5 @@ window.service_call = (method, url, params, data, callback, progress) ->
         error = $.parseJSON(jqXHR.responseText) if jqXHR.responseText
       catch e
         error = error
-      LOG 'service call error', error
-      callback error
+      LOG 'service_call error', error
+      callback?(error)

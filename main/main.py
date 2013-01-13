@@ -27,7 +27,6 @@ def welcome():
   return flask.render_template(
       'welcome.html',
       html_class='welcome',
-      channel_name='welcome',
     )
 
 
@@ -131,6 +130,7 @@ def user_list():
       cursor=util.param('cursor'),
       order=util.param('order'),
       name=util.param('name'),
+      admin=util.param('admin', bool),
     )
 
   if flask.request.path.startswith('/_s/'):
