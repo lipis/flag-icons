@@ -13,10 +13,3 @@ $ -> $('html.feedback').each ->
 
 $ -> $('html.admin-config').each ->
   init_admin_config()
-
-#Channel Enabled pages
-$ ->
-  channel_name = $('html').data('channel-name')
-
-  if channel_name == 'chat'
-    subscribe_chat()

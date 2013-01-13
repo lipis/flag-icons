@@ -1,18 +1,9 @@
-<script type="text/javascript">
-  // Global variables for the scripts
-  window.HOST_URL = {{request.url_root|tojson|safe}};
-  window.PUBNUB_PUBLISH = {{config.CONFIG_DB.pubnub_publish|tojson|safe}};
-  window.PUBNUB_SUBSCRIBE = {{config.CONFIG_DB.pubnub_subscribe|tojson|safe}};
-</script>
-
-# if config.DEVELOPMENT
-  # for module in config.SCRIPTS_MODULES
+# for module in config.SCRIPTS_MODULES
+  # if config.DEVELOPMENT
     # for script in config.SCRIPTS[module]
-      <script type='text/javascript' src="/p/{{script|replace('.coffee', '.js')|replace('src/coffee', 'dst/js')}}?{{config.CURRENT_VERSION_ID}}"></script>
+      <script src="/p/{{script.replace('.coffee', '.js').replace('src/coffee', 'dst/js')}}?{{config.CURRENT_VERSION_ID}}"></script>
     # endfor
-  # endfor
-# else
-  # for module in config.SCRIPTS_MODULES
-    <script type='text/javascript' src="/p/min/js/{{module}}.min.js?{{config.CURRENT_VERSION_ID}}"></script>
-  # endfor
-# endif
+  # else
+    <script src="/p/min/js/{{module}}.min.js?{{config.CURRENT_VERSION_ID}}"></script>
+  # endif
+# endfor

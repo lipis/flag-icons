@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html class="{% block html_class %}{{html_class}}{% endblock %}" lang="en" data-channel-name="{{channel_name}}">
+<html class="{% block html_class %}{{html_class}}{% endblock %}" lang="en">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
       # block title
         # if title
@@ -18,7 +19,7 @@
 
   <body>
     # include 'bit/top_bar.html'
-    <div class="container">
+    <div class="container main-container">
       # include 'bit/notifications.html'
       # block content
       # endblock

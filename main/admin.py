@@ -32,15 +32,6 @@ class ConfigUpdateForm(wtf.Form):
   twitter_consumer_secret = wtf.TextField(
       'Twitter Secret', [wtf.validators.optional()]
     )
-  pubnub_publish = wtf.TextField(
-      'PubNub Publish', [wtf.validators.optional()]
-    )
-  pubnub_subscribe = wtf.TextField(
-      'PubNub Subsrcibe', [wtf.validators.optional()]
-    )
-  pubnub_secret = wtf.TextField(
-      'PubNub Secret', [wtf.validators.optional()]
-    )
   flask_secret_key = wtf.TextField(
       'Flask Secret Key', [wtf.validators.required()]
     )
@@ -62,9 +53,6 @@ def admin_config_update():
     config_db.facebook_app_secret = form.facebook_app_secret.data
     config_db.feedback_email = form.feedback_email.data
     config_db.flask_secret_key = form.flask_secret_key.data
-    config_db.pubnub_publish = form.pubnub_publish.data
-    config_db.pubnub_secret = form.pubnub_secret.data
-    config_db.pubnub_subscribe = form.pubnub_subscribe.data
     config_db.twitter_consumer_key = form.twitter_consumer_key.data
     config_db.twitter_consumer_secret = form.twitter_consumer_secret.data
     config_db.put()
@@ -79,9 +67,6 @@ def admin_config_update():
     form.facebook_app_secret.data = config_db.facebook_app_secret
     form.feedback_email.data = config_db.feedback_email
     form.flask_secret_key.data = config_db.flask_secret_key
-    form.pubnub_publish.data = config_db.pubnub_publish
-    form.pubnub_secret.data = config_db.pubnub_secret
-    form.pubnub_subscribe.data = config_db.pubnub_subscribe
     form.twitter_consumer_key.data = config_db.twitter_consumer_key
     form.twitter_consumer_secret.data = config_db.twitter_consumer_secret
 

@@ -22,7 +22,6 @@ def welcome():
   return flask.render_template(
       'welcome.html',
       html_class='welcome',
-      channel_name='welcome',
     )
 
 
@@ -108,6 +107,7 @@ def feedback():
 ################################################################################
 @app.route('/_s/user/', endpoint='user_list_service')
 @app.route('/user/', endpoint='user_list')
+@auth.admin_required
 def user_list():
   user_dbs, more_cursor = util.retrieve_dbs(
       model.User,
@@ -116,6 +116,7 @@ def user_list():
       cursor=util.param('cursor'),
       order=util.param('order'),
       name=util.param('name'),
+      admin=util.param('admin', bool),
     )
 
   if flask.request.path.startswith('/_s/'):
@@ -127,54 +128,6 @@ def user_list():
       title='User List',
       user_dbs=user_dbs,
       more_url=util.generate_more_url(more_cursor),
-    )
-
-
-################################################################################
-# Extras
-################################################################################
-@app.route('/_s/extras/', endpoint='extras_service')
-@app.route('/extras/', endpoint='extras')
-def extras():
-  country = None
-  region = None
-  city = None
-  city_lat_long = None
-  if 'X-AppEngine-Country' in flask.request.headers:
-    country = flask.request.headers['X-AppEngine-Country']
-  if 'X-AppEngine-Region' in flask.request.headers:
-    region = flask.request.headers['X-AppEngine-Region']
-  if 'X-AppEngine-City' in flask.request.headers:
-    city = flask.request.headers['X-AppEngine-City']
-  if 'X-AppEngine-CityLatLong' in flask.request.headers:
-    city_lat_long = flask.request.headers['X-AppEngine-CityLatLong']
-
-  extra_info = {
-    'country': country,
-    'region': region,
-    'city': city,
-    'city_lat_long': city_lat_long,
-    'user_agent': flask.request.headers['User-Agent'],
-  }
-
-  if flask.request.path.startswith('/_s/'):
-    return flask.jsonify(extra_info)
-
-  return flask.render_template(
-      'extras.html',
-      html_class='extras',
-      title='Extras',
-      extra_info=extra_info,
-    )
-
-
-@app.route('/chat/')
-def chat():
-  return flask.render_template(
-      'chat.html',
-      title='Chat',
-      html_class='chat',
-      channel_name='chat',
     )
 
 

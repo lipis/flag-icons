@@ -1,26 +1,26 @@
 <div class="navbar navbar-fixed-top">
   <div class="navbar-inner">
     <div class="container">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
       <a class="brand" href="{{url_for('welcome')}}">
         {{config.CONFIG_DB.brand_name}}
       </a>
-      <ul class="nav">
-        <li class="{% if html_class == 'user' %} active {% endif %}">
-          <a href="{{url_for('user_list', limit=8, order='-created')}}">User List</a>
-        </li>
-        <li class="{% if html_class == 'extras' %} active {% endif %}">
-          <a href="{{url_for('extras')}}">Extras</a>
-        </li>
-        <li class="{% if html_class == 'chat' %} active {% endif %}">
-          <a href="{{url_for('chat')}}">Chat</a>
-        </li>
-        <li class="{% if html_class == 'feedback' %} active {% endif %}">
-          <a href="{{url_for('feedback')}}">Feedback</a>
-        </li>
-      </ul>
-      <ul class="nav pull-right">
-        # include 'bit/user_menu.html'
-      </ul>
+      <div class="nav-collapse collapse">
+        <ul class="nav">
+          # if config.CONFIG_DB.feedback_email
+            <li class="{% if html_class == 'feedback' %} active {% endif %}">
+              <a href="{{url_for('feedback')}}">Feedback</a>
+            </li>
+          # endif
+        </ul>
+        <ul class="nav pull-right">
+          # include 'bit/user_menu.html'
+        </ul>
+      </div>
     </div>
   </div>
 </div>

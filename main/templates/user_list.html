@@ -4,63 +4,37 @@
   <div class="page-header">
     <h1>
       {{title}}
-      <small>
-        Just an example for filters, orders, limits, JSON, more URL...
-      </small>
     </h1>
   </div>
+
   <div class="row">
     <div class="span12">
-      <div class="well">
-        <div class="btn-toolbar">
-          <div class="btn-group">
-            <a class="btn btn-success disabled">
-              Limit
-            </a>
-            <a class="btn {% if not request.args.get('limit')%} active {% endif %}" href="{{url_for('user_list')}}">
-              All
-            </a>
-            <a class="btn {% if request.args.get('limit') == '2' %} active {% endif %}" href="{{url_for('user_list', limit=2)}}">
-              2
-            </a>
-            <a class="btn {% if request.args.get('limit') == '4' %} active {% endif %}" href="{{url_for('user_list', limit=4)}}">
-              4
-            </a>
-            <a class="btn {% if request.args.get('limit') == '8' %} active {% endif %}" href="{{url_for('user_list', limit=8)}}">
-              8
-            </a>
-          </div>
-          <div class="btn-group">
-            <a class="btn btn-primary disabled">
-              Order by
-            </a>
-            <a class="btn {% if not request.args.get('order')%} active {% endif %}" href="{{url_for('user_list')}}">
-              None
-            </a>
-            <a class="btn {% if request.args.get('order') == 'name' %} active {% endif %}" href="{{url_for('user_list', order='name')}}">
-              Name
-            </a>
-            <a class="btn {% if request.args.get('order') == '-created' %} active {% endif %}" href="{{url_for('user_list', order='-created')}}">
-              Created
-            </a>
-            <a class="btn {% if request.args.get('order') == '-modified' %} active {% endif %}" href="{{url_for('user_list', order='-modified')}}">
-              Modified
-            </a>
-          </div>
-          <div class="btn-group">
-            <a class="btn btn-danger disabled">
-              Filter name by
-            </a>
-            <a class="btn {% if not request.args.get('name')%} active {% endif %}" href="{{url_for('user_list')}}">
-              All
-            </a>
-            <a class="btn {% if request.args.get('name') == 'Lipis' %} active {% endif %}" href="{{url_for('user_list', name='Lipis')}}">
-              Lipis
-            </a>
-            <a class="btn {% if request.args.get('name') == 'Chris' %} active {% endif %}" href="{{url_for('user_list', name='Chris')}}">
-              Chris
-            </a>
-          </div>
+      <div class="well well-small">
+        <div class="btn-group">
+          <a class="btn btn-small dropdown-toggle btn-success" data-toggle="dropdown" href="#">
+            Limit - {{request.args.get('limit') or 'Default'}}
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="{{url_for('user_list')}}">{{config.DEFAULT_DB_LIMIT}} (Default)</a></li>
+            <li class="divider"></li>
+            <li><a href="{{url_for('user_list', limit=2)}}">2</a></li>
+            <li><a href="{{url_for('user_list', limit=4)}}">4</a></li>
+            <li><a href="{{url_for('user_list', limit=8)}}">8</a></li>
+            <li><a href="{{url_for('user_list', limit=16)}}">16</a></li>
+          </ul>
+        </div>
+        <div class="btn-group">
+          <a class="btn btn-small dropdown-toggle btn-danger" data-toggle="dropdown" href="#">
+            Admins - {{request.args.get('admin') or 'None'}}
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="{{url_for('user_list')}}">None</a></li>
+            <li class="divider"></li>
+            <li><a href="{{url_for('user_list', admin='true')}}">Show Admins</a></li>
+            <li><a href="{{url_for('user_list', admin='false')}}">Hide Admins</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -71,10 +45,43 @@
         <thead>
           <tr>
             <th class="span1">ID</th>
-            <th class="span1">Gravatar</th>
-            <th class="span4">Name</th>
-            <th class="span3">Created</th>
-            <th class="span3">Modified</th>
+            <th class="span1">Photo</th>
+            <th class="span3">
+              # if request.args.get('order') == 'name'
+                <a href="{{url_for('user_list', order='-name')}}">Name <i class="icon-chevron-up"></i></a>
+              # elif request.args.get('order') == '-name'
+                <a href="{{url_for('user_list', order='name')}}">Name <i class="icon-chevron-down"></i></a>
+              #else
+                <a href="{{url_for('user_list', order='name')}}">Name</a>
+              #endif
+            </th>
+            <th class="span3">
+              # if request.args.get('order') == 'email'
+                <a href="{{url_for('user_list', order='-email')}}">Email <i class="icon-chevron-up"></i></a>
+              # elif request.args.get('order') == '-email'
+                <a href="{{url_for('user_list', order='email')}}">Email <i class="icon-chevron-down"></i></a>
+              #else
+                <a href="{{url_for('user_list', order='email')}}">Email</a>
+              #endif
+            </th>
+            <th class="span2">
+              # if request.args.get('order') == 'created'
+                <a href="{{url_for('user_list', order='-created')}}">Created <i class="icon-chevron-up"></i></a>
+              # elif request.args.get('order') == '-created'
+                <a href="{{url_for('user_list', order='created')}}">Created <i class="icon-chevron-down"></i></a>
+              #else
+                <a href="{{url_for('user_list', order='created')}}">Created</a>
+              #endif
+            </th>
+            <th class="span2">
+              # if request.args.get('order') == 'modified'
+                <a href="{{url_for('user_list', order='-modified')}}">Modified <i class="icon-chevron-up"></i></a>
+              # elif request.args.get('order') == '-modified'
+                <a href="{{url_for('user_list', order='modified')}}">Modified <i class="icon-chevron-down"></i></a>
+              #else
+                <a href="{{url_for('user_list', order='modified')}}">Modified</a>
+              #endif
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -84,7 +91,13 @@
               <td>
                 <img src="{{user_db.avatar_url}}&amp;s=24" alt="Gravatar for {{user_db.name}}">
               </td>
-              <td>{{user_db.name}}</td>
+              <td>
+                {{user_db.name}}
+                # if user_db.admin
+                  <i class="icon-fire" title="Administrator"></i>
+                # endif
+              </td>
+              <td>{{user_db.email}}</td>
               <td>
                 <abbr title="{{user_db.created_utc}}">
                   {{user_db.created_ago}}

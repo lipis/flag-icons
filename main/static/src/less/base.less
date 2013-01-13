@@ -1,9 +1,19 @@
+html {
+  background-color: @wellBackground;
+}
+
 body {
   padding-top: 60px;
   overflow-y: scroll;
+  background-color: @bodyBackground;
+}
+
+.main-container {
+  min-height: 512px;
 }
 
 .footer {
+  background-color: @wellBackground;
   border-top: 1px solid @grayLighter;
   padding: 32px 0px;
   margin-top: 32px;
@@ -12,6 +22,36 @@ body {
 .img-error {
   .img-polaroid;
   .size(270px, 485px);
-  margin: 0 auto;
+  margin: auto;
   display: block;
+}
+
+/* Responsive
+-------------------------------------------------- */
+
+/* Desktop
+------------------------- */
+@media (max-width: 980px) {
+  body {
+    padding-top: 0;
+  }
+}
+
+/* Tablet
+------------------------- */
+@media (max-width: 767px) {
+ .footer {
+    margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/* Landscape phones
+------------------------- */
+@media (max-width: 480px) {
+  .footer .pull-right {
+    float: none;
+  }
 }

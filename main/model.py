@@ -18,9 +18,6 @@ class Config(Base, modelx.ConfigX):
   facebook_app_secret = ndb.StringProperty(default='')
   feedback_email = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default=str(uuid4()).replace('-', ''))
-  pubnub_publish = ndb.StringProperty(default='')
-  pubnub_secret = ndb.StringProperty(default='')
-  pubnub_subscribe = ndb.StringProperty(default='')
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
   _PROPERTIES = Base._PROPERTIES.union(set([
@@ -30,8 +27,6 @@ class Config(Base, modelx.ConfigX):
       'facebook_app_secret',
       'feedback_email',
       'flask_secret_key',
-      'pubnub_publish',
-      'pubnub_subscribe',
       'twitter_consumer_key',
       'twitter_consumer_secret',
     ]))

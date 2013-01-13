@@ -11,6 +11,7 @@
         <li class="divider"></li>
         <li class="nav-header">Admin Only</li>
         <li><a href="{{url_for('admin_config_update')}}">Config</a></li>
+        <li><a href="{{url_for('user_list', order='-created')}}">User List</a></li>
       # endif
     </ul>
   </li>
