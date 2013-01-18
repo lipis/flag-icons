@@ -10,32 +10,25 @@
     </h1>
   </div>
   <div class="row">
-    <div class="span4">
-      <div class="well">
-        <a class="btn btn-block" href="{{google_signin_url}}">
-          <img src="/p/img/signin/google-logo-large.png" alt="Google Logo ">
+    <div class="span4 offset4">
+      <a class="btn btn-block btn-large btn-google" href="{{google_signin_url}}">
+        <img src="/p/img/signin/google.svg" alt="Google Logo">
+        Sign in with Google
+      </a>
+
+      # if config.CONFIG_DB.facebook_app_id and config.CONFIG_DB.facebook_app_secret
+        <a class="btn btn-block btn-large btn-facebook" href="{{facebook_signin_url}}">
+          <img src="/p/img/signin/facebook.svg" alt="Facebook Logo">
+          Sign in with Facebook
         </a>
-      </div>
+      # endif
+
+      # if config.CONFIG_DB.twitter_consumer_key and config.CONFIG_DB.twitter_consumer_secret
+        <a class="btn btn-block btn-large btn-twitter" href="{{twitter_signin_url}}">
+          <img src="/p/img/signin/twitter.svg" alt="Twitter Logo">
+          Sign in with Twitter
+        </a>
+      # endif
     </div>
-
-    # if config.CONFIG_DB.facebook_app_id and config.CONFIG_DB.facebook_app_secret
-      <div class="span4">
-        <div class="well">
-          <a class="btn btn-block" href="{{facebook_signin_url}}">
-            <img src="/p/img/signin/facebook-logo-large.png" alt="Facebook Logo ">
-          </a>
-        </div>
-      </div>
-    # endif
-
-    # if config.CONFIG_DB.twitter_consumer_key and config.CONFIG_DB.twitter_consumer_secret
-      <div class="span4">
-        <div class="well">
-          <a class="btn btn-block" href="{{twitter_signin_url}}">
-            <img src="/p/img/signin/twitter-logo-large.png" alt="Twitter Logo ">
-          </a>
-        </div>
-      </div>
-    # endif
   </div>
 # endblock

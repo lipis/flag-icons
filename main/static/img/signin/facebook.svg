@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="facebook" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="128px" height="128px" viewBox="0 0 128 128" enable-background="new 0 0 128 128" xml:space="preserve">
+<rect x="10.143" y="100.57" fill="#6D84B3" width="109.714" height="18.287"/>
+<path fill="#FFFFFF" d="M74.143,118.857V71.8H61.7V54.857h12.442c0,0,0-6.943,0-14.472c0-11.372,7.351-21.814,24.285-21.814
+	c6.857,0,11.93,0.657,11.93,0.657l-0.4,15.821c0,0-5.171-0.05-10.814-0.05c-6.105,0-7.086,2.814-7.086,7.486
+	c0,3.692,0-7.872,0,12.371h18.387l-0.801,16.942H92.057v47.058H74.143V118.857z"/>
+</svg>
