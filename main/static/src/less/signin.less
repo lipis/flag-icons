@@ -1,0 +1,45 @@
+.btn-social(@color) {
+  text-align: left;
+  padding-left: 0;
+  padding-top: 0!important;
+  padding-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  .buttonBackground(@color, darken(@color, 10%));
+  img {
+    margin-right: 2px;
+    padding: 2px;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    .square(24px);
+  }
+  &.btn-large {
+    img {
+      .square(38px);
+    }
+  }
+  &.btn-small {
+    img {
+      .square(22px);
+      padding: 1px;
+    }
+  }
+  &.btn-mini {
+    img {
+      .square(16px);
+      padding: 1px;
+    }
+  }
+}
+
+.btn-google {
+  .btn-social(#4285f4);
+}
+
+.btn-facebook {
+  .btn-social(#3C5A98);
+}
+
+.btn-twitter {
+  .btn-social(#2BA9E1);
+}
