@@ -14,10 +14,11 @@ import urllib
 import urlparse
 import posixpath
 import mimetypes
-from itertools import chain
+from itertools import chain, repeat
 from zlib import adler32
 from time import time, mktime
 from datetime import datetime
+from functools import partial
 
 from werkzeug._internal import _patch_wrapper
 from werkzeug.http import is_resource_modified, http_date
@@ -581,6 +582,13 @@ def make_limited_stream(stream, limit):
     return stream
 
 
+def make_chunk_iter_func(stream, limit, buffer_size):
+    """Helper for the line and chunk iter functions."""
+    if hasattr(stream, 'read'):
+        return partial(make_limited_stream(stream, limit).read, buffer_size)
+    return iter(chain(stream, repeat(''))).next
+
+
 def make_line_iter(stream, limit=None, buffer_size=10 * 1024):
     """Safely iterates line-based over an input stream.  If the input stream
     is not a :class:`LimitedStream` the `limit` parameter is mandatory.
@@ -597,46 +605,31 @@ def make_line_iter(stream, limit=None, buffer_size=10 * 1024):
     .. versionchanged:: 0.8
        This function now ensures that the limit was reached.
 
-    :param stream: the stream to iterate over.
+    .. versionadded:: 0.9
+       added support for iterators as input stream.
+
+    :param stream: the stream or iterate to iterate over.
     :param limit: the limit in bytes for the stream.  (Usually
                   content length.  Not necessary if the `stream`
                   is a :class:`LimitedStream`.
     :param buffer_size: The optional buffer size.
     """
-    stream = make_limited_stream(stream, limit)
     def _iter_basic_lines():
-        _read = stream.read
+        _read = make_chunk_iter_func(stream, limit, buffer_size)
         buffer = []
         while 1:
-            if len(buffer) > 1:
-                yield buffer.pop()
-                continue
-
-            # we reverse the chunks because popping from the last
-            # position of the list is O(1) and the number of chunks
-            # read will be quite large for binary files.
-            chunks = _read(buffer_size).splitlines(True)
-            chunks.reverse()
-
-            first_chunk = buffer and buffer[0] or ''
-            if chunks:
-                if first_chunk and first_chunk[-1] in '\r\n':
-                    yield first_chunk
-                    first_chunk = ''
-                first_chunk += chunks.pop()
-            else:
-                yield first_chunk
+            new_data = _read()
+            if not new_data:
                 break
-
-            buffer = chunks
-
-            # in case the line is longer than the buffer size we
-            # can't yield yet.  This will only happen if the buffer
-            # is empty.
-            if not buffer and first_chunk[-1] not in '\r\n':
-                buffer = [first_chunk]
-            else:
-                yield first_chunk
+            new_buf = []
+            for item in chain(buffer, new_data.splitlines(True)):
+                new_buf.append(item)
+                if item and item[-1:] in '\r\n':
+                    yield ''.join(new_buf)
+                    new_buf = []
+            buffer = new_buf
+        if buffer:
+            yield ''.join(buffer)
 
     # This hackery is necessary to merge 'foo\r' and '\n' into one item
     # of 'foo\r\n' if we were unlucky and we hit a chunk boundary.
@@ -655,24 +648,26 @@ def make_line_iter(stream, limit=None, buffer_size=10 * 1024):
 def make_chunk_iter(stream, separator, limit=None, buffer_size=10 * 1024):
     """Works like :func:`make_line_iter` but accepts a separator
     which divides chunks.  If you want newline based processing
-    you shuold use :func:`make_limited_stream` instead as it
+    you should use :func:`make_limited_stream` instead as it
     supports arbitrary newline markers.
 
     .. versionadded:: 0.8
 
-    :param stream: the stream to iterate over.
+    .. versionadded:: 0.9
+       added support for iterators as input stream.
+
+    :param stream: the stream or iterate to iterate over.
     :param separator: the separator that divides chunks.
     :param limit: the limit in bytes for the stream.  (Usually
                   content length.  Not necessary if the `stream`
                   is a :class:`LimitedStream`.
     :param buffer_size: The optional buffer size.
     """
-    stream = make_limited_stream(stream, limit)
-    _read = stream.read
+    _read = make_chunk_iter_func(stream, limit, buffer_size)
     _split = re.compile(r'(%s)' % re.escape(separator)).split
     buffer = []
     while 1:
-        new_data = _read(buffer_size)
+        new_data = _read()
         if not new_data:
             break
         chunks = _split(new_data)
@@ -844,6 +839,13 @@ class LimitedStream(object):
             if size is not None:
                 last_pos = self._pos
         return result
+
+    def tell(self):
+        """Returns the position of the stream.
+
+        .. versionadded:: 0.9
+        """
+        return self._pos
 
     def next(self):
         line = self.readline()

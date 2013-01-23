@@ -103,7 +103,7 @@ def exhaust_stream(f):
 
 class FormDataParser(object):
     """This class implements parsing of form data for Werkzeug.  By itself
-    it can parse multipart and url encoded form data.  It can be subclasses
+    it can parse multipart and url encoded form data.  It can be subclassed
     and extended but for most mimetypes it is a better idea to use the
     untouched stream and expose it as separate attributes on a request
     object.
@@ -235,11 +235,10 @@ def _line_parse(line):
 
 def parse_multipart_headers(iterable):
     """Parses multipart headers from an iterable that yields lines (including
-    the trailing newline symbol.  The iterable has to be newline terminated:
+    the trailing newline symbol).  The iterable has to be newline terminated.
 
-    >>> parse_multipart_headers(['Foo: Bar\r\n', 'Test: Blub\r\n',
-    ...                          '\r\n', 'More data'])
-    Headers([('Foo', 'Bar'), ('Test', 'Blub')])
+    The iterable will stop at the line where the headers ended so it can be
+    further consumed.
 
     :param iterable: iterable of strings that are newline terminated
     """
@@ -264,7 +263,6 @@ def parse_multipart_headers(iterable):
 
 
 class MultiPartParser(object):
-
     def __init__(self, stream_factory=None, charset='utf-8', errors='replace',
                  max_form_memory_size=None, cls=None, buffer_size=10 * 1024):
         self.stream_factory = stream_factory
@@ -328,7 +326,7 @@ class MultiPartParser(object):
     def start_file_streaming(self, filename, headers, total_content_length):
         filename = _decode_unicode(filename, self.charset, self.errors)
         filename = self._fix_ie_filename(filename)
-        content_type = headers.get('content_type')
+        content_type = headers.get('content-type')
         try:
             content_length = int(headers['content-length'])
         except (KeyError, ValueError):
@@ -348,8 +346,8 @@ class MultiPartParser(object):
         if len(boundary) > self.buffer_size: # pragma: no cover
             # this should never happen because we check for a minimum size
             # of 1024 and boundaries may not be longer than 200.  The only
-            # situation when this happen is for non debug builds where
-            # the assert i skipped.
+            # situation when this happens is for non debug builds where
+            # the assert is skipped.
             self.fail('Boundary longer than buffer size')
 
     def parse(self, file, boundary, content_length):

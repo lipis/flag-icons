@@ -141,7 +141,7 @@ def iri_to_uri(iri, charset='utf-8'):
     if port:
         hostname += ':' + port
 
-    path = _quote(path.encode(charset), safe="/:~+")
+    path = _quote(path.encode(charset), safe="/:~+%")
     query = _quote(query.encode(charset), safe="=%&[]:;$()+,!?*/")
 
     # this absolutely always must return a string.  Otherwise some parts of

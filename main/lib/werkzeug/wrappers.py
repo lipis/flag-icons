@@ -434,6 +434,11 @@ class BaseRequest(object):
         return _decode_unicode(path, self.url_charset, self.encoding_errors)
 
     @cached_property
+    def full_path(self):
+        """Requested path as unicode, including the query string."""
+        return self.path + u'?' + self.query_string
+
+    @cached_property
     def script_root(self):
         """The root path of the script without the trailing slash."""
         path = (self.environ.get('SCRIPT_NAME') or '').rstrip('/')
