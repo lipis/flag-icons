@@ -216,8 +216,8 @@ def parse_options_header(value):
     """Parse a ``Content-Type`` like header into a tuple with the content
     type and the options:
 
-    >>> parse_options_header('Content-Type: text/html; mimetype=text/html')
-    ('Content-Type:', {'mimetype': 'text/html'})
+    >>> parse_options_header('text/html; charset=utf8')
+    ('text/html', {'charset': 'utf8'})
 
     This should not be used to parse ``Cache-Control`` like headers that use
     a slightly different format.  For these headers use the

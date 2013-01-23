@@ -28,7 +28,7 @@ def param(name, cast=None):
 
   if cast and res:
     if cast == bool:
-      return res == 'true'
+      return res.lower() in ['true', 'yes', '1']
     return cast(res)
   return res
 
@@ -153,7 +153,7 @@ def json_value(value):
 ################################################################################
 # Helpers
 ################################################################################
-def generate_more_url(more_cursor, base_url=None):
+def generate_more_url(more_cursor, base_url=None, cursor_name='cursor'):
   '''Substitutes or alters the current request url with a new cursor parameter
   for next page of results
   '''
@@ -161,7 +161,7 @@ def generate_more_url(more_cursor, base_url=None):
     return None
   base_url = base_url or flask.request.base_url
   args = flask.request.args.to_dict()
-  args['cursor'] = more_cursor
+  args[cursor_name] = more_cursor
   return '%s?%s' % (base_url, urllib.urlencode(args))
 
 

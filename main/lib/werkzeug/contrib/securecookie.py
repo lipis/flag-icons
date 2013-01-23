@@ -88,7 +88,6 @@ r"""
     :copyright: (c) 2011 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
 """
-import sys
 import cPickle as pickle
 from hmac import new as hmac
 from time import time
@@ -98,21 +97,7 @@ from werkzeug.contrib.sessions import ModificationTrackingDict
 from werkzeug.security import safe_str_cmp
 
 
-# rather ugly way to import the correct hash method.  Because
-# hmac either accepts modules with a new method (sha, md5 etc.)
-# or a hashlib factory function we have to figure out what to
-# pass to it.  If we have 2.5 or higher (so not 2.4 with a
-# custom hashlib) we import from hashlib and fail if it does
-# not exist (have seen that in old OS X versions).
-# in all other cases the now deprecated sha module is used.
-_default_hash = None
-if sys.version_info >= (2, 5):
-    try:
-        from hashlib import sha1 as _default_hash
-    except ImportError:
-        pass
-if _default_hash is None:
-    import sha as _default_hash
+from hashlib import sha1 as _default_hash
 
 
 class UnquoteError(Exception):

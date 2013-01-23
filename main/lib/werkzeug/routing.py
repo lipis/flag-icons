@@ -100,7 +100,7 @@ import posixpath
 from pprint import pformat
 from urlparse import urljoin
 
-from werkzeug.urls import url_encode, url_decode, url_quote
+from werkzeug.urls import url_encode, url_quote
 from werkzeug.utils import redirect, format_string
 from werkzeug.exceptions import HTTPException, NotFound, MethodNotAllowed
 from werkzeug._internal import _get_environ
@@ -715,7 +715,7 @@ class Rule(RuleFactory):
                     return
                 processed.add(data)
             else:
-                add(url_quote(data, self.map.charset, safe='/:|'))
+                add(url_quote(data, self.map.charset, safe='/:|+'))
         domain_part, url = (u''.join(tmp)).split('|', 1)
 
         if append_unknown:
@@ -1503,7 +1503,8 @@ class MapAdapter(object):
             self.url_scheme,
             self.get_host(domain_part),
             posixpath.join(self.script_name[:-1].lstrip('/'),
-                           url_quote(path_info.lstrip('/'), self.map.charset)),
+                           url_quote(path_info.lstrip('/'), self.map.charset,
+                                     safe='/:|+')),
             suffix
         ))
 

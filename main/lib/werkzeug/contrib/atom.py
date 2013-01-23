@@ -239,11 +239,11 @@ class FeedEntry(object):
                not present the URL is used, but one of both is required.
     :param updated: the time the entry was modified the last time.  Must
                     be a :class:`datetime.datetime` object. Required.
-    :param author: the author of the feed.  Must be either a string (the
+    :param author: the author of the entry.  Must be either a string (the
                    name) or a dict with name (required) and uri or
                    email (both optional).  Can be a list of (may be
                    mixed, too) strings and dicts, too, if there are
-                   multiple authors. Required if not every entry has an
+                   multiple authors. Required if the feed does not have an
                    author element.
     :param published: the time the entry was initially published.  Must
                       be a :class:`datetime.datetime` object.
@@ -254,6 +254,8 @@ class FeedEntry(object):
     :param links: additional links.  Must be a list of dictionaries with
                   href (required) and rel, type, hreflang, title, length
                   (all optional)
+    :param categories: categories for the entry. Must be a list of dictionaries
+                       with term (required), scheme and label (all optional)
     :param xml_base: The xml base (url) for this feed item.  If not provided
                      it will default to the item url.
 
@@ -273,10 +275,11 @@ class FeedEntry(object):
         self.updated = kwargs.get('updated')
         self.summary = kwargs.get('summary')
         self.summary_type = kwargs.get('summary_type', 'html')
-        self.author = kwargs.get('author')
+        self.author = kwargs.get('author', ())
         self.published = kwargs.get('published')
         self.rights = kwargs.get('rights')
         self.links = kwargs.get('links', [])
+        self.categories = kwargs.get('categories', [])
         self.xml_base = kwargs.get('xml_base', feed_url)
 
         if not hasattr(self.author, '__iter__') \
@@ -324,6 +327,9 @@ class FeedEntry(object):
         for link in self.links:
             yield u'  <link %s/>\n' % ''.join('%s="%s" ' % \
                 (k, escape(link[k], True)) for k in link)
+        for category in self.categories:
+            yield u'  <category %s/>\n' % ''.join('%s="%s" ' % \
+                (k, escape(category[k], True)) for k in category)
         if self.summary:
             yield u'  ' + _make_text_block('summary', self.summary,
                                            self.summary_type)

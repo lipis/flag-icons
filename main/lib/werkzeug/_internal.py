@@ -65,6 +65,9 @@ HTTP_STATUS_CODES = {
     423:    'Locked',
     424:    'Failed Dependency',
     426:    'Upgrade Required',
+    428:    'Precondition Required', # see RFC 6585
+    429:    'Too Many Requests',
+    431:    'Request Header Fields Too Large',
     449:    'Retry With',           # proprietary MS extension
     500:    'Internal Server Error',
     501:    'Not Implemented',

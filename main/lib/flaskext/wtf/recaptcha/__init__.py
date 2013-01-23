@@ -1,5 +1,5 @@
-from flaskext.wtf.recaptcha import fields
-from flaskext.wtf.recaptcha import  validators 
-from flaskext.wtf.recaptcha import  widgets
+from . import fields
+from . import validators
+from . import widgets
 
 __all__ = fields.__all__ + validators.__all__ + widgets.__all__
