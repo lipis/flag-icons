@@ -84,6 +84,7 @@ Contributions and Ideas
   - [chris][]
   - [ksymeon][]
   - [gmist][]
+  - [stefanlindmark][]
 
 Author
 ------
@@ -118,6 +119,7 @@ Author
 [chris]: http://stackoverflow.com/users/226394/chris-top
 [ksymeon]: https://plus.google.com/102598378133436784997
 [gmist]: https://github.com/gmist
+[stefanlindmark]: http://www.linkedin.com/in/stefanlindmark
 
 [lipisflair]: http://stackexchange.com/users/flair/5282.png
 [lipis]: http://stackoverflow.com/users/8418/lipis
