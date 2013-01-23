@@ -92,6 +92,7 @@ class:
 
 """
 from wtforms import Form, validators, widgets, fields as f
+from wtforms.compat import iteritems
 from wtforms.ext.appengine.fields import GeoPtPropertyField, ReferencePropertyField, StringListPropertyField
 
 
@@ -180,6 +181,7 @@ def convert_StringListProperty(model, prop, kwargs):
 def convert_ReferenceProperty(model, prop, kwargs):
     """Returns a form field for a ``db.ReferenceProperty``."""
     kwargs['reference_class'] = prop.reference_class
+    kwargs.setdefault('allow_blank', not prop.required)
     return ReferencePropertyField(**kwargs)
 
 
@@ -334,6 +336,9 @@ class ModelConverter(object):
         'RatingProperty':        convert_RatingProperty,
     }
 
+    # Don't automatically add a required validator for these properties
+    NO_AUTO_REQUIRED = frozenset(['ListProperty', 'StringListProperty', 'BooleanProperty'])
+
     def __init__(self, converters=None):
         """
         Constructs the converter, setting the converter callables.
@@ -355,6 +360,7 @@ class ModelConverter(object):
         :param field_args:
             Optional keyword arguments to construct the field.
         """
+        prop_type_name = type(prop).__name__
         kwargs = {
             'label': prop.name.replace('_', ' ').title(),
             'default': prop.default_value(),
@@ -363,7 +369,7 @@ class ModelConverter(object):
         if field_args:
             kwargs.update(field_args)
 
-        if prop.required:
+        if prop.required and prop_type_name not in self.NO_AUTO_REQUIRED:
             kwargs['validators'].append(validators.required())
 
         if prop.choices:
@@ -371,7 +377,7 @@ class ModelConverter(object):
             kwargs['choices'] = [(v, v) for v in prop.choices]
             return f.SelectField(**kwargs)
         else:
-            converter = self.converters.get(type(prop).__name__, None)
+            converter = self.converters.get(prop_type_name, None)
             if converter is not None:
                 return converter(model, prop, kwargs)
 
@@ -403,7 +409,9 @@ def model_fields(model, only=None, exclude=None, field_args=None,
     # Get the field names we want to include or exclude, starting with the
     # full list of model properties.
     props = model.properties()
-    field_names = props.keys()
+    sorted_props = sorted(iteritems(props), key=lambda prop: prop[1].creation_counter)
+    field_names = list(x[0] for x in sorted_props)
+
     if only:
         field_names = list(f for f in only if f in field_names)
     elif exclude:

@@ -1,6 +1,11 @@
+from __future__ import unicode_literals
+
 import decimal
+import operator
+import warnings
 
 from wtforms import fields, widgets
+from wtforms.compat import text_type, string_types
 
 class ReferencePropertyField(fields.SelectFieldBase):
     """
@@ -11,10 +16,11 @@ class ReferencePropertyField(fields.SelectFieldBase):
         A db.Model class which will be used to generate the default query
         to make the list of items. If this is not specified, The `query`
         property must be overridden before validation.
-    :param label_attr:
-        If specified, use this attribute on the model class as the label
-        associated with each option. Otherwise, the model object's
-        `__str__` or `__unicode__` will be used.
+    :param get_label:
+        If a string, use this attribute on the model class as the label
+        associated with each option. If a one-argument callable, this callable
+        will be passed model instance and expected to return the label text.
+        Otherwise, the model object's `__str__` or `__unicode__` will be used.
     :param allow_blank:
         If set to true, a blank choice will be added to the top of the list
         to allow `None` to be chosen.
@@ -24,10 +30,20 @@ class ReferencePropertyField(fields.SelectFieldBase):
     widget = widgets.Select()
 
     def __init__(self, label=None, validators=None, reference_class=None,
-                 label_attr=None, allow_blank=False, blank_text=u'', **kwargs):
+                 label_attr=None, get_label=None, allow_blank=False,
+                 blank_text='', **kwargs):
         super(ReferencePropertyField, self).__init__(label, validators,
                                                      **kwargs)
-        self.label_attr = label_attr
+        if label_attr is not None:
+            warnings.warn('label_attr= will be removed in WTForms 1.1, use get_label= instead.', DeprecationWarning)
+            self.get_label = operator.attrgetter(label_attr)
+        elif get_label is None:
+            self.get_label = lambda x: x
+        elif isinstance(get_label, string_types):
+            self.get_label = operator.attrgetter(get_label)
+        else:
+            self.get_label = get_label
+
         self.allow_blank = allow_blank
         self.blank_text = blank_text
         self._set_data(None)
@@ -50,11 +66,11 @@ class ReferencePropertyField(fields.SelectFieldBase):
 
     def iter_choices(self):
         if self.allow_blank:
-            yield (u'__None', self.blank_text, self.data is None)
+            yield ('__None', self.blank_text, self.data is None)
 
         for obj in self.query:
             key = str(obj.key())
-            label = self.label_attr and getattr(obj, self.label_attr) or obj
+            label = self.get_label(obj)
             yield (key, label, self.data and ( self.data.key( ) == obj.key() ) )
 
     def process_formdata(self, valuelist):
@@ -71,7 +87,7 @@ class ReferencePropertyField(fields.SelectFieldBase):
                 if str(self.data.key()) == str(obj.key()):
                     break
             else:
-                raise ValueError(self.gettext(u'Not a valid choice'))
+                raise ValueError(self.gettext('Not a valid choice'))
 
 
 class StringListPropertyField(fields.TextAreaField):
@@ -83,14 +99,14 @@ class StringListPropertyField(fields.TextAreaField):
         if self.raw_data:
             return self.raw_data[0]
         else:
-            return self.data and unicode("\n".join(self.data)) or u''
+            return self.data and text_type("\n".join(self.data)) or ''
 
     def process_formdata(self, valuelist):
         if valuelist:
             try:
                 self.data = valuelist[0].splitlines()
             except ValueError:
-                raise ValueError(self.gettext(u'Not a valid list'))
+                raise ValueError(self.gettext('Not a valid list'))
 
 
 class GeoPtPropertyField(fields.TextField):
@@ -99,6 +115,6 @@ class GeoPtPropertyField(fields.TextField):
         if valuelist:
             try:
                 lat, lon = valuelist[0].split(',')
-                self.data = u'%s,%s' % (decimal.Decimal(lat.strip()), decimal.Decimal(lon.strip()),)
+                self.data = '%s,%s' % (decimal.Decimal(lat.strip()), decimal.Decimal(lon.strip()),)
             except (decimal.InvalidOperation, ValueError):
-                raise ValueError(u'Not a valid coordinate location')
+                raise ValueError('Not a valid coordinate location')

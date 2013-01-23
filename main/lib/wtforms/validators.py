@@ -1,11 +1,15 @@
+from __future__ import unicode_literals
+
 import re
 
+from wtforms.compat import string_types, text_type
 
 __all__ = (
-    'Email', 'email', 'EqualTo', 'equal_to', 'IPAddress', 'ip_address',
-    'Length', 'length', 'NumberRange', 'number_range', 'Optional', 'optional',
+    'DataRequired', 'data_required', 'Email', 'email', 'EqualTo', 'equal_to',
+    'IPAddress', 'ip_address', 'InputRequired', 'input_required', 'Length',
+    'length', 'NumberRange', 'number_range', 'Optional', 'optional',
     'Required', 'required', 'Regexp', 'regexp', 'URL', 'url', 'AnyOf',
-    'any_of', 'NoneOf', 'none_of'
+    'any_of', 'NoneOf', 'none_of', 'MacAddress', 'mac_address', 'UUID'
 )
 
 
@@ -13,7 +17,7 @@ class ValidationError(ValueError):
     """
     Raised when a validator fails to validate its input.
     """
-    def __init__(self, message=u'', *args, **kwargs):
+    def __init__(self, message='', *args, **kwargs):
         ValueError.__init__(self, message, *args, **kwargs)
 
 
@@ -25,7 +29,7 @@ class StopValidation(Exception):
     called. If raised with a message, the message will be added to the errors
     list.
     """
-    def __init__(self, message=u'', *args, **kwargs):
+    def __init__(self, message='', *args, **kwargs):
         Exception.__init__(self, message, *args, **kwargs)
 
 
@@ -48,14 +52,14 @@ class EqualTo(object):
         try:
             other = form[self.fieldname]
         except KeyError:
-            raise ValidationError(field.gettext(u"Invalid field name '%s'.") % self.fieldname)
+            raise ValidationError(field.gettext("Invalid field name '%s'.") % self.fieldname)
         if field.data != other.data:
             d = {
                 'other_label': hasattr(other, 'label') and other.label.text or self.fieldname,
                 'other_name': self.fieldname
             }
             if self.message is None:
-                self.message = field.gettext(u'Field must be equal to %(other_name)s.')
+                self.message = field.gettext('Field must be equal to %(other_name)s.')
 
             raise ValidationError(self.message % d)
 
@@ -87,13 +91,13 @@ class Length(object):
         if l < self.min or self.max != -1 and l > self.max:
             if self.message is None:
                 if self.max == -1:
-                    self.message = field.ngettext(u'Field must be at least %(min)d character long.',
-                                                  u'Field must be at least %(min)d characters long.', self.min)
+                    self.message = field.ngettext('Field must be at least %(min)d character long.',
+                                                  'Field must be at least %(min)d characters long.', self.min)
                 elif self.min == -1:
-                    self.message = field.ngettext(u'Field cannot be longer than %(max)d character.',
-                                                  u'Field cannot be longer than %(max)d characters.', self.max)
+                    self.message = field.ngettext('Field cannot be longer than %(max)d character.',
+                                                  'Field cannot be longer than %(max)d characters.', self.max)
                 else:
-                    self.message = field.gettext(u'Field must be between %(min)d and %(max)d characters long.')
+                    self.message = field.gettext('Field must be between %(min)d and %(max)d characters long.')
 
             raise ValidationError(self.message % dict(min=self.min, max=self.max))
 
@@ -128,11 +132,11 @@ class NumberRange(object):
                 # we use %(min)s interpolation to support floats, None, and
                 # Decimals without throwing a formatting exception.
                 if self.max is None:
-                    self.message = field.gettext(u'Number must be greater than %(min)s.')
+                    self.message = field.gettext('Number must be at least %(min)s.')
                 elif self.min is None:
-                    self.message = field.gettext(u'Number must be less than %(max)s.')
+                    self.message = field.gettext('Number must be at most %(max)s.')
                 else:
-                    self.message = field.gettext(u'Number must be between %(min)s and %(max)s.')
+                    self.message = field.gettext('Number must be between %(min)s and %(max)s.')
 
             raise ValidationError(self.message % dict(min=self.min, max=self.max))
 
@@ -143,19 +147,32 @@ class Optional(object):
 
     If input is empty, also removes prior errors (such as processing errors)
     from the field.
+
+    :param strip_whitespace:
+        If True (the default) also stop the validation chain on input which
+        consists of only whitespace.
     """
     field_flags = ('optional', )
 
+    def __init__(self, strip_whitespace=True):
+        if strip_whitespace:
+            self.string_check = lambda s: s.strip()
+        else:
+            self.string_check = lambda s: s
+
     def __call__(self, form, field):
-        if not field.raw_data or isinstance(field.raw_data[0], basestring) and not field.raw_data[0].strip():
+        if not field.raw_data or isinstance(field.raw_data[0], string_types) and not self.string_check(field.raw_data[0]):
             field.errors[:] = []
             raise StopValidation()
 
 
-class Required(object):
+class DataRequired(object):
     """
     Validates that the field contains data. This validator will stop the
     validation chain on error.
+
+    If the data is empty, also removes prior errors (such as processing errors)
+    from the field.
 
     :param message:
         Error message to raise in case of a validation error.
@@ -166,9 +183,42 @@ class Required(object):
         self.message = message
 
     def __call__(self, form, field):
-        if not field.data or isinstance(field.data, basestring) and not field.data.strip():
+        if not field.data or isinstance(field.data, string_types) and not field.data.strip():
             if self.message is None:
-                self.message = field.gettext(u'This field is required.')
+                self.message = field.gettext('This field is required.')
+
+            field.errors[:] = []
+            raise StopValidation(self.message)
+
+
+class Required(DataRequired):
+    """
+    Legacy alias for DataRequired.
+
+    This is needed over simple aliasing for those who require that the
+    class-name of required be 'Required.'
+
+    This class will start throwing deprecation warnings in WTForms 1.1 and be removed by 1.2.
+    """
+
+
+class InputRequired(object):
+    """
+    Validates that input was provided for this field.
+
+    Note there is a distinction between this and DataRequired in that
+    InputRequired looks that form-input data was provided, and DataRequired
+    looks at the post-coercion data.
+    """
+    field_flags = ('required', )
+
+    def __init__(self, message=None):
+        self.message = message
+
+    def __call__(self, form, field):
+        if not field.raw_data or not field.raw_data[0]:
+            if self.message is None:
+                self.message = field.gettext('This field is required.')
 
             field.errors[:] = []
             raise StopValidation(self.message)
@@ -188,15 +238,15 @@ class Regexp(object):
         Error message to raise in case of a validation error.
     """
     def __init__(self, regex, flags=0, message=None):
-        if isinstance(regex, basestring):
+        if isinstance(regex, string_types):
             regex = re.compile(regex, flags)
         self.regex = regex
         self.message = message
 
     def __call__(self, form, field):
-        if not self.regex.match(field.data or u''):
+        if not self.regex.match(field.data or ''):
             if self.message is None:
-                self.message = field.gettext(u'Invalid input.')
+                self.message = field.gettext('Invalid input.')
 
             raise ValidationError(self.message)
 
@@ -215,26 +265,86 @@ class Email(Regexp):
 
     def __call__(self, form, field):
         if self.message is None:
-            self.message = field.gettext(u'Invalid email address.')
+            self.message = field.gettext('Invalid email address.')
 
         super(Email, self).__call__(form, field)
 
 
-class IPAddress(Regexp):
+class IPAddress(object):
     """
-    Validates an IP(v4) address.
+    Validates an IPv4 (IPv6 too with ipv6=True) address.
+
+    :param ipv6:
+        If True, accept IPv6 as valid also.
+    :param message:
+        Error message to raise in case of a validation error.
+    """
+    def __init__(self, ipv6=False, message=None):
+        self.ipv6 = ipv6
+        self.message = message
+
+    def __call__(self, form, field):
+        value = field.data
+        valid = False
+        if value:
+            valid = self.check_ipv4(value)
+
+            if not valid and self.ipv6:
+                valid = self.check_ipv6(value)
+
+        if not valid:
+            if self.message is None:
+                self.message = field.gettext('Invalid IP address.')
+            raise ValidationError(self.message)
+
+    def check_ipv4(self, value):
+        parts = value.split('.')
+        if len(parts) == 4 and all(x.isdigit() for x in parts):
+            numbers = list(int(x) for x in parts)
+            return all(num >= 0 and num < 256 for num in numbers)
+        return False
+
+    def check_ipv6(self, value):
+        parts = value.split(':')
+        if len(parts) > 8:
+            return False
+
+        num_blank = 0
+        for part in parts:
+            if not part:
+                num_blank += 1
+            else:
+                try:
+                    value = int(part, 16)
+                except ValueError:
+                    return False
+                else:
+                    if value < 0 or value >= 65536:
+                        return False
+
+        if num_blank < 2:
+            return True
+        elif num_blank == 2 and not parts[0] and not parts[1]:
+            return True
+        return False
+
+
+class MacAddress(Regexp):
+    """
+    Validates a MAC address.
 
     :param message:
         Error message to raise in case of a validation error.
     """
     def __init__(self, message=None):
-        super(IPAddress, self).__init__(r'^([0-9]{1,3}\.){3}[0-9]{1,3}$', message=message)
+        pattern = r'^(?:[0-9a-fA-F]{2}:){5}[0-9a-fA-F]{2}$'
+        super(MacAddress, self).__init__(pattern, message=message)
 
     def __call__(self, form, field):
         if self.message is None:
-            self.message = field.gettext(u'Invalid IP address.')
+            self.message = field.gettext('Invalid Mac address.')
 
-        super(IPAddress, self).__call__(form, field)
+        super(MacAddress, self).__call__(form, field)
 
 
 class URL(Regexp):
@@ -251,15 +361,33 @@ class URL(Regexp):
         Error message to raise in case of a validation error.
     """
     def __init__(self, require_tld=True, message=None):
-        tld_part = (require_tld and ur'\.[a-z]{2,10}' or u'')
-        regex = ur'^[a-z]+://([^/:]+%s|([0-9]{1,3}\.){3}[0-9]{1,3})(:[0-9]+)?(\/.*)?$' % tld_part
+        tld_part = (require_tld and r'\.[a-z]{2,10}' or '')
+        regex = r'^[a-z]+://([^/:]+%s|([0-9]{1,3}\.){3}[0-9]{1,3})(:[0-9]+)?(\/.*)?$' % tld_part
         super(URL, self).__init__(regex, re.IGNORECASE, message)
 
     def __call__(self, form, field):
         if self.message is None:
-            self.message = field.gettext(u'Invalid URL.')
+            self.message = field.gettext('Invalid URL.')
 
         super(URL, self).__call__(form, field)
+
+
+class UUID(Regexp):
+    """
+    Validates a UUID.
+
+    :param message:
+        Error message to raise in case of a validation error.
+    """
+    def __init__(self, message=None):
+        pattern = r'^[0-9a-fA-F]{8}-([0-9a-fA-F]{4}-){3}[0-9a-fA-F]{12}$'
+        super(UUID, self).__init__(pattern, message=message)
+
+    def __call__(self, form, field):
+        if self.message is None:
+            self.message = field.gettext('Invalid UUID.')
+
+        super(UUID, self).__call__(form, field)
 
 
 class AnyOf(object):
@@ -278,15 +406,15 @@ class AnyOf(object):
         self.values = values
         self.message = message
         if values_formatter is None:
-            values_formatter = lambda v: u', '.join(v)
+            values_formatter = lambda v: ', '.join(text_type(x) for x in v)
         self.values_formatter = values_formatter
 
     def __call__(self, form, field):
         if field.data not in self.values:
             if self.message is None:
-                self.message = field.gettext(u'Invalid value, must be one of: %(values)s.')
+                self.message = field.gettext('Invalid value, must be one of: %(values)s.')
 
-            raise ValueError(self.message % dict(values=self.values_formatter(self.values)))
+            raise ValidationError(self.message % dict(values=self.values_formatter(self.values)))
 
 
 class NoneOf(object):
@@ -305,24 +433,27 @@ class NoneOf(object):
         self.values = values
         self.message = message
         if values_formatter is None:
-            values_formatter = lambda v: u', '.join(v)
+            values_formatter = lambda v: ', '.join(text_type(x) for x in v)
         self.values_formatter = values_formatter
 
     def __call__(self, form, field):
         if field.data in self.values:
             if self.message is None:
-                self.message = field.gettext(u'Invalid value, can\'t be any of: %(values)s.')
+                self.message = field.gettext('Invalid value, can\'t be any of: %(values)s.')
 
-            raise ValueError(self.message % dict(values=self.values_formatter(self.values)))
+            raise ValidationError(self.message % dict(values=self.values_formatter(self.values)))
 
 
 email = Email
 equal_to = EqualTo
 ip_address = IPAddress
+mac_address = MacAddress
 length = Length
 number_range = NumberRange
 optional = Optional
 required = Required
+input_required = InputRequired
+data_required = DataRequired
 regexp = Regexp
 url = URL
 any_of = AnyOf
