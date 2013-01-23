@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-    flaskext.oauth
-    ~~~~~~~~~~~~~~
+    flask_oauth
+    ~~~~~~~~~~~
 
     Implements basic OAuth support for Flask.
 
@@ -11,7 +11,7 @@
 import httplib2
 from functools import wraps
 from urlparse import urljoin
-from flask import request, session, json, redirect
+from flask import request, session, json, redirect, Response
 from werkzeug import url_decode, url_encode, url_quote, \
      parse_options_header, Headers
 import oauth2
@@ -41,8 +41,8 @@ def parse_response(resp, content, strict=False):
         return json.loads(content)
     elif ct in ('application/xml', 'text/xml'):
         # technically, text/xml is ascii based but because many
-        # implementations get that wrong and utf-8 is a superst
-        # of utf-8 anyways, there is not much harm in assuming
+        # implementations get that wrong and utf-8 is a superset
+        # of utf-8 anyways, so there is not much harm in assuming
         # utf-8 here
         charset = options.get('charset', 'utf-8')
         return get_etree().fromstring(content.decode(charset))
@@ -96,7 +96,8 @@ class OAuthClient(oauth2.Client):
             params['oauth_callback'] = callback
         req = oauth2.Request.from_consumer_and_token(
             self.consumer, token=self.token,
-            http_method='POST', http_url=uri, parameters=params)
+            http_method='POST', http_url=uri, parameters=params,
+            is_form_encoded=True)
         req.sign_request(self.method, self.consumer, self.token)
         body = req.to_postdata()
         headers = {
@@ -110,10 +111,13 @@ class OAuthClient(oauth2.Client):
 class OAuthException(RuntimeError):
     """Raised if authorization fails for some reason."""
     message = None
+    type = None
 
-    def __init__(self, message, data=None):
+    def __init__(self, message, type=None, data=None):
         #: A helpful error message for debugging
         self.message = message
+        #: A unique type for this exception if available.
+        self.type = type
         #: If available, the parsed data from the remote API that can be
         #: used to pointpoint the error.
         self.data = data
@@ -161,6 +165,8 @@ class OAuthRemoteApp(object):
                                  to forward to the request token URL
                                  or authorize URL depending on oauth
                                  version.
+    :param access_token_params: an option diction of parameters to forward to
+                                the access token URL
     :param access_token_method: the HTTP method that should be used
                                 for the access_token_url.  Defaults
                                 to ``'GET'``.
@@ -171,6 +177,7 @@ class OAuthRemoteApp(object):
                  access_token_url, authorize_url,
                  consumer_key, consumer_secret,
                  request_token_params=None,
+                 access_token_params=None,
                  access_token_method='GET'):
         self.oauth = oauth
         #: the `base_url` all URLs are joined with.
@@ -183,10 +190,18 @@ class OAuthRemoteApp(object):
         self.consumer_secret = consumer_secret
         self.tokengetter_func = None
         self.request_token_params = request_token_params or {}
+        self.access_token_params = access_token_params or {}
         self.access_token_method = access_token_method
         self._consumer = oauth2.Consumer(self.consumer_key,
                                          self.consumer_secret)
         self._client = OAuthClient(self._consumer)
+
+    def status_okay(self, resp):
+        """Given request data, checks if the status is okay."""
+        try:
+            return int(resp['status']) in (200, 201)
+        except ValueError:
+            return False
 
     def get(self, *args, **kwargs):
         """Sends a ``GET`` request.  Accepts the same parameters as
@@ -216,17 +231,20 @@ class OAuthRemoteApp(object):
         kwargs['method'] = 'DELETE'
         return self.request(*args, **kwargs)
 
-    def make_client(self):
+    def make_client(self, token=None):
         """Creates a new `oauth2` Client object with the token attached.
         Usually you don't have to do that but use the :meth:`request`
         method instead.
         """
-        return oauth2.Client(self._consumer, self.get_request_token())
+        return oauth2.Client(self._consumer, self.get_request_token(token))
 
-    def request(self, url, data=None, headers=None, format='urlencoded',
-                method='GET', content_type=None):
+    def request(self, url, data="", headers=None, format='urlencoded',
+                method='GET', content_type=None, token=None):
         """Sends a request to the remote server with OAuth tokens attached.
         The `url` is joined with :attr:`base_url` if the URL is relative.
+
+        .. versionadded:: 0.12
+           added the `token` parameter.
 
         :param url: where to send the request to
         :param data: the data to be sent to the server.  If the request method
@@ -242,16 +260,22 @@ class OAuthRemoteApp(object):
         :param content_type: an optional content type.  If a content type is
                              provided, the data is passed as it and the
                              `format` parameter is ignored.
+        :param token: an optional token to pass to tokengetter. Use this if you
+                      want to support sending requests using multiple tokens.
+                      If you set this to anything not None, `tokengetter_func`
+                      will receive the given token as an argument, in which case
+                      the tokengetter should return the `(token, secret)` tuple
+                      for the given token.
         :return: an :class:`OAuthResponse` object.
         """
         headers = dict(headers or {})
-        client = self.make_client()
+        client = self.make_client(token)
         url = self.expand_url(url)
         if method == 'GET':
             assert format == 'urlencoded'
-            if data is not None:
+            if data:
                 url = add_query(url, data)
-                data = None
+                data = ""
         else:
             if content_type is None:
                 data, content_type = encode_request_data(data, format)
@@ -270,22 +294,26 @@ class OAuthRemoteApp(object):
         resp, content = self._client.request_new_token(
             self.expand_url(self.request_token_url), callback,
                 self.request_token_params)
-        if resp['status'] != '200':
-            raise OAuthException('Failed to generate request token')
+        if not self.status_okay(resp):
+            raise OAuthException('Failed to generate request token',
+                                 type='token_generation_failed')
         data = parse_response(resp, content)
         if data is None:
-            raise OAuthException('Invalid token response from ' + self.name)
+            raise OAuthException('Invalid token response from ' + self.name,
+                                 type='token_generation_failed')
         tup = (data['oauth_token'], data['oauth_token_secret'])
         session[self.name + '_oauthtok'] = tup
         return tup
 
-    def get_request_token(self):
+    def get_request_token(self, token=None):
         assert self.tokengetter_func is not None, 'missing tokengetter function'
-        rv = self.tokengetter_func()
+        # Don't pass the token if the token is None to support old
+        # tokengetter functions.
+        rv = self.tokengetter_func(*(token and (token,) or ()))
         if rv is None:
             rv = session.get(self.name + '_oauthtok')
             if rv is None:
-                raise OAuthException('No token available')
+                raise OAuthException('No token available', type='token_missing')
         return oauth2.Token(*rv)
 
     def free_request_token(self):
@@ -311,14 +339,27 @@ class OAuthRemoteApp(object):
             params = dict(self.request_token_params)
             params['redirect_uri'] = callback
             params['client_id'] = self.consumer_key
+            params['response_type'] = 'code'
             session[self.name + '_oauthredir'] = callback
             url = add_query(self.expand_url(self.authorize_url), params)
+
         return redirect(url)
 
     def tokengetter(self, f):
         """Registers a function as tokengetter.  The tokengetter has to return
         a tuple of ``(token, secret)`` with the user's token and token secret.
         If the data is unavailable, the function must return `None`.
+
+        If the `token` parameter is passed to the request function it's
+        forwarded to the tokengetter function::
+
+            @oauth.tokengetter
+            def get_token(token='user'):
+                if token == 'user':
+                    return find_the_user_token()
+                elif token == 'app':
+                    return find_the_app_token()
+                raise RuntimeError('invalid token')
         """
         self.tokengetter_func = f
         return f
@@ -334,8 +375,9 @@ class OAuthRemoteApp(object):
             request.args['oauth_verifier']
         ), self.access_token_method)
         data = parse_response(resp, content)
-        if resp['status'] != '200':
-            raise OAuthException('Invalid response from ' + self.name, data)
+        if not self.status_okay(resp):
+            raise OAuthException('Invalid response from ' + self.name,
+                                 type='invalid_response', data=data)
         return data
 
     def handle_oauth2_response(self):
@@ -349,11 +391,21 @@ class OAuthRemoteApp(object):
             'client_secret':    self.consumer_secret,
             'redirect_uri':     session.get(self.name + '_oauthredir')
         }
-        url = add_query(self.expand_url(self.access_token_url), remote_args)
-        resp, content = self._client.request(url, self.access_token_method)
+        remote_args.update(self.access_token_params)
+        if self.access_token_method == 'POST':
+            resp, content = self._client.request(self.expand_url(self.access_token_url),
+                                                 self.access_token_method,
+                                                 url_encode(remote_args))
+        elif self.access_token_method == 'GET':
+            url = add_query(self.expand_url(self.access_token_url), remote_args)
+            resp, content = self._client.request(url, self.access_token_method)
+        else:
+            raise OAuthException('Unsupported access_token_method: ' +
+                                 self.access_token_method)
         data = parse_response(resp, content)
-        if resp['status'] != '200':
-            raise OAuthException('Invalid response from ' + self.name, data)
+        if not self.status_okay(resp):
+            raise OAuthException('Invalid response from ' + self.name,
+                                 type='invalid_response', data=data)
         return data
 
     def handle_unknown_response(self):
