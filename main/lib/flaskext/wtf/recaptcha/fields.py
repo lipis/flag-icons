@@ -1,9 +1,10 @@
 from wtforms.fields import Field
 
-from flaskext.wtf.recaptcha import widgets
-from flaskext.wtf.recaptcha.validators import Recaptcha
+from . import widgets
+from .validators import Recaptcha
 
 __all__ = ["RecaptchaField"]
+
 
 class RecaptchaField(Field):
     widget = widgets.RecaptchaWidget()

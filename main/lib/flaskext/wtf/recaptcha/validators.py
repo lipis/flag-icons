@@ -10,6 +10,7 @@ RECAPTCHA_VERIFY_SERVER = 'http://api-verify.recaptcha.net/verify'
 
 __all__ = ["Recaptcha"]
 
+
 class Recaptcha(object):
     """Validates a ReCaptcha."""
     _error_codes = {
@@ -30,15 +31,15 @@ class Recaptcha(object):
         remote_ip = request.remote_addr
 
         if not challenge or not response:
-            raise ValidationError('This field is required.')
+            raise ValidationError(field.gettext('This field is required.'))
 
         if not self._validate_recaptcha(challenge, response, remote_ip):
             field.recaptcha_error = 'incorrect-captcha-sol'
-            raise ValidationError(self.message)
+            raise ValidationError(field.gettext(self.message))
 
     def _validate_recaptcha(self, challenge, response, remote_addr):
         """Performs the actual validation."""
-    
+
         if current_app.testing:
             return True
 
@@ -53,7 +54,6 @@ class Recaptcha(object):
             'challenge':  challenge,
             'response':   response
         })
-
 
         response = urllib2.urlopen(RECAPTCHA_VERIFY_SERVER, data)
 

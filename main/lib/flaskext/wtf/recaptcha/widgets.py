@@ -17,7 +17,7 @@ except ImportError:
     _ = lambda(s) : s
 
 RECAPTCHA_API_SERVER = 'http://api.recaptcha.net/'
-RECAPTCHA_SSL_API_SERVER = 'https://api-secure.recaptcha.net/'
+RECAPTCHA_SSL_API_SERVER = 'https://www.google.com/recaptcha/api/'
 RECAPTCHA_HTML = u'''
 <script type="text/javascript">var RecaptchaOptions = %(options)s;</script>
 <script type="text/javascript" src="%(script_url)s"></script>
@@ -30,6 +30,7 @@ RECAPTCHA_HTML = u'''
 
 __all__ = ["RecaptchaWidget"]
 
+
 class RecaptchaWidget(object):
 
     def recaptcha_html(self, server, query, options):
@@ -38,10 +39,10 @@ class RecaptchaWidget(object):
             frame_url='%snoscript?%s' % (server, query),
             options=json.dumps(options)
         )
-        
+
     def __call__(self, field, error=None, **kwargs):
         """Returns the recaptcha input HTML."""
-        
+
         if current_app.config.get('RECAPTCHA_USE_SSL', False):
 
             server = RECAPTCHA_SSL_API_SERVER
@@ -49,7 +50,7 @@ class RecaptchaWidget(object):
         else:
 
             server = RECAPTCHA_API_SERVER
-        
+
         try:
             public_key = current_app.config['RECAPTCHA_PUBLIC_KEY']
         except KeyError:

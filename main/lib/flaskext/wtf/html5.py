@@ -47,6 +47,13 @@ class SearchInput(Input):
 
     input_type = "search"
 
+class TelInput(Input):
+    """
+    Creates `<input type=tel>` widget
+    """
+
+    input_type = "tel"
+
 
 class SearchField(TextField):
     """
@@ -77,6 +84,13 @@ class EmailField(TextField):
     """
  
     widget = EmailInput()
+
+class TelField(TextField):
+    """
+    **TextField** using **TelInput** by default
+    """
+
+    widget = TelInput()
 
 
 class IntegerField(_IntegerField):
