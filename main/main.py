@@ -155,7 +155,7 @@ def error_handler(e):
         'error_code': e.code,
         'error_name': e.name.lower().replace(' ', '_'),
         'error_message': e.name,
-      })
+      }), e.code
 
   return flask.render_template(
       'error.html',
