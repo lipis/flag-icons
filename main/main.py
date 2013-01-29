@@ -37,7 +37,7 @@ class ProfileUpdateForm(wtf.Form):
   name = wtf.TextField(_('Name'), [wtf.validators.required()])
   email = wtf.TextField(_('Email'), [
       wtf.validators.optional(),
-      wtf.validators.email(_("That doesn't look like an email")),
+      wtf.validators.email(_('That does not look like an email')),
     ])
   locale = wtf.SelectField(
       _('Language'),
@@ -169,7 +169,7 @@ def error_handler(e):
         'error_code': e.code,
         'error_name': e.name.lower().replace(' ', '_'),
         'error_message': e.name,
-      })
+      }), e.code
 
   return flask.render_template(
       'error.html',
