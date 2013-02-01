@@ -58,9 +58,10 @@ Tech Stack
   - [NDB][]
   - [Jinja2][]
   - [Flask][]
+  - [jQuery][]
   - [CoffeeScript][]
   - [LessCSS][]
-  - [Twitter Bootstrap][bootstrap]
+  - [Bootstrap][]
 
 Requirements
 ------------
@@ -70,12 +71,6 @@ Requirements
   - [OSX][] or [Linux][] or [Windows][]
   - [Mercurial][]
   - [Sublime][] (If you are a developer, you need that)
-
-Examples
---------
-
-  - [Remby][]
-  - [The smallest Creature][thesmallestcreature] ([open source][lessbands])
 
 Contributions and Ideas
 -----------------------
@@ -100,6 +95,7 @@ Author
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
 [jinja2]: http://jinja.pocoo.org/docs/
 [flask]: http://flask.pocoo.org/
+[jquery]: http://jquery.com/
 [coffeescript]: http://coffeescript.org/
 [lesscss]: http://lesscss.org/
 [bootstrap]: http://twitter.github.com/bootstrap/
@@ -110,10 +106,7 @@ Author
 [linux]: http://www.ubuntu.com
 [windows]: http://windows.microsoft.com/
 [mercurial]: http://mercurial.selenic.com/
-[sublime]: http://www.sublimetext.com/2
-
-[remby]: http://www.remby.com
-[thesmallestcreature]: http://www.thesmallestcreature.com/
+[sublime]: http://www.sublimetext.com/
 
 [tzador]: http://stackoverflow.com/users/165697/tzador
 [chris]: http://stackoverflow.com/users/226394/chris-top
