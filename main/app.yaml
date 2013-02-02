@@ -36,6 +36,7 @@ skip_files:
 - ^(.*/)?.*/RCS/.*
 - ^(.*/)?\..*
 - ^(.*/)?.*\.bak$
+- ^(.*/)?Icon\r
 - ^lib/.*
 - ^static/src/.*
 - ^static/lib/.*

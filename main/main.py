@@ -85,7 +85,7 @@ class FeedbackForm(wtf.Form):
   message = wtf.TextAreaField(_('Message'), [wtf.validators.required()])
   email = wtf.TextField(_('Email (optional)'), [
       wtf.validators.optional(),
-      wtf.validators.email(_("That doesn't look like an email")),
+      wtf.validators.email(_('That does not look like an email')),
     ])
 
 
@@ -124,7 +124,6 @@ def feedback():
 @auth.admin_required
 def user_list():
   user_dbs, more_cursor = util.retrieve_dbs(
-      model.User,
       model.User.query(),
       limit=util.param('limit', int),
       cursor=util.param('cursor'),

@@ -25,7 +25,7 @@ class ConfigUpdateForm(wtf.Form):
     )
   feedback_email = wtf.TextField(_('Feedback Email'), [
         wtf.validators.optional(),
-        wtf.validators.email(_("That doesn't look like an email")),
+        wtf.validators.email(_('That does not look like an email')),
       ])
   twitter_consumer_key = wtf.TextField(
       _('Twitter Key'), [wtf.validators.optional()]
