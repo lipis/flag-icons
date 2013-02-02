@@ -46,16 +46,13 @@ def get_next_url():
 ################################################################################
 # Model manipulations
 ################################################################################
-def retrieve_dbs(model_class, query, order=None, limit=None, cursor=None,
-                 **filters):
-  ''' Retrieves entities from datastore, by applying cursor pagindation
+def retrieve_dbs(query, order=None, limit=None, cursor=None, **filters):
+  ''' Retrieves entities from datastore, by applying cursor pagination
   and equality filters. Returns dbs and more cursor value
   '''
   limit = limit or config.DEFAULT_DB_LIMIT
-  if cursor:
-    cursor = Cursor.from_websafe_string(cursor)
-
-  #apply order if any
+  cursor = Cursor.from_websafe_string(cursor) if cursor else None
+  model_class = ndb.Model._kind_map[query.kind]
   if order:
     for o in order.split(','):
       if o.startswith('-'):
@@ -73,10 +70,7 @@ def retrieve_dbs(model_class, query, order=None, limit=None, cursor=None,
       query = query.filter(model_class._properties[prop] == filters[prop])
 
   model_dbs, more_cursor, more = query.fetch_page(limit, start_cursor=cursor)
-  if not more:
-    more_cursor = None
-  else:
-    more_cursor = more_cursor.to_websafe_string()
+  more_cursor = more_cursor.to_websafe_string() if more else None
   return list(model_dbs), more_cursor
 
 

@@ -110,7 +110,6 @@ def feedback():
 @auth.admin_required
 def user_list():
   user_dbs, more_cursor = util.retrieve_dbs(
-      model.User,
       model.User.query(),
       limit=util.param('limit', int),
       cursor=util.param('cursor'),
