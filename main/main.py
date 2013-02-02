@@ -71,7 +71,7 @@ class FeedbackForm(wtf.Form):
   message = wtf.TextAreaField('Message', [wtf.validators.required()])
   email = wtf.TextField('Email (optional)', [
       wtf.validators.optional(),
-      wtf.validators.email("That doesn't look like an email"),
+      wtf.validators.email('That does not look like an email'),
     ])
 
 

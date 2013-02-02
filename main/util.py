@@ -162,7 +162,7 @@ def uuid():
 # In Time
 ################################################################################
 def format_datetime_utc(datetime):
-  return datetime.strftime("%Y-%m-%d %H:%M:%S UTC")
+  return datetime.strftime('%Y-%m-%d %H:%M:%S UTC')
 
 
 SECOND = 1
