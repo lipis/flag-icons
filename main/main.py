@@ -113,7 +113,7 @@ def user_list():
       model.User.query(),
       limit=util.param('limit', int),
       cursor=util.param('cursor'),
-      order=util.param('order'),
+      order=util.param('order') or '-created',
       name=util.param('name'),
       admin=util.param('admin', bool),
     )
