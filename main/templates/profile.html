@@ -2,10 +2,7 @@
 
 # block content
   <div class="page-header">
-    <h1>
-      {{user_db.name}}
-      <small title="Username">{{user_db.username}}</small>
-    </h1>
+    <h1>{{user_db.name}}</h1>
   </div>
   <div class="row">
     <div class="span2">
@@ -17,6 +14,13 @@
       <form class="form" method="POST" action=".">
         <fieldset>
           {{form.csrf_token}}
+
+          <div class="control-group ">
+            <label class="control-label" for="username">Username</label>
+            <div class="controls">
+              <input class="span4" id="username" name="username" type="text" value="{{user_db.username}}" readonly="readonly">
+            </div>
+          </div>
 
           # set form_field = form.name
           # include 'bit/form_text_field.html'
