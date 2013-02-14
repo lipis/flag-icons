@@ -11,7 +11,8 @@ The latest version is always accessible from: [http://gae-init.appspot.com][gaei
 
 Getting the code
 ----------------
-The easiest way to get the code is to [fork it][fork] and then clone it.
+The easiest way to get the code is to fork it and then clone it.
+
 Or you can clone it directly using the command line:
 
     $ hg clone https://bitbucket.org/lipis/gae-init project-name
@@ -62,6 +63,7 @@ Tech Stack
   - [CoffeeScript][]
   - [LessCSS][]
   - [Bootstrap][]
+  - [Font Awesome][fontawesome]
 
 Requirements
 ------------
@@ -87,8 +89,6 @@ Author
 [![Lipis flair on stackoverflow.com][lipisflair]][lipis]
 
 [gaeinit]: http://gae-init.appspot.com
-[lessbands]: https://bitbucket.org/lipis/less-bands
-[fork]: https://bitbucket.org/lipis/gae-init/fork
 
 [gae]: https://developers.google.com/appengine/
 [gaepython]: https://developers.google.com/appengine/docs/python/python27/using27
@@ -99,6 +99,7 @@ Author
 [coffeescript]: http://coffeescript.org/
 [lesscss]: http://lesscss.org/
 [bootstrap]: http://twitter.github.com/bootstrap/
+[fontawesome]: http://fortawesome.github.com/Font-Awesome/
 
 [gaesdk]: https://developers.google.com/appengine/downloads
 [nodejs]: http://nodejs.org/
