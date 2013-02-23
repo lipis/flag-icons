@@ -3,7 +3,7 @@ html {
 }
 
 body {
-  padding-top: 60px;
+  padding-top: @navbarHeight * 1.4;
   overflow-y: scroll;
   background-color: @bodyBackground;
 }
@@ -27,7 +27,7 @@ body {
 
 .footer {
   background-color: @wellBackground;
-  border-top: 1px solid @grayLighter;
+  border-top: 1px solid @hrBorder;
   padding: 32px 0px;
   margin-top: 32px;
 }
@@ -37,6 +37,7 @@ body {
   .size(270px, 485px);
   margin: auto;
   display: block;
+  .opacity(80);
 }
 
 /* Responsive
