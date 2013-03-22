@@ -192,8 +192,6 @@ def format_datetime_ago(timestamp):
   minutes = 1.0 * seconds / MINUTE
   hours = 1.0 * seconds / HOUR
   days = 1.0 * seconds / DAY
-  months = 1.0 * seconds / MONTH
-  years = days / 365
 
   if seconds < 0:
     return 'not yet'
@@ -211,13 +209,5 @@ def format_datetime_ago(timestamp):
     return 'yesterday'
   if seconds < 30 * DAY:
     return '%0.0f days ago' % days
-  if seconds < 12 * MONTH:
-    if months < 1.5:
-      return 'one month ago'
-    else:
-      return '%0.0f months ago' % months
   else:
-    if years <= 1:
-      return 'one year ago'
-    else:
-      return '%d years ago' % years
+    return timestamp.strftime('%Y-%m-%d')
