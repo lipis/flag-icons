@@ -11,11 +11,7 @@
       </a>
       <div class="nav-collapse collapse">
         <ul class="nav">
-          # if config.CONFIG_DB.feedback_email
-            <li class="{% if html_class == 'feedback' %} active {% endif %}">
-              <a href="{{url_for('feedback')}}"><i class="icon-comment"></i> Feedback</a>
-            </li>
-          # endif
+          # include 'bit/contact_menu.html'
         </ul>
         <ul class="nav pull-right">
           # include 'bit/user_menu.html'
