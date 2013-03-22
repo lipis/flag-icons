@@ -9,7 +9,14 @@ except:
   pass
 
 import os
+from datetime import datetime
+
 CURRENT_VERSION_ID = os.environ.get('CURRENT_VERSION_ID', None)
+CURRENT_VERSION_NAME = CURRENT_VERSION_ID.split('.')[0]
+CURRENT_VERSION_TIMESTAMP = long(CURRENT_VERSION_ID.split('.')[1]) >> 28
+CURRENT_VERSION_DATE = datetime.fromtimestamp(CURRENT_VERSION_TIMESTAMP)
+
+
 if os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Engine'):
   DEVELOPMENT = False
 else:
