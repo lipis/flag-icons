@@ -1,11 +1,11 @@
 #!/usr/bin/env python
-import argparse
-import os
-import config
-import time
 from datetime import datetime
+import argparse
+import config
+import os
 import shutil
 import sys
+import time
 
 ################################################################################
 # Options
@@ -18,8 +18,13 @@ parser.add_argument('-c', '--clean', dest='clean', action='store_true',
     help='recompiles files when running the development web server',
   )
 parser.add_argument('-m', '--minify', dest='minify', action='store_true',
-    help='''compiles files into minified version before deploying, identical to
-    calling %s with no arguments''' % __file__,
+    help='compiles files into minified version before deploying'
+  )
+parser.add_argument('-r', '--run', dest='run', action='store_true',
+    help='runs the dev_appserver.py with datastore and blobstore paths',
+  )
+parser.add_argument('-p', '--port', dest='port', action='store', default='8080',
+    help='the port to run for the dev_appserver.py',
   )
 args = parser.parse_args()
 
@@ -37,8 +42,9 @@ DIR_DST = 'dst'
 DIR_LIB = 'lib'
 DIR_NODE_MODULES = 'node_modules'
 DIR_BIN = '.bin'
-FILE_ZIP = '%s.zip' % DIR_LIB
+DIR_TEMP = 'temp'
 
+FILE_ZIP = '%s.zip' % DIR_LIB
 FILE_COFFEE = 'coffee'
 FILE_LESS = 'lessc'
 FILE_UGLIFYJS = 'uglifyjs'
@@ -66,6 +72,8 @@ dir_bin = os.path.join(root, DIR_NODE_MODULES, DIR_BIN)
 file_coffee = os.path.join(dir_bin, FILE_COFFEE)
 file_less = os.path.join(dir_bin, FILE_LESS)
 file_uglifyjs = os.path.join(dir_bin, FILE_UGLIFYJS)
+
+dir_temp = os.path.join(root, '..', DIR_TEMP)
 
 
 ################################################################################
@@ -199,15 +207,20 @@ os.chdir(root)
 
 update_path_separators()
 
+if len(sys.argv) == 1:
+    parser.print_help()
+    sys.exit(1)
+
 if args.clean:
   print_out('CLEAN')
+  clean_files()
   make_lib_zip(force=True)
   remove_dir(dir_dst)
   make_dirs(dir_dst)
   compile_all_dst()
   print_out('DONE')
 
-if args.minify or len(sys.argv) == 1:
+if args.minify:
   print_out('MINIFY')
   clean_files()
   make_lib_zip(force=True)
@@ -247,3 +260,18 @@ if args.watch:
   while True:
     time.sleep(0.5)
     compile_all_dst()
+
+if args.run:
+  dir_datastore = os.path.join(dir_temp, 'datastore')
+  dir_blobstore = os.path.join(dir_temp, 'blobstore')
+  make_dirs(dir_blobstore)
+  os.system(
+       '''dev_appserver.py %s \\
+          --port %s \\
+          --datastore_path=%s \\
+          --blobstore_path=%s \\
+          --skip_sdk_update_check \\
+          ''' % (
+          root, args.port, dir_datastore, dir_blobstore,
+        )
+    )
