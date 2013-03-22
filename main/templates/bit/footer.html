@@ -2,7 +2,9 @@
   <div class="container">
     <p class="muted pull-right">
       version: {{config.CURRENT_VERSION_ID}}
-      | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">View in JSON</a>
+      # if current_user.admin
+        | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">View in JSON</a>
+      # endif
     </p>
     <p class="muted">&copy; 2013 - {{config.CONFIG_DB.brand_name}}</p>
   </div>
