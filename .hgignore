@@ -8,6 +8,6 @@ main/node_modules
 main/static/dst
 main/static/min
 main/lib.zip
-
+temp/
 *.mo
 translations/messages.pot
