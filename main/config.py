@@ -1,21 +1,18 @@
+import os
 try:
   # This part is surrounded in try/except because the this config.py file is
   # also used in the build.py script which is used to compile/minify the client
   # side files (*.less, *.coffee, *.js) and is not aware of the GAE
   import model
+  from datetime import datetime
   CONFIG_DB = model.Config.get_master_db()
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
+  CURRENT_VERSION_ID = os.environ.get('CURRENT_VERSION_ID', None)
+  CURRENT_VERSION_NAME = CURRENT_VERSION_ID.split('.')[0]
+  CURRENT_VERSION_TIMESTAMP = long(CURRENT_VERSION_ID.split('.')[1]) >> 28
+  CURRENT_VERSION_DATE = datetime.fromtimestamp(CURRENT_VERSION_TIMESTAMP)
 except:
   pass
-
-import os
-from datetime import datetime
-
-CURRENT_VERSION_ID = os.environ.get('CURRENT_VERSION_ID', None)
-CURRENT_VERSION_NAME = CURRENT_VERSION_ID.split('.')[0]
-CURRENT_VERSION_TIMESTAMP = long(CURRENT_VERSION_ID.split('.')[1]) >> 28
-CURRENT_VERSION_DATE = datetime.fromtimestamp(CURRENT_VERSION_TIMESTAMP)
-
 
 if os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Engine'):
   DEVELOPMENT = False
@@ -46,6 +43,7 @@ SCRIPTS = {
       'lib/bootstrap/js/bootstrap-button.js',
       'lib/bootstrap/js/bootstrap-collapse.js',
       'lib/bootstrap/js/bootstrap-dropdown.js',
+      'lib/bootstrap/js/bootstrap-tooltip.js',
     ],
     'scripts': [
       'src/coffee/common/util.coffee',
