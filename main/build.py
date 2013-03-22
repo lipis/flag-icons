@@ -220,7 +220,7 @@ if args.clean:
   compile_all_dst()
   print_out('DONE')
 
-if args.minify or len(sys.argv) == 1:
+if args.minify:
   print_out('MINIFY')
   clean_files()
   make_lib_zip(force=True)
