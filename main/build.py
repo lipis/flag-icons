@@ -23,6 +23,9 @@ parser.add_argument('-m', '--minify', dest='minify', action='store_true',
 parser.add_argument('-r', '--run', dest='run', action='store_true',
     help='runs the dev_appserver.py with datastore and blobstore paths',
   )
+parser.add_argument('-o', '--host', dest='host', action='store', default='127.0.0.1',
+    help='the host to run for the dev_appserver.py',
+  )
 parser.add_argument('-p', '--port', dest='port', action='store', default='8080',
     help='the port to run for the dev_appserver.py',
   )
@@ -267,11 +270,12 @@ if args.run:
   make_dirs(dir_blobstore)
   os.system(
        '''dev_appserver.py %s \\
+          --host %s \\
           --port %s \\
           --datastore_path=%s \\
           --blobstore_path=%s \\
           --skip_sdk_update_check \\
           ''' % (
-          root, args.port, dir_datastore, dir_blobstore,
+          root, args.host, args.port, dir_datastore, dir_blobstore,
         )
     )
