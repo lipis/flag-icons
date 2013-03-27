@@ -115,10 +115,9 @@ def model_db_to_object(model_db):
   model_db_object = {}
   for prop in model_db._PROPERTIES:
     if prop == 'id':
-      value = getattr(model_db, 'key', None).id()
+      value = json_value(getattr(model_db, 'key', None).id())
     else:
-      value = getattr(model_db, prop, None)
-      value = json_value(value)
+      value = json_value(getattr(model_db, prop, None))
     if value is not None:
       model_db_object[prop] = value
   return model_db_object
@@ -135,6 +134,10 @@ def json_value(value):
     return '%s,%s' % (value.lat, value.lon)
   elif type(value) == list:
     return [json_value(v) for v in value]
+  elif type(value) == long:
+    # Big numbers are sent as strings for accuracy in JavaScript
+    if value > 9007199254740992 or value < -9007199254740992:
+      return str(value)
   else:
     return value
 
