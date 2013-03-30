@@ -1,6 +1,7 @@
 {
-  "name": "main",
-  "version": "0.2.2",
+  "name": "gae-init",
+  "version": "0.3.0",
+  "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "dependencies": {
     "coffee-script": "~1",
     "less": "~1",

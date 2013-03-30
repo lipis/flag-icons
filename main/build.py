@@ -200,6 +200,18 @@ def update_path_separators():
       SCRIPTS[module][idx] = fixit(SCRIPTS[module][idx])
 
 
+def install_dependencies():
+  missing = ''
+  if not os.path.exists(file_coffee):
+    missing += 'coffee-script@1 '
+  if not os.path.exists(file_less):
+    missing += 'less@1 '
+  if not os.path.exists(file_uglifyjs):
+    missing += 'uglify-js@1 '
+
+  if missing:
+    os.system('npm install %s' % missing)
+
 ################################################################################
 # Main
 ################################################################################
@@ -209,6 +221,7 @@ STYLES = config.STYLES
 os.chdir(root)
 
 update_path_separators()
+install_dependencies()
 
 if len(sys.argv) == 1:
     parser.print_help()
