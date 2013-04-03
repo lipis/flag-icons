@@ -269,6 +269,37 @@ def pybabel_compile():
 
 
 ################################################################################
+# Babel Stuff
+################################################################################
+def pybabel_extract():
+  os.system('"pybabel" extract -k _ -k __ -F %s --sort-by-file --omit-header -o %s .' % (
+      file_babel_cfg, file_messages_pot,
+    ))
+
+
+def pybabel_update():
+  os.system('"pybabel" update -i %s -d %s' % (
+      file_messages_pot, DIR_TRANSLATIONS,
+    ))
+
+
+def pybabel_init(locale):
+  os.system('"pybabel" init -i %s -d %s -l %s' % (
+      file_messages_pot, DIR_TRANSLATIONS, locale,
+    ))
+
+
+def pybabel_init_missing():
+  for locale in config.LOCALE:
+    if not os.path.exists(os.path.join(DIR_TRANSLATIONS, locale)):
+      pybabel_init(locale)
+
+
+def pybabel_compile():
+  os.system('"pybabel" compile -f -d %s' % (DIR_TRANSLATIONS))
+
+
+################################################################################
 # Main
 ################################################################################
 SCRIPTS = config.SCRIPTS
