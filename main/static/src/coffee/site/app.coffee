@@ -1,4 +1,3 @@
-#JS enabled pages
 $ ->
   LOG('app init')
 

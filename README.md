@@ -10,6 +10,11 @@ Demo page
 The latest version is always accessible from:
 [http://babel.gae-init.appspot.com][gae-init-babel]
 
+Documentation
+-------------
+
+Visit the [docs][] page for more information, where you can
+also find a detailed [tutorial][] on how to build a phonebook application.
 
 Getting the code
 ----------------
@@ -49,6 +54,8 @@ Author
 
   [gae-init]: https://bitbucket.org/lipis/gae-init
   [gae-init-babel]: http://babel.gae-init.appspot.com
+  [docs]: http://docs.gae-init.appspot.com
+  [tutorial]: http://docs.gae-init.appspot.com/tutorial/
   [fork]: https://bitbucket.org/lipis/gae-init-babel/fork
   [babel]: http://babel.edgewall.org/wiki/Download
   [pybabel]: http://babel.edgewall.org/wiki/Documentation/cmdline.html

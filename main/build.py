@@ -23,6 +23,9 @@ parser.add_argument('-m', '--minify', dest='minify', action='store_true',
 parser.add_argument('-r', '--run', dest='run', action='store_true',
     help='runs the dev_appserver.py with datastore and blobstore paths',
   )
+parser.add_argument('-o', '--host', dest='host', action='store', default='127.0.0.1',
+    help='the host to run for the dev_appserver.py',
+  )
 parser.add_argument('-p', '--port', dest='port', action='store', default='8080',
     help='the port to run for the dev_appserver.py',
   )
@@ -222,6 +225,18 @@ def update_path_separators():
       SCRIPTS[module][idx] = fixit(SCRIPTS[module][idx])
 
 
+def install_dependencies():
+  missing = ''
+  if not os.path.exists(file_coffee):
+    missing += 'coffee-script@1 '
+  if not os.path.exists(file_less):
+    missing += 'less@1 '
+  if not os.path.exists(file_uglifyjs):
+    missing += 'uglify-js@1 '
+
+  if missing:
+    os.system('npm install %s' % missing)
+
 ################################################################################
 # Babel Stuff
 ################################################################################
@@ -262,6 +277,7 @@ STYLES = config.STYLES
 os.chdir(root)
 
 update_path_separators()
+install_dependencies()
 
 if len(sys.argv) == 1:
     parser.print_help()
@@ -276,7 +292,7 @@ if args.clean:
   compile_all_dst()
   print_out('DONE')
 
-if args.minify or len(sys.argv) == 1:
+if args.minify:
   print_out('MINIFY')
   clean_files()
   make_lib_zip(force=True)
@@ -338,11 +354,12 @@ if args.run:
   make_dirs(dir_blobstore)
   os.system(
        '''dev_appserver.py %s \\
+          --host %s \\
           --port %s \\
           --datastore_path=%s \\
           --blobstore_path=%s \\
           --skip_sdk_update_check \\
           ''' % (
-          root, args.port, dir_datastore, dir_blobstore,
+          root, args.host, args.port, dir_datastore, dir_blobstore,
         )
     )
