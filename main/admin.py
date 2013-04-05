@@ -12,32 +12,32 @@ from main import app
 
 class ConfigUpdateForm(wtf.Form):
   brand_name = wtf.TextField(
-      _('Brand Name'), [wtf.validators.required()]
+      'Brand Name', [wtf.validators.required()]
     )
   analytics_id = wtf.TextField(
-      _('Analytics ID'), [wtf.validators.optional()]
+      'Analytics ID', [wtf.validators.optional()]
     )
   facebook_app_id = wtf.TextField(
-      _('Facebook ID'), [wtf.validators.optional()]
+      'Facebook App ID', [wtf.validators.optional()]
     )
   facebook_app_secret = wtf.TextField(
-      _('Facebook Secret'), [wtf.validators.optional()]
+      'Facebook App Secret', [wtf.validators.optional()]
     )
-  feedback_email = wtf.TextField(_('Feedback Email'), [
+  feedback_email = wtf.TextField('Feedback Email', [
         wtf.validators.optional(),
-        wtf.validators.email(_('That does not look like an email')),
+        wtf.validators.email('That does not look like an email'),
       ])
   twitter_consumer_key = wtf.TextField(
-      _('Twitter Key'), [wtf.validators.optional()]
+      'Twitter Consumer Key', [wtf.validators.optional()]
     )
   twitter_consumer_secret = wtf.TextField(
-      _('Twitter Secret'), [wtf.validators.optional()]
+      'Twitter Consumer Secret', [wtf.validators.optional()]
     )
   flask_secret_key = wtf.TextField(
-      _('Flask Secret Key'), [wtf.validators.required()]
+      'Flask Secret Key', [wtf.validators.required()]
     )
   locale = wtf.SelectField(
-      _('Default Locale'),
+      'Default Locale',
       choices=config.LOCALE_SORTED,
     )
 
