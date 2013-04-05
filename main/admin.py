@@ -17,20 +17,20 @@ class ConfigUpdateForm(wtf.Form):
       'Analytics ID', [wtf.validators.optional()]
     )
   facebook_app_id = wtf.TextField(
-      'Facebook ID', [wtf.validators.optional()]
+      'Facebook App ID', [wtf.validators.optional()]
     )
   facebook_app_secret = wtf.TextField(
-      'Facebook Secret', [wtf.validators.optional()]
+      'Facebook App Secret', [wtf.validators.optional()]
     )
   feedback_email = wtf.TextField('Feedback Email', [
         wtf.validators.optional(),
         wtf.validators.email('That does not look like an email'),
       ])
   twitter_consumer_key = wtf.TextField(
-      'Twitter Key', [wtf.validators.optional()]
+      'Twitter Consumer Key', [wtf.validators.optional()]
     )
   twitter_consumer_secret = wtf.TextField(
-      'Twitter Secret', [wtf.validators.optional()]
+      'Twitter Consumer Secret', [wtf.validators.optional()]
     )
   flask_secret_key = wtf.TextField(
       'Flask Secret Key', [wtf.validators.required()]
