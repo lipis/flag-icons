@@ -396,7 +396,7 @@ class SelectFieldBase(Field):
         checked = False
 
         def _value(self):
-            return self.data
+            return text_type(self.data)
 
 
 class SelectField(SelectFieldBase):
