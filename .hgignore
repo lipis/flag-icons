@@ -1,11 +1,12 @@
 syntax: glob
 
-.DS_Store
 *.pyc
 *.pyo
+.DS_Store
+.git*
 main/index.yaml
+main/lib.zip
 main/node_modules
 main/static/dst
 main/static/min
-main/lib.zip
 temp/

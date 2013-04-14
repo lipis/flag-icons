@@ -1,6 +1,7 @@
 import sys
 sys.path.insert(0, 'lib.zip')
 
+from google.appengine.api import mail
 import flask
 from flaskext import wtf
 import config
@@ -8,8 +9,6 @@ import config
 app = flask.Flask(__name__)
 app.config.from_object(config)
 app.jinja_env.line_statement_prefix = '#'
-
-from google.appengine.api import mail
 
 import auth
 import util
