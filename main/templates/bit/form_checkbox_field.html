@@ -1,0 +1,13 @@
+<div class="control-group {% if form_field.errors %} error {% endif %}">
+  <div class="controls">
+    <label class="checkbox">
+      {{form_field()}} {{form_field.label.text}}
+    </label>
+    # for error in form_field.errors
+      <span class="help-block">{{error}}</span>
+    # endfor
+    # if form_field.description
+      <span class="help-block">{{form_field.description}}</span>
+    # endif
+  </div>
+</div>

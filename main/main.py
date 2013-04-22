@@ -2,6 +2,7 @@ import sys
 sys.path.insert(0, 'lib.zip')
 sys.path.insert(0, 'libx')
 
+from google.appengine.api import mail
 import flask
 from flaskext import wtf
 from flaskext.babel import Babel
@@ -13,8 +14,6 @@ app.config.from_object(config)
 app.jinja_env.line_statement_prefix = '#'
 app.config['BABEL_DEFAULT_LOCALE'] = config.LOCALE_DEFAULT
 babel = Babel(app)
-
-from google.appengine.api import mail
 
 import auth
 import util
