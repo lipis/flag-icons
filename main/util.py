@@ -138,6 +138,8 @@ def json_value(value):
     # Big numbers are sent as strings for accuracy in JavaScript
     if value > 9007199254740992 or value < -9007199254740992:
       return str(value)
+  if isinstance(value, ndb.Model):
+    return model_db_to_object(value)
   return value
 
 
