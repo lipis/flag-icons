@@ -126,20 +126,19 @@ def model_db_to_object(model_db):
 def json_value(value):
   if type(value) == datetime:
     return format_datetime_utc(value)
-  elif type(value) == ndb.Key:
+  if type(value) == ndb.Key:
     return value.urlsafe()
-  elif type(value) == blobstore.BlobKey:
+  if type(value) == blobstore.BlobKey:
     return urllib.quote(str(value))
-  elif type(value) == ndb.GeoPt:
+  if type(value) == ndb.GeoPt:
     return '%s,%s' % (value.lat, value.lon)
-  elif type(value) == list:
+  if type(value) == list:
     return [json_value(v) for v in value]
-  elif type(value) == long:
+  if type(value) == long:
     # Big numbers are sent as strings for accuracy in JavaScript
     if value > 9007199254740992 or value < -9007199254740992:
       return str(value)
-  else:
-    return value
+  return value
 
 
 ################################################################################
