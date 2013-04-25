@@ -29,6 +29,9 @@ parser.add_argument('-o', '--host', dest='host', action='store', default='127.0.
 parser.add_argument('-p', '--port', dest='port', action='store', default='8080',
     help='the port to run for the dev_appserver.py',
   )
+parser.add_argument('-f', '--flush', dest='flush', action='store_true',
+    help='clears the datastore',
+  )
 args = parser.parse_args()
 
 ################################################################################
@@ -280,6 +283,7 @@ if args.watch:
 if args.run:
   dir_datastore = os.path.join(dir_temp, 'datastore')
   dir_blobstore = os.path.join(dir_temp, 'blobstore')
+  clear = 'yes' if args.flush else 'no'
   make_dirs(dir_blobstore)
   os.system(
        '''dev_appserver.py %s \\
@@ -287,8 +291,9 @@ if args.run:
           --port %s \\
           --datastore_path=%s \\
           --blobstore_path=%s \\
+          --clear_datastore=%s \\
           --skip_sdk_update_check \\
           ''' % (
-          root, args.host, args.port, dir_datastore, dir_blobstore,
+          root, args.host, args.port, dir_datastore, dir_blobstore, clear
         )
     )
