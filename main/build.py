@@ -55,7 +55,6 @@ FILE_COFFEE = 'coffee'
 FILE_LESS = 'lessc'
 FILE_UGLIFYJS = 'uglifyjs'
 
-
 root = os.path.dirname(os.path.realpath(__file__))
 dir_static = os.path.join(root, DIR_STATIC)
 
@@ -286,16 +285,14 @@ if args.run:
   clear = 'yes' if args.flush else 'no'
   port = int(args.port)
   make_dirs(dir_blobstore)
-  os.system(
-       '''dev_appserver.py %s \\
-          --host %s \\
-          --port %s \\
-          --admin_port %s \\
-          --datastore_path=%s \\
-          --blobstore_path=%s \\
-          --clear_datastore=%s \\
-          --skip_sdk_update_check \\
-          ''' % (
-          root, args.host, port, port + 1, dir_datastore, dir_blobstore, clear
-        )
-    )
+  run_command = '''
+      dev_appserver.py %s
+      --host %s
+      --port %s
+      --admin_port %s
+      --datastore_path=%s
+      --blobstore_path=%s
+      --clear_datastore=%s
+      --skip_sdk_update_check
+    ''' % (root, args.host, port, port + 1, dir_datastore, dir_blobstore, clear)
+  os.system(run_command.replace('\n', ' '))
