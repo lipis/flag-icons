@@ -284,16 +284,18 @@ if args.run:
   dir_datastore = os.path.join(dir_temp, 'datastore')
   dir_blobstore = os.path.join(dir_temp, 'blobstore')
   clear = 'yes' if args.flush else 'no'
+  port = int(args.port)
   make_dirs(dir_blobstore)
   os.system(
        '''dev_appserver.py %s \\
           --host %s \\
           --port %s \\
+          --admin_port %s \\
           --datastore_path=%s \\
           --blobstore_path=%s \\
           --clear_datastore=%s \\
           --skip_sdk_update_check \\
           ''' % (
-          root, args.host, args.port, dir_datastore, dir_blobstore, clear
+          root, args.host, port, port + 1, dir_datastore, dir_blobstore, clear
         )
     )
