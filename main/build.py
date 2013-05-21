@@ -29,6 +29,9 @@ parser.add_argument('-o', '--host', dest='host', action='store', default='127.0.
 parser.add_argument('-p', '--port', dest='port', action='store', default='8080',
     help='the port to run for the dev_appserver.py',
   )
+parser.add_argument('-f', '--flush', dest='flush', action='store_true',
+    help='clears the datastore',
+  )
 parser.add_argument('-e', '--pybabel-extract', dest='pybabel_extract', action='store_true',
     help='extract messages from source files and generate messages.pot (pybabel extract..)',
   )
@@ -237,36 +240,6 @@ def install_dependencies():
   if missing:
     os.system('npm install %s' % missing)
 
-################################################################################
-# Babel Stuff
-################################################################################
-def pybabel_extract():
-  os.system('"pybabel" extract -k _ -k __ -F %s --sort-by-file --omit-header -o %s .' % (
-      file_babel_cfg, file_messages_pot,
-    ))
-
-
-def pybabel_update():
-  os.system('"pybabel" update -i %s -d %s' % (
-      file_messages_pot, DIR_TRANSLATIONS,
-    ))
-
-
-def pybabel_init(locale):
-  os.system('"pybabel" init -i %s -d %s -l %s' % (
-      file_messages_pot, DIR_TRANSLATIONS, locale,
-    ))
-
-
-def pybabel_init_missing():
-  for locale in config.LOCALE:
-    if not os.path.exists(os.path.join(DIR_TRANSLATIONS, locale)):
-      pybabel_init(locale)
-
-
-def pybabel_compile():
-  os.system('"pybabel" compile -f -d %s' % (DIR_TRANSLATIONS))
-
 
 ################################################################################
 # Babel Stuff
@@ -382,15 +355,17 @@ if args.watch:
 if args.run:
   dir_datastore = os.path.join(dir_temp, 'datastore')
   dir_blobstore = os.path.join(dir_temp, 'blobstore')
+  clear = 'yes' if args.flush else 'no'
+  port = int(args.port)
   make_dirs(dir_blobstore)
-  os.system(
-       '''dev_appserver.py %s \\
-          --host %s \\
-          --port %s \\
-          --datastore_path=%s \\
-          --blobstore_path=%s \\
-          --skip_sdk_update_check \\
-          ''' % (
-          root, args.host, args.port, dir_datastore, dir_blobstore,
-        )
-    )
+  run_command = '''
+      dev_appserver.py %s
+      --host %s
+      --port %s
+      --admin_port %s
+      --datastore_path=%s
+      --blobstore_path=%s
+      --clear_datastore=%s
+      --skip_sdk_update_check
+    ''' % (root, args.host, port, port + 1, dir_datastore, dir_blobstore, clear)
+  os.system(run_command.replace('\n', ' '))
