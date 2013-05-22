@@ -272,14 +272,19 @@ class Email(Regexp):
 
 class IPAddress(object):
     """
-    Validates an IPv4 (IPv6 too with ipv6=True) address.
+    Validates an IP address.
 
+    :param ipv4:
+        If True, accept IPv4 addresses as valid (default True)
     :param ipv6:
-        If True, accept IPv6 as valid also.
+        If True, accept IPv6 addresses as valid (default False)
     :param message:
         Error message to raise in case of a validation error.
     """
-    def __init__(self, ipv6=False, message=None):
+    def __init__(self, ipv4=True, ipv6=False, message=None):
+        if not ipv4 and not ipv6:
+            raise ValueError('IP Address Validator must have at least one of ipv4 or ipv6 enabled.')
+        self.ipv4 = ipv4
         self.ipv6 = ipv6
         self.message = message
 
@@ -287,10 +292,7 @@ class IPAddress(object):
         value = field.data
         valid = False
         if value:
-            valid = self.check_ipv4(value)
-
-            if not valid and self.ipv6:
-                valid = self.check_ipv6(value)
+            valid = (self.ipv4 and self.check_ipv4(value)) or (self.ipv6 and self.check_ipv6(value))
 
         if not valid:
             if self.message is None:
