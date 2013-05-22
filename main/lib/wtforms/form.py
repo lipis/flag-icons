@@ -208,7 +208,9 @@ class Form(with_metaclass(FormMeta, BaseForm)):
         """
         :param formdata:
             Used to pass data coming from the enduser, usually `request.POST` or
-            equivalent.
+            equivalent. formdata should be some sort of request-data wrapper which
+            can get multiple parameters from the form input, and values are unicode
+            strings, e.g. a Werkzeug/Django/WebOb MultiDict
         :param obj:
             If `formdata` is empty or not provided, this object is checked for
             attributes matching form field names, which will be used for field

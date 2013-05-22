@@ -354,7 +354,11 @@ class Label(object):
         return self()
 
     def __call__(self, text=None, **kwargs):
-        kwargs['for'] = self.field_id
+        if 'for_' in kwargs:
+            kwargs['for'] = kwargs.pop('for_')
+        else:
+            kwargs.setdefault('for', self.field_id)
+
         attributes = widgets.html_params(**kwargs)
         return widgets.HTMLString('<label %s>%s</label>' % (attributes, text or self.text))
 

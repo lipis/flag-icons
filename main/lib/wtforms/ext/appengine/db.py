@@ -373,8 +373,9 @@ class ModelConverter(object):
             kwargs['validators'].append(validators.required())
 
         if prop.choices:
-            # Use choices in a select field.
-            kwargs['choices'] = [(v, v) for v in prop.choices]
+            # Use choices in a select field if it was not provided in field_args
+            if 'choices' not in kwargs:
+                kwargs['choices'] = [(v, v) for v in prop.choices]
             return f.SelectField(**kwargs)
         else:
             converter = self.converters.get(prop_type_name, None)
