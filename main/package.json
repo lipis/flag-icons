@@ -1,7 +1,13 @@
 {
   "name": "gae-init",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://opensource.org/licenses/MIT"
+    }
+  ],
   "dependencies": {
     "coffee-script": "~1",
     "less": "~1.3",
