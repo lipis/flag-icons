@@ -1,7 +1,7 @@
 # with messages = get_flashed_messages(with_categories=True)
   # for message in messages
     <div class="alert alert-{{message[0]}}">
-      <a class="close" data-dismiss="alert" href="#">&times;</a>
+      <button type="button" class="close" data-dismiss="alert">&times;</button>
       {{message[1]}}
     </div>
   # endfor
