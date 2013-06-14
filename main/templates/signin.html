@@ -12,20 +12,20 @@
   <div class="row">
     <div class="span4 offset4">
       <a class="btn btn-block btn-large btn-google" href="{{google_signin_url}}">
-        <img src="/p/img/signin/google.svg" alt="Google Logo">
+        <i class="icon icon-google-plus"></i>
         Sign in with Google
       </a>
 
       # if config.CONFIG_DB.facebook_app_id and config.CONFIG_DB.facebook_app_secret
         <a class="btn btn-block btn-large btn-facebook" href="{{facebook_signin_url}}">
-          <img src="/p/img/signin/facebook.svg" alt="Facebook Logo">
+          <i class="icon icon-facebook"></i>
           Sign in with Facebook
         </a>
       # endif
 
       # if config.CONFIG_DB.twitter_consumer_key and config.CONFIG_DB.twitter_consumer_secret
         <a class="btn btn-block btn-large btn-twitter" href="{{twitter_signin_url}}">
-          <img src="/p/img/signin/twitter.svg" alt="Twitter Logo">
+          <i class="icon icon-twitter"></i>
           Sign in with Twitter
         </a>
       # endif

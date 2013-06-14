@@ -1,33 +1,63 @@
 .btn-social(@color) {
+  // In case of using a different theme than the default,
+  // you should update the padding values
+  @paddingBaseVertical: 4px;
+  @paddingBaseHorizontal: 12px;
+  @paddingLargeVertical: 11px;
+  @paddingLargeHorizontal: 19px;
+  @paddingSmallVertical: 2px;
+  @paddingSmallHorizontal: 10px;
+  @paddingMiniVertical: 1px;
+  @paddingMiniHorizontal: 6px;
+  @height: @baseLineHeight + @paddingBaseVertical * 2;
+  position: relative;
+  padding-left: @height + @paddingBaseHorizontal;
+  padding-right: @paddingBaseHorizontal;
+  background-color: @color;
   text-align: left;
-  padding-left: 0;
-  padding-top: 0;
-  padding-bottom: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   .buttonBackground(@color, darken(@color, 5%));
-  img {
-    margin-right: 2px;
-    padding: 2px;
-    border-right: 1px solid rgba(0, 0, 0, 0.2);
-    .square(24px);
+  i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: @height;
+    line-height: @height;
+    font-size: 1.5em;
+    text-align: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
   }
   &.btn-large {
-    img {
-      .square(38px);
+    @height: @baseLineHeight + @paddingLargeVertical * 2;
+    padding-left: @height + @paddingLargeHorizontal;
+    padding-right: @paddingLargeHorizontal;
+    i {
+      width: @height;
+      line-height: @height;
+      font-size: 1.8em;
     }
   }
   &.btn-small {
-    img {
-      .square(22px);
-      padding: 1px;
+    @height: @baseLineHeight + @paddingSmallVertical * 2;
+    padding-left: @height + @paddingSmallHorizontal;
+    padding-right: @paddingSmallHorizontal;
+    i {
+      width: @height;
+      line-height: @height;
+      font-size: 1.4em;
     }
   }
   &.btn-mini {
-    img {
-      .square(16px);
-      padding: 1px;
+    @height: @baseLineHeight + @paddingMiniVertical * 2;
+    padding-left: @height + @paddingMiniHorizontal;
+    padding-right: @paddingMiniHorizontal;
+    i {
+      width: @height;
+      line-height: @height;
+      font-size: 1.2em;
     }
   }
 }
