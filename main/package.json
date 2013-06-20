@@ -1,6 +1,6 @@
 {
   "name": "gae-init",
-  "version": "0.3.2",
+  "version": "0.3.3",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "licenses": [
     {
@@ -10,7 +10,7 @@
   ],
   "dependencies": {
     "coffee-script": "~1",
-    "less": "~1.3",
+    "less": "~1",
     "uglify-js": "~1"
   }
 }
