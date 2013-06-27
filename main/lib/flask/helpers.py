@@ -9,8 +9,6 @@
     :license: BSD, see LICENSE for more details.
 """
 
-from __future__ import with_statement
-
 import os
 import sys
 import pkgutil
@@ -20,25 +18,12 @@ from time import time
 from zlib import adler32
 from threading import RLock
 from werkzeug.routing import BuildError
-from werkzeug.urls import url_quote
 from functools import update_wrapper
 
-# try to load the best simplejson implementation available.  If JSON
-# is not installed, we add a failing class.
-json_available = True
-json = None
 try:
-    import simplejson as json
+    from werkzeug.urls import url_quote
 except ImportError:
-    try:
-        import json
-    except ImportError:
-        try:
-            # Google Appengine offers simplejson via django
-            from django.utils import simplejson as json
-        except ImportError:
-            json_available = False
-
+    from urlparse import quote as url_quote
 
 from werkzeug.datastructures import Headers
 from werkzeug.exceptions import NotFound
@@ -51,26 +36,10 @@ except ImportError:
 
 from jinja2 import FileSystemLoader
 
+from .signals import message_flashed
 from .globals import session, _request_ctx_stack, _app_ctx_stack, \
      current_app, request
-
-
-def _assert_have_json():
-    """Helper function that fails if JSON is unavailable."""
-    if not json_available:
-        raise RuntimeError('simplejson not installed')
-
-
-# figure out if simplejson escapes slashes.  This behavior was changed
-# from one version to another without reason.
-if not json_available or '\\/' not in json.dumps('/'):
-
-    def _tojson_filter(*args, **kwargs):
-        if __debug__:
-            _assert_have_json()
-        return json.dumps(*args, **kwargs).replace('/', '\\/')
-else:
-    _tojson_filter = json.dumps
+from ._compat import string_types, text_type
 
 
 # sentinel
@@ -113,7 +82,7 @@ def stream_with_context(generator_or_function):
                 yield '!'
             return Response(generate())
 
-    Alternatively it can also be used around a specific generator:
+    Alternatively it can also be used around a specific generator::
 
         from flask import stream_with_context, request, Response
 
@@ -161,41 +130,8 @@ def stream_with_context(generator_or_function):
     # pushed.  This item is discarded.  Then when the iteration continues the
     # real generator is executed.
     wrapped_g = generator()
-    wrapped_g.next()
+    next(wrapped_g)
     return wrapped_g
-
-
-def jsonify(*args, **kwargs):
-    """Creates a :class:`~flask.Response` with the JSON representation of
-    the given arguments with an `application/json` mimetype.  The arguments
-    to this function are the same as to the :class:`dict` constructor.
-
-    Example usage::
-
-        @app.route('/_get_current_user')
-        def get_current_user():
-            return jsonify(username=g.user.username,
-                           email=g.user.email,
-                           id=g.user.id)
-
-    This will send a JSON response like this to the browser::
-
-        {
-            "username": "admin",
-            "email": "admin@localhost",
-            "id": 42
-        }
-
-    This requires Python 2.6 or an installed version of simplejson.  For
-    security reasons only objects are supported toplevel.  For more
-    information about this, have a look at :ref:`json-security`.
-
-    .. versionadded:: 0.2
-    """
-    if __debug__:
-        _assert_have_json()
-    return current_app.response_class(json.dumps(dict(*args, **kwargs),
-        indent=None if request.is_xhr else 2), mimetype='application/json')
 
 
 def make_response(*args):
@@ -296,6 +232,9 @@ def url_for(endpoint, **values):
     that this is for building URLs outside the current application, and not for
     handling 404 NotFound errors.
 
+    .. versionadded:: 0.10
+       The `_scheme` parameter was added.
+
     .. versionadded:: 0.9
        The `_anchor` and `_method` parameters were added.
 
@@ -305,15 +244,20 @@ def url_for(endpoint, **values):
 
     :param endpoint: the endpoint of the URL (name of the function)
     :param values: the variable arguments of the URL rule
-    :param _external: if set to `True`, an absolute URL is generated.
+    :param _external: if set to `True`, an absolute URL is generated. Server
+      address can be changed via `SERVER_NAME` configuration variable which
+      defaults to `localhost`.
+    :param _scheme: a string specifying the desired URL scheme. The `_external`
+      parameter must be set to `True` or a `ValueError` is raised.
     :param _anchor: if provided this is added as anchor to the URL.
     :param _method: if provided this explicitly specifies an HTTP method.
     """
     appctx = _app_ctx_stack.top
     reqctx = _request_ctx_stack.top
     if appctx is None:
-        raise RuntimeError('Attempted to generate a URL with the application '
-                           'context being pushed.  This has to be executed ')
+        raise RuntimeError('Attempted to generate a URL without the '
+                           'application context being pushed. This has to be '
+                           'executed when application context is available.')
 
     # If request specific information is available we have some extra
     # features that support "relative" urls.
@@ -348,11 +292,18 @@ def url_for(endpoint, **values):
 
     anchor = values.pop('_anchor', None)
     method = values.pop('_method', None)
+    scheme = values.pop('_scheme', None)
     appctx.app.inject_url_defaults(endpoint, values)
+
+    if scheme is not None:
+        if not external:
+            raise ValueError('When specifying _scheme, _external must be True')
+        url_adapter.url_scheme = scheme
+
     try:
         rv = url_adapter.build(endpoint, values, method=method,
                                force_external=external)
-    except BuildError, error:
+    except BuildError as error:
         # We need to inject the values again so that the app callback can
         # deal with that sort of stuff.
         values['_external'] = external
@@ -360,8 +311,6 @@ def url_for(endpoint, **values):
         values['_method'] = method
         return appctx.app.handle_url_build_error(error, endpoint, values)
 
-    rv = url_adapter.build(endpoint, values, method=method,
-                           force_external=external)
     if anchor is not None:
         rv += '#' + url_quote(anchor)
     return rv
@@ -384,7 +333,7 @@ def get_template_attribute(template_name, attribute):
     .. versionadded:: 0.2
 
     :param template_name: the name of the template
-    :param attribute: the name of the variable of macro to acccess
+    :param attribute: the name of the variable of macro to access
     """
     return getattr(current_app.jinja_env.get_template(template_name).module,
                    attribute)
@@ -415,6 +364,8 @@ def flash(message, category='message'):
     flashes = session.get('_flashes', [])
     flashes.append((category, message))
     session['_flashes'] = flashes
+    message_flashed.send(current_app._get_current_object(),
+                         message=message, category=category)
 
 
 def get_flashed_messages(with_categories=False, category_filter=[]):
@@ -450,7 +401,7 @@ def get_flashed_messages(with_categories=False, category_filter=[]):
         _request_ctx_stack.top.flashes = flashes = session.pop('_flashes') \
             if '_flashes' in session else []
     if category_filter:
-        flashes = filter(lambda f: f[0] in category_filter, flashes)
+        flashes = list(filter(lambda f: f[0] in category_filter, flashes))
     if not with_categories:
         return [x[1] for x in flashes]
     return flashes
@@ -517,7 +468,7 @@ def send_file(filename_or_fp, mimetype=None, as_attachment=False,
                           :data:`~flask.current_app`.
     """
     mtime = None
-    if isinstance(filename_or_fp, basestring):
+    if isinstance(filename_or_fp, string_types):
         filename = filename_or_fp
         file = None
     else:
@@ -528,7 +479,7 @@ def send_file(filename_or_fp, mimetype=None, as_attachment=False,
         # XXX: this behavior is now deprecated because it was unreliable.
         # removed in Flask 1.0
         if not attachment_filename and not mimetype \
-           and isinstance(filename, basestring):
+           and isinstance(filename, string_types):
             warn(DeprecationWarning('The filename support for file objects '
                 'passed to send_file is now deprecated.  Pass an '
                 'attach_filename if you want mimetypes to be guessed.'),
@@ -562,11 +513,13 @@ def send_file(filename_or_fp, mimetype=None, as_attachment=False,
         if file is not None:
             file.close()
         headers['X-Sendfile'] = filename
+        headers['Content-Length'] = os.path.getsize(filename)
         data = None
     else:
         if file is None:
             file = open(filename, 'rb')
             mtime = os.path.getmtime(filename)
+            headers['Content-Length'] = os.path.getsize(filename)
         data = wrap_file(request.environ, file)
 
     rv = current_app.response_class(data, mimetype=mimetype, headers=headers,
@@ -589,7 +542,7 @@ def send_file(filename_or_fp, mimetype=None, as_attachment=False,
             os.path.getmtime(filename),
             os.path.getsize(filename),
             adler32(
-                filename.encode('utf8') if isinstance(filename, unicode)
+                filename.encode('utf-8') if isinstance(filename, text_type)
                 else filename
             ) & 0xffffffff
         ))
@@ -622,7 +575,9 @@ def safe_join(directory, filename):
     for sep in _os_alt_seps:
         if sep in filename:
             raise NotFound()
-    if os.path.isabs(filename) or filename.startswith('../'):
+    if os.path.isabs(filename) or \
+       filename == '..' or \
+       filename.startswith('../'):
         raise NotFound()
     return os.path.join(directory, filename)
 
@@ -887,6 +842,7 @@ class _PackageBoundObject(object):
 
         :param resource: the name of the resource.  To access resources within
                          subfolders use forward slashes as separator.
+        :param mode: resource file opening mode, default is 'rb'.
         """
         if mode not in ('r', 'rb'):
             raise ValueError('Resources can only be opened for reading')

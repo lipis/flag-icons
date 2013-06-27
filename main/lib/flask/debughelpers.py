@@ -8,8 +8,16 @@
     :copyright: (c) 2011 by Armin Ronacher.
     :license: BSD, see LICENSE for more details.
 """
+from ._compat import implements_to_string
 
 
+class UnexpectedUnicodeError(AssertionError, UnicodeError):
+    """Raised in places where we want some better error reporting for
+    unexpected unicode or binary data.
+    """
+
+
+@implements_to_string
 class DebugFilesKeyError(KeyError, AssertionError):
     """Raised from request.files during debugging.  The idea is that it can
     provide a better error message than just a generic KeyError/BadRequest.
@@ -27,7 +35,7 @@ class DebugFilesKeyError(KeyError, AssertionError):
             buf.append('\n\nThe browser instead transmitted some file names. '
                        'This was submitted: %s' % ', '.join('"%s"' % x
                             for x in form_matches))
-        self.msg = ''.join(buf).encode('utf-8')
+        self.msg = ''.join(buf)
 
     def __str__(self):
         return self.msg
@@ -70,7 +78,7 @@ def attach_enctype_error_multidict(request):
         def __getitem__(self, key):
             try:
                 return oldcls.__getitem__(self, key)
-            except KeyError, e:
+            except KeyError as e:
                 if key not in request.form:
                     raise
                 raise DebugFilesKeyError(request, key)
