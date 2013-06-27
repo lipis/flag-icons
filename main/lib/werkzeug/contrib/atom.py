@@ -18,12 +18,14 @@
                          updated=post.last_update, published=post.pub_date)
             return feed.get_response()
 
-    :copyright: (c) 2011 by the Werkzeug Team, see AUTHORS for more details.
+    :copyright: (c) 2013 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
 """
 from datetime import datetime
+
 from werkzeug.utils import escape
 from werkzeug.wrappers import BaseResponse
+from werkzeug._compat import implements_to_string, string_types
 
 
 XHTML_NAMESPACE = 'http://www.w3.org/1999/xhtml'
@@ -45,6 +47,7 @@ def format_iso8601(obj):
     return obj.strftime('%Y-%m-%dT%H:%M:%SZ')
 
 
+@implements_to_string
 class AtomFeed(object):
     """A helper class that creates Atom feeds.
 
@@ -115,7 +118,7 @@ class AtomFeed(object):
         self.entries = entries and list(entries) or []
 
         if not hasattr(self.author, '__iter__') \
-           or isinstance(self.author, (basestring, dict)):
+           or isinstance(self.author, string_types + (dict,)):
             self.author = [self.author]
         for i, author in enumerate(self.author):
             if not isinstance(author, dict):
@@ -215,13 +218,11 @@ class AtomFeed(object):
         """Use the class as WSGI response object."""
         return self.get_response()(environ, start_response)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.to_string()
 
-    def __str__(self):
-        return self.to_string().encode('utf-8')
 
-
+@implements_to_string
 class FeedEntry(object):
     """Represents a single entry in a feed.
 
@@ -283,7 +284,7 @@ class FeedEntry(object):
         self.xml_base = kwargs.get('xml_base', feed_url)
 
         if not hasattr(self.author, '__iter__') \
-           or isinstance(self.author, (basestring, dict)):
+           or isinstance(self.author, string_types + (dict,)):
             self.author = [self.author]
         for i, author in enumerate(self.author):
             if not isinstance(author, dict):
@@ -342,8 +343,5 @@ class FeedEntry(object):
         """Convert the feed item into a unicode object."""
         return u''.join(self.generate())
 
-    def __unicode__(self):
-        return self.to_string()
-
     def __str__(self):
-        return self.to_string().encode('utf-8')
+        return self.to_string()

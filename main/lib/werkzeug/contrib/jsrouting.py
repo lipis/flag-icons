@@ -6,7 +6,7 @@
     Addon module that allows to create a JavaScript function from a map
     that generates rules.
 
-    :copyright: (c) 2011 by the Werkzeug Team, see AUTHORS for more details.
+    :copyright: (c) 2013 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
 """
 try:
@@ -20,6 +20,7 @@ except ImportError:
 
 from inspect import getmro
 from werkzeug.routing import NumberConverter
+from werkzeug._compat import iteritems
 
 
 def render_template(name_parts, rules, converters):
@@ -181,6 +182,8 @@ def generate_map(map, name='url_map'):
     defined in your map to users. If your rules contain sensitive
     information, don't use JavaScript generation!
     """
+    from warnings import warn
+    warn(DeprecationWarning('This module is deprecated'))
     map.update()
     rules = []
     converters = []
@@ -190,7 +193,7 @@ def generate_map(map, name='url_map'):
             'data':         data
         } for is_dynamic, data in rule._trace]
         rule_converters = {}
-        for key, converter in rule._converters.iteritems():
+        for key, converter in iteritems(rule._converters):
             js_func = js_to_url_function(converter)
             try:
                 index = converters.index(js_func)

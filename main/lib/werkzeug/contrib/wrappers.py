@@ -17,18 +17,19 @@
     Afterwards this request object provides the extra functionality of the
     :class:`JSONRequestMixin`.
 
-    :copyright: (c) 2011 by the Werkzeug Team, see AUTHORS for more details.
+    :copyright: (c) 2013 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
 """
 import codecs
-from werkzeug.exceptions import BadRequest
-from werkzeug.utils import cached_property
-from werkzeug.http import dump_options_header, parse_options_header
-from werkzeug._internal import _decode_unicode
 try:
     from simplejson import loads
 except ImportError:
     from json import loads
+
+from werkzeug.exceptions import BadRequest
+from werkzeug.utils import cached_property
+from werkzeug.http import dump_options_header, parse_options_header
+from werkzeug._compat import wsgi_decoding_dance
 
 
 def is_known_charset(charset):
@@ -163,14 +164,16 @@ class ReverseSlashBehaviorRequestMixin(object):
         """Requested path as unicode.  This works a bit like the regular path
         info in the WSGI environment but will not include a leading slash.
         """
-        path = (self.environ.get('PATH_INFO') or '').lstrip('/')
-        return _decode_unicode(path, self.charset, self.encoding_errors)
+        path = wsgi_decoding_dance(self.environ.get('PATH_INFO') or '',
+                                   self.charset, self.encoding_errors)
+        return path.lstrip('/')
 
     @cached_property
     def script_root(self):
         """The root path of the script includling a trailing slash."""
-        path = (self.environ.get('SCRIPT_NAME') or '').rstrip('/') + '/'
-        return _decode_unicode(path, self.charset, self.encoding_errors)
+        path = wsgi_decoding_dance(self.environ.get('SCRIPT_NAME') or '',
+                                   self.charset, self.encoding_errors)
+        return path.rstrip('/') + '/'
 
 
 class DynamicCharsetRequestMixin(object):

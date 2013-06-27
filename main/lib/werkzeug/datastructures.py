@@ -5,15 +5,18 @@
 
     This module provides mixins and classes with an immutable interface.
 
-    :copyright: (c) 2011 by the Werkzeug Team, see AUTHORS for more details.
+    :copyright: (c) 2013 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
 """
 import re
+import sys
 import codecs
 import mimetypes
 from itertools import repeat
 
-from werkzeug._internal import _proxy_repr, _missing, _empty_stream
+from werkzeug._internal import _missing, _empty_stream
+from werkzeug._compat import iterkeys, itervalues, iteritems, iterlists, \
+     PY2, text_type, integer_types, string_types, make_literal_wrapper
 
 
 _locale_delim_re = re.compile(r'[_-]')
@@ -28,10 +31,10 @@ def iter_multi_items(mapping):
     without dropping any from more complex structures.
     """
     if isinstance(mapping, MultiDict):
-        for item in mapping.iteritems(multi=True):
+        for item in iteritems(mapping, multi=True):
             yield item
     elif isinstance(mapping, dict):
-        for key, value in mapping.iteritems():
+        for key, value in iteritems(mapping):
             if isinstance(value, (tuple, list)):
                 for value in value:
                     yield key, value
@@ -40,6 +43,24 @@ def iter_multi_items(mapping):
     else:
         for item in mapping:
             yield item
+
+
+def native_itermethods(names):
+    if not PY2:
+        return lambda x: x
+    def setmethod(cls, name):
+        itermethod = getattr(cls, name)
+        setattr(cls, 'iter%s' % name, itermethod)
+        listmethod = lambda self, *a, **kw: list(itermethod(self, *a, **kw))
+        listmethod.__doc__ = \
+                'Like :py:meth:`iter%s`, but returns a list.' % name
+        setattr(cls, name, listmethod)
+
+    def wrap(cls):
+        for name in names:
+            setmethod(cls, name)
+        return cls
+    return wrap
 
 
 class ImmutableListMixin(object):
@@ -105,7 +126,11 @@ class ImmutableList(ImmutableListMixin, list):
     :private:
     """
 
-    __repr__ = _proxy_repr(list)
+    def __repr__(self):
+        return '%s(%s)' % (
+            self.__class__.__name__,
+            dict.__repr__(self),
+        )
 
 
 class ImmutableDictMixin(object):
@@ -127,7 +152,7 @@ class ImmutableDictMixin(object):
         return type(self), (dict(self),)
 
     def _iter_hashitems(self):
-        return self.iteritems()
+        return iteritems(self)
 
     def __hash__(self):
         if self._hash_cache is not None:
@@ -166,10 +191,10 @@ class ImmutableMultiDictMixin(ImmutableDictMixin):
     """
 
     def __reduce_ex__(self, protocol):
-        return type(self), (self.items(multi=True),)
+        return type(self), (list(iteritems(self, multi=True)),)
 
     def _iter_hashitems(self):
-        return self.iteritems(multi=True)
+        return iteritems(self, multi=True)
 
     def add(self, key, value):
         is_immutable(self)
@@ -206,12 +231,27 @@ class UpdateDictMixin(object):
         oncall.__name__ = name
         return oncall
 
+    def setdefault(self, key, default=None):
+        modified = key not in self
+        rv = super(UpdateDictMixin, self).setdefault(key, default)
+        if modified and self.on_update is not None:
+            self.on_update(self)
+        return rv
+
+    def pop(self, key, default=_missing):
+        modified = key in self
+        if default is _missing:
+            rv = super(UpdateDictMixin, self).pop(key)
+        else:
+            rv = super(UpdateDictMixin, self).pop(key, default)
+        if modified and self.on_update is not None:
+            self.on_update(self)
+        return rv
+
     __setitem__ = calls_update('__setitem__')
     __delitem__ = calls_update('__delitem__')
     clear = calls_update('clear')
-    pop = calls_update('pop')
     popitem = calls_update('popitem')
-    setdefault = calls_update('setdefault')
     update = calls_update('update')
     del calls_update
 
@@ -272,6 +312,7 @@ class ImmutableTypeConversionDict(ImmutableDictMixin, TypeConversionDict):
         return self
 
 
+@native_itermethods(['keys', 'values', 'items', 'lists', 'listvalues'])
 class MultiDict(TypeConversionDict):
     """A :class:`MultiDict` is a dictionary subclass customized to deal with
     multiple values for the same key which is for example used by the parsing
@@ -315,10 +356,10 @@ class MultiDict(TypeConversionDict):
 
     def __init__(self, mapping=None):
         if isinstance(mapping, MultiDict):
-            dict.__init__(self, ((k, l[:]) for k, l in mapping.iterlists()))
+            dict.__init__(self, ((k, l[:]) for k, l in iterlists(mapping)))
         elif isinstance(mapping, dict):
             tmp = {}
-            for key, value in mapping.iteritems():
+            for key, value in iteritems(mapping):
                 if isinstance(value, (tuple, list)):
                     value = list(value)
                 else:
@@ -338,9 +379,6 @@ class MultiDict(TypeConversionDict):
         dict.clear(self)
         dict.update(self, value)
 
-    def __iter__(self):
-        return self.iterkeys()
-
     def __getitem__(self, key):
         """Return the first data value for this key;
         raises KeyError if not found.
@@ -350,7 +388,7 @@ class MultiDict(TypeConversionDict):
         """
         if key in self:
             return dict.__getitem__(self, key)[0]
-        raise BadRequestKeyError(key)
+        raise exceptions.BadRequestKeyError(key)
 
     def __setitem__(self, key, value):
         """Like :meth:`add` but removes an existing key first.
@@ -453,66 +491,47 @@ class MultiDict(TypeConversionDict):
         return default_list
 
     def items(self, multi=False):
-        """Return a list of ``(key, value)`` pairs.
+        """Return an iterator of ``(key, value)`` pairs.
 
-        :param multi: If set to `True` the list returned will have a
-                      pair for each value of each key.  Otherwise it
-                      will only contain pairs for the first value of
-                      each key.
-
-        :return: a :class:`list`
+        :param multi: If set to `True` the iterator returned will have a pair
+                      for each value of each key.  Otherwise it will only
+                      contain pairs for the first value of each key.
         """
-        return list(self.iteritems(multi))
 
-    def lists(self):
-        """Return a list of ``(key, values)`` pairs, where values is the list of
-        all values associated with the key.
-
-        :return: a :class:`list`
-        """
-        return list(self.iterlists())
-
-    def values(self):
-        """Returns a list of the first value on every key's value list.
-
-        :return: a :class:`list`.
-        """
-        return [self[key] for key in self.iterkeys()]
-
-    def listvalues(self):
-        """Return a list of all values associated with a key.  Zipping
-        :meth:`keys` and this is the same as calling :meth:`lists`:
-
-        >>> d = MultiDict({"foo": [1, 2, 3]})
-        >>> zip(d.keys(), d.listvalues()) == d.lists()
-        True
-
-        :return: a :class:`list`
-        """
-        return list(self.iterlistvalues())
-
-    def iteritems(self, multi=False):
-        """Like :meth:`items` but returns an iterator."""
-        for key, values in dict.iteritems(self):
+        for key, values in iteritems(dict, self):
             if multi:
                 for value in values:
                     yield key, value
             else:
                 yield key, values[0]
 
-    def iterlists(self):
-        """Like :meth:`items` but returns an iterator."""
-        for key, values in dict.iteritems(self):
+    def lists(self):
+        """Return a list of ``(key, values)`` pairs, where values is the list
+        of all values associated with the key."""
+
+        for key, values in iteritems(dict, self):
             yield key, list(values)
 
-    def itervalues(self):
-        """Like :meth:`values` but returns an iterator."""
-        for values in dict.itervalues(self):
+    def keys(self):
+        return iterkeys(dict, self)
+
+    __iter__ = keys
+
+    def values(self):
+        """Returns an iterator of the first value on every key's value list."""
+        for values in itervalues(dict, self):
             yield values[0]
 
-    def iterlistvalues(self):
-        """Like :meth:`listvalues` but returns an iterator."""
-        return dict.itervalues(self)
+    def listvalues(self):
+        """Return an iterator of all values associated with a key.  Zipping
+        :meth:`keys` and this is the same as calling :meth:`lists`:
+
+        >>> d = MultiDict({"foo": [1, 2, 3]})
+        >>> zip(d.keys(), d.listvalues()) == d.lists()
+        True
+        """
+
+        return itervalues(dict, self)
 
     def copy(self):
         """Return a shallow copy of this object."""
@@ -529,7 +548,7 @@ class MultiDict(TypeConversionDict):
         :return: a :class:`dict`
         """
         if flat:
-            return dict(self.iteritems())
+            return dict(iteritems(self))
         return dict(self.lists())
 
     def update(self, other_dict):
@@ -553,18 +572,18 @@ class MultiDict(TypeConversionDict):
         """
         try:
             return dict.pop(self, key)[0]
-        except KeyError, e:
+        except KeyError as e:
             if default is not _missing:
                 return default
-            raise BadRequestKeyError(str(e))
+            raise exceptions.BadRequestKeyError(str(e))
 
     def popitem(self):
         """Pop an item from the dict."""
         try:
             item = dict.popitem(self)
             return (item[0], item[1][0])
-        except KeyError, e:
-            raise BadRequestKeyError(str(e))
+        except KeyError as e:
+            raise exceptions.BadRequestKeyError(str(e))
 
     def poplist(self, key):
         """Pop the list for a key from the dict.  If the key is not in the dict
@@ -580,14 +599,14 @@ class MultiDict(TypeConversionDict):
         """Pop a ``(key, list)`` tuple from the dict."""
         try:
             return dict.popitem(self)
-        except KeyError, e:
-            raise BadRequestKeyError(str(e))
+        except KeyError as e:
+            raise exceptions.BadRequestKeyError(str(e))
 
     def __copy__(self):
         return self.copy()
 
     def __repr__(self):
-        return '%s(%r)' % (self.__class__.__name__, self.items(multi=True))
+        return '%s(%r)' % (self.__class__.__name__, list(iteritems(self, multi=True)))
 
 
 class _omd_bucket(object):
@@ -621,6 +640,7 @@ class _omd_bucket(object):
             omd._last_bucket = self.prev
 
 
+@native_itermethods(['keys', 'values', 'items', 'lists', 'listvalues'])
 class OrderedMultiDict(MultiDict):
     """Works like a regular :class:`MultiDict` but preserves the
     order of the fields.  To convert the ordered multi dict into a
@@ -647,23 +667,23 @@ class OrderedMultiDict(MultiDict):
         if not isinstance(other, MultiDict):
             return NotImplemented
         if isinstance(other, OrderedMultiDict):
-            iter1 = self.iteritems(multi=True)
-            iter2 = other.iteritems(multi=True)
+            iter1 = iteritems(self, multi=True)
+            iter2 = iteritems(other, multi=True)
             try:
                 for k1, v1 in iter1:
-                    k2, v2 = iter2.next()
+                    k2, v2 = next(iter2)
                     if k1 != k2 or v1 != v2:
                         return False
             except StopIteration:
                 return False
             try:
-                iter2.next()
+                next(iter2)
             except StopIteration:
                 return True
             return False
         if len(self) != len(other):
             return False
-        for key, values in self.iterlists():
+        for key, values in iterlists(self):
             if other.getlist(key) != values:
                 return False
         return True
@@ -672,10 +692,10 @@ class OrderedMultiDict(MultiDict):
         return not self.__eq__(other)
 
     def __reduce_ex__(self, protocol):
-        return type(self), (self.items(multi=True),)
+        return type(self), (list(iteritems(self, multi=True)),)
 
     def __getstate__(self):
-        return self.items(multi=True)
+        return list(iteritems(self, multi=True))
 
     def __setstate__(self, values):
         dict.clear(self)
@@ -685,7 +705,7 @@ class OrderedMultiDict(MultiDict):
     def __getitem__(self, key):
         if key in self:
             return dict.__getitem__(self, key)[0].value
-        raise BadRequestKeyError(key)
+        raise exceptions.BadRequestKeyError(key)
 
     def __setitem__(self, key, value):
         self.poplist(key)
@@ -694,13 +714,15 @@ class OrderedMultiDict(MultiDict):
     def __delitem__(self, key):
         self.pop(key)
 
-    def iterkeys(self):
-        return (key for key, value in self.iteritems())
+    def keys(self):
+        return (key for key, value in iteritems(self))
 
-    def itervalues(self):
-        return (value for key, value in self.iteritems())
+    __iter__ = keys
 
-    def iteritems(self, multi=False):
+    def values(self):
+        return (value for key, value in iteritems(self))
+
+    def items(self, multi=False):
         ptr = self._first_bucket
         if multi:
             while ptr is not None:
@@ -714,7 +736,7 @@ class OrderedMultiDict(MultiDict):
                     yield ptr.key, ptr.value
                 ptr = ptr.next
 
-    def iterlists(self):
+    def lists(self):
         returned_keys = set()
         ptr = self._first_bucket
         while ptr is not None:
@@ -723,8 +745,8 @@ class OrderedMultiDict(MultiDict):
                 returned_keys.add(ptr.key)
             ptr = ptr.next
 
-    def iterlistvalues(self):
-        for key, values in self.iterlists():
+    def listvalues(self):
+        for key, values in iterlists(self):
             yield values
 
     def add(self, key, value):
@@ -767,10 +789,10 @@ class OrderedMultiDict(MultiDict):
     def pop(self, key, default=_missing):
         try:
             buckets = dict.pop(self, key)
-        except KeyError, e:
+        except KeyError as e:
             if default is not _missing:
                 return default
-            raise BadRequestKeyError(str(e))
+            raise exceptions.BadRequestKeyError(str(e))
         for bucket in buckets:
             bucket.unlink(self)
         return buckets[0].value
@@ -778,8 +800,8 @@ class OrderedMultiDict(MultiDict):
     def popitem(self):
         try:
             key, buckets = dict.popitem(self)
-        except KeyError, e:
-            raise BadRequestKeyError(str(e))
+        except KeyError as e:
+            raise exceptions.BadRequestKeyError(str(e))
         for bucket in buckets:
             bucket.unlink(self)
         return key, buckets[0].value
@@ -787,8 +809,8 @@ class OrderedMultiDict(MultiDict):
     def popitemlist(self):
         try:
             key, buckets = dict.popitem(self)
-        except KeyError, e:
-            raise BadRequestKeyError(str(e))
+        except KeyError as e:
+            raise exceptions.BadRequestKeyError(str(e))
         for bucket in buckets:
             bucket.unlink(self)
         return key, [x.value for x in buckets]
@@ -799,6 +821,15 @@ def _options_header_vkw(value, kw):
                                             for k, v in kw.items()))
 
 
+def _unicodify_header_value(value):
+    if isinstance(value, bytes):
+        value = value.decode('latin-1')
+    if not isinstance(value, text_type):
+        value = text_type(value)
+    return value
+
+
+@native_itermethods(['keys', 'values', 'items'])
 class Headers(object):
     """An object that stores some headers.  It has a dict-like interface
     but is ordered and can store the same keys multiple times.
@@ -818,45 +849,36 @@ class Headers(object):
 
     To create a new :class:`Headers` object pass it a list or dict of headers
     which are used as default values.  This does not reuse the list passed
-    to the constructor for internal usage.  To create a :class:`Headers`
-    object that uses as internal storage the list or list-like object you
-    can use the :meth:`linked` class method.
+    to the constructor for internal usage.
 
     :param defaults: The list of default values for the :class:`Headers`.
+
+    .. versionchanged:: 0.9
+       This data structure now stores unicode values similar to how the
+       multi dicts do it.  The main difference is that bytes can be set as
+       well which will automatically be latin1 decoded.
+
+    .. versionchanged:: 0.9
+       The :meth:`linked` function was removed without replacement as it
+       was an API that does not support the changes to the encoding model.
     """
 
-    def __init__(self, defaults=None, _list=None):
-        if _list is None:
-            _list = []
-        self._list = _list
+    def __init__(self, defaults=None):
+        self._list = []
         if defaults is not None:
             if isinstance(defaults, (list, Headers)):
                 self._list.extend(defaults)
             else:
                 self.extend(defaults)
 
-    @classmethod
-    def linked(cls, headerlist):
-        """Create a new :class:`Headers` object that uses the list of headers
-        passed as internal storage:
-
-        >>> headerlist = [('Content-Length', '40')]
-        >>> headers = Headers.linked(headerlist)
-        >>> headers['Content-Type'] = 'text/html'
-        >>> headerlist
-        [('Content-Length', '40'), ('Content-Type', 'text/html')]
-
-        :param headerlist: The list of headers the class is linked to.
-        :return: new linked :class:`Headers` object.
-        """
-        return cls(_list=headerlist)
-
     def __getitem__(self, key, _get_mode=False):
         if not _get_mode:
-            if isinstance(key, (int, long)):
+            if isinstance(key, integer_types):
                 return self._list[key]
             elif isinstance(key, slice):
                 return self.__class__(self._list[key])
+        if not isinstance(key, string_types):
+            raise exceptions.BadRequestKeyError(key)
         ikey = key.lower()
         for k, v in self._list:
             if k.lower() == ikey:
@@ -866,7 +888,7 @@ class Headers(object):
         # key error instead of our special one.
         if _get_mode:
             raise KeyError()
-        raise BadRequestKeyError(key)
+        raise exceptions.BadRequestKeyError(key)
 
     def __eq__(self, other):
         return other.__class__ is self.__class__ and \
@@ -875,7 +897,7 @@ class Headers(object):
     def __ne__(self, other):
         return not self.__eq__(other)
 
-    def get(self, key, default=None, type=None):
+    def get(self, key, default=None, type=None, as_bytes=False):
         """Return the default value if the requested data doesn't exist.
         If `type` is provided and is a callable it should convert the value,
         return it or raise a :exc:`ValueError` if that is not possible.  In
@@ -889,6 +911,9 @@ class Headers(object):
         If a headers object is bound you must not add unicode strings
         because no encoding takes place.
 
+        .. versionadded:: 0.9
+           Added support for `as_bytes`.
+
         :param key: The key to be looked up.
         :param default: The default value to be returned if the key can't
                         be looked up.  If not further specified `None` is
@@ -896,11 +921,14 @@ class Headers(object):
         :param type: A callable that is used to cast the value in the
                      :class:`Headers`.  If a :exc:`ValueError` is raised
                      by this callable the default value is returned.
+        :param as_bytes: return bytes instead of unicode strings.
         """
         try:
             rv = self.__getitem__(key, _get_mode=True)
         except KeyError:
             return default
+        if as_bytes:
+            rv = rv.encode('latin1')
         if type is None:
             return rv
         try:
@@ -908,22 +936,28 @@ class Headers(object):
         except ValueError:
             return default
 
-    def getlist(self, key, type=None):
+    def getlist(self, key, type=None, as_bytes=False):
         """Return the list of items for a given key. If that key is not in the
         :class:`Headers`, the return value will be an empty list.  Just as
         :meth:`get` :meth:`getlist` accepts a `type` parameter.  All items will
         be converted with the callable defined there.
+
+        .. versionadded:: 0.9
+           Added support for `as_bytes`.
 
         :param key: The key to be looked up.
         :param type: A callable that is used to cast the value in the
                      :class:`Headers`.  If a :exc:`ValueError` is raised
                      by this callable the value will be removed from the list.
         :return: a :class:`list` of all the values for the key.
+        :param as_bytes: return bytes instead of unicode strings.
         """
         ikey = key.lower()
         result = []
         for k, v in self:
             if k.lower() == ikey:
+                if as_bytes:
+                    v = v.encode('latin1')
                 if type is not None:
                     try:
                         v = type(v)
@@ -940,35 +974,26 @@ class Headers(object):
         """
         return self.getlist(name)
 
-    def iteritems(self, lower=False):
+    def items(self, lower=False):
         for key, value in self:
             if lower:
                 key = key.lower()
             yield key, value
 
-    def iterkeys(self, lower=False):
-        for key, _ in self.iteritems(lower):
+    def keys(self, lower=False):
+        for key, _ in iteritems(self, lower):
             yield key
 
-    def itervalues(self):
-        for _, value in self.iteritems():
-            yield value
-
-    def keys(self, lower=False):
-        return list(self.iterkeys(lower))
-
     def values(self):
-        return list(self.itervalues())
-
-    def items(self, lower=False):
-        return list(self.iteritems(lower))
+        for _, value in iteritems(self):
+            yield value
 
     def extend(self, iterable):
         """Extend the headers with a dict or an iterable yielding keys and
         values.
         """
         if isinstance(iterable, dict):
-            for key, value in iterable.iteritems():
+            for key, value in iteritems(iterable):
                 if isinstance(value, (tuple, list)):
                     for v in value:
                         self.add(key, v)
@@ -979,7 +1004,7 @@ class Headers(object):
                 self.add(key, value)
 
     def __delitem__(self, key, _index_operation=True):
-        if _index_operation and isinstance(key, (int, long, slice)):
+        if _index_operation and isinstance(key, (integer_types, slice)):
             del self._list[key]
             return
         key = key.lower()
@@ -1007,7 +1032,7 @@ class Headers(object):
         """
         if key is None:
             return self._list.pop()
-        if isinstance(key, (int, long)):
+        if isinstance(key, integer_types):
             return self._list.pop(key)
         try:
             rv = self[key]
@@ -1057,11 +1082,14 @@ class Headers(object):
         """
         if kw:
             _value = _options_header_vkw(_value, kw)
+        _value = _unicodify_header_value(_value)
         self._validate_value(_value)
         self._list.append((_key, _value))
 
     def _validate_value(self, value):
-        if isinstance(value, basestring) and ('\n' in value or '\r' in value):
+        if not isinstance(value, text_type):
+            raise TypeError('Value should be unicode.')
+        if u'\n' in value or u'\r' in value:
             raise ValueError('Detected newline in header value.  This is '
                 'a potential security problem')
 
@@ -1094,6 +1122,7 @@ class Headers(object):
         """
         if kw:
             _value = _options_header_vkw(_value, kw)
+        _value = _unicodify_header_value(_value)
         self._validate_value(_value)
         if not self._list:
             self._list.append((_key, _value))
@@ -1125,20 +1154,36 @@ class Headers(object):
 
     def __setitem__(self, key, value):
         """Like :meth:`set` but also supports index/slice based setting."""
-        if isinstance(key, (slice, int, long)):
-            self._validate_value(value)
-            self._list[key] = value
+        if isinstance(key, (slice, integer_types)):
+            if isinstance(key, integer_types):
+                value = [value]
+            value = [(k, _unicodify_header_value(v)) for (k, v) in value]
+            [self._validate_value(v) for (k, v) in value]
+            if isinstance(key, integer_types):
+                self._list[key] = value[0]
+            else:
+                self._list[key] = value
         else:
             self.set(key, value)
 
     def to_list(self, charset='iso-8859-1'):
-        """Convert the headers into a list and converts the unicode header
-        items to the specified charset.
+        """Convert the headers into a list suitable for WSGI."""
+        from warnings import warn
+        warn(DeprecationWarning('Method removed, use to_wsgi_list instead'),
+             stacklevel=2)
+        return self.to_wsgi_list()
+
+    def to_wsgi_list(self):
+        """Convert the headers into a list suitable for WSGI.
+
+        The values are byte strings in Python 2 converted to latin1 and unicode
+        strings in Python 3 for the WSGI server to encode.
 
         :return: list
         """
-        return [(k, isinstance(v, unicode) and v.encode(charset) or str(v))
-                for k, v in self]
+        if PY2:
+            return [(k, v.encode('latin1')) for k, v in self]
+        return list(self)
 
     def copy(self):
         return self.__class__(self._list)
@@ -1146,10 +1191,10 @@ class Headers(object):
     def __copy__(self):
         return self.copy()
 
-    def __str__(self, charset='iso-8859-1'):
+    def __str__(self):
         """Returns formatted headers suitable for HTTP transmission."""
         strs = []
-        for key, value in self.to_list(charset):
+        for key, value in self.to_wsgi_list():
             strs.append('%s: %s' % (key, value))
         strs.append('\r\n')
         return '\r\n'.join(strs)
@@ -1212,11 +1257,6 @@ class EnvironHeaders(ImmutableHeadersMixin, Headers):
     def __init__(self, environ):
         self.environ = environ
 
-    @classmethod
-    def linked(cls, environ):
-        raise TypeError('%r object is always linked to environment, '
-                        'no separate initializer' % cls.__name__)
-
     def __eq__(self, other):
         return self.environ is other.environ
 
@@ -1225,8 +1265,8 @@ class EnvironHeaders(ImmutableHeadersMixin, Headers):
         # used because get() calls it.
         key = key.upper().replace('-', '_')
         if key in ('CONTENT_TYPE', 'CONTENT_LENGTH'):
-            return self.environ[key]
-        return self.environ['HTTP_' + key]
+            return _unicodify_header_value(self.environ[key])
+        return _unicodify_header_value(self.environ['HTTP_' + key])
 
     def __len__(self):
         # the iter is necessary because otherwise list calls our
@@ -1234,17 +1274,20 @@ class EnvironHeaders(ImmutableHeadersMixin, Headers):
         return len(list(iter(self)))
 
     def __iter__(self):
-        for key, value in self.environ.iteritems():
+        for key, value in iteritems(self.environ):
             if key.startswith('HTTP_') and key not in \
                ('HTTP_CONTENT_TYPE', 'HTTP_CONTENT_LENGTH'):
-                yield key[5:].replace('_', '-').title(), value
+                yield (key[5:].replace('_', '-').title(),
+                       _unicodify_header_value(value))
             elif key in ('CONTENT_TYPE', 'CONTENT_LENGTH'):
-                yield key.replace('_', '-').title(), value
+                yield (key.replace('_', '-').title(),
+                       _unicodify_header_value(value))
 
     def copy(self):
         raise TypeError('cannot create %r copies' % self.__class__.__name__)
 
 
+@native_itermethods(['keys', 'values', 'items', 'lists', 'listvalues'])
 class CombinedMultiDict(ImmutableMultiDictMixin, MultiDict):
     """A read only :class:`MultiDict` that you can pass multiple :class:`MultiDict`
     instances as sequence and it will combine the return values of all wrapped
@@ -1283,7 +1326,7 @@ class CombinedMultiDict(ImmutableMultiDictMixin, MultiDict):
         for d in self.dicts:
             if key in d:
                 return d[key]
-        raise BadRequestKeyError(key)
+        raise exceptions.BadRequestKeyError(key)
 
     def get(self, key, default=None, type=None):
         for d in self.dicts:
@@ -1306,48 +1349,33 @@ class CombinedMultiDict(ImmutableMultiDictMixin, MultiDict):
         rv = set()
         for d in self.dicts:
             rv.update(d.keys())
-        return list(rv)
+        return iter(rv)
 
-    def iteritems(self, multi=False):
+    __iter__ = keys
+
+    def items(self, multi=False):
         found = set()
         for d in self.dicts:
-            for key, value in d.iteritems(multi):
+            for key, value in iteritems(d, multi):
                 if multi:
                     yield key, value
                 elif key not in found:
                     found.add(key)
                     yield key, value
 
-    def itervalues(self):
-        for key, value in self.iteritems():
+    def values(self):
+        for key, value in iteritems(self):
             yield value
 
-    def values(self):
-        return list(self.itervalues())
-
-    def items(self, multi=False):
-        return list(self.iteritems(multi))
-
-    def iterlists(self):
+    def lists(self):
         rv = {}
         for d in self.dicts:
-            for key, values in d.iterlists():
+            for key, values in iterlists(d):
                 rv.setdefault(key, []).extend(values)
-        return rv.iteritems()
-
-    def lists(self):
-        return list(self.iterlists())
-
-    def iterlistvalues(self):
-        return (x[0] for x in self.lists())
+        return iteritems(rv)
 
     def listvalues(self):
-        return list(self.iterlistvalues())
-
-    def iterkeys(self):
-        return iter(self.keys())
-
-    __iter__ = iterkeys
+        return (x[1] for x in self.lists())
 
     def copy(self):
         """Return a shallow copy of this object."""
@@ -1403,7 +1431,7 @@ class FileMultiDict(MultiDict):
         if isinstance(file, FileStorage):
             value = file
         else:
-            if isinstance(file, basestring):
+            if isinstance(file, string_types):
                 if filename is None:
                     filename = file
                 file = open(file, 'rb')
@@ -1421,7 +1449,11 @@ class ImmutableDict(ImmutableDictMixin, dict):
     .. versionadded:: 0.5
     """
 
-    __repr__ = _proxy_repr(dict)
+    def __repr__(self):
+        return '%s(%s)' % (
+            self.__class__.__name__,
+            dict.__repr__(self),
+        )
 
     def copy(self):
         """Return a shallow mutable copy of this object.  Keep in mind that
@@ -1458,7 +1490,7 @@ class ImmutableOrderedMultiDict(ImmutableMultiDictMixin, OrderedMultiDict):
     """
 
     def _iter_hashitems(self):
-        return enumerate(self.iteritems(multi=True))
+        return enumerate(iteritems(self, multi=True))
 
     def copy(self):
         """Return a shallow mutable copy of this object.  Keep in mind that
@@ -1471,6 +1503,7 @@ class ImmutableOrderedMultiDict(ImmutableMultiDictMixin, OrderedMultiDict):
         return self
 
 
+@native_itermethods(['values'])
 class Accept(ImmutableList):
     """An :class:`Accept` object is just a list subclass for lists of
     ``(value, quality)`` tuples.  It is automatically sorted by quality.
@@ -1523,7 +1556,7 @@ class Accept(ImmutableList):
         to get the quality for the item.  If the item is not in the list, the
         returned quality is ``0``.
         """
-        if isinstance(key, basestring):
+        if isinstance(key, string_types):
             return self.quality(key)
         return list.__getitem__(self, key)
 
@@ -1560,7 +1593,7 @@ class Accept(ImmutableList):
            This used to raise :exc:`IndexError`, which was inconsistent
            with the list API.
         """
-        if isinstance(key, basestring):
+        if isinstance(key, string_types):
             for idx, (item, quality) in enumerate(self):
                 if self._value_matches(key, item):
                     return idx
@@ -1578,10 +1611,6 @@ class Accept(ImmutableList):
             return -1
 
     def values(self):
-        """Return a list of the values, not the qualities."""
-        return list(self.itervalues())
-
-    def itervalues(self):
         """Iterate over all values."""
         for item in self:
             yield item[0]
@@ -2246,6 +2275,8 @@ class ContentRange(object):
     def __nonzero__(self):
         return self.units is not None
 
+    __bool__ = __nonzero__
+
     def __str__(self):
         return self.to_header()
 
@@ -2359,7 +2390,7 @@ class WWWAuthenticate(UpdateDictMixin, dict):
         return '%s %s' % (auth_type.title(), ', '.join([
             '%s=%s' % (key, quote_header_value(value,
                        allow_token=key not in self._require_quoting))
-            for key, value in d.iteritems()
+            for key, value in iteritems(d)
         ]))
 
     def __str__(self):
@@ -2467,8 +2498,16 @@ class FileStorage(object):
         # special filenames with angular brackets.
         if filename is None:
             filename = getattr(stream, 'name', None)
-            if filename and filename[0] == '<' and filename[-1] == '>':
+            s = make_literal_wrapper(filename)
+            if filename and filename[0] == s('<') and filename[-1] == s('>'):
                 filename = None
+
+            # On Python 3 we want to make sure the filename is always unicode.
+            # This might not be if the name attribute is bytes due to the
+            # file being opened from the bytes API.
+            if not PY2 and isinstance(filename, bytes):
+                filename = filename.decode(sys.getfilesystemencoding(),
+                                           'replace')
 
         self.filename = filename
         if headers is None:
@@ -2486,12 +2525,12 @@ class FileStorage(object):
 
     @property
     def content_type(self):
-        """The file's content type.  Usually not available"""
+        """The content-type sent in the header.  Usually not available"""
         return self.headers.get('content-type')
 
     @property
     def content_length(self):
-        """The file's content length.  Usually not available"""
+        """The content-length sent in the header.  Usually not available"""
         return int(self.headers.get('content-length') or 0)
 
     @property
@@ -2533,8 +2572,8 @@ class FileStorage(object):
         """
         from shutil import copyfileobj
         close_dst = False
-        if isinstance(dst, basestring):
-            dst = file(dst, 'wb')
+        if isinstance(dst, string_types):
+            dst = open(dst, 'wb')
             close_dst = True
         try:
             copyfileobj(self.stream, dst, buffer_size)
@@ -2570,4 +2609,4 @@ class FileStorage(object):
 from werkzeug.http import dump_options_header, dump_header, generate_etag, \
      quote_header_value, parse_set_header, unquote_etag, quote_etag, \
      parse_options_header, http_date, is_byte_range_valid
-from werkzeug.exceptions import BadRequestKeyError
+from werkzeug import exceptions

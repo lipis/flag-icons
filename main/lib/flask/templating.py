@@ -12,9 +12,10 @@ import posixpath
 from jinja2 import BaseLoader, Environment as BaseEnvironment, \
      TemplateNotFound
 
-from .globals import _request_ctx_stack
+from .globals import _request_ctx_stack, _app_ctx_stack
 from .signals import template_rendered
 from .module import blueprint_is_module
+from ._compat import itervalues, iteritems
 
 
 def _default_template_ctx_processor():
@@ -22,12 +23,14 @@ def _default_template_ctx_processor():
     `session` and `g`.
     """
     reqctx = _request_ctx_stack.top
-    return dict(
-        config=reqctx.app.config,
-        request=reqctx.request,
-        session=reqctx.session,
-        g=reqctx.g
-    )
+    appctx = _app_ctx_stack.top
+    rv = {}
+    if appctx is not None:
+        rv['g'] = appctx.g
+    if reqctx is not None:
+        rv['request'] = reqctx.request
+        rv['session'] = reqctx.session
+    return rv
 
 
 class Environment(BaseEnvironment):
@@ -77,7 +80,7 @@ class DispatchingJinjaLoader(BaseLoader):
         except (ValueError, KeyError):
             pass
 
-        for blueprint in self.app.blueprints.itervalues():
+        for blueprint in itervalues(self.app.blueprints):
             if blueprint_is_module(blueprint):
                 continue
             loader = blueprint.jinja_loader
@@ -90,7 +93,7 @@ class DispatchingJinjaLoader(BaseLoader):
         if loader is not None:
             result.update(loader.list_templates())
 
-        for name, blueprint in self.app.blueprints.iteritems():
+        for name, blueprint in iteritems(self.app.blueprints):
             loader = blueprint.jinja_loader
             if loader is not None:
                 for template in loader.list_templates():
@@ -119,7 +122,7 @@ def render_template(template_name_or_list, **context):
     :param context: the variables that should be available in the
                     context of the template.
     """
-    ctx = _request_ctx_stack.top
+    ctx = _app_ctx_stack.top
     ctx.app.update_template_context(context)
     return _render(ctx.app.jinja_env.get_or_select_template(template_name_or_list),
                    context, ctx.app)
@@ -129,12 +132,12 @@ def render_template_string(source, **context):
     """Renders a template from the given template source string
     with the given context.
 
-    :param template_name: the sourcecode of the template to be
-                          rendered
+    :param source: the sourcecode of the template to be
+                   rendered
     :param context: the variables that should be available in the
                     context of the template.
     """
-    ctx = _request_ctx_stack.top
+    ctx = _app_ctx_stack.top
     ctx.app.update_template_context(context)
     return _render(ctx.app.jinja_env.from_string(source),
                    context, ctx.app)

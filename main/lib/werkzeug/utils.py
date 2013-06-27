@@ -7,14 +7,21 @@
     them are used by the request and response wrappers but especially for
     middleware development it makes sense to use them without the wrappers.
 
-    :copyright: (c) 2011 by the Werkzeug Team, see AUTHORS for more details.
+    :copyright: (c) 2013 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
 """
 import re
 import os
 import sys
+import pkgutil
+try:
+    from html.entities import name2codepoint
+except ImportError:
+    from htmlentitydefs import name2codepoint
 
-from werkzeug._internal import _iter_modules, _DictAccessorProperty, \
+from werkzeug._compat import unichr, text_type, string_types, iteritems, \
+    reraise, PY2
+from werkzeug._internal import _DictAccessorProperty, \
      _parse_signature, _missing
 
 
@@ -40,12 +47,6 @@ class cached_property(object):
 
     The class has to have a `__dict__` in order for this property to
     work.
-
-    .. versionchanged:: 0.6
-       the `writeable` attribute and parameter was deprecated.  If a
-       cached property is writeable or not has to be documented now.
-       For performance reasons the implementation does not honor the
-       writeable setting and will always make the property writeable.
     """
 
     # implementation detail: this property is implemented as non-data
@@ -56,14 +57,7 @@ class cached_property(object):
     # will still work as expected because the lookup logic is replicated
     # in __get__ for manual invocation.
 
-    def __init__(self, func, name=None, doc=None, writeable=False):
-        if writeable:
-            from warnings import warn
-            warn(DeprecationWarning('the writeable argument to the '
-                                    'cached property is a noop since 0.6 '
-                                    'because the property is writeable '
-                                    'by default for performance reasons'))
-
+    def __init__(self, func, name=None, doc=None):
         self.__name__ = name or func.__name__
         self.__module__ = func.__module__
         self.__doc__ = doc or func.__doc__
@@ -139,7 +133,6 @@ class HTMLBuilder(object):
     u'<p>&lt;foo&gt;</p>'
     """
 
-    from htmlentitydefs import name2codepoint
     _entity_re = re.compile(r'&([^;]+);')
     _entities = name2codepoint.copy()
     _entities['apos'] = 39
@@ -154,7 +147,6 @@ class HTMLBuilder(object):
     ])
     _plaintext_elements = set(['textarea'])
     _c_like_cdata = set(['script', 'style'])
-    del name2codepoint
 
     def __init__(self, dialect):
         self._dialect = dialect
@@ -167,7 +159,7 @@ class HTMLBuilder(object):
             raise AttributeError(tag)
         def proxy(*children, **arguments):
             buffer = '<' + tag
-            for key, value in arguments.iteritems():
+            for key, value in iteritems(arguments):
                 if value is None:
                     continue
                 if key[-1] == '_':
@@ -180,7 +172,7 @@ class HTMLBuilder(object):
                     else:
                         value = ''
                 else:
-                    value = '="' + escape(value, True) + '"'
+                    value = '="' + escape(value) + '"'
                 buffer += ' ' + key + value
             if not children and tag in self._empty_elements:
                 if self._dialect == 'xhtml':
@@ -190,7 +182,7 @@ class HTMLBuilder(object):
                 return buffer
             buffer += '>'
 
-            children_as_string = ''.join([unicode(x) for x in children
+            children_as_string = ''.join([text_type(x) for x in children
                                          if x is not None])
 
             if children_as_string:
@@ -246,7 +238,7 @@ def format_string(string, context):
     """
     def lookup_arg(match):
         x = context[match.group(1) or match.group(2)]
-        if not isinstance(x, basestring):
+        if not isinstance(x, string_types):
             x = type(string)(x)
         return x
     return _format_re.sub(lookup_arg, string)
@@ -276,9 +268,11 @@ def secure_filename(filename):
 
     :param filename: the filename to secure
     """
-    if isinstance(filename, unicode):
+    if isinstance(filename, text_type):
         from unicodedata import normalize
         filename = normalize('NFKD', filename).encode('ascii', 'ignore')
+        if not PY2:
+            filename = filename.decode('ascii')
     for sep in os.path.sep, os.path.altsep:
         if sep:
             filename = filename.replace(sep, ' ')
@@ -295,25 +289,28 @@ def secure_filename(filename):
     return filename
 
 
-def escape(s, quote=False):
-    """Replace special characters "&", "<" and ">" to HTML-safe sequences.  If
-    the optional flag `quote` is `True`, the quotation mark character (") is
-    also translated.
+def escape(s, quote=None):
+    """Replace special characters "&", "<", ">" and (") to HTML-safe sequences.
 
     There is a special handling for `None` which escapes to an empty string.
 
+    .. versionchanged:: 0.9
+       `quote` is now implicitly on.
+
     :param s: the string to escape.
-    :param quote: set to true to also escape double quotes.
+    :param quote: ignored.
     """
     if s is None:
         return ''
     elif hasattr(s, '__html__'):
-        return s.__html__()
-    elif not isinstance(s, basestring):
-        s = unicode(s)
-    s = s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
-    if quote:
-        s = s.replace('"', "&quot;")
+        return text_type(s.__html__())
+    elif not isinstance(s, string_types):
+        s = text_type(s)
+    if quote is not None:
+        from warnings import warn
+        warn(DeprecationWarning('quote parameter is implicit now'), stacklevel=2)
+    s = s.replace('&', '&amp;').replace('<', '&lt;') \
+        .replace('>', '&gt;').replace('"', "&quot;")
     return s
 
 
@@ -352,18 +349,18 @@ def redirect(location, code=302):
     :param location: the location the response should redirect to.
     :param code: the redirect status code. defaults to 302.
     """
-    from werkzeug.wrappers import BaseResponse
+    from werkzeug.wrappers import Response
     display_location = escape(location)
-    if isinstance(location, unicode):
+    if isinstance(location, text_type):
         from werkzeug.urls import iri_to_uri
         location = iri_to_uri(location)
-    response = BaseResponse(
+    response = Response(
         '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n'
         '<title>Redirecting...</title>\n'
         '<h1>Redirecting...</h1>\n'
         '<p>You should be redirected automatically to target URL: '
         '<a href="%s">%s</a>.  If not click the link.' %
-        (escape(location, True), display_location), code, mimetype='text/html')
+        (escape(location), display_location), code, mimetype='text/html')
     response.headers['Location'] = location
     return response
 
@@ -396,9 +393,10 @@ def import_string(import_name, silent=False):
                    `None` is returned instead.
     :return: imported object
     """
+    #XXX: py3 review needed
+    assert isinstance(import_name, string_types)
     # force the import name to automatically convert to strings
-    if isinstance(import_name, unicode):
-        import_name = str(import_name)
+    import_name = str(import_name)
     try:
         if ':' in import_name:
             module, obj = import_name.split(':', 1)
@@ -408,7 +406,7 @@ def import_string(import_name, silent=False):
             return __import__(import_name)
         # __import__ is not able to handle unicode strings in the fromlist
         # if the module is a package
-        if isinstance(obj, unicode):
+        if PY2 and isinstance(obj, unicode):
             obj = obj.encode('utf-8')
         try:
             return getattr(__import__(module, None, None, [obj]), obj)
@@ -418,9 +416,12 @@ def import_string(import_name, silent=False):
             modname = module + '.' + obj
             __import__(modname)
             return sys.modules[modname]
-    except ImportError, e:
+    except ImportError as e:
         if not silent:
-            raise ImportStringError(import_name, e), None, sys.exc_info()[2]
+            reraise(
+                ImportStringError,
+                ImportStringError(import_name, e),
+                sys.exc_info()[2])
 
 
 def find_modules(import_path, include_packages=False, recursive=False):
@@ -443,7 +444,7 @@ def find_modules(import_path, include_packages=False, recursive=False):
     if path is None:
         raise ValueError('%r is not a package' % import_path)
     basename = module.__name__ + '.'
-    for modname, ispkg in _iter_modules(path):
+    for importer, modname, ispkg in pkgutil.iter_modules(path):
         modname = basename + modname
         if ispkg:
             if include_packages:
@@ -533,11 +534,11 @@ def bind_arguments(func, args, kwargs):
         multikw = set(extra) & set([x[0] for x in arg_spec])
         if multikw:
             raise TypeError('got multiple values for keyword argument ' +
-                            repr(iter(multikw).next()))
+                            repr(next(iter(multikw))))
         values[kwarg_var] = extra
     elif extra:
         raise TypeError('got unexpected keyword argument ' +
-                        repr(iter(extra).next()))
+                        repr(next(iter(extra))))
     return values
 
 
