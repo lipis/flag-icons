@@ -11,15 +11,16 @@
     library.
 
 
-    :copyright: (c) 2011 by the Werkzeug Team, see AUTHORS for more details.
+    :copyright: (c) 2013 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
 """
 from types import ModuleType
 import sys
 
+from werkzeug._compat import iteritems
 
 # the version.  Usually set automatically by a script.
-__version__ = '0.9-dev'
+__version__ = '0.10-dev'
 
 
 # This import magic raises concerns quite often which is why the implementation
@@ -41,7 +42,6 @@ all_by_module = {
     'werkzeug.debug':       ['DebuggedApplication'],
     'werkzeug.local':       ['Local', 'LocalManager', 'LocalProxy',
                              'LocalStack', 'release_local'],
-    'werkzeug.templates':   ['Template'],
     'werkzeug.serving':     ['run_simple'],
     'werkzeug.test':        ['Client', 'EnvironBuilder', 'create_environ',
                              'run_wsgi_app'],
@@ -106,7 +106,7 @@ attribute_modules = frozenset(['exceptions', 'routing', 'script'])
 
 
 object_origins = {}
-for module, items in all_by_module.iteritems():
+for module, items in iteritems(all_by_module):
     for item in items:
         object_origins[item] = module
 
@@ -147,3 +147,8 @@ new_module.__dict__.update({
     '__all__':          tuple(object_origins) + tuple(attribute_modules),
     '__docformat__':    'restructuredtext en'
 })
+
+
+# Due to bootstrapping issues we need to import exceptions here.
+# Don't ask :-(
+__import__('werkzeug.exceptions')

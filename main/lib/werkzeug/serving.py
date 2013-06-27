@@ -32,7 +32,7 @@
     instead of a simple start file.
 
 
-    :copyright: (c) 2011 by the Werkzeug Team, see AUTHORS for more details.
+    :copyright: (c) 2013 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
 """
 from __future__ import with_statement
@@ -41,16 +41,27 @@ import os
 import socket
 import sys
 import time
-import thread
 import signal
 import subprocess
-from urllib import unquote
-from SocketServer import ThreadingMixIn, ForkingMixIn
-from BaseHTTPServer import HTTPServer, BaseHTTPRequestHandler
+
+try:
+    import thread
+except ImportError:
+    import _thread as thread
+
+try:
+    from SocketServer import ThreadingMixIn, ForkingMixIn
+    from BaseHTTPServer import HTTPServer, BaseHTTPRequestHandler
+except ImportError:
+    from socketserver import ThreadingMixIn, ForkingMixIn
+    from http.server import HTTPServer, BaseHTTPRequestHandler
 
 import werkzeug
 from werkzeug._internal import _log
-from werkzeug.exceptions import InternalServerError
+from werkzeug._compat import iteritems, PY2, reraise, text_type, \
+     wsgi_encoding_dance
+from werkzeug.urls import url_parse, url_unquote
+from werkzeug.exceptions import InternalServerError, BadRequest
 
 
 class WSGIRequestHandler(BaseHTTPRequestHandler, object):
@@ -61,16 +72,14 @@ class WSGIRequestHandler(BaseHTTPRequestHandler, object):
         return 'Werkzeug/' + werkzeug.__version__
 
     def make_environ(self):
-        if '?' in self.path:
-            path_info, query = self.path.split('?', 1)
-        else:
-            path_info = self.path
-            query = ''
+        request_url = url_parse(self.path)
 
         def shutdown_server():
             self.server.shutdown_signal = True
 
         url_scheme = self.server.ssl_context is None and 'http' or 'https'
+        path_info = url_unquote(request_url.path)
+
         environ = {
             'wsgi.version':         (1, 0),
             'wsgi.url_scheme':      url_scheme,
@@ -84,8 +93,8 @@ class WSGIRequestHandler(BaseHTTPRequestHandler, object):
             'SERVER_SOFTWARE':      self.server_version,
             'REQUEST_METHOD':       self.command,
             'SCRIPT_NAME':          '',
-            'PATH_INFO':            unquote(path_info),
-            'QUERY_STRING':         query,
+            'PATH_INFO':            wsgi_encoding_dance(path_info),
+            'QUERY_STRING':         wsgi_encoding_dance(request_url.query),
             'CONTENT_TYPE':         self.headers.get('Content-Type', ''),
             'CONTENT_LENGTH':       self.headers.get('Content-Length', ''),
             'REMOTE_ADDR':          self.client_address[0],
@@ -100,10 +109,15 @@ class WSGIRequestHandler(BaseHTTPRequestHandler, object):
             if key not in ('HTTP_CONTENT_TYPE', 'HTTP_CONTENT_LENGTH'):
                 environ[key] = value
 
+        if request_url.netloc:
+            environ['HTTP_HOST'] = request_url.netloc
+
         return environ
 
     def run_wsgi(self):
-        app = self.server.app
+        if self.headers.get('Expect', '').lower().strip() == '100-continue':
+            self.wfile.write(b'HTTP/1.1 100 Continue\r\n\r\n')
+
         environ = self.make_environ()
         headers_set = []
         headers_sent = []
@@ -112,7 +126,10 @@ class WSGIRequestHandler(BaseHTTPRequestHandler, object):
             assert headers_set, 'write() before start_response'
             if not headers_sent:
                 status, response_headers = headers_sent[:] = headers_set
-                code, msg = status.split(None, 1)
+                try:
+                    code, msg = status.split(None, 1)
+                except ValueError:
+                    code, msg = status, ""
                 self.send_response(int(code), msg)
                 header_keys = set()
                 for key, value in response_headers:
@@ -128,7 +145,7 @@ class WSGIRequestHandler(BaseHTTPRequestHandler, object):
                     self.send_header('Date', self.date_time_string())
                 self.end_headers()
 
-            assert type(data) is str, 'applications must write bytes'
+            assert type(data) is bytes, 'applications must write bytes'
             self.wfile.write(data)
             self.wfile.flush()
 
@@ -136,7 +153,7 @@ class WSGIRequestHandler(BaseHTTPRequestHandler, object):
             if exc_info:
                 try:
                     if headers_sent:
-                        raise exc_info[0], exc_info[1], exc_info[2]
+                        reraise(*exc_info)
                 finally:
                     exc_info = None
             elif headers_set:
@@ -149,17 +166,16 @@ class WSGIRequestHandler(BaseHTTPRequestHandler, object):
             try:
                 for data in application_iter:
                     write(data)
-                # make sure the headers are sent
                 if not headers_sent:
-                    write('')
+                    write(b'')
             finally:
                 if hasattr(application_iter, 'close'):
                     application_iter.close()
                 application_iter = None
 
         try:
-            execute(app)
-        except (socket.error, socket.timeout), e:
+            execute(self.server.app)
+        except (socket.error, socket.timeout) as e:
             self.connection_dropped(e, environ)
         except Exception:
             if self.server.passthrough_errors:
@@ -182,7 +198,7 @@ class WSGIRequestHandler(BaseHTTPRequestHandler, object):
         rv = None
         try:
             rv = BaseHTTPRequestHandler.handle(self)
-        except (socket.error, socket.timeout), e:
+        except (socket.error, socket.timeout) as e:
             self.connection_dropped(e)
         except Exception:
             if self.server.ssl_context is None or not is_ssl_error():
@@ -224,8 +240,8 @@ class WSGIRequestHandler(BaseHTTPRequestHandler, object):
         if message is None:
             message = code in self.responses and self.responses[code][0] or ''
         if self.request_version != 'HTTP/0.9':
-            self.wfile.write("%s %d %s\r\n" %
-                             (self.protocol_version, code, message))
+            hdr = "%s %d %s\r\n" % (self.protocol_version, code, message)
+            self.wfile.write(hdr.encode('ascii'))
 
     def version_string(self):
         return BaseHTTPRequestHandler.version_string(self).strip()
@@ -318,7 +334,7 @@ def make_ssl_devcert(base_path, host=None, cn=None):
 def generate_adhoc_ssl_context():
     """Generates an adhoc SSL context for the development server."""
     from OpenSSL import SSL
-    pkey, cert = generate_adhoc_ssl_pair()
+    cert, pkey = generate_adhoc_ssl_pair()
     ctx = SSL.Context(SSL.SSLv23_METHOD)
     ctx.use_privatekey(pkey)
     ctx.use_certificate(cert)
@@ -471,7 +487,9 @@ def make_server(host, port, app=None, threaded=False, processes=1,
 
 
 def _iter_module_files():
-    for module in sys.modules.values():
+    # The list call is necessary on Python 3 in case the module
+    # dictionary modifies during iteration.
+    for module in list(sys.modules.values()):
         filename = getattr(module, '__file__', None)
         if filename:
             old = None
@@ -575,9 +593,9 @@ def restart_with_reloader():
         # a weird bug on windows. sometimes unicode strings end up in the
         # environment and subprocess.call does not like this, encode them
         # to latin1 and continue.
-        if os.name == 'nt':
-            for key, value in new_environ.iteritems():
-                if isinstance(value, unicode):
+        if os.name == 'nt' and PY2:
+            for key, value in iteritems(new_environ):
+                if isinstance(value, text_type):
                     new_environ[key] = value.encode('iso-8859-1')
 
         exit_code = subprocess.call(args, env=new_environ)
@@ -610,6 +628,10 @@ def run_simple(hostname, port, application, use_reloader=False,
     wraps `wsgiref` to fix the wrong default reporting of the multithreaded
     WSGI variable and adds optional multithreading and fork support.
 
+    This function has a command-line interface too::
+
+        python -m werkzeug.serving --help
+
     .. versionadded:: 0.5
        `static_files` was added to simplify serving of static files as well
        as `passthrough_errors`.
@@ -620,6 +642,9 @@ def run_simple(hostname, port, application, use_reloader=False,
     .. versionadded:: 0.8
        Added support for automatically loading a SSL context from certificate
        file and private key.
+
+    .. versionadded:: 0.9
+       Added command-line interface.
 
     :param hostname: The host for the application.  eg: ``'localhost'``
     :param port: The port for the server.  eg: ``8080``
@@ -683,3 +708,42 @@ def run_simple(hostname, port, application, use_reloader=False,
         run_with_reloader(inner, extra_files, reloader_interval)
     else:
         inner()
+
+def main():
+    '''A simple command-line interface for :py:func:`run_simple`.'''
+
+    # in contrast to argparse, this works at least under Python < 2.7
+    import optparse
+    from werkzeug.utils import import_string
+
+    parser = optparse.OptionParser(usage='Usage: %prog [options] app_module:app_object')
+    parser.add_option('-b', '--bind', dest='address',
+                      help='The hostname:port the app should listen on.')
+    parser.add_option('-d', '--debug', dest='use_debugger',
+                      action='store_true', default=False,
+                      help='Use Werkzeug\'s debugger.')
+    parser.add_option('-r', '--reload', dest='use_reloader',
+                      action='store_true', default=False,
+                      help='Reload Python process if modules change.')
+    options, args = parser.parse_args()
+
+    hostname, port = None, None
+    if options.address:
+        address = options.address.split(':')
+        hostname = address[0]
+        if len(address) > 1:
+            port = address[1]
+
+    if len(args) != 1:
+        sys.stdout.write('No application supplied, or too much. See --help\n')
+        sys.exit(1)
+    app = import_string(args[0])
+
+    run_simple(
+        hostname=(hostname or '127.0.0.1'), port=int(port or 5000),
+        application=app, use_reloader=options.use_reloader,
+        use_debugger=options.use_debugger
+    )
+
+if __name__ == '__main__':
+    main()

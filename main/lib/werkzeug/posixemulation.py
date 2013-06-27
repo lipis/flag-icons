@@ -14,7 +14,7 @@ r"""
     This module was introduced in 0.6.1 and is not a public interface.
     It might become one in later versions of Werkzeug.
 
-    :copyright: (c) 2011 by the Werkzeug Team, see AUTHORS for more details.
+    :copyright: (c) 2013 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
 """
 import sys
@@ -90,7 +90,7 @@ if os.name == 'nt': # pragma: no cover
         # Fall back to "move away and replace"
         try:
             os.rename(src, dst)
-        except OSError, e:
+        except OSError as e:
             if e.errno != errno.EEXIST:
                 raise
             old = "%s-%08x" % (dst, random.randint(0, sys.maxint))

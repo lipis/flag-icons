@@ -16,7 +16,7 @@
 
     It's strongly recommended to use it during development.
 
-    :copyright: (c) 2011 by the Werkzeug Team, see AUTHORS for more details.
+    :copyright: (c) 2013 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
 """
 from urlparse import urlparse
@@ -25,6 +25,7 @@ from warnings import warn
 from werkzeug.datastructures import Headers
 from werkzeug.http import is_entity_header
 from werkzeug.wsgi import FileWrapper
+from werkzeug._compat import string_types
 
 
 class WSGIWarning(Warning):
@@ -285,7 +286,7 @@ class LintMiddleware(object):
                      stacklevel=4)
 
     def check_iterator(self, app_iter):
-        if isinstance(app_iter, basestring):
+        if isinstance(app_iter, string_types):
             warn(WSGIWarning('application returned string.  Response will '
                              'send character for character to the client '
                              'which will kill the performance.  Return a '

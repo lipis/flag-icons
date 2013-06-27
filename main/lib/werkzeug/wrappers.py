@@ -17,10 +17,10 @@
     decoded into an unicode object if possible and if it makes sense.
 
 
-    :copyright: (c) 2011 by the Werkzeug Team, see AUTHORS for more details.
+    :copyright: (c) 2013 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
 """
-import urlparse
+from functools import update_wrapper
 from datetime import datetime, timedelta
 
 from werkzeug.http import HTTP_STATUS_CODES, \
@@ -31,19 +31,21 @@ from werkzeug.http import HTTP_STATUS_CODES, \
      parse_options_header, dump_options_header, http_date, \
      parse_if_range_header, parse_cookie, dump_cookie, \
      parse_range_header, parse_content_range_header, dump_header
-from werkzeug.urls import url_decode, iri_to_uri
+from werkzeug.urls import url_decode, iri_to_uri, url_join
 from werkzeug.formparser import FormDataParser, default_stream_factory
 from werkzeug.utils import cached_property, environ_property, \
      header_property, get_content_type
-from werkzeug.wsgi import get_current_url, get_host, LimitedStream, \
-     ClosingIterator
+from werkzeug.wsgi import get_current_url, get_host, \
+     ClosingIterator, get_input_stream, get_content_length
 from werkzeug.datastructures import MultiDict, CombinedMultiDict, Headers, \
      EnvironHeaders, ImmutableMultiDict, ImmutableTypeConversionDict, \
      ImmutableList, MIMEAccept, CharsetAccept, LanguageAccept, \
      ResponseCacheControl, RequestCacheControl, CallbackDict, \
-     ContentRange
-from werkzeug._internal import _empty_stream, _decode_unicode, \
-     _patch_wrapper, _get_environ
+     ContentRange, iter_multi_items
+from werkzeug._internal import _get_environ
+from werkzeug._compat import to_bytes, string_types, text_type, \
+     integer_types, wsgi_decoding_dance, wsgi_get_bytes, \
+     to_unicode, to_native
 
 
 def _run_wsgi_app(*args):
@@ -59,13 +61,28 @@ def _warn_if_string(iterable):
     """Helper for the response objects to check if the iterable returned
     to the WSGI server is not a string.
     """
-    if isinstance(iterable, basestring):
+    if isinstance(iterable, string_types):
         from warnings import warn
         warn(Warning('response iterable was set to a string.  This appears '
                      'to work but means that the server will send the '
                      'data to the client char, by char.  This is almost '
                      'never intended behavior, use response.data to assign '
                      'strings to the response object.'), stacklevel=2)
+
+
+def _assert_not_shallow(request):
+    if request.shallow:
+        raise RuntimeError('A shallow request tried to consume '
+                           'form data.  If you really want to do '
+                           'that, set `shallow` to False.')
+
+
+def _iter_encoded(iterable, charset):
+    for item in iterable:
+        if isinstance(item, text_type):
+            yield item.encode(charset)
+        else:
+            yield item
 
 
 class BaseRequest(object):
@@ -171,6 +188,20 @@ class BaseRequest(object):
     #: the form date parsing.
     form_data_parser_class = FormDataParser
 
+    #: Optionally a list of hosts that is trusted by this request.  By default
+    #: all hosts are trusted which means that whatever the client sends the
+    #: host is will be accepted.  This is the recommended setup as a webserver
+    #: should manually be set up to not route invalid hosts to the application.
+    #:
+    #: .. versionadded:: 0.9
+    trusted_hosts = None
+
+    #: Indicates weather the data descriptor should be allowed to read and
+    #: buffer up the input stream.  By default it's enabled.
+    #:
+    #: .. versionadded:: 0.9
+    disable_data_descriptor = False
+
     def __init__(self, environ, populate_request=True, shallow=False):
         self.environ = environ
         if populate_request and not shallow:
@@ -233,7 +264,8 @@ class BaseRequest(object):
     def application(cls, f):
         """Decorate a function as responder that accepts the request as first
         argument.  This works like the :func:`responder` decorator but the
-        function is passed the request object as first argument::
+        function is passed the request object as first argument and the
+        request object will be closed automatically::
 
             @Request.application
             def my_wsgi_app(request):
@@ -247,7 +279,11 @@ class BaseRequest(object):
         #: the request.  The return value is then called with the latest
         #: two arguments.  This makes it possible to use this decorator for
         #: both methods and standalone WSGI functions.
-        return _patch_wrapper(f, lambda *a: f(*a[:-2]+(cls(a[-2]),))(*a[-2:]))
+        def application(*args):
+            request = cls(args[-2])
+            with request:
+                return f(*args[:-2] + (request,))(*args[-2:])
+        return update_wrapper(application, f)
 
     def _get_file_stream(self, total_content_length, content_type, filename=None,
                         content_length=None):
@@ -275,13 +311,12 @@ class BaseRequest(object):
 
     @property
     def want_form_data_parsed(self):
-        """Returns True if the request method is ``POST``, ``PUT`` or
-        ``PATCH``.  Can be overriden to support other HTTP methods that
-        should carry form data.
+        """Returns True if the request method carries content.  As of
+        Werkzeug 0.9 this will be the case if a content type is transmitted.
 
         .. versionadded:: 0.8
         """
-        return self.environ['REQUEST_METHOD'] in ('POST', 'PUT', 'PATCH')
+        return bool(self.environ.get('CONTENT_TYPE'))
 
     def make_form_data_parser(self):
         """Creates the form data parser.  Instanciates the
@@ -305,28 +340,20 @@ class BaseRequest(object):
         .. versionadded:: 0.8
         """
         # abort early if we have already consumed the stream
-        if 'stream' in self.__dict__:
+        if 'form' in self.__dict__:
             return
-        if self.shallow:
-            raise RuntimeError('A shallow request tried to consume '
-                               'form data.  If you really want to do '
-                               'that, set `shallow` to False.')
-        data = None
-        stream = _empty_stream
-        if self.want_form_data_parsed:
-            parser = self.make_form_data_parser()
-            data = parser.parse_from_environ(self.environ)
-        else:
-            # if we have a content length header we are able to properly
-            # guard the incoming stream, no matter what request method is
-            # used.
-            content_length = self.headers.get('content-length', type=int)
-            if content_length is not None:
-                stream = LimitedStream(self.environ['wsgi.input'],
-                                       content_length)
 
-        if data is None:
-            data = (stream, self.parameter_storage_class(),
+        _assert_not_shallow(self)
+
+        if self.want_form_data_parsed:
+            content_type = self.environ.get('CONTENT_TYPE', '')
+            content_length = get_content_length(self.environ)
+            mimetype, options = parse_options_header(content_type)
+            parser = self.make_form_data_parser()
+            data = parser.parse(self.stream, mimetype,
+                                content_length, options)
+        else:
+            data = (self.stream, self.parameter_storage_class(),
                     self.parameter_storage_class())
 
         # inject the values into the instance dict so that we bypass
@@ -334,16 +361,38 @@ class BaseRequest(object):
         d = self.__dict__
         d['stream'], d['form'], d['files'] = data
 
+    def close(self):
+        """Closes associated resources of this request object.  This
+        closes all file handles explicitly.  You can also use the request
+        object in a with statement with will automatically close it.
+
+        .. versionadded:: 0.9
+        """
+        files = self.__dict__.get('files')
+        for key, value in iter_multi_items(files or ()):
+            value.close()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, tb):
+        self.close()
+
     @cached_property
     def stream(self):
-        """The parsed stream if the submitted data was not multipart or
-        urlencoded form data.  This stream is the stream left by the form data
-        parser module after parsing.  This is *not* the WSGI input stream but
-        a wrapper around it that ensures the caller does not accidentally
-        read past `Content-Length`.
+        """The stream to read incoming data from.  Unlike :attr:`input_stream`
+        this stream is properly guarded that you can't accidentally read past
+        the length of the input.  Werkzeug will internally always refer to
+        this stream to read data which makes it possible to wrap this
+        object with a stream that does filtering.
+
+        .. versionchanged:: 0.9
+           This stream is now always available but might be consumed by the
+           form parser later on.  Previously the stream was only set if no
+           parsing happened.
         """
-        self._load_form_data()
-        return self.stream
+        _assert_not_shallow(self)
+        return get_input_stream(self.environ)
 
     input_stream = environ_property('wsgi.input', 'The WSGI input stream.\n'
         'In general it\'s a bad idea to use this one because you can easily '
@@ -357,20 +406,39 @@ class BaseRequest(object):
         :attr:`parameter_storage_class` to a different type.  This might
         be necessary if the order of the form data is important.
         """
-        return url_decode(self.environ.get('QUERY_STRING', ''),
+        return url_decode(wsgi_get_bytes(self.environ.get('QUERY_STRING', '')),
                           self.url_charset, errors=self.encoding_errors,
                           cls=self.parameter_storage_class)
 
     @cached_property
     def data(self):
-        """This reads the buffered incoming data from the client into the
-        string.  Usually it's a bad idea to access :attr:`data` because a client
-        could send dozens of megabytes or more to cause memory problems on the
-        server.
+        if self.disable_data_descriptor:
+            raise AttributeError('data descriptor is disabled')
+        # XXX: this should eventually be deprecated.
+        return self.get_data()
 
-        To circumvent that make sure to check the content length first.
+    def get_data(self, cache=True, as_text=False):
+        """This reads the buffered incoming data from the client into one
+        bytestring.  By default this is cached but that behavior can be
+        changed by setting `cache` to `False`.
+
+        Usually it's a bad idea to call this method without checking the
+        content length first as a client could send dozens of megabytes or more
+        to cause memory problems on the server.
+
+        If `as_text` is set to `True` the return value will be a decoded
+        unicode string.
+
+        .. versionadded:: 0.9
         """
-        return self.stream.read()
+        rv = getattr(self, '_cached_data', None)
+        if rv is None:
+            rv = self.stream.read()
+            if cache:
+                self._cached_data = rv
+        if as_text:
+            rv = rv.decode(self.charset, self.encoding_errors)
+        return rv
 
     @cached_property
     def form(self):
@@ -415,6 +483,7 @@ class BaseRequest(object):
     def cookies(self):
         """Read only access to the retrieved cookie values as dictionary."""
         return parse_cookie(self.environ, self.charset,
+                            self.encoding_errors,
                             cls=self.dict_storage_class)
 
     @cached_property
@@ -430,46 +499,53 @@ class BaseRequest(object):
         info in the WSGI environment but will always include a leading slash,
         even if the URL root is accessed.
         """
-        path = '/' + (self.environ.get('PATH_INFO') or '').lstrip('/')
-        return _decode_unicode(path, self.url_charset, self.encoding_errors)
+        raw_path = wsgi_decoding_dance(self.environ.get('PATH_INFO') or '',
+                                       self.charset, self.encoding_errors)
+        return '/' + raw_path.lstrip('/')
 
     @cached_property
     def full_path(self):
         """Requested path as unicode, including the query string."""
-        return self.path + u'?' + self.query_string
+        return self.path + u'?' + to_unicode(self.query_string, self.url_charset)
 
     @cached_property
     def script_root(self):
         """The root path of the script without the trailing slash."""
-        path = (self.environ.get('SCRIPT_NAME') or '').rstrip('/')
-        return _decode_unicode(path, self.url_charset, self.encoding_errors)
+        raw_path = wsgi_decoding_dance(self.environ.get('SCRIPT_NAME') or '',
+                                       self.charset, self.encoding_errors)
+        return raw_path.rstrip('/')
 
     @cached_property
     def url(self):
         """The reconstructed current URL"""
-        return get_current_url(self.environ)
+        return get_current_url(self.environ,
+                               trusted_hosts=self.trusted_hosts)
 
     @cached_property
     def base_url(self):
         """Like :attr:`url` but without the querystring"""
-        return get_current_url(self.environ, strip_querystring=True)
+        return get_current_url(self.environ, strip_querystring=True,
+                               trusted_hosts=self.trusted_hosts)
 
     @cached_property
     def url_root(self):
         """The full URL root (with hostname), this is the application root."""
-        return get_current_url(self.environ, True)
+        return get_current_url(self.environ, True,
+                               trusted_hosts=self.trusted_hosts)
 
     @cached_property
     def host_url(self):
         """Just the host with scheme."""
-        return get_current_url(self.environ, host_only=True)
+        return get_current_url(self.environ, host_only=True,
+                               trusted_hosts=self.trusted_hosts)
 
     @cached_property
     def host(self):
         """Just the host including the port if available."""
-        return get_host(self.environ)
+        return get_host(self.environ, trusted_hosts=self.trusted_hosts)
 
-    query_string = environ_property('QUERY_STRING', '', read_only=True, doc=
+    query_string = environ_property('QUERY_STRING', '', read_only=True,
+        load_func=wsgi_get_bytes, doc=
         '''The URL parameters as raw bytestring.''')
     method = environ_property('REQUEST_METHOD', 'GET', read_only=True, doc=
         '''The transmission method. (For example ``'GET'`` or ``'POST'``).''')
@@ -571,9 +647,9 @@ class BaseResponse(object):
     Special note for `mimetype` and `content_type`:  For most mime types
     `mimetype` and `content_type` work the same, the difference affects
     only 'text' mimetypes.  If the mimetype passed with `mimetype` is a
-    mimetype starting with `text/` it becomes a charset parameter defined
-    with the charset of the response object.  In contrast the
-    `content_type` parameter is always added as header unmodified.
+    mimetype starting with `text/`, the charset parameter of the response
+    object is appended to it.  In contrast the `content_type` parameter is
+    always added as header unmodified.
 
     .. versionchanged:: 0.5
        the `direct_passthrough` parameter was added.
@@ -641,7 +717,7 @@ class BaseResponse(object):
             self.headers['Content-Type'] = content_type
         if status is None:
             status = self.default_status
-        if isinstance(status, (int, long)):
+        if isinstance(status, integer_types):
             self.status_code = status
         else:
             self.status = status
@@ -653,8 +729,8 @@ class BaseResponse(object):
         # the charset attribute, the data is set in the correct charset.
         if response is None:
             self.response = []
-        elif isinstance(response, basestring):
-            self.data = response
+        elif isinstance(response, (text_type, bytes, bytearray)):
+            self.set_data(response)
         else:
             self.response = response
 
@@ -748,34 +824,63 @@ class BaseResponse(object):
     def _get_status(self):
         return self._status
     def _set_status(self, value):
-        self._status = value
+        self._status = to_native(value)
         try:
             self._status_code = int(self._status.split(None, 1)[0])
         except ValueError:
             self._status_code = 0
+            self._status = '0 %s' % self._status
     status = property(_get_status, _set_status, doc='The HTTP Status code')
     del _get_status, _set_status
 
-    def _get_data(self):
-        """The string representation of the request body.  Whenever you access
+    def get_data(self, as_text=False):
+        """The string representation of the request body.  Whenever you call
         this property the request iterable is encoded and flattened.  This
         can lead to unwanted behavior if you stream big data.
 
         This behavior can be disabled by setting
         :attr:`implicit_sequence_conversion` to `False`.
+
+        If `as_text` is set to `True` the return value will be a decoded
+        unicode string.
+
+        .. versionadded:: 0.9
         """
         self._ensure_sequence()
-        return ''.join(self.iter_encoded())
-    def _set_data(self, value):
+        rv = b''.join(self.iter_encoded())
+        if as_text:
+            rv = rv.decode(self.charset)
+        return rv
+
+    def set_data(self, value):
+        """Sets a new string as response.  The value set must either by a
+        unicode or bytestring.  If a unicode string is set it's encoded
+        automatically to the charset of the response (utf-8 by default).
+
+        .. versionadded:: 0.9
+        """
         # if an unicode string is set, it's encoded directly so that we
         # can set the content length
-        if isinstance(value, unicode):
+        if isinstance(value, text_type):
             value = value.encode(self.charset)
+        else:
+            value = bytes(value)
         self.response = [value]
         if self.automatically_set_content_length:
             self.headers['Content-Length'] = str(len(value))
-    data = property(_get_data, _set_data, doc=_get_data.__doc__)
-    del _get_data, _set_data
+
+    data = property(get_data, set_data, doc='''
+        A descriptor that calls :meth:`get_data` and :meth:`set_data`.  This
+        should not be used and will eventually get deprecated.
+        ''')
+
+    def calculate_content_length(self):
+        """Returns the content length if available or `None` otherwise."""
+        try:
+            self._ensure_sequence()
+        except RuntimeError:
+            return None
+        return sum(len(x) for x in self.response)
 
     def _ensure_sequence(self, mutable=False):
         """This method can be called by methods that need a sequence.  If
@@ -789,6 +894,10 @@ class BaseResponse(object):
             if mutable and not isinstance(self.response, list):
                 self.response = list(self.response)
             return
+        if self.direct_passthrough:
+            raise RuntimeError('Attempted implicit sequence conversion '
+                               'but the response object is in direct '
+                               'passthrough mode.')
         if not self.implicit_sequence_conversion:
             raise RuntimeError('The response object required the iterable '
                                'to be a sequence, but the implicit '
@@ -813,29 +922,19 @@ class BaseResponse(object):
             if close is not None:
                 self.call_on_close(close)
 
-    def iter_encoded(self, charset=None):
+    def iter_encoded(self):
         """Iter the response encoded with the encoding of the response.
         If the response object is invoked as WSGI application the return
         value of this method is used as application iterator unless
         :attr:`direct_passthrough` was activated.
-
-        .. versionchanged:: 0.6
-
-           The `charset` parameter was deprecated and became a no-op.
         """
-        # XXX: deprecated
-        if __debug__ and charset is not None: # pragma: no cover
-            from warnings import warn
-            warn(DeprecationWarning('charset was deprecated and is ignored.'),
-                 stacklevel=2)
         charset = self.charset
         if __debug__:
             _warn_if_string(self.response)
-        for item in self.response:
-            if isinstance(item, unicode):
-                yield item.encode(charset)
-            else:
-                yield str(item)
+        # Encode in a separate function so that self.response is fetched
+        # early.  This allows us to wrap the response with the return
+        # value from get_app_iter or iter_encoded.
+        return _iter_encoded(self.response, self.charset)
 
     def set_cookie(self, key, value='', max_age=None, expires=None,
                    path='/', domain=None, secure=None, httponly=False):
@@ -872,15 +971,6 @@ class BaseResponse(object):
         self.set_cookie(key, expires=0, max_age=0, path=path, domain=domain)
 
     @property
-    def header_list(self): # pragma: no cover
-        # XXX: deprecated
-        if __debug__:
-            from warnings import warn
-            warn(DeprecationWarning('header_list is deprecated'),
-                 stacklevel=2)
-        return self.headers.to_list(self.charset)
-
-    @property
     def is_streamed(self):
         """If the response is streamed (the response is not an iterable with
         a length information) this property is `True`.  In this case streamed
@@ -892,7 +982,7 @@ class BaseResponse(object):
         """
         try:
             len(self.response)
-        except TypeError:
+        except (TypeError, AttributeError):
             return True
         return False
 
@@ -907,11 +997,22 @@ class BaseResponse(object):
         return isinstance(self.response, (tuple, list))
 
     def close(self):
-        """Close the wrapped response if possible."""
+        """Close the wrapped response if possible.  You can also use the object
+        in a with statement which will automatically close it.
+
+        .. versionadded:: 0.9
+           Can now be used in a with statement.
+        """
         if hasattr(self.response, 'close'):
             self.response.close()
         for func in self._on_close:
             func()
+
+    def __enter__(self):
+        return self
+
+    def __exit__(self, exc_type, exc_value, tb):
+        self.close()
 
     def freeze(self):
         """Call this method if you want to make your response object ready for
@@ -925,15 +1026,6 @@ class BaseResponse(object):
         # iterator.  Even if the implicit sequence conversion is disabled.
         self.response = list(self.iter_encoded())
         self.headers['Content-Length'] = str(sum(map(len, self.response)))
-
-    def fix_headers(self, environ):
-        # XXX: deprecated
-        if __debug__:
-            from warnings import warn
-            warn(DeprecationWarning('called into deprecated fix_headers baseclass '
-                                    'method.  Use get_wsgi_headers instead.'),
-                 stacklevel=2)
-        self.headers[:] = self.get_wsgi_headers(environ)
 
     def get_wsgi_headers(self, environ):
         """This is automatically called right before the response is started
@@ -970,29 +1062,29 @@ class BaseResponse(object):
         # speedup.
         for key, value in headers:
             ikey = key.lower()
-            if ikey == 'location':
+            if ikey == u'location':
                 location = value
-            elif ikey == 'content-location':
+            elif ikey == u'content-location':
                 content_location = value
-            elif ikey == 'content-length':
+            elif ikey == u'content-length':
                 content_length = value
 
         # make sure the location header is an absolute URL
         if location is not None:
             old_location = location
-            if isinstance(location, unicode):
+            if isinstance(location, text_type):
                 location = iri_to_uri(location)
             if self.autocorrect_location_header:
-                location = urlparse.urljoin(
-                    get_current_url(environ, root_only=True),
-                    location
-                )
+                current_url = get_current_url(environ, root_only=True)
+                if isinstance(current_url, text_type):
+                    current_url = iri_to_uri(current_url)
+                location = url_join(current_url, location)
             if location != old_location:
                 headers['Location'] = location
 
         # make sure the content location is a URL
         if content_location is not None and \
-           isinstance(content_location, unicode):
+           isinstance(content_location, text_type):
             headers['Content-Location'] = iri_to_uri(content_location)
 
         # remove entity headers and set content length to zero if needed.
@@ -1000,7 +1092,7 @@ class BaseResponse(object):
         # content length detection does not trigger in the following
         # code.
         if 100 <= status < 200 or status == 204:
-            headers['Content-Length'] = content_length = '0'
+            headers['Content-Length'] = content_length = u'0'
         elif status == 304:
             remove_entity_headers(headers)
 
@@ -1012,7 +1104,7 @@ class BaseResponse(object):
         if self.automatically_set_content_length and \
            self.is_sequence and content_length is None and status != 304:
             try:
-                content_length = sum(len(str(x)) for x in self.response)
+                content_length = sum(len(to_bytes(x, 'ascii')) for x in self.response)
             except UnicodeError:
                 # aha, something non-bytestringy in there, too bad, we
                 # can't safely figure out the length of the response.
@@ -1039,12 +1131,14 @@ class BaseResponse(object):
         status = self.status_code
         if environ['REQUEST_METHOD'] == 'HEAD' or \
            100 <= status < 200 or status in (204, 304):
-            return ()
-        if self.direct_passthrough:
+            iterable = ()
+        elif self.direct_passthrough:
             if __debug__:
                 _warn_if_string(self.response)
             return self.response
-        return ClosingIterator(self.iter_encoded(), self.close)
+        else:
+            iterable = self.iter_encoded()
+        return ClosingIterator(iterable, self.close)
 
     def get_wsgi_response(self, environ):
         """Returns the final WSGI response as tuple.  The first item in
@@ -1059,22 +1153,9 @@ class BaseResponse(object):
         :param environ: the WSGI environment of the request.
         :return: an ``(app_iter, status, headers)`` tuple.
         """
-        # XXX: code for backwards compatibility with custom fix_headers
-        # methods.
-        if self.fix_headers.func_code is not \
-           BaseResponse.fix_headers.func_code:
-            if __debug__:
-                from warnings import warn
-                warn(DeprecationWarning('fix_headers changed behavior in 0.6 '
-                                        'and is now called get_wsgi_headers. '
-                                        'See documentation for more details.'),
-                     stacklevel=2)
-            self.fix_headers(environ)
-            headers = self.headers
-        else:
-            headers = self.get_wsgi_headers(environ)
+        headers = self.get_wsgi_headers(environ)
         app_iter = self.get_app_iter(environ)
-        return app_iter, self.status, headers.to_list()
+        return app_iter, self.status, headers.to_wsgi_list()
 
     def __call__(self, environ, start_response):
         """Process this response as WSGI application.
@@ -1220,6 +1301,19 @@ class AuthorizationMixin(object):
         return parse_authorization_header(header)
 
 
+class StreamOnlyMixin(object):
+    """If mixed in before the request object this will change the bahavior
+    of it to disable handling of form parsing.  This disables the
+    :attr:`files`, :attr:`form` attributes and will just provide a
+    :attr:`stream` attribute that however is always available.
+
+    .. versionadded:: 0.9
+    """
+
+    disable_data_descriptor = True
+    want_form_data_parsed = False
+
+
 class ETagResponseMixin(object):
     """Adds extra functionality to a response object for etag and cache
     handling.  This mixin requires an object with at least a `headers`
@@ -1274,7 +1368,9 @@ class ETagResponseMixin(object):
             if 'date' not in self.headers:
                 self.headers['Date'] = http_date()
             if 'content-length' not in self.headers:
-                self.headers['Content-Length'] = len(self.data)
+                length = self.calculate_content_length()
+                if length is not None:
+                    self.headers['Content-Length'] = length
             if not is_resource_modified(environ, self.headers.get('etag'), None,
                                         self.headers.get('last-modified')):
                 self.status_code = 304
@@ -1283,7 +1379,7 @@ class ETagResponseMixin(object):
     def add_etag(self, overwrite=False, weak=False):
         """Add an etag for the current response if there is none yet."""
         if overwrite or 'etag' not in self.headers:
-            self.set_etag(generate_etag(self.data), weak)
+            self.set_etag(generate_etag(self.get_data()), weak)
 
     def set_etag(self, etag, weak=False):
         """Set the etag, and override the old one if there was one."""
@@ -1329,7 +1425,7 @@ class ETagResponseMixin(object):
     def _set_content_range(self, value):
         if not value:
             del self.headers['content-range']
-        elif isinstance(value, basestring):
+        elif isinstance(value, string_types):
             self.headers['Content-Range'] = value
         else:
             self.headers['Content-Range'] = value.to_header()
@@ -1403,15 +1499,36 @@ class CommonRequestDescriptorsMixin(object):
     """
 
     content_type = environ_property('CONTENT_TYPE', doc='''
-         The Content-Type entity-header field indicates the media type of
-         the entity-body sent to the recipient or, in the case of the HEAD
-         method, the media type that would have been sent had the request
-         been a GET.''')
-    content_length = environ_property('CONTENT_LENGTH', None, int, str, doc='''
-         The Content-Length entity-header field indicates the size of the
-         entity-body in bytes or, in the case of the HEAD method, the size of
-         the entity-body that would have been sent had the request been a
-         GET.''')
+        The Content-Type entity-header field indicates the media type of
+        the entity-body sent to the recipient or, in the case of the HEAD
+        method, the media type that would have been sent had the request
+        been a GET.''')
+
+    @cached_property
+    def content_length(self):
+        """The Content-Length entity-header field indicates the size of the
+        entity-body in bytes or, in the case of the HEAD method, the size of
+        the entity-body that would have been sent had the request been a
+        GET.
+        """
+        return get_content_length(self.environ)
+
+    content_encoding = environ_property('HTTP_CONTENT_ENCODING', doc='''
+        The Content-Encoding entity-header field is used as a modifier to the
+        media-type.  When present, its value indicates what additional content
+        codings have been applied to the entity-body, and thus what decoding
+        mechanisms must be applied in order to obtain the media-type
+        referenced by the Content-Type header field.
+
+        .. versionadded:: 0.9''')
+    content_md5 = environ_property('HTTP_CONTENT_MD5', doc='''
+         The Content-MD5 entity-header field, as defined in RFC 1864, is an
+         MD5 digest of the entity-body for the purpose of providing an
+         end-to-end message integrity check (MIC) of the entity-body.  (Note:
+         a MIC is good for detecting accidental modification of the
+         entity-body in transit, but is not proof against malicious attacks.)
+
+        .. versionadded:: 0.9''')
     referrer = environ_property('HTTP_REFERER', doc='''
         The Referer[sic] request-header field allows the client to specify,
         for the server's benefit, the address (URI) of the resource from which
@@ -1579,7 +1696,7 @@ class CommonResponseDescriptorsMixin(object):
         def fset(self, value):
             if not value:
                 del self.headers[name]
-            elif isinstance(value, basestring):
+            elif isinstance(value, string_types):
                 self.headers[name] = value
             else:
                 self.headers[name] = dump_header(value)
@@ -1631,6 +1748,13 @@ class Request(BaseRequest, AcceptMixin, ETagRequestMixin,
     - :class:`UserAgentMixin` for user agent introspection
     - :class:`AuthorizationMixin` for http auth handling
     - :class:`CommonRequestDescriptorsMixin` for common headers
+    """
+
+
+class PlainRequest(StreamOnlyMixin, Request):
+    """A request object without special form parsing capabilities.
+
+    .. versionadded:: 0.9
     """
 
 

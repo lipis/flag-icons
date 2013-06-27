@@ -5,79 +5,53 @@
 
     This module provides internally used helpers and constants.
 
-    :copyright: (c) 2011 by the Werkzeug Team, see AUTHORS for more details.
+    :copyright: (c) 2013 by the Werkzeug Team, see AUTHORS for more details.
     :license: BSD, see LICENSE for more details.
 """
+import re
+import string
 import inspect
 from weakref import WeakKeyDictionary
-from cStringIO import StringIO
-from Cookie import SimpleCookie, Morsel, CookieError
-from time import gmtime
 from datetime import datetime, date
+from itertools import chain
+
+from werkzeug._compat import iter_bytes, text_type, BytesIO, int_to_byte, \
+     range_type, to_native
 
 
 _logger = None
-_empty_stream = StringIO('')
+_empty_stream = BytesIO()
 _signature_cache = WeakKeyDictionary()
 _epoch_ord = date(1970, 1, 1).toordinal()
+_cookie_params = set((b'expires', b'path', b'comment',
+                      b'max-age', b'secure', b'httponly',
+                      b'version'))
+_legal_cookie_chars = (string.ascii_letters +
+                       string.digits +
+                       u"!#$%&'*+-.^_`|~:").encode('ascii')
 
-
-HTTP_STATUS_CODES = {
-    100:    'Continue',
-    101:    'Switching Protocols',
-    102:    'Processing',
-    200:    'OK',
-    201:    'Created',
-    202:    'Accepted',
-    203:    'Non Authoritative Information',
-    204:    'No Content',
-    205:    'Reset Content',
-    206:    'Partial Content',
-    207:    'Multi Status',
-    226:    'IM Used',              # see RFC 3229
-    300:    'Multiple Choices',
-    301:    'Moved Permanently',
-    302:    'Found',
-    303:    'See Other',
-    304:    'Not Modified',
-    305:    'Use Proxy',
-    307:    'Temporary Redirect',
-    400:    'Bad Request',
-    401:    'Unauthorized',
-    402:    'Payment Required',     # unused
-    403:    'Forbidden',
-    404:    'Not Found',
-    405:    'Method Not Allowed',
-    406:    'Not Acceptable',
-    407:    'Proxy Authentication Required',
-    408:    'Request Timeout',
-    409:    'Conflict',
-    410:    'Gone',
-    411:    'Length Required',
-    412:    'Precondition Failed',
-    413:    'Request Entity Too Large',
-    414:    'Request URI Too Long',
-    415:    'Unsupported Media Type',
-    416:    'Requested Range Not Satisfiable',
-    417:    'Expectation Failed',
-    418:    'I\'m a teapot',        # see RFC 2324
-    422:    'Unprocessable Entity',
-    423:    'Locked',
-    424:    'Failed Dependency',
-    426:    'Upgrade Required',
-    428:    'Precondition Required', # see RFC 6585
-    429:    'Too Many Requests',
-    431:    'Request Header Fields Too Large',
-    449:    'Retry With',           # proprietary MS extension
-    500:    'Internal Server Error',
-    501:    'Not Implemented',
-    502:    'Bad Gateway',
-    503:    'Service Unavailable',
-    504:    'Gateway Timeout',
-    505:    'HTTP Version Not Supported',
-    507:    'Insufficient Storage',
-    510:    'Not Extended'
+_cookie_quoting_map = {
+    b',' : b'\\054',
+    b';' : b'\\073',
+    b'"' : b'\\"',
+    b'\\' : b'\\\\',
 }
+for _i in chain(range_type(32), range_type(127, 256)):
+    _cookie_quoting_map[int_to_byte(_i)] = ('\\%03o' % _i).encode('latin1')
+
+
+_octal_re = re.compile(b'\\\\[0-3][0-7][0-7]')
+_quote_re = re.compile(b'[\\\\].')
+_legal_cookie_chars_re = b'[\w\d!#%&\'~_`><@,:/\$\*\+\-\.\^\|\)\(\?\}\{\=]'
+_cookie_re = re.compile(b"""(?x)
+    (?P<key>[^=]+)
+    \s*=\s*
+    (?P<val>
+        "(?:[^\\\\"]|\\\\.)*" |
+         (?:.*?)
+    )
+    \s*;
+""")
 
 
 class _Missing(object):
@@ -89,12 +63,6 @@ class _Missing(object):
         return '_missing'
 
 _missing = _Missing()
-
-
-def _proxy_repr(cls):
-    def proxy_repr(self):
-        return '%s(%s)' % (self.__class__.__name__, cls.__repr__(self))
-    return proxy_repr
 
 
 def _get_environ(obj):
@@ -183,73 +151,6 @@ def _parse_signature(func):
     return parse
 
 
-def _patch_wrapper(old, new):
-    """Helper function that forwards all the function details to the
-    decorated function."""
-    try:
-        new.__name__ = old.__name__
-        new.__module__ = old.__module__
-        new.__doc__ = old.__doc__
-        new.__dict__ = old.__dict__
-    except Exception:
-        pass
-    return new
-
-
-def _decode_unicode(value, charset, errors):
-    """Like the regular decode function but this one raises an
-    `HTTPUnicodeError` if errors is `strict`."""
-    fallback = None
-    if errors.startswith('fallback:'):
-        fallback = errors[9:]
-        errors = 'strict'
-    try:
-        return value.decode(charset, errors)
-    except UnicodeError, e:
-        if fallback is not None:
-            return value.decode(fallback, 'replace')
-        from werkzeug.exceptions import HTTPUnicodeError
-        raise HTTPUnicodeError(str(e))
-
-
-def _iter_modules(path):
-    """Iterate over all modules in a package."""
-    import os
-    import pkgutil
-    if hasattr(pkgutil, 'iter_modules'):
-        for importer, modname, ispkg in pkgutil.iter_modules(path):
-            yield modname, ispkg
-        return
-    from inspect import getmodulename
-    from pydoc import ispackage
-    found = set()
-    for path in path:
-        for filename in os.listdir(path):
-            p = os.path.join(path, filename)
-            modname = getmodulename(filename)
-            if modname and modname != '__init__':
-                if modname not in found:
-                    found.add(modname)
-                    yield modname, ispackage(modname)
-
-
-def _dump_date(d, delim):
-    """Used for `http_date` and `cookie_date`."""
-    if d is None:
-        d = gmtime()
-    elif isinstance(d, datetime):
-        d = d.utctimetuple()
-    elif isinstance(d, (int, long, float)):
-        d = gmtime(d)
-    return '%s, %02d%s%s%s%s %02d:%02d:%02d GMT' % (
-        ('Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun')[d.tm_wday],
-        d.tm_mday, delim,
-        ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep',
-         'Oct', 'Nov', 'Dec')[d.tm_mon - 1],
-        delim, str(d.tm_year), d.tm_hour, d.tm_min, d.tm_sec
-    )
-
-
 def _date_to_unix(arg):
     """Converts a timetuple, integer or datetime object into the seconds from
     epoch in utc.
@@ -264,38 +165,6 @@ def _date_to_unix(arg):
     minutes = hours * 60 + minute
     seconds = minutes * 60 + second
     return seconds
-
-
-class _ExtendedMorsel(Morsel):
-    _reserved = {'httponly': 'HttpOnly'}
-    _reserved.update(Morsel._reserved)
-
-    def __init__(self, name=None, value=None):
-        Morsel.__init__(self)
-        if name is not None:
-            self.set(name, value, value)
-
-    def OutputString(self, attrs=None):
-        httponly = self.pop('httponly', False)
-        result = Morsel.OutputString(self, attrs).rstrip('\t ;')
-        if httponly:
-            result += '; HttpOnly'
-        return result
-
-
-class _ExtendedCookie(SimpleCookie):
-    """Form of the base cookie that doesn't raise a `CookieError` for
-    malformed keys.  This has the advantage that broken cookies submitted
-    by nonstandard browsers don't cause the cookie to be empty.
-    """
-
-    def _BaseCookie__set(self, key, real_value, coded_value):
-        morsel = self.get(key, _ExtendedMorsel())
-        try:
-            morsel.set(key, real_value, coded_value)
-        except CookieError:
-            pass
-        dict.__setitem__(self, key, morsel)
 
 
 class _DictAccessorProperty(object):
@@ -345,9 +214,144 @@ class _DictAccessorProperty(object):
         )
 
 
-def _easteregg(app):
+def _cookie_quote(b):
+    buf = bytearray()
+    all_legal = True
+    _lookup = _cookie_quoting_map.get
+    _push = buf.extend
+
+    for char in iter_bytes(b):
+        if char not in _legal_cookie_chars:
+            all_legal = False
+            char = _lookup(char, char)
+        _push(char)
+
+    if all_legal:
+        return bytes(buf)
+    return bytes(b'"' + buf + b'"')
+
+
+def _cookie_unquote(b):
+    if len(b) < 2:
+        return b
+    if b[:1] != b'"' or b[-1:] != b'"':
+        return b
+
+    b = b[1:-1]
+
+    i = 0
+    n = len(b)
+    rv = bytearray()
+    _push = rv.extend
+
+    while 0 <= i < n:
+        o_match = _octal_re.search(b, i)
+        q_match = _quote_re.search(b, i)
+        if not o_match and not q_match:
+            rv.extend(b[i:])
+            break
+        j = k = -1
+        if o_match:
+            j = o_match.start(0)
+        if q_match:
+            k = q_match.start(0)
+        if q_match and (not o_match or k < j):
+            _push(b[i:k])
+            _push(b[k + 1])
+            i = k + 2
+        else:
+            _push(b[i:j])
+            rv.append(int(b[j + 1:j + 4], 8))
+            i = j + 4
+
+    return bytes(rv)
+
+
+def _cookie_parse_impl(b):
+    """Lowlevel cookie parsing facility that operates on bytes."""
+    i = 0
+    n = len(b)
+
+    while i < n:
+        match = _cookie_re.search(b + b';', i)
+        if not match:
+            break
+
+        key = match.group('key').strip()
+        value = match.group('val')
+        i = match.end(0)
+
+        # Ignore parameters.  We have no interest in them.
+        if key.lower() not in _cookie_params:
+            yield _cookie_unquote(key), _cookie_unquote(value)
+
+
+def _encode_idna(domain):
+    # If we're given bytes, make sure they fit into ASCII
+    if not isinstance(domain, text_type):
+        domain.decode('ascii')
+        return domain
+
+    # Otherwise check if it's already ascii, then return
+    try:
+        return domain.encode('ascii')
+    except UnicodeError:
+        pass
+
+    # Otherwise encode each part separately
+    parts = domain.split('.')
+    for idx, part in enumerate(parts):
+        parts[idx] = part.encode('idna')
+    return b'.'.join(parts)
+
+
+def _decode_idna(domain):
+    # If the input is a string try to encode it to ascii to
+    # do the idna decoding.  if that fails because of an
+    # unicode error, then we already have a decoded idna domain
+    if isinstance(domain, text_type):
+        try:
+            domain = domain.encode('ascii')
+        except UnicodeError:
+            return domain
+
+    # Decode each part separately.  If a part fails, try to
+    # decode it with ascii and silently ignore errors.  This makes
+    # most sense because the idna codec does not have error handling
+    parts = domain.split(b'.')
+    for idx, part in enumerate(parts):
+        try:
+            parts[idx] = part.decode('idna')
+        except UnicodeError:
+            parts[idx] = part.decode('ascii', 'ignore')
+
+    return '.'.join(parts)
+
+
+def _make_cookie_domain(domain):
+    if domain is None:
+        return None
+    domain = _encode_idna(domain)
+    if b':' in domain:
+        domain = domain.split(b':', 1)[0]
+    if b'.' in domain:
+        return domain
+    raise ValueError(
+        'Setting \'domain\' for a cookie on a server running localy (ex: '
+        'localhost) is not supportted by complying browsers. You should '
+        'have something like: \'127.0.0.1 localhost dev.localhost\' on '
+        'your hosts file and then point your server to run on '
+        '\'dev.localhost\' and also set \'domain\' for \'dev.localhost\''
+    )
+
+
+def _easteregg(app=None):
     """Like the name says.  But who knows how it works?"""
-    gyver = '\n'.join([x + (77 - len(x)) * ' ' for x in '''
+    def bzzzzzzz(gyver):
+        import base64
+        import zlib
+        return zlib.decompress(base64.b64decode(gyver)).decode('ascii')
+    gyver = u'\n'.join([x + (77 - len(x)) * u' ' for x in bzzzzzzz(b'''
 eJyFlzuOJDkMRP06xRjymKgDJCDQStBYT8BCgK4gTwfQ2fcFs2a2FzvZk+hvlcRvRJD148efHt9m
 9Xz94dRY5hGt1nrYcXx7us9qlcP9HHNh28rz8dZj+q4rynVFFPdlY4zH873NKCexrDM6zxxRymzz
 4QIxzK4bth1PV7+uHn6WXZ5C4ka/+prFzx3zWLMHAVZb8RRUxtFXI5DTQ2n3Hi2sNI+HK43AOWSY
@@ -378,15 +382,15 @@ p1qXK3Du2mnr5INXmT/78KI12n11EFBkJHHp0wJyLe9MvPNUGYsf+170maayRoy2lURGHAIapSpQ
 krEDuNoJCHNlZYhKpvw4mspVWxqo415n8cD62N9+EfHrAvqQnINStetek7RY2Urv8nxsnGaZfRr/
 nhXbJ6m/yl1LzYqscDZA9QHLNbdaSTTr+kFg3bC0iYbX/eQy0Bv3h4B50/SGYzKAXkCeOLI3bcAt
 mj2Z/FM1vQWgDynsRwNvrWnJHlespkrp8+vO1jNaibm+PhqXPPv30YwDZ6jApe3wUjFQobghvW9p
-7f2zLkGNv8b191cD/3vs9Q833z8t'''.decode('base64').decode('zlib').splitlines()])
+7f2zLkGNv8b191cD/3vs9Q833z8t''').splitlines()])
     def easteregged(environ, start_response):
         def injecting_start_response(status, headers, exc_info=None):
             headers.append(('X-Powered-By', 'Werkzeug'))
             return start_response(status, headers, exc_info)
-        if environ.get('QUERY_STRING') != 'macgybarchakku':
+        if app is not None and environ.get('QUERY_STRING') != 'macgybarchakku':
             return app(environ, injecting_start_response)
         injecting_start_response('200 OK', [('Content-Type', 'text/html')])
-        return ['''
+        return [(u'''
 <!DOCTYPE html>
 <html>
 <head>
@@ -404,5 +408,5 @@ mj2Z/FM1vQWgDynsRwNvrWnJHlespkrp8+vO1jNaibm+PhqXPPv30YwDZ6jApe3wUjFQobghvW9p
 <p>the Swiss Army knife of Python web development.</p>
 <pre>%s\n\n\n</pre>
 </body>
-</html>''' % gyver]
+</html>''' % gyver).encode('latin1')]
     return easteregged
