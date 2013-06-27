@@ -167,13 +167,13 @@ class AtomFeed(object):
         yield u'  <id>%s</id>\n' % escape(self.id)
         yield u'  <updated>%s</updated>\n' % format_iso8601(self.updated)
         if self.url:
-            yield u'  <link href="%s" />\n' % escape(self.url)
+            yield u'  <link href="%s" />\n' % escape(self.url, True)
         if self.feed_url:
             yield u'  <link href="%s" rel="self" />\n' % \
-                escape(self.feed_url)
+                escape(self.feed_url, True)
         for link in self.links:
             yield u'  <link %s/>\n' % ''.join('%s="%s" ' % \
-                (k, escape(link[k])) for k in link)
+                (k, escape(link[k], True)) for k in link)
         for author in self.author:
             yield u'  <author>\n'
             yield u'    <name>%s</name>\n' % escape(author['name'])
@@ -196,9 +196,9 @@ class AtomFeed(object):
         if generator_name or generator_url or generator_version:
             tmp = [u'  <generator']
             if generator_url:
-                tmp.append(u' uri="%s"' % escape(generator_url))
+                tmp.append(u' uri="%s"' % escape(generator_url, True))
             if generator_version:
-                tmp.append(u' version="%s"' % escape(generator_version))
+                tmp.append(u' version="%s"' % escape(generator_version, True))
             tmp.append(u'>%s</generator>\n' % escape(generator_name))
             yield u''.join(tmp)
         for entry in self.entries:
@@ -307,7 +307,7 @@ class FeedEntry(object):
         """Yields pieces of ATOM XML."""
         base = ''
         if self.xml_base:
-            base = ' xml:base="%s"' % escape(self.xml_base)
+            base = ' xml:base="%s"' % escape(self.xml_base, True)
         yield u'<entry%s>\n' % base
         yield u'  ' + _make_text_block('title', self.title, self.title_type)
         yield u'  <id>%s</id>\n' % escape(self.id)
@@ -327,10 +327,10 @@ class FeedEntry(object):
             yield u'  </author>\n'
         for link in self.links:
             yield u'  <link %s/>\n' % ''.join('%s="%s" ' % \
-                (k, escape(link[k])) for k in link)
+                (k, escape(link[k], True)) for k in link)
         for category in self.categories:
             yield u'  <category %s/>\n' % ''.join('%s="%s" ' % \
-                (k, escape(category[k])) for k in category)
+                (k, escape(category[k], True)) for k in category)
         if self.summary:
             yield u'  ' + _make_text_block('summary', self.summary,
                                            self.summary_type)

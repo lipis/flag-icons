@@ -647,9 +647,9 @@ class BaseResponse(object):
     Special note for `mimetype` and `content_type`:  For most mime types
     `mimetype` and `content_type` work the same, the difference affects
     only 'text' mimetypes.  If the mimetype passed with `mimetype` is a
-    mimetype starting with `text/`, the charset parameter of the response
-    object is appended to it.  In contrast the `content_type` parameter is
-    always added as header unmodified.
+    mimetype starting with `text/` it becomes a charset parameter defined
+    with the charset of the response object.  In contrast the
+    `content_type` parameter is always added as header unmodified.
 
     .. versionchanged:: 0.5
        the `direct_passthrough` parameter was added.
@@ -982,7 +982,7 @@ class BaseResponse(object):
         """
         try:
             len(self.response)
-        except (TypeError, AttributeError):
+        except TypeError:
             return True
         return False
 

@@ -20,7 +20,7 @@ import sys
 from werkzeug._compat import iteritems
 
 # the version.  Usually set automatically by a script.
-__version__ = '0.10-dev'
+__version__ = '0.9.1'
 
 
 # This import magic raises concerns quite often which is why the implementation
