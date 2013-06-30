@@ -1,6 +1,14 @@
+/*
+ * Social Buttons for Bootstrap
+ *
+ * Copyright 2013 Panayiotis Lipiridis
+ * Licensed under the MIT License
+ *
+ * https://github.com/lipis/bootstrap-social
+ */
+
 .btn-social(@color) {
-  // In case of using a different theme than the default,
-  // you should update the padding values
+  // Update the padding values when using a different theme than the default.
   @paddingBaseVertical: 4px;
   @paddingBaseHorizontal: 12px;
   @paddingLargeVertical: 11px;
@@ -15,9 +23,9 @@
   padding-right: @paddingBaseHorizontal;
   background-color: @color;
   text-align: left;
+  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
   .buttonBackground(@color, darken(@color, 5%));
   i {
     position: absolute;
@@ -25,8 +33,8 @@
     top: 0;
     bottom: 0;
     width: @height;
-    line-height: @height;
     font-size: 1.5em;
+    line-height: @height;
     text-align: center;
     border-right: 1px solid rgba(0, 0, 0, 0.1);
   }
@@ -36,8 +44,8 @@
     padding-right: @paddingLargeHorizontal;
     i {
       width: @height;
-      line-height: @height;
       font-size: 1.8em;
+      line-height: @height;
     }
   }
   &.btn-small {
@@ -46,8 +54,8 @@
     padding-right: @paddingSmallHorizontal;
     i {
       width: @height;
-      line-height: @height;
       font-size: 1.4em;
+      line-height: @height;
     }
   }
   &.btn-mini {
@@ -56,20 +64,12 @@
     padding-right: @paddingMiniHorizontal;
     i {
       width: @height;
-      line-height: @height;
       font-size: 1.2em;
+      line-height: @height;
     }
   }
 }
 
-.btn-google {
-  .btn-social(#CC3732);
-}
-
-.btn-facebook {
-  .btn-social(#3C5A98);
-}
-
-.btn-twitter {
-  .btn-social(#2BA9E1);
-}
+.btn-facebook    { .btn-social(#3B5998); }
+.btn-google      { .btn-social(#DD4B39); }
+.btn-twitter     { .btn-social(#2BA9E1); }
