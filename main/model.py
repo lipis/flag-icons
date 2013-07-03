@@ -35,14 +35,14 @@ class Config(Base, modelx.ConfigX):
 class User(Base, modelx.UserX):
   name = ndb.StringProperty(indexed=True, required=True)
   username = ndb.StringProperty(indexed=True, required=True)
-  email = ndb.StringProperty(default='')
+  email = ndb.StringProperty(indexed=True, default='')
 
   active = ndb.BooleanProperty(default=True)
   admin = ndb.BooleanProperty(default=False)
 
-  federated_id = ndb.StringProperty(default='')
-  facebook_id = ndb.StringProperty(default='')
-  twitter_id = ndb.StringProperty(default='')
+  federated_id = ndb.StringProperty(indexed=True, default='')
+  facebook_id = ndb.StringProperty(indexed=True, default='')
+  twitter_id = ndb.StringProperty(indexed=True, default='')
 
   _PROPERTIES = Base._PROPERTIES.union(set([
       'name', 'username', 'avatar_url',
