@@ -10,7 +10,7 @@
     :license: MIT/X11, see LICENSE for more details.
 '''
 
-__version_info__ = ('0', '2', '4')
+__version_info__ = ('0', '2', '5')
 __version__ = '.'.join(__version_info__)
 __author__ = 'Matthew Frazier'
 __license__ = 'MIT/X11'
@@ -338,12 +338,15 @@ class LoginManager(object):
             user_loaded_from_cookie.send(app, user=_get_user())
 
     def _update_remember_cookie(self, response):
-        operation = session.pop('remember', None)
+        # Don't modify the session unless there's something to do.
+        if 'remember' in session:
+            operation = session.pop('remember', None)
 
-        if operation == 'set' and 'user_id' in session:
-            self._set_cookie(response)
-        elif operation == 'clear':
-            self._clear_cookie(response)
+            if operation == 'set' and 'user_id' in session:
+                self._set_cookie(response)
+            elif operation == 'clear':
+                self._clear_cookie(response)
+
         return response
 
     def _set_cookie(self, response):
