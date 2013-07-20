@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
+import operator
 try:
   # This part is surrounded in try/except because the this config.py file is
   # also used in the build.py script which is used to compile/minify the client
@@ -16,14 +17,8 @@ try:
 except:
   pass
 
-import operator
-
-if os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Engine'):
-  DEVELOPMENT = False
-else:
-  DEVELOPMENT = True
-
-PRODUCTION = not DEVELOPMENT
+PRODUCTION = os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Engine')
+DEVELOPMENT = not PRODUCTION
 DEBUG = DEVELOPMENT
 
 DEFAULT_DB_LIMIT = 64
