@@ -62,7 +62,7 @@ def load_user(key):
   return None
 
 
-login_manager.setup_app(app)
+login_manager.init_app(app)
 
 
 def current_user_id():
