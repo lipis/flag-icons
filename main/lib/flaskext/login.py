@@ -10,7 +10,7 @@
     :license: MIT/X11, see LICENSE for more details.
 '''
 
-__version_info__ = ('0', '2', '5')
+__version_info__ = ('0', '2', '6')
 __version__ = '.'.join(__version_info__)
 __author__ = 'Matthew Frazier'
 __license__ = 'MIT/X11'
@@ -149,6 +149,9 @@ class LoginManager(object):
         app.login_manager = self
         app.before_request(self._load_user)
         app.after_request(self._update_remember_cookie)
+
+        self._login_disabled = app.config.get('LOGIN_DISABLED',
+                                              app.config.get('TESTING', False))
 
         if add_context_processor:
             app.context_processor(_user_context_processor)
@@ -643,12 +646,19 @@ def login_required(func):
 
     ...which is essentially the code that this function adds to your views.
 
+    It can be convenient to globally turn off authentication when unit
+    testing. To enable this, if either of the application
+    configuration variables `LOGIN_DISABLED` or `TESTING` is set to
+    `True`, this decorator will be ignored.
+
     :param func: The view function to decorate.
     :type func: function
     '''
     @wraps(func)
     def decorated_view(*args, **kwargs):
-        if not current_user.is_authenticated():
+        if current_app.login_manager._login_disabled:
+            return func(*args, **kwargs)
+        elif not current_user.is_authenticated():
             return current_app.login_manager.unauthorized()
         return func(*args, **kwargs)
     return decorated_view
@@ -666,12 +676,17 @@ def fresh_login_required(func):
     fresh, it will call :meth:`LoginManager.needs_refresh` instead. (In that
     case, you will need to provide a :attr:`LoginManager.refresh_view`.)
 
+    Behaves identically to the :func:`login_required` decorator with respect
+    to configutation variables.
+
     :param func: The view function to decorate.
     :type func: function
     '''
     @wraps(func)
     def decorated_view(*args, **kwargs):
-        if not current_user.is_authenticated():
+        if current_app.login_manager._login_disabled:
+            return func(*args, **kwargs)
+        elif not current_user.is_authenticated():
             return current_app.login_manager.unauthorized()
         elif not login_fresh():
             return current_app.login_manager.needs_refresh()
@@ -693,8 +708,12 @@ def _cookie_digest(payload, key=None):
     return hmac.new(key, payload.encode('utf-8'), sha1).hexdigest()
 
 
+def _get_remote_addr():
+    return request.headers.get('X-Forwarded-For', request.remote_addr)
+
+
 def _create_identifier():
-    base = '{0}|{1}'.format(request.remote_addr,
+    base = '{0}|{1}'.format(_get_remote_addr(),
                             request.headers.get('User-Agent'))
     if str is bytes:
         base = unicode(base, 'utf-8', errors='replace')
