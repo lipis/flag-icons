@@ -185,7 +185,7 @@ twitter_oauth = flaskext.oauth.OAuth()
 
 twitter = twitter_oauth.remote_app(
     'twitter',
-    base_url='http://api.twitter.com/1/',
+    base_url='https://api.twitter.com/1.1/',
     request_token_url='https://api.twitter.com/oauth/request_token',
     access_token_url='https://api.twitter.com/oauth/access_token',
     authorize_url='https://api.twitter.com/oauth/authenticate',
