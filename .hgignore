@@ -1,5 +1,6 @@
 syntax: glob
 
+*.mo
 *.pyc
 *.pyo
 .DS_Store
@@ -11,5 +12,4 @@ main/node_modules
 main/static/dst
 main/static/min
 temp/
-*.mo
 translations/messages.pot
