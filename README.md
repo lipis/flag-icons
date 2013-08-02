@@ -87,6 +87,7 @@ Contributions and Ideas
   - [ksymeon][]
   - [gmist][]
   - [stefanlindmark][]
+  - [joernhees][]
 
 Author
 ------
@@ -120,6 +121,7 @@ Author
 [ksymeon]: https://plus.google.com/102598378133436784997
 [gmist]: https://github.com/gmist
 [stefanlindmark]: http://www.linkedin.com/in/stefanlindmark
+[joernhees]: https://github.com/joernhees
 
 [lipisflair]: http://stackexchange.com/users/flair/5282.png
 [lipis]: http://stackoverflow.com/users/8418/lipis
