@@ -18,11 +18,7 @@ also find a detailed [tutorial][] on how to build a phonebook application.
 
 Getting the code
 ----------------
-The easiest way to get the code is to [fork it][fork] and then clone it.
-Or you can clone it directly using the command line:
-
-    $ hg clone https://bitbucket.org/lipis/gae-init-babel project-name
-
+The easiest way to get the code is to fork it and then clone it.
 
 Instructions
 ------------
@@ -43,7 +39,7 @@ Requirements
 Contact & Support
 -----------------
 Due to lack of documentation if you run into any troubles, feel free to add an
-[issue][] or use the [feedback][] form and I'll be happy
+issue or use the [feedback][] form and I'll be happy
 to improve or provide more info.
 
 
@@ -52,7 +48,7 @@ Author
 [![Lipis flair on stackoverflow.com][lipis-flair]][lipis]
 
 
-  [gae-init]: https://bitbucket.org/lipis/gae-init
+  [gae-init]: http://gae-init.appspot.com
   [gae-init-babel]: http://babel.gae-init.appspot.com
   [docs]: http://docs.gae-init.appspot.com
   [tutorial]: http://docs.gae-init.appspot.com/tutorial/
@@ -60,8 +56,8 @@ Author
   [babel]: http://babel.edgewall.org/wiki/Download
   [pybabel]: http://babel.edgewall.org/wiki/Documentation/cmdline.html
   [jinja2]: http://jinja.pocoo.org/docs/intro/
-  [issue]: https://bitbucket.org/lipis/gae-init-babel/issues
   [feedback]: http://babel.gae-init.appspot.com/feedback/
 
   [lipis-flair]: http://stackexchange.com/users/flair/5282.png
   [lipis]: http://stackoverflow.com/users/8418/lipis
+
