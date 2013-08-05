@@ -1,6 +1,7 @@
 import flask
 from flaskext import wtf
 from flaskext.babel import lazy_gettext as _
+from flaskext.babel import gettext as __
 
 import auth
 import util
@@ -64,7 +65,7 @@ def admin_config_update():
     config_db.put()
     reload(config)
     app.config.update(CONFIG_DB=config_db)
-    flask.flash(_('Your config settings have been saved'), category='success')
+    flask.flash(__('Your config settings have been saved'), category='success')
     return flask.redirect(flask.url_for('welcome'))
   if not form.errors:
     form.analytics_id.data = config_db.analytics_id

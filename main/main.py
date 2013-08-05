@@ -7,6 +7,7 @@ import flask
 from flaskext import wtf
 from flaskext.babel import Babel
 from flaskext.babel import lazy_gettext as _
+from flaskext.babel import gettext as __
 import config
 
 app = flask.Flask(__name__)
@@ -102,7 +103,7 @@ def feedback():
         reply_to=form.email.data or config.CONFIG_DB.feedback_email,
         body='%s\n\n%s' % (form.message.data, form.email.data)
       )
-    flask.flash(_('Thank you for your feedback!'), category='success')
+    flask.flash(__('Thank you for your feedback!'), category='success')
     return flask.redirect(flask.url_for('welcome'))
   if not form.errors and auth.current_user_id() > 0:
     form.email.data = auth.current_user_db().email

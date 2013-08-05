@@ -163,7 +163,7 @@ def signin():
 @app.route('/signout/')
 def signout():
   flaskext.login.logout_user()
-  flask.flash(_('You have been signed out.'))
+  flask.flash(__('You have been signed out.'))
   return flask.redirect(flask.url_for('welcome'))
 
 
@@ -182,7 +182,7 @@ def signin_google():
 def google_authorized():
   google_user = users.get_current_user()
   if google_user is None:
-    flask.flash(_('You denied the request to sign in.'))
+    flask.flash(__('You denied the request to sign in.'))
     return flask.redirect(util.get_next_url())
 
   user_db = retrieve_user_from_google(google_user)
@@ -228,7 +228,7 @@ twitter = twitter_oauth.remote_app(
 @twitter.authorized_handler
 def twitter_oauth_authorized(resp):
   if resp is None:
-    flask.flash(_('You denied the request to sign in.'))
+    flask.flash(__('You denied the request to sign in.'))
     return flask.redirect(util.get_next_url())
 
   flask.session['oauth_token'] = (
@@ -254,7 +254,7 @@ def signin_twitter():
       )
   except:
     flask.flash(
-        _('Something went wrong with Twitter sign in. Please try again.'),
+        __('Something went wrong with Twitter sign in. Please try again.'),
         category='danger',
       )
     return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
@@ -353,7 +353,7 @@ def signin_user_db(user_db):
     util.set_locale(user_db.locale, response)
     return response
   else:
-    flask.flash(_('Sorry, but you could not sign in.'), category='danger')
+    flask.flash(__('Sorry, but you could not sign in.'), category='danger')
     return flask.redirect(flask.url_for('signin'))
 
 
