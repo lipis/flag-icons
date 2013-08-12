@@ -27,11 +27,6 @@ STYLES = [
     'src/less/style.less',
   ]
 
-SCRIPTS_MODULES = [
-    'libs',
-    'scripts',
-  ]
-
 SCRIPTS = {
     'libs': [
       'lib/jquery.js',
