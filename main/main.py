@@ -132,13 +132,13 @@ def user_list():
 ################################################################################
 # Error Handling
 ################################################################################
-@app.errorhandler(400)
-@app.errorhandler(401)
-@app.errorhandler(403)
-@app.errorhandler(404)
-@app.errorhandler(410)
-@app.errorhandler(418)
-@app.errorhandler(500)
+@app.errorhandler(400) # Bad Request
+@app.errorhandler(401) # Unauthorized
+@app.errorhandler(403) # Forbidden
+@app.errorhandler(404) # Not Found
+@app.errorhandler(410) # Gone
+@app.errorhandler(418) # I'm a teapot
+@app.errorhandler(500) # Internal Server Error
 def error_handler(e):
   try:
     e.code
