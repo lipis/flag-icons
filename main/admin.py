@@ -47,14 +47,14 @@ def admin_config_update():
 
   config_db = model.Config.get_master_db()
   if form.validate_on_submit():
-    config_db.analytics_id = form.analytics_id.data
-    config_db.brand_name = form.brand_name.data
-    config_db.facebook_app_id = form.facebook_app_id.data
-    config_db.facebook_app_secret = form.facebook_app_secret.data
-    config_db.feedback_email = form.feedback_email.data
-    config_db.flask_secret_key = form.flask_secret_key.data
-    config_db.twitter_consumer_key = form.twitter_consumer_key.data
-    config_db.twitter_consumer_secret = form.twitter_consumer_secret.data
+    config_db.analytics_id = form.analytics_id.data.strip()
+    config_db.brand_name = form.brand_name.data.strip()
+    config_db.facebook_app_id = form.facebook_app_id.data.strip()
+    config_db.facebook_app_secret = form.facebook_app_secret.data.strip()
+    config_db.feedback_email = form.feedback_email.data.strip()
+    config_db.flask_secret_key = form.flask_secret_key.data.strip()
+    config_db.twitter_consumer_key = form.twitter_consumer_key.data.strip()
+    config_db.twitter_consumer_secret = form.twitter_consumer_secret.data.strip()
     config_db.put()
     reload(config)
     app.config.update(CONFIG_DB=config_db)
