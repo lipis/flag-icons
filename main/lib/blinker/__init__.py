@@ -3,6 +3,7 @@ from blinker.base import (
     NamedSignal,
     Namespace,
     Signal,
+    WeakNamespace,
     receiver_connected,
     signal,
 )
@@ -12,9 +13,10 @@ __all__ = [
     'NamedSignal',
     'Namespace',
     'Signal',
+    'WeakNamespace',
     'receiver_connected',
     'signal',
     ]
 
 
-__version__ = '1.2'
+__version__ = '1.3'

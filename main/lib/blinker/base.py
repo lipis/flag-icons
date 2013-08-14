@@ -387,8 +387,29 @@ class NamedSignal(Signal):
         return "%s; %r>" % (base[:-1], self.name)
 
 
-class Namespace(WeakValueDictionary):
+class Namespace(dict):
     """A mapping of signal names to signals."""
+
+    def signal(self, name, doc=None):
+        """Return the :class:`NamedSignal` *name*, creating it if required.
+
+        Repeated calls to this function will return the same signal object.
+
+        """
+        try:
+            return self[name]
+        except KeyError:
+            return self.setdefault(name, NamedSignal(name, doc))
+
+
+class WeakNamespace(WeakValueDictionary):
+    """A weak mapping of signal names to signals.
+
+    Automatically cleans up unused Signals when the last reference goes out
+    of scope.  This namespace implementation exists for a measure of legacy
+    compatibility with Blinker <= 1.2, and may be dropped in the future.
+
+    """
 
     def signal(self, name, doc=None):
         """Return the :class:`NamedSignal` *name*, creating it if required.
