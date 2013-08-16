@@ -65,7 +65,7 @@ def retrieve_dbs(query, order=None, limit=None, cursor=None, **filters):
   for prop in filters:
     if filters.get(prop, None) is None:
       continue
-    if type(filters[prop]) == list:
+    if isinstance(filters[prop], list):
       for value in filters[prop]:
         query = query.filter(model_class._properties[prop] == value)
     else:
@@ -127,17 +127,17 @@ def model_db_to_object(model_db):
 
 
 def json_value(value):
-  if type(value) == datetime:
+  if isinstance(value, datetime):
     return format_datetime_utc(value)
-  if type(value) == ndb.Key:
+  if isinstance(value, ndb.Key):
     return value.urlsafe()
-  if type(value) == blobstore.BlobKey:
+  if isinstance(value, blobstore.BlobKey):
     return urllib.quote(str(value))
-  if type(value) == ndb.GeoPt:
+  if isinstance(value, ndb.GeoPt):
     return '%s,%s' % (value.lat, value.lon)
-  if type(value) == list:
+  if isinstance(value, list):
     return [json_value(v) for v in value]
-  if type(value) == long:
+  if isinstance(value, long):
     # Big numbers are sent as strings for accuracy in JavaScript
     if value > 9007199254740992 or value < -9007199254740992:
       return str(value)
