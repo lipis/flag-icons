@@ -52,9 +52,9 @@ def profile():
   form = ProfileUpdateForm()
   user_db = auth.current_user_db()
   if form.validate_on_submit():
-    user_db.name = form.name.data
-    user_db.email = form.email.data.lower()
-    user_db.locale = form.locale.data
+    user_db.name = form.name.data.strip()
+    user_db.email = form.email.data.strip().lower()
+    user_db.locale = form.locale.data.strip()
     user_db.put()
     return flask.redirect(flask.url_for(
         'set_locale', locale=user_db.locale, next=flask.url_for('welcome')
@@ -98,10 +98,10 @@ def feedback():
         to=config.CONFIG_DB.feedback_email,
         subject='[%s] %s' % (
             config.CONFIG_DB.brand_name,
-            form.subject.data,
+            form.subject.data.strip(),
           ),
-        reply_to=form.email.data or config.CONFIG_DB.feedback_email,
-        body='%s\n\n%s' % (form.message.data, form.email.data)
+        reply_to=form.email.data.strip() or config.CONFIG_DB.feedback_email,
+        body='%s\n\n%s' % (form.message.data.strip(), form.email.data.strip())
       )
     flask.flash(__('Thank you for your feedback!'), category='success')
     return flask.redirect(flask.url_for('welcome'))
@@ -152,7 +152,7 @@ def user_list():
 @app.errorhandler(403)  # Forbidden
 @app.errorhandler(404)  # Not Found
 @app.errorhandler(410)  # Gone
-@app.errorhandler(418)  # I'm a teapot
+@app.errorhandler(418)  # I'm a Teapot
 @app.errorhandler(500)  # Internal Server Error
 def error_handler(e):
   try:
