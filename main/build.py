@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 from datetime import datetime
 import argparse
 import config
@@ -6,6 +8,7 @@ import os
 import shutil
 import sys
 import time
+
 
 ################################################################################
 # Options
@@ -50,6 +53,7 @@ parser.add_argument('-b', '--pybabel-compile', dest='pybabel_compile', action='s
   )
 
 args = parser.parse_args()
+
 
 ################################################################################
 # Directories
@@ -154,6 +158,10 @@ def os_execute(executable, params, source, target, append=False):
 
 
 def compile_coffee(source, target_dir):
+  if not os.path.isfile(source):
+    print_out('NOT FOUND', source)
+    return
+
   target = source.replace(dir_src_coffee, target_dir).replace('.coffee', '.js')
   if not is_dirty(source, target):
     return
@@ -167,6 +175,10 @@ def compile_coffee(source, target_dir):
 
 
 def compile_less(source, target_dir, check_modified=False):
+  if not os.path.isfile(source):
+    print_out('NOT FOUND', source)
+    return
+
   target = source.replace(dir_src_less, target_dir).replace('.less', '.css')
   minified = ''
   if not source.endswith('.less'):
@@ -284,8 +296,8 @@ update_path_separators()
 install_dependencies()
 
 if len(sys.argv) == 1:
-    parser.print_help()
-    sys.exit(1)
+  parser.print_help()
+  sys.exit(1)
 
 if args.clean:
   print_out('CLEAN')
@@ -350,6 +362,9 @@ if args.watch:
   print_out('DONE', 'and watching for changes (Ctrl+C to stop)')
   while True:
     time.sleep(0.5)
+    reload(config)
+    SCRIPTS = config.SCRIPTS
+    STYLES = config.STYLES
     compile_all_dst()
 
 if args.run:
