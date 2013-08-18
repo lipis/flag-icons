@@ -13,27 +13,19 @@ class BaseX(object):
 
   @ndb.ComputedProperty
   def created_ago(self):
-    if not self.created:
-      return None
-    return util.format_datetime_ago(self.created)
+    return util.format_datetime_ago(self.created) if self.created else None
 
   @ndb.ComputedProperty
   def modified_ago(self):
-    if not self.modified:
-      return None
-    return util.format_datetime_ago(self.modified)
+    return util.format_datetime_ago(self.modified) if self.modified else None
 
   @ndb.ComputedProperty
   def created_utc(self):
-    if not self.created:
-      return None
-    return util.format_datetime_utc(self.created)
+    return util.format_datetime_utc(self.created) if self.created else None
 
   @ndb.ComputedProperty
   def modified_utc(self):
-    if not self.modified:
-      return None
-    return util.format_datetime_utc(self.modified)
+    return util.format_datetime_utc(self.modified) if self.modified else None
 
 
 class ConfigX(object):
