@@ -7,7 +7,7 @@ try:
   from datetime import datetime
   CONFIG_DB = model.Config.get_master_db()
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
-  CURRENT_VERSION_ID = os.environ.get('CURRENT_VERSION_ID', None)
+  CURRENT_VERSION_ID = os.environ.get('CURRENT_VERSION_ID')
   CURRENT_VERSION_NAME = CURRENT_VERSION_ID.split('.')[0]
   CURRENT_VERSION_TIMESTAMP = long(CURRENT_VERSION_ID.split('.')[1]) >> 28
   CURRENT_VERSION_DATE = datetime.fromtimestamp(CURRENT_VERSION_TIMESTAMP)

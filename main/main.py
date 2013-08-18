@@ -76,6 +76,9 @@ class FeedbackForm(wtf.Form):
 
 @app.route('/feedback/', methods=['GET', 'POST'])
 def feedback():
+  if not config.CONFIG_DB.feedback_email:
+    return flask.abort(418)
+
   form = FeedbackForm()
   if form.validate_on_submit():
     mail.send_mail(

@@ -1,13 +1,23 @@
 from google.appengine.ext import ndb
-import modelx
 from uuid import uuid4
+import os
+import modelx
+
+
+# The timestamp of the currently deployed version
+TIMESTAMP = long(os.environ.get('CURRENT_VERSION_ID').split('.')[1]) >> 28
 
 
 class Base(ndb.Model, modelx.BaseX):
   created = ndb.DateTimeProperty(auto_now_add=True)
   modified = ndb.DateTimeProperty(auto_now=True)
+  version = ndb.IntegerProperty(default=TIMESTAMP)
   _PROPERTIES = set([
-      'key', 'id', 'created', 'modified', 'created_ago', 'modified_ago',
+      'key',
+      'id',
+      'version',
+      'created',
+      'modified',
     ])
 
 
@@ -45,5 +55,7 @@ class User(Base, modelx.UserX):
   twitter_id = ndb.StringProperty(indexed=True, default='')
 
   _PROPERTIES = Base._PROPERTIES.union(set([
-      'name', 'username', 'avatar_url',
+      'name',
+      'username',
+      'avatar_url',
     ]))
