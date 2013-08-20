@@ -1,38 +1,49 @@
 # extends 'base.html'
+# import 'macro/forms.html' as forms
 
 # block content
   <div class="page-header">
     <h1>{{user_db.name}}</h1>
   </div>
-  <div class="row">
-    <div class="span2">
-      <a class="thumbnail" href="http://gravatar.com" target="_blank">
-        <img src="{{user_db.avatar_url}}&amp;s=170" alt="Gravatar photo of {{user_db.name}}">
-      </a>
-    </div>
-    <div class="span4">
-      <form class="form" method="POST" action=".">
+  <form method="POST" action=".">
+    <div class="row">
+      <div class="col-md-4 col-sm-6">
         <fieldset>
           {{form.csrf_token}}
 
-          <div class="control-group ">
+          <div class="form-group ">
             <label class="control-label" for="username">Username</label>
-            <div class="controls">
-              <input class="span4" id="username" name="username" type="text" value="{{user_db.username}}" readonly="readonly">
-            </div>
+            <input id="username" class="form-control" name="username" type="text" value="{{user_db.username}}" readonly="readonly">
           </div>
 
-          # set form_field = form.name
-          # include 'bit/form_text_field.html'
+          {{forms.text_field(form.name)}}
+          {{forms.email_field(form.email)}}
 
-          # set form_field = form.email
-          # include 'bit/form_text_field.html'
-
+        </fieldset>
+      </div>
+      <div class="col-md-2 col-sm-3">
+        <fieldset>
+          <div class="form-group">
+            <label class="control-label">Avatar</label>
+            <div>
+              <img class="img-thumbnail" src="{{user_db.avatar_url}}&amp;s=170" alt="Gravatar photo of {{user_db.name}}">
+            </div>
+            <p class="help-block">
+              Change on
+              <a href="http://gravatar.com" target="_blank">Gravatar</a>
+            </p>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-9">
+        <div class="controls">
           <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Updating Profile..">
             Update Profile
           </button>
-        </fieldset>
-      </form>
+        </div>
+      </div>
     </div>
-  </div>
+  </form>
 # endblock

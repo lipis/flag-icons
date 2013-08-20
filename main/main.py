@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sys
 sys.path.insert(0, 'lib.zip')
 
@@ -9,6 +11,7 @@ import config
 app = flask.Flask(__name__)
 app.config.from_object(config)
 app.jinja_env.line_statement_prefix = '#'
+app.jinja_env.line_comment_prefix = '##'
 
 import auth
 import util

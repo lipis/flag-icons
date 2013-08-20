@@ -1,7 +1,8 @@
 gae-init
 ========
 
-**gae-init** is the easiest way to start new applications on Google App Engine.
+**gae-init** is the easiest way to start new applications on Google App Engine
+using Flask, Bootstrap and tons of other cool features.
 
 
 Demo Page
@@ -15,41 +16,34 @@ Documentation
 Visit the [docs][] page for more information, where you can
 also find a detailed [tutorial][] on how to build a phonebook application.
 
-Getting the code
-----------------
-The easiest way to get the code is to fork it and then clone it.
-
-Running the build.py script (first time)
-----------------------------------------
-
-    $ cd /path/to/project-name/main
-    $ ./build.py -c
-    $ dev_appserver.py .
-
-To test it visit `http://localhost:8080/` in your browser.
-
 Running the Development Environment
 -----------------------------------
 
-To watch for changes of your `*.less` and `*.coffee` files and compile them
-automatically to `*.css` and `*.js` respectively:
-
     $ cd /path/to/project-name/main
-    $ ./build.py -w
-
-To run the actual server (in another bash):
-
-    $ dev_appserver.py /path/to/project-name/main
+    $ ./run.py -cs
 
 To test it visit `http://localhost:8080/` in your browser.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+To watch for changes of your `*.less` & `*.coffee` files and compile them
+automatically to `*.css` & `*.js` run in another bash:
+
+    $ ./run.py -w
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+For a complete list of commands:
+
+    $ ./run -h
 
 Deploying on Google App Engine
 ------------------------------
 
-Before deploying make sure that the `app.yaml` and `config.py` are up to date.
+Before deploying make sure that the `app.yaml` and `config.py` are up to date
+and you ran the `run.py` script to minify all the static files:
 
-    $ cd /path/to/project/main
-    $ ./build.py -m
+    $ ./run.py -m
     $ appcfg.py update .
 
 Tech Stack
@@ -72,8 +66,6 @@ Requirements
   - [Google App Engine SDK for Python][gaesdk]
   - [node.js][nodejs]
   - [OSX][] or [Linux][] or [Windows][]
-  - [Mercurial][]
-  - [Sublime][] (If you are a developer, you need that)
 
 Contributions and Ideas
 -----------------------
@@ -101,7 +93,7 @@ Author
 [jquery]: http://jquery.com/
 [coffeescript]: http://coffeescript.org/
 [lesscss]: http://lesscss.org/
-[bootstrap]: http://twitter.github.com/bootstrap/
+[bootstrap]: http://getbootstrap.com/
 [fontawesome]: http://fortawesome.github.com/Font-Awesome/
 
 [gaesdk]: https://developers.google.com/appengine/downloads
@@ -109,8 +101,6 @@ Author
 [osx]: http://www.apple.com/osx/
 [linux]: http://www.ubuntu.com
 [windows]: http://windows.microsoft.com/
-[mercurial]: http://mercurial.selenic.com/
-[sublime]: http://www.sublimetext.com/
 
 [tzador]: http://stackoverflow.com/users/165697/tzador
 [chris]: http://stackoverflow.com/users/226394/chris-top

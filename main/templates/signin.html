@@ -2,29 +2,25 @@
 
 # block content
   <div class="page-header">
-    <h1>
-      {{title}}
-      <small>
-        It only takes 8 seconds
-      </small>
-    </h1>
+    <h1>{{title}} <small>It only takes 8 seconds</small></h1>
   </div>
+
   <div class="row">
-    <div class="span4 offset4">
-      <a class="btn btn-block btn-large btn-google" href="{{google_signin_url}}">
+    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+      <a class="btn btn-block btn-lg btn-google" href="{{google_signin_url}}">
         <i class="icon icon-google-plus"></i>
         Sign in with Google
       </a>
 
       # if config.CONFIG_DB.facebook_app_id and config.CONFIG_DB.facebook_app_secret
-        <a class="btn btn-block btn-large btn-facebook" href="{{facebook_signin_url}}">
+        <a class="btn btn-block btn-lg btn-facebook" href="{{facebook_signin_url}}">
           <i class="icon icon-facebook"></i>
           Sign in with Facebook
         </a>
       # endif
 
       # if config.CONFIG_DB.twitter_consumer_key and config.CONFIG_DB.twitter_consumer_secret
-        <a class="btn btn-block btn-large btn-twitter" href="{{twitter_signin_url}}">
+        <a class="btn btn-block btn-lg btn-twitter" href="{{twitter_signin_url}}">
           <i class="icon icon-twitter"></i>
           Sign in with Twitter
         </a>

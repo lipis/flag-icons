@@ -1,0 +1,9 @@
+# macro order_link(title, endpoint, property)
+  # if request.args.get('order') == property
+    <a href="{{url_for(endpoint, order='-' + property)}}">{{title}} <i class="icon-chevron-up"></i></a>
+  # elif request.args.get('order') == '-' + property
+    <a href="{{url_for(endpoint, order=property)}}">{{title}} <i class="icon-chevron-down"></i></a>
+  #else
+    <a href="{{url_for(endpoint, order=property)}}">{{title}}</a>
+  #endif
+# endmacro

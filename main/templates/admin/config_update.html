@@ -1,47 +1,31 @@
 # extends 'base.html'
+# import 'macro/forms.html' as forms
 
 # block content
   <div class="page-header">
-    <h1>
-      {{title}}
-    </h1>
+    <h1>{{title}}</h1>
   </div>
+
+  <div class="alert alert-info">
+    <strong>Heads Up!</strong>
+    For most of the settings you will have to restart the
+    <a href="https://developers.google.com/appengine/docs/adminconsole/instances" class="alert-link" target="_blank">instances</a>.
+  </div>
+
   <div class="row">
-    <div class="span4">
-      <div class="alert">
-        <strong>Heads Up!</strong>
-        For most of the settings you will have to restart the
-        <a href="https://developers.google.com/appengine/docs/adminconsole/instances" target="_blank">
-          instances.
-        </a>
-      </div>
-      <form class="form" method="POST" action=".">
+    <div class="col-md-4 col-sm-6">
+      <form method="POST" action=".">
         <fieldset>
           {{form.csrf_token}}
 
-          # set form_field = form.brand_name
-          # include 'bit/form_text_field.html'
-
-          # set form_field = form.feedback_email
-          # include 'bit/form_text_field.html'
-
-          # set form_field = form.analytics_id
-          # include 'bit/form_text_field.html'
-
-          # set form_field = form.facebook_app_id
-          # include 'bit/form_text_field.html'
-
-          # set form_field = form.facebook_app_secret
-          # include 'bit/form_text_field.html'
-
-          # set form_field = form.twitter_consumer_key
-          # include 'bit/form_text_field.html'
-
-          # set form_field = form.twitter_consumer_secret
-          # include 'bit/form_text_field.html'
-
-          # set form_field = form.flask_secret_key
-          # include 'bit/form_text_field.html'
+          {{forms.text_field(form.brand_name)}}
+          {{forms.text_field(form.feedback_email)}}
+          {{forms.text_field(form.analytics_id)}}
+          {{forms.text_field(form.facebook_app_id)}}
+          {{forms.text_field(form.facebook_app_secret)}}
+          {{forms.text_field(form.twitter_consumer_key)}}
+          {{forms.text_field(form.twitter_consumer_secret)}}
+          {{forms.text_field(form.flask_secret_key)}}
 
           <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Updating Config..">
             Update Config

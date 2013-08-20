@@ -1,11 +1,10 @@
-<div class="footer">
-  <div class="container">
-    <p class="muted pull-right">
-      version: {{config.CURRENT_VERSION_NAME}} | {{config.CURRENT_VERSION_DATE}}
-      # if current_user.admin
-        | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">View in JSON</a>
-      # endif
-    </p>
-    <p class="muted">&copy; 2013 - {{config.CONFIG_DB.brand_name}}</p>
-  </div>
-</div>
+<footer role="contentinfo">
+  <p>
+    # if current_user.admin
+      Version: {{config.CURRENT_VERSION_NAME}}
+      | {{config.CURRENT_VERSION_DATE}}
+      | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">View in JSON</a>
+    # endif
+  </p>
+  <p>&copy; 2013 - {{config.CONFIG_DB.brand_name}}</p>
+</footer>

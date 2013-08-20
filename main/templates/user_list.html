@@ -1,109 +1,75 @@
 # extends 'base.html'
+# import 'macro/utils.html' as utils
 
 # block content
   <div class="page-header">
-    <h1>
-      {{title}}
-    </h1>
+    <h1>{{title}}</h1>
   </div>
 
   <div class="row">
-    <div class="span12">
-      <div class="well well-small">
-        <div class="btn-group">
-          <a class="btn btn-small dropdown-toggle btn-success" data-toggle="dropdown" href="#">
-            Limit - {{request.args.get('limit') or 'Default'}}
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="{{url_for('user_list')}}">{{config.DEFAULT_DB_LIMIT}} (Default)</a></li>
-            <li class="divider"></li>
-            <li><a href="{{url_for('user_list', limit=2)}}">2</a></li>
-            <li><a href="{{url_for('user_list', limit=4)}}">4</a></li>
-            <li><a href="{{url_for('user_list', limit=8)}}">8</a></li>
-            <li><a href="{{url_for('user_list', limit=16)}}">16</a></li>
-          </ul>
-        </div>
-        <div class="btn-group">
-          <a class="btn btn-small dropdown-toggle btn-danger" data-toggle="dropdown" href="#">
-            Admins - {{request.args.get('admin') or 'None'}}
-            <span class="caret"></span>
-          </a>
-          <ul class="dropdown-menu">
-            <li><a href="{{url_for('user_list')}}">None</a></li>
-            <li class="divider"></li>
-            <li><a href="{{url_for('user_list', admin='true')}}">Show Admins</a></li>
-            <li><a href="{{url_for('user_list', admin='false')}}">Hide Admins</a></li>
-          </ul>
+    <div class="col-lg-12">
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm dropdown-toggle btn-success" data-toggle="dropdown">
+              Limit - {{request.args.get('limit') or 'Default'}}
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="{{url_for('user_list')}}">{{config.DEFAULT_DB_LIMIT}} (Default)</a></li>
+              <li class="divider"></li>
+              <li><a href="{{url_for('user_list', limit=2)}}">2</a></li>
+              <li><a href="{{url_for('user_list', limit=4)}}">4</a></li>
+              <li><a href="{{url_for('user_list', limit=8)}}">8</a></li>
+              <li><a href="{{url_for('user_list', limit=16)}}">16</a></li>
+            </ul>
+          </div>
+          <div class="btn-group">
+            <button type="button" class="btn btn-sm dropdown-toggle btn-danger" data-toggle="dropdown">
+              Admins - {{request.args.get('admin') or 'None'}}
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li><a href="{{url_for('user_list')}}">None</a></li>
+              <li class="divider"></li>
+              <li><a href="{{url_for('user_list', admin='true')}}">Show Admins</a></li>
+              <li><a href="{{url_for('user_list', admin='false')}}">Hide Admins</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
   </div>
   <div class="row">
-    <div class="span12">
+    <div class="col-lg-12">
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th class="span1">ID</th>
-            <th class="span1">Photo</th>
-            <th class="span3">
-              # if request.args.get('order') == 'name'
-                <a href="{{url_for('user_list', order='-name')}}">Name <i class="icon-chevron-up"></i></a>
-              # elif request.args.get('order') == '-name'
-                <a href="{{url_for('user_list', order='name')}}">Name <i class="icon-chevron-down"></i></a>
-              #else
-                <a href="{{url_for('user_list', order='name')}}">Name</a>
-              #endif
-            </th>
-            <th class="span3">
-              # if request.args.get('order') == 'email'
-                <a href="{{url_for('user_list', order='-email')}}">Email <i class="icon-chevron-up"></i></a>
-              # elif request.args.get('order') == '-email'
-                <a href="{{url_for('user_list', order='email')}}">Email <i class="icon-chevron-down"></i></a>
-              #else
-                <a href="{{url_for('user_list', order='email')}}">Email</a>
-              #endif
-            </th>
-            <th class="span2">
-              # if request.args.get('order') == 'created'
-                <a href="{{url_for('user_list', order='-created')}}">Created <i class="icon-chevron-up"></i></a>
-              # elif request.args.get('order') == '-created'
-                <a href="{{url_for('user_list', order='created')}}">Created <i class="icon-chevron-down"></i></a>
-              #else
-                <a href="{{url_for('user_list', order='created')}}">Created</a>
-              #endif
-            </th>
-            <th class="span2">
-              # if request.args.get('order') == 'modified'
-                <a href="{{url_for('user_list', order='-modified')}}">Modified <i class="icon-chevron-up"></i></a>
-              # elif request.args.get('order') == '-modified'
-                <a href="{{url_for('user_list', order='modified')}}">Modified <i class="icon-chevron-down"></i></a>
-              #else
-                <a href="{{url_for('user_list', order='modified')}}">Modified</a>
-              #endif
-            </th>
+            <th class="col-xs-3">{{utils.order_link('Name', 'user_list', 'name')}}</th>
+            <th class="col-xs-2 hidden-xs">{{utils.order_link('Username', 'user_list', 'username')}}</th>
+            <th class="col-xs-3 hidden-xs">{{utils.order_link('Email', 'user_list', 'email')}}</th>
+            <th class="col-xs-2">{{utils.order_link('Created', 'user_list', 'created')}}</th>
+            <th class="col-xs-2 hidden-xs">{{utils.order_link('Modified', 'user_list', 'modified')}}</th>
           </tr>
         </thead>
         <tbody>
           # for user_db in user_dbs
             <tr>
-              <td>{{user_db.key.id()}}</td>
               <td>
-                <img src="{{user_db.avatar_url}}&amp;s=24" alt="Gravatar for {{user_db.name}}">
-              </td>
-              <td>
+                <img src="{{user_db.avatar_url}}&amp;s=36" width="18" alt="Gravatar for {{user_db.name}}">
                 {{user_db.name}}
                 # if user_db.admin
                   <i class="icon-cog" title="Administrator"></i>
                 # endif
               </td>
-              <td>{{user_db.email}}</td>
+              <td class="hidden-xs">{{user_db.username}}</td>
+              <td class="hidden-xs">{{user_db.email}}</td>
               <td>
                 <abbr title="{{user_db.created_utc}}">
                   {{user_db.created_ago}}
                 </abbr>
               </td>
-              <td>
+              <td class="hidden-xs">
                 <abbr title="{{user_db.modified_utc}}">
                   {{user_db.modified_ago}}
                 </abbr>
@@ -115,14 +81,8 @@
     </div>
   </div>
   # if more_url
-    <div class="row">
-      <div class="span12">
-        <ul class="pager">
-          <li>
-            <a href="{{more_url}}">Next Page</a>
-          </li>
-        </ul>
-      </div>
-    </div>
+    <ul class="pager">
+      <li><a href="{{more_url}}">Next Page</a></li>
+    </ul>
   # endif
 # endblock

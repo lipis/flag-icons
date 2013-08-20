@@ -1,74 +1,47 @@
-/*
- * Social Buttons for Bootstrap
- *
- * Copyright 2013 Panayiotis Lipiridis
- * Licensed under the MIT License
- *
- * https://github.com/lipis/bootstrap-social
- */
-
 .btn-social(@color) {
-  // Update the padding values when using a different theme than the default.
-  @paddingBaseVertical: 4px;
-  @paddingBaseHorizontal: 12px;
-  @paddingLargeVertical: 11px;
-  @paddingLargeHorizontal: 19px;
-  @paddingSmallVertical: 2px;
-  @paddingSmallHorizontal: 10px;
-  @paddingMiniVertical: 1px;
-  @paddingMiniHorizontal: 6px;
-  @height: @baseLineHeight + @paddingBaseVertical * 2;
+  @height: @line-height-computed + @padding-base-vertical * 2;
   position: relative;
-  padding-left: @height + @paddingBaseHorizontal;
-  padding-right: @paddingBaseHorizontal;
+  padding-left: @height + @padding-base-horizontal;
+  padding-right: @padding-base-horizontal;
   background-color: @color;
   text-align: left;
-  text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  .buttonBackground(@color, darken(@color, 5%));
+  text-overflow: ellipsis;
+  .button-variant(white, @color, rgba(0, 0, 0, 0.2));
   i {
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     width: @height;
-    font-size: 1.5em;
     line-height: @height;
+    font-size: 1.75em;
     text-align: center;
-    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
   }
-  &.btn-large {
-    @height: @baseLineHeight + @paddingLargeVertical * 2;
-    padding-left: @height + @paddingLargeHorizontal;
-    padding-right: @paddingLargeHorizontal;
+  &.btn-lg {
+    @height: floor(@font-size-large * @line-height-base) + @padding-large-vertical * 2;
+    padding-left: @height + @padding-large-horizontal;
+    padding-right: @padding-large-horizontal;
     i {
-      width: @height;
-      font-size: 1.8em;
       line-height: @height;
+      width: @height;
+      font-size: 2em;
     }
   }
-  &.btn-small {
-    @height: @baseLineHeight + @paddingSmallVertical * 2;
-    padding-left: @height + @paddingSmallHorizontal;
-    padding-right: @paddingSmallHorizontal;
+  &.btn-sm {
+    @height: floor(@font-size-small * 1.5) + @padding-small-vertical * 2;
+    padding-left: @height + @padding-small-horizontal;
+    padding-right: @padding-small-horizontal;
     i {
-      width: @height;
-      font-size: 1.4em;
       line-height: @height;
-    }
-  }
-  &.btn-mini {
-    @height: @baseLineHeight + @paddingMiniVertical * 2;
-    padding-left: @height + @paddingMiniHorizontal;
-    padding-right: @paddingMiniHorizontal;
-    i {
       width: @height;
-      font-size: 1.2em;
-      line-height: @height;
+      font-size: 1.5em;
     }
   }
 }
+
 
 .btn-facebook    { .btn-social(#3B5998); }
 .btn-google      { .btn-social(#DD4B39); }
