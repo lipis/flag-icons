@@ -8,7 +8,7 @@
 # endmacro
 
 # macro input_field(field, type='text', placeholder='', autocomplete=True)
-  <div class="form-group {% if field.errors %} has-error {% endif %}">
+  <div class="form-group {{'has-error' if field.errors else ''}}">
     {{field.label(class='control-label')}}
     {{field(class='form-control', type=type, autocomplete='on' if autocomplete else 'off', placeholder=placeholder)}}
     {{errors_and_description(field)}}
@@ -39,12 +39,12 @@
   {{field(type='hidden')}}
 # endmacro
 
-# macro select_field(field, placeholder='', autocomplete=True)
-  {{input_field(field, placeholder=placeholder, autocomplete=autocomplete)}}
+# macro select_field(field, autocomplete=True)
+  {{input_field(field, autocomplete=autocomplete)}}
 # endmacro
 
 # macro textarea_field(field, placeholder='', rows=4)
-  <div class="form-group {% if field.errors %} has-error {% endif %}">
+  <div class="form-group {{'has-error' if field.errors else ''}}">
     {{field.label(class='control-label')}}
     {{field(class='form-control', rows=rows, placeholder=placeholder)}}
     {{errors_and_description(field)}}
@@ -52,7 +52,7 @@
 # endmacro
 
 # macro checkbox_field(field)
-  <div class="checkbox {% if field.errors %} has-error {% endif %}">
+  <div class="checkbox {{'has-error' if field.errors else ''}}">
     <label>
       {{field()}} {{field.label.text}}
     </label>

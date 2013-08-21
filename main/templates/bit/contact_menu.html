@@ -1,5 +1,5 @@
 # if config.CONFIG_DB.feedback_email
-  <li class="{% if html_class == 'feedback' %} active {% endif %}">
+  <li class="{{'active' if html_class == 'feedback' else ''}}">
     <a href="{{url_for('feedback')}}"><i class="icon-comment"></i> Feedback</a>
   </li>
 # endif

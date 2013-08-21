@@ -17,7 +17,7 @@
     </ul>
   </li>
 # else
-  <li class="{% if html_class == 'signin' %} active {% endif %}">
+  <li class="{{'active' if html_class == 'signin' else ''}}">
     <a href="{{url_for('signin')}}"><i class="icon-signin"></i> Sign in</a>
   </li>
 # endif
