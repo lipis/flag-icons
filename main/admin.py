@@ -40,9 +40,7 @@ class ConfigUpdateForm(wtf.Form):
 
 
 @app.route('/_s/admin/config/', endpoint='admin_config_update_service')
-@app.route(
-    '/admin/config/', methods=['GET', 'POST'], endpoint='admin_config_update',
-  )
+@app.route('/admin/config/', methods=['GET', 'POST'])
 @auth.admin_required
 def admin_config_update():
   form = ConfigUpdateForm()
