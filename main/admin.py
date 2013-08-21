@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import flask
 from flaskext import wtf
 from flaskext.babel import lazy_gettext as _
@@ -44,9 +46,7 @@ class ConfigUpdateForm(wtf.Form):
 
 
 @app.route('/_s/admin/config/', endpoint='admin_config_update_service')
-@app.route(
-    '/admin/config/', methods=['GET', 'POST'], endpoint='admin_config_update',
-  )
+@app.route('/admin/config/', methods=['GET', 'POST'])
 @auth.admin_required
 def admin_config_update():
   form = ConfigUpdateForm()
@@ -83,7 +83,7 @@ def admin_config_update():
 
   return flask.render_template(
       'admin/config_update.html',
-      title=_('Config'),
+      title=_('Admin Config'),
       html_class='admin-config',
       form=form,
       config_db=config_db,

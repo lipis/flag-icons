@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import os
 import operator
 try:
@@ -55,11 +56,11 @@ SCRIPTS_MODULES = [
 SCRIPTS = {
     'libs': [
       'lib/jquery.js',
-      'lib/bootstrap/js/bootstrap-alert.js',
-      'lib/bootstrap/js/bootstrap-button.js',
-      'lib/bootstrap/js/bootstrap-collapse.js',
-      'lib/bootstrap/js/bootstrap-dropdown.js',
-      'lib/bootstrap/js/bootstrap-tooltip.js',
+      'lib/bootstrap/js/alert.js',
+      'lib/bootstrap/js/button.js',
+      'lib/bootstrap/js/collapse.js',
+      'lib/bootstrap/js/dropdown.js',
+      'lib/bootstrap/js/tooltip.js',
     ],
     'scripts': [
       'src/coffee/common/util.coffee',

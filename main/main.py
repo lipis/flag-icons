@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sys
 sys.path.insert(0, 'lib.zip')
 sys.path.insert(0, 'libx')
@@ -13,6 +15,7 @@ import config
 app = flask.Flask(__name__)
 app.config.from_object(config)
 app.jinja_env.line_statement_prefix = '#'
+app.jinja_env.line_comment_prefix = '##'
 app.config['BABEL_DEFAULT_LOCALE'] = config.LOCALE_DEFAULT
 babel = Babel(app)
 

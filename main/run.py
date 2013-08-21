@@ -23,17 +23,17 @@ parser.add_argument('-c', '--clean', dest='clean', action='store_true',
 parser.add_argument('-m', '--minify', dest='minify', action='store_true',
     help='compiles files into minified version before deploying'
   )
-parser.add_argument('-r', '--run', dest='run', action='store_true',
-    help='runs the dev_appserver.py with datastore and blobstore paths',
+parser.add_argument('-s', '--start', dest='start', action='store_true',
+    help='starts the dev_appserver.py with datastore and blobstore paths',
   )
 parser.add_argument('-o', '--host', dest='host', action='store', default='127.0.0.1',
-    help='the host to run for the dev_appserver.py',
+    help='the host to start the dev_appserver.py',
   )
 parser.add_argument('-p', '--port', dest='port', action='store', default='8080',
-    help='the port to run for the dev_appserver.py',
+    help='the port to start the dev_appserver.py',
   )
 parser.add_argument('-f', '--flush', dest='flush', action='store_true',
-    help='clears the datastore',
+    help='clears the datastore, blobstore, etc',
   )
 parser.add_argument('-e', '--pybabel-extract', dest='pybabel_extract', action='store_true',
     help='extract messages from source files and generate messages.pot (pybabel extract..)',
@@ -70,6 +70,7 @@ DIR_LIB = 'lib'
 DIR_NODE_MODULES = 'node_modules'
 DIR_BIN = '.bin'
 DIR_TEMP = 'temp'
+DIR_STORAGE = 'storage'
 DIR_TRANSLATIONS = 'translations'
 
 FILE_ZIP = '%s.zip' % DIR_LIB
@@ -99,13 +100,12 @@ dir_lib = os.path.join(root, DIR_LIB)
 file_lib = os.path.join(root, FILE_ZIP)
 
 dir_bin = os.path.join(root, DIR_NODE_MODULES, DIR_BIN)
-
 file_coffee = os.path.join(dir_bin, FILE_COFFEE)
 file_less = os.path.join(dir_bin, FILE_LESS)
 file_uglifyjs = os.path.join(dir_bin, FILE_UGLIFYJS)
 
 dir_temp = os.path.join(root, '..', DIR_TEMP)
-
+dir_storage = os.path.join(dir_temp, DIR_STORAGE)
 
 file_babel_cfg = os.path.join(DIR_TRANSLATIONS, FILE_BABEL_CFG)
 file_messages_pot = os.path.join(DIR_TRANSLATIONS, FILE_MESSAGES_POT)
@@ -367,20 +367,21 @@ if args.watch:
     STYLES = config.STYLES
     compile_all_dst()
 
-if args.run:
-  dir_datastore = os.path.join(dir_temp, 'datastore')
-  dir_blobstore = os.path.join(dir_temp, 'blobstore')
+if args.flush:
+  remove_dir(dir_storage)
+  print_out('STORAGE CLEARED')
+
+if args.start:
+  make_dirs(dir_storage)
   clear = 'yes' if args.flush else 'no'
   port = int(args.port)
-  make_dirs(dir_blobstore)
   run_command = '''
       dev_appserver.py %s
       --host %s
       --port %s
       --admin_port %s
-      --datastore_path=%s
-      --blobstore_path=%s
+      --storage_path=%s
       --clear_datastore=%s
       --skip_sdk_update_check
-    ''' % (root, args.host, port, port + 1, dir_datastore, dir_blobstore, clear)
+    ''' % (root, args.host, port, port + 1, dir_storage, clear)
   os.system(run_command.replace('\n', ' '))

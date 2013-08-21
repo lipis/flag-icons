@@ -1,69 +1,28 @@
 html {
-  background-color: @wellBackground;
+  background-color: @well-bg;
 }
 
 body {
-  padding-top: @navbarHeight * 1.4;
+  padding-top: @navbar-height;
   overflow-y: scroll;
-  background-color: @bodyBackground;
+  background-color: @body-bg;
+  & > .container {
+    padding-top: (@line-height-computed / 2);
+    min-height: 256px;
+  }
 }
 
-.main-container {
-  min-height: 512px;
-}
-
-.jumbotron {
-  margin: 60px 0;
+footer {
+  color: @text-muted;
   text-align: center;
-  h1 {
-    font-size: 72px;
-    line-height: 1;
-  }
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
-  }
-}
-
-.footer {
-  background-color: @wellBackground;
-  border-top: 1px solid @hrBorder;
-  padding: 32px 0px;
-  margin-top: 32px;
+  background-color: @well-bg;
+  border-top: 1px solid @hr-border;
+  padding: (@line-height-computed * 2) (@grid-gutter-width / 2) (@line-height-computed * 4 / 3);
+  margin-top: (@line-height-computed * 4);
 }
 
 .img-error {
-  .size(270px, 485px);
+  max-width: 100%;
   margin: auto;
   display: block;
-}
-
-/* Responsive
--------------------------------------------------- */
-
-/* Desktop
-------------------------- */
-@media (max-width: 980px) {
-  body {
-    padding-top: 0;
-  }
-}
-
-/* Tablet
-------------------------- */
-@media (max-width: 767px) {
- .footer {
-    margin-left: -20px;
-    margin-right: -20px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-}
-
-/* Landscape phones
-------------------------- */
-@media (max-width: 480px) {
-  .footer .pull-right {
-    float: none;
-  }
 }
