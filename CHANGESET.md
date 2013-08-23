@@ -1,3 +1,8 @@
+Version 0.5.1 - 2013-08-23
+--------------------------
+- Refactored `auth.py`
+- Updated Twitter's links
+
 Version 0.5.0 - 2013-08-20
 --------------------------
 

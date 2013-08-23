@@ -168,15 +168,14 @@ def retrieve_user_from_google(google_user):
       user_db.admin = True
       user_db.put()
     return user_db
-  user_db = model.User(
+
+  return create_user_db(
+      google_user.nickname().split('@')[0].replace('.', ' ').title(),
+      google_user.nickname(),
+      google_user.email(),
       federated_id=google_user.user_id(),
-      name=strip_username_from_email(google_user.nickname()),
-      username=generate_unique_username(google_user.nickname()),
-      email=google_user.email().lower(),
       admin=users.is_current_user_admin(),
     )
-  user_db.put()
-  return user_db
 
 
 ################################################################################
@@ -190,7 +189,7 @@ twitter = twitter_oauth.remote_app(
     base_url='https://api.twitter.com/1.1/',
     request_token_url='https://api.twitter.com/oauth/request_token',
     access_token_url='https://api.twitter.com/oauth/access_token',
-    authorize_url='https://api.twitter.com/oauth/authenticate',
+    authorize_url='https://api.twitter.com/oauth/authorize',
     consumer_key=config.CONFIG_DB.twitter_consumer_key,
     consumer_secret=config.CONFIG_DB.twitter_consumer_secret,
   )
@@ -236,13 +235,12 @@ def retrieve_user_from_twitter(response):
   user_db = model.User.retrieve_one_by('twitter_id', response['user_id'])
   if user_db:
     return user_db
-  user_db = model.User(
+
+  return create_user_db(
+      response['screen_name'],
+      response['screen_name'],
       twitter_id=response['user_id'],
-      name=response['screen_name'],
-      username=generate_unique_username(response['screen_name']),
     )
-  user_db.put()
-  return user_db
 
 
 ################################################################################
@@ -293,29 +291,38 @@ def retrieve_user_from_facebook(response):
   user_db = model.User.retrieve_one_by('facebook_id', response['id'])
   if user_db:
     return user_db
-
-  if 'username' in response:
-    username = response['username']
-  else:
-    username = response['id']
-
-  user_db = model.User(
+  return create_user_db(
+      response['name'],
+      response['username'] if 'username' in response else response['id'],
+      response['email'],
       facebook_id=response['id'],
-      name=response['name'],
-      email=response['email'].lower(),
-      username=generate_unique_username(username),
     )
-  user_db.put()
-  return user_db
 
 
 ################################################################################
 # Helpers
 ################################################################################
+def create_user_db(name, username, email='', **params):
+  username = username.split('@')[0]
+  new_username = username
+  n = 1
+  while model.User.retrieve_one_by('username', new_username) is not None:
+    new_username = '%s%d' % (username, n)
+    n += 1
+
+  user_db = model.User(
+      name=name,
+      email=email.lower(),
+      username=new_username,
+      **params
+    )
+  user_db.put()
+  return user_db
+
+
 def signin_user_db(user_db):
   if not user_db:
     return flask.redirect(flask.url_for('signin'))
-
   flask_user_db = FlaskUser(user_db)
   if login.login_user(flask_user_db):
     flask.flash('Hello %s, welcome to %s!!!' % (
@@ -325,21 +332,3 @@ def signin_user_db(user_db):
   else:
     flask.flash('Sorry, but you could not sign in.', category='danger')
     return flask.redirect(flask.url_for('signin'))
-
-
-def strip_username_from_email(email):
-  #TODO: use re
-  if email.find('@') > 0:
-    email = email[0:email.find('@')]
-  return email.lower()
-
-
-def generate_unique_username(username):
-  username = strip_username_from_email(username)
-
-  new_username = username
-  n = 1
-  while model.User.retrieve_one_by('username', new_username) is not None:
-    new_username = '%s%d' % (username, n)
-    n += 1
-  return new_username
