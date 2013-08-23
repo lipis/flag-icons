@@ -25,6 +25,10 @@ class Base(ndb.Model, modelx.BaseX):
 
 class Config(Base, modelx.ConfigX):
   analytics_id = ndb.StringProperty(default='')
+  announcement_html = ndb.StringProperty(default='')
+  announcement_type = ndb.StringProperty(default='info', choices=[
+      'info', 'warning', 'success', 'danger',
+    ])
   brand_name = ndb.StringProperty(default='gae-init')
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
@@ -33,11 +37,11 @@ class Config(Base, modelx.ConfigX):
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
   twitter_consumer_key = ndb.StringProperty(default='')
-  announcement_html = ndb.StringProperty(default='')
-  announcement_type = ndb.StringProperty(default='info', choices=['info', 'warning', 'success', 'danger'])
 
   _PROPERTIES = Base._PROPERTIES.union(set([
       'analytics_id',
+      'announcement_html',
+      'announcement_type',
       'brand_name',
       'facebook_app_id',
       'facebook_app_secret',
@@ -45,8 +49,6 @@ class Config(Base, modelx.ConfigX):
       'flask_secret_key',
       'twitter_consumer_key',
       'twitter_consumer_secret',
-      'announcement_html',
-      'announcement_type',
     ]))
 
 

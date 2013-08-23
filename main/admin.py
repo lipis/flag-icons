@@ -24,7 +24,9 @@ class ConfigUpdateForm(wtf.Form):
       wtf.optional(),
       wtf.validators.email('That does not look like an email')
     ])
-  flask_secret_key = wtf.TextField('Flask Secret Key', [wtf.validators.required()])
+  flask_secret_key = wtf.TextField('Flask Secret Key', [
+      wtf.validators.required()
+    ])
   twitter_consumer_key = wtf.TextField('Twitter Consumer Key')
   twitter_consumer_secret = wtf.TextField('Twitter Consumer Secret')
 
