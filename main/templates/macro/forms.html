@@ -35,12 +35,12 @@
   {{input_field(field, type='email', placeholder=placeholder, autocomplete=autocomplete)}}
 # endmacro
 
-# macro hidden_field(field)
-  {{field(type='hidden')}}
+# macro select_field(field)
+  {{input_field(field)}}
 # endmacro
 
-# macro select_field(field, autocomplete=True)
-  {{input_field(field, autocomplete=autocomplete)}}
+# macro hidden_field(field)
+  {{field(type='hidden')}}
 # endmacro
 
 # macro textarea_field(field, placeholder='', rows=4)

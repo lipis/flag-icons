@@ -2,10 +2,10 @@ Version 0.5.1 - 2013-08-23
 --------------------------
 - Refactored `auth.py`
 - Updated Twitter's links
+- Added announcement message in the admin config
 
 Version 0.5.0 - 2013-08-20
 --------------------------
-
 - Boostrap 3 is in da house! Strongly recommended to read the docs
 - All of the templates are affected
 - `top_bar.html` renamed to `header.html`

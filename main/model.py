@@ -32,6 +32,10 @@ class Config(Base, modelx.ConfigX):
   flask_secret_key = ndb.StringProperty(default=str(uuid4()).replace('-', ''))
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
+  twitter_consumer_key = ndb.StringProperty(default='')
+  announcement_html = ndb.StringProperty(default='')
+  announcement_type = ndb.StringProperty(default='info', choices=['info', 'warning', 'success', 'danger'])
+
   _PROPERTIES = Base._PROPERTIES.union(set([
       'analytics_id',
       'brand_name',
@@ -41,6 +45,8 @@ class Config(Base, modelx.ConfigX):
       'flask_secret_key',
       'twitter_consumer_key',
       'twitter_consumer_secret',
+      'announcement_html',
+      'announcement_type',
     ]))
 
 
