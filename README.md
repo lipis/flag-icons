@@ -8,7 +8,7 @@ using Flask, Bootstrap and tons of other cool features.
 Demo Page
 ---------
 
-The latest version is always accessible from: [http://gae-init.appspot.com][gaeinit]
+The latest version is always accessible from: [http://gae-init.appspot.com]()
 
 Documentation
 -------------
@@ -49,8 +49,8 @@ and you ran the `run.py` script to minify all the static files:
 Tech Stack
 ----------
 
-  - [Google App Engine][gae]
-  - [Python 2.7][gaepython]
+  - [Google App Engine][]
+  - [Python 2.7][]
   - [NDB][]
   - [Jinja2][]
   - [Flask][]
@@ -58,13 +58,13 @@ Tech Stack
   - [CoffeeScript][]
   - [LessCSS][]
   - [Bootstrap][]
-  - [Font Awesome][fontawesome]
+  - [Font Awesome][]
 
 Requirements
 ------------
 
-  - [Google App Engine SDK for Python][gaesdk]
-  - [node.js][nodejs]
+  - [Google App Engine SDK for Python][]
+  - [node.js][]
   - [OSX][] or [Linux][] or [Windows][]
 
 Contributions and Ideas
@@ -82,32 +82,28 @@ Author
 
 [![Lipis flair on stackoverflow.com][lipisflair]][lipis]
 
-[gaeinit]: http://gae-init.appspot.com
-[docs]: http://docs.gae-init.appspot.com
-[tutorial]: http://docs.gae-init.appspot.com/tutorial/
-[gae]: https://developers.google.com/appengine/
-[gaepython]: https://developers.google.com/appengine/docs/python/python27/using27
-[ndb]: https://developers.google.com/appengine/docs/python/ndb/
-[jinja2]: http://jinja.pocoo.org/docs/
-[flask]: http://flask.pocoo.org/
-[jquery]: http://jquery.com/
-[coffeescript]: http://coffeescript.org/
-[lesscss]: http://lesscss.org/
 [bootstrap]: http://getbootstrap.com/
-[fontawesome]: http://fortawesome.github.com/Font-Awesome/
-
-[gaesdk]: https://developers.google.com/appengine/downloads
-[nodejs]: http://nodejs.org/
-[osx]: http://www.apple.com/osx/
-[linux]: http://www.ubuntu.com
-[windows]: http://windows.microsoft.com/
-
-[tzador]: http://stackoverflow.com/users/165697/tzador
 [chris]: http://stackoverflow.com/users/226394/chris-top
-[ksymeon]: https://plus.google.com/102598378133436784997
+[coffeescript]: http://coffeescript.org/
+[docs]: http://docs.gae-init.appspot.com
+[flask]: http://flask.pocoo.org/
+[font awesome]: http://fortawesome.github.com/font-awesome/
 [gmist]: https://github.com/gmist
-[stefanlindmark]: http://www.linkedin.com/in/stefanlindmark
+[google app engine sdk for python]: https://developers.google.com/appengine/downloads
+[google app engine]: https://developers.google.com/appengine/
+[jinja2]: http://jinja.pocoo.org/docs/
 [joernhees]: https://github.com/joernhees
-
-[lipisflair]: http://stackexchange.com/users/flair/5282.png
+[jquery]: http://jquery.com/
+[ksymeon]: https://plus.google.com/102598378133436784997
+[lesscss]: http://lesscss.org/
+[linux]: http://www.ubuntu.com
 [lipis]: http://stackoverflow.com/users/8418/lipis
+[lipisflair]: http://stackexchange.com/users/flair/5282.png
+[ndb]: https://developers.google.com/appengine/docs/python/ndb/
+[node.js]: http://nodejs.org/
+[osx]: http://www.apple.com/osx/
+[python 2.7]: https://developers.google.com/appengine/docs/python/python27/using27
+[stefanlindmark]: http://www.linkedin.com/in/stefanlindmark
+[tutorial]: http://docs.gae-init.appspot.com/tutorial/
+[tzador]: http://stackoverflow.com/users/165697/tzador
+[windows]: http://windows.microsoft.com/
