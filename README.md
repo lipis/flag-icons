@@ -8,7 +8,8 @@ using Flask, Bootstrap and tons of other cool features.
 Demo Page
 ---------
 
-The latest version is always accessible from: [http://gae-init.appspot.com]()
+The latest version is always accessible from:
+[http://gae-init.appspot.com](http://gae-init.appspot.com)
 
 Documentation
 -------------
