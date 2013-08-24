@@ -8,7 +8,8 @@ using Flask, Bootstrap, Babel and tons of other cool features.
 Demo Page
 ---------
 
-The latest version is always accessible from: [http://babel.gae-init.appspot.com][gae-init-babel]
+The latest version is always accessible from:
+[http://babel.gae-init.appspot.com](http://babel.gae-init.appspot.com)
 
 Documentation
 -------------
@@ -49,8 +50,8 @@ and you ran the `run.py` script to minify all the static files:
 Tech Stack
 ----------
 
-  - [Google App Engine][gae]
-  - [Python 2.7][gaepython]
+  - [Google App Engine][]
+  - [Python 2.7][]
   - [NDB][]
   - [Jinja2][]
   - [Flask][]
@@ -58,7 +59,8 @@ Tech Stack
   - [CoffeeScript][]
   - [LessCSS][]
   - [Bootstrap][]
-  - [Font Awesome][fontawesome]
+  - [Font Awesome][]
+  - [Babel][]
 
 Requirements
 ------------
@@ -67,52 +69,31 @@ Requirements
   - [Babel][] - `easy_install Babel`
   - [Jinja2][] - `easy_install Jinja2`
 
-Contact & Support
------------------
+Support
+-------
 
 Due to lack of documentation if you run into any troubles, feel free to add an
-issue or use the [feedback][] form and I'll be happy
-to improve or provide more info.
-
-Contributions and Ideas
------------------------
-
-  - [tzador][]
-  - [chris][]
-  - [ksymeon][]
-  - [gmist][]
-  - [stefanlindmark][]
-  - [joernhees][]
+issue and I'll be happy to improve or provide more info.
 
 Author
 ------
 
 [![Lipis flair on stackoverflow.com][lipisflair]][lipis]
 
-[gae-init]: http://gae-init.appspot.com
-[gae-init-babel]: http://babel.gae-init.appspot.com
-[docs]: http://docs.gae-init.appspot.com
-[tutorial]: http://docs.gae-init.appspot.com/tutorial/
-[gae]: https://developers.google.com/appengine/
-[gaepython]: https://developers.google.com/appengine/docs/python/python27/using27
-[ndb]: https://developers.google.com/appengine/docs/python/ndb/
-[jinja2]: http://jinja.pocoo.org/docs/
-[flask]: http://flask.pocoo.org/
-[jquery]: http://jquery.com/
-[coffeescript]: http://coffeescript.org/
-[lesscss]: http://lesscss.org/
-[bootstrap]: http://getbootstrap.com/
-[fontawesome]: http://fortawesome.github.com/Font-Awesome/
-
 [babel]: http://babel.edgewall.org/wiki/Download
-[jinja2]: http://jinja.pocoo.org/docs/intro/
-
-[tzador]: http://stackoverflow.com/users/165697/tzador
-[chris]: http://stackoverflow.com/users/226394/chris-top
-[ksymeon]: https://plus.google.com/102598378133436784997
-[gmist]: https://github.com/gmist
-[stefanlindmark]: http://www.linkedin.com/in/stefanlindmark
-[joernhees]: https://github.com/joernhees
-
-[lipisflair]: http://stackexchange.com/users/flair/5282.png
+[bootstrap]: http://getbootstrap.com/
+[coffeescript]: http://coffeescript.org/
+[docs]: http://docs.gae-init.appspot.com
+[flask]: http://flask.pocoo.org/
+[font awesome]: http://fortawesome.github.com/font-awesome/
+[gae-init]: http://gae-init.appspot.com
+[google app engine sdk for python]: https://developers.google.com/appengine/downloads
+[google app engine]: https://developers.google.com/appengine/
+[jinja2]: http://jinja.pocoo.org
+[jquery]: http://jquery.com/
+[lesscss]: http://lesscss.org/
 [lipis]: http://stackoverflow.com/users/8418/lipis
+[lipisflair]: http://stackexchange.com/users/flair/5282.png
+[ndb]: https://developers.google.com/appengine/docs/python/ndb/
+[python 2.7]: https://developers.google.com/appengine/docs/python/python27/using27
+[tutorial]: http://docs.gae-init.appspot.com/tutorial/
