@@ -15,13 +15,13 @@ class ConfigUpdateForm(wtf.Form):
   analytics_id = wtf.TextField('Analytics ID')
   announcement_html = wtf.TextAreaField('Announcement HTML')
   announcement_type = wtf.SelectField('Announcement Type', choices=[
-      (s, s.title()) for s in model.Config.announcement_type._choices
+      (t, t.title()) for t in model.Config.announcement_type._choices
     ])
   brand_name = wtf.TextField('Brand Name', [wtf.validators.required()])
   facebook_app_id = wtf.TextField('Facebook App ID')
   facebook_app_secret = wtf.TextField('Facebook App Secret')
   feedback_email = wtf.TextField('Feedback Email', [
-      wtf.optional(),
+      wtf.validators.optional(),
       wtf.validators.email('That does not look like an email')
     ])
   flask_secret_key = wtf.TextField('Flask Secret Key', [

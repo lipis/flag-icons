@@ -36,7 +36,6 @@ class Config(Base, modelx.ConfigX):
   flask_secret_key = ndb.StringProperty(default=str(uuid4()).replace('-', ''))
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
-  twitter_consumer_key = ndb.StringProperty(default='')
 
   _PROPERTIES = Base._PROPERTIES.union(set([
       'analytics_id',
