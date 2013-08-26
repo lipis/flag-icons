@@ -1,3 +1,8 @@
+Version 0.5.2 - 2013-08-27
+--------------------------
+- Added a nanoscopic progress bar: NProgress
+- Removed empty `<p>` in footer
+
 Version 0.5.1 - 2013-08-23
 --------------------------
 - Refactored `auth.py`
