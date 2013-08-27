@@ -1,9 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import sys
-sys.path.insert(0, 'lib.zip')
-sys.path.insert(0, 'libx')
-
 from google.appengine.api import mail
 import flask
 from flaskext import wtf
