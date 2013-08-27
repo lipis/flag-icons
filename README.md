@@ -60,6 +60,7 @@ Tech Stack
   - [LessCSS][]
   - [Bootstrap][]
   - [Font Awesome][]
+  - [NProgress][]
   - [Babel][]
 
 Requirements
@@ -95,5 +96,8 @@ Author
 [lipis]: http://stackoverflow.com/users/8418/lipis
 [lipisflair]: http://stackexchange.com/users/flair/5282.png
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
+[node.js]: http://nodejs.org/
+[nprogress]: http://ricostacruz.com/nprogress/
+[osx]: http://www.apple.com/osx/
 [python 2.7]: https://developers.google.com/appengine/docs/python/python27/using27
 [tutorial]: http://docs.gae-init.appspot.com/tutorial/

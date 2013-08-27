@@ -25,6 +25,7 @@ class ConfigUpdateForm(wtf.Form):
   feedback_email = wtf.TextField('Feedback Email', [
       wtf.validators.optional(),
       wtf.validators.email('That does not look like an email'),
+      wtf.validators.email('That does not look like an email'),
     ])
   flask_secret_key = wtf.TextField('Flask Secret Key', [
       wtf.validators.required()
