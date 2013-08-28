@@ -26,6 +26,7 @@ class AnonymousUser(login.AnonymousUserMixin):
   id = 0
   admin = False
   name = 'Anonymous'
+  user_db = None
 
   def key(self):
     return None
@@ -72,17 +73,20 @@ def current_user_id():
 
 
 def current_user_key():
-  return login.current_user.user_db.key
+  return login.current_user.user_db.key if login.current_user.user_db else None
 
 
 def current_user_db():
-  return current_user_key().get()
+  return login.current_user.user_db
 
 
 def is_logged_in():
-  return current_user_id() != 0
+  return login.current_user.id != 0
 
 
+################################################################################
+# Decorators
+################################################################################
 def login_required(f):
   @functools.wraps(f)
   def decorated_function(*args, **kws):
