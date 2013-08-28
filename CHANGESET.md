@@ -1,3 +1,9 @@
+Version 0.5.3 - 2013-08-28
+--------------------------
+- Error checkings in the `auth` functions
+- Added 405 error
+- Minor reformats and few comments
+
 Version 0.5.2 - 2013-08-27
 --------------------------
 - Added a nanoscopic progress bar: NProgress
