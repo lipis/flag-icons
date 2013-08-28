@@ -3,7 +3,7 @@
 import os
 try:
   # This part is surrounded in try/except because the this config.py file is
-  # also used in the build.py script which is used to compile/minify the client
+  # also used in the run.py script which is used to compile/minify the client
   # side files (*.less, *.coffee, *.js) and is not aware of the GAE
   import model
   from datetime import datetime
@@ -23,7 +23,7 @@ DEBUG = DEVELOPMENT
 DEFAULT_DB_LIMIT = 64
 
 ################################################################################
-# Client modules, also used by the build.py script.
+# Client modules, also used by the run.py script.
 ################################################################################
 STYLES = [
     'src/less/style.less',
@@ -36,20 +36,19 @@ SCRIPTS_MODULES = [
 
 SCRIPTS = {
     'libs': [
-      'lib/jquery.js',
-      'lib/nprogress.js',
-      'lib/bootstrap/js/alert.js',
-      'lib/bootstrap/js/button.js',
-      'lib/bootstrap/js/collapse.js',
-      'lib/bootstrap/js/dropdown.js',
-      'lib/bootstrap/js/tooltip.js',
-    ],
+        'lib/jquery.js',
+        'lib/nprogress.js',
+        'lib/bootstrap/js/alert.js',
+        'lib/bootstrap/js/button.js',
+        'lib/bootstrap/js/collapse.js',
+        'lib/bootstrap/js/dropdown.js',
+        'lib/bootstrap/js/tooltip.js',
+      ],
     'scripts': [
-      'src/coffee/common/util.coffee',
-      'src/coffee/common/service.coffee',
-
-      'src/coffee/site/app.coffee',
-      'src/coffee/site/profile.coffee',
-      'src/coffee/site/admin.coffee',
-    ],
+        'src/coffee/common/util.coffee',
+        'src/coffee/common/service.coffee',
+        'src/coffee/site/app.coffee',
+        'src/coffee/site/profile.coffee',
+        'src/coffee/site/admin.coffee',
+      ],
   }
