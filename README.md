@@ -21,7 +21,7 @@ Running the Development Environment
 -----------------------------------
 
     $ cd /path/to/project-name/main
-    $ ./run.py -cs
+    $ ./run.py -s
 
 To test it visit `http://localhost:8080/` in your browser.
 

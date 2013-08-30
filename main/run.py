@@ -18,13 +18,14 @@ parser.add_argument('-w', '--watch', dest='watch', action='store_true',
     help='watch files for changes when running the development web server',
   )
 parser.add_argument('-c', '--clean', dest='clean', action='store_true',
-    help='recompiles files when running the development web server',
+    help='''recompiles files when running the development web server, but
+    obsolete if -s is used''',
   )
 parser.add_argument('-m', '--minify', dest='minify', action='store_true',
     help='compiles files into minified version before deploying'
   )
 parser.add_argument('-s', '--start', dest='start', action='store_true',
-    help='starts the dev_appserver.py with datastore and blobstore paths',
+    help='starts the dev_appserver.py with storage_path pointing to temp',
   )
 parser.add_argument('-o', '--host', dest='host', action='store', default='127.0.0.1',
     help='the host to start the dev_appserver.py',
@@ -229,6 +230,11 @@ def install_dependencies():
     os.system('npm install %s' % missing)
 
 
+def update_missing_args():
+  if args.start:
+    args.clean = True
+
+
 ################################################################################
 # Main
 ################################################################################
@@ -239,6 +245,7 @@ os.chdir(root)
 
 update_path_separators()
 install_dependencies()
+update_missing_args()
 
 if len(sys.argv) == 1:
   parser.print_help()
