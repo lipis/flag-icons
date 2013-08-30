@@ -97,7 +97,7 @@ def jsonify_model_dbs(model_dbs, more_cursor=None):
   if more_cursor:
     response_object['more_cursor'] = more_cursor
     response_object['more_url'] = generate_more_url(more_cursor)
-  response = flask.jsonify(response_object)
+  response = jsonpify(response_object)
   return response
 
 
@@ -105,7 +105,7 @@ def jsonify_model_db(model_db):
   '''Return respons of a db as JSON service result
   '''
   result_object = model_db_to_object(model_db)
-  response = flask.jsonify({
+  response = jsonpify({
       'status': 'success',
       'now': format_datetime_utc(datetime.utcnow()),
       'result': result_object,
@@ -146,6 +146,16 @@ def json_value(value):
   if isinstance(value, ndb.Model):
     return model_db_to_object(value)
   return value
+
+
+def jsonpify(*args, **kwargs):
+  '''Same as flask.jsonify() but returns JSONP if callback is provided
+  '''
+  if param('callback'):
+    content = '%s(%s)' % (param('callback'), flask.jsonify(*args, **kwargs).data)
+    mimetype = 'application/javascript'
+    return flask.current_app.response_class(content, mimetype=mimetype)
+  return flask.jsonify(*args, **kwargs)
 
 
 ################################################################################

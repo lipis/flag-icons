@@ -149,7 +149,7 @@ def error_handler(e):
       name = 'Internal Server Error'
 
   if flask.request.path.startswith('/_s/'):
-    return flask.jsonify({
+    return util.jsonpify({
         'status': 'error',
         'error_code': e.code,
         'error_name': e.name.lower().replace(' ', '_'),
