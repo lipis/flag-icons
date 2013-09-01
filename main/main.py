@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
 
 from google.appengine.api import mail
-import flask
 from flaskext import wtf
+import flask
 import config
+import model
+import util
 
 app = flask.Flask(__name__)
 app.config.from_object(config)
 app.jinja_env.line_statement_prefix = '#'
 app.jinja_env.line_comment_prefix = '##'
+app.jinja_env.globals.update(slugify=util.slugify)
 
 import auth
-import util
-import model
 import admin
 
 
