@@ -1,3 +1,9 @@
+Version 0.5.5 - 2013-09-01
+--------------------------
+- Added `util.slugify` function into Jinja2 templates
+- For the welcome logo the slugified name of the brand is used
+- No more custom brand names and logos in forks, to avoid conflicts
+
 Version 0.5.4 - 2013-08-30
 --------------------------
 - Introduced `util.jsonpify()`, which is like flask.jsonify but returns JSONP if callback is provided
