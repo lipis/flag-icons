@@ -1,5 +1,6 @@
 Version 0.5.5 - 2013-09-01
 --------------------------
+- Added `sitemap.xml`
 - Added `util.slugify` function into Jinja2 templates
 - For the welcome logo the slugified name of the brand is used
 - No more custom brand names and logos in forks, to avoid conflicts
