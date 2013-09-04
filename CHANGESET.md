@@ -1,3 +1,7 @@
+Version 0.5.6 - 2013-09-04
+--------------------------
+- Added `multiple_checkbox_field` macro for `wtf.SelectMultipleField`
+
 Version 0.5.5 - 2013-09-01
 --------------------------
 - Added `sitemap.xml`

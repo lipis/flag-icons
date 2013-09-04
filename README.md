@@ -89,7 +89,7 @@ Author
 [coffeescript]: http://coffeescript.org/
 [docs]: http://docs.gae-init.appspot.com
 [flask]: http://flask.pocoo.org/
-[font awesome]: http://fortawesome.github.com/font-awesome/
+[font awesome]: http://fortawesome.github.com/Font-Awesome/
 [gmist]: https://github.com/gmist
 [google app engine sdk for python]: https://developers.google.com/appengine/downloads
 [google app engine]: https://developers.google.com/appengine/
