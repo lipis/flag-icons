@@ -1,6 +1,7 @@
 Version 0.5.6 - 2013-09-04
 --------------------------
 - Added `multiple_checkbox_field` macro for `wtf.SelectMultipleField`
+- Brought back the `spinner-icon` div in the NProgress lib
 
 Version 0.5.5 - 2013-09-01
 --------------------------
