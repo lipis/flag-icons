@@ -23,22 +23,23 @@
             transform: rotate(3deg) translate(0px, -4px);
   }
   .spinner {
+    display: block;
     position: fixed;
     z-index: @nprogress-z-index;
-
     top: @nprogress-spinner-top;
     right: @nprogress-spinner-right;
-    width: @nprogress-spinner-size;
-    height: @nprogress-spinner-size;
 
-    box-sizing: border-box;
-    border: solid 2px transparent;
-    border-top-color: @nprogress-color;
-    border-left-color: @nprogress-color;
-    border-radius: 50%;
-
-    -webkit-animation: nprogress-spinner 400ms linear infinite;
-            animation: nprogress-spinner 400ms linear infinite;
+    .spinner-icon {
+      width: @nprogress-spinner-size;
+      height: @nprogress-spinner-size;
+      box-sizing: border-box;
+      border: solid 2px transparent;
+      border-top-color: @nprogress-color;
+      border-left-color: @nprogress-color;
+      border-radius: 50%;
+      -webkit-animation: nprogress-spinner 400ms linear infinite;
+              animation: nprogress-spinner 400ms linear infinite;
+    }
   }
 }
 

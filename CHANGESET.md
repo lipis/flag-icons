@@ -1,5 +1,12 @@
+Version 0.5.6 - 2013-09-04
+--------------------------
+- Added `multiple_checkbox_field` macro for `wtf.SelectMultipleField`
+- Brought back the `spinner-icon` div in the NProgress lib
+
 Version 0.5.5 - 2013-09-01
 --------------------------
+- Added `sitemap.xml`
+- Added `/signin/*/` in `robots.txt`
 - Added `util.slugify` function into Jinja2 templates
 - For the welcome logo the slugified name of the brand is used
 - No more custom brand names and logos in forks, to avoid conflicts

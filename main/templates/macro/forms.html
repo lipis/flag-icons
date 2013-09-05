@@ -1,10 +1,18 @@
-# macro errors_and_description(field)
+# macro field_errors(field)
   # for error in field.errors
     <p class="help-block">{{error}}</p>
   # endfor
+# endmacro
+
+# macro field_description(field)
   # if field.description
     <p class="help-block">{{field.description}}</p>
   # endif
+# endmacro
+
+# macro errors_and_description(field)
+  {{field_errors(field)}}
+  {{field_description(field)}}
 # endmacro
 
 # macro input_field(field, type='text', placeholder='', autocomplete=True)
@@ -57,5 +65,24 @@
       {{field()}} {{field.label.text}}
     </label>
     {{errors_and_description(field)}}
+  </div>
+# endmacro
+
+# macro multiple_checkbox_field(field)
+  <div class="form-group {{'has-error' if field.errors else ''}}">
+    {{field.label(class='control-label')}}
+    {{field_description(field)}}
+    # for choice in field.choices
+      <div class="checkbox">
+        <label>
+          <input type="checkbox" name="{{field.name}}" value="{{choice[0]}}"
+            # if field.data and choice[0] in field.data
+              checked
+            # endif
+          > {{choice[1]}}
+        </label>
+      </div>
+    # endfor
+    {{field_errors(field)}}
   </div>
 # endmacro

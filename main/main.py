@@ -24,9 +24,26 @@ import auth
 import admin
 
 
+################################################################################
+# Main page
+################################################################################
 @app.route('/')
 def welcome():
   return flask.render_template('welcome.html', html_class='welcome')
+
+
+################################################################################
+# Sitemap stuff
+################################################################################
+@app.route('/sitemap.xml')
+def sitemap():
+  response = flask.make_response(flask.render_template(
+      'sitemap.xml',
+      host_url=flask.request.host_url[:-1],
+      lastmod=config.CURRENT_VERSION_DATE.strftime('%Y-%m-%d'),
+    ))
+  response.headers['Content-Type'] = 'application/xml'
+  return response
 
 
 ################################################################################
@@ -152,7 +169,7 @@ def user_list():
 @app.errorhandler(400)  # Bad Request
 @app.errorhandler(401)  # Unauthorized
 @app.errorhandler(403)  # Forbidden
-@app.errorhandler(404)  # Not
+@app.errorhandler(404)  # Not Found
 @app.errorhandler(405)  # Method Not Allowed
 @app.errorhandler(410)  # Gone
 @app.errorhandler(418)  # I'm a Teapot
