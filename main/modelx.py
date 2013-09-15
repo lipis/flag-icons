@@ -37,7 +37,7 @@ class ConfigX(object):
 
 
 class UserX(object):
-  @ndb.ComputedProperty
+  @property
   def avatar_url(self):
     return 'http://www.gravatar.com/avatar/%s?d=identicon&r=x' % (
         md5.new(self.email or self.name).hexdigest().lower()
