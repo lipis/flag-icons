@@ -91,7 +91,7 @@ def jsonify_model_dbs(model_dbs, more_cursor=None):
   response_object = {
       'status': 'success',
       'count': len(result_objects),
-      'now': format_datetime_utc(datetime.utcnow()),
+      'now': datetime.utcnow().isoformat(),
       'result': result_objects,
     }
   if more_cursor:
@@ -107,7 +107,7 @@ def jsonify_model_db(model_db):
   result_object = model_db_to_object(model_db)
   response = jsonpify({
       'status': 'success',
-      'now': format_datetime_utc(datetime.utcnow()),
+      'now': datetime.utcnow().isoformat(),
       'result': result_object,
     })
   return response
@@ -130,7 +130,7 @@ def model_db_to_object(model_db):
 
 def json_value(value):
   if isinstance(value, datetime):
-    return format_datetime_utc(value)
+    return value.isoformat()
   if isinstance(value, ndb.Key):
     return value.urlsafe()
   if isinstance(value, blobstore.BlobKey):
@@ -189,44 +189,3 @@ def slugify(value):
   value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore')
   value = unicode(_slugify_strip_re.sub('', value).strip().lower())
   return _slugify_hyphenate_re.sub('-', value)
-
-
-################################################################################
-# In Time
-################################################################################
-def format_datetime_utc(datetime):
-  return datetime.strftime('%Y-%m-%d %H:%M:%S UTC')
-
-
-SECOND = 1
-MINUTE = 60 * SECOND
-HOUR = 60 * MINUTE
-DAY = 24 * HOUR
-MONTH = 30 * DAY
-
-
-def format_datetime_ago(timestamp):
-  delta = datetime.utcnow() - timestamp
-  seconds = delta.seconds + delta.days * DAY
-  minutes = 1.0 * seconds / MINUTE
-  hours = 1.0 * seconds / HOUR
-  days = 1.0 * seconds / DAY
-
-  if seconds < 0:
-    return 'not yet'
-  if seconds < 1 * MINUTE:
-    return '%d seconds ago' % seconds
-  if seconds < 2 * MINUTE:
-    return 'a minute ago'
-  if seconds < 45 * MINUTE:
-    return '%0.0f minutes ago' % minutes
-  if seconds < 90 * MINUTE:
-    return 'an hour ago'
-  if seconds < 24 * HOUR:
-    return '%0.0f hours ago' % hours
-  if seconds < 48 * HOUR:
-    return 'yesterday'
-  if seconds < 30 * DAY:
-    return '%0.0f days ago' % days
-  else:
-    return timestamp.strftime('%Y-%m-%d')

@@ -38,6 +38,7 @@ SCRIPTS = {
     'libs': [
         'lib/jquery.js',
         'lib/nprogress.js',
+        'lib/moment.js',
         'lib/bootstrap/js/alert.js',
         'lib/bootstrap/js/button.js',
         'lib/bootstrap/js/collapse.js',
