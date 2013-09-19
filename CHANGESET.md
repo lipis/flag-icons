@@ -1,6 +1,6 @@
 Version 0.6.0 - 2013-09-19
 --------------------------
-- Footer changed to a fixed-height and it is pinned the bottom of the viewport
+- Footer changed to a fixed-height and it is pinned to the bottom of the viewport
 - Removed relative dates from `modelx.py`
 - Removed `format_datetime_ago` and `format_datetime_utc` from `util.py`
 - Relative dates are calculated client side and updated every minute
