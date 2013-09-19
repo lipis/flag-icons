@@ -61,6 +61,7 @@ Tech Stack
   - [Bootstrap][]
   - [Font Awesome][]
   - [NProgress][]
+  - [Moment.js][]
 
 Requirements
 ------------
@@ -101,6 +102,7 @@ Author
 [linux]: http://www.ubuntu.com
 [lipis]: http://stackoverflow.com/users/8418/lipis
 [lipisflair]: http://stackexchange.com/users/flair/5282.png
+[moment.js]: http://momentjs.com/
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
 [node.js]: http://nodejs.org/
 [nprogress]: http://ricostacruz.com/nprogress/
