@@ -21,14 +21,16 @@
   </head>
 
   <body>
-    # include 'bit/header.html'
-    # include 'bit/announcement.html'
-    # block header
-    # endblock
-    <div class="container">
-      # include 'bit/notifications.html'
-      # block content
+    <div id="wrap">
+      # include 'bit/header.html'
+      # include 'bit/announcement.html'
+      # block header
       # endblock
+      <div class="container">
+        # include 'bit/notifications.html'
+        # block content
+        # endblock
+      </div>
     </div>
     # include 'bit/footer.html'
     # include 'bit/script.html'

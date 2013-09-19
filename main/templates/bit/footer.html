@@ -1,10 +1,12 @@
 <footer role="contentinfo">
-  # if current_user.admin
-    <p>
-      Version: {{config.CURRENT_VERSION_NAME}}
-      | {{config.CURRENT_VERSION_DATE}}
-      | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">View in JSON</a>
-    </p>
-  # endif
-  <p>&copy; 2013 - {{config.CONFIG_DB.brand_name}}</p>
+  <div class="container">
+    # if current_user.admin
+      <p>
+        Version: {{config.CURRENT_VERSION_NAME}}
+        | {{config.CURRENT_VERSION_DATE}}
+        | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">View in JSON</a>
+      </p>
+    # endif
+    <p>&copy; 2013 - {{config.CONFIG_DB.brand_name}}</p>
+  </div>
 </footer>
