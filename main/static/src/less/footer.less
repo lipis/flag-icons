@@ -1,0 +1,29 @@
+html,
+body {
+  height: 100%;
+}
+
+#wrap  {
+  min-height: 100%;
+  height: auto;
+  margin-bottom: -@footer-height;
+  padding-bottom: (@footer-height + @line-height-computed * 2);
+  & > .container {
+    padding-top: (@line-height-computed / 2);
+  }
+}
+
+footer {
+  display: table;
+  height: @footer-height;
+  width: 100%;
+  color: @text-muted;
+  background-color: @well-bg;
+  text-align: center;
+  border-top: 1px solid @hr-border;
+  & > .container {
+    display: table-cell;
+    vertical-align: middle;
+    padding-top: (@line-height-computed / 2);
+  }
+}
