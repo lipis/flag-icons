@@ -3,7 +3,7 @@
 
 from datetime import datetime
 import argparse
-import config
+from main import config
 import os
 import shutil
 import sys
@@ -42,6 +42,7 @@ args = parser.parse_args()
 ################################################################################
 # Directories
 ################################################################################
+DIR_MAIN = 'main'
 DIR_STATIC = 'static'
 DIR_SRC = 'src'
 DIR_LESS = 'less'
@@ -62,7 +63,9 @@ FILE_LESS = 'lessc'
 FILE_UGLIFYJS = 'uglifyjs'
 
 root = os.path.dirname(os.path.realpath(__file__))
-dir_static = os.path.join(root, DIR_STATIC)
+dir_main = os.path.join(root, DIR_MAIN)
+
+dir_static = os.path.join(dir_main, DIR_STATIC)
 
 dir_src = os.path.join(dir_static, DIR_SRC)
 dir_src_coffee = os.path.join(dir_src, DIR_COFFEE)
@@ -76,15 +79,15 @@ dir_min = os.path.join(dir_static, DIR_MIN)
 dir_min_css = os.path.join(dir_min, DIR_CSS)
 dir_min_js = os.path.join(dir_min, DIR_JS)
 
-dir_lib = os.path.join(root, DIR_LIB)
-file_lib = os.path.join(root, FILE_ZIP)
+dir_lib = os.path.join(dir_main, DIR_LIB)
+file_lib = os.path.join(dir_main, FILE_ZIP)
 
 dir_bin = os.path.join(root, DIR_NODE_MODULES, DIR_BIN)
 file_coffee = os.path.join(dir_bin, FILE_COFFEE)
 file_less = os.path.join(dir_bin, FILE_LESS)
 file_uglifyjs = os.path.join(dir_bin, FILE_UGLIFYJS)
 
-dir_temp = os.path.join(root, '..', DIR_TEMP)
+dir_temp = os.path.join(root, DIR_TEMP)
 dir_storage = os.path.join(dir_temp, DIR_STORAGE)
 
 
@@ -96,7 +99,7 @@ def print_out(script, filename=''):
   if not filename:
     filename = '-' * 41
     script = script.rjust(12, '-')
-  print '[%s] %12s %s' % (timestamp, script, filename.replace(root, ''))
+  print '[%s] %12s %s' % (timestamp, script, filename.replace(dir_main, ''))
 
 
 def make_dirs(directory):
@@ -115,7 +118,7 @@ def clean_files():
       'CLEAN FILES',
       'Removing files: %s' % ', '.join(['*%s' % e for e in bad_endings]),
     )
-  for home, dirs, files in os.walk(root):
+  for home, dirs, files in os.walk(dir_main):
     for f in files:
       for b in bad_endings:
         if f.endswith(b):
@@ -179,7 +182,7 @@ def make_lib_zip(force=False):
     os.remove(file_lib)
   if not os.path.isfile(file_lib):
     print_out('ZIP', file_lib)
-    shutil.make_archive(DIR_LIB, 'zip', dir_lib)
+    shutil.make_archive(dir_lib, 'zip', dir_lib)
 
 
 def is_dirty(source, target):
@@ -320,5 +323,5 @@ if args.start:
       --storage_path=%s
       --clear_datastore=%s
       --skip_sdk_update_check
-    ''' % (root, args.host, port, port + 1, dir_storage, clear)
+    ''' % (dir_main, args.host, port, port + 1, dir_storage, clear)
   os.system(run_command.replace('\n', ' '))
