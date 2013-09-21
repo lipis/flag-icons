@@ -20,7 +20,7 @@ also find a detailed [tutorial][] on how to build a phonebook application.
 Running the Development Environment
 -----------------------------------
 
-    $ cd /path/to/project-name/main
+    $ cd /path/to/project-name
     $ ./run.py -s
 
 To test it visit `http://localhost:8080/` in your browser.
@@ -61,6 +61,7 @@ Tech Stack
   - [Bootstrap][]
   - [Font Awesome][]
   - [NProgress][]
+  - [Moment.js][]
   - [Babel][]
 
 Requirements
@@ -95,6 +96,7 @@ Author
 [lesscss]: http://lesscss.org/
 [lipis]: http://stackoverflow.com/users/8418/lipis
 [lipisflair]: http://stackexchange.com/users/flair/5282.png
+[moment.js]: http://momentjs.com/
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
 [node.js]: http://nodejs.org/
 [nprogress]: http://ricostacruz.com/nprogress/

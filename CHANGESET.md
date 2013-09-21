@@ -1,3 +1,17 @@
+Version 0.6.0 - 2013-09-21
+--------------------------
+- Footer changed to a fixed-height and it is pinned to the bottom of the viewport
+- Removed relative dates from `modelx.py`
+- Removed `format_datetime_ago` and `format_datetime_utc` from `util.py`
+- Relative dates are calculated client side and updated every minute
+- Special treatment for `<time>` element if it has the `datetime` attribute
+- Added Moment.js - a javascript date library for parsing, validating, manipulating and formatting dates
+- All datetimes in JSON are represented in ISO 8601 format
+- Updated `util.param()` to support list values
+- Moved `run.py` in the root directory
+- Moved `package.json` in the root directory
+- Fixed the bug in `run.py` when there were spaces in the path
+
 Version 0.5.6 - 2013-09-04
 --------------------------
 - Added `multiple_checkbox_field` macro for `wtf.SelectMultipleField`

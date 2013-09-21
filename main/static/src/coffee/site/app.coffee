@@ -1,5 +1,5 @@
 $ ->
-  LOG('app init')
+  init_time()
 
 $ -> $('html.welcome').each ->
   LOG('init welcome')

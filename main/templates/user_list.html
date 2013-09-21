@@ -65,14 +65,14 @@
               <td class="hidden-xs">{{user_db.username}}</td>
               <td class="hidden-xs">{{user_db.email}}</td>
               <td>
-                <abbr title="{{user_db.created_utc}}">
-                  {{user_db.created_ago}}
-                </abbr>
+                <time datetime="{{user_db.created.isoformat()}}">
+                  {{user_db.created.strftime('%Y-%m-%d')}}
+                </time>
               </td>
               <td class="hidden-xs">
-                <abbr title="{{user_db.modified_utc}}">
-                  {{user_db.modified_ago}}
-                </abbr>
+                <time datetime="{{user_db.modified.isoformat()}}">
+                  {{user_db.modified.strftime('%Y-%m-%d')}}
+                </time>
               </td>
             </tr>
           # endfor

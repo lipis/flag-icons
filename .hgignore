@@ -8,8 +8,8 @@ syntax: glob
 .hg*
 main/index.yaml
 main/lib.zip
-main/node_modules
 main/static/dst
 main/static/min
+node_modules
 temp/
 translations/messages.pot
