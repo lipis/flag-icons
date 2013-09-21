@@ -21,20 +21,22 @@ def param(name, cast=None):
   '''Returs query parameter by its name, and optionaly casts it to given type.
   Always returns None if the parameter is missing
   '''
-  res = None
+  value = None
   if flask.request.json:
     return flask.request.json.get(name, None)
 
-  if res is None:
-    res = flask.request.args.get(name, None)
-  if res is None and flask.request.form:
-    res = flask.request.form.get(name, None)
+  if value is None:
+    value = flask.request.args.get(name, None)
+  if value is None and flask.request.form:
+    value = flask.request.form.get(name, None)
 
-  if cast and res:
+  if cast and value is not None:
     if cast == bool:
-      return res.lower() in ['true', 'yes', '1']
-    return cast(res)
-  return res
+      return value.lower() in ['true', 'yes', '1', '']
+    if cast == list:
+      return value.split(',') if len(value) > 0 else []
+    return cast(value)
+  return value
 
 
 def get_next_url():
