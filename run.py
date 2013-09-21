@@ -93,7 +93,7 @@ dir_storage = os.path.join(DIR_TEMP, DIR_STORAGE)
 def print_out(script, filename=''):
   timestamp = datetime.now().strftime('%H:%M:%S')
   if not filename:
-    filename = '-' * 42
+    filename = '-' * 46
     script = script.rjust(12, '-')
   print '[%s] %12s %s' % (timestamp, script, filename)
 
