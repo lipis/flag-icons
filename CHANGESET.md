@@ -10,6 +10,7 @@ Version 0.6.0 - 2013-09-21
 - Updated `util.param()` to support list values
 - Moved `run.py` in the root directory
 - Moved `package.json` in the root directory
+- Fixed the bug in `run.py` when there were spaces in the path
 
 Version 0.5.6 - 2013-09-04
 --------------------------

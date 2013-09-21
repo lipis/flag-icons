@@ -62,10 +62,7 @@ FILE_COFFEE = 'coffee'
 FILE_LESS = 'lessc'
 FILE_UGLIFYJS = 'uglifyjs'
 
-root = os.path.dirname(os.path.realpath(__file__))
-dir_main = os.path.join(root, DIR_MAIN)
-
-dir_static = os.path.join(dir_main, DIR_STATIC)
+dir_static = os.path.join(DIR_MAIN, DIR_STATIC)
 
 dir_src = os.path.join(dir_static, DIR_SRC)
 dir_src_coffee = os.path.join(dir_src, DIR_COFFEE)
@@ -79,16 +76,15 @@ dir_min = os.path.join(dir_static, DIR_MIN)
 dir_min_css = os.path.join(dir_min, DIR_CSS)
 dir_min_js = os.path.join(dir_min, DIR_JS)
 
-dir_lib = os.path.join(dir_main, DIR_LIB)
-file_lib = os.path.join(dir_main, FILE_ZIP)
+dir_lib = os.path.join(DIR_MAIN, DIR_LIB)
+file_lib = os.path.join(DIR_MAIN, FILE_ZIP)
 
-dir_bin = os.path.join(root, DIR_NODE_MODULES, DIR_BIN)
+dir_bin = os.path.join(DIR_NODE_MODULES, DIR_BIN)
 file_coffee = os.path.join(dir_bin, FILE_COFFEE)
 file_less = os.path.join(dir_bin, FILE_LESS)
 file_uglifyjs = os.path.join(dir_bin, FILE_UGLIFYJS)
 
-dir_temp = os.path.join(root, DIR_TEMP)
-dir_storage = os.path.join(dir_temp, DIR_STORAGE)
+dir_storage = os.path.join(DIR_TEMP, DIR_STORAGE)
 
 
 ################################################################################
@@ -97,9 +93,9 @@ dir_storage = os.path.join(dir_temp, DIR_STORAGE)
 def print_out(script, filename=''):
   timestamp = datetime.now().strftime('%H:%M:%S')
   if not filename:
-    filename = '-' * 41
+    filename = '-' * 42
     script = script.rjust(12, '-')
-  print '[%s] %12s %s' % (timestamp, script, filename.replace(dir_main, ''))
+  print '[%s] %12s %s' % (timestamp, script, filename)
 
 
 def make_dirs(directory):
@@ -118,7 +114,7 @@ def clean_files():
       'CLEAN FILES',
       'Removing files: %s' % ', '.join(['*%s' % e for e in bad_endings]),
     )
-  for home, dirs, files in os.walk(dir_main):
+  for home, dirs, files in os.walk(DIR_MAIN):
     for f in files:
       for b in bad_endings:
         if f.endswith(b):
@@ -244,7 +240,7 @@ def update_missing_args():
 SCRIPTS = config.SCRIPTS
 STYLES = config.STYLES
 
-os.chdir(root)
+os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 update_path_separators()
 install_dependencies()
@@ -323,5 +319,5 @@ if args.start:
       --storage_path=%s
       --clear_datastore=%s
       --skip_sdk_update_check
-    ''' % (dir_main, args.host, port, port + 1, dir_storage, clear)
+    ''' % (DIR_MAIN, args.host, port, port + 1, dir_storage, clear)
   os.system(run_command.replace('\n', ' '))
