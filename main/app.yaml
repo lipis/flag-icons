@@ -14,9 +14,13 @@ libraries:
   version: latest
 
 handlers:
-- url: /(favicon\.ico|robots\.txt)
-  static_files: static/\1
-  upload: static/(.*)
+- url: /favicon.ico
+  static_files: static/img/favicon.ico
+  upload: static/img/favicon.ico
+
+- url: /robots.txt
+  static_files: static/robots.txt
+  upload: static/robots.txt
 
 - url: /p/
   static_dir: static/
