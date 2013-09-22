@@ -1,4 +1,4 @@
-Version 0.6.0 - 2013-09-21
+Version 0.6.0 - 2013-09-22
 --------------------------
 - Footer changed to a fixed-height and it is pinned to the bottom of the viewport
 - Removed relative dates from `modelx.py`
