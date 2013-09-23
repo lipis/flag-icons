@@ -1,0 +1,19 @@
+.flag-icon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+
+  width: (4 / 3 * 1em);
+  line-height: 1;
+  box-sizing: border-box;
+  &:before {
+    content: "\00a0";
+  }
+}
+
+.flag-icon-gr {
+  background-image: url(../flags/4x3/gb.svg);
+}
