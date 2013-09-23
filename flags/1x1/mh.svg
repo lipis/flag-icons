@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<!--
+
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+    xmlns:dc="http://purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+   <dc:title>SVG graphic of the Marshall Islands' Flag</dc:title>
+   <dc:rights><Agent>
+      <dc:title>Andrew Duhan</dc:title>
+   </Agent></dc:rights>
+   <license rdf:resource="http://web.resource.org/cc/PublicDomain" />
+</Work>
+
+<License rdf:about="http://web.resource.org/cc/PublicDomain">
+   <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+   <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+   <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+
+</rdf:RDF>
+
+-->
+<svg id="svg650" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3495">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="flag" fill-rule="evenodd">
+  <rect id="rect659" height="512" width="511.9" y="3.3092e-14" x="0" stroke-width="1pt" fill="#3b5aa3"/>
+  <path id="path656" d="m139.06 1.2407-5.4 87.962-23.12-56.095 8.87 59.71-35.796-48.252 23.466 55.055-47.013-36.467 36.592 45.826-53.14-23.552l46.549 35.244-57.895-7.6547 54.706 21.687-85.871 7.8543 86.083 5.7533-54.547 22.427 57.311-7.755-46.377 34.245 53.819-23.615-36.708 46.202 46.7-35.358-23.136 53.817 37.382-46.801-10.119 58.338 23.514-54.511 5.3151 86.112 8.2925-85.899 20.274 54.843-7.7291-59.095 37.198 46.841-24.441-54.708 46.681 37.649-37.113-47.005 55.481 23.1-49.102-35.857 59.797 10.08-57.246-21.987 89.038-5.5288-89.038-8.2925 58.606-19.535-60.733 7.6282 50.179-35.082-56.557 22.75 39.059-47.352-47.564 37.146 22.888-56.832-36.921 48.327 7.9305-60.27-21.963 56.868-8.204-87.962z" fill="#fff"/>
+  <path id="path655" d="m0 498.22 511.94-498.22-0.03 92.71-511.91 419.29v-13.78z" fill="#e2ae57"/>
+  <path id="path654" d="m17.918 511.98 494.08-320.81-0.11-101.85-511.89 422.68 17.918-0.02z" fill="#fff"/>
+ </g>
+</svg>

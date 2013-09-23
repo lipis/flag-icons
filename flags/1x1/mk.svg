@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg id="svg704" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3511">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs706">
+  <clipPath id="clipPath8093" clipPathUnits="userSpaceOnUse">
+   <rect id="rect8095" fill-opacity="0.67" height="512" width="512" y="0" x="0"/>
+  </clipPath>
+ </defs>
+ <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath8093)">
+  <rect id="rect707" height="512" width="767.07" y="-.36417" x="-126.62" fill="#ed3d00"/>
+  <path id="path716" d="m-126.59 200.87 0.15608 109.9 385.87-54.964-386.03-54.936z" fill="#ffd100"/>
+  <path id="path713" d="m-128 512 159.3-0.3 228.68-257.41-387.98 257.71z" fill="#ffd100"/>
+  <path id="path725" d="m311.72 511.64-109.9-0.10269 54.964-253.87 54.936 253.97z" fill="#ffd100"/>
+  <path id="path732" d="m641.24-1.4601-159.3 0.3046-228.69 259.45 387.99-259.75z" fill="#ffd100"/>
+  <path id="path733" d="m201.52-0.000011636 109.9 0.10269-54.97 253.87-54.93-253.97z" fill="#ffd100"/>
+  <path id="path738" d="m640.5 511.64-159.3-0.31-228.69-257.41 387.99 257.72z" fill="#ffd100"/>
+  <path id="path740" d="m640.5 200.87-0.16 109.9-385.87-54.97 386.03-54.93z" fill="#ffd100"/>
+  <path id="path748" d="m-126.96 0.000012512 159.3 0.3022 228.69 257.41-387.99-257.71z" fill="#ffd100"/>
+  <path id="path741" d="m517.42 231.14a97.275 99.345 0 1 1 -194.55 0 97.275 99.345 0 1 1 194.55 0z" transform="matrix(.92167 0 0 .88098 -130.46 52.184)" fill="#ed3d00"/>
+  <path id="path742" d="m517.42 231.14a97.275 99.345 0 1 1 -194.55 0 97.275 99.345 0 1 1 194.55 0z" transform="matrix(.85052 0 0 .82760 -100.57 64.523)" fill="#ffd100"/>
+ </g>
+</svg>

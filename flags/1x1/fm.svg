@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg id="svg986" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3160">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs988">
+  <clipPath id="clipPath3257" clipPathUnits="userSpaceOnUse">
+   <rect id="rect3259" fill-opacity="0.67" height="496.06" width="496.06" y="-.000011476" x="244.16"/>
+  </clipPath>
+ </defs>
+ <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath3257)" transform="matrix(1.0321 0 0 1.0321 -252 .000011844)" stroke-width="1pt">
+  <rect id="rect1390" height="496.06" width="992.13" y="-.000015260" x="0" fill="#6797d6"/>
+  <polygon id="polygon1351" transform="matrix(.54883 0 0 .51651 202.91 -83.045)" points="555.61 324.28 626.44 324.23 569.1 365.81 591.04 433.16 591.04 433.16 533.77 391.48 476.5 433.15 498.45 365.81 441.12 324.21 511.95 324.28 533.78 256.9" fill="#fff"/>
+  <polygon id="polygon1387" transform="matrix(.54883 0 0 -.51651 202.91 580.11)" points="555.61 324.28 626.44 324.23 569.1 365.81 591.04 433.16 591.04 433.16 533.77 391.48 476.5 433.15 498.45 365.81 441.12 324.21 511.95 324.28 533.78 256.9" fill="#fff"/>
+  <polygon id="polygon1388" transform="matrix(.52485 -.16046 .15101 .49394 5.4986 159.08)" points="555.61 324.28 626.44 324.23 569.1 365.81 591.04 433.16 591.04 433.16 533.77 391.48 476.5 433.15 498.45 365.81 441.12 324.21 511.95 324.28 533.78 256.9" fill="#fff"/>
+  <polygon id="polygon1389" transform="matrix(-.52485 -.16046 -.15101 .49394 986.13 159.08)" points="555.61 324.28 626.44 324.23 569.1 365.81 591.04 433.16 591.04 433.16 533.77 391.48 476.5 433.15 498.45 365.81 441.12 324.21 511.95 324.28 533.78 256.9" fill="#fff"/>
+ </g>
+</svg>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3079">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs380">
+  <clipPath id="clipPath5047" clipPathUnits="userSpaceOnUse">
+   <rect id="rect5049" fill-opacity="0.67" height="708.66" width="708.66" y="-.0000033379" x="27.682"/>
+  </clipPath>
+ </defs>
+ <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath5047)" transform="matrix(.72249 0 0 .72249 -20 .0000024116)">
+  <rect id="rect149" height="708.66" width="1063" y="0" x="0" stroke-width="1pt" fill="#fff"/>
+  <rect id="rect148" height="354.33" width="1063" y="0" x="0" stroke-width="1pt" fill="#df0000"/>
+  <path id="path141" d="m263.4 473.62c-23.186 5.316-40.414 22.484-45.285 45.826-6.618 31.712 14.039 62.762 45.812 69.39-32.101 9.152-65.273-9.301-74.341-41.106-9.067-31.804 9.386-64.976 41.191-74.044 11.165-3.184 21.444-3.204 32.623-0.066z" transform="matrix(2.1168 0 0 2.1168 -312.4 -943.16)" stroke-width=".52437" fill="#fff"/>
+  <polygon id="polygon142" transform="matrix(1.8341 0 0 1.8341 -255.13 -795.56)" points="249.27 522.33 238.94 514.8 251.72 514.69 255.69 502.53 259.74 514.66 272.53 514.68 262.25 522.28 266.19 534.45 266.19 534.45 255.78 527.02 245.42 534.52" stroke-width=".52437" fill="#fff"/>
+  <polygon id="polygon144" transform="matrix(1.8341 0 0 1.8341 -229.2 -718.7)" points="249.27 522.33 238.94 514.8 251.72 514.69 255.69 502.53 259.74 514.66 272.53 514.68 262.25 522.28 266.19 534.45 266.19 534.45 255.78 527.02 245.42 534.52" stroke-width=".52437" fill="#fff"/>
+  <polygon id="polygon145" transform="matrix(1.8341 0 0 1.8341 -142.94 -719.27)" points="249.27 522.33 238.94 514.8 251.72 514.69 255.69 502.53 259.74 514.66 272.53 514.68 262.25 522.28 266.19 534.45 266.19 534.45 255.78 527.02 245.42 534.52" stroke-width=".52437" fill="#fff"/>
+  <polygon id="polygon146" transform="matrix(1.8341 0 0 1.8341 -117.22 -795.5)" points="249.27 522.33 238.94 514.8 251.72 514.69 255.69 502.53 259.74 514.66 272.53 514.68 262.25 522.28 266.19 534.45 266.19 534.45 255.78 527.02 245.42 534.52" stroke-width=".52437" fill="#fff"/>
+  <polygon id="polygon147" transform="matrix(1.8341 0 0 1.8341 -185.51 -846.08)" points="249.27 522.33 238.94 514.8 251.72 514.69 255.69 502.53 259.74 514.66 272.53 514.68 262.25 522.28 266.19 534.45 266.19 534.45 255.78 527.02 245.42 534.52" stroke-width=".52437" fill="#fff"/>
+ </g>
+</svg>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.0" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3720">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs380">
+  <clipPath id="clipPath5767" clipPathUnits="userSpaceOnUse">
+   <rect id="rect5769" fill-opacity="0.67" height="512" width="512" y="0" x="0"/>
+  </clipPath>
+ </defs>
+ <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath5767)">
+  <rect id="rect171" height="170.67" width="769.46" y="341.33" x="-128" stroke-width="1pt" fill="#dc0000"/>
+  <rect id="rect256" height="170.67" width="769.46" y=".0000048041" x="-128" stroke-width="1pt" fill="#ffcb00"/>
+  <rect id="rect255" height="170.67" width="769.46" y="170.67" x="-128" stroke-width="1pt" fill="#0000ba"/>
+  <g id="g595" stroke-width=".11287" fill="#fff" transform="matrix(3.3148 0 0 3.6671 -90.916 1.2288)">
+   <path id="path575" d="m266.19 534.45-10.408-7.432-10.357 7.505 3.852-12.196-10.338-7.531 12.79-0.105 3.967-12.159 4.052 12.131 12.79 0.016-10.285 7.602 3.937 12.169z" transform="matrix(.35933 0 0 .32494 13.106 -111.63)"/>
+   <path id="path576" d="m266.19 534.45-10.408-7.432-10.357 7.505 3.852-12.196-10.338-7.531 12.79-0.105 3.967-12.159 4.052 12.131 12.79 0.016-10.285 7.602 3.937 12.169z" transform="matrix(.35933 0 0 .32494 31.717 -109.56)"/>
+   <path id="path577" d="m266.19 534.45-10.408-7.432-10.357 7.505 3.852-12.196-10.338-7.531 12.79-0.105 3.967-12.159 4.052 12.131 12.79 0.016-10.285 7.602 3.937 12.169z" transform="matrix(.35933 0 0 .32494 47.847 -100.46)"/>
+   <path id="path578" d="m266.19 534.45-10.408-7.432-10.357 7.505 3.852-12.196-10.338-7.531 12.79-0.105 3.967-12.159 4.052 12.131 12.79 0.016-10.285 7.602 3.937 12.169z" transform="matrix(.35933 0 0 .32494 56.946 -86.815)"/>
+   <path id="path579" d="m266.19 534.45-10.408-7.432-10.357 7.505 3.852-12.196-10.338-7.531 12.79-0.105 3.967-12.159 4.052 12.131 12.79 0.016-10.285 7.602 3.937 12.169z" transform="matrix(-.35933 0 0 .32494 178.28 -109.56)"/>
+   <path id="path580" d="m266.19 534.45-10.408-7.432-10.357 7.505 3.852-12.196-10.338-7.531 12.79-0.105 3.967-12.159 4.052 12.131 12.79 0.016-10.285 7.602 3.937 12.169z" transform="matrix(-.35933 0 0 .32494 162.15 -100.46)"/>
+   <path id="path581" d="m266.19 534.45-10.408-7.432-10.357 7.505 3.852-12.196-10.338-7.531 12.79-0.105 3.967-12.159 4.052 12.131 12.79 0.016-10.285 7.602 3.937 12.169z" transform="matrix(-.35933 0 0 .32494 153.05 -86.815)"/>
+  </g>
+ </g>
+</svg>

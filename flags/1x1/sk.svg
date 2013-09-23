@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3120">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs380">
+  <clipPath id="clipPath4897" clipPathUnits="userSpaceOnUse">
+   <rect id="rect4899" fill-opacity="0.67" height="708.66" width="708.66" y="-.0000033379" x="95.503"/>
+  </clipPath>
+ </defs>
+ <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath4897)" transform="matrix(.72249 0 0 .72249 -69 .0000024116)" stroke-width="1pt">
+  <rect id="rect171" height="708.66" width="1063" y="0" x="0" fill="#fff"/>
+  <rect id="rect403" height="472.44" width="1063" y="236.22" x="0" fill="#01017e"/>
+  <rect id="rect135" height="236.22" width="1063" y="472.44" x="0" fill="#fe0101"/>
+  <path id="path150" d="m185.1 160.83v198.72c13.61 77.581 49.679 156.52 171.49 196.67 121.14-40.151 159.92-115.69 174.22-198.04v-197.35h-345.71z" fill="#fff"/>
+  <path id="path140" d="m198.72 176.48v173.54c12.24 63.29 36.06 149.72 157.88 189.87 121.13-40.15 149.04-126.58 159.92-189.87v-173.54h-317.81z" fill="#fe0101"/>
+  <path id="path153" d="m375.65 281.29v27.902h55.804c7.482 0 14.518-3.63 21.777-5.445v52.401c-7.486-1.588-14.805-4.763-22.458-4.763h-54.442v63.97l-37.43-1.361v-62.609h-53.081c-7.978 0-15.425 4.083-23.138 6.124v-55.803c7.259 2.268 14.172 6.805 21.777 6.805h54.442v-27.902h-40.151c-7.036 0-13.157 4.991-19.736 7.486v-53.081c7.486 3.176 14.326 9.527 22.458 9.527h38.11v-23.819c0-11.125-6.352-21.323-9.528-31.985h53.762c-2.722 10.889-8.166 21.442-8.166 32.666v23.138h36.068c9.411 0 18.148-4.99 27.222-7.485v52.401c-8.167-2.722-15.892-8.167-24.5-8.167h-38.79z" fill="#fff"/>
+  <path id="path152" d="m306.92 422.84c-31.986-15.993-62.54-7.062-77.156 18.544 22.713 43.384 65.927 78.431 126.84 98.507 60.568-20.076 104.63-55.123 128.79-96.465-18.82-35.903-54.613-31.135-77.751-19.905-16.333-40.152-83.025-38.11-100.72-0.681z" fill="#01017e"/>
+ </g>
+</svg>

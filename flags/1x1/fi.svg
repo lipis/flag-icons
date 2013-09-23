@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<!-- /Creative Commons Public Domain -->
+<!--
+<rdf:RDF xmlns="http://web.resource.org/cc/"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+<Work rdf:about="">
+    <dc:title>New Zealand, Australia, United Kingdom, United States, 
+Bosnia and Herzegovina, Azerbaijan, Armenia, Bahamas, Belgium, Benin, 
+Bulgaria, Estonia, Finland, Gabon, Gambia, Germany, Greece, Greenland, 
+Guinea, Honduras, Israel, Jamaica, Jordan, and Romania Flags</dc:title>
+    <dc:rights><Agent>
+       <dc:title>Daniel McRae</dc:title>
+    </Agent></dc:rights>
+    <license rdf:resource="http://web.resource.org/cc/PublicDomain" />
+</Work>
+
+<License rdf:about="http://web.resource.org/cc/PublicDomain">
+    <permits rdf:resource="http://web.resource.org/cc/Reproduction" />
+    <permits rdf:resource="http://web.resource.org/cc/Distribution" />
+    <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+</License>
+</rdf:RDF>
+-->
+<svg id="svg555" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.0" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3013">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs557">
+  <clipPath id="clipPath3830" clipPathUnits="userSpaceOnUse">
+   <rect id="rect3832" fill-opacity="0.67" height="606.3" width="606.3" y="0.0000952" x="125.07"/>
+  </clipPath>
+ </defs>
+ <rect id="rect562" fill-rule="evenodd" height="8.5455" width="49.872" y="-3764.3" x=".29339" stroke-width="1pt" fill="#0062da"/>
+ <rect id="rect571" fill-rule="evenodd" height="66033" width="7.4728e6" y="-2.8005e6" x="0" stroke-width="1pt" fill="#0062da"/>
+ <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath3830)" transform="matrix(.84447 0 0 .84447 -105.62 -.000080394)" stroke-width="1pt">
+  <rect id="rect565" height="220.65" width="295.28" y="385.64" x="0" fill="#fff"/>
+  <rect id="rect566" height="606.29" width="177.56" y="0.000092" x="295.08" fill="#0062da"/>
+  <rect id="rect567" height="165.35" width="1063" y="220.47" x="0" fill="#0062da"/>
+  <rect id="rect568" height="220.65" width="295.28" y=".0036770" x="0" fill="#fff"/>
+  <rect id="rect570" height="220.65" width="590.55" y="385.64" x="472.44" fill="#fff"/>
+  <rect id="rect574" height="220.65" width="590.55" y=".001892" x="472.44" fill="#fff"/>
+  <rect id="rect564" height="220.65" width="295.28" y="385.64" x="0" fill="#fff"/>
+  <rect id="rect569" height="606.29" width="177.56" y="0.000092" x="295.08" fill="#0062da"/>
+  <rect id="rect572" height="220.65" width="295.28" y=".0036770" x="0" fill="#fff"/>
+  <rect id="rect573" height="220.65" width="590.55" y="385.64" x="472.44" fill="#fff"/>
+  <rect id="rect575" height="220.65" width="590.55" y=".001892" x="472.44" fill="#fff"/>
+ </g>
+</svg>

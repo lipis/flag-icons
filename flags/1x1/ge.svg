@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 170.66667 170.66667" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata27">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs4">
+  <g id="smallcross">
+   <clipPath id="vclip">
+    <path id="path8" d="m-109 104a104 104 0 0 0 0 -208h218a104 104 0 0 0 0 208z"/>
+   </clipPath>
+   <path id="varm" clip-path="url(#vclip)" d="m-55 74a55 55 0 0 1 110 0v-148a55 55 0 0 1 -110 0z"/>
+   <use id="use11" xlink:href="#varm" transform="rotate(90)" height="200" width="300" y="0" x="0"/>
+  </g>
+ </defs>
+ <g id="flag">
+  <rect id="rect2993" height="170.67" width="170.67" y=".0000017529" x="0" fill="#fff"/>
+  <g id="sdsds" transform="matrix(.53484 0 0 .53484 5.1077 47.576)">
+   <rect id="rect13" height="200" width="300" y="-29.333" x="0" fill="#fff"/>
+   <path id="path15" fill="#f00" d="m130-29.333v80h-130v40h130v80h40v-80h130v-40h-130v-80h-40z"/>
+   <use id="use17" xlink:href="#smallcross" transform="translate(64.45 10.117)" height="200" width="300" y="0" x="0" fill="#ff0000"/>
+   <use id="use19" xlink:href="#smallcross" transform="translate(235.55 131.22)" height="200" width="300" y="0" x="0" fill="#ff0000"/>
+   <use id="use21" xlink:href="#smallcross" transform="translate(235.55 10.117)" height="200" width="300" y="0" x="0" fill="#ff0000"/>
+   <use id="use23" xlink:href="#smallcross" transform="translate(64.45 131.22)" height="200" width="300" y="0" x="0" fill="#ff0000"/>
+  </g>
+ </g>
+</svg>

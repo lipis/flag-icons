@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata2999">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="flag" fill-rule="evenodd" transform="matrix(.48138 0 0 .72185 .067529 142.41)">
+  <rect id="rect149" transform="scale(-1)" height="708.66" width="1063" y="-511.38" x="-1063.6" fill="#de0000"/>
+  <rect id="rect148" transform="scale(-1)" height="354.33" width="1063" y="-512" x="-1063" fill="#35a100"/>
+ </g>
+ <polygon id="polygon136" fill-rule="evenodd" transform="matrix(1.4452 0 0 1.36 -516.33 -217.18)" points="626.44 324.23 569.1 365.81 591.04 433.16 591.04 433.16 533.77 391.48 476.5 433.15 498.45 365.81 441.12 324.21 511.95 324.28 533.78 256.9 555.61 324.28" stroke-width="1pt" fill="#fff300"/>
+</svg>

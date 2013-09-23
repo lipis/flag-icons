@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3004">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="flag" stroke-width="1pt" fill-rule="evenodd">
+  <rect id="rect149" height="512" width="512" y="0" x="0" fill="#f30"/>
+  <path id="path139" d="m266.19 534.45l-10.41-7.43-10.36 7.5 3.85-12.19-10.33-7.53 12.78-0.11 3.97-12.16 4.05 12.13 12.79 0.02-10.28 7.6 3.94 12.17z" transform="matrix(6.2061 0 0 6.2061 -1415.4 -3060.2)" fill="#ff0"/>
+  <path id="path138" d="m266.19 534.45l-10.41-7.43-10.36 7.5 3.85-12.19-10.33-7.53 12.78-0.11 3.97-12.16 4.05 12.13 12.79 0.02-10.28 7.6 3.94 12.17z" transform="matrix(1.63 .55554 -.55554 1.63 253.84 -925.67)" fill="#ff0"/>
+  <path id="path137" d="m266.19 534.45l-10.41-7.43-10.36 7.5 3.85-12.19-10.33-7.53 12.78-0.11 3.97-12.16 4.05 12.13 12.79 0.02-10.28 7.6 3.94 12.17z" transform="matrix(1.6793 .38142 -.38142 1.6793 95.09 -579.25)" fill="#ff0"/>
+  <path id="path136" d="m266.19 534.45l-10.41-7.43-10.36 7.5 3.85-12.19-10.33-7.53 12.78-0.11 3.97-12.16 4.05 12.13 12.79 0.02-10.28 7.6 3.94 12.17z" transform="matrix(1.4007 1.0019 -1.0019 1.4007 603.91 -806.68)" fill="#ff0"/>
+  <path id="path135" d="m266.19 534.45l-10.41-7.43-10.36 7.5 3.85-12.19-10.33-7.53 12.78-0.11 3.97-12.16 4.05 12.13 12.79 0.02-10.28 7.6 3.94 12.17z" transform="matrix(1.7221 -.012142 .012142 1.7221 -26.659 -602.32)" fill="#ff0"/>
+ </g>
+</svg>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3387">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="flag" stroke-width="1pt" fill-rule="evenodd">
+  <rect id="rect171" height="512" width="512" y=".000015259" x="0" fill="#eb0013"/>
+  <path id="path401" d="m296.81 313.37-133.4 93.29 34.373-105.26 17.854 12.931-12.81 38.45 86.999-62.695 6.9838 23.284zm13.684-60.925 46.566 156.5-87.443-65.253 17.986-12.747 31.118 23.349-32.522-102.72 24.295 0.87444zm-55.199-31.074 163.91 0.19277-89.323 64.423-7.1464-20.854 33.212-22.235-108.35 1.5294 7.7038-23.057zm-46.343 41.839 51.901-156.73 35.721 107.75-22.043 0.27871-13.158-41.272-32.922 104.49-19.5-14.516zm26.599 56.326-132.23-97.057 111.62-0.86282-6.5112 21.059-41.429-0.16723 88.359 62.936-19.809 14.092z" fill="#0b5035"/>
+ </g>
+</svg>

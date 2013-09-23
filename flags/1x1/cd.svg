@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg id="svg2" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata14">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs12">
+  <clipPath id="clipPath3008" clipPathUnits="userSpaceOnUse">
+   <rect id="rect3010" height="600" width="600" y="-88" x="0" fill="#fff"/>
+  </clipPath>
+ </defs>
+ <g id="flag" clip-path="url(#clipPath3008)" transform="matrix(.85333 0 0 .85333 0 75.093)">
+  <rect id="rect4" height="600" width="800" y="-88" x="0" fill="#007fff"/>
+  <path id="path6" d="m36 32h84l26-84 26 84h84l-68 52 26 84-68-52-68 52 26-84-68-52zm714-120-750 450v150h50l750-450v-150h-50" fill="#f7d618"/>
+  <path id="path8" d="m800-88-800 480v120l800-480v-120" fill="#ce1021"/>
+ </g>
+</svg>

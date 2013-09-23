@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg id="svg940" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3704">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="flag" fill-rule="evenodd" transform="matrix(.66455 0 0 1 85.063 0)" stroke-width="1pt">
+  <rect id="rect953" height="512" width="768" y=".000017188" x="-128" fill="#f4f100"/>
+  <rect id="rect951" height="512" width="190.17" y=".000014159" x="452.27" fill="#199a00"/>
+  <rect id="rect952" height="512" width="190.17" y=".000014159" x="-128" fill="#0058aa"/>
+ </g>
+ <g id="g4371" fill-rule="evenodd" fill="#199a00" transform="matrix(.75551 0 0 .75551 62.077 45.886)">
+  <path id="path954" d="m170.92 122.73-65.48 100.79 63.18 105.03 61.87-104.1-59.57-101.72z"/>
+  <path id="path955" d="m342.15 122.73-65.48 100.79 63.18 105.03 61.86-104.1-59.56-101.72z"/>
+  <path id="path956" d="m255.67 260.23-65.475 100.79 63.176 105.03 61.867-104.1-59.568-101.72z"/>
+ </g>
+</svg>
