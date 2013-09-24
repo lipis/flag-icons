@@ -3,19 +3,20 @@ module.exports = (grunt)->
   TARGET_DIR = "css"
 
   grunt.initConfig
+    pkg: grunt.file.readJSON('package.json')
     clean:
       main:
         src: TARGET_DIR
 
     less:
       app_css:
-        src: "#{SRC_DIR}/country-flag-icons.less"
-        dest: "#{TARGET_DIR}/country-flag-icons.css"
+        src: "#{SRC_DIR}/<%= pkg.name %>.less"
+        dest: "#{TARGET_DIR}/<%= pkg.name %>.css"
 
     cssmin:
       app_css:
-        src: "#{TARGET_DIR}/country-flag-icons.css"
-        dest: "#{TARGET_DIR}/country-flag-icons.min.css"
+        src: "#{TARGET_DIR}/<%= pkg.name %>.css"
+        dest: "#{TARGET_DIR}/<%= pkg.name %>.min.css"
 
     watch:
       build:
@@ -27,7 +28,7 @@ module.exports = (grunt)->
       css:
         options:
           livereload: true
-        files: "#{TARGET_DIR}/country-flag-icons.css"
+        files: "#{TARGET_DIR}/<%= pkg.name %>.css"
       html_templates:
         options:
           livereload: true
