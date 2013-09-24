@@ -12,7 +12,11 @@ module.exports = (grunt)->
         src: "#{SRC_DIR}/country-flag-icons.less"
         dest: "#{TARGET_DIR}/country-flag-icons.css"
 
-    # dev only
+    cssmin:
+      app_css:
+        src: "#{TARGET_DIR}/country-flag-icons.css"
+        dest: "#{TARGET_DIR}/country-flag-icons.min.css"
+
     watch:
       build:
         options:
@@ -29,17 +33,12 @@ module.exports = (grunt)->
           livereload: true
         files: 'index.html'
 
-    cssmin:
-      app_css:
-        src: "#{TARGET_DIR}/country-flag-icons.css"
-        dest: "#{TARGET_DIR}/country-flag-icons.css"
-
 
     grunt.loadNpmTasks("grunt-contrib-clean")
     grunt.loadNpmTasks("grunt-contrib-less")
     grunt.loadNpmTasks("grunt-contrib-cssmin")
     grunt.loadNpmTasks("grunt-contrib-watch")
 
-    grunt.registerTask("default", ["clean", "build"])
-    grunt.registerTask("build", ["less", "watch"])
+    grunt.registerTask("default", ["build", "watch"])
+    grunt.registerTask("build", ["clean", "less"])
     grunt.registerTask("dist", ["clean", "less", "cssmin"])
