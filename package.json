@@ -2,10 +2,10 @@
   "name": "country-flag-icons",
   "version": "0.1.0",
   "devDependencies": {
-    "grunt": "~0.4",
-    "grunt-contrib-clean": ~"0.4",
-    "grunt-contrib-less": ~"0.6",
-    "grunt-contrib-cssmin": ~"0.5",
-    "grunt-contrib-watch": ~"0.5"
+    "grunt": "0.4.x",
+    "grunt-contrib-clean": "0.4.x",
+    "grunt-contrib-less": "0.6.x",
+    "grunt-contrib-cssmin": "0.5.x",
+    "grunt-contrib-watch": "0.5.x"
   }
 }

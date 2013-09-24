@@ -25,10 +25,12 @@ module.exports = (grunt)->
           keepalive: true
         files: ["#{SRC_DIR}/**/*.less"]
         tasks: ["less"]
+
       css:
         options:
           livereload: true
         files: "#{TARGET_DIR}/<%= pkg.name %>.css"
+
       html_templates:
         options:
           livereload: true

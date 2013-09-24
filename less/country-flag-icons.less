@@ -1,25 +1,41 @@
+@import 'variabless';
+
 .flag-icon {
   position: relative;
-  top: 1px;
   display: inline-block;
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
 
-  width: (4 / 3 * 1em);
-  line-height: 1;
-  box-sizing: border-box;
+  width: unit(4 / 3, em);
+  line-height: 1em;
   &:before {
     content: "\00a0";
+  }
+  &.flag-icon-squared {
+    width: 1em;
+  }
+  .flag-icon-x(2);
+  .flag-icon-x(3);
+}
+
+
+.flag-icon-x(@size) {
+  &.flag-icon-@{size}x {
+    width: unit(@size * 4 / 3, em);
+    line-height: unit(@size, em);
+    &.flag-icon-squared {
+      width: unit(@size, em);
+    }
   }
 }
 
 .flag-icon(@country) {
   .flag-icon-@{country} {
-    background-image: ~"url(../flags/4x3/@{country}.svg)";
-  }
-  .flag-icon-square-@{country} {
-    background-image: ~"url(../flags/1x1/@{country}.svg)";
+    background-image: ~"url(@{country-flag-icons-path}/4x3/@{country}.svg)";
+    &.flag-icon-squared {
+      background-image: ~"url(@{country-flag-icons-path}/1x1/@{country}.svg)";
+    }
   }
 }
 
