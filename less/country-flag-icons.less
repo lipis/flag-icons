@@ -3,22 +3,24 @@
 .flag-icon {
   position: relative;
   display: inline-block;
-  background-size: contain;
-  background-position: 50%;
-  background-repeat: no-repeat;
-
   width: unit(4 / 3, em);
   line-height: 1em;
+  .flag-icon-x(2);
+  .flag-icon-x(3);
+  .background-contain;
   &:before {
     content: "\00a0";
   }
   &.flag-icon-squared {
     width: 1em;
   }
-  .flag-icon-x(2);
-  .flag-icon-x(3);
 }
 
+.background-contain {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
 
 .flag-icon-x(@size) {
   &.flag-icon-@{size}x {
