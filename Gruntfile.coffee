@@ -4,10 +4,6 @@ module.exports = (grunt)->
 
   grunt.initConfig
     pkg: grunt.file.readJSON('package.json')
-    clean:
-      main:
-        src: TARGET_DIR
-
     less:
       app_css:
         src: "#{SRC_DIR}/<%= pkg.name %>.less"
@@ -19,22 +15,16 @@ module.exports = (grunt)->
         dest: "#{TARGET_DIR}/<%= pkg.name %>.min.css"
 
     watch:
-      build:
-        options:
-          base: SRC_DIR
-          keepalive: true
-        files: ["#{SRC_DIR}/**/*.less"]
-        tasks: ["less"]
-
       css:
         options:
           livereload: true
-        files: "#{TARGET_DIR}/<%= pkg.name %>.css"
+        files: "#{SRC_DIR}/*.less"
+        tasks: ["build"]
 
-      html_templates:
+      assets:
         options:
           livereload: true
-        files: 'index.html'
+        files: ['index.html', 'assets/*']
 
     connect:
       server:
@@ -43,12 +33,10 @@ module.exports = (grunt)->
           keepalive: true
 
 
-    grunt.loadNpmTasks("grunt-contrib-clean")
     grunt.loadNpmTasks("grunt-contrib-less")
     grunt.loadNpmTasks("grunt-contrib-cssmin")
     grunt.loadNpmTasks("grunt-contrib-watch")
     grunt.loadNpmTasks('grunt-contrib-connect')
 
     grunt.registerTask("default", ["build", "watch"])
-    grunt.registerTask("build", ["clean", "less"])
-    grunt.registerTask("dist", ["clean", "less", "cssmin"])
+    grunt.registerTask("build", ["less", "cssmin"])

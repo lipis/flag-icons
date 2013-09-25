@@ -2,7 +2,7 @@
   position: relative;
   display: inline-block;
   width: 1.3333333333333333em;
-  line-height: 1em;
+  line-height: 2em;
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
@@ -17,24 +17,6 @@
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
-}
-.flag-icon-gr {
-  background-image: url(../flags/4x3/gr.svg);
-}
-.flag-icon-gr.flag-icon-squared {
-  background-image: url(../flags/1x1/gr.svg);
-}
-.flag-icon-dk {
-  background-image: url(../flags/4x3/dk.svg);
-}
-.flag-icon-dk.flag-icon-squared {
-  background-image: url(../flags/1x1/dk.svg);
-}
-.flag-icon-us {
-  background-image: url(../flags/4x3/us.svg);
-}
-.flag-icon-us.flag-icon-squared {
-  background-image: url(../flags/1x1/us.svg);
 }
 .flag-icon-ad {
   background-image: url(../flags/4x3/ad.svg);

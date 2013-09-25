@@ -8,7 +8,7 @@
 }
 
 .flag-wrapper:after {
-  padding-top: 75%; /*1160/2000 ratio*/
+  padding-top: 75%; /* ratio */
   display: block;
   content: '';
 }
