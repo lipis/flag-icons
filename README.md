@@ -20,3 +20,9 @@ Usage
 
     <span class="flag-icon flag-icon-gr"></span>
     <span class="flag-icon flag-icon-gr flag-icon-squared"></span>
+
+Credits
+-------
+
+This project wouldn't exist without the awesome collection of svg flags: 
+[koppi/iso-country-flags-svg-collection](https://github.com/koppi/iso-country-flags-svg-collection)
