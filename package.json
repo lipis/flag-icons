@@ -6,6 +6,7 @@
     "grunt-contrib-clean": "0.4.x",
     "grunt-contrib-less": "0.6.x",
     "grunt-contrib-cssmin": "0.5.x",
-    "grunt-contrib-watch": "0.5.x"
+    "grunt-contrib-watch": "0.5.x",
+    "grunt-contrib-connect": "0.3.x"
   }
 }

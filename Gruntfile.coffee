@@ -36,11 +36,18 @@ module.exports = (grunt)->
           livereload: true
         files: 'index.html'
 
+    connect:
+      server:
+        options:
+          port: 8000
+          keepalive: true
+
 
     grunt.loadNpmTasks("grunt-contrib-clean")
     grunt.loadNpmTasks("grunt-contrib-less")
     grunt.loadNpmTasks("grunt-contrib-cssmin")
     grunt.loadNpmTasks("grunt-contrib-watch")
+    grunt.loadNpmTasks('grunt-contrib-connect')
 
     grunt.registerTask("default", ["build", "watch"])
     grunt.registerTask("build", ["clean", "less"])
