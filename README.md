@@ -1,6 +1,7 @@
 country-flag-icons
 ==================
 
+CSS for svg based country flag icons. See the [demo](http://lipis.github.io/country-flag-icons/).
 
 CSS classes
 -----------
