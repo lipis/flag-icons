@@ -4,28 +4,14 @@ flag-icon-css
 CSS for vector based country flags. See the
 [demo](http://lipis.github.io/flag-icon-css/).
 
-CSS classes
------------
-
-
-`.flag-icon` sets the correct proportions for the flag icon when used inline
-with text.
-
-`.flag-icon-xx` sets the `background-image` with the correct flag, where `xx` is the
-[ISO 3166-1-alpha-2 code](http://www.iso.org/iso/country_names_and_code_elements).
-
-`.flag-icon-squared` for the squared version of the flag.
-
-`.flag-icon-background` sets the the background to `position: 50%`,
-`repeat:no-repeat` and `size:contain`.
-
-
 Usage
 -----
 
 For using the flags inline with text add the classes `.flag-icon` and `.flag-icon-xx`
-to an empty `<span>`. If you want the flag to have the squared version then also add
-the clas `flag-icon-squared`. Example:
+(where `xx` is the
+[ISO 3166-1-alpha-2 code](http://www.iso.org/iso/country_names_and_code_elements) 
+of a country) to an empty `<span>`. If you want the flag to have the squared version 
+then also add the class `flag-icon-squared`. Example:
 
     <span class="flag-icon flag-icon-gr"></span>
     <span class="flag-icon flag-icon-gr flag-icon-squared"></span>
