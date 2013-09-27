@@ -3,16 +3,15 @@ module.exports = (grunt)->
   TARGET_DIR = "css"
 
   grunt.initConfig
-    pkg: grunt.file.readJSON('package.json')
     less:
       app_css:
-        src: "#{SRC_DIR}/<%= pkg.name %>.less"
-        dest: "#{TARGET_DIR}/<%= pkg.name %>.css"
+        src: "#{SRC_DIR}/flag-icon.less"
+        dest: "#{TARGET_DIR}/flag-icon.css"
 
     cssmin:
       app_css:
-        src: "#{TARGET_DIR}/<%= pkg.name %>.css"
-        dest: "#{TARGET_DIR}/<%= pkg.name %>.min.css"
+        src: "#{TARGET_DIR}/flag-icon.css"
+        dest: "#{TARGET_DIR}/flag-icon.min.css"
 
     watch:
       css:
