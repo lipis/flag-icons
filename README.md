@@ -48,7 +48,7 @@ To serve it on `localhost:8000`
 
 To have only specific countries in the css file, remove the ones that you don't
 need from the
-[`flag-icon-list.less`](https://github.com/lipis/flag-icon-css/blob/master/less/flag-icon-css-list.less)
+[`flag-icon-list.less`](https://github.com/lipis/flag-icon-css/blob/master/less/flag-icon-list.less)
 file and build it again.
 
 Credits
