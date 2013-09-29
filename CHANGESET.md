@@ -1,4 +1,4 @@
-Version 0.6.0 - 2013-09-21
+Version 0.6.0 - 2013-09-22
 --------------------------
 - Footer changed to a fixed-height and it is pinned to the bottom of the viewport
 - Removed relative dates from `modelx.py`
@@ -11,6 +11,8 @@ Version 0.6.0 - 2013-09-21
 - Moved `run.py` in the root directory
 - Moved `package.json` in the root directory
 - Fixed the bug in `run.py` when there were spaces in the path
+- Moved the `favicon.ico` to the `img` directory
+- Removed the gae-init logo from the repo
 
 Version 0.5.6 - 2013-09-04
 --------------------------
