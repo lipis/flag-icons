@@ -355,11 +355,10 @@ def retrieve_user_from_github(response):
   user_db = model.User.retrieve_one_by('github_id', str(response['id']))
   if user_db:
     return user_db
-  name = response['name']
   return create_user_db(
-      name if name else response['login'],
+      response['name'] or response['login'],
       response['login'],
-      response['email'],
+      response['email'] or '',
       github_id=str(response['id']),
     )
 
