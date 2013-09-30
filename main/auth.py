@@ -355,8 +355,9 @@ def retrieve_user_from_github(response):
   user_db = model.User.retrieve_one_by('github_id', str(response['id']))
   if user_db:
     return user_db
+  name = response['name']
   return create_user_db(
-      response['name'] if 'name' in response else response['login'],
+      name if name else response['login'],
       response['login'],
       response['email'],
       github_id=str(response['id']),
