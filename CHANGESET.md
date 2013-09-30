@@ -1,3 +1,7 @@
+Version 0.7.0 - 2013-09-30
+--------------------------
+- Added GitHub authentication
+
 Version 0.6.0 - 2013-09-22
 --------------------------
 - Footer changed to a fixed-height and it is pinned to the bottom of the viewport
