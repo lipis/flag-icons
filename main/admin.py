@@ -29,8 +29,8 @@ class ConfigUpdateForm(wtf.Form):
     ])
   twitter_consumer_key = wtf.TextField('Twitter Consumer Key')
   twitter_consumer_secret = wtf.TextField('Twitter Consumer Secret')
-  github_client_id = wtf.TextField('Github Client ID')
-  github_client_secret = wtf.TextField('Github Client Secret')
+  github_client_id = wtf.TextField('GitHub Client ID')
+  github_client_secret = wtf.TextField('GitHub Client Secret')
 
 
 @app.route('/_s/admin/config/', endpoint='admin_config_update_service')
