@@ -25,16 +25,8 @@
           {{forms.text_field(form.facebook_app_secret)}}
           {{forms.text_field(form.twitter_consumer_key)}}
           {{forms.text_field(form.twitter_consumer_secret)}}
-          <p>
           {{forms.text_field(form.github_client_id)}}
           {{forms.text_field(form.github_client_secret)}}
-          <em>Don't forget to setup
-          <a href="{{ url_for('github_authorized', _external=True) }}">callback URL</a> in
-          <a href="https://github.com/settings/applications">application settings</a>.
-          For more information please
-          <a href="http://developer.github.com/v3/oauth/#redirect-urls" target="_newtab">see</a>.
-          </em>
-          </p>
           {{forms.text_field(form.flask_secret_key)}}
           {{forms.textarea_field(form.announcement_html)}}
           {{forms.select_field(form.announcement_type)}}
