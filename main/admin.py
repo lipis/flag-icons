@@ -29,6 +29,8 @@ class ConfigUpdateForm(wtf.Form):
     ])
   twitter_consumer_key = wtf.TextField('Twitter Consumer Key')
   twitter_consumer_secret = wtf.TextField('Twitter Consumer Secret')
+  github_client_id = wtf.TextField('Github Client ID')
+  github_client_secret = wtf.TextField('Github Client Secret')
 
 
 @app.route('/_s/admin/config/', endpoint='admin_config_update_service')
@@ -49,6 +51,8 @@ def admin_config_update():
     config_db.flask_secret_key = form.flask_secret_key.data.strip()
     config_db.twitter_consumer_key = form.twitter_consumer_key.data.strip()
     config_db.twitter_consumer_secret = form.twitter_consumer_secret.data.strip()
+    config_db.github_client_id = form.github_client_id.data.strip()
+    config_db.github_client_secret = form.github_client_secret.data.strip()
     config_db.put()
     reload(config)
     app.config.update(CONFIG_DB=config_db)
@@ -64,6 +68,8 @@ def admin_config_update():
     form.flask_secret_key.data = config_db.flask_secret_key
     form.twitter_consumer_key.data = config_db.twitter_consumer_key
     form.twitter_consumer_secret.data = config_db.twitter_consumer_secret
+    form.github_client_id.data = config_db.github_client_id
+    form.github_client_secret.data = config_db.github_client_secret
 
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_db(config_db)
