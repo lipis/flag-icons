@@ -45,7 +45,7 @@ Before deploying make sure that the `app.yaml` and `config.py` are up to date
 and you ran the `run.py` script to minify all the static files:
 
     $ ./run.py -m
-    $ appcfg.py update .
+    $ appcfg.py update main
 
 Tech Stack
 ----------
