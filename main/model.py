@@ -36,6 +36,8 @@ class Config(Base, modelx.ConfigX):
   flask_secret_key = ndb.StringProperty(default=str(uuid4()).replace('-', ''))
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
+  github_client_id = ndb.StringProperty(default='')
+  github_client_secret = ndb.StringProperty(default='')
 
   _PROPERTIES = Base._PROPERTIES.union(set([
       'analytics_id',
@@ -62,6 +64,7 @@ class User(Base, modelx.UserX):
   federated_id = ndb.StringProperty(indexed=True, default='')
   facebook_id = ndb.StringProperty(indexed=True, default='')
   twitter_id = ndb.StringProperty(indexed=True, default='')
+  github_id = ndb.StringProperty(indexed=True, default='')
 
   _PROPERTIES = Base._PROPERTIES.union(set([
       'name',
