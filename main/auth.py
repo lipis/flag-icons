@@ -326,10 +326,7 @@ github = github_oauth.remote_app(
 @github.authorized_handler
 def github_authorized(resp):
   if resp is None:
-    return 'Access denied: reason=%s error=%s' % (
-      flask.request.args['error_reason'],
-      flask.request.args['error_description']
-    )
+    return 'Access denied: error=%s' % flask.request.args['error']
   flask.session['oauth_token'] = (resp['access_token'], '')
   me = github.get('user')
   user_db = retrieve_user_from_github(me.data)
