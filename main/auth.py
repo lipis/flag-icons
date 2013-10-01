@@ -364,8 +364,8 @@ def retrieve_user_from_github(response):
 # Helpers
 ################################################################################
 def create_user_db(name, username, email='', **params):
-  username = username.split('@')[0]
-  new_username = username
+  username = username.split('@')[0].lower()
+  new_username = username.replace(' ', '.').replace('_', '.').replace('-', '.')
   n = 1
   while model.User.retrieve_one_by('username', new_username) is not None:
     new_username = '%s%d' % (username, n)
