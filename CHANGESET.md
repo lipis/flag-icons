@@ -1,5 +1,17 @@
 Version 0.8.0 - 2013-10-03
 --------------------------
+- Refactored the `static` directory to make it more language agnostic friendly
+- Renamed `static/lib` to `static/src/lib`
+- Renamed `static/src/coffee` to `static/src/script`
+- Renamed `static/src/less` to `static/src/style`
+- Updated `run.py`
+- Username is always lowercase and some spacial characters are being replaced
+  with a dot
+- Added Grunt support for watch and livereload only (more will come)
+- Removed custom message from email validator
+
+### Upgrading from older versions to 0.8.0:
+
 When upgrading from an older version to **0.8.0**, in order to avoid many
 conflicts do the following changes before merging, if you had changes in the
 styles, scripts and added more static libraries:
@@ -10,18 +22,6 @@ styles, scripts and added more static libraries:
 - Update the paths in the `config.py`
 - That setup will not work after these changes, but for the rest of the
   changes it should be easy to merge.
-
-### The actual changes in 0.8.0:
-
-- Refactored the `static` directory to make it more language agnostic friendly
-- Renamed `static/lib` to `static/src/lib`
-- Renamed `static/src/coffee` to `static/src/script`
-- Renamed `static/src/less` to `static/src/style`
-- Updated `run.py`
-- Username is always lowercase and some spacial characters are being replaced
-  with a dot
-- Added Grunt support for watch and livereload only (more will come)
-- Removed custom message from email validator
 
 Version 0.7.0 - 2013-09-30
 --------------------------
