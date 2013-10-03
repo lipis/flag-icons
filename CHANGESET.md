@@ -1,8 +1,8 @@
 Version 0.8.0 - 2013-10-03
 --------------------------
-When upgrading from an older version to 0.8.0, in order to avoid many conflics
-do the following changes before merging, if you had changes in the styles,
-scripts and added more static libraries:
+When upgrading from an older version to **0.8.0**, in order to avoid many
+conflicts do the following changes before merging, if you had changes in the
+styles, scripts and added more static libraries:
 
 - `static/lib` > `static/src/lib`
 - `static/src/coffee` > `static/src/script`
