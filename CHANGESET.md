@@ -18,8 +18,9 @@ scripts and added more static libraries:
 - Renamed `static/src/coffee` to `static/src/script`
 - Renamed `static/src/less` to `static/src/style`
 - Updated `run.py`
-- Username is always lowercase and some spacial characters are being replaced 
+- Username is always lowercase and some spacial characters are being replaced
   with a dot
+- Added Grunt support for watch and livereload only (more will come)
 
 
 Version 0.7.0 - 2013-09-30

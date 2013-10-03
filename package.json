@@ -12,5 +12,9 @@
     "coffee-script": "~1",
     "less": "~1",
     "uglify-js": "~1"
+  },
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-contrib-watch": "0.5.x"
   }
 }
