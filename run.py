@@ -45,10 +45,8 @@ args = parser.parse_args()
 DIR_MAIN = 'main'
 DIR_STATIC = 'static'
 DIR_SRC = 'src'
-DIR_LESS = 'less'
-DIR_COFFEE = 'coffee'
-DIR_CSS = 'css'
-DIR_JS = 'js'
+DIR_STYLE = 'style'
+DIR_SCRIPT = 'script'
 DIR_MIN = 'min'
 DIR_DST = 'dst'
 DIR_LIB = 'lib'
@@ -65,16 +63,16 @@ FILE_UGLIFYJS = 'uglifyjs'
 dir_static = os.path.join(DIR_MAIN, DIR_STATIC)
 
 dir_src = os.path.join(dir_static, DIR_SRC)
-dir_src_coffee = os.path.join(dir_src, DIR_COFFEE)
-dir_src_less = os.path.join(dir_src, DIR_LESS)
+dir_src_script = os.path.join(dir_src, DIR_SCRIPT)
+dir_src_style = os.path.join(dir_src, DIR_STYLE)
 
 dir_dst = os.path.join(dir_static, DIR_DST)
-dir_dst_css = os.path.join(dir_dst, DIR_CSS)
-dir_dst_js = os.path.join(dir_dst, DIR_JS)
+dir_dst_style = os.path.join(dir_dst, DIR_STYLE)
+dir_dst_script = os.path.join(dir_dst, DIR_SCRIPT)
 
 dir_min = os.path.join(dir_static, DIR_MIN)
-dir_min_css = os.path.join(dir_min, DIR_CSS)
-dir_min_js = os.path.join(dir_min, DIR_JS)
+dir_min_style = os.path.join(dir_min, DIR_STYLE)
+dir_min_script = os.path.join(dir_min, DIR_SCRIPT)
 
 dir_lib = os.path.join(DIR_MAIN, DIR_LIB)
 file_lib = os.path.join(DIR_MAIN, FILE_ZIP)
@@ -133,12 +131,12 @@ def os_execute(executable, params, source, target, append=False):
   os.system('"%s" %s %s %s %s' % (executable, params, source, operator, target))
 
 
-def compile_coffee(source, target_dir):
+def compile_script(source, target_dir):
   if not os.path.isfile(source):
     print_out('NOT FOUND', source)
     return
 
-  target = source.replace(dir_src_coffee, target_dir).replace('.coffee', '.js')
+  target = source.replace(dir_src_script, target_dir).replace('.coffee', '.js')
   if not is_dirty(source, target):
     return
   make_dirs(os.path.dirname(target))
@@ -150,19 +148,19 @@ def compile_coffee(source, target_dir):
   os_execute(file_coffee, '-cp', source, target)
 
 
-def compile_less(source, target_dir, check_modified=False):
+def compile_style(source, target_dir, check_modified=False):
   if not os.path.isfile(source):
     print_out('NOT FOUND', source)
     return
 
-  target = source.replace(dir_src_less, target_dir).replace('.less', '.css')
+  target = source.replace(dir_src_style, target_dir).replace('.less', '.css')
   minified = ''
   if not source.endswith('.less'):
     return
-  if check_modified and not is_less_modified(target):
+  if check_modified and not is_style_modified(target):
     return
 
-  if target_dir == dir_min_css:
+  if target_dir == dir_min_style:
     minified = '-x'
     target = target.replace('.css', '.min.css')
     print_out('LESS MIN', source)
@@ -187,7 +185,7 @@ def is_dirty(source, target):
   return os.stat(source).st_mtime - os.stat(target).st_mtime > 0
 
 
-def is_less_modified(target):
+def is_style_modified(target):
   for folder, folders, files in os.walk(dir_src):
     for file_ in files:
       path = os.path.join(folder, file_)
@@ -198,10 +196,10 @@ def is_less_modified(target):
 
 def compile_all_dst():
   for source in STYLES:
-    compile_less(os.path.join(dir_static, source), dir_dst_css, True)
+    compile_style(os.path.join(dir_static, source), dir_dst_style, True)
   for module in config.SCRIPTS:
     for source in config.SCRIPTS[module]:
-      compile_coffee(os.path.join(dir_static, source), dir_dst_js)
+      compile_script(os.path.join(dir_static, source), dir_dst_script)
 
 
 def update_path_separators():
@@ -264,18 +262,18 @@ if args.minify:
   clean_files()
   make_lib_zip(force=True)
   remove_dir(dir_min)
-  make_dirs(dir_min_js)
+  make_dirs(dir_min_script)
 
   for source in STYLES:
-    compile_less(os.path.join(dir_static, source), dir_min_css)
+    compile_style(os.path.join(dir_static, source), dir_min_style)
 
   for module in config.SCRIPTS:
     coffees = ' '.join([os.path.join(dir_static, script)
         for script in config.SCRIPTS[module] if script.endswith('.coffee')
       ])
 
-    pretty_js = os.path.join(dir_min_js, '%s.js' % module)
-    ugly_js = os.path.join(dir_min_js, '%s.min.js' % module)
+    pretty_js = os.path.join(dir_min_script, '%s.js' % module)
+    ugly_js = os.path.join(dir_min_script, '%s.min.js' % module)
     print_out('COFFEE MIN', ugly_js)
 
     if len(coffees):

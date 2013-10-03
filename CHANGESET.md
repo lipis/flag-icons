@@ -1,3 +1,27 @@
+Version 0.8.0 - 2013-10-03
+--------------------------
+If you are upgrading from an older version to this, to avoid many conflics
+do the following changes mefore merging, if you had changes in the styles,
+scripts and added more static libraries:
+
+- `static/lib` > `static/src/lib`
+- `static/src/coffee` > `static/src/script`
+- `static/src/less` > `static/src/style`
+- Update the paths in the `config.py`
+- That setup will not work after these changes, but for the rest of the
+  changes it should be easy to merge.
+
+### The actual changes in 0.8.0:
+
+- Refactored the `static` directory to make it more language agnostic friendly
+- Renamed `static/lib` to `static/src/lib`
+- Renamed `static/src/coffee` to `static/src/script`
+- Renamed `static/src/less` to `static/src/style`
+- Updated `run.py`
+- Username is always lowercase and some spacial characters are being replaced 
+  with a dot
+
+
 Version 0.7.0 - 2013-09-30
 --------------------------
 - Added GitHub authentication

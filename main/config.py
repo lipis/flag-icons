@@ -26,7 +26,7 @@ DEFAULT_DB_LIMIT = 64
 # Client modules, also used by the run.py script.
 ################################################################################
 STYLES = [
-    'src/less/style.less',
+    'src/style/style.less',
   ]
 
 SCRIPTS_MODULES = [
@@ -36,20 +36,20 @@ SCRIPTS_MODULES = [
 
 SCRIPTS = {
     'libs': [
-        'lib/jquery.js',
-        'lib/nprogress.js',
-        'lib/moment.js',
-        'lib/bootstrap/js/alert.js',
-        'lib/bootstrap/js/button.js',
-        'lib/bootstrap/js/collapse.js',
-        'lib/bootstrap/js/dropdown.js',
-        'lib/bootstrap/js/tooltip.js',
+        'src/lib/jquery.js',
+        'src/lib/nprogress.js',
+        'src/lib/moment.js',
+        'src/lib/bootstrap/js/alert.js',
+        'src/lib/bootstrap/js/button.js',
+        'src/lib/bootstrap/js/collapse.js',
+        'src/lib/bootstrap/js/dropdown.js',
+        'src/lib/bootstrap/js/tooltip.js',
       ],
     'scripts': [
-        'src/coffee/common/util.coffee',
-        'src/coffee/common/service.coffee',
-        'src/coffee/site/app.coffee',
-        'src/coffee/site/profile.coffee',
-        'src/coffee/site/admin.coffee',
+        'src/script/common/util.coffee',
+        'src/script/common/service.coffee',
+        'src/script/site/app.coffee',
+        'src/script/site/profile.coffee',
+        'src/script/site/admin.coffee',
       ],
   }
