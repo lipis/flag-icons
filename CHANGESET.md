@@ -1,7 +1,7 @@
 Version 0.8.0 - 2013-10-03
 --------------------------
-If you are upgrading from an older version to this, to avoid many conflics
-do the following changes mefore merging, if you had changes in the styles,
+When upgrading from an older version to 0.8.0, in order to avoid many conflics
+do the following changes before merging, if you had changes in the styles,
 scripts and added more static libraries:
 
 - `static/lib` > `static/src/lib`
@@ -23,19 +23,20 @@ scripts and added more static libraries:
 - Added Grunt support for watch and livereload only (more will come)
 - Removed custom message from email validator
 
-
 Version 0.7.0 - 2013-09-30
 --------------------------
 - Added GitHub authentication
 
 Version 0.6.0 - 2013-09-22
 --------------------------
-- Footer changed to a fixed-height and it is pinned to the bottom of the viewport
+- Footer changed to a fixed-height and it is pinned to the bottom of the
+  viewport
 - Removed relative dates from `modelx.py`
 - Removed `format_datetime_ago` and `format_datetime_utc` from `util.py`
 - Relative dates are calculated client side and updated every minute
 - Special treatment for `<time>` element if it has the `datetime` attribute
-- Added Moment.js - a javascript date library for parsing, validating, manipulating and formatting dates
+- Added Moment.js - a javascript date library for parsing, validating,
+  manipulating and formatting dates
 - All datetimes in JSON are represented in ISO 8601 format
 - Updated `util.param()` to support list values
 - Moved `run.py` in the root directory
@@ -59,9 +60,11 @@ Version 0.5.5 - 2013-09-01
 
 Version 0.5.4 - 2013-08-30
 --------------------------
-- Introduced `util.jsonpify()`, which is like flask.jsonify but returns JSONP if callback is provided
+- Introduced `util.jsonpify()`, which is like flask.jsonify but returns JSONP
+  if callback is provided
 - All the services now support a `callback` argument to get JSONP
-- Updated `run.py` script so the `--clean` argument is obsolete when `--start` is used
+- Updated `run.py` script so the `--clean` argument is obsolete when `--start`
+  is used
 
 Version 0.5.3 - 2013-08-28
 --------------------------
@@ -92,6 +95,7 @@ Version 0.5.0 - 2013-08-20
 - Added `# -*- coding: utf-8 -*-` to every source file
 - HTML5 elements `<header>`, `<nav>`, `<footer>`
 - The `build.py` script renamed to `run.py`
-- Dev server starts with `-s` or `--start` instead of `-r` argument in the `run.py`
+- Dev server starts with `-s` or `--start` instead of `-r` argument in the
+  `run.py`
 - Bunch of small changes
 - Merge at your own risk!
