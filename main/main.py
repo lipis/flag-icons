@@ -46,7 +46,7 @@ class ProfileUpdateForm(wtf.Form):
   name = wtf.TextField('Name', [wtf.validators.required()])
   email = wtf.TextField('Email', [
       wtf.validators.optional(),
-      wtf.validators.email('That does not look like an email'),
+      wtf.validators.email(),
     ])
 
 

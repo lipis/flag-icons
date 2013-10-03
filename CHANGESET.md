@@ -21,6 +21,7 @@ scripts and added more static libraries:
 - Username is always lowercase and some spacial characters are being replaced
   with a dot
 - Added Grunt support for watch and livereload only (more will come)
+- Removed custom message from email validator
 
 
 Version 0.7.0 - 2013-09-30
