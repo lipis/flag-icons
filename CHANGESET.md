@@ -30,7 +30,7 @@ Version 0.7.0 - 2013-09-30
 Version 0.6.0 - 2013-09-22
 --------------------------
 - Footer changed to a fixed-height and it is pinned to the bottom of the
-  viewport
+  view port
 - Removed relative dates from `modelx.py`
 - Removed `format_datetime_ago` and `format_datetime_utc` from `util.py`
 - Relative dates are calculated client side and updated every minute
@@ -68,7 +68,7 @@ Version 0.5.4 - 2013-08-30
 
 Version 0.5.3 - 2013-08-28
 --------------------------
-- Error checkings in the `auth` functions
+- Error checking in the `auth` functions
 - Added 405 error
 - Minor reformats and few comments
 
@@ -76,7 +76,7 @@ Version 0.5.2 - 2013-08-27
 --------------------------
 - Added a nanoscopic progress bar: NProgress
 - Removed empty `<p>` in footer
-- Third party libs are decleared in `appengine_config.py`
+- Third party libs are declared in `appengine_config.py`
 
 Version 0.5.1 - 2013-08-23
 --------------------------
