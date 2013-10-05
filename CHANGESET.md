@@ -1,3 +1,8 @@
+Version 0.8.1 - 2013-10-05
+--------------------------
+- Simplifying forms by using the populate instead of doing it manually
+- Added `novalidation` to the forms to disable HTML5 validations
+
 Version 0.8.0 - 2013-10-03
 --------------------------
 - Refactored the `static` directory to make it more language agnostic friendly
