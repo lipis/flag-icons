@@ -2,6 +2,7 @@ Version 0.8.1 - 2013-10-05
 --------------------------
 - Simplifying forms by using the populate instead of doing it manually
 - Added `novalidation` to the forms to disable HTML5 validations
+- Introduced `init_common` in scripts to run stuff on every page
 
 Version 0.8.0 - 2013-10-03
 --------------------------

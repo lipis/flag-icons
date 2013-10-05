@@ -1,2 +1,2 @@
-window.init_profile = () ->
-  init_loading_button()
+window.init_profile = ->
+  # do something with the admin page here

@@ -1,14 +1,13 @@
 $ ->
-  init_time()
+  init_common()
 
-$ -> $('html.welcome').each ->
+$ -> ($ 'html.welcome').each ->
   LOG('init welcome')
 
-$ -> $('html.profile').each ->
+$ -> ($ 'html.profile').each ->
   init_profile()
 
-$ -> $('html.feedback').each ->
-  init_loading_button()
+$ -> ($ 'html.feedback').each ->
 
-$ -> $('html.admin-config').each ->
+$ -> ($ 'html.admin-config').each ->
   init_admin_config()

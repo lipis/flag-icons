@@ -1,2 +1,2 @@
-window.init_admin_config = () ->
-  init_loading_button()
+window.init_admin_config = ->
+  # do something with the admin page here
