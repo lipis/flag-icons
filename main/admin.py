@@ -11,36 +11,19 @@ import config
 from main import app
 
 
-strip_filter = lambda x: x.strip() if x else ''
-
-
 class ConfigUpdateForm(wtf.Form):
-  analytics_id = wtf.TextField('Analytics ID', filters=[strip_filter])
-  announcement_html = wtf.TextAreaField(
-    'Announcement HTML', filters=[strip_filter])
-  announcement_type = wtf.SelectField('Announcement Type', choices=[
-      (t, t.title()) for t in model.Config.announcement_type._choices
-    ])
-  brand_name = wtf.TextField(
-    'Brand Name', [wtf.validators.required()], filters=[strip_filter])
-  facebook_app_id = wtf.TextField(
-    'Facebook App ID', filters=[strip_filter])
-  facebook_app_secret = wtf.TextField(
-    'Facebook App Secret', filters=[strip_filter])
-  feedback_email = wtf.TextField(
-    'Feedback Email',
-    [wtf.validators.optional(),
-     wtf.validators.email()],
-    filters=[strip_filter])
-  flask_secret_key = wtf.TextField(
-    'Flask Secret Key', [wtf.validators.required()], filters=[strip_filter])
-  twitter_consumer_key = wtf.TextField(
-    'Twitter Consumer Key', filters=[strip_filter])
-  twitter_consumer_secret = wtf.TextField(
-    'Twitter Consumer Secret', filters=[strip_filter])
-  github_client_id = wtf.TextField('GitHub Client ID', filters=[strip_filter])
-  github_client_secret = wtf.TextField(
-    'GitHub Client Secret', filters=[strip_filter])
+  analytics_id = wtf.TextField('Analytics ID', filters=[util.strip_filter])
+  announcement_html = wtf.TextAreaField('Announcement HTML', filters=[util.strip_filter])
+  announcement_type = wtf.SelectField('Announcement Type', choices=[(t, t.title()) for t in model.Config.announcement_type._choices])
+  brand_name = wtf.TextField('Brand Name', [wtf.validators.required()], filters=[util.strip_filter])
+  facebook_app_id = wtf.TextField('Facebook App ID', filters=[util.strip_filter])
+  facebook_app_secret = wtf.TextField('Facebook App Secret', filters=[util.strip_filter])
+  feedback_email = wtf.TextField('Feedback Email', [wtf.validators.email()], filters=[util.strip_filter])
+  flask_secret_key = wtf.TextField('Flask Secret Key', [wtf.validators.required()], filters=[util.strip_filter])
+  github_client_id = wtf.TextField('GitHub Client ID', filters=[util.strip_filter])
+  github_client_secret = wtf.TextField('GitHub Client Secret', filters=[util.strip_filter])
+  twitter_consumer_key = wtf.TextField('Twitter Consumer Key', filters=[util.strip_filter])
+  twitter_consumer_secret = wtf.TextField('Twitter Consumer Secret', filters=[util.strip_filter])
 
 
 @app.route('/_s/admin/config/', endpoint='admin_config_update_service')

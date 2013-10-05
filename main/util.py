@@ -191,3 +191,9 @@ def slugify(value):
   value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore')
   value = unicode(_slugify_strip_re.sub('', value).strip().lower())
   return _slugify_hyphenate_re.sub('-', value)
+
+
+################################################################################
+# Lambdas
+################################################################################
+strip_filter = lambda x: x.strip() if x else ''
