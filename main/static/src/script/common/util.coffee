@@ -4,9 +4,7 @@ window.LOG = () ->
 
 window.init_loading_button = () ->
   $('body').on 'click', '.btn-loading', ->
-    th = $(this)
-    th.button('loading')
-    setTimeout (->th.button('reset')), 3000
+    $(this).button('loading')
 
 
 window.init_time = () ->
