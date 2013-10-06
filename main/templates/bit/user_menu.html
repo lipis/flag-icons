@@ -10,7 +10,7 @@
       # if current_user.admin
         <li class="divider"></li>
         <li><a href="{{url_for('admin_config_update')}}"><i class="icon-cog"></i> Admin Config</a></li>
-        <li><a href="{{url_for('user_list', order='-created')}}"><i class="icon-group"></i> User List</a></li>
+        <li><a href="{{url_for('user_list', order='-modified')}}"><i class="icon-group"></i> User List</a></li>
         <li class="divider"></li>
       # endif
       <li><a href="{{url_for('signout')}}"><i class="icon-signout"></i> Sign out</a></li>

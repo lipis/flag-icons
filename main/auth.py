@@ -381,11 +381,13 @@ def create_user_db(name, username, email='', **params):
   return user_db
 
 
+@ndb.toplevel
 def signin_user_db(user_db):
   if not user_db:
     return flask.redirect(flask.url_for('signin'))
   flask_user_db = FlaskUser(user_db)
   if login.login_user(flask_user_db):
+    user_db.put_async()
     flask.flash('Hello %s, welcome to %s!!!' % (
         user_db.name, config.CONFIG_DB.brand_name,
       ), category='success')
