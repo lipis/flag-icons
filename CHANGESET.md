@@ -6,6 +6,7 @@ Version 0.8.1 - 2013-10-06
 - Syntactic changes in the `*.coffee` files to be more consistent
 - Updating the User model after sign in to track the last seen
 - Showing relative date of the deployed version in the footer for the admins
+- Admin config page got a facelift
 
 Version 0.8.0 - 2013-10-03
 --------------------------

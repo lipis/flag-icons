@@ -203,7 +203,7 @@ twitter = twitter_oauth.remote_app(
 
 @app.route('/_s/callback/twitter/oauth-authorized/')
 @twitter.authorized_handler
-def twitter_oauth_authorized(resp):
+def twitter_authorized(resp):
   if resp is None:
     flask.flash(u'You denied the request to sign in.')
     return flask.redirect(util.get_next_url())
@@ -226,7 +226,7 @@ def signin_twitter():
   flask.session.pop('oauth_token', None)
   try:
     return twitter.authorize(
-        callback=flask.url_for('twitter_oauth_authorized',
+        callback=flask.url_for('twitter_authorized',
         next=util.get_next_url()),
       )
   except:

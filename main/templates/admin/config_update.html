@@ -6,31 +6,40 @@
     <h1>{{title}}</h1>
   </div>
 
-  <div class="alert alert-info">
-    <strong>Heads Up!</strong>
-    For most of the settings you will have to restart the
-    <a href="https://developers.google.com/appengine/docs/adminconsole/instances" class="alert-link" target="_blank">instances</a>.
-  </div>
-
   <div class="row">
-    <div class="col-md-4 col-sm-6">
-      <form method="POST" action="." novalidate>
-        <fieldset>
+    <div class="col-md-4 col-md-push-8">
+      <legend>Info</legend>
+      <ul>
+        <li>For most of the settings you will have to restart the <a href="https://developers.google.com/appengine/docs/adminconsole/instances" target="_blank">instances</a></li>
+        <li>Site URL for <a href="https://developers.facebook.com/apps" target="_blank">Facebook application</a>: <em>{{request.host_url[:-1]}}</em></li>
+        <li>Callback URL for <a href="https://dev.twitter.com/apps" target="_blank">Twitter application</a>: <em>{{'%s%s' % (request.host_url[:-1], url_for('twitter_authorized'))}}</em></li>
+        <li>Callback URL for <a href="https://github.com/settings/applications" target="_blank">GitHub application</a>: <em>{{'%s%s' % (request.host_url[:-1], url_for('github_authorized'))}}</em></li>
+      </ul>
+    </div>
+    <div class="col-md-8 col-md-pull-4">
+      <form class="row" method="POST" action="." novalidate>
+        <fieldset class="col-sm-6">
+          <legend>General</legend>
           {{form.csrf_token}}
 
           {{forms.text_field(form.brand_name)}}
           {{forms.email_field(form.feedback_email)}}
           {{forms.text_field(form.analytics_id)}}
+          {{forms.text_field(form.flask_secret_key)}}
+          {{forms.textarea_field(form.announcement_html)}}
+          {{forms.select_field(form.announcement_type)}}
+        </fieldset>
+        <fieldset class="col-sm-6">
+          <legend>Third Party OAuth</legend>
           {{forms.text_field(form.facebook_app_id)}}
           {{forms.text_field(form.facebook_app_secret)}}
           {{forms.text_field(form.twitter_consumer_key)}}
           {{forms.text_field(form.twitter_consumer_secret)}}
           {{forms.text_field(form.github_client_id)}}
           {{forms.text_field(form.github_client_secret)}}
-          {{forms.text_field(form.flask_secret_key)}}
-          {{forms.textarea_field(form.announcement_html)}}
-          {{forms.select_field(form.announcement_type)}}
+        </fieldset>
 
+        <fieldset class="col-sm-12">
           <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Updating Config..">
             Update Config
           </button>
