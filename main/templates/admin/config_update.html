@@ -14,18 +14,20 @@
 
   <div class="row">
     <div class="col-md-4 col-sm-6">
-      <form method="POST" action=".">
+      <form method="POST" action="." novalidate>
         <fieldset>
           {{form.csrf_token}}
 
           {{forms.text_field(form.brand_name)}}
           {{forms.select_field(form.locale)}}
-          {{forms.text_field(form.feedback_email)}}
+          {{forms.email_field(form.feedback_email)}}
           {{forms.text_field(form.analytics_id)}}
           {{forms.text_field(form.facebook_app_id)}}
           {{forms.text_field(form.facebook_app_secret)}}
           {{forms.text_field(form.twitter_consumer_key)}}
           {{forms.text_field(form.twitter_consumer_secret)}}
+          {{forms.text_field(form.github_client_id)}}
+          {{forms.text_field(form.github_client_secret)}}
           {{forms.text_field(form.flask_secret_key)}}
           {{forms.textarea_field(form.announcement_html)}}
           {{forms.select_field(form.announcement_type)}}

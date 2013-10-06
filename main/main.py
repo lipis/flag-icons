@@ -50,36 +50,33 @@ def sitemap():
 # Profile stuff
 ################################################################################
 class ProfileUpdateForm(wtf.Form):
-  name = wtf.TextField(_('Name'), [wtf.validators.required()])
-  email = wtf.TextField(_('Email'), [
-      wtf.validators.optional(),
-      wtf.validators.email(_('That does not look like an email')),
-    ])
-  locale = wtf.SelectField(
-      _('Language'),
-      choices=config.LOCALE_SORTED,
+  name = wtf.TextField(_('Name'),
+      [wtf.validators.required()], filters=[util.strip_filter],
+    )
+  email = wtf.TextField(_('Email'),
+      [wtf.validators.optional(), wtf.validators.email()],
+      filters=[util.strip_filter],
+    )
+  locale = wtf.SelectField(_('Language'),
+      choices=config.LOCALE_SORTED, filters=[util.strip_filter],
     )
 
 
 @app.route('/_s/profile/', endpoint='profile_service')
-@app.route('/profile/', methods=['GET', 'POST'], endpoint='profile')
+@app.route('/profile/', methods=['GET', 'POST'])
 @auth.login_required
 def profile():
-  form = ProfileUpdateForm()
   user_db = auth.current_user_db()
+  form = ProfileUpdateForm(obj=user_db)
+
   if form.validate_on_submit():
-    user_db.name = form.name.data.strip()
-    user_db.email = form.email.data.strip().lower()
-    user_db.locale = form.locale.data.strip()
+    form.populate_obj(user_db)
     user_db.put()
     return flask.redirect(flask.url_for(
         'set_locale', locale=user_db.locale, next=flask.url_for('welcome')
       ))
 
-  if not form.errors:
-    form.name.data = user_db.name
-    form.email.data = user_db.email or ''
-    form.locale.data = user_db.locale or auth.get_locale()
+    return flask.redirect(flask.url_for('welcome'))
 
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_db(user_db)
@@ -97,12 +94,16 @@ def profile():
 # Feedback
 ################################################################################
 class FeedbackForm(wtf.Form):
-  subject = wtf.TextField(_('Subject'), [wtf.validators.required()])
-  message = wtf.TextAreaField(_('Message'), [wtf.validators.required()])
-  email = wtf.TextField(_('Email (optional)'), [
-      wtf.validators.optional(),
-      wtf.validators.email(_('That does not look like an email')),
-    ])
+  subject = wtf.TextField(_('Subject'),
+      [wtf.validators.required()], filters=[util.strip_filter],
+    )
+  message = wtf.TextAreaField(_('Message'),
+      [wtf.validators.required()], filters=[util.strip_filter],
+    )
+  email = wtf.TextField(_('Email (optional)'),
+      [wtf.validators.optional(), wtf.validators.email()],
+      filters=[util.strip_filter],
+    )
 
 
 @app.route('/feedback/', methods=['GET', 'POST'])
@@ -117,10 +118,10 @@ def feedback():
         to=config.CONFIG_DB.feedback_email,
         subject='[%s] %s' % (
             config.CONFIG_DB.brand_name,
-            form.subject.data.strip(),
+            form.subject.data,
           ),
-        reply_to=form.email.data.strip() or config.CONFIG_DB.feedback_email,
-        body='%s\n\n%s' % (form.message.data.strip(), form.email.data.strip())
+        reply_to=form.email.data or config.CONFIG_DB.feedback_email,
+        body='%s\n\n%s' % (form.message.data, form.email.data)
       )
     flask.flash(__('Thank you for your feedback!'), category='success')
     return flask.redirect(flask.url_for('welcome'))
@@ -139,7 +140,7 @@ def feedback():
 # User Stuff
 ################################################################################
 @app.route('/_s/user/', endpoint='user_list_service')
-@app.route('/user/', endpoint='user_list')
+@app.route('/user/')
 @auth.admin_required
 def user_list():
   user_dbs, more_cursor = util.retrieve_dbs(

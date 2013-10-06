@@ -1,6 +1,6 @@
 {
   "name": "gae-init",
-  "version": "0.6.0",
+  "version": "0.8.1",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "licenses": [
     {
@@ -12,5 +12,9 @@
     "coffee-script": "~1",
     "less": "~1",
     "uglify-js": "~1"
+  },
+  "devDependencies": {
+    "grunt": "0.4.x",
+    "grunt-contrib-watch": "0.5.x"
   }
 }

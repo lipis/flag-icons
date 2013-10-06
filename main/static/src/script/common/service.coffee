@@ -11,7 +11,7 @@ window.service_call = (method, url, params, data, callback) ->
     delete params[k] if not v?
   $.ajax
     type: method
-    url: url + '?' + $.param(params)
+    url: "url?#{$.param params}"
     contentType: 'application/json'
     accepts: 'application/json'
     dataType: 'json'
@@ -21,9 +21,9 @@ window.service_call = (method, url, params, data, callback) ->
         more = undefined
         if response.more_url
           more = (callback) -> service_call(method, response.more_url, {}, callback)
-        callback?(undefined, response.result, more)
+        callback? undefined, response.result, more
       else
-        callback?(response)
+        callback? response
     error: (jqXHR, textStatus, errorThrown) ->
       error =
         error_code: 'ajax_error'
@@ -35,4 +35,4 @@ window.service_call = (method, url, params, data, callback) ->
       catch e
         error = error
       LOG 'service_call error', error
-      callback?(error)
+      callback? error
