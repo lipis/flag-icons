@@ -1,8 +1,11 @@
-Version 0.8.1 - 2013-10-05
+Version 0.8.1 - 2013-10-06
 --------------------------
 - Simplifying forms by using the populate instead of doing it manually
 - Added `novalidation` to the forms to disable HTML5 validations
 - Introduced `init_common` in scripts to run stuff on every page
+- Syntactic changes in the `*.coffee` files to be more consistent
+- Updating the User model after sign in to track the last seen
+- Showing relative date of the deployed version in the footer for the admins
 
 Version 0.8.0 - 2013-10-03
 --------------------------

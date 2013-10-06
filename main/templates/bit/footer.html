@@ -3,7 +3,7 @@
     # if current_user.admin
       <p>
         Version: {{config.CURRENT_VERSION_NAME}}
-        | {{config.CURRENT_VERSION_DATE}}
+        (<time datetime="{{config.CURRENT_VERSION_DATE}}">{{config.CURRENT_VERSION_DATE}}</time>)
         | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">View in JSON</a>
       </p>
     # endif
