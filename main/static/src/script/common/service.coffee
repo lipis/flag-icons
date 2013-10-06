@@ -11,7 +11,7 @@ window.service_call = (method, url, params, data, callback) ->
     delete params[k] if not v?
   $.ajax
     type: method
-    url: "url?#{$.param params}"
+    url: "#{url}?#{$.param params}"
     contentType: 'application/json'
     accepts: 'application/json'
     dataType: 'json'
