@@ -233,7 +233,7 @@ twitter = twitter_oauth.remote_app(
 
 @app.route('/_s/callback/twitter/oauth-authorized/')
 @twitter.authorized_handler
-def twitter_oauth_authorized(resp):
+def twitter_authorized(resp):
   if resp is None:
     flask.flash(__('You denied the request to sign in.'))
     return flask.redirect(util.get_next_url())
@@ -256,7 +256,7 @@ def signin_twitter():
   flask.session.pop('oauth_token', None)
   try:
     return twitter.authorize(
-        callback=flask.url_for('twitter_oauth_authorized',
+        callback=flask.url_for('twitter_authorized',
         next=util.get_next_url()),
       )
   except:
@@ -411,11 +411,13 @@ def create_user_db(name, username, email='', **params):
   return user_db
 
 
+@ndb.toplevel
 def signin_user_db(user_db):
   if not user_db:
     return flask.redirect(flask.url_for('signin'))
   flask_user_db = FlaskUser(user_db)
   if login.login_user(flask_user_db):
+    user_db.put_async()
     flask.flash(__('Hello %(name)s, welcome to %(brand)s!!!',
         name=user_db.name, brand=config.CONFIG_DB.brand_name,
       ), category='success')

@@ -10,16 +10,12 @@
   # endif
 # endmacro
 
-# macro errors_and_description(field)
-  {{field_errors(field)}}
-  {{field_description(field)}}
-# endmacro
-
 # macro input_field(field, type='text', placeholder='', autocomplete=True)
   <div class="form-group {{'has-error' if field.errors else ''}}">
     {{field.label(class='control-label')}}
     {{field(class='form-control', type=type, autocomplete='on' if autocomplete else 'off', placeholder=placeholder)}}
-    {{errors_and_description(field)}}
+    {{field_errors(field)}}
+    {{field_description(field)}}
   </div>
 # endmacro
 
@@ -55,7 +51,8 @@
   <div class="form-group {{'has-error' if field.errors else ''}}">
     {{field.label(class='control-label')}}
     {{field(class='form-control', rows=rows, placeholder=placeholder)}}
-    {{errors_and_description(field)}}
+    {{field_errors(field)}}
+    {{field_description(field)}}
   </div>
 # endmacro
 
@@ -64,7 +61,8 @@
     <label>
       {{field()}} {{field.label.text}}
     </label>
-    {{errors_and_description(field)}}
+    {{field_errors(field)}}
+    {{field_description(field)}}
   </div>
 # endmacro
 
