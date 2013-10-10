@@ -215,16 +215,18 @@ def update_path_separators():
 
 
 def install_dependencies():
-  missing = ''
+  missing = False
   if not os.path.exists(file_coffee):
-    missing += 'coffee-script@1 '
+    missing = True
   if not os.path.exists(file_less):
-    missing += 'less@1 '
+    missing = True
   if not os.path.exists(file_uglifyjs):
-    missing += 'uglify-js@1 '
+    missing = True
+  if not os.path.exists(os.path.join(DIR_NODE_MODULES, 'grunt')):
+    missing = True
 
   if missing:
-    os.system('npm install %s' % missing)
+    os.system('npm install')
 
 
 def update_missing_args():
