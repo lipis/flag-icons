@@ -55,7 +55,6 @@ class Config(Base, modelx.ConfigX):
     ]))
 
 
-
 class User(Base, modelx.UserX):
   name = ndb.StringProperty(indexed=True, required=True)
   username = ndb.StringProperty(indexed=True, required=True)
