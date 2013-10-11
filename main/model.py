@@ -51,7 +51,7 @@ class Config(Base, modelx.ConfigX):
       'github_client_id',
       'github_client_secret',
       'twitter_consumer_key',
-      'twitter_consumer_secret'
+      'twitter_consumer_secret',
     ]))
 
 
