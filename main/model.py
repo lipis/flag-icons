@@ -39,19 +39,6 @@ class Config(Base, modelx.ConfigX):
   github_client_id = ndb.StringProperty(default='')
   github_client_secret = ndb.StringProperty(default='')
 
-  _PROPERTIES = Base._PROPERTIES.union(set([
-      'analytics_id',
-      'announcement_html',
-      'announcement_type',
-      'brand_name',
-      'facebook_app_id',
-      'facebook_app_secret',
-      'feedback_email',
-      'flask_secret_key',
-      'twitter_consumer_key',
-      'twitter_consumer_secret',
-    ]))
-
 
 class User(Base, modelx.UserX):
   name = ndb.StringProperty(indexed=True, required=True)
