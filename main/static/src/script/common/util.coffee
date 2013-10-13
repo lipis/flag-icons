@@ -19,7 +19,7 @@ window.init_time = () ->
         date = moment.utc ($ this).attr 'datetime'
         diff = moment().diff date , 'days'
         if diff > 25
-          ($ this).text date.local().format 'YYYY-DD-MM'
+          ($ this).text date.local().format 'YYYY-MM-DD'
         else
           ($ this).text date.fromNow()
         ($ this).attr 'title', date.local().format 'dddd, MMMM Do YYYY, HH:mm:ss Z'
