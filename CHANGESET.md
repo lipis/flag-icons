@@ -1,8 +1,8 @@
 Version 0.8.2 - 2013-10-14
 --------------------------
 - Added missing properties for JSON in model Config
-- Updated `run.py` to install Grunt if it's missing
-- Removed the X-UA-Compatible header to pass the validators
+- Updated `run.py` to install Grunt if missing
+- Removed the `X-UA-Compatible` header to pass the validators
 - Fixed the broken relative date format
 - Added template macro for the Next Page link (`more_url`)
 - View in JSON link is now visible only when `has_json` variable is `True`
