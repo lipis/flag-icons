@@ -49,7 +49,7 @@ class SessionSecureForm(SecureForm):
             expires = ''
             csrf_build = session['csrf']
 
-        hmac_csrf = hmac.new(self.SECRET_KEY, csrf_build.encode('utf8'), digestmod=sha1) 
+        hmac_csrf = hmac.new(self.SECRET_KEY, csrf_build.encode('utf8'), digestmod=sha1)
         return '%s##%s' % (expires, hmac_csrf.hexdigest())
 
     def validate_csrf_token(self, field):

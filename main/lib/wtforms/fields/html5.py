@@ -64,26 +64,26 @@ class IntegerField(core.IntegerField):
     """
     Represents an ``<input type="number">``.
     """
-    widget = widgets.NumberInput()
+    widget = widgets.NumberInput(step='1')
 
 
 class DecimalField(core.DecimalField):
     """
     Represents an ``<input type="number">``.
     """
-    widget = widgets.NumberInput()
+    widget = widgets.NumberInput(step='any')
 
 
 class IntegerRangeField(core.IntegerField):
     """
     Represents an ``<input type="range">``.
     """
-    widget = widgets.RangeInput()
+    widget = widgets.RangeInput(step='1')
 
 
 class DecimalRangeField(core.DecimalField):
     """
     Represents an ``<input type="range">``.
     """
-    widget = widgets.RangeInput()
+    widget = widgets.RangeInput(step='any')
 

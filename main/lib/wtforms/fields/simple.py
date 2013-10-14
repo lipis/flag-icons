@@ -13,6 +13,7 @@ class TextField(StringField):
     Legacy alias for StringField
     """
 
+
 class TextAreaField(TextField):
     """
     This field represents an HTML ``<textarea>`` and can be used to take
@@ -23,7 +24,9 @@ class TextAreaField(TextField):
 
 class PasswordField(TextField):
     """
-    Represents an ``<input type="password">``.
+    A StringField, except renders an ``<input type="password">``.
+
+    Also, whatever value is accepted by this field
     """
     widget = widgets.PasswordInput()
 
@@ -40,7 +43,9 @@ class FileField(TextField):
 
 class HiddenField(TextField):
     """
-    Represents an ``<input type="hidden">``.
+    HiddenField is a convenience for a StringField with a HiddenInput widget.
+
+    It will render as an ``<input type="hidden">`` but otherwise coerce to a string.
     """
     widget = widgets.HiddenInput()
 
@@ -51,4 +56,3 @@ class SubmitField(BooleanField):
     submit button has been pressed.
     """
     widget = widgets.SubmitInput()
-

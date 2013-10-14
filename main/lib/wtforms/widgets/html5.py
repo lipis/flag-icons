@@ -5,9 +5,9 @@ Widgets for various HTML5 input types.
 from .core import Input
 
 __all__ = (
-    'ColorInput', 'DateTimeInput', 'DateTimeLocalInput', 'EmailInput',
-    'MonthInput', 'NumberInput', 'RangeInput', 'SearchInput', 'TelInput',
-    'TimeInput', 'URLInput', 'WeekInput',
+    'ColorInput', 'DateInput', 'DateTimeInput', 'DateTimeLocalInput',
+    'EmailInput', 'MonthInput', 'NumberInput', 'RangeInput', 'SearchInput',
+    'TelInput', 'TimeInput', 'URLInput', 'WeekInput',
 )
 
 
@@ -87,12 +87,28 @@ class NumberInput(Input):
     """
     input_type = 'number'
 
+    def __init__(self, step=None):
+        self.step = step
+
+    def __call__(self, field, **kwargs):
+        if self.step is not None:
+            kwargs.setdefault('step', self.step)
+        return super(NumberInput, self).__call__(field, **kwargs)
+
 
 class RangeInput(Input):
     """
     Renders an input with type "range".
     """
     input_type = 'range'
+
+    def __init__(self, step=None):
+        self.step = step
+
+    def __call__(self, field, **kwargs):
+        if self.step is not None:
+            kwargs.setdefault('step', self.step)
+        return super(RangeInput, self).__call__(field, **kwargs)
 
 
 class ColorInput(Input):
