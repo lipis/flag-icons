@@ -4,7 +4,8 @@ Version 0.8.2 - 2013-10-14
 - Updated `run.py` to install Grunt if it's missing
 - Removed the X-UA-Compatible header to pass the validators
 - Fixed the broken relative date format
-- Added template macro for next page (more_url)
+- Added template macro for the Next Page link (`more_url`)
+- View in JSON link is now visible only when `has_json` variable is `True`
 
 Version 0.8.1 - 2013-10-06
 --------------------------

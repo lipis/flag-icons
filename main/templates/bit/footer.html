@@ -4,7 +4,9 @@
       <p>
         Version: {{config.CURRENT_VERSION_NAME}}
         (<time datetime="{{config.CURRENT_VERSION_DATE}}">{{config.CURRENT_VERSION_DATE}}</time>)
-        | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">View in JSON</a>
+        # if has_json
+          | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">View in JSON</a>
+        # endif
       </p>
     # endif
     <p>&copy; 2013 - {{config.CONFIG_DB.brand_name}}</p>

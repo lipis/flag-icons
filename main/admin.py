@@ -48,4 +48,5 @@ def admin_config_update():
       html_class='admin-config',
       form=form,
       config_db=config_db,
+      has_json=True,
     )
