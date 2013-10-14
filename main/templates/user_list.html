@@ -80,9 +80,6 @@
       </table>
     </div>
   </div>
-  # if more_url
-    <ul class="pager">
-      <li><a href="{{more_url}}">Next Page</a></li>
-    </ul>
-  # endif
+
+  {{utils.next_link(more_url)}}
 # endblock

@@ -7,3 +7,12 @@
     <a href="{{url_for(endpoint, order=property)}}">{{title}}</a>
   #endif
 # endmacro
+
+
+# macro next_link(more_url, caption='Next Page')
+  # if more_url
+    <ul class="pager">
+      <li><a href="{{more_url}}">{{caption}}</a></li>
+    </ul>
+  # endif
+# endmacro
