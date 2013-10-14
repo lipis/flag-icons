@@ -257,7 +257,7 @@ def _cookie_unquote(b):
             k = q_match.start(0)
         if q_match and (not o_match or k < j):
             _push(b[i:k])
-            _push(b[k + 1])
+            _push(b[k + 1:k + 2])
             i = k + 2
         else:
             _push(b[i:j])

@@ -89,12 +89,12 @@ if PY2:
     wsgi_get_bytes = _identity
 
     def wsgi_decoding_dance(s, charset='utf-8', errors='replace'):
-        return s.decode(charset)
+        return s.decode(charset, errors)
 
     def wsgi_encoding_dance(s, charset='utf-8', errors='replace'):
         if isinstance(s, bytes):
             return s
-        return s.encode(charset)
+        return s.encode(charset, errors)
 
     def to_bytes(x, charset=sys.getdefaultencoding(), errors='strict'):
         if x is None:

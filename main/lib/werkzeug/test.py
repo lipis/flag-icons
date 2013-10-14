@@ -303,7 +303,8 @@ class EnvironBuilder(object):
         elif not isinstance(headers, Headers):
             headers = Headers(headers)
         self.headers = headers
-        self.content_type = content_type
+        if content_type is not None:
+            self.content_type = content_type
         if errors_stream is None:
             errors_stream = sys.stderr
         self.errors_stream = errors_stream

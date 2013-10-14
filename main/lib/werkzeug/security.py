@@ -27,7 +27,7 @@ DEFAULT_PBKDF2_ITERATIONS = 1000
 
 
 _pack_int = Struct('>I').pack
-_builtin_safe_str_cmp = getattr(hmac, 'digest_compare', None)
+_builtin_safe_str_cmp = getattr(hmac, 'compare_digest', None)
 _sys_rng = SystemRandom()
 _os_alt_seps = list(sep for sep in [os.path.sep, os.path.altsep]
                     if sep not in (None, '/'))
