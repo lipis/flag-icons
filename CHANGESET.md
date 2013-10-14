@@ -2,6 +2,7 @@ Version 0.8.3 - 2013-10-14
 --------------------------
 - Updated Werkzeug to 0.9.4
 - Updated WTForms to 1.0.5
+- Updated itsdangerous to 0.23
 
 Version 0.8.2 - 2013-10-14
 --------------------------
