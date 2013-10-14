@@ -1,3 +1,11 @@
+Version 0.8.2 - 2013-10-14
+--------------------------
+- Added missing properties for JSON in model Config
+- Updated `run.py` to install Grunt if it's missing
+- Removed the X-UA-Compatible header to pass the validators
+- Fixed the broken relative date format
+- Added template macro for next page (more_url)
+
 Version 0.8.1 - 2013-10-06
 --------------------------
 - Simplifying forms by using the populate instead of doing it manually
