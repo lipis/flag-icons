@@ -7,27 +7,27 @@
 
   <div class="row">
     <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
-      <a class="btn btn-block btn-lg btn-google" href="{{google_signin_url}}">
+      <a class="btn btn-block btn-lg btn-google" href="{{google_signin_url}}" rel="nofollow">
         <i class="icon icon-google-plus"></i>
         Sign in with Google
       </a>
 
       # if config.CONFIG_DB.facebook_app_id and config.CONFIG_DB.facebook_app_secret
-        <a class="btn btn-block btn-lg btn-facebook" href="{{facebook_signin_url}}">
+        <a class="btn btn-block btn-lg btn-facebook" href="{{facebook_signin_url}}" rel="nofollow">
           <i class="icon icon-facebook"></i>
           Sign in with Facebook
         </a>
       # endif
 
       # if config.CONFIG_DB.twitter_consumer_key and config.CONFIG_DB.twitter_consumer_secret
-        <a class="btn btn-block btn-lg btn-twitter" href="{{twitter_signin_url}}">
+        <a class="btn btn-block btn-lg btn-twitter" href="{{twitter_signin_url}}" rel="nofollow">
           <i class="icon icon-twitter"></i>
           Sign in with Twitter
         </a>
       # endif
 
       # if config.CONFIG_DB.github_client_id and config.CONFIG_DB.github_client_secret
-        <a class="btn btn-block btn-lg btn-github" href="{{github_signin_url}}">
+        <a class="btn btn-block btn-lg btn-github" href="{{github_signin_url}}" rel="nofollow">
           <i class="icon icon-github"></i>
           Sign in with GitHub
         </a>
