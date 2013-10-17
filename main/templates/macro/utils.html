@@ -16,3 +16,10 @@
     </ul>
   # endif
 # endmacro
+
+# macro prefetch_link(url)
+  # if url
+    <link rel="prerender" href="{{url}}" />
+    <link rel="prefetch" href="{{url}}" />
+  # endif
+# endmacro

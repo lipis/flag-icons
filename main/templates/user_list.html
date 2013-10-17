@@ -1,6 +1,10 @@
 # extends 'base.html'
 # import 'macro/utils.html' as utils
 
+# block head
+  {{utils.prefetch_link(more_url)}}
+# endblock
+
 # block content
   <div class="page-header">
     <h1>{{title}}</h1>
