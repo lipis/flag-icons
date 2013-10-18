@@ -1,8 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from google.appengine.ext import ndb
-import md5
-import util
+import hashlib
 
 
 class BaseX(object):
@@ -24,5 +22,5 @@ class UserX(object):
   @property
   def avatar_url(self):
     return 'http://www.gravatar.com/avatar/%s?d=identicon&r=x' % (
-        md5.new((self.email or self.name).encode('utf-8')).hexdigest().lower()
+        hashlib.md5((self.email or self.name).encode('utf-8')).hexdigest().lower()
       )
