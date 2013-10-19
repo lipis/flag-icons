@@ -1,9 +1,14 @@
+Version 0.9.0 - 2013-10-20
+--------------------------
+- Introduced `auth_ids` in the `User` model instead of separete auth ids per provider
+- To upgrade the existing user data deploy the `gae-init-migrate` to your GAE app and run the upgrade task
+
 Version 0.8.4 - 2013-10-19
 --------------------------
-- Added rel='nofollow' wherever applicable
+- Added `rel='nofollow'` wherever applicable
 - Updated Moment.js to 2.3.1
 - Added the prefetch link if there is one
-- Removed deprecated md5 package
+- Removed deprecated `md5` package
 
 Version 0.8.3 - 2013-10-14
 --------------------------
