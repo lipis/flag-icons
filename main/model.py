@@ -15,12 +15,12 @@ class Base(ndb.Model, modelx.BaseX):
   modified = ndb.DateTimeProperty(auto_now=True)
   version = ndb.IntegerProperty(default=TIMESTAMP)
   _PROPERTIES = {
-    'key',
-    'id',
-    'version',
-    'created',
-    'modified',
-  }
+      'key',
+      'id',
+      'version',
+      'created',
+      'modified',
+    }
 
 
 class Config(Base, modelx.ConfigX):
@@ -40,19 +40,19 @@ class Config(Base, modelx.ConfigX):
   twitter_consumer_secret = ndb.StringProperty(default='')
 
   _PROPERTIES = Base._PROPERTIES.union({
-    'analytics_id',
-    'announcement_html',
-    'announcement_type',
-    'brand_name',
-    'facebook_app_id',
-    'facebook_app_secret',
-    'feedback_email',
-    'flask_secret_key',
-    'github_client_id',
-    'github_client_secret',
-    'twitter_consumer_key',
-    'twitter_consumer_secret',
-  })
+      'analytics_id',
+      'announcement_html',
+      'announcement_type',
+      'brand_name',
+      'facebook_app_id',
+      'facebook_app_secret',
+      'feedback_email',
+      'flask_secret_key',
+      'github_client_id',
+      'github_client_secret',
+      'twitter_consumer_key',
+      'twitter_consumer_secret',
+    })
 
 
 class User(Base, modelx.UserX):
@@ -69,7 +69,7 @@ class User(Base, modelx.UserX):
   github_id = ndb.StringProperty(indexed=True, default='')
 
   _PROPERTIES = Base._PROPERTIES.union({
-    'name',
-    'username',
-    'avatar_url',
-  })
+      'name',
+      'username',
+      'avatar_url',
+    })
