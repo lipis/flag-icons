@@ -14,13 +14,13 @@ class Base(ndb.Model, modelx.BaseX):
   created = ndb.DateTimeProperty(auto_now_add=True)
   modified = ndb.DateTimeProperty(auto_now=True)
   version = ndb.IntegerProperty(default=TIMESTAMP)
-  _PROPERTIES = set([
-      'key',
-      'id',
-      'version',
-      'created',
-      'modified',
-    ])
+  _PROPERTIES = {
+    'key',
+    'id',
+    'version',
+    'created',
+    'modified',
+  }
 
 
 class Config(Base, modelx.ConfigX):
@@ -39,20 +39,20 @@ class Config(Base, modelx.ConfigX):
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
 
-  _PROPERTIES = Base._PROPERTIES.union(set([
-      'analytics_id',
-      'announcement_html',
-      'announcement_type',
-      'brand_name',
-      'facebook_app_id',
-      'facebook_app_secret',
-      'feedback_email',
-      'flask_secret_key',
-      'github_client_id',
-      'github_client_secret',
-      'twitter_consumer_key',
-      'twitter_consumer_secret',
-    ]))
+  _PROPERTIES = Base._PROPERTIES.union({
+    'analytics_id',
+    'announcement_html',
+    'announcement_type',
+    'brand_name',
+    'facebook_app_id',
+    'facebook_app_secret',
+    'feedback_email',
+    'flask_secret_key',
+    'github_client_id',
+    'github_client_secret',
+    'twitter_consumer_key',
+    'twitter_consumer_secret',
+  })
 
 
 class User(Base, modelx.UserX):
@@ -68,8 +68,8 @@ class User(Base, modelx.UserX):
   twitter_id = ndb.StringProperty(indexed=True, default='')
   github_id = ndb.StringProperty(indexed=True, default='')
 
-  _PROPERTIES = Base._PROPERTIES.union(set([
-      'name',
-      'username',
-      'avatar_url',
-    ]))
+  _PROPERTIES = Base._PROPERTIES.union({
+    'name',
+    'username',
+    'avatar_url',
+  })
