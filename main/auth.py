@@ -168,7 +168,8 @@ def google_authorized():
 
 
 def retrieve_user_from_google(google_user):
-  user_db = model.User.retrieve_one_by('federated_id', google_user.user_id())
+  auth_id = 'federated_%s' % google_user.user_id()
+  user_db = model.User.retrieve_one_by('auth_ids', auth_id)
   if user_db:
     if not user_db.admin and users.is_current_user_admin():
       user_db.admin = True
@@ -176,10 +177,10 @@ def retrieve_user_from_google(google_user):
     return user_db
 
   return create_user_db(
+      auth_id,
       google_user.nickname().split('@')[0].replace('.', ' ').title(),
       google_user.nickname(),
       google_user.email(),
-      federated_id=google_user.user_id(),
       admin=users.is_current_user_admin(),
     )
 
@@ -238,14 +239,15 @@ def signin_twitter():
 
 
 def retrieve_user_from_twitter(response):
-  user_db = model.User.retrieve_one_by('twitter_id', response['user_id'])
+  auth_id = 'twitter_%s' % response['user_id']
+  user_db = model.User.retrieve_one_by('auth_ids', auth_id)
   if user_db:
     return user_db
 
   return create_user_db(
+      auth_id,
       response['screen_name'],
       response['screen_name'],
-      twitter_id=response['user_id'],
     )
 
 
@@ -294,14 +296,15 @@ def signin_facebook():
 
 
 def retrieve_user_from_facebook(response):
-  user_db = model.User.retrieve_one_by('facebook_id', response['id'])
+  auth_id = 'facebook_%s' % response['id']
+  user_db = model.User.retrieve_one_by('auth_ids', auth_id)
   if user_db:
     return user_db
   return create_user_db(
+      auth_id,
       response['name'],
       response['username'] if 'username' in response else response['id'],
       response['email'],
-      facebook_id=response['id'],
     )
 
 
@@ -349,21 +352,22 @@ def signin_github():
 
 
 def retrieve_user_from_github(response):
-  user_db = model.User.retrieve_one_by('github_id', str(response['id']))
+  auth_id = 'github_%s' % str(response['id'])
+  user_db = model.User.retrieve_one_by('auth_ids', auth_id)
   if user_db:
     return user_db
   return create_user_db(
+      auth_id,
       response['name'] or response['login'],
       response['login'],
       response['email'] or '',
-      github_id=str(response['id']),
     )
 
 
 ################################################################################
 # Helpers
 ################################################################################
-def create_user_db(name, username, email='', **params):
+def create_user_db(auth_id, name, username, email='', **params):
   username = username.split('@')[0].lower()
   new_username = username.replace(' ', '.').replace('_', '.').replace('-', '.')
   n = 1
@@ -375,6 +379,7 @@ def create_user_db(name, username, email='', **params):
       name=name,
       email=email.lower(),
       username=new_username,
+      auth_ids=[auth_id],
       **params
     )
   user_db.put()

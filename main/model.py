@@ -59,17 +59,17 @@ class User(Base, modelx.UserX):
   name = ndb.StringProperty(indexed=True, required=True)
   username = ndb.StringProperty(indexed=True, required=True)
   email = ndb.StringProperty(indexed=True, default='')
+  auth_ids = ndb.StringProperty(indexed=True, repeated=True)
 
   active = ndb.BooleanProperty(default=True)
   admin = ndb.BooleanProperty(default=False)
 
-  federated_id = ndb.StringProperty(indexed=True, default='')
-  facebook_id = ndb.StringProperty(indexed=True, default='')
-  twitter_id = ndb.StringProperty(indexed=True, default='')
-  github_id = ndb.StringProperty(indexed=True, default='')
-
   _PROPERTIES = Base._PROPERTIES.union(set([
+      'active',
+      'admin',
+      'auth_ids',
+      'avatar_url',
+      'email',
       'name',
       'username',
-      'avatar_url',
     ]))
