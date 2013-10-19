@@ -1,3 +1,10 @@
+Version 0.8.4 - 2013-10-19
+--------------------------
+- Added rel='nofollow' wherever applicable
+- Updated Moment.js to 2.3.1
+- Added the prefetch link if there is one
+- Removed deprecated md5 package
+
 Version 0.8.3 - 2013-10-14
 --------------------------
 - Updated Werkzeug to 0.9.4
