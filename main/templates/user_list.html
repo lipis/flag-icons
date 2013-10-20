@@ -69,12 +69,12 @@
               <td class="hidden-xs">{{user_db.username}}</td>
               <td class="hidden-xs">{{user_db.email}}</td>
               <td>
-                <time datetime="{{user_db.created.isoformat()}}">
+                <time datetime="{{user_db.created.__str__()[:-3]}}">
                   {{user_db.created.strftime('%Y-%m-%d')}}
                 </time>
               </td>
               <td class="hidden-xs">
-                <time datetime="{{user_db.modified.isoformat()}}">
+                <time datetime="{{user_db.modified.__str__()[:-3]}}">
                   {{user_db.modified.strftime('%Y-%m-%d')}}
                 </time>
               </td>
