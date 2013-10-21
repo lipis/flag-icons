@@ -17,9 +17,27 @@
   # endif
 # endmacro
 
+
 # macro prefetch_link(url)
   # if url
     <link rel="prerender" href="{{url}}" />
     <link rel="prefetch" href="{{url}}" />
   # endif
+# endmacro
+
+
+# macro auth_icons(auth_ids)
+  # for auth_id in auth_ids
+    # if auth_id.startswith('federated')
+      <span class="icon-google-plus"></span>
+    # elif auth_id.startswith('facebook')
+      <span class="icon-facebook"></span>
+    # elif auth_id.startswith('twitter')
+      <span class="icon-twitter"></span>
+    # elif auth_id.startswith('github')
+      <span class="icon-github"></span>
+    # else
+      <span class="icon-question"></span>
+    # endif
+  # endfor
 # endmacro

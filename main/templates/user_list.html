@@ -53,7 +53,8 @@
             <th class="col-xs-2 hidden-xs">{{utils.order_link('Username', 'user_list', 'username')}}</th>
             <th class="col-xs-3 hidden-xs">{{utils.order_link('Email', 'user_list', 'email')}}</th>
             <th class="col-xs-2">{{utils.order_link('Created', 'user_list', 'created')}}</th>
-            <th class="col-xs-2 hidden-xs">{{utils.order_link('Modified', 'user_list', 'modified')}}</th>
+            <th class="col-xs-2 hidden-sm hidden-xs">{{utils.order_link('Modified', 'user_list', 'modified')}}</th>
+            <th class="hidden-sm hidden-xs">Auth</th>
           </tr>
         </thead>
         <tbody>
@@ -73,11 +74,12 @@
                   {{user_db.created.strftime('%Y-%m-%d')}}
                 </time>
               </td>
-              <td class="hidden-xs">
+              <td class="hidden-sm hidden-xs">
                 <time datetime="{{user_db.modified.__str__()[:-3]}}">
                   {{user_db.modified.strftime('%Y-%m-%d')}}
                 </time>
               </td>
+              <td class="hidden-sm hidden-xs text-nowrap">{{utils.auth_icons(user_db.auth_ids)}}</td>
             </tr>
           # endfor
         </tbody>

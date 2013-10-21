@@ -1,9 +1,13 @@
 # extends 'base.html'
 # import 'macro/forms.html' as forms
+# import 'macro/utils.html' as utils
 
 # block content
   <div class="page-header">
-    <h1>{{user_db.name}}</h1>
+    <h1>
+      <small class="pull-right" title="Connected Accounts">{{utils.auth_icons(user_db.auth_ids)}}</small>
+      {{user_db.name}}
+    </h1>
   </div>
   <form method="POST" action="." novalidate>
     <div class="row">
