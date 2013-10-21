@@ -4,11 +4,13 @@
   # endfor
 # endmacro
 
+
 # macro field_description(field)
   # if field.description
     <p class="help-block">{{field.description}}</p>
   # endif
 # endmacro
+
 
 # macro input_field(field, type='text', placeholder='', autocomplete=True)
   <div class="form-group {{'has-error' if field.errors else ''}}">
@@ -19,33 +21,41 @@
   </div>
 # endmacro
 
+
 # macro text_field(field, placeholder='', autocomplete=True)
   {{input_field(field, placeholder=placeholder, autocomplete=autocomplete)}}
 # endmacro
+
 
 # macro password_field(field)
   {{input_field(field, type='password', autocomplete=False)}}
 # endmacro
 
+
 # macro number_field(field, placeholder='', autocomplete=True)
   {{input_field(field, type='number', placeholder=placeholder, autocomplete=autocomplete)}}
 # endmacro
+
 
 # macro date_field(field, placeholder='', autocomplete=True)
   {{input_field(field, type='date', placeholder=placeholder, autocomplete=autocomplete)}}
 # endmacro
 
+
 # macro email_field(field, placeholder='', autocomplete=True)
   {{input_field(field, type='email', placeholder=placeholder, autocomplete=autocomplete)}}
 # endmacro
+
 
 # macro select_field(field)
   {{input_field(field)}}
 # endmacro
 
+
 # macro hidden_field(field)
   {{field(type='hidden')}}
 # endmacro
+
 
 # macro textarea_field(field, placeholder='', rows=4)
   <div class="form-group {{'has-error' if field.errors else ''}}">
@@ -56,6 +66,7 @@
   </div>
 # endmacro
 
+
 # macro checkbox_field(field)
   <div class="checkbox {{'has-error' if field.errors else ''}}">
     <label>
@@ -65,6 +76,7 @@
     {{field_description(field)}}
   </div>
 # endmacro
+
 
 # macro multiple_checkbox_field(field)
   <div class="form-group {{'has-error' if field.errors else ''}}">
