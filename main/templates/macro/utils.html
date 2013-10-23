@@ -1,8 +1,8 @@
 # macro order_link(title, endpoint, property)
   # if request.args.get('order') == property
-    <a href="{{url_for(endpoint, order='-' + property)}}">{{title}} <i class="icon-chevron-up"></i></a>
+    <a href="{{url_for(endpoint, order='-' + property)}}">{{title}} <i class="fa fa-chevron-up"></i></a>
   # elif request.args.get('order') == '-' + property
-    <a href="{{url_for(endpoint, order=property)}}">{{title}} <i class="icon-chevron-down"></i></a>
+    <a href="{{url_for(endpoint, order=property)}}">{{title}} <i class="fa fa-chevron-down"></i></a>
   #else
     <a href="{{url_for(endpoint, order=property)}}">{{title}}</a>
   #endif
@@ -29,15 +29,15 @@
 # macro auth_icons(auth_ids)
   # for auth_id in auth_ids
     # if auth_id.startswith('federated')
-      <span class="icon-google-plus"></span>
+      <span class="fa fa-google-plus"></span>
     # elif auth_id.startswith('facebook')
-      <span class="icon-facebook"></span>
+      <span class="fa fa-facebook"></span>
     # elif auth_id.startswith('twitter')
-      <span class="icon-twitter"></span>
+      <span class="fa fa-twitter"></span>
     # elif auth_id.startswith('github')
-      <span class="icon-github"></span>
+      <span class="fa fa-github"></span>
     # else
-      <span class="icon-question"></span>
+      <span class="fa fa-question"></span>
     # endif
   # endfor
 # endmacro

@@ -1,23 +1,23 @@
 # if current_user.id > 0
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      <i class="icon-user"></i>
+      <i class="fa fa-user"></i>
       {{current_user.name}}
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li><a href="{{url_for('profile')}}"><i class="icon-edit"></i> Profile Settings</a></li>
+      <li><a href="{{url_for('profile')}}"><i class="fa fa-edit"></i> Profile Settings</a></li>
       # if current_user.admin
         <li class="divider"></li>
-        <li><a href="{{url_for('admin_config_update')}}"><i class="icon-cog"></i> Admin Config</a></li>
-        <li><a href="{{url_for('user_list', order='-modified')}}"><i class="icon-group"></i> User List</a></li>
+        <li><a href="{{url_for('admin_config_update')}}"><i class="fa fa-cog"></i> Admin Config</a></li>
+        <li><a href="{{url_for('user_list', order='-modified')}}"><i class="fa fa-group"></i> User List</a></li>
         <li class="divider"></li>
       # endif
-      <li><a href="{{url_for('signout')}}"><i class="icon-signout"></i> Sign out</a></li>
+      <li><a href="{{url_for('signout')}}"><i class="fa fa-sign-out"></i> Sign out</a></li>
     </ul>
   </li>
 # else
   <li class="{{'active' if html_class == 'signin' else ''}}">
-    <a href="{{url_for('signin')}}"><i class="icon-signin"></i> Sign in</a>
+    <a href="{{url_for('signin')}}"><i class="fa fa-sign-in"></i> Sign in</a>
   </li>
 # endif
