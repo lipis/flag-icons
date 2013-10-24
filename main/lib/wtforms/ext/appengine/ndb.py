@@ -92,6 +92,7 @@ class:
 
 """
 from wtforms import Form, validators, fields as f
+from wtforms.compat import string_types
 from wtforms.ext.appengine.fields import GeoPtPropertyField, KeyPropertyField, StringListPropertyField, IntegerListPropertyField
 
 
@@ -324,7 +325,17 @@ class ModelConverter(ModelConverterBase):
 
     def convert_KeyProperty(self, model, prop, kwargs):
         """Returns a form field for a ``ndb.KeyProperty``."""
-        kwargs['reference_class'] = prop._reference_class
+        if 'reference_class' not in kwargs:
+            try:
+                reference_class = prop._kind
+            except AttributeError:
+                reference_class = prop._reference_class
+
+            if isinstance(reference_class, string_types):
+                # reference class is a string, try to retrieve the model object.
+                mod = __import__(model.__module__, None, None, [reference_class], 0)
+                reference_class = getattr(mod, reference_class)
+            kwargs['reference_class'] = reference_class
         kwargs.setdefault('allow_blank', not prop._required)
         return KeyPropertyField(**kwargs)
 

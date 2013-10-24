@@ -149,7 +149,8 @@ def convert_DateTimeProperty(model, prop, kwargs):
     if prop.auto_now or prop.auto_now_add:
         return None
 
-    return f.DateTimeField(format='%Y-%m-%d %H:%M:%S', **kwargs)
+    kwargs.setdefault('format', '%Y-%m-%d %H:%M:%S')
+    return f.DateTimeField(**kwargs)
 
 
 def convert_DateProperty(model, prop, kwargs):
@@ -157,7 +158,8 @@ def convert_DateProperty(model, prop, kwargs):
     if prop.auto_now or prop.auto_now_add:
         return None
 
-    return f.DateField(format='%Y-%m-%d', **kwargs)
+    kwargs.setdefault('format', '%Y-%m-%d')
+    return f.DateField(**kwargs)
 
 
 def convert_TimeProperty(model, prop, kwargs):
@@ -165,7 +167,8 @@ def convert_TimeProperty(model, prop, kwargs):
     if prop.auto_now or prop.auto_now_add:
         return None
 
-    return f.DateTimeField(format='%H:%M:%S', **kwargs)
+    kwargs.setdefault('format', '%H:%M:%S')
+    return f.DateTimeField(**kwargs)
 
 
 def convert_ListProperty(model, prop, kwargs):

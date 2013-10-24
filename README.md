@@ -1,21 +1,13 @@
 gae-init-babel
 ==============
+**gae-init-babel** is the easiest way to kick start new applications on Google
+App Engine using Flask, Bootstrap, Babel and tons of other cool features.
 
-**gae-init-babel** is the easiest way to start new applications on Google App Engine
-using Flask, Bootstrap, Babel and tons of other cool features.
+Read more in the [docs][], where you can find a complete [feature list][],
+a detailed [tutorial][] on how to build a phonebook application and more..
 
-
-Demo Page
----------
-
-The latest version is always accessible from:
+The latest version is always accessible from
 [http://babel.gae-init.appspot.com](http://babel.gae-init.appspot.com)
-
-Documentation
--------------
-
-Visit the [docs][] page for more information, where you can
-also find a detailed [tutorial][] on how to build a phonebook application.
 
 Running the Development Environment
 -----------------------------------
@@ -92,6 +84,7 @@ Author
 [bootstrap]: http://getbootstrap.com/
 [coffeescript]: http://coffeescript.org/
 [docs]: http://docs.gae-init.appspot.com
+[feature list]: http://docs.gae-init.appspot.com/features/
 [flask]: http://flask.pocoo.org/
 [font awesome]: http://fortawesome.github.com/Font-Awesome/
 [gae-init]: http://gae-init.appspot.com

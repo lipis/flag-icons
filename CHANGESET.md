@@ -1,3 +1,30 @@
+Version 0.9.0 - 2013-10-20
+--------------------------
+- Introduced `auth_ids` in the `User` model instead of separete auth ids per provider
+- To upgrade the existing user data deploy the `gae-init-migrate` to your GAE app and run the upgrade task
+
+Version 0.8.4 - 2013-10-19
+--------------------------
+- Added `rel='nofollow'` wherever applicable
+- Updated Moment.js to 2.3.1
+- Added the prefetch link if there is one
+- Removed deprecated `md5` package
+
+Version 0.8.3 - 2013-10-14
+--------------------------
+- Updated Werkzeug to 0.9.4
+- Updated WTForms to 1.0.5
+- Updated itsdangerous to 0.23
+
+Version 0.8.2 - 2013-10-14
+--------------------------
+- Added missing properties for JSON in model Config
+- Updated `run.py` to install Grunt if missing
+- Removed the `X-UA-Compatible` header to pass the validators
+- Fixed the broken relative date format
+- Added template macro for the Next Page link (`more_url`)
+- View in JSON link is now visible only when `has_json` variable is `True`
+
 Version 0.8.1 - 2013-10-06
 --------------------------
 - Simplifying forms by using the populate instead of doing it manually

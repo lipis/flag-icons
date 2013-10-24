@@ -25,11 +25,13 @@ if PY2:
     from itertools import izip
     text_type = unicode
     int_to_byte = chr
+    number_types = (int, long, float)
 else:
     from functools import reduce
     izip = zip
     text_type = str
     int_to_byte = operator.methodcaller('to_bytes', 1, 'big')
+    number_types = (int, float)
 
 
 try:
@@ -211,6 +213,10 @@ class SigningAlgorithm(object):
         """Returns the signature for the given key and value"""
         raise NotImplementedError()
 
+    def verify_signature(self, key, value, sig):
+        """Verifies the given signature matches the expected signature"""
+        return constant_time_compare(sig, self.get_signature(key, value))
+
 
 class NoneAlgorithm(SigningAlgorithm):
     """This class provides a algorithm that does not perform any signing and
@@ -321,6 +327,12 @@ class Signer(object):
         """Signs the given string."""
         return value + want_bytes(self.sep) + self.get_signature(value)
 
+    def verify_signature(self, value, sig):
+        """Verifies the signature for the given value."""
+        key = self.derive_key()
+        sig = base64_decode(sig)
+        return self.algorithm.verify_signature(key, value, sig)
+
     def unsign(self, signed_value):
         """Unsigns the given string."""
         signed_value = want_bytes(signed_value)
@@ -328,7 +340,7 @@ class Signer(object):
         if sep not in signed_value:
             raise BadSignature('No %r found in value' % self.sep)
         value, sig = signed_value.rsplit(sep, 1)
-        if constant_time_compare(sig, self.get_signature(value)):
+        if self.verify_signature(value, sig):
             return value
         raise BadSignature('Signature %r does not match' % sig,
                            payload=value)
@@ -708,6 +720,65 @@ class JSONWebSignatureSerializer(Serializer):
     def loads_unsafe(self, s, salt=None, return_header=False):
         kwargs = {'return_header': return_header}
         return self._loads_unsafe_impl(s, salt, kwargs, kwargs)
+
+
+class TimedJSONWebSignatureSerializer(JSONWebSignatureSerializer):
+    """Works like the regular :class:`JSONWebSignatureSerializer` but also
+    records the time of the signing and can be used to expire signatures.
+
+    JWS currently does not specify this behavior but it mentions a possibility
+    extension like this in the spec.  Expiry date is encoded into the header
+    similarily as specified in `draft-ietf-oauth-json-web-token
+    <http://self-issued.info/docs/draft-ietf-oauth-json-web-token.html#expDef`_.
+
+    The unsign method can raise a :exc:`SignatureExpired` method if the
+    unsigning failed because the signature is expired.  This exception is a
+    subclass of :exc:`BadSignature`.
+    """
+
+    DEFAULT_EXPIRES_IN = 3600
+
+    def __init__(self, secret_key, expires_in=None, **kwargs):
+        JSONWebSignatureSerializer.__init__(self, secret_key, **kwargs)
+        if expires_in is None:
+            expires_in = self.DEFAULT_EXPIRES_IN
+        self.expires_in = expires_in
+
+    def make_header(self, header_fields):
+        header = JSONWebSignatureSerializer.make_header(self, header_fields)
+        iat = self.now()
+        exp = iat + self.expires_in
+        header['iat'] = iat
+        header['exp'] = exp
+        return header
+
+    def loads(self, s, salt=None, return_header=False):
+        payload, header = JSONWebSignatureSerializer.loads(
+            self, s, salt, return_header=True)
+
+        if 'exp' not in header:
+            raise BadSignature('Missing expiry date', payload=payload)
+
+        if not (isinstance(header['exp'], number_types)
+                and header['exp'] > 0):
+            raise BadSignature('expiry date is not an IntDate',
+                               payload=payload)
+
+        if header['exp'] < self.now():
+            raise SignatureExpired('Signature expired', payload=payload,
+                                   date_signed=self.get_issue_date(header))
+
+        if return_header:
+            return payload, header
+        return payload
+
+    def get_issue_date(self, header):
+        rv = header.get('iat')
+        if isinstance(rv, number_types):
+            return datetime.utcfromtimestamp(int(rv))
+
+    def now(self):
+        return int(time.time())
 
 
 class URLSafeSerializerMixin(object):

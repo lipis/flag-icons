@@ -1,39 +1,37 @@
 # extends 'base.html'
 # import 'macro/forms.html' as forms
+# import 'macro/utils.html' as utils
 
 # block content
   <div class="page-header">
-    <h1>{{user_db.name}}</h1>
+    <h1>
+      <small class="pull-right" title="Connected Accounts">{{utils.auth_icons(user_db.auth_ids)}}</small>
+      {{user_db.name}}
+    </h1>
   </div>
   <form method="POST" action="." novalidate>
     <div class="row">
       <div class="col-md-4 col-sm-6">
-        <fieldset>
-          {{form.csrf_token}}
-
-          <div class="form-group ">
-            <label class="control-label" for="username">Username</label>
-            <input id="username" class="form-control" name="username" type="text" value="{{user_db.username}}" readonly="readonly">
-          </div>
-
-          {{forms.text_field(form.name)}}
-          {{forms.email_field(form.email)}}
-          {{forms.select_field(form.locale)}}
-        </fieldset>
+        {{form.csrf_token}}
+        <div class="form-group ">
+          <label class="control-label" for="username">{{_('Username')}}</label>
+          <input id="username" class="form-control" name="username" type="text" value="{{user_db.username}}" readonly="readonly">
+        </div>
+        {{forms.text_field(form.name)}}
+        {{forms.email_field(form.email)}}
+        {{forms.select_field(form.locale)}}
       </div>
       <div class="col-md-2 col-sm-3">
-        <fieldset>
-          <div class="form-group">
-            <label class="control-label">Avatar</label>
-            <div>
-              <img class="img-thumbnail" src="{{user_db.avatar_url}}&amp;s=170" alt="Gravatar photo of {{user_db.name}}">
-            </div>
-            <p class="help-block">
-              Change on
-              <a href="http://gravatar.com" target="_blank">Gravatar</a>
-            </p>
+        <div class="form-group">
+          <label class="control-label">Avatar</label>
+          <div>
+            <img class="img-thumbnail" src="{{user_db.avatar_url}}&amp;s=170" alt="Gravatar photo of {{user_db.name}}">
           </div>
-        </fieldset>
+          <p class="help-block">
+            {{_('Change on')}}
+            <a href="http://gravatar.com" target="_blank">Gravatar</a>
+          </p>
+        </div>
       </div>
     </div>
     <div class="row">

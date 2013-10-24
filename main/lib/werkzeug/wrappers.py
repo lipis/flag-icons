@@ -45,7 +45,7 @@ from werkzeug.datastructures import MultiDict, CombinedMultiDict, Headers, \
 from werkzeug._internal import _get_environ
 from werkzeug._compat import to_bytes, string_types, text_type, \
      integer_types, wsgi_decoding_dance, wsgi_get_bytes, \
-     to_unicode, to_native
+     to_unicode, to_native, BytesIO
 
 
 def _run_wsgi_app(*args):
@@ -335,7 +335,8 @@ class BaseRequest(object):
         """Method used internally to retrieve submitted data.  After calling
         this sets `form` and `files` on the request object to multi dicts
         filled with the incoming form data.  As a matter of fact the input
-        stream will be empty afterwards.
+        stream will be empty afterwards.  You can also call this method to
+        force the parsing of the form data.
 
         .. versionadded:: 0.8
         """
@@ -350,8 +351,8 @@ class BaseRequest(object):
             content_length = get_content_length(self.environ)
             mimetype, options = parse_options_header(content_type)
             parser = self.make_form_data_parser()
-            data = parser.parse(self.stream, mimetype,
-                                content_length, options)
+            data = parser.parse(self._get_stream_for_parsing(),
+                                mimetype, content_length, options)
         else:
             data = (self.stream, self.parameter_storage_class(),
                     self.parameter_storage_class())
@@ -360,6 +361,18 @@ class BaseRequest(object):
         # our cached_property non-data descriptor.
         d = self.__dict__
         d['stream'], d['form'], d['files'] = data
+
+    def _get_stream_for_parsing(self):
+        """This is the same as accessing :attr:`stream` with the difference
+        that if it finds cached data from calling :meth:`get_data` first it
+        will create a new stream out of the cached data.
+
+        .. versionadded:: 0.9.3
+        """
+        cached_data = getattr(self, '_cached_data', None)
+        if cached_data is not None:
+            return BytesIO(cached_data)
+        return self.stream
 
     def close(self):
         """Closes associated resources of this request object.  This
@@ -415,9 +428,15 @@ class BaseRequest(object):
         if self.disable_data_descriptor:
             raise AttributeError('data descriptor is disabled')
         # XXX: this should eventually be deprecated.
-        return self.get_data()
 
-    def get_data(self, cache=True, as_text=False):
+        # We trigger form data parsing first which means that the descriptor
+        # will not cache the data that would otherwise be .form or .files
+        # data.  This restores the behavior that was there in Werkzeug
+        # before 0.9.  New code should use :meth:`get_data` explicitly as
+        # this will make behavior explicit.
+        return self.get_data(parse_form_data=True)
+
+    def get_data(self, cache=True, as_text=False, parse_form_data=False):
         """This reads the buffered incoming data from the client into one
         bytestring.  By default this is cached but that behavior can be
         changed by setting `cache` to `False`.
@@ -426,6 +445,17 @@ class BaseRequest(object):
         content length first as a client could send dozens of megabytes or more
         to cause memory problems on the server.
 
+        Note that if the form data was already parsed this method will not
+        return anything as form data parsing does not cache the data like
+        this method does.  To implicitly invoke form data parsing function
+        set `parse_form_data` to `True`.  When this is done the return value
+        of this method will be an empty string if the form parser handles
+        the data.  This generally is not necessary as if the whole data is
+        cached (which is the default) the form parser will used the cached
+        data to parse the form data.  Please be generally aware of checking
+        the content length first in any case before calling this method
+        to avoid exhausting server memory.
+
         If `as_text` is set to `True` the return value will be a decoded
         unicode string.
 
@@ -433,6 +463,8 @@ class BaseRequest(object):
         """
         rv = getattr(self, '_cached_data', None)
         if rv is None:
+            if parse_form_data:
+                self._load_form_data()
             rv = self.stream.read()
             if cache:
                 self._cached_data = rv
@@ -647,9 +679,9 @@ class BaseResponse(object):
     Special note for `mimetype` and `content_type`:  For most mime types
     `mimetype` and `content_type` work the same, the difference affects
     only 'text' mimetypes.  If the mimetype passed with `mimetype` is a
-    mimetype starting with `text/` it becomes a charset parameter defined
-    with the charset of the response object.  In contrast the
-    `content_type` parameter is always added as header unmodified.
+    mimetype starting with `text/`, the charset parameter of the response
+    object is appended to it.  In contrast the `content_type` parameter is
+    always added as header unmodified.
 
     .. versionchanged:: 0.5
        the `direct_passthrough` parameter was added.
@@ -982,7 +1014,7 @@ class BaseResponse(object):
         """
         try:
             len(self.response)
-        except TypeError:
+        except (TypeError, AttributeError):
             return True
         return False
 

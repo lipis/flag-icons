@@ -1,6 +1,10 @@
 # extends 'base.html'
 # import 'macro/utils.html' as utils
 
+# block head
+  {{utils.prefetch_link(more_url)}}
+# endblock
+
 # block content
   <div class="page-header">
     <h1>{{title}}</h1>
@@ -50,6 +54,7 @@
             <th class="col-xs-3 hidden-xs">{{utils.order_link(_('Email'), 'user_list', 'email')}}</th>
             <th class="col-xs-2">{{utils.order_link(_('Created'), 'user_list', 'created')}}</th>
             <th class="col-xs-2 hidden-xs">{{utils.order_link(_('Modified'), 'user_list', 'modified')}}</th>
+            <th class="hidden-sm hidden-xs">{{_('Auth')}}</th>
           </tr>
         </thead>
         <tbody>
@@ -59,30 +64,28 @@
                 <img src="{{user_db.avatar_url}}&amp;s=36" width="18" alt="Gravatar for {{user_db.name}}">
                 {{user_db.name}}
                 # if user_db.admin
-                  <i class="icon-cog" title="Administrator"></i>
+                  <i class="fa fa-cog" title="Administrator"></i>
                 # endif
               </td>
               <td class="hidden-xs">{{user_db.username}}</td>
               <td class="hidden-xs">{{user_db.email}}</td>
               <td>
-                <time datetime="{{user_db.created.isoformat()}}">
+                <time datetime="{{user_db.created.__str__()[:-3]}}">
                   {{user_db.created.strftime('%Y-%m-%d')}}
                 </time>
               </td>
-              <td class="hidden-xs">
-                <time datetime="{{user_db.modified.isoformat()}}">
+              <td class="hidden-sm hidden-xs">
+                <time datetime="{{user_db.modified.__str__()[:-3]}}">
                   {{user_db.modified.strftime('%Y-%m-%d')}}
                 </time>
               </td>
+              <td class="hidden-sm hidden-xs text-nowrap">{{utils.auth_icons(user_db.auth_ids)}}</td>
             </tr>
           # endfor
         </tbody>
       </table>
     </div>
   </div>
-  # if more_url
-    <ul class="pager">
-      <li><a href="{{more_url}}">{{_('Next Page')}}</a></li>
-    </ul>
-  # endif
+
+  {{utils.next_link(more_url)}}
 # endblock

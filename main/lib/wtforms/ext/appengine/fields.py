@@ -113,14 +113,9 @@ class KeyPropertyField(fields.SelectFieldBase):
     widget = widgets.Select()
 
     def __init__(self, label=None, validators=None, reference_class=None,
-                 label_attr=None, get_label=None, allow_blank=False,
-                 blank_text=u'', **kwargs):
-        super(KeyPropertyField, self).__init__(label, validators,
-                                                     **kwargs)
-        if label_attr is not None:
-            warnings.warn('label_attr= will be removed in WTForms 1.1, use get_label= instead.', DeprecationWarning)
-            self.get_label = operator.attrgetter(label_attr)
-        elif get_label is None:
+                 get_label=None, allow_blank=False, blank_text='', **kwargs):
+        super(KeyPropertyField, self).__init__(label, validators, **kwargs)
+        if get_label is None:
             self.get_label = lambda x: x
         elif isinstance(get_label, basestring):
             self.get_label = operator.attrgetter(get_label)
@@ -149,7 +144,7 @@ class KeyPropertyField(fields.SelectFieldBase):
 
     def iter_choices(self):
         if self.allow_blank:
-            yield (u'__None', self.blank_text, self.data is None)
+            yield ('__None', self.blank_text, self.data is None)
 
         for obj in self.query:
             key = str(obj.key.id())
@@ -170,9 +165,9 @@ class KeyPropertyField(fields.SelectFieldBase):
                 if self.data.key == obj.key:
                     break
             else:
-                raise ValueError(self.gettext(u'Not a valid choice'))
+                raise ValueError(self.gettext('Not a valid choice'))
         elif not self.allow_blank:
-            raise ValueError(self.gettext(u'Not a valid choice'))
+            raise ValueError(self.gettext('Not a valid choice'))
 
 
 class StringListPropertyField(fields.TextAreaField):
@@ -203,14 +198,14 @@ class IntegerListPropertyField(fields.TextAreaField):
         if self.raw_data:
             return self.raw_data[0]
         else:
-            return self.data and unicode("\n".join(self.data)) or u''
+            return text_type('\n'.join(self.data)) if self.data else ''
 
     def process_formdata(self, valuelist):
         if valuelist:
             try:
                 self.data = [int(value) for value in valuelist[0].splitlines()]
             except ValueError:
-                raise ValueError(self.gettext(u'Not a valid integer list'))
+                raise ValueError(self.gettext('Not a valid integer list'))
 
 
 class GeoPtPropertyField(fields.TextField):
