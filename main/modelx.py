@@ -21,6 +21,6 @@ class ConfigX(object):
 class UserX(object):
   @property
   def avatar_url(self):
-    return 'http://www.gravatar.com/avatar/%s?d=identicon&r=x' % (
+    return '//gravatar.com/avatar/%s?d=identicon&r=x' % (
         hashlib.md5((self.email or self.name).encode('utf-8')).hexdigest().lower()
       )
