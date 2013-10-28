@@ -5,7 +5,7 @@
 # block content
   <div class="page-header">
     <h1>
-      <small class="pull-right" title="Connected Accounts">{{utils.auth_icons(user_db.auth_ids)}}</small>
+      <small class="pull-right" title="{{_('Connected Accounts')}}">{{utils.auth_icons(user_db.auth_ids)}}</small>
       {{user_db.name}}
     </h1>
   </div>
@@ -29,7 +29,7 @@
           </div>
           <p class="help-block">
             {{_('Change on')}}
-            <a href="http://gravatar.com" target="_blank">Gravatar</a>
+            <a href="//gravatar.com" target="_blank">Gravatar</a>
           </p>
         </div>
       </div>
@@ -37,7 +37,7 @@
     <div class="row">
       <div class="col-md-6 col-sm-9">
         <div class="controls">
-          <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Updating Profile..">
+          <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="{{_('Updating Profile..')}}">
             {{_('Update Profile')}}
           </button>
         </div>
