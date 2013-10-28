@@ -124,7 +124,6 @@ def signin():
   google_signin_url = flask.url_for('signin_google', next=next_url)
   twitter_signin_url = flask.url_for('signin_twitter', next=next_url)
   facebook_signin_url = flask.url_for('signin_facebook', next=next_url)
-  github_signin_url = flask.url_for('signin_github', next=next_url)
 
   return flask.render_template(
       'signin.html',
@@ -133,7 +132,6 @@ def signin():
       google_signin_url=google_signin_url,
       twitter_signin_url=twitter_signin_url,
       facebook_signin_url=facebook_signin_url,
-      github_signin_url=github_signin_url,
       next_url=next_url,
     )
 
@@ -305,62 +303,6 @@ def retrieve_user_from_facebook(response):
       response['name'],
       response['username'] if 'username' in response else response['id'],
       response['email'],
-    )
-
-
-################################################################################
-# GitHub
-################################################################################
-github_oauth = oauth.OAuth()
-
-github = github_oauth.remote_app(
-    'github',
-    base_url='https://api.github.com/',
-    request_token_url=None,
-    access_token_url='https://github.com/login/oauth/access_token',
-    authorize_url='https://github.com/login/oauth/authorize',
-    consumer_key=config.CONFIG_DB.github_client_id,
-    consumer_secret=config.CONFIG_DB.github_client_secret,
-    request_token_params={'scope': 'user:email'}
-  )
-
-
-@app.route('/_s/callback/github/oauth-authorized/')
-@github.authorized_handler
-def github_authorized(resp):
-  if resp is None:
-    return 'Access denied: error=%s' % flask.request.args['error']
-  flask.session['oauth_token'] = (resp['access_token'], '')
-  me = github.get('user')
-  user_db = retrieve_user_from_github(me.data)
-  return signin_user_db(user_db)
-
-
-@github.tokengetter
-def get_github_oauth_token():
-  return flask.session.get('oauth_token')
-
-
-@app.route('/signin/github/')
-def signin_github():
-  return github.authorize(
-    callback=flask.url_for('github_authorized',
-      next=util.get_next_url(),
-      _external=True
-    )
-  )
-
-
-def retrieve_user_from_github(response):
-  auth_id = 'github_%s' % str(response['id'])
-  user_db = model.User.retrieve_one_by('auth_ids', auth_id)
-  if user_db:
-    return user_db
-  return create_user_db(
-      auth_id,
-      response['name'] or response['login'],
-      response['login'],
-      response['email'] or '',
     )
 
 

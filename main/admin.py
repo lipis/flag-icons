@@ -20,8 +20,6 @@ class ConfigUpdateForm(wtf.Form):
   facebook_app_secret = wtf.TextField('Facebook App Secret', filters=[util.strip_filter])
   feedback_email = wtf.TextField('Feedback Email', [wtf.validators.optional(), wtf.validators.email()], filters=[util.strip_filter])
   flask_secret_key = wtf.TextField('Flask Secret Key', [wtf.validators.required()], filters=[util.strip_filter])
-  github_client_id = wtf.TextField('GitHub Client ID', filters=[util.strip_filter])
-  github_client_secret = wtf.TextField('GitHub Client Secret', filters=[util.strip_filter])
   twitter_consumer_key = wtf.TextField('Twitter Consumer Key', filters=[util.strip_filter])
   twitter_consumer_secret = wtf.TextField('Twitter Consumer Secret', filters=[util.strip_filter])
 
