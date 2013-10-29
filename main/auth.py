@@ -4,6 +4,7 @@ from google.appengine.ext import ndb
 from google.appengine.api import users
 
 import functools
+import re
 
 import flask
 from flaskext import login
@@ -310,8 +311,7 @@ def retrieve_user_from_facebook(response):
 # Helpers
 ################################################################################
 def create_user_db(auth_id, name, username, email='', **params):
-  username = username.split('@')[0].lower()
-  username = username.replace(' ', '.').replace('_', '.').replace('-', '.')
+  username = re.sub(r'_+|-+|\s+', '.', username.split('@')[0].lower().strip())
   new_username = username
   n = 1
   while model.User.retrieve_one_by('username', new_username) is not None:
