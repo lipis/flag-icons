@@ -17,7 +17,7 @@
           <label class="control-label" for="username">Username</label>
           <input id="username" class="form-control" name="username" type="text" value="{{user_db.username}}" readonly="readonly">
         </div>
-        {{forms.text_field(form.name)}}
+        {{forms.text_field(form.name, autofocus=True)}}
         {{forms.email_field(form.email)}}
       </div>
       <div class="col-md-2 col-sm-3">
