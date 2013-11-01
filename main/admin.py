@@ -46,8 +46,8 @@ def admin_config_update():
   else:
     app_id = app_identity.get_application_id()
     version_id = config.CURRENT_VERSION_ID
-    instances_url = "https://appengine.google.com/instances?"\
-                    "app_id=%s&version_id=%s" % (app_id, version_id)
+    instances_url = 'https://appengine.google.com/instances?'\
+                    'app_id=%s&version_id=%s' % (app_id, version_id)
 
   return flask.render_template(
       'admin/config_update.html',
