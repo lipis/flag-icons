@@ -48,7 +48,7 @@ class ProfileUpdateForm(wtf.Form):
     )
   email = wtf.TextField('Email',
       [wtf.validators.optional(), wtf.validators.email()],
-      filters=[util.strip_filter],
+      filters=[util.email_filter],
     )
 
 
