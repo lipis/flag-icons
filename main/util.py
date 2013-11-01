@@ -197,3 +197,4 @@ def slugify(value):
 # Lambdas
 ################################################################################
 strip_filter = lambda x: x.strip() if x else ''
+email_filter = lambda x: x.lower().strip() if x else ''
