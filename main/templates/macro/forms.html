@@ -12,55 +12,55 @@
 # endmacro
 
 
-# macro input_field(field, type='text', placeholder='', autocomplete=True)
+# macro input_field(field, type='text')
   <div class="form-group {{'has-error' if field.errors else ''}}">
     {{field.label(class='control-label')}}
-    {{field(class='form-control', type=type, autocomplete='on' if autocomplete else 'off', placeholder=placeholder)}}
+    {{field(class='form-control', type=type, **kwargs)}}
     {{field_errors(field)}}
     {{field_description(field)}}
   </div>
 # endmacro
 
 
-# macro text_field(field, placeholder='', autocomplete=True)
-  {{input_field(field, placeholder=placeholder, autocomplete=autocomplete)}}
+# macro text_field(field)
+  {{input_field(field, **kwargs)}}
 # endmacro
 
 
 # macro password_field(field)
-  {{input_field(field, type='password', autocomplete=False)}}
+  {{input_field(field, type='password', **kwargs)}}
 # endmacro
 
 
-# macro number_field(field, placeholder='', autocomplete=True)
-  {{input_field(field, type='number', placeholder=placeholder, autocomplete=autocomplete)}}
+# macro number_field(field)
+  {{input_field(field, type='number', **kwargs)}}
 # endmacro
 
 
-# macro date_field(field, placeholder='', autocomplete=True)
-  {{input_field(field, type='date', placeholder=placeholder, autocomplete=autocomplete)}}
+# macro date_field(field)
+  {{input_field(field, type='date', **kwargs)}}
 # endmacro
 
 
-# macro email_field(field, placeholder='', autocomplete=True)
-  {{input_field(field, type='email', placeholder=placeholder, autocomplete=autocomplete)}}
+# macro email_field(field)
+  {{input_field(field, type='email', **kwargs)}}
 # endmacro
 
 
 # macro select_field(field)
-  {{input_field(field)}}
+  {{input_field(field, **kwargs)}}
 # endmacro
 
 
 # macro hidden_field(field)
-  {{field(type='hidden')}}
+  {{field(type='hidden', **kwargs)}}
 # endmacro
 
 
-# macro textarea_field(field, placeholder='', rows=4)
+# macro textarea_field(field, rows=4)
   <div class="form-group {{'has-error' if field.errors else ''}}">
     {{field.label(class='control-label')}}
-    {{field(class='form-control', rows=rows, placeholder=placeholder)}}
+    {{field(class='form-control', rows=rows, **kwargs)}}
     {{field_errors(field)}}
     {{field_description(field)}}
   </div>
@@ -70,7 +70,7 @@
 # macro checkbox_field(field)
   <div class="checkbox {{'has-error' if field.errors else ''}}">
     <label>
-      {{field()}} {{field.label.text}}
+      {{field(**kwargs)}} {{field.label.text}}
     </label>
     {{field_errors(field)}}
     {{field_description(field)}}
