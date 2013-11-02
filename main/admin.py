@@ -41,13 +41,12 @@ def admin_config_update():
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_db(config_db)
 
-  if config.DEBUG:
-    instances_url = ''
-  else:
-    app_id = app_identity.get_application_id()
-    version_id = config.CURRENT_VERSION_ID
-    instances_url = 'https://appengine.google.com/instances?'\
-                    'app_id=%s&version_id=%s' % (app_id, version_id)
+  instances_url = None
+  if config.PRODUCTION:
+    instances_url = 'https://appengine.google.com/instances?app_id=%s&version_id=%s' % (
+        app_identity.get_application_id(),
+        config.CURRENT_VERSION_ID,
+      )
 
   return flask.render_template(
       'admin/config_update.html',
@@ -55,6 +54,6 @@ def admin_config_update():
       html_class='admin-config',
       form=form,
       config_db=config_db,
-      has_json=True,
       instances_url=instances_url,
+      has_json=True,
     )
