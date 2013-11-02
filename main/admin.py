@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from google.appengine.api import app_identity
 import flask
 from flaskext import wtf
 
@@ -40,6 +41,14 @@ def admin_config_update():
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_db(config_db)
 
+  if config.DEBUG:
+    instances_url = ''
+  else:
+    app_id = app_identity.get_application_id()
+    version_id = config.CURRENT_VERSION_ID
+    instances_url = 'https://appengine.google.com/instances?'\
+                    'app_id=%s&version_id=%s' % (app_id, version_id)
+
   return flask.render_template(
       'admin/config_update.html',
       title='Admin Config',
@@ -47,4 +56,5 @@ def admin_config_update():
       form=form,
       config_db=config_db,
       has_json=True,
+      instances_url=instances_url,
     )
