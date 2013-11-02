@@ -43,7 +43,8 @@ def admin_config_update():
 
   instances_url = None
   if config.PRODUCTION:
-    instances_url = 'https://appengine.google.com/instances?app_id=%s&version_id=%s' % (
+    instances_url = '%s?app_id=%s&version_id=%s' % (
+        'https://appengine.google.com/instances',
         app_identity.get_application_id(),
         config.CURRENT_VERSION_ID,
       )
