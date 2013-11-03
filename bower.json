@@ -1,8 +1,13 @@
 {
   "name": "flag-icon-css",
-  "version": "0.3.0",
-  "main": ["./css/flag-icon.css", "./flags/*"],
+  "version": "0.4.0",
   "ignore": [
-      "**/.*"
+      "**/.*",
+      "assets",
+      "bower.json",
+      "Gruntfile.coffee",
+      "index.html",
+      "LICENCE",
+      "package.json"
   ]
 }
