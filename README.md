@@ -7,8 +7,8 @@ CSS for vector based country flags. See the
 Usage
 -----
 
-For using the flags inline with text add the classes `.flag-icon` and `.flag-icon-xx`
-(where `xx` is the
+For using the flags inline with text add the classes `.flag-icon` and 
+`.flag-icon-xx` (where `xx` is the
 [ISO 3166-1-alpha-2 code](http://www.iso.org/iso/country_names_and_code_elements) 
 of a country) to an empty `<span>`. If you want to have a squared version flag
 then add the class `flag-icon-squared` as well. Example:
@@ -25,7 +25,8 @@ correct background with the following CSS properties:
     background-repeat: no-repeat;
 
 Which means that the flag is just going to appear in the middle of an element, so
-you will have to set manually the correct size of 3x4 ratio or if it's squared add also the `flag-icon-squared` class.
+you will have to set manually the correct size of 4 by 3 ratio or if it's squared 
+add also the `flag-icon-squared` class.
 
 
 Development
