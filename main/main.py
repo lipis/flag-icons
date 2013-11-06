@@ -23,8 +23,8 @@ import user
 
 
 if config.DEBUG:
-    from werkzeug.debug import DebuggedApplication
-    app.wsgi_app = DebuggedApplication(app.wsgi_app, evalex=True)
+  from werkzeug.debug import DebuggedApplication
+  app.wsgi_app = DebuggedApplication(app.wsgi_app, evalex=True)
 
 
 ###############################################################################
