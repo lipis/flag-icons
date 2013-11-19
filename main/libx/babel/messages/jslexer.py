@@ -1,24 +1,18 @@
 # -*- coding: utf-8 -*-
-#
-# Copyright (C) 2008 Edgewall Software
-# All rights reserved.
-#
-# This software is licensed as described in the file COPYING, which
-# you should have received as part of this distribution. The terms
-# are also available at http://babel.edgewall.org/wiki/License.
-#
-# This software consists of voluntary contributions made by many
-# individuals. For the exact contribution history, see the revision
-# history and logs, available at http://babel.edgewall.org/log/.
+"""
+    babel.messages.jslexer
+    ~~~~~~~~~~~~~~~~~~~~~~
 
-"""A simple JavaScript 1.5 lexer which is used for the JavaScript
-extractor.
+    A simple JavaScript 1.5 lexer which is used for the JavaScript
+    extractor.
+
+    :copyright: (c) 2013 by the Babel Team.
+    :license: BSD, see LICENSE for more details.
 """
 
+from operator import itemgetter
 import re
-
-from babel.util import itemgetter
-
+from babel._compat import unichr
 
 operators = [
     '+', '-', '*', '%', '!=', '==', '<', '>', '<=', '>=', '=',
@@ -26,7 +20,7 @@ operators = [
     '>>>=', '&', '&=', '|', '|=', '&&', '||', '^', '^=', '(', ')',
     '[', ']', '{', '}', '!', '--', '++', '~', ',', ';', '.', ':'
 ]
-operators.sort(lambda a, b: cmp(-len(a), -len(b)))
+operators.sort(key=lambda a: -len(a))
 
 escapes = {'b': '\b', 'f': '\f', 'n': '\n', 'r': '\r', 't': '\t'}
 
@@ -80,8 +74,6 @@ def indicates_division(token):
 def unquote_string(string):
     """Unquote a string with JavaScript rules.  The string has to start with
     string delimiters (``'`` or ``"``.)
-
-    :return: a string
     """
     assert string and string[0] == string[-1] and string[0] in '"\'', \
         'string provided is not properly delimited'
@@ -136,9 +128,7 @@ def unquote_string(string):
 
 
 def tokenize(source):
-    """Tokenize a JavaScript source.
-
-    :return: generator of `Token`\s
+    """Tokenize a JavaScript source.  Returns a generator of tokens.
     """
     may_divide = False
     pos = 0

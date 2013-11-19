@@ -1,34 +1,22 @@
 # -*- coding: utf-8 -*-
-#
-# Copyright (C) 2007 Edgewall Software
-# All rights reserved.
-#
-# This software is licensed as described in the file COPYING, which
-# you should have received as part of this distribution. The terms
-# are also available at http://babel.edgewall.org/wiki/License.
-#
-# This software consists of voluntary contributions made by many
-# individuals. For the exact contribution history, see the revision
-# history and logs, available at http://babel.edgewall.org/log/.
+"""
+    babel.util
+    ~~~~~~~~~~
 
-"""Various utility classes and functions."""
+    Various utility classes and functions.
+
+    :copyright: (c) 2013 by the Babel Team.
+    :license: BSD, see LICENSE for more details.
+"""
 
 import codecs
 from datetime import timedelta, tzinfo
 import os
 import re
-try:
-    set = set
-except NameError:
-    from sets import Set as set
 import textwrap
-import time
-from itertools import izip, imap
-missing = object()
+from babel._compat import izip, imap
 
-__all__ = ['distinct', 'pathmatch', 'relpath', 'wraptext', 'odict', 'UTC',
-           'LOCALTZ']
-__docformat__ = 'restructuredtext en'
+missing = object()
 
 
 def distinct(iterable):
@@ -43,8 +31,6 @@ def distinct(iterable):
     ['f', 'o', 'b', 'a', 'r']
 
     :param iterable: the iterable collection providing the data
-    :return: the distinct items in the collection
-    :rtype: ``iterator``
     """
     seen = set()
     for item in iter(iterable):
@@ -54,7 +40,7 @@ def distinct(iterable):
 
 # Regexp to match python magic encoding line
 PYTHON_MAGIC_COMMENT_re = re.compile(
-    r'[ \t\f]* \# .* coding[=:][ \t]*([-\w.]+)', re.VERBOSE)
+    br'[ \t\f]* \# .* coding[=:][ \t]*([-\w.]+)', re.VERBOSE)
 def parse_encoding(fp):
     """Deduce the encoding of a source file from magic comment.
 
@@ -78,7 +64,7 @@ def parse_encoding(fp):
         if not m:
             try:
                 import parser
-                parser.suite(line1)
+                parser.suite(line1.decode('latin-1'))
             except (ImportError, SyntaxError):
                 # Either it's a real syntax error, in which case the source is
                 # not valid python source, or line2 is a continuation of line1,
@@ -96,7 +82,7 @@ def parse_encoding(fp):
                     "byte-order-mark and a magic encoding comment")
             return 'utf_8'
         elif m:
-            return m.group(1)
+            return m.group(1).decode('latin-1')
         else:
             return None
     finally:
@@ -104,33 +90,31 @@ def parse_encoding(fp):
 
 def pathmatch(pattern, filename):
     """Extended pathname pattern matching.
-    
+
     This function is similar to what is provided by the ``fnmatch`` module in
     the Python standard library, but:
-    
+
      * can match complete (relative or absolute) path names, and not just file
        names, and
      * also supports a convenience pattern ("**") to match files at any
        directory level.
-    
+
     Examples:
-    
+
     >>> pathmatch('**.py', 'bar.py')
     True
     >>> pathmatch('**.py', 'foo/bar/baz.py')
     True
     >>> pathmatch('**.py', 'templates/index.html')
     False
-    
+
     >>> pathmatch('**/templates/*.html', 'templates/index.html')
     True
     >>> pathmatch('**/templates/*.html', 'templates/foo/bar.html')
     False
-    
+
     :param pattern: the glob pattern
     :param filename: the path name of the file to match against
-    :return: `True` if the path name matches the pattern, `False` otherwise
-    :rtype: `bool`
     """
     symbols = {
         '?':   '[^/]',
@@ -160,15 +144,13 @@ class TextWrapper(textwrap.TextWrapper):
 def wraptext(text, width=70, initial_indent='', subsequent_indent=''):
     """Simple wrapper around the ``textwrap.wrap`` function in the standard
     library. This version does not wrap lines on hyphens in words.
-    
+
     :param text: the text to wrap
     :param width: the maximum line width
     :param initial_indent: string that will be prepended to the first line of
                            wrapped output
     :param subsequent_indent: string that will be prepended to all lines save
                               the first of wrapped output
-    :return: a list of lines
-    :rtype: `list`
     """
     wrapper = TextWrapper(width=width, initial_indent=initial_indent,
                           subsequent_indent=subsequent_indent,
@@ -178,12 +160,12 @@ def wraptext(text, width=70, initial_indent='', subsequent_indent=''):
 
 class odict(dict):
     """Ordered dict implementation.
-    
+
     :see: http://aspn.activestate.com/ASPN/Cookbook/Python/Recipe/107747
     """
     def __init__(self, data=None):
         dict.__init__(self, data or {})
-        self._keys = dict.keys(self)
+        self._keys = list(dict.keys(self))
 
     def __delitem__(self, key):
         dict.__delitem__(self, key)
@@ -249,16 +231,13 @@ try:
 except AttributeError:
     def relpath(path, start='.'):
         """Compute the relative path to one path from another.
-        
+
         >>> relpath('foo/bar.txt', '').replace(os.sep, '/')
         'foo/bar.txt'
         >>> relpath('foo/bar.txt', 'foo').replace(os.sep, '/')
         'bar.txt'
         >>> relpath('foo/bar.txt', 'baz').replace(os.sep, '/')
         '../foo/bar.txt'
-        
-        :return: the relative path
-        :rtype: `basestring`
         """
         start_list = os.path.abspath(start).split(os.sep)
         path_list = os.path.abspath(path).split(os.sep)
@@ -268,30 +247,6 @@ except AttributeError:
 
         rel_list = [os.path.pardir] * (len(start_list) - i) + path_list[i:]
         return os.path.join(*rel_list)
-
-try:
-    from operator import attrgetter, itemgetter
-except ImportError:
-    def itemgetter(name):
-        def _getitem(obj):
-            return obj[name]
-        return _getitem
-
-try:
-    ''.rsplit
-    def rsplit(a_string, sep=None, maxsplit=None):
-        return a_string.rsplit(sep, maxsplit)
-except AttributeError:
-    def rsplit(a_string, sep=None, maxsplit=None):
-        parts = a_string.split(sep)
-        if maxsplit is None or len(parts) <= maxsplit:
-            return parts
-        maxsplit_index = len(parts) - maxsplit
-        non_splitted_part = sep.join(parts[:maxsplit_index])
-        splitted = parts[maxsplit_index:]
-        return [non_splitted_part] + splitted
-
-ZERO = timedelta(0)
 
 
 class FixedOffsetTimezone(tzinfo):
@@ -319,52 +274,16 @@ class FixedOffsetTimezone(tzinfo):
         return ZERO
 
 
-try:
-    from pytz import UTC
-except ImportError:
-    UTC = FixedOffsetTimezone(0, 'UTC')
-    """`tzinfo` object for UTC (Universal Time).
-    
-    :type: `tzinfo`
-    """
+import pytz as _pytz
+from babel import localtime
 
-STDOFFSET = timedelta(seconds = -time.timezone)
-if time.daylight:
-    DSTOFFSET = timedelta(seconds = -time.altzone)
-else:
-    DSTOFFSET = STDOFFSET
+# Export the localtime functionality here because that's
+# where it was in the past.
+UTC = _pytz.utc
+LOCALTZ = localtime.LOCALTZ
+get_localzone = localtime.get_localzone
 
-DSTDIFF = DSTOFFSET - STDOFFSET
-
-
-class LocalTimezone(tzinfo):
-
-    def utcoffset(self, dt):
-        if self._isdst(dt):
-            return DSTOFFSET
-        else:
-            return STDOFFSET
-
-    def dst(self, dt):
-        if self._isdst(dt):
-            return DSTDIFF
-        else:
-            return ZERO
-
-    def tzname(self, dt):
-        return time.tzname[self._isdst(dt)]
-
-    def _isdst(self, dt):
-        tt = (dt.year, dt.month, dt.day,
-              dt.hour, dt.minute, dt.second,
-              dt.weekday(), 0, -1)
-        stamp = time.mktime(tt)
-        tt = time.localtime(stamp)
-        return tt.tm_isdst > 0
-
-
-LOCALTZ = LocalTimezone()
-"""`tzinfo` object for local time-zone.
-
-:type: `tzinfo`
-"""
+STDOFFSET = localtime.STDOFFSET
+DSTOFFSET = localtime.DSTOFFSET
+DSTDIFF = localtime.DSTDIFF
+ZERO = localtime.ZERO

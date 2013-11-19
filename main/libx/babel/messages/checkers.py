@@ -1,24 +1,19 @@
 # -*- coding: utf-8 -*-
-#
-# Copyright (C) 2007 Edgewall Software
-# All rights reserved.
-#
-# This software is licensed as described in the file COPYING, which
-# you should have received as part of this distribution. The terms
-# are also available at http://babel.edgewall.org/wiki/License.
-#
-# This software consists of voluntary contributions made by many
-# individuals. For the exact contribution history, see the revision
-# history and logs, available at http://babel.edgewall.org/log/.
+"""
+    babel.messages.checkers
+    ~~~~~~~~~~~~~~~~~~~~~~~
 
-"""Various routines that help with validation of translations.
+    Various routines that help with validation of translations.
 
-:since: version 0.9
+    :since: version 0.9
+
+    :copyright: (c) 2013 by the Babel Team.
+    :license: BSD, see LICENSE for more details.
 """
 
-from itertools import izip
 from babel.messages.catalog import TranslationError, PYTHON_FORMAT
-from babel.util import set
+from babel._compat import string_types, izip
+
 
 #: list of format chars that are compatible to each other
 _string_format_compatibilities = [
@@ -31,7 +26,7 @@ _string_format_compatibilities = [
 def num_plurals(catalog, message):
     """Verify the number of plurals in the translation."""
     if not message.pluralizable:
-        if not isinstance(message.string, basestring):
+        if not isinstance(message.string, string_types):
             raise TranslationError("Found plural forms for non-pluralizable "
                                    "message")
         return
@@ -93,7 +88,6 @@ def _validate_format(format, alternative):
     :param format: The original format string
     :param alternative: The alternative format string that should be checked
                         against format
-    :return: None on success
     :raises TranslationError: on formatting errors
     """
 
@@ -161,13 +155,18 @@ def _validate_format(format, alternative):
 
 
 def _find_checkers():
+    checkers = []
     try:
         from pkg_resources import working_set
     except ImportError:
+        pass
+    else:
+        for entry_point in working_set.iter_entry_points('babel.checkers'):
+            checkers.append(entry_point.load())
+    if len(checkers) == 0:
+        # if pkg_resources is not available or no usable egg-info was found
+        # (see #230), just resort to hard-coded checkers
         return [num_plurals, python_format]
-    checkers = []
-    for entry_point in working_set.iter_entry_points('babel.checkers'):
-        checkers.append(entry_point.load())
     return checkers
 
 
