@@ -7,25 +7,24 @@
 .thumbnail {
   .img-thumbnail();
   display: block; // Override the inline-block from `.img-thumbnail`
+  margin-bottom: @line-height-computed;
 
   > img {
     .img-responsive();
+    margin-left: auto;
+    margin-right: auto;
   }
-}
 
+  // Add a hover state for linked versions only
+  a&:hover,
+  a&:focus,
+  a&.active {
+    border-color: @link-color;
+  }
 
-// Add a hover state for linked versions only
-a.thumbnail:hover,
-a.thumbnail:focus {
-  border-color: @link-color;
-}
-
-// Images and captions
-.thumbnail > img {
-  margin-left: auto;
-  margin-right: auto;
-}
-.thumbnail .caption {
-  padding: @thumbnail-caption-padding;
-  color: @thumbnail-caption-color;
+  // Image captions
+  .caption {
+    padding: @thumbnail-caption-padding;
+    color: @thumbnail-caption-color;
+  }
 }

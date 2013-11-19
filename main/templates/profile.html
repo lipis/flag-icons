@@ -17,7 +17,7 @@
           <label class="control-label" for="username">{{_('Username')}}</label>
           <input id="username" class="form-control" name="username" type="text" value="{{user_db.username}}" readonly="readonly">
         </div>
-        {{forms.text_field(form.name)}}
+        {{forms.text_field(form.name, autofocus=True)}}
         {{forms.email_field(form.email)}}
         {{forms.select_field(form.locale)}}
       </div>
@@ -25,7 +25,7 @@
         <div class="form-group">
           <label class="control-label">Avatar</label>
           <div>
-            <img class="img-thumbnail" src="{{user_db.avatar_url}}&amp;s=170" alt="Gravatar photo of {{user_db.name}}">
+            <img class="img-thumbnail" src="{{user_db.avatar_url_size(170)}}" alt="Gravatar photo of {{user_db.name}}">
           </div>
           <p class="help-block">
             {{_('Change on')}}
