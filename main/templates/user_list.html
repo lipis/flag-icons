@@ -16,11 +16,11 @@
         <div class="panel-body">
           <div class="btn-group">
             <button type="button" class="btn btn-sm dropdown-toggle btn-success" data-toggle="dropdown">
-              Limit - {{request.args.get('limit') or 'Default'}}
+              {{_('Limit')}} - {{request.args.get('limit') or _('Default')}}
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-              <li><a href="{{url_for('user_list')}}">{{config.DEFAULT_DB_LIMIT}} (Default)</a></li>
+              <li><a href="{{url_for('user_list')}}">{{config.DEFAULT_DB_LIMIT}} ({{_('Default')}})</a></li>
               <li class="divider"></li>
               <li><a href="{{url_for('user_list', limit=2)}}">2</a></li>
               <li><a href="{{url_for('user_list', limit=4)}}">4</a></li>
@@ -30,14 +30,14 @@
           </div>
           <div class="btn-group">
             <button type="button" class="btn btn-sm dropdown-toggle btn-danger" data-toggle="dropdown">
-              Admins - {{request.args.get('admin') or 'None'}}
+              {{_('Admins')}} - {{request.args.get('admin') or _('None')}}
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-              <li><a href="{{url_for('user_list')}}">None</a></li>
+              <li><a href="{{url_for('user_list')}}">{{_('None')}}</a></li>
               <li class="divider"></li>
-              <li><a href="{{url_for('user_list', admin='true')}}">Show Admins</a></li>
-              <li><a href="{{url_for('user_list', admin='false')}}">Hide Admins</a></li>
+              <li><a href="{{url_for('user_list', admin='true')}}">{{_('Show Admins')}}</a></li>
+              <li><a href="{{url_for('user_list', admin='false')}}">{{_('Hide Admins')}}</a></li>
             </ul>
           </div>
         </div>
@@ -54,17 +54,17 @@
             <th class="col-xs-3 hidden-xs">{{utils.order_link(_('Email'), 'user_list', 'email')}}</th>
             <th class="col-xs-2">{{utils.order_link(_('Created'), 'user_list', 'created')}}</th>
             <th class="col-xs-2 hidden-xs">{{utils.order_link(_('Modified'), 'user_list', 'modified')}}</th>
-            <th class="hidden-sm hidden-xs">{{_('Auth')}}</th>
+            <th class="hidden-sm hidden-xs">{{_('Accounts')}}</th>
           </tr>
         </thead>
         <tbody>
           # for user_db in user_dbs
             <tr>
               <td>
-                <img src="{{user_db.avatar_url}}&amp;s=36" width="18" alt="Gravatar for {{user_db.name}}">
+                <img src="{{user_db.avatar_url}}&amp;s=36" width="18" alt="{{_('Gravatar for')}} {{user_db.name}}">
                 {{user_db.name}}
                 # if user_db.admin
-                  <i class="fa fa-cog" title="Administrator"></i>
+                  <i class="fa fa-cog" title="{{_('Administrator')}}"></i>
                 # endif
               </td>
               <td class="hidden-xs">{{user_db.username}}</td>
