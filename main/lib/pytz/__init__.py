@@ -9,11 +9,9 @@ on how to use these modules.
 '''
 
 # The Olson database is updated several times a year.
-OLSON_VERSION = '2012h'
-VERSION = OLSON_VERSION
-# Version format for a patch release - only one so far.
-#VERSION = OLSON_VERSION + '.2'
-__version__ = OLSON_VERSION
+OLSON_VERSION = '2013h'
+VERSION = '2013.8'  # Switching to pip compatible version numbering.
+__version__ = VERSION
 
 OLSEN_VERSION = OLSON_VERSION # Old releases had this misspelling
 
@@ -26,10 +24,6 @@ __all__ = [
     ]
 
 import sys, datetime, os.path, gettext
-try:
-    from UserDict import DictMixin
-except ImportError:
-    from collections import Mapping as DictMixin
 
 try:
     from pkg_resources import resource_stream
@@ -40,6 +34,7 @@ from pytz.exceptions import AmbiguousTimeError
 from pytz.exceptions import InvalidTimeError
 from pytz.exceptions import NonExistentTimeError
 from pytz.exceptions import UnknownTimeZoneError
+from pytz.lazy import LazyDict, LazyList, LazySet
 from pytz.tzinfo import unpickler
 from pytz.tzfile import build_tzinfo, _byte_string
 
@@ -292,36 +287,8 @@ def _p(*args):
 _p.__safe_for_unpickling__ = True
 
 
-class _LazyDict(DictMixin):
-    """Dictionary populated on first use."""
-    data = None
-    def __getitem__(self, key):
-        if self.data is None:
-            self._fill()
-        return self.data[key.upper()]
 
-    def __contains__(self, key):
-        if self.data is None:
-            self._fill()
-        return key in self.data
-
-    def __iter__(self):
-        if self.data is None:
-            self._fill()
-        return iter(self.data)
-
-    def __len__(self):
-        if self.data is None:
-            self._fill()
-        return len(self.data)
-
-    def keys(self):
-        if self.data is None:
-            self._fill()
-        return self.data.keys()
-
-
-class _CountryTimezoneDict(_LazyDict):
+class _CountryTimezoneDict(LazyDict):
     """Map ISO 3166 country code to a list of timezone names commonly used
     in that country.
 
@@ -379,7 +346,7 @@ class _CountryTimezoneDict(_LazyDict):
 country_timezones = _CountryTimezoneDict()
 
 
-class _CountryNameDict(_LazyDict):
+class _CountryNameDict(LazyDict):
     '''Dictionary proving ISO3166 code -> English name.
 
     >>> print(country_names['au'])
@@ -794,6 +761,7 @@ all_timezones = \
  'Asia/Kashgar',
  'Asia/Kathmandu',
  'Asia/Katmandu',
+ 'Asia/Khandyga',
  'Asia/Kolkata',
  'Asia/Krasnoyarsk',
  'Asia/Kuala_Lumpur',
@@ -835,6 +803,7 @@ all_timezones = \
  'Asia/Ulaanbaatar',
  'Asia/Ulan_Bator',
  'Asia/Urumqi',
+ 'Asia/Ust-Nera',
  'Asia/Vientiane',
  'Asia/Vladivostok',
  'Asia/Yakutsk',
@@ -943,6 +912,7 @@ all_timezones = \
  'Europe/Brussels',
  'Europe/Bucharest',
  'Europe/Budapest',
+ 'Europe/Busingen',
  'Europe/Chisinau',
  'Europe/Copenhagen',
  'Europe/Dublin',
@@ -1096,10 +1066,10 @@ all_timezones = \
  'W-SU',
  'WET',
  'Zulu']
-all_timezones = [
-        tz for tz in all_timezones if resource_exists(tz)]
+all_timezones = LazyList(
+        tz for tz in all_timezones if resource_exists(tz))
         
-all_timezones_set = set(all_timezones)
+all_timezones_set = LazySet(all_timezones)
 common_timezones = \
 ['Africa/Abidjan',
  'Africa/Accra',
@@ -1281,7 +1251,6 @@ common_timezones = \
  'America/Santo_Domingo',
  'America/Sao_Paulo',
  'America/Scoresbysund',
- 'America/Shiprock',
  'America/Sitka',
  'America/St_Barthelemy',
  'America/St_Johns',
@@ -1309,7 +1278,6 @@ common_timezones = \
  'Antarctica/McMurdo',
  'Antarctica/Palmer',
  'Antarctica/Rothera',
- 'Antarctica/South_Pole',
  'Antarctica/Syowa',
  'Antarctica/Vostok',
  'Arctic/Longyearbyen',
@@ -1350,6 +1318,7 @@ common_timezones = \
  'Asia/Karachi',
  'Asia/Kashgar',
  'Asia/Kathmandu',
+ 'Asia/Khandyga',
  'Asia/Kolkata',
  'Asia/Krasnoyarsk',
  'Asia/Kuala_Lumpur',
@@ -1385,6 +1354,7 @@ common_timezones = \
  'Asia/Tokyo',
  'Asia/Ulaanbaatar',
  'Asia/Urumqi',
+ 'Asia/Ust-Nera',
  'Asia/Vientiane',
  'Asia/Vladivostok',
  'Asia/Yakutsk',
@@ -1427,6 +1397,7 @@ common_timezones = \
  'Europe/Brussels',
  'Europe/Bucharest',
  'Europe/Budapest',
+ 'Europe/Busingen',
  'Europe/Chisinau',
  'Europe/Copenhagen',
  'Europe/Dublin',
@@ -1531,7 +1502,7 @@ common_timezones = \
  'US/Mountain',
  'US/Pacific',
  'UTC']
-common_timezones = [
-        tz for tz in common_timezones if tz in all_timezones]
+common_timezones = LazyList(
+            tz for tz in common_timezones if tz in all_timezones)
         
-common_timezones_set = set(common_timezones)
+common_timezones_set = LazySet(common_timezones)
