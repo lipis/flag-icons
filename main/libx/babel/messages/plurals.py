@@ -1,20 +1,19 @@
 # -*- coding: utf-8 -*-
-#
-# Copyright (C) 2007 Edgewall Software
-# All rights reserved.
-#
-# This software is licensed as described in the file COPYING, which
-# you should have received as part of this distribution. The terms
-# are also available at http://babel.edgewall.org/wiki/License.
-#
-# This software consists of voluntary contributions made by many
-# individuals. For the exact contribution history, see the revision
-# history and logs, available at http://babel.edgewall.org/log/.
+"""
+    babel.messages.plurals
+    ~~~~~~~~~~~~~~~~~~~~~~
 
-"""Plural form definitions."""
+    Plural form definitions.
+
+    :copyright: (c) 2013 by the Babel Team.
+    :license: BSD, see LICENSE for more details.
+"""
 
 from babel.core import default_locale, Locale
-from babel.util import itemgetter
+from operator import itemgetter
+
+
+# XXX: remove this file, duplication with babel.plural
 
 
 LC_CTYPE = default_locale('LC_CTYPE')

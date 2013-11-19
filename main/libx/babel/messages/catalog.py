@@ -1,34 +1,31 @@
 # -*- coding: utf-8 -*-
-#
-# Copyright (C) 2007 Edgewall Software
-# All rights reserved.
-#
-# This software is licensed as described in the file COPYING, which
-# you should have received as part of this distribution. The terms
-# are also available at http://babel.edgewall.org/wiki/License.
-#
-# This software consists of voluntary contributions made by many
-# individuals. For the exact contribution history, see the revision
-# history and logs, available at http://babel.edgewall.org/log/.
+"""
+    babel.messages.catalog
+    ~~~~~~~~~~~~~~~~~~~~~~
 
-"""Data structures for message catalogs."""
+    Data structures for message catalogs.
+
+    :copyright: (c) 2013 by the Babel Team.
+    :license: BSD, see LICENSE for more details.
+"""
+
+import re
+import time
 
 from cgi import parse_header
-from datetime import datetime
+from datetime import datetime, time as time_
 from difflib import get_close_matches
 from email import message_from_string
 from copy import copy
-import re
-import time
 
 from babel import __version__ as VERSION
 from babel.core import Locale
 from babel.dates import format_datetime
 from babel.messages.plurals import get_plural
-from babel.util import odict, distinct, set, LOCALTZ, UTC, FixedOffsetTimezone
+from babel.util import odict, distinct, LOCALTZ, FixedOffsetTimezone
+from babel._compat import string_types, number_types, PY2, cmp
 
 __all__ = ['Message', 'Catalog', 'TranslationError']
-__docformat__ = 'restructuredtext en'
 
 
 PYTHON_FORMAT = re.compile(r'''(?x)
@@ -47,7 +44,7 @@ class Message(object):
     """Representation of a single message in a catalog."""
 
     def __init__(self, id, string=u'', locations=(), flags=(), auto_comments=(),
-                 user_comments=(), previous_id=(), lineno=None):
+                 user_comments=(), previous_id=(), lineno=None, context=None):
         """Create the message object.
 
         :param id: the message ID, or a ``(singular, plural)`` tuple for
@@ -62,6 +59,7 @@ class Message(object):
                             tuple for pluralizable messages
         :param lineno: the line number on which the msgid line was found in the
                        PO file, if any
+        :param context: the message context
         """
         self.id = id #: The message ID
         if not string and self.pluralizable:
@@ -75,11 +73,12 @@ class Message(object):
             self.flags.discard('python-format')
         self.auto_comments = list(distinct(auto_comments))
         self.user_comments = list(distinct(user_comments))
-        if isinstance(previous_id, basestring):
+        if isinstance(previous_id, string_types):
             self.previous_id = [previous_id]
         else:
             self.previous_id = list(previous_id)
         self.lineno = lineno
+        self.context = context
 
     def __repr__(self):
         return '<%s %r (flags: %r)>' % (type(self).__name__, self.id,
@@ -87,22 +86,43 @@ class Message(object):
 
     def __cmp__(self, obj):
         """Compare Messages, taking into account plural ids"""
-        if isinstance(obj, Message):
-            plural = self.pluralizable
-            obj_plural = obj.pluralizable
-            if plural and obj_plural:
-                return cmp(self.id[0], obj.id[0])
-            elif plural:
-                return cmp(self.id[0], obj.id)
-            elif obj_plural:
-                return cmp(self.id, obj.id[0])
-        return cmp(self.id, obj.id)
+        def values_to_compare():
+            if isinstance(obj, Message):
+                plural = self.pluralizable
+                obj_plural = obj.pluralizable
+                if plural and obj_plural:
+                    return self.id[0], obj.id[0]
+                elif plural:
+                    return self.id[0], obj.id
+                elif obj_plural:
+                    return self.id, obj.id[0]
+            return self.id, obj.id
+        this, other = values_to_compare()
+        return cmp(this, other)
+
+    def __gt__(self, other):
+        return self.__cmp__(other) > 0
+
+    def __lt__(self, other):
+        return self.__cmp__(other) < 0
+
+    def __ge__(self, other):
+        return self.__cmp__(other) >= 0
+
+    def __le__(self, other):
+        return self.__cmp__(other) <= 0
+
+    def __eq__(self, other):
+        return self.__cmp__(other) == 0
+
+    def __ne__(self, other):
+        return self.__cmp__(other) != 0
 
     def clone(self):
         return Message(*map(copy, (self.id, self.string, self.locations,
                                    self.flags, self.auto_comments,
                                    self.user_comments, self.previous_id,
-                                   self.lineno)))
+                                   self.lineno, self.context)))
 
     def check(self, catalog=None):
         """Run various validation checks on the message.  Some validations
@@ -119,14 +139,13 @@ class Message(object):
         for checker in checkers:
             try:
                 checker(catalog, self)
-            except TranslationError, e:
+            except TranslationError as e:
                 errors.append(e)
         return errors
 
+    @property
     def fuzzy(self):
-        return 'fuzzy' in self.flags
-    fuzzy = property(fuzzy, doc="""\
-        Whether the translation is fuzzy.
+        """Whether the translation is fuzzy.
 
         >>> Message('foo').fuzzy
         False
@@ -136,37 +155,35 @@ class Message(object):
         >>> msg
         <Message 'foo' (flags: ['fuzzy'])>
 
-        :type:  `bool`
-        """)
+        :type:  `bool`"""
+        return 'fuzzy' in self.flags
 
+    @property
     def pluralizable(self):
-        return isinstance(self.id, (list, tuple))
-    pluralizable = property(pluralizable, doc="""\
-        Whether the message is plurizable.
+        """Whether the message is plurizable.
 
         >>> Message('foo').pluralizable
         False
         >>> Message(('foo', 'bar')).pluralizable
         True
 
-        :type:  `bool`
-        """)
+        :type:  `bool`"""
+        return isinstance(self.id, (list, tuple))
 
+    @property
     def python_format(self):
-        ids = self.id
-        if not isinstance(ids, (list, tuple)):
-            ids = [ids]
-        return bool(filter(None, [PYTHON_FORMAT.search(id) for id in ids]))
-    python_format = property(python_format, doc="""\
-        Whether the message contains Python-style parameters.
+        """Whether the message contains Python-style parameters.
 
         >>> Message('foo %(name)s bar').python_format
         True
         >>> Message(('foo %(name)s', 'foo %(name)s')).python_format
         True
 
-        :type:  `bool`
-        """)
+        :type:  `bool`"""
+        ids = self.id
+        if not isinstance(ids, (list, tuple)):
+            ids = [ids]
+        return any(PYTHON_FORMAT.search(id) for id in ids)
 
 
 class TranslationError(Exception):
@@ -182,6 +199,21 @@ DEFAULT_HEADER = u"""\
 #"""
 
 
+if PY2:
+    def _parse_header(header_string):
+        # message_from_string only works for str, not for unicode
+        headers = message_from_string(header_string.encode('utf8'))
+        decoded_headers = {}
+        for name, value in headers.items():
+            name = name.decode('utf8')
+            value = value.decode('utf8')
+            decoded_headers[name] = value
+        return decoded_headers
+
+else:
+    _parse_header = message_from_string
+
+
 class Catalog(object):
     """Representation of a message catalog."""
 
@@ -189,7 +221,7 @@ class Catalog(object):
                  project=None, version=None, copyright_holder=None,
                  msgid_bugs_address=None, creation_date=None,
                  revision_date=None, last_translator=None, language_team=None,
-                 charset='utf-8', fuzzy=True):
+                 charset=None, fuzzy=True):
         """Initialize the catalog object.
 
         :param locale: the locale identifier or `Locale` object, or `None`
@@ -207,7 +239,7 @@ class Catalog(object):
         :param revision_date: the date the catalog was revised
         :param last_translator: the name and email of the last translator
         :param language_team: the name and email of the language team
-        :param charset: the encoding to use in the output
+        :param charset: the encoding to use in the output (defaults to utf-8)
         :param fuzzy: the fuzzy bit on the catalog header
         """
         self.domain = domain #: The message domain
@@ -235,7 +267,7 @@ class Catalog(object):
             creation_date = creation_date.replace(tzinfo=LOCALTZ)
         self.creation_date = creation_date #: Creation date of the template
         if revision_date is None:
-            revision_date = datetime.now(LOCALTZ)
+            revision_date = 'YEAR-MO-DA HO:MI+ZONE'
         elif isinstance(revision_date, datetime) and not revision_date.tzinfo:
             revision_date = revision_date.replace(tzinfo=LOCALTZ)
         self.revision_date = revision_date #: Last revision date of the catalog
@@ -247,9 +279,12 @@ class Catalog(object):
 
     def _get_header_comment(self):
         comment = self._header_comment
+        year = datetime.now(LOCALTZ).strftime('%Y')
+        if hasattr(self.revision_date, 'strftime'):
+            year = self.revision_date.strftime('%Y')
         comment = comment.replace('PROJECT', self.project) \
                          .replace('VERSION', self.version) \
-                         .replace('YEAR', self.revision_date.strftime('%Y')) \
+                         .replace('YEAR', year) \
                          .replace('ORGANIZATION', self.copyright_holder)
         if self.locale:
             comment = comment.replace('Translations template', '%s translations'
@@ -300,18 +335,20 @@ class Catalog(object):
         headers.append(('POT-Creation-Date',
                         format_datetime(self.creation_date, 'yyyy-MM-dd HH:mmZ',
                                         locale='en')))
-        if self.locale is None:
-            headers.append(('PO-Revision-Date', 'YEAR-MO-DA HO:MI+ZONE'))
-            headers.append(('Last-Translator', 'FULL NAME <EMAIL@ADDRESS>'))
-            headers.append(('Language-Team', 'LANGUAGE <LL@li.org>'))
-        else:
+        if isinstance(self.revision_date, (datetime, time_) + number_types):
             headers.append(('PO-Revision-Date',
                             format_datetime(self.revision_date,
                                             'yyyy-MM-dd HH:mmZ', locale='en')))
-            headers.append(('Last-Translator', self.last_translator))
+        else:
+            headers.append(('PO-Revision-Date', self.revision_date))
+        headers.append(('Last-Translator', self.last_translator))
+        if (self.locale is not None) and ('LANGUAGE' in self.language_team):
             headers.append(('Language-Team',
                            self.language_team.replace('LANGUAGE',
                                                       str(self.locale))))
+        else:
+            headers.append(('Language-Team', self.language_team))
+        if self.locale is not None:
             headers.append(('Plural-Forms', self.plural_forms))
         headers.append(('MIME-Version', '1.0'))
         headers.append(('Content-Type',
@@ -322,14 +359,7 @@ class Catalog(object):
 
     def _set_mime_headers(self, headers):
         for name, value in headers:
-            if name.lower() == 'content-type':
-                mimetype, params = parse_header(value)
-                if 'charset' in params:
-                    self.charset = params['charset'].lower()
-                break
-        for name, value in headers:
-            name = name.lower().decode(self.charset)
-            value = value.decode(self.charset)
+            name = name.lower()
             if name == 'project-id-version':
                 parts = value.split(' ')
                 self.project = u' '.join(parts[:-1])
@@ -340,6 +370,10 @@ class Catalog(object):
                 self.last_translator = value
             elif name == 'language-team':
                 self.language_team = value
+            elif name == 'content-type':
+                mimetype, params = parse_header(value)
+                if 'charset' in params:
+                    self.charset = params['charset'].lower()
             elif name == 'plural-forms':
                 _, params = parse_header(' ;' + value)
                 self._num_plurals = int(params.get('nplurals', 2))
@@ -412,6 +446,7 @@ class Catalog(object):
 
     Here's an example of the output for such a catalog template:
 
+    >>> from babel.dates import UTC
     >>> created = datetime(1990, 4, 1, 15, 30, tzinfo=UTC)
     >>> catalog = Catalog(project='Foobar', version='1.0',
     ...                   creation_date=created)
@@ -452,54 +487,51 @@ class Catalog(object):
     :type: `list`
     """)
 
+    @property
     def num_plurals(self):
+        """The number of plurals used by the catalog or locale.
+
+        >>> Catalog(locale='en').num_plurals
+        2
+        >>> Catalog(locale='ga').num_plurals
+        3
+
+        :type: `int`"""
         if self._num_plurals is None:
             num = 2
             if self.locale:
                 num = get_plural(self.locale)[0]
             self._num_plurals = num
         return self._num_plurals
-    num_plurals = property(num_plurals, doc="""\
-    The number of plurals used by the catalog or locale.
 
-    >>> Catalog(locale='en').num_plurals
-    2
-    >>> Catalog(locale='ga').num_plurals
-    3
-
-    :type: `int`
-    """)
-
+    @property
     def plural_expr(self):
+        """The plural expression used by the catalog or locale.
+
+        >>> Catalog(locale='en').plural_expr
+        '(n != 1)'
+        >>> Catalog(locale='ga').plural_expr
+        '(n==1 ? 0 : n==2 ? 1 : 2)'
+
+        :type: `string_types`"""
         if self._plural_expr is None:
             expr = '(n != 1)'
             if self.locale:
                 expr = get_plural(self.locale)[1]
             self._plural_expr = expr
         return self._plural_expr
-    plural_expr = property(plural_expr, doc="""\
-    The plural expression used by the catalog or locale.
 
-    >>> Catalog(locale='en').plural_expr
-    '(n != 1)'
-    >>> Catalog(locale='ga').plural_expr
-    '(n==1 ? 0 : n==2 ? 1 : 2)'
-
-    :type: `basestring`
-    """)
-
+    @property
     def plural_forms(self):
+        """Return the plural forms declaration for the locale.
+
+        >>> Catalog(locale='en').plural_forms
+        'nplurals=2; plural=(n != 1)'
+        >>> Catalog(locale='pt_BR').plural_forms
+        'nplurals=2; plural=(n > 1)'
+
+        :type: `str`"""
         return 'nplurals=%s; plural=%s' % (self.num_plurals, self.plural_expr)
-    plural_forms = property(plural_forms, doc="""\
-    Return the plural forms declaration for the locale.
-
-    >>> Catalog(locale='en').plural_forms
-    'nplurals=2; plural=(n != 1)'
-    >>> Catalog(locale='pt_BR').plural_forms
-    'nplurals=2; plural=(n > 1)'
-
-    :type: `str`
-    """)
 
     def __contains__(self, id):
         """Return whether the catalog has a message with the specified ID."""
@@ -508,16 +540,14 @@ class Catalog(object):
     def __len__(self):
         """The number of messages in the catalog.
 
-        This does not include the special ``msgid ""`` entry.
-        """
+        This does not include the special ``msgid ""`` entry."""
         return len(self._messages)
 
     def __iter__(self):
         """Iterates through all the entries in the catalog, in the order they
         were added, yielding a `Message` object for every entry.
 
-        :rtype: ``iterator``
-        """
+        :rtype: ``iterator``"""
         buf = []
         for name, value in self.mime_headers:
             buf.append('%s: %s' % (name, value))
@@ -536,19 +566,14 @@ class Catalog(object):
 
     def __delitem__(self, id):
         """Delete the message with the specified ID."""
-        key = self._key_for(id)
-        if key in self._messages:
-            del self._messages[key]
+        self.delete(id)
 
     def __getitem__(self, id):
         """Return the message with the specified ID.
 
         :param id: the message ID
-        :return: the message with the specified ID, or `None` if no such message
-                 is in the catalog
-        :rtype: `Message`
         """
-        return self._messages.get(self._key_for(id))
+        return self.get(id)
 
     def __setitem__(self, id, message):
         """Add or update the message with the specified ID.
@@ -573,7 +598,7 @@ class Catalog(object):
         :param message: the `Message` object
         """
         assert isinstance(message, Message), 'expected a Message object'
-        key = self._key_for(id)
+        key = self._key_for(id, message.context)
         current = self._messages.get(key)
         if current:
             if message.pluralizable and not current.pluralizable:
@@ -590,9 +615,8 @@ class Catalog(object):
             message = current
         elif id == '':
             # special treatment for the header message
-            headers = message_from_string(message.string.encode(self.charset))
-            self.mime_headers = headers.items()
-            self.header_comment = '\n'.join(['# %s' % comment for comment
+            self.mime_headers = _parse_header(message.string).items()
+            self.header_comment = '\n'.join([('# %s' % c).rstrip() for c
                                              in message.user_comments])
             self.fuzzy = message.fuzzy
         else:
@@ -602,11 +626,12 @@ class Catalog(object):
             self._messages[key] = message
 
     def add(self, id, string=None, locations=(), flags=(), auto_comments=(),
-            user_comments=(), previous_id=(), lineno=None):
+            user_comments=(), previous_id=(), lineno=None, context=None):
         """Add or update the message with the specified ID.
 
         >>> catalog = Catalog()
         >>> catalog.add(u'foo')
+        <Message ...>
         >>> catalog[u'foo']
         <Message u'foo' (flags: [])>
 
@@ -625,9 +650,13 @@ class Catalog(object):
                             tuple for pluralizable messages
         :param lineno: the line number on which the msgid line was found in the
                        PO file, if any
+        :param context: the message context
         """
-        self[id] = Message(id, string, list(locations), flags, auto_comments,
-                           user_comments, previous_id, lineno=lineno)
+        message = Message(id, string, list(locations), flags, auto_comments,
+                          user_comments, previous_id, lineno=lineno,
+                          context=context)
+        self[id] = message
+        return message
 
     def check(self):
         """Run various validation checks on the translations in the catalog.
@@ -643,19 +672,43 @@ class Catalog(object):
             if errors:
                 yield message, errors
 
+    def get(self, id, context=None):
+        """Return the message with the specified ID and context.
+
+        :param id: the message ID
+        :param context: the message context, or ``None`` for no context
+        """
+        return self._messages.get(self._key_for(id, context))
+
+    def delete(self, id, context=None):
+        """Delete the message with the specified ID and context.
+
+        :param id: the message ID
+        :param context: the message context, or ``None`` for no context
+        """
+        key = self._key_for(id, context)
+        if key in self._messages:
+            del self._messages[key]
+
     def update(self, template, no_fuzzy_matching=False):
         """Update the catalog based on the given template catalog.
 
         >>> from babel.messages import Catalog
         >>> template = Catalog()
         >>> template.add('green', locations=[('main.py', 99)])
+        <Message ...>
         >>> template.add('blue', locations=[('main.py', 100)])
+        <Message ...>
         >>> template.add(('salad', 'salads'), locations=[('util.py', 42)])
+        <Message ...>
         >>> catalog = Catalog(locale='de_DE')
         >>> catalog.add('blue', u'blau', locations=[('main.py', 98)])
+        <Message ...>
         >>> catalog.add('head', u'Kopf', locations=[('util.py', 33)])
+        <Message ...>
         >>> catalog.add(('salad', 'salads'), (u'Salat', u'Salate'),
         ...             locations=[('util.py', 38)])
+        <Message ...>
 
         >>> catalog.update(template)
         >>> len(catalog)
@@ -697,10 +750,10 @@ class Catalog(object):
         # Prepare for fuzzy matching
         fuzzy_candidates = []
         if not no_fuzzy_matching:
-            fuzzy_candidates = [
-                self._key_for(msgid) for msgid in messages
-                if msgid and messages[msgid].string
-            ]
+            fuzzy_candidates = dict([
+                (self._key_for(msgid), messages[msgid].context)
+                for msgid in messages if msgid and messages[msgid].string
+            ])
         fuzzy_matches = set()
 
         def _merge(message, oldkey, newkey):
@@ -710,7 +763,7 @@ class Catalog(object):
                 fuzzy = True
                 fuzzy_matches.add(oldkey)
                 oldmsg = messages.get(oldkey)
-                if isinstance(oldmsg.id, basestring):
+                if isinstance(oldmsg.id, string_types):
                     message.previous_id = [oldmsg.id]
                 else:
                     message.previous_id = list(oldmsg.id)
@@ -736,21 +789,28 @@ class Catalog(object):
 
         for message in template:
             if message.id:
-                key = self._key_for(message.id)
+                key = self._key_for(message.id, message.context)
                 if key in messages:
                     _merge(message, key, key)
                 else:
                     if no_fuzzy_matching is False:
                         # do some fuzzy matching with difflib
-                        matches = get_close_matches(key.lower().strip(),
-                                                    fuzzy_candidates, 1)
+                        if isinstance(key, tuple):
+                            matchkey = key[0] # just the msgid, no context
+                        else:
+                            matchkey = key
+                        matches = get_close_matches(matchkey.lower().strip(),
+                                                    fuzzy_candidates.keys(), 1)
                         if matches:
-                            _merge(message, matches[0], key)
+                            newkey = matches[0]
+                            newctxt = fuzzy_candidates[newkey]
+                            if newctxt is not None:
+                                newkey = newkey, newctxt
+                            _merge(message, newkey, key)
                             continue
 
                     self[message.id] = message
 
-        self.obsolete = odict()
         for msgid in remaining:
             if no_fuzzy_matching or msgid not in fuzzy_matches:
                 self.obsolete[msgid] = remaining[msgid]
@@ -758,11 +818,14 @@ class Catalog(object):
         # used to update the catalog
         self.creation_date = template.creation_date
 
-    def _key_for(self, id):
+    def _key_for(self, id, context=None):
         """The key for a message is just the singular ID even for pluralizable
+        messages, but is a ``(msgid, msgctxt)`` tuple for context-specific
         messages.
         """
         key = id
         if isinstance(key, (list, tuple)):
             key = id[0]
+        if context is not None:
+            key = (key, context)
         return key
