@@ -23,13 +23,13 @@
       </div>
       <div class="col-md-2 col-sm-3">
         <div class="form-group">
-          <label class="control-label">Avatar</label>
+          <label class="control-label">{{_('Avatar')}}</label>
           <div>
-            <img class="img-thumbnail" src="{{user_db.avatar_url_size(170)}}" alt="Gravatar photo of {{user_db.name}}">
+            <img class="img-thumbnail" src="{{user_db.avatar_url_size(170)}}" alt="{{_('Avatar of')}} {{user_db.name}}">
           </div>
           <p class="help-block">
             {{_('Change on')}}
-            <a href="//gravatar.com" target="_blank">Gravatar</a>
+            <a href="//gravatar.com" target="_blank">{{_('Gravatar')}}</a>
           </p>
         </div>
       </div>
