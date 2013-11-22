@@ -170,7 +170,7 @@ def signin():
 @app.route('/signout/')
 def signout():
   login.logout_user()
-  flask.flash(__('You have been signed out.'))
+  flask.flash(__('You have been signed out.'), category='success')
   return flask.redirect(flask.url_for('welcome'))
 
 
