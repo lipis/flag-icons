@@ -14,9 +14,9 @@ import unicodedata
 import config
 
 
-################################################################################
+###############################################################################
 # Request Parameters
-################################################################################
+###############################################################################
 def param(name, cast=None):
   '''Returs query parameter by its name, and optionaly casts it to given type.
   Always returns None if the parameter is missing
@@ -49,9 +49,9 @@ def get_next_url():
   return flask.url_for('welcome')
 
 
-################################################################################
+###############################################################################
 # Model manipulations
-################################################################################
+###############################################################################
 def retrieve_dbs(query, order=None, limit=None, cursor=None, **filters):
   ''' Retrieves entities from datastore, by applying cursor pagination
   and equality filters. Returns dbs and more cursor value
@@ -80,9 +80,9 @@ def retrieve_dbs(query, order=None, limit=None, cursor=None, **filters):
   return list(model_dbs), more_cursor
 
 
-################################################################################
+###############################################################################
 # JSON Response Helpers
-################################################################################
+###############################################################################
 def jsonify_model_dbs(model_dbs, more_cursor=None):
   '''Return a response of a list of dbs as JSON service result
   '''
@@ -160,9 +160,9 @@ def jsonpify(*args, **kwargs):
   return flask.jsonify(*args, **kwargs)
 
 
-################################################################################
+###############################################################################
 # Helpers
-################################################################################
+###############################################################################
 def generate_more_url(more_cursor, base_url=None, cursor_name='cursor'):
   '''Substitutes or alters the current request url with a new cursor parameter
   for next page of results
@@ -193,8 +193,8 @@ def slugify(value):
   return _slugify_hyphenate_re.sub('-', value)
 
 
-################################################################################
+###############################################################################
 # Lambdas
-################################################################################
+###############################################################################
 strip_filter = lambda x: x.strip() if x else ''
 email_filter = lambda x: x.lower().strip() if x else ''
