@@ -16,7 +16,7 @@ try:
 except:
   pass
 
-PRODUCTION = os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Engine')
+PRODUCTION = os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Eng')
 DEVELOPMENT = not PRODUCTION
 DEBUG = DEVELOPMENT
 
@@ -49,7 +49,8 @@ SCRIPTS = {
         'src/script/common/util.coffee',
         'src/script/common/service.coffee',
         'src/script/site/app.coffee',
-        'src/script/site/profile.coffee',
         'src/script/site/admin.coffee',
+        'src/script/site/profile.coffee',
+        'src/script/site/user.coffee',
       ],
   }

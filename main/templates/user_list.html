@@ -22,10 +22,10 @@
             <ul class="dropdown-menu">
               <li><a href="{{url_for('user_list')}}">{{config.DEFAULT_DB_LIMIT}} (Default)</a></li>
               <li class="divider"></li>
-              <li><a href="{{url_for('user_list', limit=2)}}">2</a></li>
-              <li><a href="{{url_for('user_list', limit=4)}}">4</a></li>
-              <li><a href="{{url_for('user_list', limit=8)}}">8</a></li>
               <li><a href="{{url_for('user_list', limit=16)}}">16</a></li>
+              <li><a href="{{url_for('user_list', limit=128)}}">128</a></li>
+              <li><a href="{{url_for('user_list', limit=256)}}">256</a></li>
+              <li><a href="{{url_for('user_list', limit=1024)}}">1024</a></li>
             </ul>
           </div>
           <div class="btn-group">
@@ -40,6 +40,26 @@
               <li><a href="{{url_for('user_list', admin='false')}}">Hide Admins</a></li>
             </ul>
           </div>
+          <div id="user-actions" class="btn-group hidden">
+            <button type="button" class="btn btn-sm dropdown-toggle btn-info" data-toggle="dropdown">
+              More
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a id="user-delete" data-service-url="{{url_for('user_delete_service')}}" data-confirm="Are you sure you want to delete the selected users?" href="#">
+                  <i class="fa fa-fw fa-trash-o"></i>
+                  Delete Selected
+                </a>
+              </li>
+              <li class="disabled">
+                <a id="user-merge">
+                  <i class="fa fa-fw fa-code-fork"></i>
+                  Merge Selected...
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -49,9 +69,9 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th class="col-xs-3">{{utils.order_link('Name', 'user_list', 'name')}}</th>
+            <th class="col-xs-4"><input id="select-all" type="checkbox"> {{utils.order_link('Name', 'user_list', 'name')}}</th>
             <th class="col-xs-2 hidden-xs">{{utils.order_link('Username', 'user_list', 'username')}}</th>
-            <th class="col-xs-3 hidden-xs">{{utils.order_link('Email', 'user_list', 'email')}}</th>
+            <th class="col-xs-2 hidden-xs">{{utils.order_link('Email', 'user_list', 'email')}}</th>
             <th class="col-xs-2">{{utils.order_link('Created', 'user_list', 'created')}}</th>
             <th class="col-xs-2 hidden-sm hidden-xs">{{utils.order_link('Modified', 'user_list', 'modified')}}</th>
             <th class="hidden-sm hidden-xs">Accounts</th>
@@ -59,9 +79,12 @@
         </thead>
         <tbody>
           # for user_db in user_dbs
-            <tr>
+            <tr id="{{user_db.key.urlsafe()}}">
               <td>
-                <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="Avatar of {{user_db.name}}">
+                <label>
+                  <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
+                  <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="Avatar of {{user_db.name}}">
+                </label>
                 {{user_db.name}}
                 # if user_db.admin
                   <i class="fa fa-cog" title="Administrator"></i>
