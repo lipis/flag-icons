@@ -5,7 +5,6 @@ Version 0.9.0 - tbd
 - Updated pytz to 2013.8
 - Updated babel to 1.3
 - Updated Moment.js to 2.4.0
-- Renamed `LICENCE` to `LICENSE`
 - Introduced `auth_ids` in the `User` model instead of separete auth ids per provider
 - To upgrade the existing user data deploy the `gae-init-migrate` to your GAE app and run the upgrade task
 
