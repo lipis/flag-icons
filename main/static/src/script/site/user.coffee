@@ -27,7 +27,6 @@ update_selections = ->
   selected = ($ 'input[name=user_db]:checked').length
   ($ '#user-actions').toggleClass 'hidden', selected == 0
   ($ '#user-merge').parent().toggleClass 'hidden', selected <= 1
-
   if selected is 0
     ($ '#select-all').prop 'indeterminate', false
     ($ '#select-all').prop 'checked', false
@@ -42,13 +41,11 @@ init_user_delete_btn = ->
   ($ '#user-delete').click (e) ->
     clear_notifications()
     e.preventDefault()
-
     user_keys = []
     ($ 'input[name=user_db]:checked').each ->
       ($ this).attr 'disabled', true
       user_keys.push ($ this).val()
     confirm_message = (($ this).data 'confirm').replace '{users}', user_keys.length
-
     if confirm confirm_message
       delete_url = ($ this).data 'service-url'
       success_message = ($ this).data 'success'

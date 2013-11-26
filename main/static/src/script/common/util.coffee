@@ -23,11 +23,8 @@ window.init_time = ->
         else
           ($ this).text date.fromNow()
         ($ this).attr 'title', date.local().format 'dddd, MMMM Do YYYY, HH:mm:ss Z'
-
+      setTimeout arguments.callee, 1000 * 45
     recalculate()
-    setInterval ->
-        recalculate()
-      , 1000 * 60
 
 
 window.clear_notifications = ->
