@@ -87,10 +87,8 @@
           # for user_db in user_dbs
             <tr id="{{user_db.key.urlsafe()}}">
               <td>
-                <label>
-                  <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
-                  <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="Avatar of {{user_db.name}}">
-                </label>
+                <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
+                <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="Avatar of {{user_db.name}}">
                 {{user_db.name}}
                 # if user_db.admin
                   <i class="fa fa-cog" title="Administrator"></i>
