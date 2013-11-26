@@ -1,6 +1,8 @@
-# for message in get_flashed_messages(with_categories=True)
-  <div class="alert alert-dismissable alert-{{'warning' if message[0] == 'message' else message[0]}}">
-    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-    {{message[1]}}
-  </div>
-# endfor
+<div id="notifications">
+  # for message in get_flashed_messages(with_categories=True)
+    <div class="alert alert-dismissable alert-{{'warning' if message[0] == 'message' else message[0]}}">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      {{message[1]}}
+    </div>
+  # endfor
+</div>
