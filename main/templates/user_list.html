@@ -47,7 +47,13 @@
             </button>
             <ul class="dropdown-menu">
               <li>
-                <a id="user-delete" data-service-url="{{url_for('user_delete_service')}}" data-confirm="Are you sure you want to delete the selected users?" href="#">
+                <a id="user-delete"
+                    data-service-url="{{url_for('user_delete_service')}}"
+                    data-confirm="Are you sure you want to delete {users} selected user(s)?"
+                    data-success="{users} user(s) deleted."
+                    data-error="Something went while deleting. Please try again."
+                    href="#"
+                  >
                   <i class="fa fa-fw fa-trash-o"></i>
                   Delete Selected
                 </a>

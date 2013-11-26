@@ -40,17 +40,25 @@ update_selections = ->
 
 init_user_delete_btn = ->
   ($ '#user-delete').click (e) ->
+    clear_notifications()
     e.preventDefault()
-    if confirm ($ this).data 'confirm'
-      user_keys = []
-      ($ 'input[name=user_db]:checked').each ->
-        ($ this).attr 'disabled', true
-        user_keys.push ($ this).val()
+
+    user_keys = []
+    ($ 'input[name=user_db]:checked').each ->
+      ($ this).attr 'disabled', true
+      user_keys.push ($ this).val()
+    confirm_message = (($ this).data 'confirm').replace '{users}', user_keys.length
+
+    if confirm confirm_message
       delete_url = ($ this).data 'service-url'
+      success_message = ($ this).data 'success'
+      error_message = ($ this).data 'error'
       service_call 'POST', delete_url, {user_keys: user_keys.join(',')}, (err, result) ->
         if err
           ($ 'input[name=user_db]:disabled').removeAttr 'disabled'
+          show_notification error_message.replace('{users}', user_keys.length), 'danger'
           return
         ($ "##{result.join(', #')}").fadeOut ->
           ($ this).remove()
           update_selections()
+          show_notification success_message.replace('{users}', user_keys.length), 'success'
