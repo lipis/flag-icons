@@ -14,8 +14,8 @@ app.jinja_env.line_comment_prefix = '##'
 app.jinja_env.globals.update(slugify=util.slugify)
 
 import auth
-import admin
 import user
+import admin
 
 
 ###############################################################################
