@@ -41,12 +41,12 @@ init_user_delete_btn = ->
   ($ '#user-delete').click (e) ->
     clear_notifications()
     e.preventDefault()
-    user_keys = []
-    ($ 'input[name=user_db]:checked').each ->
-      ($ this).attr 'disabled', true
-      user_keys.push ($ this).val()
-    confirm_message = (($ this).data 'confirm').replace '{users}', user_keys.length
+    confirm_message = (($ this).data 'confirm').replace '{users}', ($ 'input[name=user_db]:checked').length
     if confirm confirm_message
+      user_keys = []
+      ($ 'input[name=user_db]:checked').each ->
+        ($ this).attr 'disabled', true
+        user_keys.push ($ this).val()
       delete_url = ($ this).data 'service-url'
       success_message = ($ this).data 'success'
       error_message = ($ this).data 'error'
