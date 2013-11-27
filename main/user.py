@@ -34,7 +34,7 @@ def user_list():
       html_class='user',
       title='User List',
       user_dbs=user_dbs,
-      more_url=util.generate_more_url (more_cursor),
+      more_url=util.generate_more_url(more_cursor),
       has_json=True,
     )
 
