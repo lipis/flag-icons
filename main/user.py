@@ -42,16 +42,18 @@ def user_list():
 ###############################################################################
 # User Delete
 ###############################################################################
-@app.route('/_s/user/delete/', methods=['POST'])
+@app.route('/_s/user/delete/', methods=['DELETE'])
 @auth.admin_required
 def user_delete_service():
   user_keys = util.param('user_keys', list)
-  result = {'result': user_keys}
-  try:
-    user_db_keys = [ndb.Key(urlsafe=k) for k in user_keys]
-    ndb.delete_multi(user_db_keys)
-    result['status'] = 'success'
-  except:
-    result['status'] = 'error'
+  user_db_keys = [ndb.Key(urlsafe=k) for k in user_keys]
+  delete_user_dbs(user_db_keys)
+  return flask.jsonify({
+      'result': user_keys,
+      'status': 'success',
+    })
 
-  return flask.jsonify(result)
+
+@ndb.transactional(xg=True)
+def delete_user_dbs(user_db_keys):
+  ndb.delete_multi(user_db_keys)

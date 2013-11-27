@@ -50,7 +50,7 @@ init_user_delete_btn = ->
       delete_url = ($ this).data 'service-url'
       success_message = ($ this).data 'success'
       error_message = ($ this).data 'error'
-      service_call 'POST', delete_url, {user_keys: user_keys.join(',')}, (err, result) ->
+      service_call 'DELETE', delete_url, {user_keys: user_keys.join(',')}, (err, result) ->
         if err
           ($ 'input[name=user_db]:disabled').removeAttr 'disabled'
           show_notification error_message.replace('{users}', user_keys.length), 'danger'
