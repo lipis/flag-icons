@@ -21,7 +21,7 @@ To test it visit `http://localhost:8080/` in your browser.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 To watch for changes of your `*.less` & `*.coffee` files and compile them
-automatically to `*.css` & `*.js` run in another bash:
+automatically to `*.css` & `*.js` execute in another bash:
 
     $ ./run.py -w
 
@@ -33,7 +33,12 @@ For a complete list of commands:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-[Grunt][] is used only for watching for changes and live reloading the page:
+Grunt is used only for watching for changes and live reloading the page.
+Install [grunt command line interface][grunt-cli] as a global package:
+
+    $ npm install -g grunt-cli
+
+and then from the root execute with no arguments:
 
     $ grunt
 
@@ -78,6 +83,8 @@ Contributions and Ideas
   - [gmist][]
   - [stefanlindmark][]
   - [joernhees][]
+  - [xcash][]
+  - [mdxs][]
 
 Author
 ------
@@ -94,7 +101,7 @@ Author
 [gmist]: https://github.com/gmist
 [google app engine sdk for python]: https://developers.google.com/appengine/downloads
 [google app engine]: https://developers.google.com/appengine/
-[grunt]: http://gruntjs.com/
+[grunt-cli]: https://github.com/gruntjs/grunt-cli
 [jinja2]: http://jinja.pocoo.org/docs/
 [joernhees]: https://github.com/joernhees
 [jquery]: http://jquery.com/
@@ -103,6 +110,7 @@ Author
 [linux]: http://www.ubuntu.com
 [lipis]: http://stackoverflow.com/users/8418/lipis
 [lipisflair]: http://stackexchange.com/users/flair/5282.png
+[mdxs]: https://github.com/mdxs
 [moment.js]: http://momentjs.com/
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
 [node.js]: http://nodejs.org/
@@ -113,3 +121,4 @@ Author
 [tutorial]: http://docs.gae-init.appspot.com/tutorial/
 [tzador]: http://stackoverflow.com/users/165697/tzador
 [windows]: http://windows.microsoft.com/
+[xcash]: https://github.com/xcash
