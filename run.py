@@ -234,6 +234,14 @@ def update_missing_args():
     args.clean = True
 
 
+def uniq(seq):
+  '''Returns list of unique elements in seq (= removes duplicates),
+  while preserving order of elements as provided in seq.'''
+  seen = set()
+  seen_add = seen.add
+  return [e for e in seq if e not in seen and not seen_add(e)]
+
+
 ###############################################################################
 # Main
 ###############################################################################
@@ -270,8 +278,9 @@ if args.minify:
     compile_style(os.path.join(dir_static, source), dir_min_style)
 
   for module in config.SCRIPTS:
+    scripts = uniq(config.SCRIPTS[module])
     coffees = ' '.join([os.path.join(dir_static, script)
-        for script in config.SCRIPTS[module] if script.endswith('.coffee')
+        for script in scripts if script.endswith('.coffee')
       ])
 
     pretty_js = os.path.join(dir_min_script, '%s.js' % module)
@@ -280,7 +289,7 @@ if args.minify:
 
     if len(coffees):
       os_execute(file_coffee, '--join -cp', coffees, pretty_js, append=True)
-    for script in config.SCRIPTS[module]:
+    for script in scripts:
       if not script.endswith('.js'):
         continue
       script_file = os.path.join(dir_static, script)
