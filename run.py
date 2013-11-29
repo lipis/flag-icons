@@ -235,8 +235,6 @@ def update_missing_args():
 
 
 def uniq(seq):
-  '''Returns list of unique elements in seq (= removes duplicates),
-  while preserving order of elements as provided in seq.'''
   seen = set()
   return [e for e in seq if e not in seen and not seen.add(e)]
 
