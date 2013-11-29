@@ -1,7 +1,3 @@
-# if config.DEVELOPMENT
-  <script src="http://localhost:35729/livereload.js"></script>
-# endif
-
 # for module in config.SCRIPTS_MODULES
   # if config.DEVELOPMENT
     # for script in config.SCRIPTS[module]
@@ -11,3 +7,7 @@
     <script src="/p/min/script/{{module}}.min.js?{{config.CURRENT_VERSION_ID}}"></script>
   # endif
 # endfor
+
+# if config.DEVELOPMENT
+  <script src="http://localhost:35729/livereload.js"></script>
+# endif
