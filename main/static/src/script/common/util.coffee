@@ -41,4 +41,3 @@ window.show_notification = (message, category='warning') ->
         #{message}
       </div>
     """
-
