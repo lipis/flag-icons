@@ -11,7 +11,7 @@
   "dependencies": {
     "coffee-script": "~1",
     "less": "~1",
-    "uglify-js": "~1"
+    "uglify-js": "~2"
   },
   "devDependencies": {
     "grunt": "0.4.x",

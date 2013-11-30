@@ -291,7 +291,7 @@ if args.minify:
         continue
       script_file = os.path.join(dir_static, script)
       merge_files(script_file, pretty_js)
-    os_execute(file_uglifyjs, '-nc', pretty_js, ugly_js)
+    os_execute(file_uglifyjs, pretty_js, '-cm', ugly_js)
     os.remove(pretty_js)
   print_out('DONE')
 
