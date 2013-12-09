@@ -1,6 +1,6 @@
 Version 0.9.0 - tbd
 --------------------------
-- Updated Bootstrap to 3.0.2
+- Updated Bootstrap to 3.0.3
 - Updated Font Awesome to 4.0.3
 - Updated Moment.js to 2.4.0
 - Introduced `auth_ids` in the `User` model instead of separete auth ids per provider
