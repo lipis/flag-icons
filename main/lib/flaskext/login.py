@@ -10,7 +10,7 @@
     :license: MIT/X11, see LICENSE for more details.
 '''
 
-__version_info__ = ('0', '2', '6')
+__version_info__ = ('0', '2', '7')
 __version__ = '.'.join(__version_info__)
 __author__ = 'Matthew Frazier'
 __license__ = 'MIT/X11'
@@ -534,12 +534,7 @@ def make_secure_token(*args, **options):
     :type \*\*options: kwargs
     '''
     key = options.get('key')
-
-    if key is None:
-        key = current_app.config['SECRET_KEY']
-
-    if hasattr(key, 'encode'):  # pragma: no cover
-        key = key.encode('utf-8')  # ensure bytes
+    key = _secret_key(key)
 
     l = [s if isinstance(s, bytes) else s.encode('utf-8') for s in args]
 
@@ -699,22 +694,23 @@ def _get_user():
 
 
 def _cookie_digest(payload, key=None):
-    if key is None:
-        key = current_app.config['SECRET_KEY']
-
-    if hasattr(key, 'encode'):
-        key = key.encode('utf-8')  # ensure bytes
+    key = _secret_key(key)
 
     return hmac.new(key, payload.encode('utf-8'), sha1).hexdigest()
 
 
 def _get_remote_addr():
-    return request.headers.get('X-Forwarded-For', request.remote_addr)
+    address = request.headers.get('X-Forwarded-For', request.remote_addr)
+    if address is not None:
+        address = address.encode('utf-8')
+    return address
 
 
 def _create_identifier():
-    base = '{0}|{1}'.format(_get_remote_addr(),
-                            request.headers.get('User-Agent'))
+    user_agent = request.headers.get('User-Agent')
+    if user_agent is not None:
+        user_agent = user_agent.encode('utf-8')
+    base = '{0}|{1}'.format(_get_remote_addr(), user_agent)
     if str is bytes:
         base = unicode(base, 'utf-8', errors='replace')
     h = md5()
@@ -724,6 +720,16 @@ def _create_identifier():
 
 def _user_context_processor():
     return dict(current_user=_get_user())
+
+
+def _secret_key(key=None):
+    if key is None:
+        key = current_app.config['SECRET_KEY']
+
+    if isinstance(key, unicode):  # pragma: no cover
+        key = key.encode('latin1')  # ensure bytes
+
+    return key
 
 
 # Signals

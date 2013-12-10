@@ -6,18 +6,18 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li><a href="{{url_for('profile')}}"><i class="fa fa-edit"></i> {{_('Profile Settings')}}</a></li>
+      <li><a href="{{url_for('profile')}}"><i class="fa fa-fw fa-edit"></i> {{_('Profile Settings')}}</a></li>
       # if current_user.admin
         <li class="divider"></li>
-        <li><a href="{{url_for('admin_config_update')}}"><i class="fa fa-cog"></i> {{_('Admin Config')}}</a></li>
-        <li><a href="{{url_for('user_list', order='-modified')}}"><i class="fa fa-group"></i> {{_('User List')}}</a></li>
+        <li><a href="{{url_for('admin_config_update')}}"><i class="fa fa-fw fa-cog"></i> {{_('Admin Config')}}</a></li>
+        <li><a href="{{url_for('user_list', order='-modified')}}"><i class="fa fa-fw fa-group"></i> {{_('User List')}}</a></li>
         <li class="divider"></li>
       # endif
-      <li><a href="{{url_for('signout')}}"><i class="fa fa-sign-out"></i> {{_('Sign out')}}</a></li>
+      <li><a href="{{url_for('signout')}}"><i class="fa fa-fw fa-sign-out"></i> {{_('Sign out')}}</a></li>
     </ul>
   </li>
 # else
   <li class="{{'active' if html_class == 'signin' else ''}}">
-    <a href="{{url_for('signin')}}"><i class="fa fa-sign-in"></i> {{_('Sign in')}}</a>
+    <a href="{{url_for('signin')}}"><i class="fa fa-fw fa-sign-in"></i> {{_('Sign in')}}</a>
   </li>
 # endif

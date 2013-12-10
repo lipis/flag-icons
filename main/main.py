@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from google.appengine.api import mail
+import logging
+from werkzeug import exceptions
 from flaskext import wtf
 from flaskext.babel import Babel
 from flaskext.babel import gettext as __
@@ -21,20 +23,21 @@ app.config['BABEL_DEFAULT_LOCALE'] = config.LOCALE_DEFAULT
 babel = Babel(app)
 
 import auth
+import user
 import admin
 
 
-################################################################################
+###############################################################################
 # Main page
-################################################################################
+###############################################################################
 @app.route('/')
 def welcome():
   return flask.render_template('welcome.html', html_class='welcome')
 
 
-################################################################################
+###############################################################################
 # Sitemap stuff
-################################################################################
+###############################################################################
 @app.route('/sitemap.xml')
 def sitemap():
   response = flask.make_response(flask.render_template(
@@ -46,14 +49,14 @@ def sitemap():
   return response
 
 
-################################################################################
+###############################################################################
 # Profile stuff
-################################################################################
+###############################################################################
 class ProfileUpdateForm(wtf.Form):
-  name = wtf.TextField(_('Name'),
+  name = wtf.StringField(_('Name'),
       [wtf.validators.required()], filters=[util.strip_filter],
     )
-  email = wtf.TextField(_('Email'),
+  email = wtf.StringField(_('Email'),
       [wtf.validators.optional(), wtf.validators.email()],
       filters=[util.email_filter],
     )
@@ -91,17 +94,17 @@ def profile():
     )
 
 
-################################################################################
+###############################################################################
 # Feedback
-################################################################################
+###############################################################################
 class FeedbackForm(wtf.Form):
-  subject = wtf.TextField(_('Subject'),
+  subject = wtf.StringField(_('Subject'),
       [wtf.validators.required()], filters=[util.strip_filter],
     )
   message = wtf.TextAreaField(_('Message'),
       [wtf.validators.required()], filters=[util.strip_filter],
     )
-  email = wtf.TextField(_('Email (optional)'),
+  email = wtf.StringField(_('Email (optional)'),
       [wtf.validators.optional(), wtf.validators.email()],
       filters=[util.strip_filter],
     )
@@ -137,38 +140,9 @@ def feedback():
     )
 
 
-################################################################################
-# User Stuff
-################################################################################
-@app.route('/_s/user/', endpoint='user_list_service')
-@app.route('/user/')
-@auth.admin_required
-def user_list():
-  user_dbs, more_cursor = util.retrieve_dbs(
-      model.User.query(),
-      limit=util.param('limit', int),
-      cursor=util.param('cursor'),
-      order=util.param('order') or '-created',
-      name=util.param('name'),
-      admin=util.param('admin', bool),
-    )
-
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_dbs(user_dbs, more_cursor)
-
-  return flask.render_template(
-      'user_list.html',
-      html_class='user',
-      title=_('User List'),
-      user_dbs=user_dbs,
-      more_url=util.generate_more_url(more_cursor),
-      has_json=True,
-    )
-
-
-################################################################################
+###############################################################################
 # Error Handling
-################################################################################
+###############################################################################
 @app.errorhandler(400)  # Bad Request
 @app.errorhandler(401)  # Unauthorized
 @app.errorhandler(403)  # Forbidden
@@ -177,10 +151,12 @@ def user_list():
 @app.errorhandler(410)  # Gone
 @app.errorhandler(418)  # I'm a Teapot
 @app.errorhandler(500)  # Internal Server Error
+@app.errorhandler(Exception)
 def error_handler(e):
+  logging.exception(e)
   try:
     e.code
-  except AttributeError as e:
+  except AttributeError as err:
     e.code = 500
     e.name = 'Internal Server Error'
 
@@ -188,8 +164,9 @@ def error_handler(e):
     return util.jsonpify({
         'status': 'error',
         'error_code': e.code,
-        'error_name': e.name.lower().replace(' ', '_'),
+        'error_name': util.slugify(e.name),
         'error_message': e.name,
+        'error_class': e.__class__.__name__,
       }), e.code
 
   return flask.render_template(
