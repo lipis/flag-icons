@@ -4,6 +4,7 @@ from google.appengine.api import mail
 import logging
 from werkzeug import exceptions
 from flaskext import wtf
+import i18n
 from flaskext.babel import Babel
 from flaskext.babel import gettext as __
 from flaskext.babel import lazy_gettext as _

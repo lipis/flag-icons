@@ -3,6 +3,7 @@
 from google.appengine.api import app_identity
 import flask
 from flaskext import wtf
+import i18n
 from flaskext.babel import lazy_gettext as _
 from flaskext.babel import gettext as __
 
@@ -14,7 +15,7 @@ import config
 from main import app
 
 
-class ConfigUpdateForm(wtf.Form):
+class ConfigUpdateForm(i18n.Form):
   analytics_id = wtf.StringField('Analytics ID', filters=[util.strip_filter])
   announcement_html = wtf.TextAreaField('Announcement HTML', filters=[util.strip_filter])
   announcement_type = wtf.SelectField('Announcement Type', choices=[(t, t.title()) for t in model.Config.announcement_type._choices])
