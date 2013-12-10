@@ -53,7 +53,7 @@ def sitemap():
 ###############################################################################
 # Profile stuff
 ###############################################################################
-class ProfileUpdateForm(wtf.Form):
+class ProfileUpdateForm(i18n.Form):
   name = wtf.StringField(_('Name'),
       [wtf.validators.required()], filters=[util.strip_filter],
     )
@@ -98,7 +98,7 @@ def profile():
 ###############################################################################
 # Feedback
 ###############################################################################
-class FeedbackForm(wtf.Form):
+class FeedbackForm(i18n.Form):
   subject = wtf.StringField(_('Subject'),
       [wtf.validators.required()], filters=[util.strip_filter],
     )
