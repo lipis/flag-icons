@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 from google.appengine.api import mail
+import logging
+from werkzeug import exceptions
 from flaskext import wtf
 import flask
 import config
@@ -135,10 +137,12 @@ def feedback():
 @app.errorhandler(410)  # Gone
 @app.errorhandler(418)  # I'm a Teapot
 @app.errorhandler(500)  # Internal Server Error
+@app.errorhandler(Exception)
 def error_handler(e):
+  logging.exception(e)
   try:
     e.code
-  except AttributeError as e:
+  except AttributeError as err:
     e.code = 500
     e.name = 'Internal Server Error'
 
@@ -146,8 +150,9 @@ def error_handler(e):
     return util.jsonpify({
         'status': 'error',
         'error_code': e.code,
-        'error_name': e.name.lower().replace(' ', '_'),
+        'error_name': util.slugify(e.name),
         'error_message': e.name,
+        'error_class': e.__class__.__name__,
       }), e.code
 
   return flask.render_template(
