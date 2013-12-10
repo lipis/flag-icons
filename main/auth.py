@@ -7,10 +7,10 @@ import functools
 import re
 
 import flask
-from flaskext import login
-from flaskext import oauth
-from flask_babel import lazy_gettext as _
-from flask_babel import gettext as __
+from flask.ext import login
+from flask.ext import oauth
+from flask.ext.babel import lazy_gettext as _
+from flask.ext.babel import gettext as __
 from babel import localedata
 
 import util

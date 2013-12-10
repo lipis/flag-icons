@@ -2,9 +2,9 @@
 
 from google.appengine.api import app_identity
 import flask
-from flaskext import wtf
-from flask_babel import lazy_gettext as _
-from flask_babel import gettext as __
+from flask.ext import wtf
+from flask.ext.babel import lazy_gettext as _
+from flask.ext.babel import gettext as __
 
 import auth
 import util

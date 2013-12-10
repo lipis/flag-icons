@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 
 from google.appengine.api import mail
-from flaskext import wtf
-from flask_babel import Babel
-from flask_babel import gettext as __
-from flask_babel import lazy_gettext as _
+from flask.ext import wtf
+from flask.ext.babel import Babel
+from flask.ext.babel import gettext as __
+from flask.ext.babel import lazy_gettext as _
 import flask
 
 import config
