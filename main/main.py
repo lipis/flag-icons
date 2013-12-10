@@ -2,9 +2,9 @@
 
 from google.appengine.api import mail
 from flaskext import wtf
-from flaskext.babel import Babel
-from flaskext.babel import gettext as __
-from flaskext.babel import lazy_gettext as _
+from flask_babel import Babel
+from flask_babel import gettext as __
+from flask_babel import lazy_gettext as _
 import flask
 
 import config

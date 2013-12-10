@@ -1,7 +1,12 @@
 Version 0.9.0 - 2013-10-20
 --------------------------
+- Updated Flask-Babel to 0.9
 - Introduced `auth_ids` in the `User` model instead of separete auth ids per provider
 - To upgrade the existing user data deploy the `gae-init-migrate` to your GAE app and run the upgrade task
+
+### Upgrading from older versions to 0.9.0:
+
+For Flask-Babel functions import `flask_babel` (instead of `flask.ext.babel`).
 
 Version 0.8.4 - 2013-10-19
 --------------------------

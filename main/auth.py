@@ -9,8 +9,8 @@ import re
 import flask
 from flaskext import login
 from flaskext import oauth
-from flaskext.babel import lazy_gettext as _
-from flaskext.babel import gettext as __
+from flask_babel import lazy_gettext as _
+from flask_babel import gettext as __
 from babel import localedata
 
 import util
