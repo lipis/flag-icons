@@ -7,8 +7,8 @@ import functools
 import re
 
 import flask
-from flaskext import login
-from flaskext import oauth
+from flask.ext import login
+from flask.ext import oauth
 
 import util
 import model
