@@ -2,7 +2,7 @@
 
 from google.appengine.api import app_identity
 import flask
-from flaskext import wtf
+from flask.ext import wtf
 
 import auth
 import util
