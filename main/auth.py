@@ -1,21 +1,20 @@
 # -*- coding: utf-8 -*-
 
-from google.appengine.ext import ndb
-from google.appengine.api import users
-
 import functools
 import re
 
-import flask
+from babel import localedata
 from flask.ext import login
 from flask.ext import oauth
-from flask.ext.babel import lazy_gettext as _
 from flask.ext.babel import gettext as __
-from babel import localedata
+from flask.ext.babel import lazy_gettext as _
+from google.appengine.api import users
+from google.appengine.ext import ndb
+import flask
 
-import util
-import model
 import config
+import model
+import util
 
 from main import app
 from main import babel

@@ -1,15 +1,15 @@
 # -*- coding: utf-8 -*-
 
-from google.appengine.datastore.datastore_query import Cursor
-from google.appengine.ext import ndb
-from google.appengine.ext import blobstore
-import flask
-
-from uuid import uuid4
 from datetime import datetime
-import urllib
+from uuid import uuid4
 import re
 import unicodedata
+import urllib
+
+from google.appengine.datastore.datastore_query import Cursor
+from google.appengine.ext import blobstore
+from google.appengine.ext import ndb
+import flask
 
 import config
 

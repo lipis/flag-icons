@@ -1,12 +1,14 @@
-from google.appengine.ext import ndb
+# -*- coding: utf-8 -*-
+
 import logging
 
 from flask.ext.babel import lazy_gettext as _
+from google.appengine.ext import ndb
 import flask
 
-import util
 import auth
 import model
+import util
 
 from main import app
 

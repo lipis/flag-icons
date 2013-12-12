@@ -2,12 +2,13 @@
 
 import os
 import operator
+
 try:
   # This part is surrounded in try/except because the config.py file is
   # also used in the run.py script which is used to compile/minify the client
   # side files (*.less, *.coffee, *.js) and is not aware of the GAE
-  import model
   from datetime import datetime
+  import model
   CONFIG_DB = model.Config.get_master_db()
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
   LOCALE_DEFAULT = CONFIG_DB.locale

@@ -1,16 +1,16 @@
 # -*- coding: utf-8 -*-
 
+from flask.ext import wtf
+from flask.ext.babel import gettext as __
+from flask.ext.babel import lazy_gettext as _
 from google.appengine.api import app_identity
 import flask
-from flask.ext import wtf
-from flask.ext.babel import lazy_gettext as _
-from flask.ext.babel import gettext as __
 
-import i18n
 import auth
-import util
-import model
 import config
+import i18n
+import model
+import util
 
 from main import app
 

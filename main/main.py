@@ -1,16 +1,17 @@
 # -*- coding: utf-8 -*-
 
-from google.appengine.api import mail
 import logging
-from werkzeug import exceptions
+
 from flask.ext import wtf
 from flask.ext.babel import Babel
 from flask.ext.babel import gettext as __
 from flask.ext.babel import lazy_gettext as _
+from google.appengine.api import mail
+from werkzeug import exceptions
 import flask
 
-import i18n
 import config
+import i18n
 import model
 import util
 
@@ -19,13 +20,12 @@ app.config.from_object(config)
 app.jinja_env.line_statement_prefix = '#'
 app.jinja_env.line_comment_prefix = '##'
 app.jinja_env.globals.update(slugify=util.slugify)
-
 app.config['BABEL_DEFAULT_LOCALE'] = config.LOCALE_DEFAULT
 babel = Babel(app)
 
+import admin
 import auth
 import user
-import admin
 
 
 ###############################################################################
