@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 
-from google.appengine.api import mail
 import logging
-from werkzeug import exceptions
+
 from flask.ext import wtf
+from google.appengine.api import mail
+from werkzeug import exceptions
 import flask
+
 import config
 import model
 import util
@@ -15,9 +17,9 @@ app.jinja_env.line_statement_prefix = '#'
 app.jinja_env.line_comment_prefix = '##'
 app.jinja_env.globals.update(slugify=util.slugify)
 
+import admin
 import auth
 import user
-import admin
 
 
 ###############################################################################

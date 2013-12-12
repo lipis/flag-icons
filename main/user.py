@@ -1,11 +1,11 @@
-from google.appengine.ext import ndb
 import logging
 
+from google.appengine.ext import ndb
 import flask
 
-import util
 import auth
 import model
+import util
 
 from main import app
 

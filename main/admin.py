@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 
+from flask.ext import wtf
 from google.appengine.api import app_identity
 import flask
-from flask.ext import wtf
 
 import auth
 import util

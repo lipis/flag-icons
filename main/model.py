@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from google.appengine.ext import ndb
-import util
 import os
+
+from google.appengine.ext import ndb
+
 import modelx
+import util
 
 
 # The timestamp of the currently deployed version
