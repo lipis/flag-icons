@@ -1,7 +1,7 @@
 from google.appengine.ext import ndb
 import logging
 
-from flaskext.babel import lazy_gettext as _
+from flask.ext.babel import lazy_gettext as _
 import flask
 
 import util
