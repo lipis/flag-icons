@@ -22,6 +22,16 @@ handlers:
   static_files: static/robots.txt
   upload: static/robots.txt
 
+# Special case for .ttf files needing specific mime_type
+# to enjoy gzip encoding/compression from GAE hosting.
+# Order is important: this must precede "/p/" static_dir
+# See: https://github.com/gae-init/gae-init/issues/53
+- url: /p/font/(.*\.ttf)
+  static_files: static/font/\1
+  upload: static/font/(.*\.ttf)
+  mime_type: font/ttf
+  expiration: 1000d
+
 - url: /p/
   static_dir: static/
   expiration: 1000d
