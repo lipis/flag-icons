@@ -59,7 +59,7 @@ class UserUpdateForm(wtf.Form):
     )
 
 
-@app.route('/user/update/<int:user_id>/', methods=['GET', 'POST'])
+@app.route('/user/<int:user_id>/update/', methods=['GET', 'POST'])
 @auth.admin_required
 def user_update(user_id):
   user_db = model.User.get_by_id(user_id)
