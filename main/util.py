@@ -193,6 +193,10 @@ def slugify(value):
   return _slugify_hyphenate_re.sub('-', value)
 
 
+def is_valid_username(username):
+  return True if re.match('^[a-z0-9]+(?:[\.][a-z0-9]+)*$', username) else False
+
+
 ###############################################################################
 # Lambdas
 ###############################################################################
