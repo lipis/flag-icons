@@ -46,9 +46,9 @@ def user_list():
 # User Update
 ###############################################################################
 class UserUpdateForm(wtf.Form):
-  username = wtf.StringField(
-      'Username',
-      [wtf.validators.required(), wtf.validators.length(min=4)], filters=[util.email_filter],
+  username = wtf.StringField('Username',
+      [wtf.validators.required(), wtf.validators.length(min=3)],
+      filters=[util.email_filter],
     )
   name = wtf.StringField('Name',
       [wtf.validators.required()], filters=[util.strip_filter],
