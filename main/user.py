@@ -33,7 +33,7 @@ def user_list():
     return util.jsonify_model_dbs(user_dbs, more_cursor)
 
   return flask.render_template(
-      'user_list.html',
+      'user/user_list.html',
       html_class='user',
       title='User List',
       user_dbs=user_dbs,
