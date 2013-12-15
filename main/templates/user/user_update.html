@@ -1,0 +1,38 @@
+# extends 'base.html'
+# import 'macro/forms.html' as forms
+# import 'macro/utils.html' as utils
+
+# block content
+  <div class="page-header">
+    <h1>
+      {{user_db.name}}
+    </h1>
+  </div>
+  <form method="POST" action="." novalidate>
+    <div class="row">
+      <div class="col-md-4 col-sm-6">
+        {{form.csrf_token}}
+        {{forms.text_field(form.username, autofocus=True, autocomplete='off')}}
+        {{forms.text_field(form.name)}}
+        {{forms.email_field(form.email)}}
+      </div>
+      <div class="col-md-2 col-sm-3">
+        <div class="form-group">
+          <label class="control-label">Avatar</label>
+          <div>
+            <img class="img-thumbnail" src="{{user_db.avatar_url_size(170)}}" alt="Avatar of {{user_db.name}}">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-sm-9">
+        <div class="controls">
+          <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Updating..">
+            Update
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+# endblock

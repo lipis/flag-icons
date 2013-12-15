@@ -107,7 +107,7 @@ class FeedbackForm(i18n.Form):
     )
   email = wtf.StringField(_('Email (optional)'),
       [wtf.validators.optional(), wtf.validators.email()],
-      filters=[util.strip_filter],
+      filters=[util.email_filter],
     )
 
 
@@ -116,7 +116,7 @@ def feedback():
   if not config.CONFIG_DB.feedback_email:
     return flask.abort(418)
 
-  form = FeedbackForm()
+  form = FeedbackForm(obj=auth.current_user_db())
   if form.validate_on_submit():
     mail.send_mail(
         sender=config.CONFIG_DB.feedback_email,
@@ -130,8 +130,6 @@ def feedback():
       )
     flask.flash(__('Thank you for your feedback!'), category='success')
     return flask.redirect(flask.url_for('welcome'))
-  if not form.errors and auth.current_user_id() > 0:
-    form.email.data = auth.current_user_db().email
 
   return flask.render_template(
       'feedback.html',

@@ -18,7 +18,7 @@ import config
 # Request Parameters
 ###############################################################################
 def param(name, cast=None):
-  '''Returs query parameter by its name, and optionaly casts it to given type.
+  '''Returns query parameter by its name, and optionally casts it to given type.
   Always returns None if the parameter is missing
   '''
   value = None
@@ -111,7 +111,7 @@ def jsonify_model_dbs(model_dbs, more_cursor=None):
 
 
 def jsonify_model_db(model_db):
-  '''Return respons of a db as JSON service result
+  '''Return response of a db as JSON service result
   '''
   result_object = model_db_to_object(model_db)
   response = jsonpify({
@@ -171,7 +171,7 @@ def jsonpify(*args, **kwargs):
 # Helpers
 ###############################################################################
 def generate_more_url(more_cursor, base_url=None, cursor_name='cursor'):
-  '''Substitutes or alters the current request url with a new cursor parameter
+  '''Substitutes or alters the current request URL with a new cursor parameter
   for next page of results
   '''
   if not more_cursor:
@@ -198,6 +198,10 @@ def slugify(value):
   value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore')
   value = unicode(_slugify_strip_re.sub('', value).strip().lower())
   return _slugify_hyphenate_re.sub('-', value)
+
+
+def is_valid_username(username):
+  return True if re.match('^[a-z0-9]+(?:[\.][a-z0-9]+)*$', username) else False
 
 
 ###############################################################################
