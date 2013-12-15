@@ -3,8 +3,28 @@ Version 0.9.0 - tbd
 - Updated Bootstrap to 3.0.3
 - Updated Font Awesome to 4.0.3
 - Updated Moment.js to 2.4.0
+- Updated Flask Login to 0.2.7
 - Introduced `auth_ids` in the `User` model instead of separete auth ids per provider
 - To upgrade the existing user data deploy the `gae-init-migrate` to your GAE app and run the upgrade task
+- Administrators can now delete users
+- Administrators can now edit user profiles and change username
+- Added function to check for uniqueness of a username
+- Showing in the profile and user list the connected accounts
+- Using protocol independent absolute paths
+- Added support for the size (s) argument in the Gravatar API
+- Removed GitHub oauth (it can be found in gae-init-auth)
+- Updated sign-in buttons to the latest version
+- Fixed avatar for HDPI screens in `user_list.html`
+- Added filters for WTForms: `util.strip_filter` & `util.email_filter`
+- Form macros are now accepting keyword arguments for stuff like `autofocus`, `placeholder`, etc
+- Autofocus flag is now set to the first input in forms
+- Added link to GAE instances in admin config
+- Changed the soon to be depricated wtf.TextField for wtf.StringField
+- Added `show_notifications()` and `clear_notifications()` as JS functions
+- Using `flask.ext` notation when importing instead of `flaskext`
+- Moved all the Flask extensions to root lib directory and removed the `lib/flaskext` directory completely
+- Organized imports by standard, libs and local
+- Bunch fixes and optimizations
 
 Version 0.8.4 - 2013-10-19
 --------------------------
