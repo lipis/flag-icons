@@ -4,27 +4,29 @@ Version 0.9.0 - tbd
 - Updated Font Awesome to 4.0.3
 - Updated Moment.js to 2.4.0
 - Updated Flask Login to 0.2.7
-- Introduced `auth_ids` in the `User` model instead of separete auth ids per provider
-- To upgrade the existing user data deploy the `gae-init-migrate` to your GAE app and run the upgrade task
+- Using `auth_ids` in `User` model instead of separate auth ids per provider
+- To upgrade any existing user data: deploy the `gae-init-migrate` to
+  your GAE app and run the upgrade task
 - Administrators can now delete users
 - Administrators can now edit user profiles and change username
 - Added function to check for uniqueness of a username
-- Showing in the profile and user list the connected accounts
+- Connected accounts are shown on profile and user list pages
 - Using protocol independent absolute paths
-- Added support for the size (s) argument in the Gravatar API
+- Added support for the size `s` argument in the Gravatar API
 - Removed GitHub oauth (it can be found in gae-init-auth)
 - Updated sign-in buttons to the latest version
 - Fixed avatar for HDPI screens in `user_list.html`
-- Added filters for WTForms: `util.strip_filter` & `util.email_filter`
-- Form macros are now accepting keyword arguments for stuff like `autofocus`, `placeholder`, etc
+- Added filters for WTForms: `util.strip_filter` and `util.email_filter`
+- Form macros are now accepting keyword arguments, such as: `autofocus`,
+  `placeholder`, etc.
 - Autofocus flag is now set to the first input in forms
 - Added link to GAE instances in admin config
-- Changed the soon to be depricated wtf.TextField for wtf.StringField
+- Changed the soon to be deprecated wtf.TextField for wtf.StringField
 - Added `show_notifications()` and `clear_notifications()` as JS functions
 - Using `flask.ext` notation when importing instead of `flaskext`
-- Moved all the Flask extensions to root lib directory and removed the `lib/flaskext` directory completely
+- Removed `lib/flaskext` directory, after moving Flask extensions into `lib`
 - Organized imports by standard, libs and local
-- Bunch fixes and optimizations
+- Several other fixes and optimizations
 
 Version 0.8.4 - 2013-10-19
 --------------------------
@@ -65,9 +67,9 @@ Version 0.8.0 - 2013-10-03
 - Renamed `static/src/coffee` to `static/src/script`
 - Renamed `static/src/less` to `static/src/style`
 - Updated `run.py`
-- Username is always lowercase and some spacial characters are being replaced
+- Username is always lowercase and some special characters are being replaced
   with a dot
-- Added Grunt support for watch and livereload only (more will come)
+- Added Grunt support for watch and live reload only (more will come)
 - Removed custom message from email validator
 
 ### Upgrading from older versions to 0.8.0:
@@ -146,7 +148,7 @@ Version 0.5.1 - 2013-08-23
 
 Version 0.5.0 - 2013-08-20
 --------------------------
-- Boostrap 3 is in da house! Strongly recommended to read the docs
+- Bootstrap 3 is in da house! Strongly recommended to read the docs
 - All of the templates are affected
 - `top_bar.html` renamed to `header.html`
 - `base.html` is much simpler
