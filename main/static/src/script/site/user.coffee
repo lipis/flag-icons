@@ -26,7 +26,6 @@ user_select_row = ($element) ->
 update_selections = ->
   selected = ($ 'input[name=user_db]:checked').length
   ($ '#user-actions').toggleClass 'hidden', selected == 0
-  ($ '#user-merge').parent().toggleClass 'hidden', selected <= 1
   if selected is 0
     ($ '#select-all').prop 'indeterminate', false
     ($ '#select-all').prop 'checked', false
