@@ -22,7 +22,7 @@ import auth
 import user
 
 
-if config.DEBUG:
+if config.DEVELOPMENT:
   from werkzeug import debug
   app.wsgi_app = debug.DebuggedApplication(app.wsgi_app, evalex=True)
 
@@ -142,7 +142,6 @@ def feedback():
 @app.errorhandler(410)  # Gone
 @app.errorhandler(418)  # I'm a Teapot
 @app.errorhandler(500)  # Internal Server Error
-@app.errorhandler(Exception)
 def error_handler(e):
   logging.exception(e)
   try:
@@ -166,3 +165,9 @@ def error_handler(e):
       html_class='error-page',
       error=e,
     ), e.code
+
+
+if config.PRODUCTION:
+  @app.errorhandler(Exception)
+  def production_error_handler(e):
+    return error_handler(e)

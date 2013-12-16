@@ -1,5 +1,5 @@
-import sys
 import os
+import sys
 
 if os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Engine'):
   sys.path.insert(0, 'lib.zip')

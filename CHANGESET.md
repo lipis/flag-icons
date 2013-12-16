@@ -1,9 +1,10 @@
-Version 0.9.0 - tbd
+Version 0.9.0 - 2013-12-16
 --------------------------
 - Updated Bootstrap to 3.0.3
 - Updated Font Awesome to 4.0.3
 - Updated Moment.js to 2.4.0
 - Updated Flask Login to 0.2.7
+- Enable WSGI application traceback debugger
 - Using `auth_ids` in `User` model instead of separate auth ids per provider
 - To upgrade any existing user data: deploy the `gae-init-migrate` to
   your GAE app and run the upgrade task
