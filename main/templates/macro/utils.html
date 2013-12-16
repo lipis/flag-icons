@@ -26,16 +26,21 @@
 # endmacro
 
 
+# macro auth_icon(auth_id)
+  # if auth_id.startswith('federated')
+    <span class="fa fa-google-plus"></span>
+  # elif auth_id.startswith('facebook')
+    <span class="fa fa-facebook"></span>
+  # elif auth_id.startswith('twitter')
+    <span class="fa fa-twitter"></span>
+  # else
+    <span class="fa fa-question"></span>
+  # endif
+# endmacro
+
+
 # macro auth_icons(auth_ids)
   # for auth_id in auth_ids
-    # if auth_id.startswith('federated')
-      <span class="fa fa-google-plus"></span>
-    # elif auth_id.startswith('facebook')
-      <span class="fa fa-facebook"></span>
-    # elif auth_id.startswith('twitter')
-      <span class="fa fa-twitter"></span>
-    # else
-      <span class="fa fa-question"></span>
-    # endif
+    {{auth_icon(auth_id)}}
   # endfor
 # endmacro

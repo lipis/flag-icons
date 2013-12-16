@@ -10,9 +10,9 @@ import sys
 import time
 
 
-################################################################################
+###############################################################################
 # Options
-################################################################################
+###############################################################################
 parser = argparse.ArgumentParser()
 parser.add_argument('-w', '--watch', dest='watch', action='store_true',
     help='watch files for changes when running the development web server',
@@ -55,9 +55,9 @@ parser.add_argument('-b', '--pybabel-compile', dest='pybabel_compile', action='s
 args = parser.parse_args()
 
 
-################################################################################
+###############################################################################
 # Directories
-################################################################################
+###############################################################################
 DIR_MAIN = 'main'
 DIR_STATIC = 'static'
 DIR_SRC = 'src'
@@ -109,9 +109,9 @@ file_babel_cfg = os.path.join(dir_translations, FILE_BABEL_CFG)
 file_messages_pot = os.path.join(dir_translations, FILE_MESSAGES_POT)
 
 
-################################################################################
+###############################################################################
 # Helpers
-################################################################################
+###############################################################################
 def print_out(script, filename=''):
   timestamp = datetime.now().strftime('%H:%M:%S')
   if not filename:
@@ -258,9 +258,14 @@ def update_missing_args():
     args.clean = True
 
 
-################################################################################
+def uniq(seq):
+  seen = set()
+  return [e for e in seq if e not in seen and not seen.add(e)]
+
+
+###############################################################################
 # Babel Stuff
-################################################################################
+###############################################################################
 def pybabel_extract():
   os.system('"pybabel" extract -k _ -k __ -F %s --sort-by-file --omit-header -o %s %s' % (
       file_babel_cfg, file_messages_pot, DIR_MAIN,
@@ -289,9 +294,9 @@ def pybabel_compile():
   os.system('"pybabel" compile -f -d %s' % (dir_translations))
 
 
-################################################################################
+###############################################################################
 # Main
-################################################################################
+###############################################################################
 SCRIPTS = config.SCRIPTS
 STYLES = config.STYLES
 
@@ -325,8 +330,9 @@ if args.minify:
     compile_style(os.path.join(dir_static, source), dir_min_style)
 
   for module in config.SCRIPTS:
+    scripts = uniq(config.SCRIPTS[module])
     coffees = ' '.join([os.path.join(dir_static, script)
-        for script in config.SCRIPTS[module] if script.endswith('.coffee')
+        for script in scripts if script.endswith('.coffee')
       ])
 
     pretty_js = os.path.join(dir_min_script, '%s.js' % module)
@@ -335,7 +341,7 @@ if args.minify:
 
     if len(coffees):
       os_execute(file_coffee, '--join -cp', coffees, pretty_js, append=True)
-    for script in config.SCRIPTS[module]:
+    for script in scripts:
       if not script.endswith('.js'):
         continue
       script_file = os.path.join(dir_static, script)

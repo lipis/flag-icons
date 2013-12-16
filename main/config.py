@@ -2,12 +2,13 @@
 
 import os
 import operator
+
 try:
-  # This part is surrounded in try/except because the this config.py file is
+  # This part is surrounded in try/except because the config.py file is
   # also used in the run.py script which is used to compile/minify the client
   # side files (*.less, *.coffee, *.js) and is not aware of the GAE
-  import model
   from datetime import datetime
+  import model
   CONFIG_DB = model.Config.get_master_db()
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
   LOCALE_DEFAULT = CONFIG_DB.locale
@@ -18,15 +19,15 @@ try:
 except:
   pass
 
-PRODUCTION = os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Engine')
+PRODUCTION = os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Eng')
 DEVELOPMENT = not PRODUCTION
 DEBUG = DEVELOPMENT
 
 DEFAULT_DB_LIMIT = 64
 
-################################################################################
+###############################################################################
 # i18n Stuff
-################################################################################
+###############################################################################
 
 # Languages: http://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 # Countries: http://en.wikipedia.org/wiki/ISO_3166-1
@@ -41,9 +42,9 @@ LOCALE = {
 
 LOCALE_SORTED = sorted(LOCALE.iteritems(), key=operator.itemgetter(1))
 
-################################################################################
+###############################################################################
 # Client modules, also used by the run.py script.
-################################################################################
+###############################################################################
 STYLES = [
     'src/style/style.less',
   ]
@@ -69,6 +70,7 @@ SCRIPTS = {
         'src/script/common/service.coffee',
         'src/script/site/app.coffee',
         'src/script/site/profile.coffee',
+        'src/script/site/user.coffee',
         'src/script/site/admin.coffee',
       ],
   }

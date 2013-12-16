@@ -21,7 +21,7 @@ To test it visit `http://localhost:8080/` in your browser.
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 To watch for changes of your `*.less` & `*.coffee` files and compile them
-automatically to `*.css` & `*.js` run in another bash:
+automatically to `*.css` & `*.js` execute in another bash:
 
     $ ./run.py -w
 
@@ -33,7 +33,12 @@ For a complete list of commands:
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-[Grunt][] is used only for watching for changes and live reloading the page:
+Grunt is used only for watching for changes and live reloading the page.
+Install [grunt command line interface][grunt-cli] as a global package:
+
+    $ npm install -g grunt-cli
+
+and then from the root execute with no arguments:
 
     $ grunt
 
@@ -91,9 +96,8 @@ Author
 [gae-init]: http://gae-init.appspot.com
 [google app engine sdk for python]: https://developers.google.com/appengine/downloads
 [google app engine]: https://developers.google.com/appengine/
-[grunt]: http://gruntjs.com/
+[grunt-cli]: https://github.com/gruntjs/grunt-cli
 [jinja2]: http://jinja.pocoo.org/docs/
-[joernhees]: https://github.com/joernhees
 [jquery]: http://jquery.com/
 [lesscss]: http://lesscss.org/
 [lipis]: http://stackoverflow.com/users/8418/lipis
