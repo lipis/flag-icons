@@ -25,6 +25,9 @@ from main import babel
 ###############################################################################
 @babel.localeselector
 def get_locale():
+  user_db = current_user_db()
+  if user_db:
+    return user_db.locale
   locale = flask.request.cookies.get('locale', config.LOCALE_DEFAULT)
   if locale not in config.LOCALE:
     locale = config.LOCALE_DEFAULT
