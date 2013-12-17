@@ -27,7 +27,6 @@ def check_locale(locale):
   locale = locale.lower()
   if locale in config.LOCALE:
     return locale
-  print '-'*5, locale, config.LOCALE_DEFAULT
   return config.LOCALE_DEFAULT
 
 
