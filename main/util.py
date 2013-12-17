@@ -18,7 +18,7 @@ import config
 # Request Parameters
 ###############################################################################
 def param(name, cast=None):
-  '''Returns query parameter by its name, and optionally casts it to given type.
+  '''Returns query parameter by its name and optionally casts it to given type.
   Always returns None if the parameter is missing
   '''
   value = None
@@ -154,7 +154,9 @@ def jsonpify(*args, **kwargs):
   '''Same as flask.jsonify() but returns JSONP if callback is provided
   '''
   if param('callback'):
-    content = '%s(%s)' % (param('callback'), flask.jsonify(*args, **kwargs).data)
+    content = '%s(%s)' % (
+        param('callback'), flask.jsonify(*args, **kwargs).data,
+      )
     mimetype = 'application/javascript'
     return flask.current_app.response_class(content, mimetype=mimetype)
   return flask.jsonify(*args, **kwargs)

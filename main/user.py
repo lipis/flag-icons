@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import logging
-
 from flask.ext import wtf
 from google.appengine.ext import ndb
 import flask
@@ -124,4 +122,4 @@ def is_username_available(username, self_db=None):
       limit=2,
     )
   c = len(user_dbs)
-  return not (c == 2 or (c == 1 and self_db and self_db.key != user_dbs[0].key))
+  return not (c == 2 or c == 1 and self_db and self_db.key != user_dbs[0].key)

@@ -17,7 +17,7 @@ from main import app
 
 
 ###############################################################################
-# Flaskext Login
+# Flask Login
 ###############################################################################
 login_manager = login.LoginManager()
 
@@ -230,7 +230,7 @@ def signin_twitter():
       )
   except:
     flask.flash(
-        'Something went terribly wrong with Twitter sign in. Please try again.',
+        'Something went wrong with Twitter sign in. Please try again.',
         category='danger',
       )
     return flask.redirect(flask.url_for('signin', next=util.get_next_url()))

@@ -4,11 +4,9 @@ import logging
 
 from flask.ext import wtf
 from google.appengine.api import mail
-from werkzeug import exceptions
 import flask
 
 import config
-import model
 import util
 
 app = flask.Flask(__name__)
@@ -146,7 +144,7 @@ def error_handler(e):
   logging.exception(e)
   try:
     e.code
-  except AttributeError as err:
+  except AttributeError:
     e.code = 500
     e.name = 'Internal Server Error'
 
