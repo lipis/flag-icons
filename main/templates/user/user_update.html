@@ -15,6 +15,10 @@
         {{forms.text_field(form.username, autofocus=True, autocomplete='off')}}
         {{forms.text_field(form.name)}}
         {{forms.email_field(form.email)}}
+        # if current_user.id != user_db.key.id()
+          {{forms.checkbox_field(form.admin)}}
+          {{forms.checkbox_field(form.active)}}
+        # endif
       </div>
       <div class="col-md-2 col-sm-3">
         <div class="form-group">

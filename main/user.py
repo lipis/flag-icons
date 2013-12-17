@@ -57,6 +57,8 @@ class UserUpdateForm(wtf.Form):
       [wtf.validators.optional(), wtf.validators.email()],
       filters=[util.email_filter],
     )
+  admin = wtf.BooleanField('Admin')
+  active = wtf.BooleanField('Active')
 
 
 @app.route('/user/<int:user_id>/update/', methods=['GET', 'POST'])
@@ -74,6 +76,9 @@ def user_update(user_id):
       form.username.errors.append('This username is taken.')
     else:
       form.populate_obj(user_db)
+      if auth.current_user_id() == user_db.key.id():
+        user_db.admin = True
+        user_db.active = True
       user_db.put()
       return flask.redirect(flask.url_for('user_list', order='-modified'))
 
