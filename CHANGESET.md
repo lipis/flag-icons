@@ -1,3 +1,9 @@
+Version 0.9.1 - tbd
+--------------------------
+- Updating the `admin` and `active` states of the User model
+- Showing a ban icon for inactive users in user list
+- Added an icon to indicate your own account on user list/update
+
 Version 0.9.0 - 2013-12-16
 --------------------------
 - Updated Bootstrap to 3.0.3
