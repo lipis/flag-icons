@@ -85,7 +85,10 @@
                 <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="Avatar of {{user_db.name}}">
                 <a href="{{url_for('user_update', user_id=user_db.key.id())}}">{{user_db.name}}</a>
                 # if user_db.admin
-                  <i class="fa fa-cog" title="Administrator"></i>
+                  <i class="fa fa-cog" title="Admin"></i>
+                # endif
+                # if not user_db.active
+                  <i class="fa fa-ban" title="Inactive"></i>
                 # endif
               </td>
               <td class="hidden-xs">{{user_db.username}}</td>
