@@ -32,7 +32,7 @@ def user_list():
 
   return flask.render_template(
       'user/user_list.html',
-      html_class='user',
+      html_class='user-list',
       title='User List',
       user_dbs=user_dbs,
       more_url=util.generate_more_url(more_cursor),

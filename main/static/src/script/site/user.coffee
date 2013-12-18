@@ -1,4 +1,4 @@
-window.init_user = ->
+window.init_user_list = ->
   init_user_selections()
   init_user_delete_btn()
 

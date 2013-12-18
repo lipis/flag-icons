@@ -3,11 +3,12 @@
 
 from datetime import datetime
 import argparse
-from main import config
 import os
 import shutil
 import sys
 import time
+
+from main import config
 
 
 ###############################################################################
