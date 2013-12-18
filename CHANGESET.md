@@ -1,8 +1,10 @@
-Version 0.9.1 - tbd
+Version 0.9.1 - 2013-12-18
 --------------------------
 - Updating the `admin` and `active` states of the User model
 - Showing a ban icon for inactive users in user list
 - Added an icon to indicate your own account on user list/update
+- The `user` class renamed to `user-list` to be more specific
+- Clean ups and some PEP8 fixes
 
 Version 0.9.0 - 2013-12-16
 --------------------------
@@ -25,7 +27,7 @@ Version 0.9.0 - 2013-12-16
 - Fixed avatar for HDPI screens in `user_list.html`
 - Added filters for WTForms: `util.strip_filter` and `util.email_filter`
 - Form macros are now accepting keyword arguments, such as: `autofocus`,
-  `placeholder`, etc.
+  `placeholder`, etc
 - Autofocus flag is now set to the first input in forms
 - Added link to GAE instances in admin config
 - Changed the soon to be deprecated wtf.TextField for wtf.StringField
@@ -90,7 +92,7 @@ styles, scripts and added more static libraries:
 - `static/src/less` > `static/src/style`
 - Update the paths in the `config.py`
 - That setup will not work after these changes, but for the rest of the
-  changes it should be easy to merge.
+  changes it should be easy to merge
 
 Version 0.7.0 - 2013-09-30
 --------------------------
