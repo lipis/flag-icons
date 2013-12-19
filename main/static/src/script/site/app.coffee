@@ -9,8 +9,8 @@ $ -> ($ 'html.profile').each ->
 
 $ -> ($ 'html.feedback').each ->
 
-$ -> ($ 'html.user').each ->
-  init_user()
+$ -> ($ 'html.user-list').each ->
+  init_user_list()
 
 $ -> ($ 'html.admin-config').each ->
   init_admin_config()

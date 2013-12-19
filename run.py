@@ -3,37 +3,45 @@
 
 from datetime import datetime
 import argparse
-from main import config
 import os
 import shutil
 import sys
 import time
+
+from main import config
 
 
 ###############################################################################
 # Options
 ###############################################################################
 parser = argparse.ArgumentParser()
-parser.add_argument('-w', '--watch', dest='watch', action='store_true',
+parser.add_argument(
+    '-w', '--watch', dest='watch', action='store_true',
     help='watch files for changes when running the development web server',
   )
-parser.add_argument('-c', '--clean', dest='clean', action='store_true',
+parser.add_argument(
+    '-c', '--clean', dest='clean', action='store_true',
     help='''recompiles files when running the development web server, but
     obsolete if -s is used''',
   )
-parser.add_argument('-m', '--minify', dest='minify', action='store_true',
+parser.add_argument(
+    '-m', '--minify', dest='minify', action='store_true',
     help='compiles files into minified version before deploying'
   )
-parser.add_argument('-s', '--start', dest='start', action='store_true',
+parser.add_argument(
+    '-s', '--start', dest='start', action='store_true',
     help='starts the dev_appserver.py with storage_path pointing to temp',
   )
-parser.add_argument('-o', '--host', dest='host', action='store', default='127.0.0.1',
+parser.add_argument(
+    '-o', '--host', dest='host', action='store', default='127.0.0.1',
     help='the host to start the dev_appserver.py',
   )
-parser.add_argument('-p', '--port', dest='port', action='store', default='8080',
+parser.add_argument(
+    '-p', '--port', dest='port', action='store', default='8080',
     help='the port to start the dev_appserver.py',
   )
-parser.add_argument('-f', '--flush', dest='flush', action='store_true',
+parser.add_argument(
+    '-f', '--flush', dest='flush', action='store_true',
     help='clears the datastore, blobstore, etc',
   )
 parser.add_argument('-e', '--pybabel-extract', dest='pybabel_extract', action='store_true',
@@ -150,9 +158,9 @@ def merge_files(source, target):
   fout.close()
 
 
-def os_execute(executable, params, source, target, append=False):
+def os_execute(executable, args, source, target, append=False):
   operator = '>>' if append else '>'
-  os.system('"%s" %s %s %s %s' % (executable, params, source, operator, target))
+  os.system('"%s" %s %s %s %s' % (executable, args, source, operator, target))
 
 
 def compile_script(source, target_dir):

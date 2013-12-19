@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import logging
-
 from flask.ext import wtf
 from flask.ext.babel import lazy_gettext as _
 from google.appengine.ext import ndb
@@ -35,7 +33,7 @@ def user_list():
 
   return flask.render_template(
       'user/user_list.html',
-      html_class='user',
+      html_class='user-list',
       title=_('User List'),
       user_dbs=user_dbs,
       more_url=util.generate_more_url(more_cursor),
@@ -47,17 +45,19 @@ def user_list():
 # User Update
 ###############################################################################
 class UserUpdateForm(wtf.Form):
-  username = wtf.StringField('Username',
+  username = wtf.StringField(_('Username'),
       [wtf.validators.required(), wtf.validators.length(min=3)],
       filters=[util.email_filter],
     )
-  name = wtf.StringField('Name',
+  name = wtf.StringField(_('Name'),
       [wtf.validators.required()], filters=[util.strip_filter],
     )
-  email = wtf.StringField('Email',
+  email = wtf.StringField(_('Email'),
       [wtf.validators.optional(), wtf.validators.email()],
       filters=[util.email_filter],
     )
+  admin = wtf.BooleanField(_('Admin'))
+  active = wtf.BooleanField(_('Active'))
 
 
 @app.route('/user/<int:user_id>/update/', methods=['GET', 'POST'])
@@ -70,11 +70,14 @@ def user_update(user_id):
   form = UserUpdateForm(obj=user_db)
   if form.validate_on_submit():
     if not util.is_valid_username(form.username.data):
-      form.username.errors.append('This username is invalid.')
+      form.username.errors.append(_('This username is invalid.'))
     elif not is_username_available(form.username.data, user_db):
-      form.username.errors.append('This username is taken.')
+      form.username.errors.append(_('This username is taken.'))
     else:
       form.populate_obj(user_db)
+      if auth.current_user_id() == user_db.key.id():
+        user_db.admin = True
+        user_db.active = True
       user_db.put()
       return flask.redirect(flask.url_for('user_list', order='-modified'))
 
@@ -120,4 +123,4 @@ def is_username_available(username, self_db=None):
       limit=2,
     )
   c = len(user_dbs)
-  return not (c == 2 or (c == 1 and self_db and self_db.key != user_dbs[0].key))
+  return not (c == 2 or c == 1 and self_db and self_db.key != user_dbs[0].key)

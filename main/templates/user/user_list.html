@@ -49,19 +49,13 @@
               <li>
                 <a id="user-delete"
                     data-service-url="{{url_for('user_delete_service')}}"
-                    data-confirm="Are you sure you want to delete {users} selected user(s)?"
-                    data-success="{users} user(s) deleted."
-                    data-error="Something went while deleting. Please try again."
+                    data-confirm="{{_('Are you sure you want to delete {users} selected user(s)?')}}"
+                    data-success="{{_('{users} user(s) deleted.')}}"
+                    data-error="{{_('Something went while deleting. Please try again.')}}"
                     href="#"
                   >
                   <i class="fa fa-fw fa-trash-o"></i>
-                  Delete Selected
-                </a>
-              </li>
-              <li class="disabled">
-                <a id="user-merge">
-                  <i class="fa fa-fw fa-code-fork"></i>
-                  Merge Selected...
+                  {{_('Delete Selected')}}
                 </a>
               </li>
             </ul>
@@ -90,8 +84,14 @@
                 <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
                 <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="{{_('Avatar of')}} {{user_db.name}}">
                 <a href="{{url_for('user_update', user_id=user_db.key.id())}}">{{user_db.name}}</a>
+                # if current_user.id == user_db.key.id()
+                  <i class="fa fa-hand-o-left" title="{{_('You')}}"></i>
+                # endif
                 # if user_db.admin
-                  <i class="fa fa-cog" title="{{_('Administrator')}}"></i>
+                  <i class="fa fa-cog" title="{{_('Admin')}}"></i>
+                # endif
+                # if not user_db.active
+                  <i class="fa fa-ban" title="{{_('Inactive')}}"></i>
                 # endif
               </td>
               <td class="hidden-xs">{{user_db.username}}</td>
