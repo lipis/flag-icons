@@ -59,7 +59,10 @@ r"""
     >>> is_lazy_string(yes)
     True
 
-    :copyright: (c) 2009 by Armin Ronacher.
+    New in version 1.2: It's now also possible to pass keyword arguments to
+    the callback used with `make_lazy_string`.
+
+    :copyright: (c) 2010 by Armin Ronacher.
     :license: BSD, see LICENSE for more details.
 """
 
@@ -69,9 +72,9 @@ def is_lazy_string(obj):
     return isinstance(obj, _LazyString)
 
 
-def make_lazy_string(func, *args):
+def make_lazy_string(__func, *args, **kwargs):
     """Creates a lazy string by invoking func with args."""
-    return _LazyString(func, args)
+    return _LazyString(__func, args, kwargs)
 
 
 def make_lazy_gettext(lookup_func):
@@ -102,13 +105,14 @@ class _LazyString(object):
     The proxy implementation attempts to be as complete as possible, so that
     the lazy objects should mostly work as expected, for example for sorting.
     """
-    __slots__ = ('_func', '_args')
+    __slots__ = ('_func', '_args', '_kwargs')
 
-    def __init__(self, func, args):
+    def __init__(self, func, args, kwargs):
         self._func = func
         self._args = args
+        self._kwargs = kwargs
 
-    value = property(lambda x: x._func(*x._args))
+    value = property(lambda x: x._func(*x._args, **x._kwargs))
 
     def __contains__(self, key):
         return key in self.value
@@ -173,10 +177,10 @@ class _LazyString(object):
         return getattr(self.value, name)
 
     def __getstate__(self):
-        return self._func, self._args
+        return self._func, self._args, self._kwargs
 
     def __setstate__(self, tup):
-        self._func, self._args = tup
+        self._func, self._args, self._kwargs = tup
 
     def __getitem__(self, key):
         return self.value[key]
