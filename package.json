@@ -8,6 +8,10 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
+  "repository" : {
+    "type": "git",
+    "url": "http://github.com/gae-init"
+  },
   "dependencies": {
     "coffee-script": "~1",
     "less": "~1",

@@ -3,6 +3,7 @@
 
 from datetime import datetime
 import argparse
+import json
 import os
 import shutil
 import sys
@@ -231,6 +232,14 @@ def install_dependencies():
   if not os.path.exists(file_uglifyjs):
     missing = True
   if not os.path.exists(os.path.join(DIR_NODE_MODULES, 'grunt')):
+    missing = True
+  try:
+    file_package = os.path.join(DIR_NODE_MODULES, 'uglify-js', 'package.json')
+    package_json = json.load(open(file_package))
+    version = package_json['version']
+    if int(version.split('.')[0]) < 2:
+      missing = True
+  except:
     missing = True
 
   if missing:

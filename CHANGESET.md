@@ -1,6 +1,7 @@
 Version 0.9.2 - TBD
 --------------------------
 - Updated Moment.js to 2.5.0
+- Updated to UglifyJS2
 
 Version 0.9.1 - 2013-12-18
 --------------------------
