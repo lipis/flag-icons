@@ -41,6 +41,7 @@ LOCALE = {
 }
 
 LOCALE_SORTED = sorted(LOCALE.iteritems(), key=operator.itemgetter(1))
+LANGUAGES = [l.lower().replace('_', '-') for l in LOCALE.keys()]
 
 ###############################################################################
 # Client modules, also used by the run.py script.
@@ -64,7 +65,7 @@ SCRIPTS = {
         'src/lib/bootstrap/js/collapse.js',
         'src/lib/bootstrap/js/dropdown.js',
         'src/lib/bootstrap/js/tooltip.js',
-      ],
+      ] + ['src/lib/lang/%s.js' % l for l in LANGUAGES if l != 'en'],
     'scripts': [
         'src/script/common/util.coffee',
         'src/script/common/service.coffee',
