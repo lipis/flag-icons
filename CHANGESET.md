@@ -2,6 +2,8 @@ Version 0.9.2 - TBD
 --------------------------
 - Updated Moment.js to 2.5.0
 - Updated to UglifyJS2
+- Corrected Twitter's color
+- Updated `threadsafe` setting to `true` to fit Google documentation
 
 Version 0.9.1 - 2013-12-18
 --------------------------
