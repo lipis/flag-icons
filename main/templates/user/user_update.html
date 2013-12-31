@@ -15,8 +15,8 @@
     <div class="row">
       <div class="col-md-4 col-sm-6">
         {{form.csrf_token}}
-        {{forms.text_field(form.username, autofocus=True, autocomplete='off')}}
-        {{forms.text_field(form.name)}}
+        {{forms.text_field(form.name, autofocus=True)}}
+        {{forms.text_field(form.username, autocomplete='off')}}
         {{forms.email_field(form.email)}}
         # if current_user.id != user_db.key.id()
           {{forms.checkbox_field(form.admin)}}
