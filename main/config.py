@@ -38,7 +38,7 @@ SCRIPTS_MODULES = [
 SCRIPTS = {
     'libs': [
         'src/lib/jquery.js',
-        'src/lib/nprogress.js',
+        'src/lib/nprogress/nprogress.js',
         'src/lib/moment.js',
         'src/lib/bootstrap/js/alert.js',
         'src/lib/bootstrap/js/button.js',
