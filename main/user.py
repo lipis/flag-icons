@@ -6,6 +6,7 @@ from google.appengine.ext import ndb
 import flask
 
 import auth
+import i18n
 import model
 import util
 
@@ -44,7 +45,7 @@ def user_list():
 ###############################################################################
 # User Update
 ###############################################################################
-class UserUpdateForm(wtf.Form):
+class UserUpdateForm(i18n.Form):
   username = wtf.StringField(_('Username'),
       [wtf.validators.required(), wtf.validators.length(min=3)],
       filters=[util.email_filter],
