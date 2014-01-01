@@ -5,7 +5,7 @@
 
     Implements i18n/l10n support for Flask applications based on Babel.
 
-    :copyright: (c) 2010 by Armin Ronacher.
+    :copyright: (c) 2013 by Armin Ronacher, Daniel Neuhäuser.
     :license: BSD, see LICENSE for more details.
 """
 from __future__ import absolute_import
@@ -27,6 +27,8 @@ except ImportError:
 else:
     timezone = pytz.timezone
     UTC = pytz.UTC
+
+from flask_babel._compat import string_types
 
 
 class Babel(object):
@@ -235,7 +237,7 @@ def get_timezone():
             if rv is None:
                 tzinfo = babel.default_timezone
             else:
-                if isinstance(rv, basestring):
+                if isinstance(rv, string_types):
                     tzinfo = timezone(rv)
                 else:
                     tzinfo = rv
