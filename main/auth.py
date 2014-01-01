@@ -23,14 +23,22 @@ from main import babel
 ###############################################################################
 # Babel stuff - i18n
 ###############################################################################
+def check_locale(locale):
+  locale = locale.lower()
+  if locale in config.LOCALE:
+    return locale
+  return config.LOCALE_DEFAULT
+
+
 @babel.localeselector
 def get_locale():
+  # session.locale is only used for flash message on sign-in
+  locale = flask.session.get('locale', None)
+  if locale:
+    flask.session.pop('locale', None)
+    return check_locale(locale)
   locale = flask.request.cookies.get('locale', config.LOCALE_DEFAULT)
-  if locale not in config.LOCALE:
-    locale = config.LOCALE_DEFAULT
-  if not localedata.exists(locale):
-    locale = 'en'
-  return locale
+  return check_locale(locale)
 
 
 @flask.request_started.connect_via(app)
@@ -42,7 +50,7 @@ def request_started(sender, **extra):
 @app.route('/l/<path:locale>/')
 def set_locale(locale):
   response = flask.redirect(util.get_next_url())
-  util.set_locale(locale, response)
+  util.set_locale(check_locale(locale), response)
   return response
 
 
@@ -365,11 +373,13 @@ def signin_user_db(user_db):
   flask_user_db = FlaskUser(user_db)
   if login.login_user(flask_user_db):
     user_db.put_async()
+    response = flask.redirect(util.get_next_url())
+    util.set_locale(user_db.locale, response)
+    # using session.locale since cookie is not accessible (yet)
+    flask.session['locale'] = user_db.locale
     flask.flash(__('Hello %(name)s, welcome to %(brand)s!!!',
         name=user_db.name, brand=config.CONFIG_DB.brand_name,
       ), category='success')
-    response = flask.redirect(util.get_next_url())
-    util.set_locale(user_db.locale, response)
     return response
   else:
     flask.flash(__('Sorry, but you could not sign in.'), category='danger')
