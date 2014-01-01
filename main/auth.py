@@ -372,8 +372,6 @@ def signin_user_db(user_db):
     user_db.put_async()
     response = flask.redirect(util.get_next_url())
     util.set_locale(user_db.locale, response)
-    # using session.locale since cookie is not accessible (yet)
-    flask.session['locale'] = user_db.locale
     flask.flash(__('Hello %(name)s, welcome to %(brand)s!!!',
         name=user_db.name, brand=config.CONFIG_DB.brand_name,
       ), category='success')

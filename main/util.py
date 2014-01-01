@@ -53,6 +53,7 @@ def set_locale(locale, response):
   if not locale:
     return response
   response.set_cookie('locale', value=locale, path='/')
+  flask.session['locale'] = locale
   return response
 
 
