@@ -25,19 +25,16 @@ from main import babel
 ###############################################################################
 def check_locale(locale):
   locale = locale.lower()
-  if locale in config.LOCALE:
-    return locale
-  return config.LOCALE_DEFAULT
+  if locale not in config.LOCALE:
+    locale = config.LOCALE_DEFAULT
+  return locale if localedata.exists(locale) else 'en'
 
 
 @babel.localeselector
 def get_locale():
-  # session.locale is only used for flash message on sign-in
-  locale = flask.session.get('locale', None)
-  if locale:
-    flask.session.pop('locale', None)
-    return check_locale(locale)
-  locale = flask.request.cookies.get('locale', config.LOCALE_DEFAULT)
+  locale = flask.session.pop('locale', None)
+  if not locale:
+    locale = flask.request.cookies.get('locale', config.LOCALE_DEFAULT)
   return check_locale(locale)
 
 
