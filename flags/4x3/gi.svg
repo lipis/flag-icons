@@ -1,9 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
-    <defs>
-        <clipPath id="a">
-            <path fill-opacity=".67" d="M-85.241 0h682.67v512h-682.67z"/>
-        </clipPath>
-    </defs>
     <g clip-path="url(#a)" transform="matrix(.938 0 0 .938 79.914 0)">
         <path fill-rule="evenodd" fill="#fff" d="M-254.55 0h1021.8v510.88h-1021.8z"/>
         <path d="M405.2 175.1zm-71.913-62.795l-12.743 64.988 88.979-.909-9.557-64.072" fill="#a11011"/>

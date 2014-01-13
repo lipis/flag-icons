@@ -1,14 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <defs>
-        <linearGradient id="a">
-            <stop stop-color="#faff00" offset="0"/>
-            <stop stop-color="#f5c402" offset="1"/>
-        </linearGradient>
-        <linearGradient id="c" y2="459.27" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="123.79" gradientTransform="scale(.727 1.376)" y1="360.52" x1="123.79"/>
-        <clipPath id="b">
-            <path fill-opacity=".67" d="M-.143-.339h496.74v496.74h-496.74z"/>
-        </clipPath>
-    </defs>
     <g fill-rule="evenodd" transform="matrix(.484 0 0 .484 116.372 -61.391)" clip-path="url(#b)">
         <path fill="#fff" d="M-240.65 126.95h1587v1059h-1587z"/>
         <path d="M-25.558 413.628c-19.603-6.063-38.778-8.043-62.932-20.221-25.483-23.052-27.309-30.449-43.487-37.23-6.09-2.309-10.547-1.336-20.756-10.569-13.048-14.771-7.878-21.627-1.568-27.13 5.322 3.232 7.008 7.057 21.898 6.946 8.432.311 20.469 2.717 32.299 9.495 9.306 7.775 20.809 18.468 34.334 23.536 16.139 3.946 21.919 7.929 32.996 7.391 12.978 1.029 15.074 3.828 25.952 8.188 4.914 21.118-1.424 30.059-18.737 39.594z" fill-opacity=".561" stroke="#cbaa19" stroke-width="3.125" fill="url(#c)"/>

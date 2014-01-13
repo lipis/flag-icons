@@ -1,13 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 170.66667 170.66667">
-    <defs>
-        <g id="c">
-            <clipPath id="a">
-                <path d="M-109 104a104 104 0 0 0 0-208h218a104 104 0 0 0 0 208z"/>
-            </clipPath>
-            <path id="b" clip-path="url(#a)" d="M-55 74a55 55 0 0 1 110 0v-148a55 55 0 0 1-110 0z"/>
-            <use xlink:href="#b" transform="rotate(90)" height="200" width="300"/>
-        </g>
-    </defs>
     <g>
         <path fill="#fff" d="M0 0h170.67v170.67h-170.67z"/>
         <g transform="matrix(.535 0 0 .535 5.108 47.576)">

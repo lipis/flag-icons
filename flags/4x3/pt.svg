@@ -1,13 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-    <defs>
-        <linearGradient id="b" y2="-5035.4" gradientUnits="userSpaceOnUse" y1="-5035.4" gradientTransform="matrix(.085 0 0 .142 -225.71 715.44)" x2="4203.4" x1="359.59">
-            <stop offset="0"/>
-            <stop stop-color="#fff" offset="1"/>
-        </linearGradient>
-        <clipPath id="a">
-            <path fill-opacity=".67" d="M-72.352 0h682.67v512h-682.67z"/>
-        </clipPath>
-    </defs>
     <g clip-path="url(#a)">
         <path stroke="url(#b)" stroke-width="NaN" fill="#090" d="M-39.926.061h288.216v479.878h-288.216z"/>
         <path fill-rule="evenodd" fill="#f00" d="M247.661 0h432.328v480h-432.328z"/>

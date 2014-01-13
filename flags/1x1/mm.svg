@@ -1,20 +1,4 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 5.12 5.12">
-    <defs>
-        <path id="a" fill="#fff" d="M1.437 0h-2.874l1.437-4.422z"/>
-        <g id="c">
-            <use xlink:href="#a" transform="matrix(-.809 -.588 .588 -.809 0 0)" width="18" height="12"/>
-            <use xlink:href="#a" transform="rotate(-72)" width="18" height="12"/>
-            <use xlink:href="#a" width="18" height="12"/>
-            <use xlink:href="#a" transform="rotate(72)" width="18" height="12"/>
-            <use xlink:href="#a" transform="matrix(-.809 .588 -.588 -.809 0 0)" width="18" height="12"/>
-        </g>
-        <clipPath>
-            <path d="M1-7.2h16v12h-16z"/>
-        </clipPath>
-        <clipPath id="b">
-            <path d="M2.992-7.2h12v12h-12z"/>
-        </clipPath>
-    </defs>
     <g transform="matrix(.427 0 0 .427 -1.277 3.072)" clip-path="url(#b)">
         <path fill="#fecb00" d="M0-7.2h18v6h-18z"/>
         <path fill="#ea2839" d="M0-1.2h18v6h-18z"/>
