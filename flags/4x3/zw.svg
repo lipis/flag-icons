@@ -1,37 +1,37 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
-    <g clip-path="url(#a)">
-        <path fill-rule="evenodd" fill="#319208" d="M0 411.431h960v68.572h-960z"/>
-        <path fill-rule="evenodd" fill="#de2010" d="M0 274.284h960v68.572h-960z"/>
-        <path fill-rule="evenodd" fill="#ffd200" d="M0 342.853h960v68.572h-960z"/>
-        <path fill-rule="evenodd" fill="#de2010" d="M0 137.147h960v68.572h-960z"/>
-        <path fill-rule="evenodd" fill="#ffd200" d="M0 68.572h960v68.572h-960z"/>
-        <path fill-rule="evenodd" fill="#319208" d="M0 0h960v68.572h-960z"/>
-        <path d="M27.085 0v480l322.284-240-322.284-240z" fill-rule="evenodd"/>
-        <path fill-rule="evenodd" d="M0 0h27.428v480h-27.428z"/>
-        <path d="M0 0v480l349.716-240-349.716-240z" fill-rule="evenodd"/>
-        <path fill-rule="evenodd" d="M0 205.716h960v68.572h-960z"/>
-        <path d="M0 0v480l322.284-240-322.284-240z" fill-rule="evenodd" fill="#fff"/>
-        <g>
-            <path fill="#d62419" fill-rule="evenodd" d="M123.713 107.541l25.56 84.723 91.319.81-72.685 50.491 27.458 87.086-70.476-53.522-74.348 53.026 29.122-83.571-73.411-54.319 88.49 1.869z"/>
-            <path d="M47.135 155.909c1.555-2.799 1.865-4.355 9.953-7.777 10.575-30.793 37.637-18.662 52.567 23.951 13.686 5.91 95.491 66.874 94.247 70.296-.622 3.11-10.887.622-10.887.622s-16.174 69.052-16.485 69.052c-30.173-4.043-77.14-4.666-109.181-4.043.311-5.288-8.709-39.815-8.709-39.815s-7.777-2.488 5.287-28.927c13.997-33.282 16.797-87.405-16.796-83.36z" fill-rule="evenodd" stroke="#000" stroke-width="NaN" fill="#f7df00"/>
-            <path d="M74.81 143.46c0 1.89-1.532 3.421-3.421 3.421s-3.421-1.532-3.421-3.421 1.532-3.421 3.421-3.421 3.421 1.532 3.421 3.421z" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M108.719 172.084s-26.751 15.241-34.527 14.929" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M193.012 243c-1.866-1.556-99.22-6.221-95.181-39.192" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M113.385 243.619s10.575 6.221 19.595-9.953" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M125.204 243.309s7.465 6.843 18.352-8.087" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M58.954 268.197s6.843.933 8.088-3.11" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M91.295 308.32c0-.311-6.843-44.169-6.843-44.169 33.801 3.007 68.845 3.215 101.398 9.021" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M87.878 264.77l9.331 10.886 9.643-9.332 8.087 8.71" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M117.431 275.35l8.087-7.154 8.71 8.398" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M135.774 276.589l9.021-8.087 6.843 8.088" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M155.376 276.909l8.088-5.599 7.154 6.843" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M176.217 277.838l5.91-5.599" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M86.319 274.721l9.954 11.51 9.953-9.021 8.709 9.332 9.954-8.709 8.398 9.953 10.265-8.709s7.776 9.642 8.709 9.642l10.265-8.087 9.021 9.953 12.441-9.953" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M87.878 285.921s80.25 3.111 93.313 6.221" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M101.256 249.534s76.206 4.043 88.337 8.709" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M85.7 217.803c.622 4.666-4.976 20.84-10.886 26.439-8.088 6.532-7.154 20.218-7.154 20.218.933 5.599 13.064 4.976 14.62 2.178 1.244-12.753 14.929-15.553 14.929-15.553s18.975-5.287 27.061-21.151" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M123.955 258.236c0 2.233-1.81 4.044-4.044 4.044s-4.044-1.81-4.044-4.044c0-2.233 1.81-4.044 4.044-4.044s4.044 1.81 4.044 4.044z" stroke="#000" stroke-width="NaN" fill="none"/>
-            <path d="M141.999 259.794c0 2.233-1.81 4.044-4.044 4.044s-4.044-1.81-4.044-4.044c0-2.233 1.81-4.044 4.044-4.044s4.044 1.81 4.044 4.044z" stroke="#000" stroke-width="NaN" fill="none"/>
-        </g>
+  <g clip-path="url(#a)">
+    <path fill-rule="evenodd" fill="#319208" d="M0 411.431h960v68.572h-960z"/>
+    <path fill-rule="evenodd" fill="#de2010" d="M0 274.284h960v68.572h-960z"/>
+    <path fill-rule="evenodd" fill="#ffd200" d="M0 342.853h960v68.572h-960z"/>
+    <path fill-rule="evenodd" fill="#de2010" d="M0 137.147h960v68.572h-960z"/>
+    <path fill-rule="evenodd" fill="#ffd200" d="M0 68.572h960v68.572h-960z"/>
+    <path fill-rule="evenodd" fill="#319208" d="M0 0h960v68.572h-960z"/>
+    <path d="M27.085 0v480l322.284-240-322.284-240z" fill-rule="evenodd"/>
+    <path fill-rule="evenodd" d="M0 0h27.428v480h-27.428z"/>
+    <path d="M0 0v480l349.716-240-349.716-240z" fill-rule="evenodd"/>
+    <path fill-rule="evenodd" d="M0 205.716h960v68.572h-960z"/>
+    <path d="M0 0v480l322.284-240-322.284-240z" fill-rule="evenodd" fill="#fff"/>
+    <g>
+      <path fill="#d62419" fill-rule="evenodd" d="M123.713 107.541l25.56 84.723 91.319.81-72.685 50.491 27.458 87.086-70.476-53.522-74.348 53.026 29.122-83.571-73.411-54.319 88.49 1.869z"/>
+      <path d="M47.135 155.909c1.555-2.799 1.865-4.355 9.953-7.777 10.575-30.793 37.637-18.662 52.567 23.951 13.686 5.91 95.491 66.874 94.247 70.296-.622 3.11-10.887.622-10.887.622s-16.174 69.052-16.485 69.052c-30.173-4.043-77.14-4.666-109.181-4.043.311-5.288-8.709-39.815-8.709-39.815s-7.777-2.488 5.287-28.927c13.997-33.282 16.797-87.405-16.796-83.36z" fill-rule="evenodd" stroke="#000" stroke-width="NaN" fill="#f7df00"/>
+      <path d="M74.81 143.46c0 1.89-1.532 3.421-3.421 3.421s-3.421-1.532-3.421-3.421 1.532-3.421 3.421-3.421 3.421 1.532 3.421 3.421z" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M108.719 172.084s-26.751 15.241-34.527 14.929" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M193.012 243c-1.866-1.556-99.22-6.221-95.181-39.192" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M113.385 243.619s10.575 6.221 19.595-9.953" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M125.204 243.309s7.465 6.843 18.352-8.087" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M58.954 268.197s6.843.933 8.088-3.11" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M91.295 308.32c0-.311-6.843-44.169-6.843-44.169 33.801 3.007 68.845 3.215 101.398 9.021" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M87.878 264.77l9.331 10.886 9.643-9.332 8.087 8.71" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M117.431 275.35l8.087-7.154 8.71 8.398" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M135.774 276.589l9.021-8.087 6.843 8.088" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M155.376 276.909l8.088-5.599 7.154 6.843" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M176.217 277.838l5.91-5.599" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M86.319 274.721l9.954 11.51 9.953-9.021 8.709 9.332 9.954-8.709 8.398 9.953 10.265-8.709s7.776 9.642 8.709 9.642l10.265-8.087 9.021 9.953 12.441-9.953" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M87.878 285.921s80.25 3.111 93.313 6.221" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M101.256 249.534s76.206 4.043 88.337 8.709" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M85.7 217.803c.622 4.666-4.976 20.84-10.886 26.439-8.088 6.532-7.154 20.218-7.154 20.218.933 5.599 13.064 4.976 14.62 2.178 1.244-12.753 14.929-15.553 14.929-15.553s18.975-5.287 27.061-21.151" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M123.955 258.236c0 2.233-1.81 4.044-4.044 4.044s-4.044-1.81-4.044-4.044c0-2.233 1.81-4.044 4.044-4.044s4.044 1.81 4.044 4.044z" stroke="#000" stroke-width="NaN" fill="none"/>
+      <path d="M141.999 259.794c0 2.233-1.81 4.044-4.044 4.044s-4.044-1.81-4.044-4.044c0-2.233 1.81-4.044 4.044-4.044s4.044 1.81 4.044 4.044z" stroke="#000" stroke-width="NaN" fill="none"/>
     </g>
+  </g>
 </svg>

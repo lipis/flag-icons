@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 5.12 5.12">
-    <g transform="matrix(.427 0 0 .427 -1.277 3.072)" clip-path="url(#b)">
-        <path fill="#fecb00" d="M0-7.2h18v6h-18z"/>
-        <path fill="#ea2839" d="M0-1.2h18v6h-18z"/>
-        <path fill="#34b233" d="M0-3.2h18v4h-18z"/>
-        <use transform="translate(0 -7.2)" height="12" width="18" y="6.422" x="9" xlink:href="#c"/>
-    </g>
+  <g transform="matrix(.427 0 0 .427 -1.277 3.072)" clip-path="url(#b)">
+    <path fill="#fecb00" d="M0-7.2h18v6h-18z"/>
+    <path fill="#ea2839" d="M0-1.2h18v6h-18z"/>
+    <path fill="#34b233" d="M0-3.2h18v4h-18z"/>
+    <use transform="translate(0 -7.2)" height="12" width="18" y="6.422" x="9" xlink:href="#c"/>
+  </g>
 </svg>

@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-    <g clip-path="url(#a)">
-        <path fill="#fff" d="M32-26h512v512h-512z"/>
-        <path fill-rule="evenodd" fill="#fff" d="M-38-25.842h699.74v511.84h-699.74z"/>
-        <path fill-rule="evenodd" fill="#d72828" d="M-67.213-49.039h222.94v221.47h-222.94z"/>
-        <path fill-rule="evenodd" fill="#d72828" d="M279.42-49.039h431.36v221.47h-431.36z"/>
-        <path fill-rule="evenodd" fill="#d72828" d="M-67.213 295.67h220v225.76h-220z"/>
-        <path fill-rule="evenodd" fill="#d72828" d="M282 297.79h419.68v223.65h-419.68z"/>
-        <path fill-rule="evenodd" fill="#003897" d="M186.65-49.039h64.425v545.67h-64.425z"/>
-        <path fill-rule="evenodd" fill="#003897" d="M-67.213 198.84h763.01v63.444h-763.01z"/>
-    </g>
+  <g clip-path="url(#a)">
+    <path fill="#fff" d="M32-26h512v512h-512z"/>
+    <path fill-rule="evenodd" fill="#fff" d="M-38-25.842h699.74v511.84h-699.74z"/>
+    <path fill-rule="evenodd" fill="#d72828" d="M-67.213-49.039h222.94v221.47h-222.94z"/>
+    <path fill-rule="evenodd" fill="#d72828" d="M279.42-49.039h431.36v221.47h-431.36z"/>
+    <path fill-rule="evenodd" fill="#d72828" d="M-67.213 295.67h220v225.76h-220z"/>
+    <path fill-rule="evenodd" fill="#d72828" d="M282 297.79h419.68v223.65h-419.68z"/>
+    <path fill-rule="evenodd" fill="#003897" d="M186.65-49.039h64.425v545.67h-64.425z"/>
+    <path fill-rule="evenodd" fill="#003897" d="M-67.213 198.84h763.01v63.444h-763.01z"/>
+  </g>
 </svg>

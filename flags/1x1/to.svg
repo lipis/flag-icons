@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512">
-    <g fill-rule="evenodd">
-        <path fill="#c10000" d="M0 0h512v512h-512z"/>
-        <g>
-            <path fill="#fff" d="M0 0h218.308v174.959h-218.308z"/>
-            <g fill="#c10000">
-                <path d="M89.884 27.301h34.816v121.944h-34.816z"/>
-                <path d="M168.269 70.861v34.816h-121.944v-34.816z"/>
-            </g>
-        </g>
+  <g fill-rule="evenodd">
+    <path fill="#c10000" d="M0 0h512v512h-512z"/>
+    <g>
+      <path fill="#fff" d="M0 0h218.308v174.959h-218.308z"/>
+      <g fill="#c10000">
+        <path d="M89.884 27.301h34.816v121.944h-34.816z"/>
+        <path d="M168.269 70.861v34.816h-121.944v-34.816z"/>
+      </g>
     </g>
+  </g>
 </svg>

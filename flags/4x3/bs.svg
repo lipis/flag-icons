@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-    <g fill-rule="evenodd" clip-path="url(#a)">
-        <path fill="#fff" d="M980.53 480h-978.98v-478.23h978.98z"/>
-        <path fill="#ffe900" d="M980.53 344.48h-978.98v-201.18h978.98z"/>
-        <path fill="#08ced6" d="M980.53 480h-978.98v-159.41h978.98z"/>
-        <path fill="#08ced6" d="M980.53 161.31h-978.98v-159.41h978.98z"/>
-        <path d="M1.087 0c2.173 0 391.71 236.82 391.71 236.82l-392.8 242.38 1.087-479.2z"/>
-    </g>
+  <g fill-rule="evenodd" clip-path="url(#a)">
+    <path fill="#fff" d="M980.53 480h-978.98v-478.23h978.98z"/>
+    <path fill="#ffe900" d="M980.53 344.48h-978.98v-201.18h978.98z"/>
+    <path fill="#08ced6" d="M980.53 480h-978.98v-159.41h978.98z"/>
+    <path fill="#08ced6" d="M980.53 161.31h-978.98v-159.41h978.98z"/>
+    <path d="M1.087 0c2.173 0 391.71 236.82 391.71 236.82l-392.8 242.38 1.087-479.2z"/>
+  </g>
 </svg>

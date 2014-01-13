@@ -1,22 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
-    <g fill-rule="evenodd" clip-path="url(#a)">
-        <g>
-            <path fill="#0061f3" d="M0 0h719.996v53.333h-719.996z"/>
-            <path fill="#fff" d="M0 53.333h719.996v53.333h-719.996z"/>
-            <path fill="#0061f3" d="M0 106.666h719.996v53.333h-719.996z"/>
-            <path fill="#fff" d="M0 159.999h719.996v53.333h-719.996z"/>
-            <path fill="#0061f3" d="M0 213.332h719.996v53.333h-719.996z"/>
-            <path fill="#fff" d="M0 266.665h719.996v53.333h-719.996z"/>
-            <path fill="#0061f3" d="M0 319.998h719.996v53.333h-719.996z"/>
-            <path fill="#fff" d="M0 373.331h719.996v53.333h-719.996z"/>
-            <path fill="#0061f3" d="M0 426.664h719.996v53.333h-719.996z"/>
-        </g>
-        <g>
-            <path fill="#0061f3" d="M0 0h266.665v266.665h-266.665z"/>
-            <g fill="#fff">
-                <path d="M106.666 0h53.333v266.665h-53.333z"/>
-                <path d="M0 106.666h266.665v53.333h-266.665z"/>
-            </g>
-        </g>
+  <g fill-rule="evenodd" clip-path="url(#a)">
+    <g>
+      <path fill="#0061f3" d="M0 0h719.996v53.333h-719.996z"/>
+      <path fill="#fff" d="M0 53.333h719.996v53.333h-719.996z"/>
+      <path fill="#0061f3" d="M0 106.666h719.996v53.333h-719.996z"/>
+      <path fill="#fff" d="M0 159.999h719.996v53.333h-719.996z"/>
+      <path fill="#0061f3" d="M0 213.332h719.996v53.333h-719.996z"/>
+      <path fill="#fff" d="M0 266.665h719.996v53.333h-719.996z"/>
+      <path fill="#0061f3" d="M0 319.998h719.996v53.333h-719.996z"/>
+      <path fill="#fff" d="M0 373.331h719.996v53.333h-719.996z"/>
+      <path fill="#0061f3" d="M0 426.664h719.996v53.333h-719.996z"/>
     </g>
+    <g>
+      <path fill="#0061f3" d="M0 0h266.665v266.665h-266.665z"/>
+      <g fill="#fff">
+        <path d="M106.666 0h53.333v266.665h-53.333z"/>
+        <path d="M0 106.666h266.665v53.333h-266.665z"/>
+      </g>
+    </g>
+  </g>
 </svg>

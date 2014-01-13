@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <g clip-path="url(#a)" transform="scale(.938 .938)">
-        <path fill="#002b7f" d="M0 0h768v512h-768z"/>
-        <path fill="#f9e814" d="M0 320h768v64h-768z"/>
-        <use xlink:href="#b" transform="scale(42.667)" height="9000" width="13500" y="2" x="2" fill="#fff"/>
-        <use xlink:href="#b" transform="scale(56.889)" height="9000" width="13500" y="3" x="3" fill="#fff"/>
-    </g>
+  <g clip-path="url(#a)" transform="scale(.938 .938)">
+    <path fill="#002b7f" d="M0 0h768v512h-768z"/>
+    <path fill="#f9e814" d="M0 320h768v64h-768z"/>
+    <use xlink:href="#b" transform="scale(42.667)" height="9000" width="13500" y="2" x="2" fill="#fff"/>
+    <use xlink:href="#b" transform="scale(56.889)" height="9000" width="13500" y="3" x="3" fill="#fff"/>
+  </g>
 </svg>

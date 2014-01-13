@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-    <g fill-rule="evenodd" clip-path="url(#a)">
-        <path fill="#fff" d="M-80.784 305.306h233.766v174.694h-233.766z"/>
-        <path fill="#0062da" d="M152.832 0h140.569v480h-140.569z"/>
-        <path fill="#0062da" d="M-80.784 174.544h841.566v130.912h-841.566z"/>
-        <path fill="#fff" d="M-80.784.003h233.766v174.694h-233.766z"/>
-        <path fill="#fff" d="M293.251 305.306h467.531v174.694h-467.531z"/>
-        <path fill="#fff" d="M293.251.002h467.531v174.694h-467.531z"/>
-        <path fill="#fff" d="M-80.784 305.306h233.766v174.694h-233.766z"/>
-        <path fill="#0062da" d="M152.832 0h140.569v480h-140.569z"/>
-        <path fill="#fff" d="M-80.784.003h233.766v174.694h-233.766z"/>
-        <path fill="#fff" d="M293.251 305.306h467.531v174.694h-467.531z"/>
-        <path fill="#fff" d="M293.251.002h467.531v174.694h-467.531z"/>
-    </g>
+  <g fill-rule="evenodd" clip-path="url(#a)">
+    <path fill="#fff" d="M-80.784 305.306h233.766v174.694h-233.766z"/>
+    <path fill="#0062da" d="M152.832 0h140.569v480h-140.569z"/>
+    <path fill="#0062da" d="M-80.784 174.544h841.566v130.912h-841.566z"/>
+    <path fill="#fff" d="M-80.784.003h233.766v174.694h-233.766z"/>
+    <path fill="#fff" d="M293.251 305.306h467.531v174.694h-467.531z"/>
+    <path fill="#fff" d="M293.251.002h467.531v174.694h-467.531z"/>
+    <path fill="#fff" d="M-80.784 305.306h233.766v174.694h-233.766z"/>
+    <path fill="#0062da" d="M152.832 0h140.569v480h-140.569z"/>
+    <path fill="#fff" d="M-80.784.003h233.766v174.694h-233.766z"/>
+    <path fill="#fff" d="M293.251 305.306h467.531v174.694h-467.531z"/>
+    <path fill="#fff" d="M293.251.002h467.531v174.694h-467.531z"/>
+  </g>
 </svg>

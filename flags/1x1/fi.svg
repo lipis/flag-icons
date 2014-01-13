@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
-    <path fill-rule="evenodd" fill="#0062da" d="M.293-3764.3h49.872v8.546h-49.872z"/>
-    <path fill-rule="evenodd" fill="#0062da" d="M0-2800500h7472800v66033h-7472800z"/>
-    <g fill-rule="evenodd" clip-path="url(#a)">
-        <path fill="#fff" d="M-105.62 325.661h249.355v186.332h-249.355z"/>
-        <path fill="#0062da" d="M143.566 0h149.944v511.994h-149.944z"/>
-        <path fill="#0062da" d="M-105.62 186.18h897.672v139.633h-897.672z"/>
-        <path fill="#fff" d="M-105.62.003h249.355v186.332h-249.355z"/>
-        <path fill="#fff" d="M293.341 325.661h498.702v186.332h-498.702z"/>
-        <path fill="#fff" d="M293.341.002h498.702v186.332h-498.702z"/>
-        <path fill="#fff" d="M-105.62 325.661h249.355v186.332h-249.355z"/>
-        <path fill="#0062da" d="M143.566 0h149.944v511.994h-149.944z"/>
-        <path fill="#fff" d="M-105.62.003h249.355v186.332h-249.355z"/>
-        <path fill="#fff" d="M293.341 325.661h498.702v186.332h-498.702z"/>
-        <path fill="#fff" d="M293.341.002h498.702v186.332h-498.702z"/>
-    </g>
+  <path fill-rule="evenodd" fill="#0062da" d="M.293-3764.3h49.872v8.546h-49.872z"/>
+  <path fill-rule="evenodd" fill="#0062da" d="M0-2800500h7472800v66033h-7472800z"/>
+  <g fill-rule="evenodd" clip-path="url(#a)">
+    <path fill="#fff" d="M-105.62 325.661h249.355v186.332h-249.355z"/>
+    <path fill="#0062da" d="M143.566 0h149.944v511.994h-149.944z"/>
+    <path fill="#0062da" d="M-105.62 186.18h897.672v139.633h-897.672z"/>
+    <path fill="#fff" d="M-105.62.003h249.355v186.332h-249.355z"/>
+    <path fill="#fff" d="M293.341 325.661h498.702v186.332h-498.702z"/>
+    <path fill="#fff" d="M293.341.002h498.702v186.332h-498.702z"/>
+    <path fill="#fff" d="M-105.62 325.661h249.355v186.332h-249.355z"/>
+    <path fill="#0062da" d="M143.566 0h149.944v511.994h-149.944z"/>
+    <path fill="#fff" d="M-105.62.003h249.355v186.332h-249.355z"/>
+    <path fill="#fff" d="M293.341 325.661h498.702v186.332h-498.702z"/>
+    <path fill="#fff" d="M293.341.002h498.702v186.332h-498.702z"/>
+  </g>
 </svg>

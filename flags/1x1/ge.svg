@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 170.66667 170.66667">
-    <g>
-        <path fill="#fff" d="M0 0h170.67v170.67h-170.67z"/>
-        <g transform="matrix(.535 0 0 .535 5.108 47.576)">
-            <path fill="#fff" d="M0-29.333h300v200h-300z"/>
-            <path fill="#f00" d="M130-29.333v80h-130v40h130v80h40v-80h130v-40h-130v-80h-40z"/>
-            <use xlink:href="#c" transform="translate(64.45 10.117)" height="200" width="300" fill="#f00"/>
-            <use xlink:href="#c" transform="translate(235.55 131.22)" height="200" width="300" fill="#f00"/>
-            <use xlink:href="#c" transform="translate(235.55 10.117)" height="200" width="300" fill="#f00"/>
-            <use xlink:href="#c" transform="translate(64.45 131.22)" height="200" width="300" fill="#f00"/>
-        </g>
+  <g>
+    <path fill="#fff" d="M0 0h170.67v170.67h-170.67z"/>
+    <g transform="matrix(.535 0 0 .535 5.108 47.576)">
+      <path fill="#fff" d="M0-29.333h300v200h-300z"/>
+      <path fill="#f00" d="M130-29.333v80h-130v40h130v80h40v-80h130v-40h-130v-80h-40z"/>
+      <use xlink:href="#c" transform="translate(64.45 10.117)" height="200" width="300" fill="#f00"/>
+      <use xlink:href="#c" transform="translate(235.55 131.22)" height="200" width="300" fill="#f00"/>
+      <use xlink:href="#c" transform="translate(235.55 10.117)" height="200" width="300" fill="#f00"/>
+      <use xlink:href="#c" transform="translate(64.45 131.22)" height="200" width="300" fill="#f00"/>
     </g>
+  </g>
 </svg>

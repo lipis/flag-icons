@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-    <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(88.001 -32)">
-        <path fill="#fff" d="M-128 32h720v480h-720z"/>
-        <ellipse rx="194.93" ry="194.93" transform="matrix(.766 0 0 .766 -168.44 8.618)" cy="344.05" cx="523.08" fill="#d30000"/>
-    </g>
+  <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(88.001 -32)">
+    <path fill="#fff" d="M-128 32h720v480h-720z"/>
+    <ellipse rx="194.93" ry="194.93" transform="matrix(.766 0 0 .766 -168.44 8.618)" cy="344.05" cx="523.08" fill="#d30000"/>
+  </g>
 </svg>

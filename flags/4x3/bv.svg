@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-    <g fill-rule="evenodd" clip-path="url(#a)">
-        <path fill="#fff" d="M-28 0h699.74v512h-699.74z"/>
-        <path fill="#d72828" d="M-52.992-77.837h218.72v276.26h-218.72z"/>
-        <path fill="#d72828" d="M289.42-.572h380.91v199h-380.91z"/>
-        <path fill="#d72828" d="M-27.545 320.01h190.33v190.33h-190.33z"/>
-        <path fill="#d72828" d="M292 322.12h378.34v188.21h-378.34z"/>
-        <path fill="#003897" d="M196.65-25.447h64.425v535.78h-64.425z"/>
-        <path fill="#003897" d="M-27.545 224.84h697.88v63.444h-697.88z"/>
-    </g>
+  <g fill-rule="evenodd" clip-path="url(#a)">
+    <path fill="#fff" d="M-28 0h699.74v512h-699.74z"/>
+    <path fill="#d72828" d="M-52.992-77.837h218.72v276.26h-218.72z"/>
+    <path fill="#d72828" d="M289.42-.572h380.91v199h-380.91z"/>
+    <path fill="#d72828" d="M-27.545 320.01h190.33v190.33h-190.33z"/>
+    <path fill="#d72828" d="M292 322.12h378.34v188.21h-378.34z"/>
+    <path fill="#003897" d="M196.65-25.447h64.425v535.78h-64.425z"/>
+    <path fill="#003897" d="M-27.545 224.84h697.88v63.444h-697.88z"/>
+  </g>
 </svg>

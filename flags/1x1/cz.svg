@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
-    <g fill-rule="evenodd" clip-path="url(#a)">
-        <path fill="#e80000" d="M-74 0h768.007v512h-768.007z"/>
-        <path fill="#fff" d="M-74 0h768.007v256h-768.007z"/>
-        <path d="M-74 0l382.445 255.501-382.445 255.169v-510.671z" fill="#00006f"/>
-    </g>
+  <g fill-rule="evenodd" clip-path="url(#a)">
+    <path fill="#e80000" d="M-74 0h768.007v512h-768.007z"/>
+    <path fill="#fff" d="M-74 0h768.007v256h-768.007z"/>
+    <path d="M-74 0l382.445 255.501-382.445 255.169v-510.671z" fill="#00006f"/>
+  </g>
 </svg>

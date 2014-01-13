@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" viewBox="0 0 10.24 10.24">
-    <title>
-        Flag of South Sudan
-    </title>
-    <g>
-        <path fill="#078930" d="M0 7.168h10.24v3.072h-10.24z"/>
-        <path fill="#fff" d="M0 3.072h10.24v4.096h-10.24z"/>
-        <path d="M0 0h10.24v3.072h-10.24z"/>
-        <path fill="#da121a" d="M0 3.584h10.24v3.072h-10.24z"/>
-        <path fill="#0f47af" d="M0 0l8.66 5.12-8.66 5.12z"/>
-        <path fill="#fcdd09" d="M4.181 4.157l-2.894.963 2.894.963-1.789-2.521v3.116z"/>
-    </g>
+  <title>
+    Flag of South Sudan
+  </title>
+  <g>
+    <path fill="#078930" d="M0 7.168h10.24v3.072h-10.24z"/>
+    <path fill="#fff" d="M0 3.072h10.24v4.096h-10.24z"/>
+    <path d="M0 0h10.24v3.072h-10.24z"/>
+    <path fill="#da121a" d="M0 3.584h10.24v3.072h-10.24z"/>
+    <path fill="#0f47af" d="M0 0l8.66 5.12-8.66 5.12z"/>
+    <path fill="#fcdd09" d="M4.181 4.157l-2.894.963 2.894.963-1.789-2.521v3.116z"/>
+  </g>
 </svg>
