@@ -2,15 +2,6 @@
     <title>
         Flag of the People&apos;s Republic of China
     </title>
-    <defs>
-        <path id="b" fill="#ffde00" d="M.951-.309l-1.539 1.118.588-1.809.588 1.809-1.539-1.118z"/>
-        <clipPath>
-            <path d="M-5-15.4h26.667v20h-26.667z"/>
-        </clipPath>
-        <clipPath id="a">
-            <path d="M-5-15.4h20v20h-20z"/>
-        </clipPath>
-    </defs>
     <g transform="matrix(.512 0 0 .512 -2.44 2.885)" clip-path="url(#a)">
         <path fill="#de2910" d="M-5-15.4h30v20h-30z"/>
         <use height="20" width="30" transform="matrix(3 0 0 3 0 -10.4)" xlink:href="#b"/>

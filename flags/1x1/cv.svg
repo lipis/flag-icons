@@ -2,11 +2,6 @@
     <desc>
         The United States of America flag, produced by Daniel McRae
     </desc>
-    <defs>
-        <clipPath id="a">
-            <path fill-opacity=".67" d="M0 0h512v512h-512z"/>
-        </clipPath>
-    </defs>
     <g fill-rule="evenodd" clip-path="url(#a)">
         <path fill="#fff" d="M-123.43 233.05h846.53v205.97h-846.53z"/>
         <path fill="#081873" d="M-122.76 0h845.95v256.64h-845.95z"/>
