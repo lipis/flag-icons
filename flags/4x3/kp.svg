@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1"><defs><clipPath id="a"><rect fill-opacity=".67" height="511.9" width="682.53" y=".1" x="5.077"/></clipPath></defs><g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(.938 0 0 .938 -4.761 -.094)"><rect transform="scale(-1)" height="510.95" width="851.86" stroke="#000" y="-511.52" x="-775.94" stroke-width=".76pt" fill="#fff"/><rect transform="scale(-1 1)" height="92.457" width="851.86" y="419.07" x="-775.94" fill="#3e5698"/><rect transform="scale(-1)" height="283.21" width="851.86" y="-397.65" x="-775.94" fill="#c60000"/><rect transform="scale(-1 1)" height="92.457" width="851.86" y=".576" x="-775.94" fill="#3e5698"/><path d="M328.518 256.07c0 63.45-53.108 114.886-118.618 114.886-65.512 0-118.618-51.437-118.618-114.886 0-63.45 53.108-114.886 118.618-114.886 65.512 0 118.618 51.437 118.618 114.886z" fill="#fff"/><polygon transform="matrix(1.003 -.005 -.011 .983 -320.22 -86.633)" points="498.45 365.81 441.12 324.21 511.95 324.28 533.78 256.9 555.61 324.28 626.44 324.23 569.1 365.81 591.04 433.16 591.04 433.16 533.77 391.48 476.5 433.15" fill="#c40000"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
+    <defs>
+        <clipPath id="a">
+            <path fill-opacity=".67" d="M5.077.1h682.53v511.9h-682.53z"/>
+        </clipPath>
+    </defs>
+    <g fill-rule="evenodd" clip-path="url(#a)">
+        <path stroke="#000" stroke-width="NaN" fill="#fff" d="M723.071 479.712h-799.045v-479.271h799.045z"/>
+        <path fill="#3e5698" d="M723.071 392.994h-799.045v86.725h799.045z"/>
+        <path fill="#c60000" d="M723.071 372.902h-799.045v-265.651h799.045z"/>
+        <path fill="#3e5698" d="M723.071.446h-799.045v86.725h799.045z"/>
+        <path d="M303.245 240.353c0 59.523-49.792 107.774-111.213 107.774-61.422 0-111.213-48.252-111.213-107.774 0-59.523 49.792-107.774 111.213-107.774 61.422 0 111.213 48.252 111.213 107.774z" fill="#fff"/>
+        <path fill="#c40000" d="M160.358 253.457l-53.532-38.069 66.65-.29 21.216-62.234 19.868 62.015 66.652-.4-54.373 38.623 19.972 61.987-53.474-38.143-54.308 38.706z"/>
+    </g>
+</svg>

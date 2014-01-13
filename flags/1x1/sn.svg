@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512"><g fill-rule="evenodd" transform="matrix(.583 0 0 1 110.4 .381)"><rect height="512" width="292.57" y="-.381" x="-189.26" fill="#0b7226"/><rect height="512" width="292.57" y="-.381" x="103.31" fill="#ff0"/><rect height="512" width="292.57" y="-.381" x="395.88" fill="#bc0000"/></g><polygon transform="matrix(1.298 0 0 1.345 30.195 41.682)" points="128.47 230.43 145.53 177.05 99 142.52 156.39 142.52 175 86 192.06 142.52 251 142.52 204.47 177.05 221.53 232 175 197.46" fill="#0b7226"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512">
+    <g fill-rule="evenodd">
+        <path fill="#0b7226" d="M-.001 0h170.665v512h-170.665z"/>
+        <path fill="#ff0" d="M170.664 0h170.665v512h-170.665z"/>
+        <path fill="#bc0000" d="M341.329 0h170.665v512h-170.665z"/>
+    </g>
+    <path fill="#0b7226" d="M196.962 351.726l22.146-71.823-60.401-46.46h74.498l24.158-76.048 22.146 76.048h76.51l-60.401 46.46 22.146 73.935-60.401-46.474z"/>
+</svg>

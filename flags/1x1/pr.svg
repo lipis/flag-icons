@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1"><defs><clipPath id="a"><rect fill-opacity=".67" height="708.66" width="708.66" x="51.624"/></clipPath></defs><g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(.722 0 0 .722 -37.298 0)"><rect height="708.66" width="1063" fill="#ed0000"/><rect height="141.73" width="1063" y="141.73" fill="#fff"/><rect height="141.73" width="1063" y="425.2" fill="#fff"/><path d="M0 0l609.96 353.88-609.96 353.42v-707.3z" fill="#0050f0"/><path d="M268.179 450.475l-65.671-49.042-65.35 49.523 24.305-80.478-65.23-49.695 80.701-.693 25.031-80.234 25.567 80.049 80.701.106-64.895 50.163 24.841 80.3z" fill="#fff"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
+    <defs>
+        <clipPath id="a">
+            <path fill-opacity=".67" d="M51.624 0h708.66v708.66h-708.66z"/>
+        </clipPath>
+    </defs>
+    <g fill-rule="evenodd" clip-path="url(#a)">
+        <path fill="#ed0000" d="M-37.298 0h768.007v512h-768.007z"/>
+        <path fill="#fff" d="M-37.298 102.399h768.007v102.399h-768.007z"/>
+        <path fill="#fff" d="M-37.298 307.203h768.007v102.399h-768.007z"/>
+        <path d="M-37.298 0l440.69 255.675-440.69 255.342v-511.017z" fill="#0050f0"/>
+        <path d="M156.54 325.199l-47.45-35.428-47.218 35.776 17.561-58.138-47.131-35.9 58.31-.501 18.086-57.962 18.473 57.828 58.31.076-46.889 36.239 17.949 58.01z" fill="#fff"/>
+    </g>
+</svg>

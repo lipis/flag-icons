@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 213.33333 160"><defs><g id="c"><clipPath id="a"><path d="M-109 104a104 104 0 0 0 0-208h218a104 104 0 0 0 0 208z"/></clipPath><path id="b" clip-path="url(#a)" d="M-55 74a55 55 0 0 1 110 0v-148a55 55 0 0 1-110 0z"/><use xlink:href="#b" transform="rotate(90)" height="200" width="300"/></g></defs><g><rect height="160" width="213.33" fill="#fff"/><g><rect height="133.71" width="200.56" y="13.192" x="6.385" fill="#fff"/><path fill="#f00" d="M93.296 13.192v53.484h-86.911v26.742h86.911v53.484h26.742v-53.484h86.911v-26.742h-86.911v-53.484h-26.742z"/><use xlink:href="#c" transform="matrix(.669 0 0 .669 49.472 39.566)" height="200" width="300" fill="#f00"/><use xlink:href="#c" transform="matrix(.669 0 0 .669 163.86 120.53)" height="200" width="300" fill="#f00"/><use xlink:href="#c" transform="matrix(.669 0 0 .669 163.86 39.566)" height="200" width="300" fill="#f00"/><use xlink:href="#c" transform="matrix(.669 0 0 .669 49.472 120.53)" height="200" width="300" fill="#f00"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 213.33333 160">
+    <defs>
+        <g id="c">
+            <clipPath id="a">
+                <path d="M-109 104a104 104 0 0 0 0-208h218a104 104 0 0 0 0 208z"/>
+            </clipPath>
+            <path id="b" clip-path="url(#a)" d="M-55 74a55 55 0 0 1 110 0v-148a55 55 0 0 1-110 0z"/>
+            <use xlink:href="#b" transform="rotate(90)" height="200" width="300"/>
+        </g>
+    </defs>
+    <g>
+        <path fill="#fff" d="M0 0h213.33v160h-213.33z"/>
+        <g>
+            <path fill="#fff" d="M6.385 13.192h200.56v133.71h-200.56z"/>
+            <path fill="#f00" d="M93.296 13.192v53.484h-86.911v26.742h86.911v53.484h26.742v-53.484h86.911v-26.742h-86.911v-53.484h-26.742z"/>
+            <use xlink:href="#c" transform="matrix(.669 0 0 .669 49.472 39.566)" height="200" width="300" fill="#f00"/>
+            <use xlink:href="#c" transform="matrix(.669 0 0 .669 163.86 120.53)" height="200" width="300" fill="#f00"/>
+            <use xlink:href="#c" transform="matrix(.669 0 0 .669 163.86 39.566)" height="200" width="300" fill="#f00"/>
+            <use xlink:href="#c" transform="matrix(.669 0 0 .669 49.472 120.53)" height="200" width="300" fill="#f00"/>
+        </g>
+    </g>
+</svg>

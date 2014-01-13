@@ -1,1 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1"><defs><clipPath id="a"><rect fill-opacity=".67" height="708.66" width="708.66" x="177.17"/></clipPath></defs><g clip-path="url(#a)" fill-rule="evenodd" transform="matrix(.722 0 0 .722 -128 0)"><rect height="708.66" width="1063" fill="#40a6ff"/><path d="M642.937 527.641l-114.197-74.016-113.637 74.743 42.264-121.461-113.429-75.002 140.332-1.046 43.526-121.093 44.459 120.814 140.332.159-112.847 75.709 43.197 121.192z" fill="#fff"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
+    <defs>
+        <clipPath id="a">
+            <path fill-opacity=".67" d="M177.17 0h708.66v708.66h-708.66z"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#a)" fill-rule="evenodd">
+        <path fill="#40a6ff" d="M-128 0h768.007v512h-768.007z"/>
+        <path d="M336.473 381.028l-82.504-53.473-82.1 53.998 30.535-87.75-81.949-54.186 101.386-.755 31.446-87.484 32.12 87.283 101.386.115-81.529 54.696 31.209 87.556z" fill="#fff"/>
+    </g>
+</svg>

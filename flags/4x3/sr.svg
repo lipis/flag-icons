@@ -1,1 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640"><defs><clipPath id="a"><rect fill-opacity=".67" height="480" width="640"/></clipPath></defs><g clip-path="url(#a)"><rect height="480" width="640" fill="#fff"/><rect height="480" width="480" x="79.926" fill="#fff"/><rect fill-rule="evenodd" height="95.895" width="720.15" y="384.1" x="-40.074" fill="#090"/><rect fill-rule="evenodd" height="96.001" width="720.09" x="-40.074" fill="#090"/><rect fill-rule="evenodd" height="191.69" width="720.11" y="143.8" x="-40.074" fill="#f00"/><path d="M373.9 329.18l-62.259-41.2-61.954 41.605 23.042-67.61-61.841-41.749 76.508-.582 23.73-67.405 24.239 67.25 76.508.089-61.524 42.143 23.551 67.461z" fill-rule="evenodd" fill="#ff0"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
+    <defs>
+        <clipPath id="a">
+            <path fill-opacity=".67" d="M0 0h640v480h-640z"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#a)">
+        <path fill="#fff" d="M0 0h640v480h-640z"/>
+        <path fill="#fff" d="M79.926 0h480v480h-480z"/>
+        <path fill-rule="evenodd" fill="#090" d="M-40.074 384.1h720.15v95.895h-720.15z"/>
+        <path fill-rule="evenodd" fill="#090" d="M-40.074 0h720.09v96.001h-720.09z"/>
+        <path fill-rule="evenodd" fill="#f00" d="M-40.074 143.8h720.11v191.69h-720.11z"/>
+        <path d="M373.9 329.18l-62.259-41.2-61.954 41.605 23.042-67.61-61.841-41.749 76.508-.582 23.73-67.405 24.239 67.25 76.508.089-61.524 42.143 23.551 67.461z" fill-rule="evenodd" fill="#ff0"/>
+    </g>
+</svg>

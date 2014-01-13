@@ -1,1 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 5.12 5.12"><defs><polygon id="a" points="0.16245985,0 -0.16245985,0 0,-0.5" transform="scale(8.844)" fill="#fff"/><g id="c"><use xlink:href="#a" transform="matrix(-.809 -.588 .588 -.809 0 0)" width="18" height="12"/><use xlink:href="#a" transform="rotate(-72)" width="18" height="12"/><use xlink:href="#a" width="18" height="12"/><use xlink:href="#a" transform="rotate(72)" width="18" height="12"/><use xlink:href="#a" transform="matrix(-.809 .588 -.588 -.809 0 0)" width="18" height="12"/></g><clipPath><rect width="16" height="12" x="1" y="-7.2"/></clipPath><clipPath id="b"><rect width="12" height="12" x="2.992" y="-7.2"/></clipPath></defs><g transform="matrix(.427 0 0 .427 -1.277 3.072)" clip-path="url(#b)"><rect y="-7.2" height="6" width="18" fill="#fecb00"/><rect y="-1.2" height="6" width="18" fill="#ea2839"/><rect y="-3.2" height="4" width="18" fill="#34b233"/><use transform="translate(0 -7.2)" height="12" width="18" y="6.422" x="9" xlink:href="#c"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="0 0 5.12 5.12">
+    <defs>
+        <path id="a" fill="#fff" d="M1.437 0h-2.874l1.437-4.422z"/>
+        <g id="c">
+            <use xlink:href="#a" transform="matrix(-.809 -.588 .588 -.809 0 0)" width="18" height="12"/>
+            <use xlink:href="#a" transform="rotate(-72)" width="18" height="12"/>
+            <use xlink:href="#a" width="18" height="12"/>
+            <use xlink:href="#a" transform="rotate(72)" width="18" height="12"/>
+            <use xlink:href="#a" transform="matrix(-.809 .588 -.588 -.809 0 0)" width="18" height="12"/>
+        </g>
+        <clipPath>
+            <path d="M1-7.2h16v12h-16z"/>
+        </clipPath>
+        <clipPath id="b">
+            <path d="M2.992-7.2h12v12h-12z"/>
+        </clipPath>
+    </defs>
+    <g transform="matrix(.427 0 0 .427 -1.277 3.072)" clip-path="url(#b)">
+        <path fill="#fecb00" d="M0-7.2h18v6h-18z"/>
+        <path fill="#ea2839" d="M0-1.2h18v6h-18z"/>
+        <path fill="#34b233" d="M0-3.2h18v4h-18z"/>
+        <use transform="translate(0 -7.2)" height="12" width="18" y="6.422" x="9" xlink:href="#c"/>
+    </g>
+</svg>

@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><polygon id="b" points="0 -1 0.22451 -0.30902 0.95106 -0.30902 0.36327 0.11803 0.58779 0.80902 0 0.38197 -0.58779 0.80902 -0.36327 0.11803 -0.95106 -0.30902 -0.22451 -0.30902"/><clipPath id="a"><rect fill-opacity=".67" height="512" width="682.67"/></clipPath></defs><g clip-path="url(#a)" transform="scale(.938 .938)"><rect height="512" width="768" fill="#002b7f"/><rect height="64" width="768" y="320" fill="#f9e814"/><use xlink:href="#b" transform="scale(42.667)" height="9000" width="13500" y="2" x="2" fill="#fff"/><use xlink:href="#b" transform="scale(56.889)" height="9000" width="13500" y="3" x="3" fill="#fff"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+        <path id="b" d="M0-1l.225.691h.727l-.588.427.225.691-.588-.427-.588.427.225-.691-.588-.427h.727z"/>
+        <clipPath id="a">
+            <path fill-opacity=".67" d="M0 0h682.67v512h-682.67z"/>
+        </clipPath>
+    </defs>
+    <g clip-path="url(#a)" transform="scale(.938 .938)">
+        <path fill="#002b7f" d="M0 0h768v512h-768z"/>
+        <path fill="#f9e814" d="M0 320h768v64h-768z"/>
+        <use xlink:href="#b" transform="scale(42.667)" height="9000" width="13500" y="2" x="2" fill="#fff"/>
+        <use xlink:href="#b" transform="scale(56.889)" height="9000" width="13500" y="3" x="3" fill="#fff"/>
+    </g>
+</svg>
