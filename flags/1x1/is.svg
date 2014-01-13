@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1"><defs><clipPath id="a"><rect fill-opacity=".67" height="486" width="486" x="85.43"/></clipPath></defs><g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(1.054 0 0 1.054 -90 0)"><rect height="486" width="675" fill="#003897"/><path d="M0 189h189v-189h108v189h378v108h-378v189h-108v-189h-189v-108z" fill="#fff"/><path d="M0 216h216v-216h54v216h405v54h-405v216h-54v-216h-216v-54z" fill="#d72828"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
+    <defs>
+        <clipPath id="a">
+            <path fill-opacity=".67" d="M85.43 0h486v486h-486z"/>
+        </clipPath>
+    </defs>
+    <g fill-rule="evenodd" clip-path="url(#a)">
+        <path fill="#003897" d="M-90 0h711.113v512.001h-711.113z"/>
+        <path d="M-90 199.112h199.112v-199.112h113.778v199.112h398.223v113.778h-398.223v199.112h-113.778v-199.112h-199.112v-113.778z" fill="#fff"/>
+        <path d="M-90 227.556h227.556v-227.556h56.889v227.556h426.668v56.889h-426.668v227.556h-56.889v-227.556h-227.556v-56.889z" fill="#d72828"/>
+    </g>
+</svg>

@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1"><g fill-rule="evenodd"><rect height="512" width="512" fill="#f30"/><path d="M236.602 256.65l-64.606-46.111-64.295 46.546 23.893-75.652-64.109-46.732 79.314-.683 24.638-75.466 25.135 75.28 79.376.124-63.799 47.166 24.452 75.528z" fill="#ff0"/><path d="M390.821 93.363l-12.841-17.894-21.053 6.47 13.048-17.731-12.655-18.013 20.893 6.921 13.226-17.615-.137 22.022 20.837 7.138-20.979 6.677-.339 22.026z" fill="#ff0"/><path d="M338.253 419.782l-14.648-16.448-20.258 8.643 11.115-19.002-14.475-16.585 21.503 4.69 11.305-18.906 2.175 21.915 21.471 4.912-20.162 8.842 1.975 21.94z" fill="#ff0"/><path d="M441.297 208.62l-7.137-20.837-22.026.126 17.606-13.217-6.925-20.897 18.011 12.65 17.744-13.055-6.48 21.048 17.895 12.842-22.014.346-6.674 20.994z" fill="#ff0"/><path d="M438.236 314.824l-18.017-12.669-17.75 13.042 6.482-21.039-17.881-12.842 22.007-.345 6.689-20.989 7.122 20.84 22.026-.121-17.611 13.213 6.933 20.91z" fill="#ff0"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" viewBox="-5 -5 10.24 10.24">
+    <title>
+        Flag of the People&apos;s Republic of China
+    </title>
+    <defs>
+        <path id="b" fill="#ffde00" d="M.951-.309l-1.539 1.118.588-1.809.588 1.809-1.539-1.118z"/>
+        <clipPath>
+            <path d="M-5-15.4h26.667v20h-26.667z"/>
+        </clipPath>
+        <clipPath id="a">
+            <path d="M-5-15.4h20v20h-20z"/>
+        </clipPath>
+    </defs>
+    <g transform="matrix(.512 0 0 .512 -2.44 2.885)" clip-path="url(#a)">
+        <path fill="#de2910" d="M-5-15.4h30v20h-30z"/>
+        <use height="20" width="30" transform="matrix(3 0 0 3 0 -10.4)" xlink:href="#b"/>
+        <use height="20" width="30" transform="matrix(-.514 -.857 .857 -.514 5 -13.4)" xlink:href="#b"/>
+        <use height="20" width="30" transform="matrix(-.141 -.99 .99 -.141 7 -11.4)" xlink:href="#b"/>
+        <use height="20" width="30" transform="matrix(.275 -.962 .962 .275 7 -8.4)" xlink:href="#b"/>
+        <use height="20" width="30" transform="matrix(.625 -.781 .781 .625 5 -6.4)" xlink:href="#b"/>
+    </g>
+</svg>

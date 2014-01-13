@@ -1,1 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1"><g fill-rule="evenodd" transform="matrix(-.481 0 0 -.722 .068 142.41)"><rect height="708.66" width="1063" y="-511.38" x="-1063.6" fill="#de0000"/><rect height="354.33" width="1063" y="-512" x="-1063" fill="#35a100"/></g><polygon fill-rule="evenodd" transform="matrix(1.445 0 0 1.36 -516.33 -217.18)" points="626.44 324.23 569.1 365.81 591.04 433.16 591.04 433.16 533.77 391.48 476.5 433.15 498.45 365.81 441.12 324.21 511.95 324.28 533.78 256.9 555.61 324.28" fill="#fff300"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
+    <g fill-rule="evenodd">
+        <path fill="#de0000" d="M511.66 511.626h-511.303v-511.653h511.303z"/>
+        <path fill="#35a100" d="M511.371 512.074h-511.303v-255.826h511.303z"/>
+    </g>
+    <path fill-rule="evenodd" fill="#fff300" d="M389.001 223.773l-82.868 56.549 31.708 91.596-82.767-56.685-82.767 56.671 31.722-91.582-82.853-56.576 102.364.095 31.549-91.637 31.549 91.637z"/>
+</svg>

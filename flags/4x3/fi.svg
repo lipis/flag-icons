@@ -1,1 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1"><defs><clipPath id="a"><rect fill-opacity=".67" height="512" width="682.67" x="-19.451"/></clipPath></defs><g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(.938 0 0 .938 18.235 0)"><rect height="186.34" width="249.35" y="325.66" x="-105.62" fill="#fff"/><rect height="512" width="149.94" x="143.57" fill="#0062da"/><rect height="139.64" width="897.67" y="186.18" x="-105.62" fill="#0062da"/><rect height="186.34" width="249.35" y=".003" x="-105.62" fill="#fff"/><rect height="186.34" width="498.7" y="325.66" x="293.35" fill="#fff"/><rect height="186.34" width="498.7" y=".002" x="293.35" fill="#fff"/><rect height="186.34" width="249.35" y="325.66" x="-105.62" fill="#fff"/><rect height="512" width="149.94" x="143.57" fill="#0062da"/><rect height="186.34" width="249.35" y=".003" x="-105.62" fill="#fff"/><rect height="186.34" width="498.7" y="325.66" x="293.35" fill="#fff"/><rect height="186.34" width="498.7" y=".002" x="293.35" fill="#fff"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
+    <defs>
+        <clipPath id="a">
+            <path fill-opacity=".67" d="M-19.451 0h682.67v512h-682.67z"/>
+        </clipPath>
+    </defs>
+    <g fill-rule="evenodd" clip-path="url(#a)">
+        <path fill="#fff" d="M-80.784 305.306h233.766v174.694h-233.766z"/>
+        <path fill="#0062da" d="M152.832 0h140.569v480h-140.569z"/>
+        <path fill="#0062da" d="M-80.784 174.544h841.566v130.912h-841.566z"/>
+        <path fill="#fff" d="M-80.784.003h233.766v174.694h-233.766z"/>
+        <path fill="#fff" d="M293.251 305.306h467.531v174.694h-467.531z"/>
+        <path fill="#fff" d="M293.251.002h467.531v174.694h-467.531z"/>
+        <path fill="#fff" d="M-80.784 305.306h233.766v174.694h-233.766z"/>
+        <path fill="#0062da" d="M152.832 0h140.569v480h-140.569z"/>
+        <path fill="#fff" d="M-80.784.003h233.766v174.694h-233.766z"/>
+        <path fill="#fff" d="M293.251 305.306h467.531v174.694h-467.531z"/>
+        <path fill="#fff" d="M293.251.002h467.531v174.694h-467.531z"/>
+    </g>
+</svg>

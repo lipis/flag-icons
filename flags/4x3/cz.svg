@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1"><defs><clipPath id="a"><rect fill-opacity=".67" height="512" width="682.67" x="-74"/></clipPath></defs><g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(.938 0 0 .938 69.375 0)"><rect height="512" width="768" x="-74" fill="#e80000"/><rect height="256" width="768" x="-74" fill="#fff"/><path d="M-74 0l382.73 255.67-382.73 255.34v-511.01z" fill="#00006f"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
+    <defs>
+        <clipPath id="a">
+            <path fill-opacity=".67" d="M-74 0h682.67v512h-682.67z"/>
+        </clipPath>
+    </defs>
+    <g fill-rule="evenodd" clip-path="url(#a)">
+        <path fill="#e80000" d="M0 0h720v480h-720z"/>
+        <path fill="#fff" d="M0 0h720v240h-720z"/>
+        <path d="M0 0l358.809 239.691-358.809 239.381v-479.072z" fill="#00006f"/>
+    </g>
+</svg>

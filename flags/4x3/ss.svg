@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" viewBox="0 0 12.8 9.6"><title>Flag of South Sudan</title><g><rect height="2.88" width="12.8" y="6.72" fill="#078930"/><rect height="3.84" width="12.8" y="2.88" fill="#fff"/><rect height="2.88" width="12.8"/><rect height="2.88" width="12.8" y="3.36" fill="#da121a"/><polygon points="0 0 8.6603 5 0 10" fill="#0f47af" transform="scale(.96)"/><polygon points="4.1557e5 -3.0193e5 -5.1367e5 0 4.1557e5 3.0193e5 -1.5873e5 -4.8853e5 -1.5873e5 4.8853e5" fill="#fcdd09" transform="matrix(0 0 0 0 2.771 4.8)"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" viewBox="0 0 12.8 9.6">
+    <title>
+        Flag of South Sudan
+    </title>
+    <g>
+        <path fill="#078930" d="M0 6.72h12.8v2.88h-12.8z"/>
+        <path fill="#fff" d="M0 2.88h12.8v3.84h-12.8z"/>
+        <path d="M0 0h12.8v2.88h-12.8z"/>
+        <path fill="#da121a" d="M0 3.36h12.8v2.88h-12.8z"/>
+        <path fill="#0f47af" d="M0 0l8.314 4.8-8.314 4.8z"/>
+        <path fill="#fcdd09" d="M4.014 3.897l-2.779.903 2.779.903-1.717-2.364v2.922z"/>
+    </g>
+</svg>

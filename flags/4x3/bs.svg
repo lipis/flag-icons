@@ -1,1 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1"><defs><clipPath id="a"><rect fill-opacity=".67" height="480" width="640" x="-12"/></clipPath></defs><g fill-rule="evenodd" clip-path="url(#a)" transform="translate(12)"><rect transform="scale(-1)" height="478.23" width="978.98" y="-480" x="-968.53" fill="#fff"/><rect transform="scale(-1)" height="201.18" width="978.98" y="-344.48" x="-968.53" fill="#ffe900"/><rect transform="scale(-1)" height="159.41" width="978.98" y="-480" x="-968.53" fill="#08ced6"/><rect transform="scale(-1)" height="159.41" width="978.98" y="-161.31" x="-968.53" fill="#08ced6"/><path d="M-10.913 0c2.173 0 391.71 236.82 391.71 236.82l-392.8 242.38 1.087-479.2z"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
+    <defs>
+        <clipPath id="a">
+            <path fill-opacity=".67" d="M-12 0h640v480h-640z"/>
+        </clipPath>
+    </defs>
+    <g fill-rule="evenodd" clip-path="url(#a)">
+        <path fill="#fff" d="M980.53 480h-978.98v-478.23h978.98z"/>
+        <path fill="#ffe900" d="M980.53 344.48h-978.98v-201.18h978.98z"/>
+        <path fill="#08ced6" d="M980.53 480h-978.98v-159.41h978.98z"/>
+        <path fill="#08ced6" d="M980.53 161.31h-978.98v-159.41h978.98z"/>
+        <path d="M1.087 0c2.173 0 391.71 236.82 391.71 236.82l-392.8 242.38 1.087-479.2z"/>
+    </g>
+</svg>

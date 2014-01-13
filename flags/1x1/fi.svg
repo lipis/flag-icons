@@ -1,1 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1"><defs><clipPath id="a"><rect fill-opacity=".67" height="606.3" width="606.3" x="125.07"/></clipPath></defs><rect fill-rule="evenodd" height="8.546" width="49.872" y="-3764.3" x=".293" fill="#0062da"/><rect fill-rule="evenodd" height="66033" width="7472800" y="-2800500" fill="#0062da"/><g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(.844 0 0 .844 -105.62 0)"><rect height="220.65" width="295.28" y="385.64" fill="#fff"/><rect height="606.29" width="177.56" x="295.08" fill="#0062da"/><rect height="165.35" width="1063" y="220.47" fill="#0062da"/><rect height="220.65" width="295.28" y=".004" fill="#fff"/><rect height="220.65" width="590.55" y="385.64" x="472.44" fill="#fff"/><rect height="220.65" width="590.55" y=".002" x="472.44" fill="#fff"/><rect height="220.65" width="295.28" y="385.64" fill="#fff"/><rect height="606.29" width="177.56" x="295.08" fill="#0062da"/><rect height="220.65" width="295.28" y=".004" fill="#fff"/><rect height="220.65" width="590.55" y="385.64" x="472.44" fill="#fff"/><rect height="220.65" width="590.55" y=".002" x="472.44" fill="#fff"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
+    <defs>
+        <clipPath id="a">
+            <path fill-opacity=".67" d="M125.07 0h606.3v606.3h-606.3z"/>
+        </clipPath>
+    </defs>
+    <path fill-rule="evenodd" fill="#0062da" d="M.293-3764.3h49.872v8.546h-49.872z"/>
+    <path fill-rule="evenodd" fill="#0062da" d="M0-2800500h7472800v66033h-7472800z"/>
+    <g fill-rule="evenodd" clip-path="url(#a)">
+        <path fill="#fff" d="M-105.62 325.661h249.355v186.332h-249.355z"/>
+        <path fill="#0062da" d="M143.566 0h149.944v511.994h-149.944z"/>
+        <path fill="#0062da" d="M-105.62 186.18h897.672v139.633h-897.672z"/>
+        <path fill="#fff" d="M-105.62.003h249.355v186.332h-249.355z"/>
+        <path fill="#fff" d="M293.341 325.661h498.702v186.332h-498.702z"/>
+        <path fill="#fff" d="M293.341.002h498.702v186.332h-498.702z"/>
+        <path fill="#fff" d="M-105.62 325.661h249.355v186.332h-249.355z"/>
+        <path fill="#0062da" d="M143.566 0h149.944v511.994h-149.944z"/>
+        <path fill="#fff" d="M-105.62.003h249.355v186.332h-249.355z"/>
+        <path fill="#fff" d="M293.341 325.661h498.702v186.332h-498.702z"/>
+        <path fill="#fff" d="M293.341.002h498.702v186.332h-498.702z"/>
+    </g>
+</svg>

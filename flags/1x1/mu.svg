@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512"><g fill-rule="evenodd" transform="scale(.688 1.032)"><rect height="124.02" width="744.09" y="372.05" fill="#009a00"/><rect height="124.02" width="744.09" y="124.02" fill="#00f"/><rect height="124.02" width="744.09" fill="#f00"/><rect height="124.02" width="744.09" y="248.03" fill="#ff0"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512">
+    <g fill-rule="evenodd">
+        <path fill="#009a00" d="M0 383.993h511.993v128.001h-511.993z"/>
+        <path fill="#00f" d="M0 128.001h511.993v128.001h-511.993z"/>
+        <path fill="#f00" d="M0 0h511.993v128.001h-511.993z"/>
+        <path fill="#ff0" d="M0 255.992h511.993v128.001h-511.993z"/>
+    </g>
+</svg>

@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512"><g fill-rule="evenodd" transform="scale(4.266 8.533)"><g><path d="M0 0l60 30-60 30z"/><path d="M120 0l-60 30 60 30z"/><path d="M0 0l60 30 60-30z" fill="#090"/><path d="M0 60l60-30 60 30z" fill="#090"/></g><path d="M120 0h-11.18l-108.82 54.41v5.59h11.18l108.82-54.41z" fill="#fc0"/><path d="M0 0v5.59l108.82 54.41h11.18v-5.59l-108.82-54.41z" fill="#fc0"/></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512">
+    <g fill-rule="evenodd">
+        <g>
+            <path d="M0 0l256.02 255.99-256.02 255.99z"/>
+            <path d="M512.04 0l-256.02 255.99 256.02 255.99z"/>
+            <path d="M0 0l256.02 255.99 256.02-255.99z" fill="#090"/>
+            <path d="M0 511.98l256.02-255.99 256.02 255.99z" fill="#090"/>
+        </g>
+        <path d="M512.04 0h-47.705l-464.335 464.281v47.699h47.705l464.335-464.281z" fill="#fc0"/>
+        <path d="M0 0v47.701l464.335 464.281h47.705v-47.699l-464.335-464.281z" fill="#fc0"/>
+    </g>
+</svg>
