@@ -1,5 +1,5 @@
-Version 0.9.2 - TBD
---------------------------
+Version 0.10.0 - 2013-12-30
+---------------------------
 - Updated Moment.js to 2.5.0
 - Updated to UglifyJS2
 - Corrected Twitter's color
