@@ -38,8 +38,8 @@ SCRIPTS_MODULES = [
 SCRIPTS = {
     'libs': [
         'src/lib/jquery.js',
-        'src/lib/nprogress/nprogress.js',
         'src/lib/moment.js',
+        'src/lib/nprogress/nprogress.js',
         'src/lib/bootstrap/js/alert.js',
         'src/lib/bootstrap/js/button.js',
         'src/lib/bootstrap/js/collapse.js',
@@ -47,11 +47,11 @@ SCRIPTS = {
         'src/lib/bootstrap/js/tooltip.js',
       ],
     'scripts': [
-        'src/script/common/util.coffee',
         'src/script/common/service.coffee',
+        'src/script/common/util.coffee',
         'src/script/site/app.coffee',
+        'src/script/site/admin.coffee',
         'src/script/site/profile.coffee',
         'src/script/site/user.coffee',
-        'src/script/site/admin.coffee',
       ],
   }
