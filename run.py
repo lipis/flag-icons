@@ -204,7 +204,7 @@ def is_style_modified(target):
 
 
 def compile_all_dst():
-  for source in STYLES:
+  for source in config.STYLES:
     compile_style(os.path.join(dir_static, source), dir_dst_style, True)
   for module in config.SCRIPTS:
     for source in config.SCRIPTS[module]:
@@ -215,12 +215,12 @@ def update_path_separators():
   def fixit(path):
     return path.replace('\\', '/').replace('/', os.sep)
 
-  for idx in xrange(len(STYLES)):
-    STYLES[idx] = fixit(STYLES[idx])
+  for idx in xrange(len(config.STYLES)):
+    config.STYLES[idx] = fixit(config.STYLES[idx])
 
-  for module in SCRIPTS:
-    for idx in xrange(len(SCRIPTS[module])):
-      SCRIPTS[module][idx] = fixit(SCRIPTS[module][idx])
+  for module in config.SCRIPTS:
+    for idx in xrange(len(config.SCRIPTS[module])):
+      config.SCRIPTS[module][idx] = fixit(config.SCRIPTS[module][idx])
 
 
 def install_dependencies():
@@ -259,9 +259,6 @@ def uniq(seq):
 ###############################################################################
 # Main
 ###############################################################################
-SCRIPTS = config.SCRIPTS
-STYLES = config.STYLES
-
 os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
 update_path_separators()
@@ -288,12 +285,13 @@ if args.minify:
   remove_dir(dir_min)
   make_dirs(dir_min_script)
 
-  for source in STYLES:
+  for source in config.STYLES:
     compile_style(os.path.join(dir_static, source), dir_min_style)
 
   for module in config.SCRIPTS:
     scripts = uniq(config.SCRIPTS[module])
-    coffees = ' '.join([os.path.join(dir_static, script)
+    coffees = ' '.join([
+        os.path.join(dir_static, script)
         for script in scripts if script.endswith('.coffee')
       ])
 
@@ -322,8 +320,7 @@ if args.watch:
   while True:
     time.sleep(0.5)
     reload(config)
-    SCRIPTS = config.SCRIPTS
-    STYLES = config.STYLES
+    update_path_separators()
     compile_all_dst()
 
 if args.flush:
