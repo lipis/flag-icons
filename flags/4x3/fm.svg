@@ -1,9 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
-  <g fill-rule="evenodd" clip-path="url(#a)">
-    <path fill="#6797d6" d="M-160 0h960v480h-960z"/>
-    <path fill="#fff" d="M319.771 115.384l-30.41 20.835 11.655-33.67-30.442-20.8 37.611.035 11.592-33.69 11.592 33.69 37.611-.025-30.448 20.79 11.65 33.675z"/>
-    <path fill="#fff" d="M319.771 365.588l-30.41-20.835 11.655 33.67-30.442 20.8 37.611-.035 11.592 33.69 11.592-33.69 37.611.025-30.448-20.79 11.65-33.675z"/>
-    <path fill="#fff" d="M173.636 258.321l-23.009 28.795 1.319-35.591-35.197-10.999 35.992-10.945 1.252-35.591 20.927 28.824 35.974-11.003-23.058 28.763 20.979 28.793z"/>
-    <path fill="#fff" d="M465.886 258.321l23.009 28.795-1.319-35.591 35.197-10.999-35.992-10.945-1.252-35.591-20.927 28.824-35.974-11.003 23.058 28.763-20.979 28.793z"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg id="svg986" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3160">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs988">
+  <clipPath id="clipPath3752" clipPathUnits="userSpaceOnUse">
+   <rect id="rect3754" fill-opacity="0.67" height="512" width="682.67" y="-.0000039058" x="-81.333"/>
+  </clipPath>
+ </defs>
+ <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath3752)" transform="matrix(.9375 0 0 .9375 76.25 .0000036617)" stroke-width="1pt">
+  <rect id="rect1390" height="512" width="1024" y="-.0000039058" x="-252" fill="#6797d6"/>
+  <polygon id="polygon1351" transform="matrix(.56646 0 0 .53310 -42.572 -85.713)" points="533.77 391.48 476.5 433.15 498.45 365.81 441.12 324.21 511.95 324.28 533.78 256.9 555.61 324.28 626.44 324.23 569.1 365.81 591.04 433.16 591.04 433.16" fill="#fff"/>
+  <polygon id="polygon1387" transform="matrix(.56646 0 0 -.53310 -42.572 598.75)" points="533.77 391.48 476.5 433.15 498.45 365.81 441.12 324.21 511.95 324.28 533.78 256.9 555.61 324.28 626.44 324.23 569.1 365.81 591.04 433.16 591.04 433.16" fill="#fff"/>
+  <polygon id="polygon1388" transform="matrix(.54171 -.16562 .15586 .50981 -246.32 164.19)" points="533.77 391.48 476.5 433.15 498.45 365.81 441.12 324.21 511.95 324.28 533.78 256.9 555.61 324.28 626.44 324.23 569.1 365.81 591.04 433.16 591.04 433.16" fill="#fff"/>
+  <polygon id="polygon1389" transform="matrix(-.54171 -.16562 -.15586 .50981 765.81 164.19)" points="533.77 391.48 476.5 433.15 498.45 365.81 441.12 324.21 511.95 324.28 533.78 256.9 555.61 324.28 626.44 324.23 569.1 365.81 591.04 433.16 591.04 433.16" fill="#fff"/>
+ </g>
 </svg>

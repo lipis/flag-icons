@@ -1,10 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-  <g fill-rule="evenodd" clip-path="url(#a)">
-    <path fill="#0c590b" d="M-39.999 0h720v480h-720z"/>
-    <path fill="#fff" d="M-39.999 0h180.488v480h-180.488z"/>
-    <g fill="#fff">
-      <path d="M427.511 211.302l-29.215-6.146-15.364 25.598-3.183-29.685-29.094-6.702 27.248-12.2-2.617-29.74 20.024 22.145 27.476-11.679-14.873 25.886 19.598 22.523z"/>
-      <path d="M438.529 286.941c-25.935 57.147-94.004 82.109-151.313 55.562-57.316-26.554-82.286-94.616-55.732-151.933 13.543-29.233 35.706-49.322 66.992-60.287-3.598 3.043-7.159 6.2-11.061 10.226-40.414 41.708-39.364 108.361 2.343 148.771 41.708 40.414 108.361 39.365 148.771-2.343z"/>
-    </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3676">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs380">
+  <clipPath id="clipPath8442" clipPathUnits="userSpaceOnUse">
+   <rect id="rect8444" fill-opacity="0.67" height="512" width="682.67" y="-.0000018825" x="-52.334"/>
+  </clipPath>
+ </defs>
+ <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath8442)" transform="matrix(.93750 0 0 .93750 49.063 .0000017649)" stroke-width="1pt">
+  <rect id="rect171" height="512" width="768" y=".000016585" x="-95" fill="#0c590b"/>
+  <rect id="rect403" height="512" width="192.52" y="-7.5494e-7" x="-95" fill="#fff"/>
+  <g id="g6428" fill="#fff" transform="matrix(.78618 0 0 .78618 1.1148 55.129)">
+   <path id="path273" d="m512.08 216.58-39.641-8.3395-20.846 34.733-4.3191-40.278-39.476-9.0939 36.972-16.554-3.5504-40.353 27.169 30.047 37.281-15.846-20.18 35.124 26.591 30.56z"/>
+   <path id="path278" d="m527.03 319.21c-35.19 77.54-127.55 111.41-205.31 75.39-77.77-36.03-111.65-128.38-75.62-206.15 18.376-39.665 48.448-66.923 90.898-81.8-4.8826 4.129-9.7139 8.4119-15.008 13.875-54.836 56.591-53.411 147.03 3.179 201.86 56.591 54.836 147.03 53.412 201.86-3.179z"/>
   </g>
+ </g>
 </svg>
