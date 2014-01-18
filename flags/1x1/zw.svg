@@ -1,37 +1,52 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512">
-    <g clip-path="url(#a)">
-        <path fill-rule="evenodd" fill="#319208" d="M0 438.849h1023.977v73.141h-1023.977z"/>
-        <path fill-rule="evenodd" fill="#de2010" d="M0 292.559h1023.977v73.141h-1023.977z"/>
-        <path fill-rule="evenodd" fill="#ffd200" d="M0 365.704h1023.977v73.141h-1023.977z"/>
-        <path fill-rule="evenodd" fill="#de2010" d="M0 146.28h1023.977v73.141h-1023.977z"/>
-        <path fill-rule="evenodd" fill="#ffd200" d="M0 73.141h1023.977v73.141h-1023.977z"/>
-        <path fill-rule="evenodd" fill="#319208" d="M0 0h1023.977v73.141h-1023.977z"/>
-        <path d="M28.891 0v511.984l343.762-255.992-343.762-255.992z" fill-rule="evenodd"/>
-        <path fill-rule="evenodd" d="M0 0h29.256v511.984h-29.256z"/>
-        <path d="M0 0v511.984l373.022-255.992-373.022-255.992z" fill-rule="evenodd"/>
-        <path fill-rule="evenodd" d="M0 219.425h1023.977v73.141h-1023.977z"/>
-        <path d="M0 0v511.984l343.762-255.992-343.762-255.992z" fill-rule="evenodd" fill="#fff"/>
-        <g>
-            <path fill="#d62419" fill-rule="evenodd" d="M131.983 114.903l27.244 90.385 97.415.888-77.55 53.842 29.268 92.906-75.167-57.113-79.325 56.546 31.088-89.142-78.298-57.964 94.396 2.017z"/>
-            <path d="M50.002 166.208c1.657-2.985 1.989-4.643 10.611-8.291 11.275-32.829 40.125-19.896 56.043 25.535 14.59 6.3 101.805 71.296 100.479 74.944-.664 3.316-11.607.664-11.607.664s-17.244 73.618-17.575 73.618c-32.167-4.311-82.24-4.974-116.399-4.311.331-5.638-9.285-42.447-9.285-42.447s-8.291-2.652 5.637-30.839c14.923-35.482 17.907-93.183-17.906-88.872z" fill-rule="evenodd" stroke="#000" fill="#f7df00" stroke-width="1.032"/>
-            <path d="M79.507 152.937c0 2.015-1.633 3.648-3.648 3.648s-3.648-1.633-3.648-3.648 1.633-3.648 3.648-3.648 3.648 1.633 3.648 3.648z" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M115.658 183.453s-28.519 16.249-36.809 15.917" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M205.525 259.057c-1.99-1.658-105.78-6.633-101.473-41.784" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M120.632 259.718s11.275 6.633 20.891-10.611" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M133.233 259.388s7.959 7.295 19.566-8.621" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M62.603 285.92s7.295.995 8.622-3.316" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M97.082 328.697c0-.331-7.295-47.089-7.295-47.089 36.035 3.205 73.397 3.427 108.102 9.617" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M93.439 282.267l9.947 11.606 10.281-9.948 8.621 9.286" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M124.946 293.547l8.621-7.628 9.286 8.954" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M144.503 294.868l9.617-8.621 7.295 8.622" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M165.401 295.208l8.622-5.969 7.626 7.295" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M187.62 296.199l6.3-5.969" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M91.778 292.876l10.612 12.27 10.611-9.617 9.285 9.948 10.612-9.285 8.954 10.611 10.943-9.285s8.29 10.28 9.285 10.28l10.943-8.621 9.617 10.611 13.263-10.611" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M93.439 304.816s85.556 3.317 99.483 6.633" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M107.701 266.023s81.244 4.311 94.177 9.285" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M91.117 232.194c.664 4.974-5.306 22.218-11.606 28.187-8.622 6.964-7.628 21.554-7.628 21.554.995 5.969 13.928 5.306 15.586 2.322 1.326-13.597 15.917-16.581 15.917-16.581s20.229-5.637 28.851-22.549" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M131.902 275.301c0 2.381-1.93 4.311-4.311 4.311s-4.311-1.93-4.311-4.311c0-2.381 1.93-4.311 4.311-4.311s4.311 1.93 4.311 4.311z" stroke="#000" fill="none" stroke-width="1.032"/>
-            <path d="M151.138 276.963c0 2.381-1.93 4.311-4.311 4.311s-4.311-1.93-4.311-4.311c0-2.381 1.93-4.311 4.311-4.311s4.311 1.93 4.311 4.311z" stroke="#000" fill="none" stroke-width="1.032"/>
-        </g>
-    </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape ("http://www.inkscape.org/") -->
+<svg id="svg559" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata3856">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs id="defs561">
+  <clipPath id="clipPath3967" clipPathUnits="userSpaceOnUse">
+   <rect id="rect3969" fill-opacity="0.67" height="496.06" width="496.06" y="-.00032093" x="0"/>
+  </clipPath>
+ </defs>
+ <g id="flag" stroke-width="1pt" clip-path="url(#clipPath3967)" transform="matrix(1.0321 0 0 1.0321 0 .00033124)">
+  <rect id="rect608" fill-rule="evenodd" height="70.866" width="992.13" y="425.2" x="0" fill="#319208"/>
+  <rect id="rect612" fill-rule="evenodd" height="70.866" width="992.13" y="283.46" x="0" fill="#de2010"/>
+  <rect id="rect611" fill-rule="evenodd" height="70.866" width="992.13" y="354.33" x="0" fill="#ffd200"/>
+  <rect id="rect614" fill-rule="evenodd" height="70.866" width="992.13" y="141.73" x="0" fill="#de2010"/>
+  <rect id="rect615" fill-rule="evenodd" height="70.866" width="992.13" y="70.866" x="0" fill="#ffd200"/>
+  <rect id="rect616" fill-rule="evenodd" height="70.866" width="992.13" y="-.000008" x="0" fill="#319208"/>
+  <path id="path623" d="m27.992-0.00030518v496.06l333.07-248.03-333.07-248.03z" fill-rule="evenodd"/>
+  <rect id="rect621" fill-rule="evenodd" height="496.06" width="28.346" y="-0.000192" x="0"/>
+  <path id="path620" d="m0-0.00011444v496.06l361.42-248.03-361.42-248.03z" fill-rule="evenodd"/>
+  <rect id="rect613" fill-rule="evenodd" height="70.866" width="992.13" y="212.6" x="0"/>
+  <path id="path617" d="m0-0.00017548v496.06l333.07-248.03-333.07-248.03z" fill-rule="evenodd" fill="#fff"/>
+  <g id="g584" transform="translate(-494.23 -14.644)">
+   <polygon id="polygon583" fill="#d62419" fill-rule="evenodd" transform="matrix(1.0221 .073279 -.073279 1.0221 3.3492 -41.431)" d="m 613.9433,119.5371 31.82993,83.38772 91.91782,-5.79005 -69.47045,56.04029 33.91084,85.62981 -74.76503,-48.75292 -70.95977,58.71219 23.26312,-86.17125 -77.76639,-49.34369 89.14243,-4.50384 z" points="613.94 119.54 645.77 202.92 737.69 197.14 668.22 253.18 702.13 338.8 627.37 290.05 556.41 348.76 579.67 262.59 501.9 213.25 591.05 208.74"/>
+   <path id="path564" d="m542.73 175.7c1.606-2.892 1.927-4.499 10.282-8.034 10.925-31.811 38.881-19.279 54.305 24.743 14.138 6.105 98.648 69.085 97.363 72.62-0.643 3.213-11.247 0.643-11.247 0.643s-16.709 71.335-17.03 71.335c-31.17-4.177-79.69-4.82-112.79-4.177 0.321-5.463-8.997-41.131-8.997-41.131s-8.034-2.57 5.462-29.883c14.46-34.382 17.352-90.294-17.351-86.116z" fill-rule="evenodd" stroke="#000" fill="#f7df00"/>
+   <path id="path565" d="m571.32 162.84c0 1.9521-1.5825 3.5346-3.5346 3.5346s-3.5346-1.5825-3.5346-3.5346 1.5825-3.5346 3.5346-3.5346 3.5346 1.5825 3.5346 3.5346z" stroke="#000" fill="none"/>
+   <path id="path566" d="m606.35 192.41s-27.635 15.745-35.668 15.423" stroke="#000" fill="none"/>
+   <path id="path567" d="m693.43 265.67c-1.928-1.607-102.5-6.427-98.327-40.488" stroke="#000" fill="none"/>
+   <path id="path568" d="m611.17 266.31s10.925 6.427 20.243-10.282" stroke="#000" fill="none"/>
+   <path id="path569" d="m623.38 265.99s7.712 7.069 18.959-8.354" stroke="#000" fill="none"/>
+   <path id="path570" d="m554.94 291.7s7.069 0.964 8.355-3.213" stroke="#000" fill="none"/>
+   <path id="path571" d="m588.35 333.15c0-0.321-7.069-45.629-7.069-45.629 34.918 3.106 71.121 3.321 104.75 9.319" stroke="#000" fill="none"/>
+   <path id="path572" d="m584.82 288.16 9.639 11.246 9.962-9.64 8.354 8.998" stroke="#000" fill="none"/>
+   <path id="path573" d="m615.35 299.09 8.354-7.391 8.998 8.676" stroke="#000" fill="none"/>
+   <path id="path574" d="m634.3 300.37 9.319-8.354 7.069 8.355" stroke="#000" fill="none"/>
+   <path id="path575" d="m654.55 300.7 8.355-5.784 7.39 7.069" stroke="#000" fill="none"/>
+   <path id="path576" d="m676.08 301.66 6.105-5.784" stroke="#000" fill="none"/>
+   <path id="path577" d="m583.21 298.44 10.283 11.89 10.282-9.319 8.997 9.64 10.283-8.997 8.676 10.282 10.604-8.997s8.033 9.961 8.997 9.961 10.604-8.354 10.604-8.354l9.319 10.282 12.852-10.282" stroke="#000" fill="none"/>
+   <path id="path578" d="m584.82 310.01s82.903 3.214 96.398 6.427" stroke="#000" fill="none"/>
+   <path id="path579" d="m598.64 272.42s78.725 4.177 91.257 8.997" stroke="#000" fill="none"/>
+   <path id="path580" d="m582.57 239.64c0.643 4.82-5.141 21.529-11.246 27.313-8.355 6.748-7.391 20.886-7.391 20.886 0.964 5.784 13.496 5.141 15.103 2.25 1.285-13.175 15.423-16.067 15.423-16.067s19.602-5.462 27.956-21.85" stroke="#000" fill="none"/>
+   <path id="path581" d="m622.09 281.41c0 2.307-1.8702 4.1773-4.1773 4.1773s-4.1773-1.8702-4.1773-4.1773c0-2.307 1.8702-4.1773 4.1773-4.1773s4.1773 1.8702 4.1773 4.1773z" stroke="#000" fill="none"/>
+   <path id="path582" d="m640.73 283.02c0 2.307-1.8702 4.1773-4.1772 4.1773s-4.1772-1.8702-4.1772-4.1773c0-2.307 1.8702-4.1773 4.1772-4.1773s4.1772 1.8702 4.1772 4.1773z" stroke="#000" fill="none"/>
+  </g>
+ </g>
 </svg>

@@ -1,12 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-    <g fill-rule="evenodd">
-        <g>
-            <path fill="#fff" d="M0 0h640.011v479.997h-640.011z"/>
-            <path fill="#00bf13" d="M0 0h320.006v479.997h-320.006z"/>
-        </g>
-        <g fill="#f21930">
-            <path d="M445.896 308.66c-40.313 72.507-129.227 98.271-199.877 59.356s-96.406-127.836-57.491-198.487c38.914-70.648 127.828-96.406 198.479-57.491 26.118 14.386 44.714 33.298 59.339 60.237-5.338-7.341-11.297-13.4-19.119-19.55-48.189-37.887-118.045-29.525-155.931 18.664-37.885 48.188-29.525 118.045 18.664 155.931 48.189 37.886 118.045 29.525 155.931-18.664z"/>
-            <path d="M411.468 321.667l-35.191-49.88-58.033 18.926 36.558-48.883-35.931-49.341 57.792 19.666 35.826-49.422-.852 61.04 58.073 18.798-58.306 18.05z"/>
-        </g>
-    </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata9942">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="flag" stroke-width="1pt" fill-rule="evenodd">
+  <g id="g10429" transform="matrix(.60208 0 0 .67733 0 .0000013750)">
+   <rect id="rect171" height="708.66" width="1063" y="0" x="0" fill="#fff"/>
+   <rect id="rect186" height="708.66" width="531.5" y="0" x="0" fill="#00bf13"/>
+  </g>
+  <g id="g10433" transform="matrix(.80385 0 0 .80385 -110.73 -44.801)" fill="#f21930">
+   <path id="path184" d="m692.45 439.71c-50.15 90.2-160.76 122.25-248.65 73.84s-119.93-159.03-71.52-246.92c48.409-87.887 159.02-119.93 246.91-71.519 32.491 17.896 55.625 41.423 73.819 74.936-6.64-9.132-14.053-16.67-23.784-24.32-59.948-47.132-146.85-36.73-193.98 23.218-47.13 59.947-36.729 146.85 23.218 193.98 59.948 47.131 146.85 36.729 193.98-23.218z"/>
+   <polygon id="polygon185" transform="translate(2.1812 -2.9051)" points="647.32 458.71 603.55 396.67 531.37 420.21 576.84 359.41 532.15 298.04 604.03 322.5 648.59 261.03 647.53 336.95 719.76 360.33 647.24 382.78"/>
+  </g>
+ </g>
 </svg>
