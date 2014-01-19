@@ -88,7 +88,7 @@
         </thead>
         <tbody>
           # for user_db in user_dbs
-            <tr id="{{user_db.key.urlsafe()}}">
+            <tr id="{{user_db.key.urlsafe()}}" class="{{'text-muted' if not user_db.active}}">
               <td>
                 <label>
                   <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
