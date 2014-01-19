@@ -23,7 +23,7 @@
           {{forms.checkbox_field(form.active)}}
         # endif
       </div>
-      <div class="col-md-2 col-sm-3">
+      <div class="col-md-2 col-sm-6">
         <div class="form-group">
           <label class="control-label">Avatar</label>
           <div>
@@ -31,15 +31,32 @@
           </div>
         </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="col-md-6 col-sm-9">
-        <div class="controls">
-          <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Updating..">
-            Update
-          </button>
+      <div class="col-md-6 col-sm-12">
+        <div class="form-group">
+          <label class="control-label">Accounts</label>
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th><i class="fa fa-key"></i></th>
+                <th class="col-xs-12">Auth ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              # for auth_id in user_db.auth_ids
+                <tr>
+                  <td>{{utils.auth_icon(auth_id)}}</td>
+                  <td>{{auth_id}}</td>
+                </tr>
+              # endfor
+            </tbody>
+          </table>
         </div>
       </div>
+    </div>
+    <div class="controls">
+      <button type="submit" class="btn btn-primary btn-lg btn-block btn-loading" data-loading-text="Updating..">
+        Update
+      </button>
     </div>
   </form>
 # endblock
