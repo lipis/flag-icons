@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import copy
 
 from flask.ext import wtf
 from google.appengine.ext import ndb
@@ -113,6 +114,85 @@ def delete_user_dbs(user_db_keys):
 
 
 ###############################################################################
+# User Merge
+###############################################################################
+class UserMergeForm(wtf.Form):
+  user_key = wtf.StringField('User Key', [wtf.validators.required()])
+  user_keys = wtf.StringField('User Keys', [wtf.validators.required()])
+  username = wtf.StringField('Username', [wtf.validators.optional()])
+  name = wtf.StringField('Merged Name',
+      [wtf.validators.required()], filters=[util.strip_filter],
+    )
+  email = wtf.StringField('Merged Email',
+      [wtf.validators.optional(), wtf.validators.email()],
+      filters=[util.email_filter],
+    )
+
+
+@app.route('/_s/user/merge/')
+@app.route('/user/merge/', methods=['GET', 'POST'])
+@auth.admin_required
+def user_merge():
+  user_keys = util.param('user_keys', list)
+  if not user_keys:
+    flask.abort(400)
+
+  user_db_keys = [ndb.Key(urlsafe=k) for k in user_keys]
+  user_dbs = ndb.get_multi(user_db_keys)
+  if len(user_dbs) < 2:
+    flask.abort(400)
+
+  if flask.request.path.startswith('/_s/'):
+    return util.jsonify_model_dbs(user_dbs)
+
+  merged_user_db = user_dbs[0]
+  auth_ids = []
+  is_admin = False
+  for user_db in user_dbs:
+    auth_ids.extend(user_db.auth_ids)
+    auth_ids.extend(user_db.auth_ids)
+    auth_ids.extend(user_db.auth_ids)
+    is_admin = is_admin or user_db.admin
+    if user_db.key.urlsafe() == util.param('user_key'):
+      merged_user_db = user_db
+
+  auth_ids = sorted(list(set(auth_ids)))
+  merged_user_db.admin = is_admin
+
+  form_obj = copy.deepcopy(merged_user_db)
+  form_obj.user_key = merged_user_db.key.urlsafe()
+  form_obj.user_keys = ','.join(user_keys)
+
+  form = UserMergeForm(obj=form_obj)
+  if form.validate_on_submit():
+    form.populate_obj(merged_user_db)
+    merged_user_db.auth_ids = auth_ids
+    merged_user_db.put()
+
+    depricated_keys = [key for key in user_db_keys if key != merged_user_db.key]
+    merge_user_dbs(merged_user_db, depricated_keys)
+    return flask.redirect(
+        flask.url_for('user_update', user_id=merged_user_db.key.id()),
+      )
+
+  return flask.render_template(
+      'user/user_merge.html',
+      title='Merge Users',
+      html_class='user-merge',
+      user_dbs=user_dbs,
+      merged_user_db=merged_user_db,
+      form=form,
+      auth_ids=auth_ids,
+    )
+
+
+@ndb.transactional(xg=True)
+def merge_user_dbs(user_db, user_db_keys):
+  # TODO: Merge possible user data before deleting the merged users
+  delete_user_dbs(user_db_keys)
+
+
+########################################################
 # Helpers
 ###############################################################################
 def is_username_available(username, self_db=None):

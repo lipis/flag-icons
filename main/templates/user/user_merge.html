@@ -1,0 +1,109 @@
+# extends 'base.html'
+# import 'macro/forms.html' as forms
+# import 'macro/utils.html' as utils
+
+
+# block content
+  <div class="page-header">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="row">
+    <div class="col-lg-12">
+      <table class="table table-bordered table-hover">
+        <thead>
+          <tr>
+            <th class="col-xs-4">Name</th>
+            <th class="col-xs-2">Username</th>
+            <th class="col-xs-2 hidden-xs">Email</th>
+            <th class="col-xs-2 hidden-sm hidden-xs">Created</th>
+            <th class="col-xs-2 hidden-sm hidden-xs">Modified</th>
+            <th class="text-center" title="Accounts"><i class="fa fa-key"></i></th>
+          </tr>
+        </thead>
+        <tbody>
+          # for user_db in user_dbs
+            <tr id="{{user_db.key.urlsafe()}}" class=" user-row {{'success' if merged_user_db.key.urlsafe() == user_db.key.urlsafe() else 'danger'}}">
+              <td>
+                  <label>
+                    <input type="radio" name="user_db" value="{{user_db.key.urlsafe()}}" {{'checked' if merged_user_db.key.urlsafe() == user_db.key.urlsafe()}} disabled>
+                    <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="Avatar of {{user_db.name}}">
+                  </label>
+                  {{user_db.name}}
+                  # if current_user.id == user_db.key.id()
+                    <i class="fa fa-hand-o-left" title="You"></i>
+                  # endif
+                  # if user_db.admin
+                    <i class="fa fa-cog" title="Admin"></i>
+                  # endif
+                  # if not user_db.active
+                    <i class="fa fa-ban" title="Inactive"></i>
+                  # endif
+              </td>
+              <td>{{user_db.username}}</td>
+              <td class="hidden-xs">{{user_db.email}}</td>
+              <td class="hidden-sm hidden-xs">
+                <time datetime="{{user_db.created.__str__()[:-3]}}">
+                  {{user_db.created.strftime('%Y-%m-%d')}}
+                </time>
+              </td>
+              <td class="hidden-sm hidden-xs">
+                <time datetime="{{user_db.modified.__str__()[:-3]}}">
+                  {{user_db.modified.strftime('%Y-%m-%d')}}
+                </time>
+              </td>
+              <td class="text-nowrap">{{utils.auth_icons(user_db.auth_ids)}}</td>
+            </tr>
+          # endfor
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <hr>
+  <form method="POST" action="." novalidate>
+    <div class="row">
+      <div class="col-md-6">
+        {{form.csrf_token}}
+        {{forms.hidden_field(form.user_keys)}}
+        {{forms.hidden_field(form.user_key)}}
+        {{forms.hidden_field(form.username)}}
+
+        {{forms.text_field(form.username, disabled=True)}}
+        {{forms.text_field(form.name)}}
+        {{forms.email_field(form.email)}}
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <label class="control-label">Merged Accounts</label>
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th><i class="fa fa-key"></i></th>
+                <th class="col-xs-12">Auth ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              # for auth_id in auth_ids
+                <tr>
+                  <td>{{utils.auth_icon(auth_id)}}</td>
+                  <td>{{auth_id}}</td>
+                </tr>
+              # endfor
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-warning">
+      <ul>
+        <li>Select the user's entity that you want to keep (the other entities will be deleted)</li>
+        <li>Before merging make sure that the entities that have references to the user are being taking care of</li>
+        <li>There is no way back after merge</li>
+      </ul>
+    </div>
+    <div class="controls">
+      <button type="submit" class="btn btn-danger btn-lg btn-block btn-loading" data-loading-text="Merging..">
+        Merge
+      </button>
+    </div>
+  </form>
+# endblock

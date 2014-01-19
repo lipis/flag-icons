@@ -1,6 +1,7 @@
 window.init_user_list = ->
   init_user_selections()
   init_user_delete_btn()
+  init_user_merge_btn()
 
 
 init_user_selections = ->
@@ -26,6 +27,7 @@ user_select_row = ($element) ->
 update_selections = ->
   selected = ($ 'input[name=user_db]:checked').length
   ($ '#user-actions').toggleClass 'hidden', selected == 0
+  ($ '#user-merge').toggleClass 'hidden', selected < 2
   if selected is 0
     ($ '#select-all').prop 'indeterminate', false
     ($ '#select-all').prop 'checked', false
@@ -36,6 +38,9 @@ update_selections = ->
     ($ '#select-all').prop 'indeterminate', true
 
 
+###############################################################################
+# Delete Users Stuff
+###############################################################################
 init_user_delete_btn = ->
   ($ '#user-delete').click (e) ->
     clear_notifications()
@@ -58,3 +63,44 @@ init_user_delete_btn = ->
           ($ this).remove()
           update_selections()
           show_notification success_message.replace('{users}', user_keys.length), 'success'
+
+
+###############################################################################
+# Merge Users Stuff
+###############################################################################
+window.init_user_merge = ->
+  user_keys = ($ '#user_keys').val()
+
+  service_call 'GET', "/_s#{location.pathname}?user_keys=#{user_keys}", (error, result) ->
+    if error
+      LOG 'Something went terribly wrong'
+      return
+    window.user_dbs = result
+    ($ 'input[name=user_db]').removeAttr 'disabled'
+
+  ($ 'input[name=user_db]').change (event) ->
+    user_key = ($ event.currentTarget).val()
+    select_default_user user_key
+
+
+select_default_user = (user_key) ->
+  ($ '.user-row').removeClass('success').addClass('danger')
+  ($ "##{user_key}").removeClass('danger').addClass('success')
+
+  for user_db in user_dbs
+    if user_key == user_db.key
+      ($ 'input[name=user_key]').val user_db.key
+      ($ 'input[name=username]').val user_db.username
+      ($ 'input[name=name]').val user_db.name
+      ($ 'input[name=email]').val user_db.email
+      break
+
+
+init_user_merge_btn = ->
+  ($ '#user-merge').click (e) ->
+    e.preventDefault()
+    user_keys = []
+    ($ 'input[name=user_db]:checked').each ->
+      user_keys.push ($ this).val()
+    user_merge_url = ($ this).data 'user-merge-url'
+    window.location.href = "#{user_merge_url}?user_keys=#{user_keys.join(',')}"
