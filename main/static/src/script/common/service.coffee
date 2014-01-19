@@ -16,14 +16,14 @@ window.service_call = (method, url, params, data, callback) ->
     accepts: 'application/json'
     dataType: 'json'
     data: if data then JSON.stringify(data) else undefined
-    success: (response) ->
-      if response.status == 'success'
+    success: (data, textStatus, jqXHR) ->
+      if data.status == 'success'
         more = undefined
-        if response.more_url
-          more = (callback) -> service_call(method, response.more_url, {}, callback)
-        callback? undefined, response.result, more
+        if data.more_url
+          more = (callback) -> service_call(method, data.more_url, {}, callback)
+        callback? undefined, data.result, more
       else
-        callback? response
+        callback? data
     error: (jqXHR, textStatus, errorThrown) ->
       error =
         error_code: 'ajax_error'
