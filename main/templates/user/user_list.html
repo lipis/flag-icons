@@ -90,8 +90,10 @@
           # for user_db in user_dbs
             <tr id="{{user_db.key.urlsafe()}}">
               <td>
-                <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
-                <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="Avatar of {{user_db.name}}">
+                <label>
+                  <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
+                  <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="Avatar of {{user_db.name}}">
+                </label>
                 <a href="{{url_for('user_update', user_id=user_db.key.id())}}">{{user_db.name}}</a>
                 # if current_user.id == user_db.key.id()
                   <i class="fa fa-hand-o-left" title="You"></i>
