@@ -2,6 +2,10 @@
 
 import os
 
+PRODUCTION = os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Eng')
+DEVELOPMENT = not PRODUCTION
+DEBUG = DEVELOPMENT
+
 try:
   # This part is surrounded in try/except because the config.py file is
   # also used in the run.py script which is used to compile/minify the client
@@ -12,6 +16,9 @@ try:
   CURRENT_VERSION_ID = os.environ.get('CURRENT_VERSION_ID')
   CURRENT_VERSION_NAME = CURRENT_VERSION_ID.split('.')[0]
   CURRENT_VERSION_TIMESTAMP = long(CURRENT_VERSION_ID.split('.')[1]) >> 28
+  if DEVELOPMENT:
+    from calendar import timegm
+    CURRENT_VERSION_TIMESTAMP = long(timegm(datetime.now().timetuple()))
   CURRENT_VERSION_DATE = datetime.fromtimestamp(CURRENT_VERSION_TIMESTAMP)
   APPLICATION_ID = app_identity.get_application_id()
 
@@ -21,10 +28,6 @@ try:
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
 except:
   pass
-
-PRODUCTION = os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Eng')
-DEVELOPMENT = not PRODUCTION
-DEBUG = DEVELOPMENT
 
 DEFAULT_DB_LIMIT = 64
 
