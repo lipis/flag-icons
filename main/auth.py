@@ -176,8 +176,8 @@ def retrieve_user_from_google(google_user):
 
   return create_user_db(
       auth_id,
-      google_user.nickname().split('@')[0].replace('.', ' ').title(),
-      google_user.nickname(),
+      re.sub(r'_+|-+|\.+|\s+', ' ', google_user.email().split('@')[0]).title(),
+      google_user.email(),
       google_user.email(),
       admin=users.is_current_user_admin(),
     )
