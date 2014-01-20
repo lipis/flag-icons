@@ -16,7 +16,7 @@ window.service_call = (method, url, params, data, callback) ->
     accepts: 'application/json'
     dataType: 'json'
     data: if data then JSON.stringify(data) else undefined
-    success: (data, textStatus, jqXHR) ->
+    success: (data) ->
       if data.status == 'success'
         more = undefined
         if data.more_url
