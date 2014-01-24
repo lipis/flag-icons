@@ -188,7 +188,7 @@ def user_merge():
 
 @ndb.transactional(xg=True)
 def merge_user_dbs(user_db, depricated_keys):
-  # TODO: Merge possible user data before deleting the merged users
+  # TODO: Merge possible user data before handlining deprecated users
   delete_user_dbs(depricated_keys)
 
 
