@@ -189,7 +189,13 @@ def user_merge():
 @ndb.transactional(xg=True)
 def merge_user_dbs(user_db, depricated_keys):
   # TODO: Merge possible user data before handlining deprecated users
-  delete_user_dbs(depricated_keys)
+  depricated_dbs = ndb.get_multi(depricated_keys)
+  for depricated_db in depricated_dbs:
+    depricated_db.auth_ids = []
+    depricated_db.active = False
+    if not depricated_db.username.startswith('_'):
+      depricated_db.username = '_%s' % depricated_db.username
+  ndb.put_multi(depricated_dbs)
 
 
 ########################################################
