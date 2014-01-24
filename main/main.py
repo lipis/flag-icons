@@ -77,7 +77,7 @@ def profile():
 
   return flask.render_template(
       'profile.html',
-      title='Profile',
+      title=user_db.name,
       html_class='profile',
       form=form,
       user_db=user_db,
