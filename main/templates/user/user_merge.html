@@ -14,53 +14,49 @@
   </div>
   <div class="row">
     <div class="col-lg-12">
-      <table class="table table-bordered table-hover">
-        <thead>
-          <tr>
-            <th class="col-xs-4">Name</th>
-            <th class="col-xs-2">Username</th>
-            <th class="col-xs-2 hidden-xs">Email</th>
-            <th class="col-xs-2 hidden-sm hidden-xs">Created</th>
-            <th class="col-xs-2 hidden-sm hidden-xs">Modified</th>
-            <th class="text-center" title="Accounts"><i class="fa fa-key"></i></th>
-          </tr>
-        </thead>
-        <tbody>
-          # for user_db in user_dbs
-            <tr id="{{user_db.key.urlsafe()}}" class=" user-row {{'success' if merged_user_db.key.urlsafe() == user_db.key.urlsafe() else 'danger'}}">
-              <td>
-                <label>
-                  <input type="radio" name="user_db" value="{{user_db.key.urlsafe()}}" {{'checked' if merged_user_db.key.urlsafe() == user_db.key.urlsafe()}} disabled>
-                  <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="Avatar of {{user_db.name}}">
-                </label>
-                {{user_db.name}}
-                # if current_user.id == user_db.key.id()
-                  <i class="fa fa-hand-o-left" title="You"></i>
-                # endif
-                # if user_db.admin
-                  <i class="fa fa-cog" title="Admin"></i>
-                # endif
-                # if not user_db.active
-                  <i class="fa fa-ban" title="Inactive"></i>
-                # endif
-              </td>
-              <td>{{user_db.username}}</td>
-              <td class="hidden-xs">{{user_db.email}}</td>
-              <td class="hidden-sm hidden-xs">
-                <time datetime="{{user_db.created.__str__()[:-3]}}">
-                  {{user_db.created.strftime('%Y-%m-%d')}}
-                </time>
-              </td>
-              <td class="hidden-sm hidden-xs">
-                <time datetime="{{user_db.modified.__str__()[:-3]}}">
-                  {{user_db.modified.strftime('%Y-%m-%d')}}
-                </time>
-              </td>
-              <td class="text-nowrap">{{utils.auth_icons(user_db.auth_ids)}}</td>
+      <div class="table-responsive">
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th class="col-xs-4">Name</th>
+              <th class="col-xs-3">Username</th>
+              <th class="col-xs-3">Email</th>
+              <th class="col-xs-2">Created</th>
+              <th class="text-center" title="Accounts"><i class="fa fa-key"></i></th>
             </tr>
-          # endfor
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            # for user_db in user_dbs
+              <tr id="{{user_db.key.urlsafe()}}" class="user-row {{'success' if merged_user_db.key.urlsafe() == user_db.key.urlsafe() else 'danger'}}">
+                <td>
+                  <label>
+                    <input type="radio" name="user_db" value="{{user_db.key.urlsafe()}}" {{'checked' if merged_user_db.key.urlsafe() == user_db.key.urlsafe()}} disabled>
+                    <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="Avatar of {{user_db.name}}">
+                  </label>
+                  {{user_db.name}}
+                  # if current_user.id == user_db.key.id()
+                    <i class="fa fa-hand-o-left" title="You"></i>
+                  # endif
+                  # if user_db.admin
+                    <i class="fa fa-cog" title="Admin"></i>
+                  # endif
+                  # if not user_db.active
+                    <i class="fa fa-ban" title="Inactive"></i>
+                  # endif
+                </td>
+                <td>{{user_db.username}}</td>
+                <td>{{user_db.email}}</td>
+                <td>
+                  <time datetime="{{user_db.created.__str__()[:-3]}}">
+                    {{user_db.created.strftime('%Y-%m-%d')}}
+                  </time>
+                </td>
+                <td class="text-nowrap">{{utils.auth_icons(user_db.auth_ids)}}</td>
+              </tr>
+            # endfor
+          </tbody>
+        </table>
+      </div>
     </div>
   </div>
   <hr>
@@ -100,9 +96,9 @@
     </div>
     <div class="alert alert-warning">
       <ul>
-        <li>Select the user's entity that you want to keep (the other entities will be deleted)</li>
-        <li>Before merging make sure that the entities that have references to the user are being taking care of</li>
-        <li>There is no way back after merge</li>
+        <li>Select the user's entity that you want to keep (the other entities will be deactivated)</li>
+        <li>Before merging make sure the entities with references to the user are being taking care of</li>
+        <li>For deactivated users the 3rd party associated accounts will be cleared</li>
       </ul>
     </div>
     <hr>
