@@ -9,7 +9,11 @@ module.exports = (grunt)->
       rest:
         options:
           livereload: true
-        files: ['main/**/*.py', 'main/**/*.js', 'main/**/*.html']
+        files: [
+            'main/**/*.py'
+            'main/**/*.js'
+            'main/**/*.html'
+          ]
 
     grunt.loadNpmTasks('grunt-contrib-watch')
     grunt.registerTask('default', ['watch'])
