@@ -45,21 +45,19 @@ parser.add_argument(
     '-f', '--flush', dest='flush', action='store_true',
     help='clears the datastore, blobstore, etc',
   )
-parser.add_argument('-e', '--pybabel-extract', dest='pybabel_extract', action='store_true',
-    help='extract messages from source files and generate messages.pot (pybabel extract..)',
-  )
-parser.add_argument('-u', '--pybabel-update', dest='pybabel_update', action='store_true',
-    help='update existing message catalogs from messages.pot (pybabel update..)',
-  )
-parser.add_argument('-l', '--pybabel-init', dest='locale', action='store',
-    help='create new message catalogs from messages.pot (pybabel init..)',
-  )
-parser.add_argument('-i', '--pybabel-init-missing', dest='init', action='store_true',
+parser.add_argument('-i', '--pybabel-init', dest='init', action='store_true',
     help='''create new message catalogs from messages.pot that are defined
     in config.py and still not present (pybabel init..)''',
   )
+parser.add_argument('-u', '--pybabel-update', dest='pybabel_update', action='store_true',
+    help='''extracts messages from source files to generate messages.pot
+    (pybabel extract..) and updates existing catalogs (pybabel update..)''',
+  )
 parser.add_argument('-b', '--pybabel-compile', dest='pybabel_compile', action='store_true',
     help='compile message catalogs to MO files (pybabel compile..)',
+  )
+parser.add_argument('-l', '--pybabel-init-locale', dest='locale', action='store',
+    help='create new message catalogs from messages.pot (pybabel init..)',
   )
 args = parser.parse_args()
 
@@ -302,8 +300,11 @@ def pybabel_init(locale):
 
 
 def pybabel_init_missing():
+  if not os.path.exists(os.path.join(dir_translations, 'messages.pot')):
+    pybabel_extract()
   for locale in config.LOCALE:
-    if not os.path.exists(os.path.join(dir_translations, locale)):
+    msg = os.path.join(dir_translations, locale, 'LC_MESSAGES', 'messages.po')
+    if not os.path.exists(msg):
       pybabel_init(locale)
 
 
@@ -363,15 +364,20 @@ if args.minify:
       merge_files(script_file, pretty_js)
     os_execute(file_uglifyjs, pretty_js, '-cm', ugly_js)
     os.remove(pretty_js)
-  print_out('DONE')
 
-if args.pybabel_extract:
+  print_out('BABEL')
   pybabel_extract()
+  pybabel_init_missing()
+  pybabel_update()
+  pybabel_compile()
+  print_out('DONE')
 
 if args.init:
   pybabel_init_missing()
 
 if args.pybabel_update:
+  pybabel_extract()
+  pybabel_init_missing()
   pybabel_update()
 
 if args.locale:
