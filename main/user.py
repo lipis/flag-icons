@@ -148,16 +148,19 @@ def user_merge():
   merged_user_db = user_dbs[0]
   auth_ids = []
   is_admin = False
+  is_active = False
   for user_db in user_dbs:
     auth_ids.extend(user_db.auth_ids)
     auth_ids.extend(user_db.auth_ids)
     auth_ids.extend(user_db.auth_ids)
     is_admin = is_admin or user_db.admin
+    is_active = is_active or user_db.active
     if user_db.key.urlsafe() == util.param('user_key'):
       merged_user_db = user_db
 
   auth_ids = sorted(list(set(auth_ids)))
   merged_user_db.admin = is_admin
+  merged_user_db.active = is_active
 
   form_obj = copy.deepcopy(merged_user_db)
   form_obj.user_key = merged_user_db.key.urlsafe()
