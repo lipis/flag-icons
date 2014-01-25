@@ -119,13 +119,13 @@ def delete_user_dbs(user_db_keys):
 # User Merge
 ###############################################################################
 class UserMergeForm(wtf.Form):
-  user_key = wtf.StringField('User Key', [wtf.validators.required()])
-  user_keys = wtf.StringField('User Keys', [wtf.validators.required()])
-  username = wtf.StringField('Username', [wtf.validators.optional()])
-  name = wtf.StringField('Merged Name',
+  user_key = wtf.StringField(_('User Key'), [wtf.validators.required()])
+  user_keys = wtf.StringField(_('User Keys'), [wtf.validators.required()])
+  username = wtf.StringField(_('Username'), [wtf.validators.optional()])
+  name = wtf.StringField(_('Merged Name'),
       [wtf.validators.required()], filters=[util.strip_filter],
     )
-  email = wtf.StringField('Merged Email',
+  email = wtf.StringField(_('Merged Email'),
       [wtf.validators.optional(), wtf.validators.email()],
       filters=[util.email_filter],
     )
@@ -183,7 +183,7 @@ def user_merge():
 
   return flask.render_template(
       'user/user_merge.html',
-      title='Merge Users',
+      title=_('Merge Users'),
       html_class='user-merge',
       user_dbs=user_dbs,
       merged_user_db=merged_user_db,

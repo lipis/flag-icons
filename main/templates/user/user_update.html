@@ -6,11 +6,11 @@
   <div class="page-header">
     <h1>
       <small>
-        <a href="{{url_for('user_list', order='-modified')}}" title="Back to user list"><i class="fa fa-angle-double-left"></i></a>
+        <a href="{{url_for('user_list', order='-modified')}}" title="{{_('Back to user list')}}"><i class="fa fa-angle-double-left"></i></a>
       </small>
       {{title}}
       # if current_user.id == user_db.key.id()
-        <small><i class="fa fa-hand-o-left" title="You"></i></small>
+        <small><i class="fa fa-hand-o-left" title="{{_('You')}}"></i></small>
       # endif
     </h1>
   </div>
@@ -28,20 +28,20 @@
       </div>
       <div class="col-md-2 col-sm-6">
         <div class="form-group">
-          <label class="control-label">Avatar</label>
+          <label class="control-label">{{_('Avatar')}}</label>
           <div>
-            <img class="img-thumbnail" src="{{user_db.avatar_url_size(170)}}" alt="Avatar of {{user_db.name}}">
+            <img class="img-thumbnail" src="{{user_db.avatar_url_size(170)}}" alt="{{_('Avatar of')}} {{user_db.name}}">
           </div>
         </div>
       </div>
       <div class="col-md-6 col-sm-12">
         <div class="form-group">
-          <label class="control-label">Accounts</label>
+          <label class="control-label">{{_('Accounts')}}</label>
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
                 <th><i class="fa fa-key"></i></th>
-                <th class="col-xs-12">Auth ID</th>
+                <th class="col-xs-12">{{_('Auth ID')}}</th>
               </tr>
             </thead>
             <tbody>
@@ -59,8 +59,8 @@
     <hr>
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <button type="submit" class="btn btn-primary btn-lg btn-block btn-loading" data-loading-text="Updating..">
-          Update
+        <button type="submit" class="btn btn-primary btn-lg btn-block btn-loading" data-loading-text="{{_('Updating..')}}">
+          {{_('Update')}}
         </button>
       </div>
     </div>
