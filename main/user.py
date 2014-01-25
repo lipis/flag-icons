@@ -145,6 +145,7 @@ def user_merge():
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_dbs(user_dbs)
 
+  user_dbs.sort(key=lambda user_db: user_db.created)
   merged_user_db = user_dbs[0]
   auth_ids = []
   is_admin = False
