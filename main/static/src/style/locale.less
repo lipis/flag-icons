@@ -1,34 +1,30 @@
-[class^="flag-"],
-[class*=" flag-"] {
+// Modified version of flag-icon-css
+// https://github.com/lipis/flag-icon-css
+
+.flag-icon {
+  position: relative;
   display: inline-block;
-  width: 14 * 4 / 3px;
-  height: 14px;
-  line-height: 14px;
-  vertical-align: text-top;
-  background-size: cover;
-  background-position: 50% 50%;
+  width: unit(4 / 3, em);
+  line-height: 1em;
+  .flag-icon-background;
+  &:before {
+    content: "\00a0";
+  }
+}
+
+.flag-icon-background {
+  background-size: contain;
+  background-position: 50%;
   background-repeat: no-repeat;
-  margin-top: 1px;
-  border-radius: 1px;
-  .box-shadow(0 0 3px @gray);
 }
 
-.disabled [class^="flag-"], [class*=" flag-"] {
-  opacity: .5;
+.flag-icon(@country, @locale) {
+  .flag-icon-@{locale} {
+    background-image: ~"url(@{flag-icon-css-path}/@{country}.svg)";
+  }
 }
 
-.flag-en {
-  background-image: url(/p/img/locale/gb.svg);
-}
-
-.flag-el {
-  background-image: url(/p/img/locale/gr.svg);
-}
-
-.flag-pl {
-  background-image: url(/p/img/locale/pl.svg);
-}
-
-.flag-ru {
-  background-image: url(/p/img/locale/ru.svg);
-}
+.flag-icon(gb, en);
+.flag-icon(gr, el);
+.flag-icon(pl, pl);
+.flag-icon(ru, ru);
