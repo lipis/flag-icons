@@ -288,7 +288,7 @@ def pybabel_extract():
 
 
 def pybabel_update():
-  os.system('"pybabel" update -i %s -d %s' % (
+  os.system('"pybabel" update -i %s -d %s --no-wrap' % (
       file_messages_pot, dir_translations,
     ))
 
