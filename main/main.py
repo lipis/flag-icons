@@ -83,8 +83,6 @@ def profile():
         'set_locale', locale=user_db.locale, next=flask.url_for('welcome')
       ))
 
-    return flask.redirect(flask.url_for('welcome'))
-
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_db(user_db)
 
