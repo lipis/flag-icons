@@ -1,3 +1,16 @@
+Version 0.12.0 - TBD
+---------------------------
+- Updated Bootstrap to 3.1.0
+- Replaced the macro `utils.order_link(title, endpoint, property)` with
+  `utils.order_by_link(property, title)` which breaks the backwards
+  compatibility (refer to `user_list.html` on how it is used)
+- New macro `utils.filter_by_link(property, value, icon=None)` for easier
+  filtering
+- New function `util.update_query_argument(name, value=None)` for updating
+  query arguments of the current request URL
+- Refined filters on the User List page
+- Added filter for active and inactive users
+
 Version 0.11.0 - 2014-01-25
 ---------------------------
 - Merge users is now supported

@@ -12,32 +12,27 @@
 
   <div class="panel panel-default">
     <div class="panel-body">
-      <div class="btn-group">
-        <button type="button" class="btn btn-sm dropdown-toggle btn-success" data-toggle="dropdown">
-          Limit - {{request.args.get('limit') or 'Default'}}
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="{{url_for('user_list')}}">{{config.DEFAULT_DB_LIMIT}} (Default)</a></li>
-          <li class="divider"></li>
-          <li><a href="{{url_for('user_list', limit=16)}}">16</a></li>
-          <li><a href="{{url_for('user_list', limit=128)}}">128</a></li>
-          <li><a href="{{url_for('user_list', limit=256)}}">256</a></li>
-          <li><a href="{{url_for('user_list', limit=1024)}}">1024</a></li>
-        </ul>
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-success" disabled >Limit</button>
+        {{utils.filter_by_link('limit', 16)}}
+        {{utils.filter_by_link('limit', 64)}}
+        {{utils.filter_by_link('limit', 128)}}
+        {{utils.filter_by_link('limit', 512)}}
+        {{utils.filter_by_link('limit', 1024)}}
       </div>
-      <div class="btn-group">
-        <button type="button" class="btn btn-sm dropdown-toggle btn-danger" data-toggle="dropdown">
-          Admins - {{request.args.get('admin') or 'None'}}
-          <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu">
-          <li><a href="{{url_for('user_list')}}">None</a></li>
-          <li class="divider"></li>
-          <li><a href="{{url_for('user_list', admin='true')}}">Show Admins</a></li>
-          <li><a href="{{url_for('user_list', admin='false')}}">Hide Admins</a></li>
-        </ul>
+
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-danger" disabled >Admins</button>
+        {{utils.filter_by_link('admin', True, 'thumbs-o-up')}}
+        {{utils.filter_by_link('admin', False, 'thumbs-o-down')}}
       </div>
+
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-primary" disabled >Active</button>
+        {{utils.filter_by_link('active', True, 'thumbs-o-up')}}
+        {{utils.filter_by_link('active', False, 'thumbs-o-down')}}
+      </div>
+
       <div id="user-actions" class="btn-group hidden">
         <button type="button" class="btn btn-sm dropdown-toggle btn-info" data-toggle="dropdown">
           More
@@ -71,11 +66,11 @@
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th class="col-xs-4"><input id="select-all" type="checkbox"> {{utils.order_link('Name', 'user_list', 'name')}}</th>
-          <th class="col-xs-2">{{utils.order_link('Username', 'user_list', 'username')}}</th>
-          <th class="col-xs-2">{{utils.order_link('Email', 'user_list', 'email')}}</th>
-          <th class="col-xs-2">{{utils.order_link('Created', 'user_list', 'created')}}</th>
-          <th class="col-xs-2">{{utils.order_link('Modified', 'user_list', 'modified')}}</th>
+          <th class="col-xs-4"><input id="select-all" type="checkbox"> {{utils.order_by_link('name', 'Name')}}</th>
+          <th class="col-xs-2">{{utils.order_by_link('username', 'Username')}}</th>
+          <th class="col-xs-2">{{utils.order_by_link('email', 'Email')}}</th>
+          <th class="col-xs-2">{{utils.order_by_link('created', 'Created')}}</th>
+          <th class="col-xs-2">{{utils.order_by_link('modified', 'Modified')}}</th>
           <th class="text-center" title="Accounts"><i class="fa fa-key"></i></th>
         </tr>
       </thead>

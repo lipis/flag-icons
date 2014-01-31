@@ -26,6 +26,7 @@ def user_list():
       order=util.param('order') or '-created',
       name=util.param('name'),
       admin=util.param('admin', bool),
+      active=util.param('active', bool),
     )
 
   if flask.request.path.startswith('/_s/'):
