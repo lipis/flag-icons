@@ -80,7 +80,9 @@ def user_update(user_id):
         user_db.admin = True
         user_db.active = True
       user_db.put()
-      return flask.redirect(flask.url_for('user_list', order='-modified'))
+      return flask.redirect(flask.url_for(
+          'user_list', order='-modified', active=user_db.active,
+        ))
 
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_db(user_db)
