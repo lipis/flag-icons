@@ -199,16 +199,27 @@ _slugify_strip_re = re.compile(r'[^\w\s-]')
 _slugify_hyphenate_re = re.compile(r'[-\s]+')
 
 
-def slugify(value):
-  if not isinstance(value, unicode):
-    value = unicode(value)
-  value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore')
-  value = unicode(_slugify_strip_re.sub('', value).strip().lower())
-  return _slugify_hyphenate_re.sub('-', value)
+def slugify(text):
+  if not isinstance(text, unicode):
+    text = unicode(text)
+  text = unicodedata.normalize('NFKD', text).encode('ascii', 'ignore')
+  text = unicode(_slugify_strip_re.sub('', text).strip().lower())
+  return _slugify_hyphenate_re.sub('-', text)
 
 
 def is_valid_username(username):
   return True if re.match('^[a-z0-9]+(?:[\.][a-z0-9]+)*$', username) else False
+
+
+def update_query_argument(name, value=None):
+  arguments = {}
+  for k, v in flask.request.args.items():
+    if k != name:
+      arguments[k] = v
+  if value is not None:
+    arguments[name] = value
+  query = '&'.join('%s=%s' % item for item in sorted(arguments.items()))
+  return '%s?%s' % (flask.request.path, query)
 
 
 ###############################################################################

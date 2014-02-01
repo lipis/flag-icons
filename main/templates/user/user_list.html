@@ -10,116 +10,111 @@
     <h1>{{title}}</h1>
   </div>
 
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="panel panel-default">
-        <div class="panel-body">
-          <div class="btn-group">
-            <button type="button" class="btn btn-sm dropdown-toggle btn-success" data-toggle="dropdown">
-              {{_('Limit')}} - {{request.args.get('limit') or _('Default')}}
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="{{url_for('user_list')}}">{{config.DEFAULT_DB_LIMIT}} ({{_('Default')}})</a></li>
-              <li class="divider"></li>
-              <li><a href="{{url_for('user_list', limit=16)}}">16</a></li>
-              <li><a href="{{url_for('user_list', limit=128)}}">128</a></li>
-              <li><a href="{{url_for('user_list', limit=256)}}">256</a></li>
-              <li><a href="{{url_for('user_list', limit=1024)}}">1024</a></li>
-            </ul>
-          </div>
-          <div class="btn-group">
-            <button type="button" class="btn btn-sm dropdown-toggle btn-danger" data-toggle="dropdown">
-              {{_('Admins')}} - {{request.args.get('admin') or _('None')}}
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li><a href="{{url_for('user_list')}}">{{_('None')}}</a></li>
-              <li class="divider"></li>
-              <li><a href="{{url_for('user_list', admin='true')}}">{{_('Show Admins')}}</a></li>
-              <li><a href="{{url_for('user_list', admin='false')}}">{{_('Hide Admins')}}</a></li>
-            </ul>
-          </div>
-          <div id="user-actions" class="btn-group hidden">
-            <button type="button" class="btn btn-sm dropdown-toggle btn-info" data-toggle="dropdown">
-              {{_('More')}}
-              <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu">
-              <li>
-                <a id="user-delete"
-                    data-service-url="{{url_for('user_delete_service')}}"
-                    data-confirm="{{_('Are you sure you want to delete {users} selected user(s)?')}}"
-                    data-success="{{_('{users} user(s) deleted.')}}"
-                    data-error="{{_('Something went wrong while deleting. Please try again.')}}"
-                    href="#"
-                  >
-                  <i class="fa fa-fw fa-trash-o"></i>
-                  {{_('Delete Selected')}}
-                </a>
-              </li>
-              <li>
-                <a id="user-merge" data-user-merge-url="{{url_for('user_merge')}}" href="#">
-                  <i class="fa fa-fw fa-code-fork"></i>
-                  {{_('Merge Selected')}}
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-success" disabled >{{_('Limit')}}</button>
+        {{utils.filter_by_link('limit', 16)}}
+        {{utils.filter_by_link('limit', 64)}}
+        {{utils.filter_by_link('limit', 128)}}
+        {{utils.filter_by_link('limit', 512)}}
+        {{utils.filter_by_link('limit', 1024)}}
+      </div>
+
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-danger" disabled >{{_('Admins')}}</button>
+        {{utils.filter_by_link('admin', True, 'thumbs-o-up')}}
+        {{utils.filter_by_link('admin', False, 'thumbs-o-down')}}
+      </div>
+
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-primary" disabled >{{_('Active')}}</button>
+        {{utils.filter_by_link('active', True, 'thumbs-o-up')}}
+        {{utils.filter_by_link('active', False, 'thumbs-o-down')}}
+      </div>
+
+      <div id="user-actions" class="btn-group hidden">
+        <button type="button" class="btn btn-sm dropdown-toggle btn-info" data-toggle="dropdown">
+          {{_('More')}}
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu">
+          <li>
+            <a id="user-delete"
+                data-service-url="{{url_for('user_delete_service')}}"
+                data-confirm="{{_('Are you sure you want to delete {users} selected user(s)?')}}"
+                data-success="{{_('{users} user(s) deleted.')}}"
+                data-error="{{_('Something went wrong while deleting. Please try again.')}}"
+                href="#"
+              >
+              <i class="fa fa-fw fa-trash-o"></i>
+              {{_('Delete Selected')}}
+            </a>
+          </li>
+          <li>
+            <a id="user-merge" data-user-merge-url="{{url_for('user_merge')}}" href="#">
+              <i class="fa fa-fw fa-code-fork"></i>
+              {{_('Merge Selected')}}
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-lg-12">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th class="col-xs-4"><input id="select-all" type="checkbox"> {{utils.order_link(_('Name'), 'user_list', 'name')}}</th>
-            <th class="col-xs-2 hidden-xs">{{utils.order_link(_('Username'), 'user_list', 'username')}}</th>
-            <th class="col-xs-2 hidden-xs">{{utils.order_link(_('Email'), 'user_list', 'email')}}</th>
-            <th class="col-xs-2">{{utils.order_link(_('Created'), 'user_list', 'created')}}</th>
-            <th class="col-xs-2 hidden-sm hidden-xs">{{utils.order_link(_('Modified'), 'user_list', 'modified')}}</th>
-            <th class="hidden-sm hidden-xs text-center" title="{{_('Accounts')}}"><i class="fa fa-key"></i></th>
+
+  <div class="alert alert-warning alert-dismissable {{'hide' if user_dbs | count > 0}}">
+    <a href="{{url_for('user_list', order='-modified')}}" class="close" title="{{_('Remove all filters')}}">&times;</a>
+    {{_('There are no users to match the above filters.')}}
+  </div>
+
+  <div class="table-responsive {{'hide' if user_dbs | count == 0}}">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th class="col-xs-4"><input id="select-all" type="checkbox"> {{utils.order_by_link('name', _('Name'))}}</th>
+          <th class="col-xs-2">{{utils.order_by_link('username', _('Username'))}}</th>
+          <th class="col-xs-2">{{utils.order_by_link('email', _('Email'))}}</th>
+          <th class="col-xs-2">{{utils.order_by_link('created', _('Created'))}}</th>
+          <th class="col-xs-2">{{utils.order_by_link('modified', _('Modified'))}}</th>
+          <th class="text-center" title="{{_('Accounts')}}"><i class="fa fa-key"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+        # for user_db in user_dbs
+          <tr id="{{user_db.key.urlsafe()}}" class="{{'text-muted' if not user_db.active}}">
+            <td>
+              <label>
+                <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
+                <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="{{_('Avatar of')}} {{user_db.name}}">
+              </label>
+              <a href="{{url_for('user_update', user_id=user_db.key.id())}}">{{user_db.name}}</a>
+              # if current_user.id == user_db.key.id()
+                <i class="fa fa-hand-o-left" title="{{_('You')}}"></i>
+              # endif
+              # if user_db.admin
+                <i class="fa fa-cog" title="{{_('Admin')}}"></i>
+              # endif
+              # if not user_db.active
+                <i class="fa fa-ban" title="{{_('Inactive')}}"></i>
+              # endif
+            </td>
+            <td>{{user_db.username}}</td>
+            <td>{{user_db.email}}</td>
+            <td>
+              <time datetime="{{user_db.created.__str__()[:-3]}}">
+                {{user_db.created.strftime('%Y-%m-%d')}}
+              </time>
+            </td>
+            <td>
+              <time datetime="{{user_db.modified.__str__()[:-3]}}">
+                {{user_db.modified.strftime('%Y-%m-%d')}}
+              </time>
+            </td>
+            <td class="text-nowrap">{{utils.auth_icons(user_db.auth_ids)}}</td>
           </tr>
-        </thead>
-        <tbody>
-          # for user_db in user_dbs
-            <tr id="{{user_db.key.urlsafe()}}" class="{{'text-muted' if not user_db.active}}">
-              <td>
-                <label>
-                  <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
-                  <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="{{_('Avatar of')}} {{user_db.name}}">
-                </label>
-                <a href="{{url_for('user_update', user_id=user_db.key.id())}}">{{user_db.name}}</a>
-                # if current_user.id == user_db.key.id()
-                  <i class="fa fa-hand-o-left" title="{{_('You')}}"></i>
-                # endif
-                # if user_db.admin
-                  <i class="fa fa-cog" title="{{_('Admin')}}"></i>
-                # endif
-                # if not user_db.active
-                  <i class="fa fa-ban" title="{{_('Inactive')}}"></i>
-                # endif
-              </td>
-              <td class="hidden-xs">{{user_db.username}}</td>
-              <td class="hidden-xs">{{user_db.email}}</td>
-              <td>
-                <time datetime="{{user_db.created.__str__()[:-3]}}">
-                  {{user_db.created.strftime('%Y-%m-%d')}}
-                </time>
-              </td>
-              <td class="hidden-sm hidden-xs">
-                <time datetime="{{user_db.modified.__str__()[:-3]}}">
-                  {{user_db.modified.strftime('%Y-%m-%d')}}
-                </time>
-              </td>
-              <td class="hidden-sm hidden-xs text-nowrap">{{utils.auth_icons(user_db.auth_ids)}}</td>
-            </tr>
-          # endfor
-        </tbody>
-      </table>
-    </div>
+        # endfor
+      </tbody>
+    </table>
   </div>
 
   {{utils.next_link(more_url)}}
