@@ -1,17 +1,17 @@
-# macro order_by_link(property, title)
+# macro order_by_link(property, title, ignore=['cursor'])
   # if request.args.get('order') == property
-    <a href="{{update_query_argument('order', '-' + property)}}">{{title}} <i class="fa fa-chevron-up"></i></a>
+    <a href="{{update_query_argument('order', '-' + property, ignore)}}">{{title}} <i class="fa fa-chevron-up"></i></a>
   # elif request.args.get('order') == '-' + property
-    <a href="{{update_query_argument('order', property)}}">{{title}} <i class="fa fa-chevron-down"></i></a>
+    <a href="{{update_query_argument('order', property, ignore)}}">{{title}} <i class="fa fa-chevron-down"></i></a>
   #else
-    <a href="{{update_query_argument('order', property)}}">{{title}}</a>
+    <a href="{{update_query_argument('order', property, ignore)}}">{{title}}</a>
   #endif
 # endmacro
 
 
-# macro filter_by_link(property, value, icon=None)
+# macro filter_by_link(property, value, icon=None, ignore=['cursor'])
   # set value = '%s' % value
-  <a href="{{update_query_argument(property, None if request.args.get(property) == value else value)}}"
+  <a href="{{update_query_argument(property, None if request.args.get(property) == value else value, ignore)}}"
      class="btn btn-default {{'active' if request.args.get(property) == value}}">
     # if icon
       <i class="fa fa-{{icon}}"></i>
