@@ -6,7 +6,7 @@
   <div class="page-header">
     <h1>
       <small>
-        <a href="{{url_for('user_list', order='-modified')}}" title="Back to user list"><i class="fa fa-angle-double-left"></i></a>
+        <a href="{{url_for('user_list', order='-modified', active=user_db.active)}}" title="Back to user list"><i class="fa fa-angle-double-left"></i></a>
       </small>
       {{title}}
       # if current_user.id == user_db.key.id()
