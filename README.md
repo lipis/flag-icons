@@ -35,7 +35,7 @@ Development
 Run the `npm install` to install the dependencies after cloning the project and
 you'll be able to:
 
-To watch for changes and live reloed if served
+To watch for changes and live reload if served
 
     $ grunt
 
