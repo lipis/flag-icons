@@ -49,6 +49,9 @@ def get_next_url():
   return flask.url_for('welcome')
 
 
+###############################################################################
+# Babel stuff - i18n
+###############################################################################
 def set_locale(locale, response):
   if not locale:
     return response
