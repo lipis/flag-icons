@@ -70,7 +70,6 @@ class User(Base, modelx.UserX):
       'admin',
       'auth_ids',
       'avatar_url',
-      'avatar_url',
       'email',
       'locale',
       'name',
