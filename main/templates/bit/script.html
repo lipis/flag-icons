@@ -9,5 +9,5 @@
 # endfor
 
 # if config.DEVELOPMENT
-  <script src="http://localhost:35729/livereload.js"></script>
+  <script src="http://{{request.host.split(':')[0]}}:35729/livereload.js"></script>
 # endif
