@@ -16,6 +16,7 @@ class Base(ndb.Model, modelx.BaseX):
   created = ndb.DateTimeProperty(auto_now_add=True)
   modified = ndb.DateTimeProperty(auto_now=True)
   version = ndb.IntegerProperty(default=TIMESTAMP)
+
   _PROPERTIES = {
       'key',
       'id',
@@ -54,11 +55,10 @@ class Config(Base, modelx.ConfigX):
 
 
 class User(Base, modelx.UserX):
-  name = ndb.StringProperty(indexed=True, required=True)
-  username = ndb.StringProperty(indexed=True, required=True)
-  email = ndb.StringProperty(indexed=True, default='')
-  auth_ids = ndb.StringProperty(indexed=True, repeated=True)
-
+  name = ndb.StringProperty(required=True)
+  username = ndb.StringProperty(required=True)
+  email = ndb.StringProperty(default='')
+  auth_ids = ndb.StringProperty(repeated=True)
   active = ndb.BooleanProperty(default=True)
   admin = ndb.BooleanProperty(default=False)
 
