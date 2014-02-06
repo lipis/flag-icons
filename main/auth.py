@@ -357,6 +357,7 @@ def create_user_db(auth_id, name, username, email='', **params):
       email=email.lower(),
       username=new_username,
       auth_ids=[auth_id],
+      locale=get_locale(),
       **params
     )
   user_db.put()

@@ -21,6 +21,7 @@
         {{forms.text_field(form.name, autofocus=True)}}
         {{forms.text_field(form.username, autocomplete='off')}}
         {{forms.email_field(form.email)}}
+        {{forms.select_field(form.locale)}}
         # if current_user.id != user_db.key.id()
           {{forms.checkbox_field(form.admin)}}
           {{forms.checkbox_field(form.active)}}

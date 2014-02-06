@@ -70,10 +70,11 @@
   <div class="table-responsive {{'hide' if user_dbs | count == 0}}">
     <table class="table table-bordered">
       <thead>
-        <tr>
-          <th class="col-xs-4"><input id="select-all" type="checkbox"> {{utils.order_by_link('name', _('Name'))}}</th>
+        <tr class="text-nowrap">
+          <th class="col-xs-3"><input id="select-all" type="checkbox"> {{utils.order_by_link('name', _('Name'))}}</th>
           <th class="col-xs-2">{{utils.order_by_link('username', _('Username'))}}</th>
           <th class="col-xs-2">{{utils.order_by_link('email', _('Email'))}}</th>
+          <th class="col-xs-1">{{utils.order_by_link('locale', _('Language'))}}</th>
           <th class="col-xs-2">{{utils.order_by_link('created', _('Created'))}}</th>
           <th class="col-xs-2">{{utils.order_by_link('modified', _('Modified'))}}</th>
           <th class="text-center" title="{{_('Accounts')}}"><i class="fa fa-key"></i></th>
@@ -100,6 +101,12 @@
             </td>
             <td>{{user_db.username}}</td>
             <td>{{user_db.email}}</td>
+            <td class="text-nowrap">
+              # if user_db.locale
+                <i class="flag-icon flag-icon-{{user_db.locale}}"></i>
+                {{config.LOCALE[user_db.locale]}}
+              # endif
+            </td>
             <td>
               <time datetime="{{user_db.created.__str__()[:-3]}}">
                 {{user_db.created.strftime('%Y-%m-%d')}}

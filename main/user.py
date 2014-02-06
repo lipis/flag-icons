@@ -7,6 +7,7 @@ from google.appengine.ext import ndb
 import flask
 
 import auth
+import config
 import i18n
 import model
 import util
@@ -58,6 +59,9 @@ class UserUpdateForm(i18n.Form):
   email = wtf.StringField(_('Email'),
       [wtf.validators.optional(), wtf.validators.email()],
       filters=[util.email_filter],
+    )
+  locale = wtf.SelectField(_('Language'),
+      choices=config.LOCALE_SORTED, filters=[util.strip_filter],
     )
   admin = wtf.BooleanField(_('Admin'))
   active = wtf.BooleanField(_('Active'))
