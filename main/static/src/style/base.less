@@ -1,5 +1,9 @@
 body {
   padding-top: @navbar-height;
+  > .container {
+    padding-top: (@line-height-computed / 2);
+    padding-bottom: (@line-height-computed * 2);
+  }
 }
 
 .alert-announcement {

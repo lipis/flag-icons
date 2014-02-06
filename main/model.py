@@ -16,6 +16,7 @@ class Base(ndb.Model, modelx.BaseX):
   created = ndb.DateTimeProperty(auto_now_add=True)
   modified = ndb.DateTimeProperty(auto_now=True)
   version = ndb.IntegerProperty(default=TIMESTAMP)
+
   _PROPERTIES = {
       'key',
       'id',
@@ -27,7 +28,7 @@ class Base(ndb.Model, modelx.BaseX):
 
 class Config(Base, modelx.ConfigX):
   analytics_id = ndb.StringProperty(default='')
-  announcement_html = ndb.StringProperty(default='')
+  announcement_html = ndb.TextProperty(default='')
   announcement_type = ndb.StringProperty(default='info', choices=[
       'info', 'warning', 'success', 'danger',
     ])
@@ -56,11 +57,11 @@ class Config(Base, modelx.ConfigX):
 
 
 class User(Base, modelx.UserX):
-  name = ndb.StringProperty(indexed=True, required=True)
-  username = ndb.StringProperty(indexed=True, required=True)
-  email = ndb.StringProperty(indexed=True, default='')
+  name = ndb.StringProperty(required=True)
+  username = ndb.StringProperty(required=True)
+  email = ndb.StringProperty(default='')
   locale = ndb.StringProperty(default='')
-  auth_ids = ndb.StringProperty(indexed=True, repeated=True)
+  auth_ids = ndb.StringProperty(repeated=True)
 
   active = ndb.BooleanProperty(default=True)
   admin = ndb.BooleanProperty(default=False)
