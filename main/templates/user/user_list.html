@@ -70,7 +70,7 @@
   <div class="table-responsive {{'hide' if user_dbs | count == 0}}">
     <table class="table table-bordered">
       <thead>
-        <tr>
+        <tr class="text-nowrap">
           <th class="col-xs-4"><input id="select-all" type="checkbox"> {{utils.order_by_link('name', 'Name')}}</th>
           <th class="col-xs-2">{{utils.order_by_link('username', 'Username')}}</th>
           <th class="col-xs-2">{{utils.order_by_link('email', 'Email')}}</th>
