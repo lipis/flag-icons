@@ -42,6 +42,7 @@ SCRIPTS = {
         'src/lib/nprogress/nprogress.js',
         'src/lib/bootstrap/js/alert.js',
         'src/lib/bootstrap/js/button.js',
+        'src/lib/bootstrap/js/transition.js',
         'src/lib/bootstrap/js/collapse.js',
         'src/lib/bootstrap/js/dropdown.js',
         'src/lib/bootstrap/js/tooltip.js',

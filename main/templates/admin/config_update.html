@@ -4,43 +4,73 @@
 # block content
   <div class="page-header">
     <h1>{{title}}</h1>
+    <p class="text-muted">
+      For most of the settings you will
+      # if instances_url
+        <a href="{{instances_url}}" target="_blank">have to restart</a>
+      # else
+        have to restart
+      # endif
+      the <a href="https://developers.google.com/appengine/docs/adminconsole/instances" target="_blank" >instances</a>
+    </p>
   </div>
 
-  <div class="row">
-    <div class="col-md-4 col-md-push-8">
-      <legend>Information</legend>
-      <ul>
-        <li>For most of the settings you will {% if instances_url %} <a href="{{instances_url}}" target="_blank">have to restart</a> {% else %} have to restart {% endif %} the <a href="https://developers.google.com/appengine/docs/adminconsole/instances" target="_blank">instances</a></li>
-        <li>Site URL for <a href="https://developers.facebook.com/apps" target="_blank">Facebook application</a>: <em>{{request.host_url[:-1]}}</em></li>
-        <li>Callback URL for <a href="https://dev.twitter.com/apps" target="_blank">Twitter application</a>: <em>{{'%s%s' % (request.host_url[:-1], url_for('twitter_authorized'))}}</em></li>
-      </ul>
-    </div>
-    <div class="col-md-8 col-md-pull-4">
-      <form class="row" method="POST" action="." novalidate>
-        <fieldset class="col-sm-6">
-          <legend>General</legend>
-          {{form.csrf_token}}
 
-          {{forms.text_field(form.brand_name, autofocus=True)}}
-          {{forms.email_field(form.feedback_email)}}
-          {{forms.text_field(form.analytics_id)}}
-          {{forms.text_field(form.flask_secret_key)}}
-          {{forms.textarea_field(form.announcement_html)}}
-          {{forms.select_field(form.announcement_type)}}
-        </fieldset>
-        <fieldset class="col-sm-6">
-          <legend>Third Party OAuth</legend>
-          {{forms.text_field(form.facebook_app_id)}}
-          {{forms.text_field(form.facebook_app_secret)}}
-          {{forms.text_field(form.twitter_consumer_key)}}
-          {{forms.text_field(form.twitter_consumer_secret)}}
-        </fieldset>
-        <fieldset class="col-sm-12">
-          <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Updating Config..">
-            Update Config
-          </button>
-        </fieldset>
-      </form>
+  <form method="POST" action="." novalidate>
+    <div class="row">
+      <fieldset class="col-sm-6 col-md-5">
+        <legend>General</legend>
+        {{form.csrf_token}}
+
+        {{forms.text_field(form.brand_name, autofocus=True)}}
+        {{forms.email_field(form.feedback_email)}}
+        {{forms.text_field(form.analytics_id)}}
+        {{forms.text_field(form.flask_secret_key)}}
+        {{forms.textarea_field(form.announcement_html)}}
+        {{forms.select_field(form.announcement_type)}}
+      </fieldset>
+
+      <fieldset class="col-sm-6 col-md-7">
+        <legend>Third Party OAuth</legend>
+        <div class="panel-group" id="oauth">
+
+          <!-- Facebook -->
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#oauth" href="#facebook">Facebook</a></h4></div>
+            <div id="facebook" class="panel-collapse collapse">
+              <div class="panel-body">
+                {{forms.text_field(form.facebook_app_id)}}
+                {{forms.text_field(form.facebook_app_secret)}}
+                <p class="help-block">
+                  Site URL for <a href="https://developers.facebook.com/apps" target="_blank">Facebook application</a>: <em>{{request.host_url[:-1]}}</em>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Twitter -->
+          <div class="panel panel-default">
+            <div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#oauth" href="#twitter">Twitter</a></h4></div>
+            <div id="twitter" class="panel-collapse collapse">
+              <div class="panel-body">
+                {{forms.text_field(form.twitter_consumer_key)}}
+                {{forms.text_field(form.twitter_consumer_secret)}}
+                <p class="help-block">
+                  Callback URL for <a href="https://dev.twitter.com/apps" target="_blank">Twitter application</a>: <em>{{'%s%s' % (request.host_url[:-1], url_for('twitter_authorized'))}}</em>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
     </div>
-  </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <button type="submit" class="btn btn-primary btn-lg btn-block btn-loading" data-loading-text="Updating Config..">
+          Update Config
+        </button>
+      </div>
+    </div>
+  </form>
 # endblock
