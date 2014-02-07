@@ -64,7 +64,7 @@
 
   <div class="alert alert-warning alert-dismissable {{'hide' if user_dbs | count > 0}}">
     <a href="{{url_for('user_list', order='-modified')}}" class="close" title="Remove all filters">&times;</a>
-    There are no users to match the above filters.
+    There are no users matching the filters.
   </div>
 
   <div class="table-responsive {{'hide' if user_dbs | count == 0}}">
