@@ -17,14 +17,14 @@
         Sign in with Google
       </a>
 
-      # if config.CONFIG_DB.facebook_app_id and config.CONFIG_DB.facebook_app_secret
+      # if config.CONFIG_DB.has_facebook
         <a class="btn btn-block btn-lg btn-social btn-facebook" href="{{facebook_signin_url}}" rel="nofollow">
           <i class="fa fa-facebook"></i>
           Sign in with Facebook
         </a>
       # endif
 
-      # if config.CONFIG_DB.twitter_consumer_key and config.CONFIG_DB.twitter_consumer_secret
+      # if config.CONFIG_DB.has_twitter
         <a class="btn btn-block btn-lg btn-social btn-twitter" href="{{twitter_signin_url}}" rel="nofollow">
           <i class="fa fa-twitter"></i>
           Sign in with Twitter

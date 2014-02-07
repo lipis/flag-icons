@@ -14,6 +14,14 @@ class ConfigX(object):
   def get_master_db(cls):
     return cls.get_or_insert('master')
 
+  @property
+  def has_facebook(self):
+    return bool(self.facebook_app_id and self.facebook_app_secret)
+
+  @property
+  def has_twitter(self):
+    return bool(self.twitter_consumer_key and self.twitter_consumer_secret)
+
 
 class UserX(object):
   def avatar_url_size(self, size=None):

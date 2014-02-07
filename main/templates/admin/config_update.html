@@ -35,7 +35,7 @@
         <div class="panel-group" id="oauth">
 
           <!-- Facebook -->
-          <div class="panel panel-default">
+          <div class="panel {{'panel-success' if config.CONFIG_DB.has_facebook else 'panel-default'}}">
             <div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#oauth" href="#facebook">Facebook</a></h4></div>
             <div id="facebook" class="panel-collapse collapse">
               <div class="panel-body">
@@ -49,7 +49,7 @@
           </div>
 
           <!-- Twitter -->
-          <div class="panel panel-default">
+          <div class="panel {{'panel-success' if config.CONFIG_DB.has_twitter else 'panel-default'}}">
             <div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#oauth" href="#twitter">Twitter</a></h4></div>
             <div id="twitter" class="panel-collapse collapse">
               <div class="panel-body">
