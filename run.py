@@ -45,18 +45,22 @@ parser.add_argument(
     '-f', '--flush', dest='flush', action='store_true',
     help='clears the datastore, blobstore, etc',
   )
-parser.add_argument('-i', '--pybabel-init', dest='init', action='store_true',
+parser.add_argument(
+    '-i', '--pybabel-init', dest='init', action='store_true',
     help='''create new message catalogs from messages.pot that are defined
     in config.py and still not present (pybabel init..)''',
   )
-parser.add_argument('-u', '--pybabel-update', dest='pybabel_update', action='store_true',
+parser.add_argument(
+    '-u', '--pybabel-update', dest='pybabel_update', action='store_true',
     help='''extracts messages from source files to generate messages.pot
     (pybabel extract..) and updates existing catalogs (pybabel update..)''',
   )
-parser.add_argument('-b', '--pybabel-compile', dest='pybabel_compile', action='store_true',
+parser.add_argument(
+    '-b', '--pybabel-compile', dest='pybabel_compile', action='store_true',
     help='compile message catalogs to MO files (pybabel compile..)',
   )
-parser.add_argument('-l', '--pybabel-init-locale', dest='locale', action='store',
+parser.add_argument(
+    '-l', '--pybabel-init-locale', dest='locale', action='store',
     help='create new message catalogs from messages.pot (pybabel init..)',
   )
 args = parser.parse_args()

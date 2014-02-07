@@ -7,7 +7,6 @@ from babel import localedata
 from flask.ext import login
 from flask.ext import oauth
 from flask.ext.babel import gettext as __
-from flask.ext.babel import lazy_gettext as _
 from google.appengine.api import users
 from google.appengine.ext import ndb
 import flask
@@ -162,7 +161,7 @@ def signin():
 
   return flask.render_template(
       'signin.html',
-      title=_('Please sign in'),
+      title=__('Please sign in'),
       html_class='signin',
       google_signin_url=google_signin_url,
       twitter_signin_url=twitter_signin_url,
@@ -373,7 +372,8 @@ def signin_user_db(user_db):
     user_db.put_async()
     response = flask.redirect(util.get_next_url())
     util.set_locale(user_db.locale, response)
-    flask.flash(__('Hello %(name)s, welcome to %(brand)s!!!',
+    flask.flash(__(
+        'Hello %(name)s, welcome to %(brand)s!!!',
         name=user_db.name, brand=config.CONFIG_DB.brand_name,
       ), category='success')
     return response

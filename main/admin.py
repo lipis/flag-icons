@@ -55,7 +55,7 @@ def admin_config_update():
 
   return flask.render_template(
       'admin/config_update.html',
-      title=_('Admin Config'),
+      title=__('Admin Config'),
       html_class='admin-config',
       form=form,
       config_db=config_db,
