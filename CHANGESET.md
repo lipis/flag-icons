@@ -1,6 +1,7 @@
 Version 0.12.0 - TBD
 ---------------------------
 - Updated Bootstrap to 3.1.0
+- Updated Flask-Login to 0.2.9
 - Replaced the macro `utils.order_link(title, endpoint, property)` with
   `utils.order_by_link(property, title)` which breaks the backwards
   compatibility (refer to `user_list.html` on how it is used)
