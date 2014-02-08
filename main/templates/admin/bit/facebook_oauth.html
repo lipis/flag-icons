@@ -1,0 +1,18 @@
+<!-- Facebook -->
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="panel-title">
+      <a data-toggle="collapse" data-parent="#oauth" href="#facebook">Facebook</a>
+      <i class="fa fa-check pull-right {{'hide' if not config.CONFIG_DB.has_facebook}}"></i>
+    </h4>
+  </div>
+  <div id="facebook" class="panel-collapse collapse">
+    <div class="panel-body">
+      {{forms.text_field(form.facebook_app_id)}}
+      {{forms.text_field(form.facebook_app_secret)}}
+      <p class="help-block">
+        Site URL for <a href="https://developers.facebook.com/apps" target="_blank">Facebook application</a>: <em>{{request.host_url[:-1]}}</em>
+      </p>
+    </div>
+  </div>
+</div>
