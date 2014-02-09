@@ -1,6 +1,6 @@
 # macro twitter_help()
   Callback URL for <a href="https://dev.twitter.com/apps" target="_blank">Twitter application</a>:
-  <em>{{'%s%s' % (request.host_url[:-1], url_for('twitter_authorized'))}}</em>
+  <em>{{request.host_url[:-1]}}{{url_for('twitter_authorized')}}</em>
 # endmacro
 
 {{
@@ -8,6 +8,6 @@
       'Twitter',
       (form.twitter_consumer_key, form.twitter_consumer_secret),
       config.CONFIG_DB.has_twitter,
-      twitter_help()
+      twitter_help(),
     )
 }}
