@@ -335,7 +335,7 @@ def signin_user_db(user_db):
   flask_user_db = FlaskUser(user_db)
   if login.login_user(flask_user_db):
     user_db.put_async()
-    flask.flash('Hello %s, welcome to %s!!!' % (
+    flask.flash('Hello %s, welcome to %s.' % (
         user_db.name, config.CONFIG_DB.brand_name,
       ), category='success')
     return flask.redirect(util.get_next_url())
