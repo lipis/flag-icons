@@ -1,17 +1,13 @@
-<div class="panel panel-default">
-  <div class="panel-heading">
-    <h4 class="panel-title">
-      <a data-toggle="collapse" data-parent="#oauth" href="#twitter">Twitter</a>
-      <i class="fa fa-check pull-right {{'hide' if not config.CONFIG_DB.has_twitter}}"></i>
-    </h4>
-  </div>
-  <div id="twitter" class="panel-collapse collapse">
-    <div class="panel-body">
-      {{forms.text_field(form.twitter_consumer_key)}}
-      {{forms.text_field(form.twitter_consumer_secret)}}
-      <p class="help-block">
-        Callback URL for <a href="https://dev.twitter.com/apps" target="_blank">Twitter application</a>: <em>{{'%s%s' % (request.host_url[:-1], url_for('twitter_authorized'))}}</em>
-      </p>
-    </div>
-  </div>
-</div>
+# macro twitter_help()
+  Callback URL for <a href="https://dev.twitter.com/apps" target="_blank">Twitter application</a>:
+  <em>{{'%s%s' % (request.host_url[:-1], url_for('twitter_authorized'))}}</em>
+# endmacro
+
+{{
+  forms.oauth_fields(
+      'Twitter',
+      (form.twitter_consumer_key, form.twitter_consumer_secret),
+      config.CONFIG_DB.has_twitter,
+      twitter_help()
+    )
+}}
