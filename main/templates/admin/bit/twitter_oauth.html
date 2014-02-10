@@ -1,0 +1,11 @@
+{{
+  forms.oauth_fields(
+      'Twitter',
+      (form.twitter_consumer_key, form.twitter_consumer_secret),
+      config.CONFIG_DB.has_twitter,
+      '''
+        Callback URL for <a href="https://dev.twitter.com/apps" target="_blank">Twitter application</a>:
+        <em>%s</em>
+      ''' % url_for('twitter_authorized', _external=True)
+    )
+}}

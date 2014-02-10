@@ -33,34 +33,8 @@
       <fieldset class="col-sm-6 col-md-7">
         <legend>Third Party OAuth</legend>
         <div class="panel-group" id="oauth">
-
-          <!-- Facebook -->
-          <div class="panel {{'panel-success' if config.CONFIG_DB.has_facebook else 'panel-default'}}">
-            <div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#oauth" href="#facebook">Facebook</a></h4></div>
-            <div id="facebook" class="panel-collapse collapse">
-              <div class="panel-body">
-                {{forms.text_field(form.facebook_app_id)}}
-                {{forms.text_field(form.facebook_app_secret)}}
-                <p class="help-block">
-                  Site URL for <a href="https://developers.facebook.com/apps" target="_blank">Facebook application</a>: <em>{{request.host_url[:-1]}}</em>
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Twitter -->
-          <div class="panel {{'panel-success' if config.CONFIG_DB.has_twitter else 'panel-default'}}">
-            <div class="panel-heading"><h4 class="panel-title"><a data-toggle="collapse" data-parent="#oauth" href="#twitter">Twitter</a></h4></div>
-            <div id="twitter" class="panel-collapse collapse">
-              <div class="panel-body">
-                {{forms.text_field(form.twitter_consumer_key)}}
-                {{forms.text_field(form.twitter_consumer_secret)}}
-                <p class="help-block">
-                  Callback URL for <a href="https://dev.twitter.com/apps" target="_blank">Twitter application</a>: <em>{{'%s%s' % (request.host_url[:-1], url_for('twitter_authorized'))}}</em>
-                </p>
-              </div>
-            </div>
-          </div>
+          # include "admin/bit/facebook_oauth.html"
+          # include "admin/bit/twitter_oauth.html"
         </div>
       </fieldset>
     </div>

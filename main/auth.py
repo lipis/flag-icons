@@ -373,7 +373,7 @@ def signin_user_db(user_db):
     response = flask.redirect(util.get_next_url())
     util.set_locale(user_db.locale, response)
     flask.flash(__(
-        'Hello %(name)s, welcome to %(brand)s!!!',
+        'Hello %(name)s, welcome to %(brand)s.',
         name=user_db.name, brand=config.CONFIG_DB.brand_name,
       ), category='success')
     return response

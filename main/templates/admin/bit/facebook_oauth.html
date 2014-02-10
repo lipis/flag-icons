@@ -1,0 +1,11 @@
+{{
+  forms.oauth_fields(
+      'Facebook',
+      (form.facebook_app_id, form.facebook_app_secret),
+      config.CONFIG_DB.has_facebook,
+      '''
+        Site URL for <a href="https://developers.facebook.com/apps" target="_blank">Facebook application</a>:
+        <em>%s</em>
+      ''' % request.host_url[:-1]
+    )
+}}
