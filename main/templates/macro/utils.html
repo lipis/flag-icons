@@ -59,3 +59,15 @@
     {{auth_icon(auth_id)}}
   # endfor
 # endmacro
+
+
+# macro html_element(name, content)
+  <{{name}}
+    #- for arg in kwargs
+      {{arg}}="{{kwargs[arg]}}"
+    #- endfor
+  >
+  #- if content
+    {{content}}</{{name}}>
+  #- endif
+# endmacro
