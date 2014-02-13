@@ -58,8 +58,20 @@ class UserUpdateForm(wtf.Form):
       [wtf.validators.optional(), wtf.validators.email()],
       filters=[util.email_filter],
     )
+  permissions = wtf.SelectMultipleField('Permissions', choices=[])
+  _permission_choices = set()
   admin = wtf.BooleanField('Admin')
   active = wtf.BooleanField('Active')
+
+  def __init__(self, *args, **kwds):
+    super(UserUpdateForm, self).__init__(*args, **kwds)
+    self.permissions.choices = [
+        (p,p) for p in sorted(UserUpdateForm._permission_choices)
+      ]
+
+  @auth.permission_registered.connect
+  def _permission_registered_callback(sender, permission):
+    UserUpdateForm._permission_choices.add(permission)
 
 
 @app.route('/user/<int:user_id>/update/', methods=['GET', 'POST'])

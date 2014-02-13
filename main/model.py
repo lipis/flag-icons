@@ -61,6 +61,7 @@ class User(Base, modelx.UserX):
   auth_ids = ndb.StringProperty(repeated=True)
   active = ndb.BooleanProperty(default=True)
   admin = ndb.BooleanProperty(default=False)
+  permissions = ndb.StringProperty(repeated=True)
 
   _PROPERTIES = Base._PROPERTIES.union({
       'active',
@@ -70,4 +71,5 @@ class User(Base, modelx.UserX):
       'email',
       'name',
       'username',
+      'permissions',
     })
