@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+
 import copy
 
 from flask.ext import wtf
