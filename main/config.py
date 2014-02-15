@@ -16,7 +16,7 @@ try:
   CURRENT_VERSION_NAME = CURRENT_VERSION_ID.split('.')[0]
   CURRENT_VERSION_TIMESTAMP = long(CURRENT_VERSION_ID.split('.')[1]) >> 28
   CURRENT_VERSION_DATE = datetime.fromtimestamp(CURRENT_VERSION_TIMESTAMP)
-  CURRENT_APP_NAME = app_identity.get_application_id()
+  APPLICATION_ID = app_identity.get_application_id()
 except:
   pass
 
