@@ -304,9 +304,9 @@ facebook = facebook_oauth.remote_app(
 @facebook.authorized_handler
 def facebook_authorized(resp):
   if resp is None:
-    return 'Access denied: reason=%s error=%s' % (
-      flask.request.args['error_reason'],
-      flask.request.args['error_description']
+    return _('Access denied: reason=%(reason)s error=%(error)s',
+      reason=flask.request.args['error_reason'],
+      error=flask.request.args['error_description']
     )
   flask.session['oauth_token'] = (resp['access_token'], '')
   me = facebook.get('/me')
