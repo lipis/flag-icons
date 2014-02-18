@@ -98,12 +98,12 @@
 # endmacro
 
 
-# macro oauth_fields(name, fields, is_has, help_text)
+# macro oauth_fields(name, fields, checkmark, help)
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#oauth" href="#{{slugify(name)}}">{{name}}</a>
-        <i class="fa fa-check pull-right {{'hide' if not is_has}}"></i>
+        <i class="fa fa-check pull-right {{'hide' if not checkmark}}"></i>
       </h4>
     </div>
     <div id="{{slugify(name)}}" class="panel-collapse collapse">
@@ -111,8 +111,8 @@
         # for field in fields:
           {{text_field(field)}}
         # endfor
-        # if help_text
-          <p class="help-block">{{help_text | safe}}</p>
+        # if help
+          <p class="help-block">{{help | safe}}</p>
         # endif
       </div>
     </div>

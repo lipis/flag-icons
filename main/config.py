@@ -8,7 +8,9 @@ try:
   # also used in the run.py script which is used to compile/minify the client
   # side files (*.less, *.coffee, *.js) and is not aware of the GAE
   from datetime import datetime
+  from google.appengine.api import app_identity
   import model
+
   CONFIG_DB = model.Config.get_master_db()
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
   LOCALE_DEFAULT = CONFIG_DB.locale
@@ -16,6 +18,7 @@ try:
   CURRENT_VERSION_NAME = CURRENT_VERSION_ID.split('.')[0]
   CURRENT_VERSION_TIMESTAMP = long(CURRENT_VERSION_ID.split('.')[1]) >> 28
   CURRENT_VERSION_DATE = datetime.fromtimestamp(CURRENT_VERSION_TIMESTAMP)
+  APPLICATION_ID = app_identity.get_application_id()
 except:
   pass
 

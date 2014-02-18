@@ -18,9 +18,6 @@ import config
 # Request Parameters
 ###############################################################################
 def param(name, cast=None):
-  '''Returns query parameter by its name and optionally casts it to given type.
-  Always returns None if the parameter is missing
-  '''
   value = None
   if flask.request.json:
     return flask.request.json.get(name, None)
@@ -166,8 +163,6 @@ def json_value(value):
 
 
 def jsonpify(*args, **kwargs):
-  '''Same as flask.jsonify() but returns JSONP if callback is provided
-  '''
   if param('callback'):
     content = '%s(%s)' % (
         param('callback'), flask.jsonify(*args, **kwargs).data,
@@ -193,8 +188,6 @@ def generate_more_url(more_cursor, base_url=None, cursor_name='cursor'):
 
 
 def uuid():
-  ''' Generates universal unique identifier
-  '''
   return uuid4().hex
 
 
