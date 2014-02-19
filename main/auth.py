@@ -7,6 +7,7 @@ from babel import localedata
 from flask.ext import login
 from flask.ext import oauth
 from flask.ext.babel import gettext as __
+from flask.ext.babel import lazy_gettext as _
 from google.appengine.api import users
 from google.appengine.ext import ndb
 import flask
