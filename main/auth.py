@@ -7,6 +7,7 @@ from babel import localedata
 from flask.ext import login
 from flask.ext import oauth
 from flask.ext.babel import gettext as __
+from flask.ext.babel import lazy_gettext as _
 from google.appengine.api import users
 from google.appengine.ext import ndb
 import flask
@@ -165,7 +166,7 @@ def signin():
 
   return flask.render_template(
       'signin.html',
-      title=__('Please sign in'),
+      title=_('Please sign in'),
       html_class='signin',
       google_signin_url=google_signin_url,
       twitter_signin_url=twitter_signin_url,

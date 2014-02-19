@@ -3,7 +3,6 @@
 import copy
 
 from flask.ext import wtf
-from flask.ext.babel import gettext as __
 from flask.ext.babel import lazy_gettext as _
 from google.appengine.ext import ndb
 import flask
@@ -40,7 +39,7 @@ def user_list():
   return flask.render_template(
       'user/user_list.html',
       html_class='user-list',
-      title=__('User List'),
+      title=_('User List'),
       user_dbs=user_dbs,
       more_url=util.generate_more_url(more_cursor),
       has_json=True,
@@ -192,7 +191,7 @@ def user_merge():
 
   return flask.render_template(
       'user/user_merge.html',
-      title=__('Merge Users'),
+      title=_('Merge Users'),
       html_class='user-merge',
       user_dbs=user_dbs,
       merged_user_db=merged_user_db,
