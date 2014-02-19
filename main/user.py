@@ -177,8 +177,8 @@ def user_merge():
     merged_user_db.auth_ids = auth_ids
     merged_user_db.put()
 
-    depricated_keys = [key for key in user_db_keys if key != merged_user_db.key]
-    merge_user_dbs(merged_user_db, depricated_keys)
+    deprecated_keys = [key for key in user_db_keys if key != merged_user_db.key]
+    merge_user_dbs(merged_user_db, deprecated_keys)
     return flask.redirect(
         flask.url_for('user_update', user_id=merged_user_db.key.id()),
       )
@@ -195,15 +195,15 @@ def user_merge():
 
 
 @ndb.transactional(xg=True)
-def merge_user_dbs(user_db, depricated_keys):
+def merge_user_dbs(user_db, deprecated_keys):
   # TODO: Merge possible user data before handling deprecated users
-  depricated_dbs = ndb.get_multi(depricated_keys)
-  for depricated_db in depricated_dbs:
-    depricated_db.auth_ids = []
-    depricated_db.active = False
-    if not depricated_db.username.startswith('_'):
-      depricated_db.username = '_%s' % depricated_db.username
-  ndb.put_multi(depricated_dbs)
+  deprecated_dbs = ndb.get_multi(deprecated_keys)
+  for deprecated_db in deprecated_dbs:
+    deprecated_db.auth_ids = []
+    deprecated_db.active = False
+    if not deprecated_db.username.startswith('_'):
+      deprecated_db.username = '_%s' % deprecated_db.username
+  ndb.put_multi(deprecated_dbs)
 
 
 ###############################################################################
