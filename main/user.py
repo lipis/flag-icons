@@ -3,7 +3,6 @@
 import copy
 
 from flask.ext import wtf
-from flask.ext.babel import gettext as __
 from flask.ext.babel import lazy_gettext as _
 from google.appengine.ext import ndb
 import flask
