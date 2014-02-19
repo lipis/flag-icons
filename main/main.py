@@ -135,7 +135,7 @@ def feedback():
 
   return flask.render_template(
       'feedback.html',
-      title=__('Feedback'),
+      title=_('Feedback'),
       html_class='feedback',
       form=form,
     )

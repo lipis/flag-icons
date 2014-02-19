@@ -165,7 +165,7 @@ def signin():
 
   return flask.render_template(
       'signin.html',
-      title=__('Please sign in'),
+      title=_('Please sign in'),
       html_class='signin',
       google_signin_url=google_signin_url,
       twitter_signin_url=twitter_signin_url,
