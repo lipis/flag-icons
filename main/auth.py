@@ -33,7 +33,11 @@ def check_locale(locale):
 def get_locale():
   locale = flask.session.pop('locale', None)
   if not locale:
-    locale = flask.request.cookies.get('locale', config.LOCALE_DEFAULT)
+    locale = flask.request.cookies.get('locale', None)
+    if not locale:
+      locale = flask.request.accept_languages.best_match(
+        matches=config.LOCALE.keys(),
+        default=config.LOCALE_DEFAULT)
   return check_locale(locale)
 
 
