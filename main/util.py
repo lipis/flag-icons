@@ -105,8 +105,6 @@ def jsonify_model_dbs(model_dbs, more_cursor=None):
 
 
 def jsonify_model_db(model_db):
-  '''Return response of a db as JSON service result
-  '''
   result_object = model_db_to_object(model_db)
   response = jsonpify({
       'status': 'success',
