@@ -244,6 +244,7 @@ def install_dependencies():
 
   if missing:
     os.system('npm install')
+  os.system('./node_modules/grunt-cli/bin/grunt bower')
 
 
 def update_missing_args():
