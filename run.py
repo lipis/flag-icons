@@ -91,7 +91,7 @@ dir_bin = os.path.join(DIR_NODE_MODULES, DIR_BIN)
 file_coffee = os.path.join(dir_bin, FILE_COFFEE)
 file_less = os.path.join(dir_bin, FILE_LESS)
 file_uglifyjs = os.path.join(dir_bin, FILE_UGLIFYJS)
-file_grunt = os.path.join (dir_bin, FILE_GRUNT)
+file_grunt = os.path.join(dir_bin, FILE_GRUNT)
 
 dir_storage = os.path.join(DIR_TEMP, DIR_STORAGE)
 
