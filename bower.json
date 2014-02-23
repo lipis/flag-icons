@@ -1,5 +1,5 @@
 {
-  "name": "my-gae-init",
+  "name": "gae-init",
   "dependencies": {
     "jquery": "latest",
     "bootstrap": "latest",
