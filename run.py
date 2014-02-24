@@ -52,9 +52,9 @@ ARGS = PARSER.parse_args()
 # Directories
 ###############################################################################
 DIR_MAIN = 'main'
+DIR_NODE_MODULES = 'node_modules'
 DIR_STYLE = 'style'
 DIR_SCRIPT = 'script'
-DIR_NODE_MODULES = 'node_modules'
 DIR_TEMP = 'temp'
 
 DIR_STATIC = os.path.join(DIR_MAIN, 'static')
