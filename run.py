@@ -252,6 +252,84 @@ def uniq(seq):
 ###############################################################################
 # Main
 ###############################################################################
+def run_clean():
+  print_out('CLEAN')
+  clean_files()
+  make_lib_zip(force=True)
+  remove_dir(DIR_DST)
+  make_dirs(DIR_DST)
+  compile_all_dst()
+  print_out('DONE')
+
+
+def run_minify():
+  print_out('MINIFY')
+  clean_files()
+  make_lib_zip(force=True)
+  remove_dir(DIR_MIN)
+  make_dirs(DIR_MIN_SCRIPT)
+
+  for source in config.STYLES:
+    compile_style(os.path.join(DIR_STATIC, source), DIR_MIN_STYLE)
+
+  for module in config.SCRIPTS:
+    scripts = uniq(config.SCRIPTS[module])
+    coffees = ' '.join([
+        os.path.join(DIR_STATIC, script)
+        for script in scripts if script.endswith('.coffee')
+      ])
+
+    pretty_js = os.path.join(DIR_MIN_SCRIPT, '%s.js' % module)
+    ugly_js = os.path.join(DIR_MIN_SCRIPT, '%s.min.js' % module)
+    print_out('COFFEE MIN', ugly_js)
+
+    if len(coffees):
+      os_execute(FILE_COFFEE, '--join -cp', coffees, pretty_js, append=True)
+    for script in scripts:
+      if not script.endswith('.js'):
+        continue
+      script_file = os.path.join(DIR_STATIC, script)
+      merge_files(script_file, pretty_js)
+    os_execute(FILE_UGLIFYJS, pretty_js, '-cm', ugly_js)
+    os.remove(pretty_js)
+  print_out('DONE')
+
+
+def run_watch():
+  print_out('WATCHING')
+  make_lib_zip()
+  make_dirs(DIR_DST)
+
+  compile_all_dst()
+  print_out('DONE', 'and watching for changes (Ctrl+C to stop)')
+  while True:
+    time.sleep(0.5)
+    reload(config)
+    update_path_separators()
+    compile_all_dst()
+
+
+def run_flush():
+  remove_dir(DIR_STORAGE)
+  print_out('STORAGE CLEARED')
+
+
+def run_start():
+  make_dirs(DIR_STORAGE)
+  clear = 'yes' if ARGS.flush else 'no'
+  port = int(ARGS.port)
+  run_command = '''
+      dev_appserver.py %s
+      --host %s
+      --port %s
+      --admin_port %s
+      --storage_path=%s
+      --clear_datastore=%s
+      --skip_sdk_update_check
+    ''' % (DIR_MAIN, ARGS.host, port, port + 1, DIR_STORAGE, clear)
+  os.system(run_command.replace('\n', ' '))
+
+
 def run():
   os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
@@ -264,77 +342,19 @@ def run():
     sys.exit(1)
 
   if ARGS.clean:
-    print_out('CLEAN')
-    clean_files()
-    make_lib_zip(force=True)
-    remove_dir(DIR_DST)
-    make_dirs(DIR_DST)
-    compile_all_dst()
-    print_out('DONE')
+    run_clean()
 
   if ARGS.minify:
-    print_out('MINIFY')
-    clean_files()
-    make_lib_zip(force=True)
-    remove_dir(DIR_MIN)
-    make_dirs(DIR_MIN_SCRIPT)
-
-    for source in config.STYLES:
-      compile_style(os.path.join(DIR_STATIC, source), DIR_MIN_STYLE)
-
-    for module in config.SCRIPTS:
-      scripts = uniq(config.SCRIPTS[module])
-      coffees = ' '.join([
-          os.path.join(DIR_STATIC, script)
-          for script in scripts if script.endswith('.coffee')
-        ])
-
-      pretty_js = os.path.join(DIR_MIN_SCRIPT, '%s.js' % module)
-      ugly_js = os.path.join(DIR_MIN_SCRIPT, '%s.min.js' % module)
-      print_out('COFFEE MIN', ugly_js)
-
-      if len(coffees):
-        os_execute(FILE_COFFEE, '--join -cp', coffees, pretty_js, append=True)
-      for script in scripts:
-        if not script.endswith('.js'):
-          continue
-        script_file = os.path.join(DIR_STATIC, script)
-        merge_files(script_file, pretty_js)
-      os_execute(FILE_UGLIFYJS, pretty_js, '-cm', ugly_js)
-      os.remove(pretty_js)
-    print_out('DONE')
+    run_minify()
 
   if ARGS.watch:
-    print_out('WATCHING')
-    make_lib_zip()
-    make_dirs(DIR_DST)
-
-    compile_all_dst()
-    print_out('DONE', 'and watching for changes (Ctrl+C to stop)')
-    while True:
-      time.sleep(0.5)
-      reload(config)
-      update_path_separators()
-      compile_all_dst()
+    run_watch()
 
   if ARGS.flush:
-    remove_dir(DIR_STORAGE)
-    print_out('STORAGE CLEARED')
+    run_flush()
 
   if ARGS.start:
-    make_dirs(DIR_STORAGE)
-    clear = 'yes' if ARGS.flush else 'no'
-    port = int(ARGS.port)
-    run_command = '''
-        dev_appserver.py %s
-        --host %s
-        --port %s
-        --admin_port %s
-        --storage_path=%s
-        --clear_datastore=%s
-        --skip_sdk_update_check
-      ''' % (DIR_MAIN, ARGS.host, port, port + 1, DIR_STORAGE, clear)
-    os.system(run_command.replace('\n', ' '))
+    run_start()
 
 
 if __name__ == '__main__':
