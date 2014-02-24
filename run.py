@@ -8,6 +8,7 @@ import os
 import shutil
 import sys
 import time
+import urllib2
 
 from main import config
 
@@ -51,6 +52,7 @@ ARGS = PARSER.parse_args()
 ###############################################################################
 # Directories
 ###############################################################################
+DIR_BOWER_COMPONENTS = 'bower_components'
 DIR_MAIN = 'main'
 DIR_NODE_MODULES = 'node_modules'
 DIR_STYLE = 'style'
@@ -75,7 +77,6 @@ DIR_LIB = os.path.join(DIR_MAIN, 'lib')
 FILE_LIB = os.path.join(DIR_MAIN, 'lib.zip')
 
 DIR_BIN = os.path.join(DIR_NODE_MODULES, '.bin')
-FILE_BOWER = os.path.join(DIR_BIN, 'bower')
 FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
 FILE_GRUNT = os.path.join(DIR_BIN, 'grunt')
 FILE_LESS = os.path.join(DIR_BIN, 'lessc')
@@ -213,30 +214,35 @@ def update_path_separators():
       config.SCRIPTS[module][idx] = fixit(config.SCRIPTS[module][idx])
 
 
-def install_dependencies():
-  missing = False
-  if not os.path.exists(FILE_BOWER):
-    missing = True
-  if not os.path.exists(FILE_COFFEE):
-    missing = True
-  if not os.path.exists(FILE_LESS):
-    missing = True
-  if not os.path.exists(FILE_UGLIFYJS):
-    missing = True
-  if not os.path.exists(FILE_GRUNT):
-    missing = True
+def internet_on():
   try:
-    file_package = os.path.join(DIR_NODE_MODULES, 'uglify-js', 'package.json')
-    package_json = json.load(open(file_package))
-    version = package_json['version']
-    if int(version.split('.')[0]) < 2:
-      missing = True
-  except:
-    missing = True
+    urllib2.urlopen('http://74.125.228.100', timeout=1)
+    return True
+  except urllib2.URLError:
+    return False
 
-  if missing:
-    os.system('npm install')
-  os.system('"%s" bower' % FILE_GRUNT)
+
+def get_dependencies(file_name):
+  with open(file_name) as json_file:
+    json_data = json.load(json_file)
+  dependencies = json_data.get('dependencies', dict()).keys()
+  return dependencies + json_data.get('devDependencies', dict()).keys()
+
+
+def install_dependencies():
+  if not internet_on():
+    print_out('NO INTERNET')
+    return
+
+  for dependency in get_dependencies('package.json'):
+    if not os.path.exists(os.path.join(DIR_NODE_MODULES, dependency)):
+      os.system('npm install')
+      break
+
+  for dependency in get_dependencies('bower.json'):
+    if not os.path.exists(os.path.join(DIR_BOWER_COMPONENTS, dependency)):
+      os.system('"%s" bower' % FILE_GRUNT)
+      break
 
 
 def update_missing_args():
