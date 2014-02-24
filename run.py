@@ -125,9 +125,9 @@ def merge_files(source, target):
   fout.close()
 
 
-def os_execute(executable, ARGS, source, target, append=False):
+def os_execute(executable, args, source, target, append=False):
   operator = '>>' if append else '>'
-  os.system('"%s" %s %s %s %s' % (executable, ARGS, source, operator, target))
+  os.system('"%s" %s %s %s %s' % (executable, args, source, operator, target))
 
 
 def compile_script(source, target_dir):
