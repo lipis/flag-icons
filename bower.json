@@ -1,14 +1,14 @@
 {
   "name": "gae-init",
   "dependencies": {
-    "jquery": "latest",
-    "bootstrap": "latest",
+    "jquery": "~2",
+    "bootstrap": "~3",
     "nprogress": "https://github.com/lipis/nprogress.git#master",
-    "momentjs": "~2.5.1",
-    "font-awesome": "~4.0.3"
+    "momentjs": "~2",
+    "font-awesome": "~4"
   },
   "exportsOverride": {
-    "jquery":{
+    "jquery": {
       "js": "dist/jquery.js"
     },
     "bootstrap": {
@@ -16,11 +16,11 @@
       "less": "less/*.less",
       "fonts": "fonts/*"
     },
-    "nprogress":{
+    "nprogress": {
       "js": "*.js",
       "less": "*.less"
     },
-    "momentjs":{
+    "momentjs": {
       "js": "*.js"
     },
     "font-awesome": {

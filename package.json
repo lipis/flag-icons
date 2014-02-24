@@ -18,10 +18,10 @@
     "uglify-js": "~2"
   },
   "devDependencies": {
-    "bower": "latest",
-    "grunt": "0.4.x",
-    "grunt-contrib-watch": "0.5.x",
-    "grunt-bower-task": "~0.3.4",
-    "grunt-cli": "~0.1.13"
+    "bower": "~1",
+    "grunt": "~0",
+    "grunt-contrib-watch": "~0",
+    "grunt-bower-task": "~0",
+    "grunt-cli": "~0"
   }
 }
