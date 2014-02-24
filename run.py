@@ -66,9 +66,9 @@ DIR_STORAGE = 'storage'
 
 FILE_ZIP = '%s.zip' % DIR_LIB
 FILE_COFFEE = 'coffee'
+FILE_GRUNT = 'grunt'
 FILE_LESS = 'lessc'
 FILE_UGLIFYJS = 'uglifyjs'
-FILE_GRUNT = 'grunt'
 
 dir_static = os.path.join(DIR_MAIN, DIR_STATIC)
 
@@ -89,9 +89,9 @@ file_lib = os.path.join(DIR_MAIN, FILE_ZIP)
 
 dir_bin = os.path.join(DIR_NODE_MODULES, DIR_BIN)
 file_coffee = os.path.join(dir_bin, FILE_COFFEE)
+file_grunt = os.path.join(dir_bin, FILE_GRUNT)
 file_less = os.path.join(dir_bin, FILE_LESS)
 file_uglifyjs = os.path.join(dir_bin, FILE_UGLIFYJS)
-file_grunt = os.path.join(dir_bin, FILE_GRUNT)
 
 dir_storage = os.path.join(DIR_TEMP, DIR_STORAGE)
 
