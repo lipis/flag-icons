@@ -111,11 +111,11 @@ def clean_files():
       'CLEAN FILES',
       'Removing files: %s' % ', '.join(['*%s' % e for e in bad_endings]),
     )
-  for home, dirs, files in os.walk('.'):
-    for f in files:
-      for b in bad_endings:
-        if f.endswith(b):
-          os.remove(os.path.join(home, f))
+  for root, _, files in os.walk('.'):
+    for filename in files:
+      for bad_ending in bad_endings:
+        if filename.endswith(bad_ending):
+          os.remove(os.path.join(root, filename))
 
 
 def merge_files(source, target):
@@ -185,9 +185,9 @@ def is_dirty(source, target):
 
 
 def is_style_modified(target):
-  for folder, folders, files in os.walk(DIR_SRC):
-    for file_ in files:
-      path = os.path.join(folder, file_)
+  for root, _, files in os.walk(DIR_SRC):
+    for filename in files:
+      path = os.path.join(root, filename)
       if path.endswith('.less') and is_dirty(path, target):
         return True
   return False
