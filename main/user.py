@@ -66,7 +66,7 @@ class UserUpdateForm(wtf.Form):
   def __init__(self, *args, **kwds):
     super(UserUpdateForm, self).__init__(*args, **kwds)
     self.permissions.choices = [
-        (p,p) for p in sorted(UserUpdateForm._permission_choices)
+        (p, p) for p in sorted(UserUpdateForm._permission_choices)
       ]
 
   @auth.permission_registered.connect
