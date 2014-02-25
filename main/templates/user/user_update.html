@@ -25,6 +25,9 @@
           {{forms.checkbox_field(form.admin)}}
           {{forms.checkbox_field(form.active)}}
         # endif
+        # if form.permissions.choices
+          {{forms.multiple_checkbox_field(form.permissions)}}
+        # endif
       </div>
       <div class="col-md-2 col-sm-6">
         <div class="form-group">
