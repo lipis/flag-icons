@@ -69,7 +69,7 @@
 
 # macro checkbox_field(field)
   <div class="checkbox {{'has-error' if field.errors}}">
-    <label>
+    <label class="{{'text_muted' if 'disabled' in kwargs}}">
       {{field(**kwargs)}} {{field.label.text}}
     </label>
     {{field_errors(field)}}

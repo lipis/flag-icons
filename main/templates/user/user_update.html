@@ -24,6 +24,9 @@
         # if current_user.id != user_db.key.id()
           {{forms.checkbox_field(form.admin)}}
           {{forms.checkbox_field(form.active)}}
+        # else
+          {{forms.checkbox_field(form.admin, disabled=True, checked=user_db.admin)}}
+          {{forms.checkbox_field(form.active, disabled=True, checked=user_db.active)}}
         # endif
         # if form.permissions.choices
           {{forms.multiple_checkbox_field(form.permissions)}}
