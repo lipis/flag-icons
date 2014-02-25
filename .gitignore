@@ -5,9 +5,12 @@
 .DS_Store
 .git*
 .hg*
+bower_components
 main/index.yaml
 main/lib.zip
 main/static/dst
 main/static/min
+main/static/src/vendor
+main/static/vendor-fonts
 node_modules
 temp/
