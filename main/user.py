@@ -28,6 +28,7 @@ def user_list():
       name=util.param('name'),
       admin=util.param('admin', bool),
       active=util.param('active', bool),
+      permissions=util.param('permissions', list),
     )
 
   if flask.request.path.startswith('/_s/'):
