@@ -76,6 +76,7 @@
           <th class="col-xs-2">{{utils.order_by_link('email', 'Email')}}</th>
           <th class="col-xs-2">{{utils.order_by_link('created', 'Created')}}</th>
           <th class="col-xs-2">{{utils.order_by_link('modified', 'Modified')}}</th>
+          <th class="col-xs-2">Permissions</th>
           <th class="text-center" title="Accounts"><i class="fa fa-key"></i></th>
         </tr>
       </thead>
@@ -107,6 +108,11 @@
               <time datetime="{{user_db.modified.__str__()[:-3]}}">
                 {{user_db.modified.strftime('%Y-%m-%d')}}
               </time>
+            </td>
+            <td>
+              # for permission in user_db.permissions
+                <span class="label label-info">{{permission}}</span>
+              # endfor
             </td>
             <td class="text-nowrap">{{utils.auth_icons(user_db.auth_ids)}}</td>
           </tr>
