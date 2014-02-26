@@ -59,7 +59,9 @@ class UserUpdateForm(wtf.Form):
       [wtf.validators.optional(), wtf.validators.email()],
       filters=[util.email_filter],
     )
-  permissions = wtf.SelectMultipleField('Permissions', choices=[])
+  permissions = wtf.SelectMultipleField('Permissions',
+      filters=[util.sort_filter],
+    )
   _permission_choices = set()
   admin = wtf.BooleanField('Admin')
   active = wtf.BooleanField('Active')

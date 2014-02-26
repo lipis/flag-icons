@@ -210,3 +210,4 @@ def update_query_argument(name, value=None, ignore=[]):
 ###############################################################################
 strip_filter = lambda x: x.strip() if x else ''
 email_filter = lambda x: x.lower().strip() if x else ''
+sort_filter = lambda x: sorted(x) if x else []
