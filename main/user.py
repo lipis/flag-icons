@@ -33,6 +33,7 @@ def user_list():
 
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_dbs(user_dbs, more_cursor)
+
   return flask.render_template(
       'user/user_list.html',
       html_class='user-list',
@@ -85,6 +86,9 @@ def user_update(user_id):
     flask.abort(404)
 
   form = UserUpdateForm(obj=user_db)
+  for permission in user_db.permissions:
+    form.permissions.choices.append((permission, permission))
+  form.permissions.choices = sorted(set(form.permissions.choices))
   if form.validate_on_submit():
     if not util.is_valid_username(form.username.data):
       form.username.errors.append('This username is invalid.')
