@@ -81,13 +81,13 @@
     <table class="table table-bordered">
       <thead>
         <tr class="text-nowrap">
-          <th class="col-sm-2 col-xs-4"><input id="select-all" type="checkbox"> {{utils.order_by_link('name', 'Name')}}</th>
-          <th class="col-sm-1 col-xs-2">{{utils.order_by_link('username', 'Username')}}</th>
-          <th class="col-sm-2 col-xs-3">{{utils.order_by_link('email', 'Email')}}</th>
-          <th class="col-sm-2 hidden-xs">{{utils.order_by_link('created', 'Created')}}</th>
-          <th class="col-sm-2 col-xs-2">{{utils.order_by_link('modified', 'Modified')}}</th>
-          <th class="col-sm-2 hidden-xs">Permissions</th>
-          <th class="col-sm-1 col-xs-1 text-center" title="Accounts"><i class="fa fa-key"></i></th>
+          <th class="col-xs-3"><input id="select-all" type="checkbox"> {{utils.order_by_link('name', 'Name')}}</th>
+          <th class="col-xs-1">{{utils.order_by_link('username', 'Username')}}</th>
+          <th class="col-xs-2">{{utils.order_by_link('email', 'Email')}}</th>
+          <th class="col-xs-2">{{utils.order_by_link('created', 'Created')}}</th>
+          <th class="col-xs-2">{{utils.order_by_link('modified', 'Modified')}}</th>
+          <th class="col-xs-2">Permissions</th>
+          <th class="text-center" title="Accounts"><i class="fa fa-key"></i></th>
         </tr>
       </thead>
       <tbody>
@@ -109,7 +109,7 @@
             </td>
             <td>{{user_db.username}}</td>
             <td>{{user_db.email}}</td>
-            <td class="hidden-xs">
+            <td>
               <time datetime="{{user_db.created.__str__()[:-3]}}">
                 {{user_db.created.strftime('%Y-%m-%d')}}
               </time>
@@ -119,7 +119,7 @@
                 {{user_db.modified.strftime('%Y-%m-%d')}}
               </time>
             </td>
-            <td class="hidden-xs">
+            <td>
               # for permission in user_db.permissions
                 <a href="{{update_query_argument('permissions', permission)}}" class="label label-info">{{permission}}</a>
               # endfor
