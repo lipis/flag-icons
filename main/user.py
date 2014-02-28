@@ -171,18 +171,20 @@ def user_merge():
   user_dbs.sort(key=lambda user_db: user_db.created)
   merged_user_db = user_dbs[0]
   auth_ids = []
+  permissions = []
   is_admin = False
   is_active = False
   for user_db in user_dbs:
     auth_ids.extend(user_db.auth_ids)
-    auth_ids.extend(user_db.auth_ids)
-    auth_ids.extend(user_db.auth_ids)
+    permissions.extend(user_db.permissions)
     is_admin = is_admin or user_db.admin
     is_active = is_active or user_db.active
     if user_db.key.urlsafe() == util.param('user_key'):
       merged_user_db = user_db
 
   auth_ids = sorted(list(set(auth_ids)))
+  permissions = sorted(list(set(permissions)))
+  merged_user_db.permissions = permissions
   merged_user_db.admin = is_admin
   merged_user_db.active = is_active
 
