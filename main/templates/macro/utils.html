@@ -11,10 +11,10 @@
 # endmacro
 
 
-# macro filter_by_link(property, value, icon=None, ignore=['cursor'])
+# macro filter_by_link(property, value, icon=None, ignore=['cursor'], list=False)
   # set value = '%s' % value
-  <a href="{{update_query_argument(property, None if request.args.get(property) == value else value, ignore)}}"
-     class="btn btn-default {{'active' if request.args.get(property) == value}}">
+  <a href="{{update_query_argument(property, None if request.args.get(property) == value else value, ignore, list)}}"
+     class="btn btn-default {{'active' if request.args.get(property, '').find(value) >= 0}}">
     # if icon
       <i class="fa fa-{{icon}}"></i>
     # else

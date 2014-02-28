@@ -33,6 +33,16 @@
         {{utils.filter_by_link('active', False, 'thumbs-o-down')}}
       </div>
 
+      <div class="btn-group btn-group-sm {{'hide' if not permissions}}">
+        <button type="button" class="btn btn-info" disabled >Permissions</button>
+        # for permission in permissions
+          {{utils.filter_by_link('permissions', permission, list=True)}}
+        # endfor
+        # if request.args.get('permissions')
+          <a href="{{update_query_argument('permissions')}}" class="btn btn-default" title="Clear all premissions"><i class="fa fa-times"></i></a>
+        # endif
+      </div>
+
       <div id="user-actions" class="btn-group hidden">
         <button type="button" class="btn btn-sm dropdown-toggle btn-info" data-toggle="dropdown">
           More
@@ -66,16 +76,6 @@
     <a href="{{url_for('user_list', order='-modified')}}" class="close" title="Remove all filters">&times;</a>
     There are no users matching the filters.
   </div>
-
-  # if request.args['permissions']
-    <div class="alert alert-info alert-dismissable {{'hide' if user_dbs | count == 0}}">
-      <a href="{{update_query_argument('permissions')}}" class="close" title="Remove permissions">&times;</a>
-      Showing users with permissions:
-      # for permission in request.args['permissions'].split(',')
-        <strong class="label label-info">{{permission}}</strong>
-      # endfor
-    </div>
-  # endif
 
   <div class="table-responsive {{'hide' if user_dbs | count == 0}}">
     <table class="table table-bordered table-hover">
@@ -121,7 +121,7 @@
             </td>
             <td>
               # for permission in user_db.permissions
-                <a href="{{update_query_argument('permissions', permission)}}" class="label label-info">{{permission}}</a>
+                <a href="{{update_query_argument('permissions', permission, list=True)}}" class="label label-info">{{permission}}</a>
               # endfor
             </td>
             <td class="text-nowrap">{{utils.auth_icons(user_db.auth_ids)}}</td>

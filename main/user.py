@@ -33,7 +33,6 @@ def user_list():
 
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_dbs(user_dbs, more_cursor)
-
   return flask.render_template(
       'user/user_list.html',
       html_class='user-list',
@@ -41,6 +40,7 @@ def user_list():
       user_dbs=user_dbs,
       more_url=util.generate_more_url(more_cursor),
       has_json=True,
+      permissions=sorted(UserUpdateForm._permission_choices),
     )
 
 
