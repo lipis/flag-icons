@@ -36,9 +36,6 @@
                   # if current_user.id == user_db.key.id()
                     <i class="fa fa-hand-o-left" title="You"></i>
                   # endif
-                  # if not user_db.active
-                    <i class="fa fa-ban" title="Inactive"></i>
-                  # endif
                 </td>
                 <td>{{user_db.username}}</td>
                 <td>{{user_db.email}}</td>
@@ -52,7 +49,7 @@
                     <span class="label label-danger" title="More like God"><i class="fa fa-cog"></i> admin</span>
                   # endif
                   # if not user_db.active
-                    <span class="label label-default" title="More like God"><i class="fa fa-ban"></i> inactive</span>
+                    <span class="label label-default" title="Can't sign in"><i class="fa fa-ban"></i> inactive</span>
                   # endif
                   # for permission in user_db.permissions
                     <span class="label label-info">{{permission}}</span>
