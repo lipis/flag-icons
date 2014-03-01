@@ -100,12 +100,6 @@
               # if current_user.id == user_db.key.id()
                 <i class="fa fa-hand-o-left" title="You"></i>
               # endif
-              # if user_db.admin
-                <i class="fa fa-cog" title="Admin"></i>
-              # endif
-              # if not user_db.active
-                <i class="fa fa-ban" title="Inactive"></i>
-              # endif
             </td>
             <td>{{user_db.username}}</td>
             <td>{{user_db.email}}</td>
@@ -120,8 +114,14 @@
               </time>
             </td>
             <td>
+              # if user_db.admin
+                <a href="{{update_query_argument('admin', True)}}" class="label label-danger" title="More like God"><i class="fa fa-cog"></i> admin</a>
+              # endif
+              # if not user_db.active
+                <a href="{{update_query_argument('active', False)}}" class="label label-default" title="Can't sign in"><i class="fa fa-ban"></i> inactive</a>
+              # endif
               # for permission in user_db.permissions
-                <a href="{{update_query_argument('permissions', permission, list=True)}}" class="label label-info">{{permission}}</a>
+                <a href="{{update_query_argument('permissions', permission)}}" class="label label-info">{{permission}}</a>
               # endfor
             </td>
             <td class="text-nowrap">{{utils.auth_icons(user_db.auth_ids)}}</td>
