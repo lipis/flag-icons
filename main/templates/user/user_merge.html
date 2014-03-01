@@ -18,10 +18,11 @@
         <table class="table table-bordered table-hover">
           <thead>
             <tr class="text-nowrap">
-              <th class="col-xs-4">Name</th>
-              <th class="col-xs-3">Username</th>
-              <th class="col-xs-3">Email</th>
+              <th class="col-xs-3">Name</th>
+              <th class="col-xs-2">Username</th>
+              <th class="col-xs-2">Email</th>
               <th class="col-xs-2">Created <i class="fa fa-chevron-up"></i></th>
+              <th class="col-xs-3">Permissions</th>
               <th class="text-center" title="Accounts"><i class="fa fa-key"></i></th>
             </tr>
           </thead>
@@ -35,9 +36,6 @@
                   # if current_user.id == user_db.key.id()
                     <i class="fa fa-hand-o-left" title="You"></i>
                   # endif
-                  # if user_db.admin
-                    <i class="fa fa-cog" title="Admin"></i>
-                  # endif
                   # if not user_db.active
                     <i class="fa fa-ban" title="Inactive"></i>
                   # endif
@@ -48,6 +46,17 @@
                   <time datetime="{{user_db.created.__str__()[:-3]}}">
                     {{user_db.created.strftime('%Y-%m-%d')}}
                   </time>
+                </td>
+                <td>
+                  # if user_db.admin
+                    <span class="label label-danger" title="More like God"><i class="fa fa-cog"></i> admin</span>
+                  # endif
+                  # if not user_db.active
+                    <span class="label label-default" title="More like God"><i class="fa fa-ban"></i> inactive</span>
+                  # endif
+                  # for permission in user_db.permissions
+                    <span class="label label-info">{{permission}}</span>
+                  # endfor
                 </td>
                 <td class="text-nowrap">{{utils.auth_icons(user_db.auth_ids)}}</td>
               </tr>
