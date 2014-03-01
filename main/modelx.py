@@ -30,3 +30,6 @@ class UserX(object):
         'size': '&s=%d' % size if size > 0 else '',
       }
   avatar_url = property(avatar_url_size)
+
+  def has_permission(self, perm):
+    return self.admin or perm in self.permissions

@@ -9,9 +9,10 @@ window.service_call = (method, url, params, data, callback) ->
   params = params || {}
   for k, v of params
     delete params[k] if not v?
+  separator = if url.search('\\?') >= 0 then '&' else '?'
   $.ajax
     type: method
-    url: "#{url}?#{$.param params}"
+    url: "#{url}#{separator}#{$.param params}"
     contentType: 'application/json'
     accepts: 'application/json'
     dataType: 'json'

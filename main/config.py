@@ -60,16 +60,16 @@ SCRIPTS_MODULES = [
 
 SCRIPTS = {
     'libs': [
-        'src/lib/jquery.js',
-        'src/lib/moment.js',
-        'src/lib/nprogress/nprogress.js',
-        'src/lib/bootstrap/js/alert.js',
-        'src/lib/bootstrap/js/button.js',
-        'src/lib/bootstrap/js/transition.js',
-        'src/lib/bootstrap/js/collapse.js',
-        'src/lib/bootstrap/js/dropdown.js',
-        'src/lib/bootstrap/js/tooltip.js',
-      ] + ['src/lib/lang/%s.js' % l for l in LANGUAGES if l != 'en'],
+        'src/vendor/js/jquery/jquery.js',
+        'src/vendor/js/momentjs/moment.js',
+        'src/vendor/js/nprogress/nprogress.js',
+        'src/vendor/js/bootstrap/alert.js',
+        'src/vendor/js/bootstrap/button.js',
+        'src/vendor/js/bootstrap/transition.js',
+        'src/vendor/js/bootstrap/collapse.js',
+        'src/vendor/js/bootstrap/dropdown.js',
+        'src/vendor/js/bootstrap/tooltip.js',
+      ] + ['src/vendor/lang/momentjs/%s.js' % l for l in LANGUAGES if l != 'en'],
     'scripts': [
         'src/script/common/service.coffee',
         'src/script/common/util.coffee',

@@ -2,6 +2,7 @@
 
 import os
 
+from google.appengine.api import app_identity
 from google.appengine.ext import ndb
 
 import modelx
@@ -32,7 +33,7 @@ class Config(Base, modelx.ConfigX):
   announcement_type = ndb.StringProperty(default='info', choices=[
       'info', 'warning', 'success', 'danger',
     ])
-  brand_name = ndb.StringProperty(default='gae-init')
+  brand_name = ndb.StringProperty(default=app_identity.get_application_id())
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
   feedback_email = ndb.StringProperty(default='')
@@ -65,6 +66,7 @@ class User(Base, modelx.UserX):
 
   active = ndb.BooleanProperty(default=True)
   admin = ndb.BooleanProperty(default=False)
+  permissions = ndb.StringProperty(repeated=True)
 
   _PROPERTIES = Base._PROPERTIES.union({
       'active',
@@ -75,4 +77,5 @@ class User(Base, modelx.UserX):
       'locale',
       'name',
       'username',
+      'permissions',
     })

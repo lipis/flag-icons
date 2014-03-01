@@ -54,6 +54,7 @@ def set_locale(locale):
   util.set_locale(check_locale(locale), response)
   return response
 
+_signals = flask.signals.Namespace()
 
 ###############################################################################
 # Flask Login
@@ -148,6 +149,29 @@ def admin_required(f):
       return flask.redirect(flask.url_for('signin', next=flask.request.url))
     return flask.abort(403)
   return decorated_function
+
+
+permission_registered = _signals.signal('permission-registered')
+
+
+def permission_required(permission=None):
+  def permission_decorator(f):
+    # default to decorated function name as permission
+    perm = permission or f.func_name
+
+    permission_registered.send(f, permission=perm)
+
+    @functools.wraps(f)
+    def decorated_function(*args, **kws):
+      if is_logged_in() and current_user_db().has_permission(perm):
+        return f(*args, **kws)
+      if not is_logged_in():
+        if flask.request.path.startswith('/_s/'):
+          return flask.abort(401)
+        return flask.redirect(flask.url_for('signin', next=flask.request.url))
+      return flask.abort(403)
+    return decorated_function
+  return permission_decorator
 
 
 ###############################################################################

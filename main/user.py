@@ -31,6 +31,7 @@ def user_list():
       name=util.param('name'),
       admin=util.param('admin', bool),
       active=util.param('active', bool),
+      permissions=util.param('permissions', list),
     )
 
   if flask.request.path.startswith('/_s/'):
@@ -43,6 +44,7 @@ def user_list():
       user_dbs=user_dbs,
       more_url=util.generate_more_url(more_cursor),
       has_json=True,
+      permissions=sorted(UserUpdateForm._permission_choices),
     )
 
 
@@ -66,6 +68,21 @@ class UserUpdateForm(i18n.Form):
     )
   admin = wtf.BooleanField(_('Admin'))
   active = wtf.BooleanField(_('Active'))
+  permissions = wtf.SelectMultipleField(_('Permissions'),
+      filters=[util.sort_filter],
+    )
+
+  _permission_choices = set()
+
+  def __init__(self, *args, **kwds):
+    super(UserUpdateForm, self).__init__(*args, **kwds)
+    self.permissions.choices = [
+        (p, p) for p in sorted(UserUpdateForm._permission_choices)
+      ]
+
+  @auth.permission_registered.connect
+  def _permission_registered_callback(sender, permission):
+    UserUpdateForm._permission_choices.add(permission)
 
 
 @app.route('/user/<int:user_id>/update/', methods=['GET', 'POST'])
@@ -76,6 +93,9 @@ def user_update(user_id):
     flask.abort(404)
 
   form = UserUpdateForm(obj=user_db)
+  for permission in user_db.permissions:
+    form.permissions.choices.append((permission, permission))
+  form.permissions.choices = sorted(set(form.permissions.choices))
   if form.validate_on_submit():
     if not util.is_valid_username(form.username.data):
       form.username.errors.append(_('This username is invalid.'))
@@ -158,18 +178,20 @@ def user_merge():
   user_dbs.sort(key=lambda user_db: user_db.created)
   merged_user_db = user_dbs[0]
   auth_ids = []
+  permissions = []
   is_admin = False
   is_active = False
   for user_db in user_dbs:
     auth_ids.extend(user_db.auth_ids)
-    auth_ids.extend(user_db.auth_ids)
-    auth_ids.extend(user_db.auth_ids)
+    permissions.extend(user_db.permissions)
     is_admin = is_admin or user_db.admin
     is_active = is_active or user_db.active
     if user_db.key.urlsafe() == util.param('user_key'):
       merged_user_db = user_db
 
   auth_ids = sorted(list(set(auth_ids)))
+  permissions = sorted(list(set(permissions)))
+  merged_user_db.permissions = permissions
   merged_user_db.admin = is_admin
   merged_user_db.active = is_active
 
