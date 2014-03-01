@@ -69,7 +69,7 @@ SCRIPTS = {
         'src/vendor/js/bootstrap/collapse.js',
         'src/vendor/js/bootstrap/dropdown.js',
         'src/vendor/js/bootstrap/tooltip.js',
-      ] + ['src/vendor/lang/momentjs/%s.js' % l for l in LANGUAGES if l != 'en'],
+      ] + ['src/vendor/js/momentjs/%s.js' % l for l in LANGUAGES if l != 'en'],
     'scripts': [
         'src/script/common/service.coffee',
         'src/script/common/util.coffee',

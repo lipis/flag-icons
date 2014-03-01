@@ -21,8 +21,7 @@
       "less": "*.less"
     },
     "momentjs": {
-      "js": "*.js",
-      "lang": "lang/*.js"
+      "js": "{moment.js,lang/*.js}"
     },
     "font-awesome": {
       "less": "less/*.less",
