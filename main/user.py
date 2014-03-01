@@ -60,12 +60,13 @@ class UserUpdateForm(wtf.Form):
       [wtf.validators.optional(), wtf.validators.email()],
       filters=[util.email_filter],
     )
+  admin = wtf.BooleanField('Admin')
+  active = wtf.BooleanField('Active')
   permissions = wtf.SelectMultipleField('Permissions',
       filters=[util.sort_filter],
     )
+
   _permission_choices = set()
-  admin = wtf.BooleanField('Admin')
-  active = wtf.BooleanField('Active')
 
   def __init__(self, *args, **kwds):
     super(UserUpdateForm, self).__init__(*args, **kwds)
