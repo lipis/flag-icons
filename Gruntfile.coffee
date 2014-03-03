@@ -26,4 +26,3 @@ module.exports = (grunt)->
     grunt.loadNpmTasks('grunt-contrib-watch')
     grunt.registerTask('default', ['watch'])
     grunt.loadNpmTasks('grunt-bower-task')
-

@@ -24,12 +24,12 @@ class ConfigX(object):
 
 
 class UserX(object):
+  def has_permission(self, perm):
+    return self.admin or perm in self.permissions
+
   def avatar_url_size(self, size=None):
     return '//gravatar.com/avatar/%(hash)s?d=identicon&r=x%(size)s' % {
         'hash': hashlib.md5(self.email or self.username).hexdigest(),
         'size': '&s=%d' % size if size > 0 else '',
       }
   avatar_url = property(avatar_url_size)
-
-  def has_permission(self, perm):
-    return self.admin or perm in self.permissions
