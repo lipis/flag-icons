@@ -1,5 +1,5 @@
 module.exports = (grunt)->
-  path = require("path")
+  path = require('path')
   grunt.initConfig
     watch:
       style:
@@ -18,7 +18,7 @@ module.exports = (grunt)->
           targetDir: 'main/static/src/vendor'
           cleanTargetDir: true
           layout: (type, component) ->
-            if type is "fonts"
+            if type is 'fonts'
               path.join '../../vendor-fonts'
             else
               path.join type, component
@@ -26,4 +26,3 @@ module.exports = (grunt)->
     grunt.loadNpmTasks('grunt-contrib-watch')
     grunt.registerTask('default', ['watch'])
     grunt.loadNpmTasks('grunt-bower-task')
-
