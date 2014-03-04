@@ -304,7 +304,7 @@ def pybabel_init(locale):
 
 
 def pybabel_init_missing():
-  if not os.path.exists(os.path.join(DIR_TRANSLATIONS, 'messages.pot')):
+  if not os.path.exists(FILE_MESSAGES_POT):
     pybabel_extract()
   for locale in config.LOCALE:
     msg = os.path.join(DIR_TRANSLATIONS, locale, 'LC_MESSAGES', 'messages.po')
