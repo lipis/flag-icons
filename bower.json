@@ -4,7 +4,6 @@
   "ignore": [
       "**/.*",
       "assets",
-      "bower.json",
       "Gruntfile.coffee",
       "index.html",
       "LICENCE",
