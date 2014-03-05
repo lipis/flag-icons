@@ -23,7 +23,7 @@ PARSER.add_argument(
   )
 PARSER.add_argument(
     '-c', '--clean', dest='clean', action='store_true',
-    help='''recompiles files when running the development web server''',
+    help='recompiles files when running the development web server',
   )
 PARSER.add_argument(
     '-C', '--clean-all', dest='clean_all', action='store_true',
