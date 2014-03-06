@@ -1,2 +1,2 @@
 window.init_profile = ->
-  # do something with the admin page here
+  # do something with the profile page here
