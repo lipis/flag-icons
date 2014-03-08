@@ -23,8 +23,7 @@ PARSER.add_argument(
   )
 PARSER.add_argument(
     '-c', '--clean', dest='clean', action='store_true',
-    help='''recompiles files when running the development web server, but
-    obsolete if -s is used''',
+    help='recompiles files when running the development web server',
   )
 PARSER.add_argument(
     '-C', '--clean-all', dest='clean_all', action='store_true',
@@ -268,7 +267,7 @@ def install_dependencies():
 
   for dependency in get_dependencies('bower.json'):
     if not os.path.exists(os.path.join(DIR_BOWER_COMPONENTS, dependency)):
-      os.system('"%s" bower' % FILE_GRUNT)
+      os.system('"%s" ext' % FILE_GRUNT)
       break
 
 
