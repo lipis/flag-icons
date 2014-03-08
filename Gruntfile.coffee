@@ -1,5 +1,6 @@
-module.exports = (grunt)->
-  path = require('path')
+module.exports = (grunt) ->
+  path = require 'path'
+
   grunt.initConfig
     watch:
       style:
@@ -15,14 +16,18 @@ module.exports = (grunt)->
     bower:
       install:
         options:
-          targetDir: 'main/static/src/vendor'
-          cleanTargetDir: true
+          targetDir: 'main/static/ext'
           layout: (type, component) ->
-            if type is 'fonts'
-              path.join '../../vendor-fonts'
+            if type.search('/') > -1
+              path.join type.replace '/', "/#{component}/"
             else
               path.join type, component
 
-    grunt.loadNpmTasks('grunt-contrib-watch')
-    grunt.registerTask('default', ['watch'])
-    grunt.loadNpmTasks('grunt-bower-task')
+    clean:
+      ext: 'main/static/ext'
+
+    grunt.loadNpmTasks 'grunt-bower-task'
+    grunt.loadNpmTasks 'grunt-contrib-clean'
+    grunt.loadNpmTasks 'grunt-contrib-watch'
+    grunt.registerTask 'default', ['watch']
+    grunt.registerTask 'ext', ['clean:ext', 'bower']

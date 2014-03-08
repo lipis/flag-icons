@@ -40,15 +40,15 @@ SCRIPTS_MODULES = [
 
 SCRIPTS = {
     'libs': [
-        'src/vendor/js/jquery/jquery.js',
-        'src/vendor/js/momentjs/moment.js',
-        'src/vendor/js/nprogress/nprogress.js',
-        'src/vendor/js/bootstrap/alert.js',
-        'src/vendor/js/bootstrap/button.js',
-        'src/vendor/js/bootstrap/transition.js',
-        'src/vendor/js/bootstrap/collapse.js',
-        'src/vendor/js/bootstrap/dropdown.js',
-        'src/vendor/js/bootstrap/tooltip.js',
+        'ext/js/jquery/jquery.js',
+        'ext/js/momentjs/moment.js',
+        'ext/js/nprogress/nprogress.js',
+        'ext/js/bootstrap/alert.js',
+        'ext/js/bootstrap/button.js',
+        'ext/js/bootstrap/transition.js',
+        'ext/js/bootstrap/collapse.js',
+        'ext/js/bootstrap/dropdown.js',
+        'ext/js/bootstrap/tooltip.js',
       ],
     'scripts': [
         'src/script/common/service.coffee',

@@ -9,8 +9,7 @@ bower_components
 main/index.yaml
 main/lib.zip
 main/static/dst
+main/static/ext
 main/static/min
-main/static/src/vendor
-main/static/vendor-fonts
 node_modules
 temp/

@@ -245,7 +245,7 @@ def install_dependencies():
 
   for dependency in get_dependencies('bower.json'):
     if not os.path.exists(os.path.join(DIR_BOWER_COMPONENTS, dependency)):
-      os.system('"%s" bower' % FILE_GRUNT)
+      os.system('"%s" ext' % FILE_GRUNT)
       break
 
 

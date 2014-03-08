@@ -20,8 +20,9 @@
   "devDependencies": {
     "bower": "~1",
     "grunt": "~0",
-    "grunt-contrib-watch": "~0",
     "grunt-bower-task": "~0",
-    "grunt-cli": "~0"
+    "grunt-cli": "~0",
+    "grunt-contrib-clean": "~0",
+    "grunt-contrib-watch": "~0"
   }
 }

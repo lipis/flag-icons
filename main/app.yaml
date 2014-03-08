@@ -30,17 +30,21 @@ handlers:
   script: main.app
 
 skip_files:
+- ^(.*/)?#.*#
+- ^(.*/)?.*/RCS/.*
+- ^(.*/)?.*\.bak$
+- ^(.*/)?.*\.py[co]
+- ^(.*/)?.*~
+- ^(.*/)?Icon\r
+- ^(.*/)?\..*
 - ^(.*/)?app\.yaml
 - ^(.*/)?app\.yml
 - ^(.*/)?index\.yaml
 - ^(.*/)?index\.yml
-- ^(.*/)?#.*#
-- ^(.*/)?.*~
-- ^(.*/)?.*\.py[co]
-- ^(.*/)?.*/RCS/.*
-- ^(.*/)?\..*
-- ^(.*/)?.*\.bak$
-- ^(.*/)?Icon\r
 - ^lib/.*
-- ^static/src/.*
 - ^static/dst/.*
+- ^static/ext/coffee/.*
+- ^static/ext/css/.*
+- ^static/ext/js/.*
+- ^static/ext/less/.*
+- ^static/src/.*
