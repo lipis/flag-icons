@@ -2,6 +2,7 @@
   "name": "gae-init",
   "dependencies": {
     "bootstrap": "~3",
+    "flag-icon-css": "~0",
     "font-awesome": "~4",
     "jquery": "~2",
     "momentjs": "~2",
@@ -12,6 +13,10 @@
       "js": "js/*.js",
       "less": "less/*.less",
       "font": "fonts/*"
+    },
+    "flag-icon-css": {
+      "less": "less/*.less",
+      "flag": "flags"
     },
     "font-awesome": {
       "less": "less/*.less",

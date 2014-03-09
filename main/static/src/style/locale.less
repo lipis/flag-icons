@@ -1,24 +1,15 @@
-// Modified version of flag-icon-css
-// https://github.com/lipis/flag-icon-css
+// Overrides of flag-icon-css
 
 .flag-icon {
-  position: relative;
-  display: inline-block;
-  width: unit(4 / 3, em);
-  line-height: 1em;
-  background-size: cover;
-  background-position: 50%;
-  background-repeat: no-repeat;
-  border-radius: 1px;
-  .box-shadow(0 0 3px @gray);
-  &:before {
-    content: "\00a0";
-  }
+  .box-shadow(0 0 3px rgba(0, 0, 0, .64));
 }
 
 .flag-icon(@country, @locale) {
   .flag-icon-@{locale} {
-    background-image: ~"url(@{flag-icon-css-path}/@{country}.svg)";
+    background-image: ~"url(@{flag-icon-css-path}4x3/@{country}.svg)";
+    &.flag-icon-squared {
+      background-image: ~"url(@{flag-icon-css-path}1x1/@{country}.svg)";
+    }
   }
 }
 
