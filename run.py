@@ -201,8 +201,8 @@ def is_style_modified(target):
 def compile_all_dst():
   for source in config.STYLES:
     compile_style(os.path.join(DIR_STATIC, source), DIR_DST_STYLE, True)
-  for module in config.SCRIPTS:
-    for source in config.SCRIPTS[module]:
+  for (module, scripts) in config.SCRIPTS:
+    for source in scripts:
       compile_script(os.path.join(DIR_STATIC, source), DIR_DST_SCRIPT)
 
 
@@ -213,9 +213,9 @@ def update_path_separators():
   for idx in xrange(len(config.STYLES)):
     config.STYLES[idx] = fixit(config.STYLES[idx])
 
-  for module in config.SCRIPTS:
-    for idx in xrange(len(config.SCRIPTS[module])):
-      config.SCRIPTS[module][idx] = fixit(config.SCRIPTS[module][idx])
+  for (module, scripts) in config.SCRIPTS:
+    for idx in xrange(len(scripts)):
+      scripts[idx] = fixit(scripts[idx])
 
 
 def internet_on():
@@ -288,8 +288,8 @@ def run_minify():
   for source in config.STYLES:
     compile_style(os.path.join(DIR_STATIC, source), DIR_MIN_STYLE)
 
-  for module in config.SCRIPTS:
-    scripts = uniq(config.SCRIPTS[module])
+  for (module, scripts) in config.SCRIPTS:
+    scripts = uniq(scripts)
     coffees = ' '.join([
         os.path.join(DIR_STATIC, script)
         for script in scripts if script.endswith('.coffee')
