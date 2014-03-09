@@ -1,4 +1,4 @@
-# for (module, scripts) in config.SCRIPTS
+# for module, scripts in config.SCRIPTS
   # if config.DEVELOPMENT
     # for script in scripts
       <script src="/p/{{script.replace('.coffee', '.js').replace('src/script/', 'dst/script/')}}?{{config.CURRENT_VERSION_ID}}"></script>
