@@ -33,13 +33,8 @@ STYLES = [
     'src/style/style.less',
   ]
 
-SCRIPTS_MODULES = [
-    'libs',
-    'scripts',
-  ]
-
-SCRIPTS = {
-    'libs': [
+SCRIPTS = [
+    ('libs', [
         'ext/js/jquery/jquery.js',
         'ext/js/momentjs/moment.js',
         'ext/js/nprogress/nprogress.js',
@@ -49,13 +44,13 @@ SCRIPTS = {
         'ext/js/bootstrap/collapse.js',
         'ext/js/bootstrap/dropdown.js',
         'ext/js/bootstrap/tooltip.js',
-      ],
-    'scripts': [
+      ]),
+    ('scripts', [
         'src/script/common/service.coffee',
         'src/script/common/util.coffee',
         'src/script/site/app.coffee',
         'src/script/site/admin.coffee',
         'src/script/site/profile.coffee',
         'src/script/site/user.coffee',
-      ],
-  }
+      ]),
+  ]
