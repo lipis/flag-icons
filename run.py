@@ -156,14 +156,14 @@ def compile_style(source, target_dir, check_modified=False):
   if not os.path.isfile(source):
     print_out('NOT FOUND', source)
     return
-
-  target = source.replace(DIR_SRC_STYLE, target_dir).replace('.less', '.css')
-  minified = ''
   if not source.endswith('.less'):
     return
+
+  target = source.replace(DIR_SRC_STYLE, target_dir).replace('.less', '.css')
   if check_modified and not is_style_modified(target):
     return
 
+  minified = ''
   if target_dir == DIR_MIN_STYLE:
     minified = '-x'
     target = target.replace('.css', '.min.css')
