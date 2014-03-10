@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 from flask.ext import wtf
-from flask.ext.babel import gettext as __
 from flask.ext.babel import lazy_gettext as _
 from google.appengine.api import app_identity
 import flask
