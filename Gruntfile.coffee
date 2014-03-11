@@ -25,6 +25,8 @@ module.exports = (grunt) ->
 
     clean:
       ext: 'main/static/ext'
+      min: 'main/static/min'
+      dst: 'main/static/dst'
 
     grunt.loadNpmTasks 'grunt-bower-task'
     grunt.loadNpmTasks 'grunt-contrib-clean'
