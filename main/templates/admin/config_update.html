@@ -24,6 +24,7 @@
 
         {{forms.text_field(form.brand_name, autofocus=True)}}
         {{forms.email_field(form.feedback_email)}}
+        {{forms.checkbox_field(form.notify_on_new_user)}}
         {{forms.text_field(form.analytics_id)}}
         {{forms.text_field(form.flask_secret_key)}}
         {{forms.textarea_field(form.announcement_html)}}

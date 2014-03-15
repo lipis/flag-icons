@@ -38,6 +38,7 @@ class Config(Base, modelx.ConfigX):
   facebook_app_secret = ndb.StringProperty(default='')
   feedback_email = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default=util.uuid())
+  notify_on_new_user = ndb.BooleanProperty(default=True)
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
 

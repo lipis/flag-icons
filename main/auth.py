@@ -12,6 +12,7 @@ import flask
 import config
 import model
 import util
+import task
 
 from main import app
 
@@ -351,6 +352,7 @@ def create_user_db(auth_id, name, username, email='', **params):
       **params
     )
   user_db.put()
+  task.new_user_notification(user_db)
   return user_db
 
 
