@@ -24,6 +24,7 @@ class ConfigUpdateForm(i18n.Form):
   feedback_email = wtf.StringField('Feedback Email', [wtf.validators.optional(), wtf.validators.email()], filters=[util.email_filter])
   flask_secret_key = wtf.StringField('Flask Secret Key', [wtf.validators.required()], filters=[util.strip_filter])
   locale = wtf.SelectField('Default Locale', choices=config.LOCALE_SORTED)
+  notify_on_new_user = wtf.BooleanField('Send an email notification when a user signs up')
   twitter_consumer_key = wtf.StringField('Twitter Consumer Key', filters=[util.strip_filter])
   twitter_consumer_secret = wtf.StringField('Twitter Consumer Secret', filters=[util.strip_filter])
 

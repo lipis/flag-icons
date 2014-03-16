@@ -14,6 +14,7 @@ import flask
 
 import config
 import model
+import task
 import util
 
 from main import app
@@ -154,15 +155,18 @@ def admin_required(f):
 permission_registered = _signals.signal('permission-registered')
 
 
-def permission_required(permission=None):
+def permission_required(permission=None, methods=None):
   def permission_decorator(f):
     # default to decorated function name as permission
     perm = permission or f.func_name
+    meths = [m.upper() for m in methods] if methods else None
 
     permission_registered.send(f, permission=perm)
 
     @functools.wraps(f)
     def decorated_function(*args, **kws):
+      if meths and flask.request.method.upper() not in meths:
+        return f(*args, **kws)
       if is_logged_in() and current_user_db().has_permission(perm):
         return f(*args, **kws)
       if not is_logged_in():
@@ -388,6 +392,7 @@ def create_user_db(auth_id, name, username, email='', **params):
       **params
     )
   user_db.put()
+  task.new_user_notification(user_db)
   return user_db
 
 
