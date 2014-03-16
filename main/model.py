@@ -51,6 +51,7 @@ class Config(Base, modelx.ConfigX):
       'facebook_app_secret',
       'feedback_email',
       'flask_secret_key',
+      'notify_on_new_user',
       'twitter_consumer_key',
       'twitter_consumer_secret',
     })

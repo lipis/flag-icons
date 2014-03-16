@@ -11,8 +11,8 @@ import flask
 
 import config
 import model
-import util
 import task
+import util
 
 from main import app
 

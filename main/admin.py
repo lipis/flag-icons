@@ -5,9 +5,9 @@ from google.appengine.api import app_identity
 import flask
 
 import auth
-import util
-import model
 import config
+import model
+import util
 
 from main import app
 
@@ -20,8 +20,8 @@ class ConfigUpdateForm(wtf.Form):
   facebook_app_id = wtf.StringField('Facebook App ID', filters=[util.strip_filter])
   facebook_app_secret = wtf.StringField('Facebook App Secret', filters=[util.strip_filter])
   feedback_email = wtf.StringField('Feedback Email', [wtf.validators.optional(), wtf.validators.email()], filters=[util.email_filter])
-  notify_on_new_user = wtf.BooleanField('Send an email notification when a user signs up')
   flask_secret_key = wtf.StringField('Flask Secret Key', [wtf.validators.required()], filters=[util.strip_filter])
+  notify_on_new_user = wtf.BooleanField('Send an email notification when a user signs up')
   twitter_consumer_key = wtf.StringField('Twitter Consumer Key', filters=[util.strip_filter])
   twitter_consumer_secret = wtf.StringField('Twitter Consumer Secret', filters=[util.strip_filter])
 
