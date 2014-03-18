@@ -47,9 +47,8 @@ def get_locale():
 
 @flask.request_started.connect_via(app)
 def request_started(sender, **extra):
-  locale = get_locale()
-  flask.request.locale = locale
-  flask.request.locale_html = locale.replace('_', '-')
+  flask.request.locale = get_locale()
+  flask.request.locale_html = flask.request.locale.replace('_', '-')
 
 
 @app.route('/l/<path:locale>/')
