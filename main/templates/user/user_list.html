@@ -115,10 +115,10 @@
             </td>
             <td>
               # if user_db.admin
-                <a href="{{update_query_argument('admin', True)}}" class="label label-danger" title="More like God"><i class="fa fa-cog"></i> admin</a>
+                <a href="{{update_query_argument('admin', True)}}" class="label label-danger"><i class="fa fa-cog"></i> admin</a>
               # endif
               # if not user_db.active
-                <a href="{{update_query_argument('active', False)}}" class="label label-default" title="Can't sign in"><i class="fa fa-ban"></i> inactive</a>
+                <a href="{{update_query_argument('active', False)}}" class="label label-default"><i class="fa fa-ban"></i> inactive</a>
               # endif
               # for permission in user_db.permissions
                 <a href="{{update_query_argument('permissions', permission)}}" class="label label-info">{{permission}}</a>
