@@ -8,8 +8,10 @@ import os
 import shutil
 import sys
 import time
+import urllib
 import urllib2
 
+import main
 from main import config
 
 
@@ -87,6 +89,7 @@ FILE_LESS = os.path.join(DIR_BIN, 'lessc')
 FILE_UGLIFYJS = os.path.join(DIR_BIN, 'uglifyjs')
 
 DIR_STORAGE = os.path.join(DIR_TEMP, 'storage')
+FILE_UPDATE = os.path.join(DIR_TEMP, 'update.json')
 
 
 ###############################################################################
@@ -234,10 +237,6 @@ def get_dependencies(file_name):
 
 
 def install_dependencies():
-  if not internet_on():
-    print_out('NO INTERNET')
-    return
-
   for dependency in get_dependencies('package.json'):
     if not os.path.exists(os.path.join(DIR_NODE_MODULES, dependency)):
       os.system('npm install')
@@ -247,6 +246,42 @@ def install_dependencies():
     if not os.path.exists(os.path.join(DIR_BOWER_COMPONENTS, dependency)):
       os.system('"%s" ext' % FILE_GRUNT)
       break
+
+
+def check_for_update():
+  if os.path.exists(FILE_UPDATE):
+    mtime = os.path.getmtime(FILE_UPDATE)
+    last = datetime.fromtimestamp(mtime).strftime('%Y-%m-%d')
+    today = datetime.utcnow().strftime('%Y-%m-%d')
+    if last == today:
+      return
+  try:
+    request = urllib2.Request(
+        'https://gae-init.appspot.com/_s/version/',
+        urllib.urlencode({'version': main.__version__}),
+      )
+    response = urllib2.urlopen(request)
+    update_json = open(FILE_UPDATE, 'w')
+    update_json.write(response.read())
+    update_json.close()
+  except urllib2.HTTPError:
+    pass
+
+
+def print_out_update():
+  try:
+    update_json = open(FILE_UPDATE)
+    data = json.load(update_json)
+    update_json.close()
+    if main.__version__ < data['version']:
+      print_out('UPDATE')
+      print_out(data['version'], 'Latest version of gae-init')
+      print_out(main.__version__, 'Your version is a bit behind')
+      print_out('CHANGESET', data['changeset'])
+  except (ValueError, KeyError):
+    os.remove(FILE_UPDATE)
+  except IOError:
+    pass
 
 
 def update_missing_args():
@@ -359,7 +394,13 @@ def run():
   if ARGS.clean_all:
     run_clean_all()
 
-  install_dependencies()
+  if internet_on():
+    install_dependencies()
+    check_for_update()
+  else:
+    print_out('NO INTERNET')
+
+  print_out_update()
 
   if ARGS.clean:
     run_clean()
