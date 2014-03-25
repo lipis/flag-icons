@@ -66,6 +66,7 @@ DIR_NODE_MODULES = 'node_modules'
 DIR_STYLE = 'style'
 DIR_SCRIPT = 'script'
 DIR_TEMP = 'temp'
+DIR_VENV = os.path.join(DIR_TEMP, 'venv')
 
 DIR_STATIC = os.path.join(DIR_MAIN, 'static')
 
@@ -82,6 +83,7 @@ DIR_MIN_STYLE = os.path.join(DIR_MIN, DIR_STYLE)
 DIR_MIN_SCRIPT = os.path.join(DIR_MIN, DIR_SCRIPT)
 
 DIR_LIB = os.path.join(DIR_MAIN, 'lib')
+DIR_LIBX = os.path.join(DIR_MAIN, 'libx')
 FILE_LIB = os.path.join(DIR_MAIN, 'lib.zip')
 
 DIR_BIN = os.path.join(DIR_NODE_MODULES, '.bin')
@@ -89,6 +91,9 @@ FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
 FILE_GRUNT = os.path.join(DIR_BIN, 'grunt')
 FILE_LESS = os.path.join(DIR_BIN, 'lessc')
 FILE_UGLIFYJS = os.path.join(DIR_BIN, 'uglifyjs')
+FILE_VENV = os.path.join(DIR_VENV, 'Scripts', 'activate.bat')\
+    if platform.system() is 'Windows'\
+    else os.path.join(DIR_VENV, 'bin', 'activate')
 
 DIR_STORAGE = os.path.join(DIR_TEMP, 'storage')
 FILE_UPDATE = os.path.join(DIR_TEMP, 'update.json')
@@ -115,9 +120,12 @@ def make_dirs(directory):
     os.makedirs(directory)
 
 
-def remove_dir(directory):
-  if os.path.isdir(directory):
-    shutil.rmtree(directory)
+def remove_file_dir(file_dir):
+  if os.path.exists(file_dir):
+    if os.path.isdir(file_dir):
+      shutil.rmtree(file_dir)
+    else:
+      os.remove(file_dir)
 
 
 def clean_files():
@@ -130,7 +138,7 @@ def clean_files():
     for filename in files:
       for bad_ending in bad_endings:
         if filename.endswith(bad_ending):
-          os.remove(os.path.join(root, filename))
+          remove_file_dir(os.path.join(root, filename))
 
 
 def merge_files(source, target):
@@ -187,7 +195,7 @@ def compile_style(source, target_dir, check_modified=False):
 
 def make_lib_zip(force=False):
   if force and os.path.isfile(FILE_LIB):
-    os.remove(FILE_LIB)
+    remove_file_dir(FILE_LIB)
   if not os.path.isfile(FILE_LIB):
     print_out('ZIP', FILE_LIB)
     shutil.make_archive(DIR_LIB, 'zip', DIR_LIB)
@@ -211,7 +219,7 @@ def is_style_modified(target):
 def compile_all_dst():
   for source in config.STYLES:
     compile_style(os.path.join(DIR_STATIC, source), DIR_DST_STYLE, True)
-  for module, scripts in config.SCRIPTS:
+  for _, scripts in config.SCRIPTS:
     for source in scripts:
       compile_script(os.path.join(DIR_STATIC, source), DIR_DST_SCRIPT)
 
@@ -223,9 +231,189 @@ def update_path_separators():
   for idx in xrange(len(config.STYLES)):
     config.STYLES[idx] = fixit(config.STYLES[idx])
 
-  for module, scripts in config.SCRIPTS:
+  for _, scripts in config.SCRIPTS:
     for idx in xrange(len(scripts)):
       scripts[idx] = fixit(scripts[idx])
+
+
+def get_py_libs_required():
+  try:
+    with open('pip.json') as pip_json:
+      json_data = json.load(pip_json)
+    stuffs = [stuff for stuff in json_data.itervalues()]
+    packages = {}
+    for stuff in stuffs:
+      if stuff and type(stuff) is dict:
+        packages.update(stuff)
+    for lib, opt in packages.iteritems():
+      opt['compress'] = opt.get('compress', True)
+      opt['pkg_name'] = opt.get('pkg_name', lib.replace('-', '_'))
+      opt['deps'] = '' if opt.get('deps') else '--no-deps'
+      opt['url'] = opt.get('url', lib)
+      opt['version'] = opt.get('version', '')
+    return packages
+  except IOError:
+    return {}
+
+
+def listdir(directory, split_ext=False):
+  try:
+    if split_ext:
+      return [os.path.splitext(dir_)[0] for dir_ in os.listdir(directory)]
+    else:
+      return os.listdir(directory)
+  except OSError:
+    return []
+
+
+def site_packages_path():
+  if platform.system() == 'Windows':
+    return os.path.join(DIR_VENV, 'Lib', 'site-packages')
+  py_version = 'python%s.%s' % sys.version_info[:2]
+  return os.path.join(DIR_VENV, 'lib', py_version, 'site-packages')
+
+
+def exists_venv():
+  return True if spawn.find_executable('virtualenv') else False
+
+
+def install_venv(pip_commands):
+  if not pip_commands:
+    return
+  is_windows = platform.system() == 'Windows'
+  if not os.path.exists(FILE_VENV) and exists_venv():
+    os.system('virtualenv %s' % DIR_VENV)
+    if is_windows:
+      paths = os.environ['PATH'].split(';')
+      gae_path = 'C:\\Program Files\\Google\\google_appengine'
+      for path in paths:
+        if path.endswith('google_appengine'):
+          gae_path = path
+          break
+    else:
+      gae_path = '/usr/local/google_appengine'
+    pth_file = os.path.join(site_packages_path(), 'gae.pth')
+    echo_to = 'echo %s >> {pth}'.format(pth=pth_file)
+    os.system(echo_to % gae_path)
+    os.system(echo_to % os.path.abspath(DIR_LIB))
+    os.system(echo_to % os.path.abspath(DIR_LIBX))
+    if is_windows:
+      os.system(echo_to % 'import dev_appserver; dev_appserver.fix_sys_path()')
+    else:
+      os.system(
+          echo_to % '"import dev_appserver; dev_appserver.fix_sys_path()"'
+        )
+
+  script = []
+  if exists_venv():
+    if is_windows:
+      activate_cmd = 'call %s'
+    else:
+      activate_cmd = 'source %s'
+    activate_cmd %= FILE_VENV
+    script.append('%s' % activate_cmd)
+
+  for cmd in pip_commands:
+    script.append('echo %s' % cmd)
+    script.append('%s' % cmd)
+  if is_windows:
+    script = '&'.join(script)
+  else:
+    script = '/bin/bash -c "%s"' % ';'.join(script)
+  os.system(script)
+
+
+def is_global_py_pkg(pkg_name):
+  try:
+    __import__(pkg_name)
+    return True
+  except ImportError:
+    return False
+
+
+def install_py_libs():
+  required = get_py_libs_required()
+  installed = listdir(DIR_LIB, split_ext=True)
+  installed.extend(listdir(DIR_LIBX, split_ext=True))
+  pip_commands = []
+  is_exists_venv = exists_venv()
+  for opt in required.itervalues():
+    if opt['pkg_name'] not in installed:
+      pip_cmd = 'pip install -qq --no-use-wheel %s {deps} {ignore} {lib}'
+      lib_name = '%s%s' % (opt['url'], opt['version'])
+      if is_global_py_pkg(lib_name):
+        pip_cmd = pip_cmd.format(
+          deps=opt['deps'], ignore='--ignore-installed', lib=lib_name
+        )
+      else:
+        pip_cmd = pip_cmd.format(
+          deps=opt['deps'], ignore='', lib=lib_name
+        )
+      if is_exists_venv:
+        pip_commands.append(pip_cmd % '')
+      else:
+        pip_commands.append(pip_cmd % (
+            '--install-option="--prefix=%s"' % os.path.abspath(DIR_VENV))
+          )
+  install_venv(pip_commands)
+
+  exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info']
+  exclude_prefix = ['setuptools-', 'pip-', 'Pillow-']
+  exclude = [
+      'test', 'tests', 'pip', 'setuptools', '_markerlib', 'PIL',
+      'easy_install.py', 'pkg_resources.py'
+    ]
+
+  def _exclude_prefix(pkg):
+    for prefix in exclude_prefix:
+      if pkg.startswith(prefix):
+        return True
+    return False
+
+  def _exclude_ext(pkg):
+    for ext in exclude_ext:
+      if pkg.endswith(ext):
+        return True
+    return False
+
+  def _get_dest(pkg):
+    for req_pkg in required.itervalues():
+      if pkg == req_pkg['pkg_name'] or\
+          (pkg.startswith(req_pkg['pkg_name']) and pkg.endswith('.py')):
+        if not req_pkg['compress']:
+          if not os.path.exists(DIR_LIBX):
+            os.mkdir(DIR_LIBX)
+          return os.path.join(DIR_LIBX, pkg)
+        else:
+          break
+    if not os.path.exists(DIR_LIB):
+      os.mkdir(DIR_LIB)
+    return os.path.join(DIR_LIB, pkg)
+
+  site_packages = site_packages_path()
+  dir_lib = listdir(DIR_LIB)
+  dir_lib.extend(listdir(DIR_LIBX))
+  for dir_ in listdir(site_packages):
+    if dir_ in dir_lib or dir_ in exclude:
+      continue
+    if _exclude_prefix(dir_) or _exclude_ext(dir_):
+      continue
+    src_path = os.path.join(site_packages, dir_)
+    copy = shutil.copy if os.path.isfile(src_path) else shutil.copytree
+    copy(src_path, _get_dest(dir_))
+
+
+def clean_py_libs():
+  site_packages = listdir(site_packages_path())
+  dir_lib = listdir(DIR_LIB)
+  dir_libx = listdir(DIR_LIBX)
+  for lib in dir_lib:
+    if lib in site_packages:
+      remove_file_dir(os.path.join(DIR_LIB, lib))
+  for lib in dir_libx:
+    if lib in site_packages:
+      remove_file_dir(os.path.join(DIR_LIBX, lib))
+  remove_file_dir(DIR_VENV)
 
 
 def get_dependencies(file_name):
@@ -236,6 +424,8 @@ def get_dependencies(file_name):
 
 
 def install_dependencies():
+  install_py_libs()
+
   for dependency in get_dependencies('package.json'):
     if not os.path.exists(os.path.join(DIR_NODE_MODULES, dependency)):
       os.system('npm install')
@@ -353,7 +543,7 @@ def run_clean():
   print_out('CLEAN')
   clean_files()
   make_lib_zip(force=True)
-  remove_dir(DIR_DST)
+  remove_file_dir(DIR_DST)
   make_dirs(DIR_DST)
   compile_all_dst()
   print_out('DONE')
@@ -361,15 +551,16 @@ def run_clean():
 
 def run_clean_all():
   print_out('CLEAN ALL')
-  remove_dir(DIR_BOWER_COMPONENTS)
-  remove_dir(DIR_NODE_MODULES)
+  remove_file_dir(DIR_BOWER_COMPONENTS)
+  remove_file_dir(DIR_NODE_MODULES)
+  clean_py_libs()
 
 
 def run_minify():
   print_out('MINIFY')
   clean_files()
   make_lib_zip(force=True)
-  remove_dir(DIR_MIN)
+  remove_file_dir(DIR_MIN)
   make_dirs(DIR_MIN_SCRIPT)
 
   for source in config.STYLES:
@@ -394,7 +585,7 @@ def run_minify():
       script_file = os.path.join(DIR_STATIC, script)
       merge_files(script_file, pretty_js)
     os_execute(FILE_UGLIFYJS, pretty_js, '-cm', ugly_js)
-    os.remove(pretty_js)
+    remove_file_dir(pretty_js)
   print_out('DONE')
 
 
@@ -413,7 +604,7 @@ def run_watch():
 
 
 def run_flush():
-  remove_dir(DIR_STORAGE)
+  remove_file_dir(DIR_STORAGE)
   print_out('STORAGE CLEARED')
 
 
