@@ -261,6 +261,8 @@ def check_for_update():
         urllib.urlencode({'version': main.__version__}),
       )
     response = urllib2.urlopen(request)
+    if not os.path.exists(DIR_TEMP):
+      os.mkdir(DIR_TEMP)
     update_json = open(FILE_UPDATE, 'w')
     update_json.write(response.read())
     update_json.close()
