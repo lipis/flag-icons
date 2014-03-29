@@ -18,13 +18,13 @@ init_user_selections = ->
 
 
 user_select_row = ($element) ->
-  update_selections()
+  update_user_selections()
   ($ 'input[name=user_db]').each ->
     id = $element.val()
     ($ "##{id}").toggleClass 'warning', $element.is ':checked'
 
 
-update_selections = ->
+update_user_selections = ->
   selected = ($ 'input[name=user_db]:checked').length
   ($ '#user-actions').toggleClass 'hidden', selected == 0
   ($ '#user-merge').toggleClass 'hidden', selected < 2
@@ -61,7 +61,7 @@ init_user_delete_btn = ->
           return
         ($ "##{result.join(', #')}").fadeOut ->
           ($ this).remove()
-          update_selections()
+          update_user_selections()
           show_notification success_message.replace('{users}', user_keys.length), 'success'
 
 
