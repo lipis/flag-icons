@@ -46,10 +46,10 @@
                 </td>
                 <td>
                   # if user_db.admin
-                    <span class="label label-danger" title="More like God"><i class="fa fa-cog"></i> admin</span>
+                    <span class="label label-danger"><i class="fa fa-cog"></i> admin</span>
                   # endif
                   # if not user_db.active
-                    <span class="label label-default" title="Can't sign in"><i class="fa fa-ban"></i> inactive</span>
+                    <span class="label label-default"><i class="fa fa-ban"></i> inactive</span>
                   # endif
                   # for permission in user_db.permissions
                     <span class="label label-info">{{permission}}</span>
