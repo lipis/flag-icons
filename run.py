@@ -285,11 +285,10 @@ def is_global_py_pkg(pkg_name):
     return False
 
 
-def exec_pip_commands(pip_commands):
-  if not pip_commands:
-    return
-  is_windows = platform.system() == 'Windows'
-  if not os.path.exists(FILE_VENV) and exists_venv():
+def create_virtualenv(is_windows):
+  if not exists_venv():
+    return False
+  if not os.path.exists(FILE_VENV):
     os.system('virtualenv %s' % DIR_VENV)
     if is_windows:
       paths = os.environ['PATH'].split(';')
@@ -306,14 +305,22 @@ def exec_pip_commands(pip_commands):
     os.system(echo_to % os.path.abspath(DIR_LIB))
     os.system(echo_to % os.path.abspath(DIR_LIBX))
     if is_windows:
-      os.system(echo_to % 'import dev_appserver; dev_appserver.fix_sys_path()')
+      os.system(
+          echo_to % 'import dev_appserver; dev_appserver.fix_sys_path()'
+        )
     else:
       os.system(
           echo_to % '"import dev_appserver; dev_appserver.fix_sys_path()"'
         )
+  return True
 
+
+def exec_pip_commands(pip_commands):
+  if not pip_commands:
+    return
+  is_windows = platform.system() == 'Windows'
   script = []
-  if exists_venv():
+  if create_virtualenv(is_windows):
     if is_windows:
       activate_cmd = 'call %s'
     else:
