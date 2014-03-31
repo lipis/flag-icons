@@ -274,7 +274,7 @@ def site_packages_path():
 
 
 def exists_venv():
-  return True if spawn.find_executable('virtualenv') else False
+  return bool(spawn.find_executable('virtualenv'))
 
 
 def install_venv(pip_commands):
