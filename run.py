@@ -343,20 +343,13 @@ def install_py_libs():
     if opt['pkg_name'] not in installed:
       pip_cmd = 'pip install -qq --no-use-wheel %s {deps} {ignore} {lib}'
       lib_name = '%s%s' % (opt['url'], opt['version'])
-      if is_global_py_pkg(lib_name):
-        pip_cmd = pip_cmd.format(
-            deps=opt['deps'], ignore='--ignore-installed', lib=lib_name
-          )
-      else:
-        pip_cmd = pip_cmd.format(
-            deps=opt['deps'], ignore='', lib=lib_name
-          )
-      if is_exists_venv:
-        pip_commands.append(pip_cmd % '')
-      else:
-        pip_commands.append(pip_cmd % (
-            '--install-option="--prefix=%s"' % os.path.abspath(DIR_VENV))
-          )
+      ignore = '--ignore-installed' if is_global_py_pkg(lib_name) else ''
+      pip_cmd = pip_cmd.format(deps=opt['deps'], ignore=ignore, lib=lib_name)
+      pip_commands.append(
+          pip_cmd % '' if is_exists_venv else pip_cmd % (
+              '--install-option="--prefix=%s"' % os.path.abspath(DIR_VENV)
+            )
+        )
   exec_pip_commands(pip_commands)
 
   exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info']
