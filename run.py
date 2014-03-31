@@ -343,12 +343,12 @@ def install_py_libs():
       lib_name = '%s%s' % (opt['url'], opt['version'])
       if is_global_py_pkg(lib_name):
         pip_cmd = pip_cmd.format(
-          deps=opt['deps'], ignore='--ignore-installed', lib=lib_name
-        )
+            deps=opt['deps'], ignore='--ignore-installed', lib=lib_name
+          )
       else:
         pip_cmd = pip_cmd.format(
-          deps=opt['deps'], ignore='', lib=lib_name
-        )
+            deps=opt['deps'], ignore='', lib=lib_name
+          )
       if is_exists_venv:
         pip_commands.append(pip_cmd % '')
       else:
