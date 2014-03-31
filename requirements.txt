@@ -1,0 +1,10 @@
+blinker
+flask
+flask-login==0.2.9
+Flask-OAuth
+flask-wtf==0.8.2
+httplib2
+itsdangerous
+oauth2
+werkzeug
+wtforms

@@ -84,6 +84,7 @@ DIR_MIN_SCRIPT = os.path.join(DIR_MIN, DIR_SCRIPT)
 
 DIR_LIB = os.path.join(DIR_MAIN, 'lib')
 DIR_LIBX = os.path.join(DIR_MAIN, 'libx')
+FILE_LIB_REQIREMENTS = 'requirements.txt'
 FILE_LIB = os.path.join(DIR_MAIN, 'lib.zip')
 
 DIR_BIN = os.path.join(DIR_NODE_MODULES, '.bin')
@@ -236,26 +237,6 @@ def update_path_separators():
       scripts[idx] = fixit(scripts[idx])
 
 
-def get_py_libs_required():
-  try:
-    with open('pip.json') as pip_json:
-      json_data = json.load(pip_json)
-    stuffs = [stuff for stuff in json_data.itervalues()]
-    packages = {}
-    for stuff in stuffs:
-      if stuff and type(stuff) is dict:
-        packages.update(stuff)
-    for lib, opt in packages.iteritems():
-      opt['compress'] = opt.get('compress', True)
-      opt['pkg_name'] = opt.get('pkg_name', lib.replace('-', '_'))
-      opt['deps'] = '' if opt.get('deps') else '--no-deps'
-      opt['url'] = opt.get('url', lib)
-      opt['version'] = opt.get('version', '')
-    return packages
-  except IOError:
-    return {}
-
-
 def listdir(directory, split_ext=False):
   try:
     if split_ext:
@@ -273,8 +254,11 @@ def site_packages_path():
   return os.path.join(DIR_VENV, 'lib', py_version, 'site-packages')
 
 
-def exists_venv():
-  return bool(spawn.find_executable('virtualenv'))
+def check_venv_installed():
+  if not bool(spawn.find_executable('virtualenv')):
+    print_out('NOT FOUND', 'virtualenv')
+    sys.exit(1)
+  return True
 
 
 def is_global_py_pkg(pkg_name):
@@ -286,8 +270,6 @@ def is_global_py_pkg(pkg_name):
 
 
 def create_virtualenv(is_windows):
-  if not exists_venv():
-    return False
   if not os.path.exists(FILE_VENV):
     os.system('virtualenv --no-site-packages %s' % DIR_VENV)
     if is_windows:
@@ -303,16 +285,13 @@ def create_virtualenv(is_windows):
     pth_file = os.path.join(site_packages_path(), 'gae.pth')
     echo_to = 'echo %s >> {pth}'.format(pth=pth_file)
     os.system(echo_to % gae_path)
-    os.system(echo_to % os.path.abspath(DIR_LIB))
     os.system(echo_to % os.path.abspath(DIR_LIBX))
     fix_path_cmd = 'import dev_appserver; dev_appserver.fix_sys_path()'
     os.system(echo_to % (fix_path_cmd if is_windows else '"%s"' % fix_path_cmd))
   return True
 
 
-def exec_pip_commands(pip_commands):
-  if not pip_commands:
-    return
+def exec_pip_commands():
   is_windows = platform.system() == 'Windows'
   script = []
   if create_virtualenv(is_windows):
@@ -323,7 +302,7 @@ def exec_pip_commands(pip_commands):
     activate_cmd %= FILE_VENV
     script.append('%s' % activate_cmd)
 
-  for cmd in pip_commands:
+  for cmd in ['pip install -r %s' % FILE_LIB_REQIREMENTS]:
     script.append('echo %s' % cmd)
     script.append('%s' % cmd)
   if is_windows:
@@ -334,23 +313,10 @@ def exec_pip_commands(pip_commands):
 
 
 def install_py_libs():
-  required = get_py_libs_required()
   installed = listdir(DIR_LIB, split_ext=True)
   installed.extend(listdir(DIR_LIBX, split_ext=True))
-  pip_commands = []
-  is_exists_venv = exists_venv()
-  for opt in required.itervalues():
-    if opt['pkg_name'] not in installed:
-      pip_cmd = 'pip install -qq --no-use-wheel %s {deps} {ignore} {lib}'
-      lib_name = '%s%s' % (opt['url'], opt['version'])
-      ignore = '--ignore-installed' if is_global_py_pkg(lib_name) else ''
-      pip_cmd = pip_cmd.format(deps=opt['deps'], ignore=ignore, lib=lib_name)
-      pip_commands.append(
-          pip_cmd % '' if is_exists_venv else pip_cmd % (
-              '--install-option="--prefix=%s"' % os.path.abspath(DIR_VENV)
-            )
-        )
-  exec_pip_commands(pip_commands)
+  check_venv_installed()
+  exec_pip_commands()
 
   exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info']
   exclude_prefix = ['setuptools-', 'pip-', 'Pillow-']
@@ -372,24 +338,15 @@ def install_py_libs():
     return False
 
   def _get_dest(pkg):
-    for req_pkg in required.itervalues():
-      if pkg == req_pkg['pkg_name'] or\
-          (pkg.startswith(req_pkg['pkg_name']) and pkg.endswith('.py')):
-        if not req_pkg['compress']:
-          if not os.path.exists(DIR_LIBX):
-            os.mkdir(DIR_LIBX)
-          return os.path.join(DIR_LIBX, pkg)
-        else:
-          break
     if not os.path.exists(DIR_LIB):
       os.mkdir(DIR_LIB)
     return os.path.join(DIR_LIB, pkg)
 
   site_packages = site_packages_path()
-  dir_lib = listdir(DIR_LIB)
-  dir_lib.extend(listdir(DIR_LIBX))
+  dir_libs = listdir(DIR_LIB)
+  dir_libs.extend(listdir(DIR_LIBX))
   for dir_ in listdir(site_packages):
-    if dir_ in dir_lib or dir_ in exclude:
+    if dir_ in dir_libs or dir_ in exclude:
       continue
     if _exclude_prefix(dir_) or _exclude_ext(dir_):
       continue
@@ -401,13 +358,9 @@ def install_py_libs():
 def clean_py_libs():
   site_packages = listdir(site_packages_path())
   dir_lib = listdir(DIR_LIB)
-  dir_libx = listdir(DIR_LIBX)
   for lib in dir_lib:
     if lib in site_packages:
       remove_file_dir(os.path.join(DIR_LIB, lib))
-  for lib in dir_libx:
-    if lib in site_packages:
-      remove_file_dir(os.path.join(DIR_LIBX, lib))
   remove_file_dir(DIR_VENV)
 
 
