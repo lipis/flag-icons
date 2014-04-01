@@ -261,14 +261,6 @@ def check_venv_installed():
   return True
 
 
-def is_global_py_pkg(pkg_name):
-  try:
-    __import__(pkg_name)
-    return True
-  except ImportError:
-    return False
-
-
 def create_virtualenv(is_windows):
   if not os.path.exists(FILE_VENV):
     os.system('virtualenv --no-site-packages %s' % DIR_VENV)
