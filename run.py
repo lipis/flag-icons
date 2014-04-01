@@ -274,6 +274,12 @@ def create_virtualenv(is_windows):
       gae_path = os.path.dirname(
           os.path.realpath(spawn.find_executable('dev_appserver.py'))
         )
+    os.system(
+        'echo %s >> %s' % (
+            'set PYTHONPATH=' if is_windows else 'unset PYTHONPATH',
+            FILE_VENV
+          )
+      )
     pth_file = os.path.join(site_packages_path(), 'gae.pth')
     echo_to = 'echo %s >> {pth}'.format(pth=pth_file)
     os.system(echo_to % gae_path)
