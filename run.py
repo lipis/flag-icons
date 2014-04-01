@@ -283,7 +283,7 @@ def create_virtualenv(is_windows):
   return True
 
 
-def exec_pip_commands():
+def exec_pip_commands(commands):
   is_windows = platform.system() == 'Windows'
   script = []
   if create_virtualenv(is_windows):
@@ -291,9 +291,13 @@ def exec_pip_commands():
     activate_cmd %= FILE_VENV
     script.append('%s' % activate_cmd)
 
-  for cmd in ['pip install -r %s' % FILE_LIB_REQIREMENTS]:
-    script.append('echo %s' % cmd)
-    script.append('%s' % cmd)
+  if type(commands) is list or type(commands) is tuple:
+    for cmd in commands:
+      script.append('echo %s' % cmd)
+      script.append('%s' % cmd)
+  else:
+    script.append('echo %s' % commands)
+    script.append('%s' % commands)
 
   script = '&'.join(script) if is_windows else \
       '/bin/bash -c "%s"' % ';'.join(script)
@@ -304,7 +308,7 @@ def install_py_libs():
   installed = listdir(DIR_LIB, split_ext=True)
   installed.extend(listdir(DIR_LIBX, split_ext=True))
   check_venv_installed()
-  exec_pip_commands()
+  exec_pip_commands('pip install -q -r %s' % FILE_LIB_REQIREMENTS)
 
   exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info']
   exclude_prefix = ['setuptools-', 'pip-', 'Pillow-']
