@@ -289,7 +289,7 @@ def exec_pip_commands(commands):
   if create_virtualenv(is_windows):
     activate_cmd = 'call %s' if is_windows else 'source %s'
     activate_cmd %= FILE_VENV
-    script.append('%s' % activate_cmd)
+    script.append(activate_cmd)
 
   if type(commands) is list or type(commands) is tuple:
     for cmd in commands:
