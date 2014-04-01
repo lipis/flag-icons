@@ -294,10 +294,10 @@ def exec_pip_commands(commands):
   if type(commands) is list or type(commands) is tuple:
     for cmd in commands:
       script.append('echo %s' % cmd)
-      script.append('%s' % cmd)
+      script.append(cmd)
   else:
     script.append('echo %s' % commands)
-    script.append('%s' % commands)
+    script.append(commands)
 
   script = '&'.join(script) if is_windows else \
       '/bin/bash -c "%s"' % ';'.join(script)
