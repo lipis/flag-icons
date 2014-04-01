@@ -336,8 +336,7 @@ def install_py_libs():
     return False
 
   def _get_dest(pkg):
-    if not os.path.exists(DIR_LIB):
-      os.mkdir(DIR_LIB)
+    make_dirs(DIR_LIB)
     return os.path.join(DIR_LIB, pkg)
 
   site_packages = site_packages_path()
