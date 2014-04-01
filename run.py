@@ -295,20 +295,16 @@ def exec_pip_commands():
   is_windows = platform.system() == 'Windows'
   script = []
   if create_virtualenv(is_windows):
-    if is_windows:
-      activate_cmd = 'call %s'
-    else:
-      activate_cmd = 'source %s'
+    activate_cmd = 'call %s' if is_windows else 'source %s'
     activate_cmd %= FILE_VENV
     script.append('%s' % activate_cmd)
 
   for cmd in ['pip install -r %s' % FILE_LIB_REQIREMENTS]:
     script.append('echo %s' % cmd)
     script.append('%s' % cmd)
-  if is_windows:
-    script = '&'.join(script)
-  else:
-    script = '/bin/bash -c "%s"' % ';'.join(script)
+
+  script = '&'.join(script) if is_windows else \
+      '/bin/bash -c "%s"' % ';'.join(script)
   os.system(script)
 
 
