@@ -373,8 +373,6 @@ def get_dependencies(file_name):
 
 
 def install_dependencies():
-  install_py_libs()
-
   for dependency in get_dependencies('package.json'):
     if not os.path.exists(os.path.join(DIR_NODE_MODULES, dependency)):
       os.system('npm install')
@@ -384,6 +382,8 @@ def install_dependencies():
     if not os.path.exists(os.path.join(DIR_BOWER_COMPONENTS, dependency)):
       os.system('"%s" ext' % FILE_GRUNT)
       break
+
+  install_py_libs()
 
 
 def check_for_update():
