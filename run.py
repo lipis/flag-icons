@@ -265,15 +265,19 @@ def create_virtualenv(is_windows):
   if not os.path.exists(FILE_VENV):
     os.system('virtualenv --no-site-packages %s' % DIR_VENV)
     if is_windows:
-      gae_path = 'C:\\Program Files\\Google\\google_appengine'
+      gae_path = None
       for path in os.environ['PATH'].split(os.pathsep):
         if os.path.isfile(os.path.join(path, 'dev_appserver.py')):
           gae_path = path
           break
     else:
-      gae_path = os.path.dirname(
-          os.path.realpath(spawn.find_executable('dev_appserver.py'))
-        )
+      gae_path = spawn.find_executable('dev_appserver.py')
+      if gae_path:
+        gae_path = os.path.dirname(os.path.realpath(gae_path))
+    if not gae_path:
+      print_out('NOT FOUND', 'Google App Engine SDK')
+      sys.exit(1)
+
     os.system(
         'echo %s >> %s' % (
             'set PYTHONPATH=' if is_windows else 'unset PYTHONPATH',
