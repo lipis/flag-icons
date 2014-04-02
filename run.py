@@ -262,9 +262,8 @@ def check_for_update():
       )
     response = urllib2.urlopen(request)
     make_dirs(DIR_TEMP)
-    update_json = open(FILE_UPDATE, 'w')
-    update_json.write(response.read())
-    update_json.close()
+    with open(FILE_UPDATE, 'w') as update_json:
+      update_json.write(response.read())
   except urllib2.HTTPError:
     pass
 
