@@ -322,7 +322,8 @@ def check_requirement(check_func):
   result, name, help_url_id = check_func()
   if not result:
     print_out('NOT FOUND', name)
-    print "Please see %s%s" % (REQUIREMENTS_URL, help_url_id)
+    if help_url_id:
+      print "Please see %s%s" % (REQUIREMENTS_URL, help_url_id)
     return False
   return True
 
@@ -336,7 +337,7 @@ def check_nodejs():
 
 
 def check_internet():
-  return internet_on(), 'INTERNET', '#internet'
+  return internet_on(), 'INTERNET', ''
 
 
 def doctor_say_ok():
