@@ -339,6 +339,10 @@ def check_pip():
   return bool(spawn.find_executable('pip')), 'PIP', '#pip'
 
 
+def check_internet():
+  return internet_on(), 'INTERNET', '#internet'
+
+
 def check_virtualenv():
   return bool(spawn.find_executable('virtualenv')), 'VIRTUALENV', '#virtualenv'
 
@@ -347,11 +351,7 @@ def doctor_say_ok():
   checkers = [check_nodejs, check_gae, check_pip, check_virtualenv]
   if False in [check_requirement(check) for check in checkers]:
     sys.exit(1)
-  if not internet_on():
-    print_out('NO INTERNET')
-    print 'Please see %s#internet' % REQUIREMENTS_URL
-    return False
-  return True
+  return check_requirement(check_internet)
 
 
 ###############################################################################
