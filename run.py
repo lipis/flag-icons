@@ -478,8 +478,16 @@ def check_nodejs():
   return bool(spawn.find_executable('node')), 'NODE.JS', '#nodejs'
 
 
+def check_pip():
+  return bool(spawn.find_executable('pip')), 'PIP', '#pip'
+
+
+def check_virtualenv():
+  return bool(spawn.find_executable('virtualenv')), 'VIRTUALENV', '#virtualenv'
+
+
 def doctor_say_ok():
-  checkers = [check_gae, check_nodejs]
+  checkers = [check_gae, check_nodejs, check_pip, check_virtualenv]
   if False in [check_requirement(check) for check in checkers]:
     sys.exit(1)
   return check_requirement(check_internet)
