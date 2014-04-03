@@ -2,9 +2,11 @@
 # -*- coding: utf-8 -*-
 
 from datetime import datetime
+from distutils import spawn
 import argparse
 import json
 import os
+import platform
 import shutil
 import sys
 import time
@@ -90,6 +92,11 @@ FILE_UGLIFYJS = os.path.join(DIR_BIN, 'uglifyjs')
 
 DIR_STORAGE = os.path.join(DIR_TEMP, 'storage')
 FILE_UPDATE = os.path.join(DIR_TEMP, 'update.json')
+
+###############################################################################
+# Other global variables
+###############################################################################
+REQUIREMENTS_URL = 'http://docs.gae-init.appspot.com/requirement/'
 
 
 ###############################################################################
@@ -221,14 +228,6 @@ def update_path_separators():
       scripts[idx] = fixit(scripts[idx])
 
 
-def internet_on():
-  try:
-    urllib2.urlopen('http://74.125.228.100', timeout=1)
-    return True
-  except urllib2.URLError:
-    return False
-
-
 def get_dependencies(file_name):
   with open(file_name) as json_file:
     json_data = json.load(json_file)
@@ -292,6 +291,59 @@ def update_missing_args():
 def uniq(seq):
   seen = set()
   return [e for e in seq if e not in seen and not seen.add(e)]
+
+
+###############################################################################
+# Doctor
+###############################################################################
+def internet_on():
+  try:
+    urllib2.urlopen('http://74.125.228.100', timeout=1)
+    return True
+  except urllib2.URLError:
+    return False
+
+
+def find_gae_path():
+  if platform.system() == 'Windows':
+    for path in os.environ['PATH'].split(os.pathsep):
+      if os.path.isfile(os.path.join(path, 'dev_appserver.py')):
+        return path
+  else:
+    gae_path = spawn.find_executable('dev_appserver.py')
+    if gae_path:
+      gae_path = os.path.dirname(os.path.realpath(gae_path))
+      return gae_path
+  return ''
+
+
+def check_requirement(check_func):
+  result, name, help_url_id = check_func()
+  if not result:
+    print_out('NOT FOUND', name)
+    if help_url_id:
+      print "Please see %s%s" % (REQUIREMENTS_URL, help_url_id)
+    return False
+  return True
+
+
+def check_gae():
+  return bool(find_gae_path()), 'GAE SDK', '#gae'
+
+
+def check_nodejs():
+  return bool(spawn.find_executable('node')), 'NODE.JS', '#nodejs'
+
+
+def check_internet():
+  return internet_on(), 'INTERNET', ''
+
+
+def doctor_say_ok():
+  checkers = [check_nodejs, check_gae]
+  if False in [check_requirement(check) for check in checkers]:
+    sys.exit(1)
+  return check_requirement(check_internet)
 
 
 ###############################################################################
@@ -394,11 +446,9 @@ def run():
   if ARGS.clean_all:
     run_clean_all()
 
-  if internet_on():
+  if doctor_say_ok():
     install_dependencies()
     check_for_update()
-  else:
-    print_out('NO INTERNET')
 
   print_out_update()
 
