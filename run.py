@@ -99,6 +99,7 @@ FILE_VENV = os.path.join(DIR_VENV, 'Scripts', 'activate.bat')\
 DIR_STORAGE = os.path.join(DIR_TEMP, 'storage')
 FILE_UPDATE = os.path.join(DIR_TEMP, 'update.json')
 
+
 ###############################################################################
 # Other global variables
 ###############################################################################
@@ -257,12 +258,9 @@ def site_packages_path():
 def create_virtualenv(is_windows):
   if not os.path.exists(FILE_VENV):
     os.system('virtualenv --no-site-packages %s' % DIR_VENV)
-    os.system(
-      'echo %s >> %s' % (
-        'set PYTHONPATH=' if is_windows else 'unset PYTHONPATH',
-        FILE_VENV
+    os.system('echo %s >> %s' % (
+        'set PYTHONPATH=' if is_windows else 'unset PYTHONPATH', FILE_VENV)
       )
-    )
     gae_path = find_gae_path()
     pth_file = os.path.join(site_packages_path(), 'gae.pth')
     echo_to = 'echo %s >> {pth}'.format(pth=pth_file)
@@ -273,7 +271,7 @@ def create_virtualenv(is_windows):
   return True
 
 
-def exec_pip_commands(commands):
+def exec_pip_commands(command):
   is_windows = platform.system() == 'Windows'
   script = []
   if create_virtualenv(is_windows):
@@ -281,14 +279,8 @@ def exec_pip_commands(commands):
     activate_cmd %= FILE_VENV
     script.append(activate_cmd)
 
-  if type(commands) is list or type(commands) is tuple:
-    for cmd in commands:
-      script.append('echo %s' % cmd)
-      script.append(cmd)
-  else:
-    script.append('echo %s' % commands)
-    script.append(commands)
-
+  script.append('echo %s' % command)
+  script.append(command)
   script = '&'.join(script) if is_windows else \
       '/bin/bash -c "%s"' % ';'.join(script)
   os.system(script)
