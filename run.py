@@ -254,36 +254,16 @@ def site_packages_path():
   return os.path.join(DIR_VENV, 'lib', py_version, 'site-packages')
 
 
-def check_venv_installed():
-  if not bool(spawn.find_executable('virtualenv')):
-    print_out('NOT FOUND', 'virtualenv')
-    sys.exit(1)
-  return True
-
-
 def create_virtualenv(is_windows):
   if not os.path.exists(FILE_VENV):
     os.system('virtualenv --no-site-packages %s' % DIR_VENV)
-    if is_windows:
-      gae_path = None
-      for path in os.environ['PATH'].split(os.pathsep):
-        if os.path.isfile(os.path.join(path, 'dev_appserver.py')):
-          gae_path = path
-          break
-    else:
-      gae_path = spawn.find_executable('dev_appserver.py')
-      if gae_path:
-        gae_path = os.path.dirname(os.path.realpath(gae_path))
-    if not gae_path:
-      print_out('NOT FOUND', 'Google App Engine SDK')
-      sys.exit(1)
-
     os.system(
-        'echo %s >> %s' % (
-            'set PYTHONPATH=' if is_windows else 'unset PYTHONPATH',
-            FILE_VENV
-          )
+      'echo %s >> %s' % (
+        'set PYTHONPATH=' if is_windows else 'unset PYTHONPATH',
+        FILE_VENV
       )
+    )
+    gae_path = find_gae_path()
     pth_file = os.path.join(site_packages_path(), 'gae.pth')
     echo_to = 'echo %s >> {pth}'.format(pth=pth_file)
     os.system(echo_to % gae_path)
@@ -317,7 +297,6 @@ def exec_pip_commands(commands):
 def install_py_libs():
   installed = listdir(DIR_LIB, split_ext=True)
   installed.extend(listdir(DIR_LIBX, split_ext=True))
-  check_venv_installed()
   exec_pip_commands('pip install -q -r %s' % FILE_LIB_REQIREMENTS)
 
   exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info']
