@@ -304,6 +304,16 @@ def internet_on():
     return False
 
 
+def check_requirement(check_func):
+  result, name, help_url_id = check_func()
+  if not result:
+    print_out('NOT FOUND', name)
+    if help_url_id:
+      print "Please see %s%s" % (REQUIREMENTS_URL, help_url_id)
+    return False
+  return True
+
+
 def find_gae_path():
   if platform.system() == 'Windows':
     for path in os.environ['PATH'].split(os.pathsep):
@@ -317,14 +327,8 @@ def find_gae_path():
   return ''
 
 
-def check_requirement(check_func):
-  result, name, help_url_id = check_func()
-  if not result:
-    print_out('NOT FOUND', name)
-    if help_url_id:
-      print "Please see %s%s" % (REQUIREMENTS_URL, help_url_id)
-    return False
-  return True
+def check_internet():
+  return internet_on(), 'INTERNET', ''
 
 
 def check_gae():
@@ -335,12 +339,8 @@ def check_nodejs():
   return bool(spawn.find_executable('node')), 'NODE.JS', '#nodejs'
 
 
-def check_internet():
-  return internet_on(), 'INTERNET', ''
-
-
 def doctor_say_ok():
-  checkers = [check_nodejs, check_gae]
+  checkers = [check_gae, check_nodejs]
   if False in [check_requirement(check) for check in checkers]:
     sys.exit(1)
   return check_requirement(check_internet)
