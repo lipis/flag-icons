@@ -2,21 +2,18 @@
 
 import os
 
-from google.appengine.api import app_identity
 from google.appengine.ext import ndb
 
+from config import APPLICATION_ID
+from config import CURRENT_VERSION_TIMESTAMP
 import modelx
 import util
-
-
-# The timestamp of the currently deployed version
-TIMESTAMP = long(os.environ.get('CURRENT_VERSION_ID').split('.')[1]) >> 28
 
 
 class Base(ndb.Model, modelx.BaseX):
   created = ndb.DateTimeProperty(auto_now_add=True)
   modified = ndb.DateTimeProperty(auto_now=True)
-  version = ndb.IntegerProperty(default=TIMESTAMP)
+  version = ndb.IntegerProperty(default=CURRENT_VERSION_TIMESTAMP)
 
   _PROPERTIES = {
       'key',
@@ -33,7 +30,7 @@ class Config(Base, modelx.ConfigX):
   announcement_type = ndb.StringProperty(default='info', choices=[
       'info', 'warning', 'success', 'danger',
     ])
-  brand_name = ndb.StringProperty(default=app_identity.get_application_id())
+  brand_name = ndb.StringProperty(default=APPLICATION_ID)
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
   feedback_email = ndb.StringProperty(default='')
