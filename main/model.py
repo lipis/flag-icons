@@ -1,7 +1,5 @@
 # coding: utf-8
 
-import os
-
 from google.appengine.ext import ndb
 
 from config import APPLICATION_ID
