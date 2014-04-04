@@ -328,11 +328,7 @@ def install_py_libs():
 
 
 def clean_py_libs():
-  site_packages = listdir(site_packages_path())
-  dir_lib = listdir(DIR_LIB)
-  for lib in dir_lib:
-    if lib in site_packages:
-      remove_file_dir(os.path.join(DIR_LIB, lib))
+  remove_file_dir(DIR_LIB)
   remove_file_dir(DIR_VENV)
 
 
@@ -482,6 +478,8 @@ def run_clean_all():
   remove_file_dir(DIR_BOWER_COMPONENTS)
   remove_file_dir(DIR_NODE_MODULES)
   clean_py_libs()
+  clean_files()
+  remove_file_dir(FILE_LIB)
 
 
 def run_minify():
