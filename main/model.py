@@ -4,7 +4,8 @@ import os
 
 from google.appengine.ext import ndb
 
-from config import APPLICATION_ID, CURRENT_VERSION_TIMESTAMP
+from config import APPLICATION_ID
+from config import CURRENT_VERSION_TIMESTAMP
 import modelx
 import util
 
