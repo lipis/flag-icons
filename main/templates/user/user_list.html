@@ -36,7 +36,7 @@
       <div class="btn-group btn-group-sm {{'hide' if not permissions}}">
         <button type="button" class="btn btn-info" disabled >Permissions</button>
         # for permission in permissions
-          {{utils.filter_by_link('permissions', permission, list=True)}}
+          {{utils.filter_by_link('permissions', permission, is_list=True)}}
         # endfor
         # if request.args.get('permissions')
           <a href="{{update_query_argument('permissions')}}" class="btn btn-default" title="Clear all permissions"><i class="fa fa-times"></i></a>
