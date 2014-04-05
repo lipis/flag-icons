@@ -1,4 +1,4 @@
-# macro order_by_link(property, title, ignore=['cursor'])
+# macro order_by_link(property, title, ignore='cursor')
   # if request.args.get('order') == property
     <a href="{{update_query_argument('order', '-' + property, ignore)}}">{{title}}</a>
     <i class="fa fa-chevron-up text-muted"></i>
@@ -11,7 +11,7 @@
 # endmacro
 
 
-# macro filter_by_link(property, value, icon=None, ignore=['cursor'], list=False)
+# macro filter_by_link(property, value, icon=None, ignore='cursor', list=False)
   # set value = '%s' % value
   <a href="{{update_query_argument(property, None if request.args.get(property) == value else value, ignore, list)}}"
      class="btn btn-default {{'active' if request.args.get(property, '').find(value) >= 0}}">
