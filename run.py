@@ -422,14 +422,21 @@ def check_requirement(check_func):
 
 def find_gae_path():
   if platform.system() == 'Windows':
+    gae_path = None
     for path in os.environ['PATH'].split(os.pathsep):
       if os.path.isfile(os.path.join(path, 'dev_appserver.py')):
-        return path
+        gae_path = path
   else:
     gae_path = spawn.find_executable('dev_appserver.py')
     if gae_path:
       gae_path = os.path.dirname(os.path.realpath(gae_path))
-      return gae_path
+  if not gae_path:
+    return ''
+  if os.path.isfile(os.path.join(gae_path, 'gcloud')):
+    # Google Cloud SDK?
+    gae_path = os.path.join(gae_path, '..', 'platform', 'google_appengine')
+    if os.path.exists:
+      return os.path.realpath(gae_path)
   return ''
 
 
