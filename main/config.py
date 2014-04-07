@@ -17,9 +17,9 @@ try:
   CURRENT_VERSION_NAME = CURRENT_VERSION_ID.split('.')[0]
   CURRENT_VERSION_TIMESTAMP = long(CURRENT_VERSION_ID.split('.')[1]) >> 28
   if DEVELOPMENT:
-    from calendar import timegm
-    CURRENT_VERSION_TIMESTAMP = long(timegm(datetime.now().timetuple()))
-  CURRENT_VERSION_DATE = datetime.fromtimestamp(CURRENT_VERSION_TIMESTAMP)
+    import calendar
+    CURRENT_VERSION_TIMESTAMP = calendar.timegm(datetime.utcnow().timetuple())
+  CURRENT_VERSION_DATE = datetime.utcfromtimestamp(CURRENT_VERSION_TIMESTAMP)
   APPLICATION_ID = app_identity.get_application_id()
 
   import model
