@@ -432,11 +432,11 @@ def find_gae_path():
       gae_path = os.path.dirname(os.path.realpath(gae_path))
   if not gae_path:
     return ''
-  if os.path.isfile(os.path.join(gae_path, 'gcloud')):
-    # Google Cloud SDK?
-    gae_path = os.path.join(gae_path, '..', 'platform', 'google_appengine')
-    if os.path.exists:
-      return os.path.realpath(gae_path)
+  if not os.path.isfile(os.path.join(gae_path, 'gcloud')):
+    return gae_path
+  gae_path = os.path.join(gae_path, '..', 'platform', 'google_appengine')
+  if os.path.exists:
+    return os.path.realpath(gae_path)
   return ''
 
 
