@@ -25,7 +25,6 @@ def user_list():
       limit=util.param('limit', int),
       cursor=util.param('cursor'),
       order=util.param('order') or '-created',
-      name=util.param('name'),
       admin=util.param('admin', bool),
       active=util.param('active', bool),
       permissions=util.param('permissions', list),
