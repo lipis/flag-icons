@@ -8,6 +8,7 @@ import json
 import os
 import platform
 import shutil
+import socket
 import sys
 import time
 import urllib
@@ -406,7 +407,7 @@ def internet_on():
   try:
     urllib2.urlopen('http://74.125.228.100', timeout=1)
     return True
-  except urllib2.URLError:
+  except (urllib2.URLError, socket.timeout):
     return False
 
 
