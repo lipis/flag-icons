@@ -39,7 +39,7 @@
           {{utils.filter_by_link('permissions', permission, is_list=True)}}
         # endfor
         # if request.args.get('permissions')
-          <a href="{{update_query_argument('permissions')}}" class="btn btn-default" title="Clear all permissions"><i class="fa fa-times"></i></a>
+          <a href="{{update_query_argument('permissions', ignore='cursor')}}" class="btn btn-default" title="Clear all permissions"><i class="fa fa-times"></i></a>
         # endif
       </div>
 
