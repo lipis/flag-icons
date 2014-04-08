@@ -85,8 +85,8 @@ DIR_MIN_SCRIPT = os.path.join(DIR_MIN, DIR_SCRIPT)
 
 DIR_LIB = os.path.join(DIR_MAIN, 'lib')
 DIR_LIBX = os.path.join(DIR_MAIN, 'libx')
-FILE_LIB_REQIREMENTS = 'requirements.txt'
 FILE_LIB = os.path.join(DIR_MAIN, 'lib.zip')
+FILE_LIB_REQIREMENTS = 'requirements.txt'
 
 DIR_BIN = os.path.join(DIR_NODE_MODULES, '.bin')
 FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
