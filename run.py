@@ -465,7 +465,7 @@ def check_virtualenv():
   return bool(spawn.find_executable('virtualenv')), 'VIRTUALENV', '#virtualenv'
 
 
-def doctor_say_ok():
+def doctor_says_ok():
   checkers = [check_gae, check_git, check_nodejs, check_pip, check_virtualenv]
   if False in [check_requirement(check) for check in checkers]:
     sys.exit(1)
@@ -575,7 +575,7 @@ def run():
   if ARGS.clean_all:
     run_clean_all()
 
-  if doctor_say_ok():
+  if doctor_says_ok():
     install_dependencies()
     check_for_update()
 
