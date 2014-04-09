@@ -86,7 +86,7 @@ DIR_MIN_SCRIPT = os.path.join(DIR_MIN, DIR_SCRIPT)
 DIR_LIB = os.path.join(DIR_MAIN, 'lib')
 DIR_LIBX = os.path.join(DIR_MAIN, 'libx')
 FILE_LIB = os.path.join(DIR_MAIN, 'lib.zip')
-FILE_LIB_REQIREMENTS = 'requirements.txt'
+FILE_LIB_REQUIREMENTS = 'requirements.txt'
 
 DIR_BIN = os.path.join(DIR_NODE_MODULES, '.bin')
 FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
@@ -290,7 +290,7 @@ def exec_pip_commands(command):
 def install_py_libs():
   installed = listdir(DIR_LIB, split_ext=True)
   installed.extend(listdir(DIR_LIBX, split_ext=True))
-  exec_pip_commands('pip install -q -r %s' % FILE_LIB_REQIREMENTS)
+  exec_pip_commands('pip install -q -r %s' % FILE_LIB_REQUIREMENTS)
 
   exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info']
   exclude_prefix = ['setuptools-', 'pip-', 'Pillow-']
