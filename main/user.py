@@ -95,7 +95,7 @@ def user_update(user_id):
     if not util.is_valid_username(form.username.data):
       form.username.errors.append('This username is invalid.')
     elif not is_username_available(form.username.data, user_db):
-      form.username.errors.append('This username is taken.')
+      form.username.errors.append('This username is already taken.')
     else:
       form.populate_obj(user_db)
       if auth.current_user_id() == user_db.key.id():
