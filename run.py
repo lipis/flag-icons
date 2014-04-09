@@ -288,8 +288,6 @@ def exec_pip_commands(command):
 
 
 def install_py_libs():
-  installed = listdir(DIR_LIB, split_ext=True)
-  installed.extend(listdir(DIR_LIBX, split_ext=True))
   exec_pip_commands('pip install -q -r %s' % FILE_LIB_REQUIREMENTS)
 
   exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info']
