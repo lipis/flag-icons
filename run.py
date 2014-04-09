@@ -87,7 +87,7 @@ DIR_LIB = os.path.join(DIR_MAIN, 'lib')
 DIR_LIBX = os.path.join(DIR_MAIN, 'libx')
 FILE_LIB = os.path.join(DIR_MAIN, 'lib.zip')
 FILE_LIB_REQUIREMENTS = 'requirements.txt'
-FILE_PIP_RUN = os.path.join(DIR_TEMP, 'pip_guard.lck')
+FILE_PIP_RUN = os.path.join(DIR_TEMP, 'pip.guard')
 
 DIR_BIN = os.path.join(DIR_NODE_MODULES, '.bin')
 FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
