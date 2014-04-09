@@ -331,6 +331,7 @@ def install_py_libs():
 def clean_py_libs():
   remove_file_dir(DIR_LIB)
   remove_file_dir(DIR_VENV)
+  make_dirs(DIR_LIB)
 
 
 def get_dependencies(file_name):
