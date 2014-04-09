@@ -291,7 +291,8 @@ def exec_pip_commands(command):
 def check_pip_should_run():
   if not os.path.exists(FILE_PIP_RUN):
     return True
-  return os.path.getmtime(FILE_PIP_RUN) < os.path.getmtime(FILE_LIB_REQUIREMENTS)
+  return os.path.getmtime(FILE_PIP_RUN) < \
+      os.path.getmtime(FILE_LIB_REQUIREMENTS)
 
 
 def install_py_libs():
