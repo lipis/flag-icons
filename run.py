@@ -291,11 +291,7 @@ def exec_pip_commands(command):
 def check_pip_should_run():
   if not os.path.exists(FILE_PIP_RUN):
     return True
-  last_pip_run = os.path.getmtime(FILE_PIP_RUN)
-  last_req_change = os.path.getmtime(FILE_LIB_REQUIREMENTS)
-  if last_pip_run < last_req_change:
-    return True
-  return False
+  return os.path.getmtime(FILE_PIP_RUN) < os.path.getmtime(FILE_LIB_REQUIREMENTS)
 
 
 def install_py_libs():
@@ -340,8 +336,7 @@ def install_py_libs():
     copy(src_path, _get_dest(dir_))
 
   with open(FILE_PIP_RUN, 'w') as pip_run:
-      pip_run.write('If this file exists and is newer than requirements.txt '
-                    'pip is not executed.')
+      pip_run.write('Prevents pip execution if newer than requirements.txt')
 
 
 def clean_py_libs():
