@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
 
 import flask
 from google.appengine.api import mail
@@ -25,15 +25,11 @@ def send_mail_notification(subject, body, **kwargs):
 def new_user_notification(user_db):
   if not config.CONFIG_DB.notify_on_new_user:
     return
-  update_url = '%s%s' % (
-      flask.request.host_url[:-1],
-      flask.url_for('user_update', user_id=user_db.key.id()),
-    )
   body = 'name: %s\nusername: %s\nemail: %s\n%s\n%s' % (
       user_db.name,
       user_db.username,
       user_db.email,
       ''.join([': '.join(('%s\n' % a).split('_')) for a in user_db.auth_ids]),
-      update_url,
+      flask.url_for('user_update', user_id=user_db.key.id(), _external=True),
     )
   send_mail_notification('New user: %s' % user_db.name, body)

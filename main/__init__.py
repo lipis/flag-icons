@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
 """
 gae-init
 ~~~~~~~~
@@ -13,4 +13,4 @@ License MIT, see LICENSE for more details.
 
 """
 
-__version__ = '0.14.3'
+__version__ = '0.14.9'
