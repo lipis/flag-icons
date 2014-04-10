@@ -87,6 +87,7 @@ DIR_LIB = os.path.join(DIR_MAIN, 'lib')
 DIR_LIBX = os.path.join(DIR_MAIN, 'libx')
 FILE_LIB = os.path.join(DIR_MAIN, 'lib.zip')
 FILE_LIB_REQUIREMENTS = 'requirements.txt'
+FILE_PIP_RUN = os.path.join(DIR_TEMP, 'pip.guard')
 
 DIR_BIN = os.path.join(DIR_NODE_MODULES, '.bin')
 FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
@@ -287,9 +288,17 @@ def exec_pip_commands(command):
   os.system(script)
 
 
+def check_pip_should_run():
+  if not os.path.exists(FILE_PIP_RUN):
+    return True
+  return os.path.getmtime(FILE_PIP_RUN) < \
+      os.path.getmtime(FILE_LIB_REQUIREMENTS)
+
+
 def install_py_libs():
-  installed = listdir(DIR_LIB, split_ext=True)
-  installed.extend(listdir(DIR_LIBX, split_ext=True))
+  if not check_pip_should_run():
+    return
+
   exec_pip_commands('pip install -q -r %s' % FILE_LIB_REQUIREMENTS)
 
   exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info']
@@ -327,10 +336,14 @@ def install_py_libs():
     copy = shutil.copy if os.path.isfile(src_path) else shutil.copytree
     copy(src_path, _get_dest(dir_))
 
+  with open(FILE_PIP_RUN, 'w') as pip_run:
+      pip_run.write('Prevents pip execution if newer than requirements.txt')
+
 
 def clean_py_libs():
   remove_file_dir(DIR_LIB)
   remove_file_dir(DIR_VENV)
+  make_dirs(DIR_LIB)
 
 
 def get_dependencies(file_name):
@@ -492,6 +505,7 @@ def run_clean_all():
   clean_py_libs()
   clean_files()
   remove_file_dir(FILE_LIB)
+  remove_file_dir(FILE_PIP_RUN)
 
 
 def run_minify():
