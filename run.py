@@ -585,13 +585,9 @@ def run_start():
 
 
 def run():
-  if len(sys.argv) == 1:
+  if len(sys.argv) == 1 or (ARGS.args and not ARGS.start):
     PARSER.print_help()
     sys.exit(1)
-
-  if ARGS.args and not ARGS.start:
-      PARSER.print_help()
-      sys.exit(1)
 
   os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
