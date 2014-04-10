@@ -457,27 +457,27 @@ def find_gae_path():
 
 
 def check_internet():
-  return internet_on(), 'INTERNET', ''
+  return internet_on(), 'Internet', ''
 
 
 def check_gae():
-  return bool(find_gae_path()), 'GAE SDK', '#gae'
+  return bool(find_gae_path()), 'Google App Engine SDK', '#gae'
 
 
 def check_git():
-  return bool(spawn.find_executable('git')), 'GIT', '#git'
+  return bool(spawn.find_executable('git')), 'Git', '#git'
 
 
 def check_nodejs():
-  return bool(spawn.find_executable('node')), 'NODE.JS', '#nodejs'
+  return bool(spawn.find_executable('node')), 'Node.js', '#nodejs'
 
 
 def check_pip():
-  return bool(spawn.find_executable('pip')), 'PIP', '#pip'
+  return bool(spawn.find_executable('pip')), 'pip', '#pip'
 
 
 def check_virtualenv():
-  return bool(spawn.find_executable('virtualenv')), 'VIRTUALENV', '#virtualenv'
+  return bool(spawn.find_executable('virtualenv')), 'virtualenv', '#virtualenv'
 
 
 def doctor_says_ok():
