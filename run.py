@@ -103,8 +103,9 @@ DIR_MIN_SCRIPT = os.path.join(DIR_MIN, DIR_SCRIPT)
 
 DIR_LIB = os.path.join(DIR_MAIN, 'lib')
 DIR_LIBX = os.path.join(DIR_MAIN, 'libx')
-FILE_LIB = os.path.join(DIR_MAIN, 'lib.zip')
-FILE_LIB_REQIREMENTS = 'requirements.txt'
+FILE_LIB = '%s.zip' % DIR_LIB
+FILE_LIB_REQUIREMENTS = 'requirements.txt'
+FILE_PIP_RUN = os.path.join(DIR_TEMP, 'pip.guard')
 
 DIR_BIN = os.path.join(DIR_NODE_MODULES, '.bin')
 FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
@@ -222,8 +223,11 @@ def make_lib_zip(force=False):
   if force and os.path.isfile(FILE_LIB):
     remove_file_dir(FILE_LIB)
   if not os.path.isfile(FILE_LIB):
-    print_out('ZIP', FILE_LIB)
-    shutil.make_archive(DIR_LIB, 'zip', DIR_LIB)
+    if os.path.exists(DIR_LIB):
+      print_out('ZIP', FILE_LIB)
+      shutil.make_archive(DIR_LIB, 'zip', DIR_LIB)
+    else:
+      print_out('NOT FOUND', DIR_LIB)
 
 
 def is_dirty(source, target):
@@ -309,10 +313,18 @@ def exec_pip_commands(command):
   os.system(script)
 
 
+def check_pip_should_run():
+  if not os.path.exists(FILE_PIP_RUN):
+    return True
+  return os.path.getmtime(FILE_PIP_RUN) < \
+      os.path.getmtime(FILE_LIB_REQUIREMENTS)
+
+
 def install_py_libs():
-  installed = listdir(DIR_LIB, split_ext=True)
-  installed.extend(listdir(DIR_LIBX, split_ext=True))
-  exec_pip_commands('pip install -q -r %s' % FILE_LIB_REQIREMENTS)
+  if not check_pip_should_run():
+    return
+
+  exec_pip_commands('pip install -q -r %s' % FILE_LIB_REQUIREMENTS)
 
   exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info']
   exclude_prefix = ['setuptools-', 'pip-', 'Pillow-']
@@ -348,6 +360,9 @@ def install_py_libs():
     src_path = os.path.join(site_packages, dir_)
     copy = shutil.copy if os.path.isfile(src_path) else shutil.copytree
     copy(src_path, _get_dest(dir_))
+
+  with open(FILE_PIP_RUN, 'w') as pip_run:
+      pip_run.write('Prevents pip execution if newer than requirements.txt')
 
 
 def clean_py_libs():
@@ -487,7 +502,7 @@ def check_virtualenv():
   return bool(spawn.find_executable('virtualenv')), 'VIRTUALENV', '#virtualenv'
 
 
-def doctor_say_ok():
+def doctor_says_ok():
   checkers = [check_gae, check_git, check_nodejs, check_pip, check_virtualenv]
   if False in [check_requirement(check) for check in checkers]:
     sys.exit(1)
@@ -548,6 +563,7 @@ def run_clean_all():
   clean_py_libs()
   clean_files()
   remove_file_dir(FILE_LIB)
+  remove_file_dir(FILE_PIP_RUN)
 
 
 def run_minify():
@@ -637,7 +653,7 @@ def run():
   if ARGS.clean_all:
     run_clean_all()
 
-  if doctor_say_ok():
+  if doctor_says_ok():
     install_dependencies()
     check_for_update()
 
