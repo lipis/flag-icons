@@ -431,7 +431,7 @@ def check_requirement(check_func):
   if not result:
     print_out('NOT FOUND', name)
     if help_url_id:
-      print "Please see %s%s" % (REQUIREMENTS_URL, help_url_id)
+      print 'Please see %s%s' % (REQUIREMENTS_URL, help_url_id)
     return False
   return True
 
