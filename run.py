@@ -85,7 +85,7 @@ DIR_MIN_SCRIPT = os.path.join(DIR_MIN, DIR_SCRIPT)
 
 DIR_LIB = os.path.join(DIR_MAIN, 'lib')
 DIR_LIBX = os.path.join(DIR_MAIN, 'libx')
-FILE_LIB = os.path.join(DIR_MAIN, 'lib.zip')
+FILE_LIB = '%s.zip' % DIR_LIB
 FILE_LIB_REQUIREMENTS = 'requirements.txt'
 FILE_PIP_RUN = os.path.join(DIR_TEMP, 'pip.guard')
 
@@ -201,8 +201,11 @@ def make_lib_zip(force=False):
   if force and os.path.isfile(FILE_LIB):
     remove_file_dir(FILE_LIB)
   if not os.path.isfile(FILE_LIB):
-    print_out('ZIP', FILE_LIB)
-    shutil.make_archive(DIR_LIB, 'zip', DIR_LIB)
+    if os.path.exists(DIR_LIB):
+      print_out('ZIP', FILE_LIB)
+      shutil.make_archive(DIR_LIB, 'zip', DIR_LIB)
+    else:
+      print_out('NOT FOUND', DIR_LIB)
 
 
 def is_dirty(source, target):
@@ -343,7 +346,6 @@ def install_py_libs():
 def clean_py_libs():
   remove_file_dir(DIR_LIB)
   remove_file_dir(DIR_VENV)
-  make_dirs(DIR_LIB)
 
 
 def get_dependencies(file_name):
