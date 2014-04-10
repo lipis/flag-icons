@@ -405,10 +405,12 @@ def check_for_update():
 
 
 def print_out_update():
+  import pip
+  SemVer = pip.util.version.SemanticVersion
   try:
     with open(FILE_UPDATE, 'r') as update_json:
       data = json.load(update_json)
-    if main.__version__ < data['version']:
+    if SemVer(main.__version__) < SemVer(data['version']):
       print_out('UPDATE')
       print_out(data['version'], 'Latest version of gae-init')
       print_out(main.__version__, 'Your version is a bit behind')
