@@ -236,9 +236,9 @@ def twitter_authorized(resp):
     return flask.redirect(util.get_next_url())
 
   flask.session['oauth_token'] = (
-    resp['oauth_token'],
-    resp['oauth_token_secret']
-  )
+      resp['oauth_token'],
+      resp['oauth_token_secret']
+    )
   user_db = retrieve_user_from_twitter(resp)
   return signin_user_db(user_db)
 
