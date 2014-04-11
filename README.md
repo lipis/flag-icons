@@ -113,7 +113,6 @@ Author
 [mdxs]: https://github.com/mdxs
 [moment.js]: http://momentjs.com/
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
-[ndb]: https://developers.google.com/appengine/docs/python/ndb/
 [node.js]: http://nodejs.org/
 [nprogress]: http://ricostacruz.com/nprogress/
 [openid]: http://en.wikipedia.org/wiki/OpenID
