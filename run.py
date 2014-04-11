@@ -372,7 +372,7 @@ def install_dependencies():
 def check_for_update():
   if os.path.exists(FILE_UPDATE):
     mtime = os.path.getmtime(FILE_UPDATE)
-    last = datetime.fromtimestamp(mtime).strftime('%Y-%m-%d')
+    last = datetime.utcfromtimestamp(mtime).strftime('%Y-%m-%d')
     today = datetime.utcnow().strftime('%Y-%m-%d')
     if last == today:
       return
