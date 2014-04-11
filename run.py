@@ -372,7 +372,7 @@ def install_dependencies():
 def check_for_update():
   if os.path.exists(FILE_UPDATE):
     mtime = os.path.getmtime(FILE_UPDATE)
-    last = datetime.fromtimestamp(mtime).strftime('%Y-%m-%d')
+    last = datetime.utcfromtimestamp(mtime).strftime('%Y-%m-%d')
     today = datetime.utcnow().strftime('%Y-%m-%d')
     if last == today:
       return
@@ -391,9 +391,8 @@ def check_for_update():
 
 def print_out_update():
   try:
-    update_json = open(FILE_UPDATE)
-    data = json.load(update_json)
-    update_json.close()
+    with open(FILE_UPDATE, 'r') as update_json:
+      data = json.load(update_json)
     if main.__version__ < data['version']:
       print_out('UPDATE')
       print_out(data['version'], 'Latest version of gae-init')
