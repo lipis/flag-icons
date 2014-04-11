@@ -37,9 +37,9 @@ def param(name, cast=None):
 
 
 def get_next_url():
-  next = param('next')
-  if next:
-    return next
+  next_url = param('next')
+  if next_url:
+    return next_url
   referrer = flask.request.referrer
   if referrer and referrer.startswith(flask.request.host_url):
     return referrer
