@@ -90,6 +90,12 @@ def is_logged_in():
 # Decorators
 ###############################################################################
 def login_required(f):
+  if f in app.view_functions.values():
+    raise SyntaxError(
+        'Do not use auth.login_required above app.route decorators as it '
+        'would not be checked. Instead move the line below the app.route '
+        'lines.'
+      )
   @functools.wraps(f)
   def decorated_function(*args, **kws):
     if is_logged_in():
@@ -101,6 +107,12 @@ def login_required(f):
 
 
 def admin_required(f):
+  if f in app.view_functions.values():
+    raise SyntaxError(
+        'Do not use auth.admin_required above app.route decorators as it '
+        'would not be checked. Instead move the line below the app.route '
+        'lines.'
+      )
   @functools.wraps(f)
   def decorated_function(*args, **kws):
     if is_logged_in() and current_user_db().admin:
@@ -118,6 +130,13 @@ permission_registered = _signals.signal('permission-registered')
 
 def permission_required(permission=None, methods=None):
   def permission_decorator(f):
+    if f in app.view_functions.values():
+      raise SyntaxError(
+          'Do not use auth.permisison_required above app.route decorators as '
+          'it would not be checked. Instead move the line below the app.route '
+          'lines.'
+        )
+
     # default to decorated function name as permission
     perm = permission or f.func_name
     meths = [m.upper() for m in methods] if methods else None
