@@ -9,6 +9,9 @@ builtins:
 - deferred: on
 - appstats: on
 
+inbound_services:
+- warmup
+
 libraries:
 - name: jinja2
   version: latest
