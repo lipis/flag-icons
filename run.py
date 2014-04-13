@@ -264,8 +264,8 @@ def create_virtualenv(is_windows):
   if not os.path.exists(FILE_VENV):
     os.system('virtualenv --no-site-packages %s' % DIR_VENV)
     os.system('echo %s >> %s' % (
-        'set PYTHONPATH=' if is_windows else 'unset PYTHONPATH', FILE_VENV)
-      )
+        'set PYTHONPATH=' if is_windows else 'unset PYTHONPATH', FILE_VENV
+      ))
     gae_path = find_gae_path()
     pth_file = os.path.join(site_packages_path(), 'gae.pth')
     echo_to = 'echo %s >> {pth}'.format(pth=pth_file)
@@ -273,8 +273,8 @@ def create_virtualenv(is_windows):
     os.system(echo_to % os.path.abspath(DIR_LIBX))
     fix_path_cmd = 'import dev_appserver; dev_appserver.fix_sys_path()'
     os.system(echo_to % (
-        fix_path_cmd if is_windows else '"%s"' % fix_path_cmd)
-      )
+        fix_path_cmd if is_windows else '"%s"' % fix_path_cmd
+      ))
   return True
 
 
