@@ -112,8 +112,8 @@ FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
 FILE_GRUNT = os.path.join(DIR_BIN, 'grunt')
 FILE_LESS = os.path.join(DIR_BIN, 'lessc')
 FILE_UGLIFYJS = os.path.join(DIR_BIN, 'uglifyjs')
-FILE_VENV = os.path.join(DIR_VENV, 'Scripts', 'activate.bat')\
-    if platform.system() is 'Windows'\
+FILE_VENV = os.path.join(DIR_VENV, 'Scripts', 'activate.bat') \
+    if platform.system() is 'Windows' \
     else os.path.join(DIR_VENV, 'bin', 'activate')
 
 DIR_STORAGE = os.path.join(DIR_TEMP, 'storage')
@@ -286,15 +286,17 @@ def create_virtualenv(is_windows):
   if not os.path.exists(FILE_VENV):
     os.system('virtualenv --no-site-packages %s' % DIR_VENV)
     os.system('echo %s >> %s' % (
-        'set PYTHONPATH=' if is_windows else 'unset PYTHONPATH', FILE_VENV)
-      )
+        'set PYTHONPATH=' if is_windows else 'unset PYTHONPATH', FILE_VENV
+      ))
     gae_path = find_gae_path()
     pth_file = os.path.join(site_packages_path(), 'gae.pth')
     echo_to = 'echo %s >> {pth}'.format(pth=pth_file)
     os.system(echo_to % gae_path)
     os.system(echo_to % os.path.abspath(DIR_LIBX))
     fix_path_cmd = 'import dev_appserver; dev_appserver.fix_sys_path()'
-    os.system(echo_to % (fix_path_cmd if is_windows else '"%s"' % fix_path_cmd))
+    os.system(echo_to % (
+        fix_path_cmd if is_windows else '"%s"' % fix_path_cmd
+      ))
   return True
 
 
@@ -362,7 +364,7 @@ def install_py_libs():
     copy(src_path, _get_dest(dir_))
 
   with open(FILE_PIP_RUN, 'w') as pip_run:
-      pip_run.write('Prevents pip execution if newer than requirements.txt')
+    pip_run.write('Prevents pip execution if newer than requirements.txt')
 
 
 def clean_py_libs():
@@ -394,7 +396,7 @@ def install_dependencies():
 def check_for_update():
   if os.path.exists(FILE_UPDATE):
     mtime = os.path.getmtime(FILE_UPDATE)
-    last = datetime.fromtimestamp(mtime).strftime('%Y-%m-%d')
+    last = datetime.utcfromtimestamp(mtime).strftime('%Y-%m-%d')
     today = datetime.utcnow().strftime('%Y-%m-%d')
     if last == today:
       return
@@ -413,9 +415,8 @@ def check_for_update():
 
 def print_out_update():
   try:
-    update_json = open(FILE_UPDATE)
-    data = json.load(update_json)
-    update_json.close()
+    with open(FILE_UPDATE, 'r') as update_json:
+      data = json.load(update_json)
     if main.__version__ < data['version']:
       print_out('UPDATE')
       print_out(data['version'], 'Latest version of gae-init')
@@ -453,7 +454,7 @@ def check_requirement(check_func):
   if not result:
     print_out('NOT FOUND', name)
     if help_url_id:
-      print "Please see %s%s" % (REQUIREMENTS_URL, help_url_id)
+      print 'Please see %s%s' % (REQUIREMENTS_URL, help_url_id)
     return False
   return True
 
@@ -479,27 +480,27 @@ def find_gae_path():
 
 
 def check_internet():
-  return internet_on(), 'INTERNET', ''
+  return internet_on(), 'Internet', ''
 
 
 def check_gae():
-  return bool(find_gae_path()), 'GAE SDK', '#gae'
+  return bool(find_gae_path()), 'Google App Engine SDK', '#gae'
 
 
 def check_git():
-  return bool(spawn.find_executable('git')), 'GIT', '#git'
+  return bool(spawn.find_executable('git')), 'Git', '#git'
 
 
 def check_nodejs():
-  return bool(spawn.find_executable('node')), 'NODE.JS', '#nodejs'
+  return bool(spawn.find_executable('node')), 'Node.js', '#nodejs'
 
 
 def check_pip():
-  return bool(spawn.find_executable('pip')), 'PIP', '#pip'
+  return bool(spawn.find_executable('pip')), 'pip', '#pip'
 
 
 def check_virtualenv():
-  return bool(spawn.find_executable('virtualenv')), 'VIRTUALENV', '#virtualenv'
+  return bool(spawn.find_executable('virtualenv')), 'virtualenv', '#virtualenv'
 
 
 def doctor_says_ok():

@@ -54,18 +54,14 @@ and you ran the `run.py` script to minify all the static files:
 Tech Stack
 ----------
 
-  - [Google App Engine][]
-  - [Python 2.7][]
-  - [NDB][]
-  - [Jinja2][]
-  - [Flask][]
-  - [jQuery][]
-  - [CoffeeScript][]
-  - [LessCSS][]
-  - [Bootstrap][]
-  - [Font Awesome][]
-  - [NProgress][]
-  - [Moment.js][]
+  - [Google App Engine][], [NDB][]
+  - [Jinja2][], [Flask][], [Flask-WTF][]
+  - [CoffeeScript][], [Less][]
+  - [Bootstrap][], [Font Awesome][], [Social Buttons][]
+  - [jQuery][], [NProgress][], [Moment.js][]
+  - [OpenID][] sign in (Google, Facebook, Twitter)
+  - [Python 2.7][], [pip][], [virtualenv][]
+  - [Grunt][], [Bower][]
   - [Babel][]
 
 Requirements
@@ -88,24 +84,29 @@ Author
 
 [babel]: http://babel.edgewall.org/wiki/Download
 [bootstrap]: http://getbootstrap.com/
+[bower]: http://bower.io/
 [coffeescript]: http://coffeescript.org/
 [docs]: http://docs.gae-init.appspot.com
 [feature list]: http://docs.gae-init.appspot.com/features/
+[flask-wtf]: https://flask-wtf.readthedocs.org
 [flask]: http://flask.pocoo.org/
 [font awesome]: http://fortawesome.github.com/Font-Awesome/
 [gae-init]: http://gae-init.appspot.com
-[google app engine sdk for python]: https://developers.google.com/appengine/downloads
 [google app engine]: https://developers.google.com/appengine/
 [grunt-cli]: https://github.com/gruntjs/grunt-cli
+[grunt]: http://gruntjs.com/
 [jinja2]: http://jinja.pocoo.org/docs/
 [jquery]: http://jquery.com/
-[lesscss]: http://lesscss.org/
+[less]: http://lesscss.org/
 [lipis]: http://stackoverflow.com/users/8418/lipis
 [lipisflair]: http://stackexchange.com/users/flair/5282.png
 [moment.js]: http://momentjs.com/
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
-[node.js]: http://nodejs.org/
 [nprogress]: http://ricostacruz.com/nprogress/
-[osx]: http://www.apple.com/osx/
+[openid]: http://en.wikipedia.org/wiki/OpenID
+[pip]: http://www.pip-installer.org/
 [python 2.7]: https://developers.google.com/appengine/docs/python/python27/using27
+[social buttons]: http://lipis.github.io/bootstrap-social/
 [tutorial]: http://docs.gae-init.appspot.com/tutorial/
+[virtualenv]: http://www.virtualenv.org/
+[xcash]: https://github.com/xcash
