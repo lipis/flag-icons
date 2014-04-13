@@ -94,8 +94,8 @@ FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
 FILE_GRUNT = os.path.join(DIR_BIN, 'grunt')
 FILE_LESS = os.path.join(DIR_BIN, 'lessc')
 FILE_UGLIFYJS = os.path.join(DIR_BIN, 'uglifyjs')
-FILE_VENV = os.path.join(DIR_VENV, 'Scripts', 'activate.bat')\
-    if platform.system() is 'Windows'\
+FILE_VENV = os.path.join(DIR_VENV, 'Scripts', 'activate.bat') \
+    if platform.system() is 'Windows' \
     else os.path.join(DIR_VENV, 'bin', 'activate')
 
 DIR_STORAGE = os.path.join(DIR_TEMP, 'storage')
@@ -272,7 +272,9 @@ def create_virtualenv(is_windows):
     os.system(echo_to % gae_path)
     os.system(echo_to % os.path.abspath(DIR_LIBX))
     fix_path_cmd = 'import dev_appserver; dev_appserver.fix_sys_path()'
-    os.system(echo_to % (fix_path_cmd if is_windows else '"%s"' % fix_path_cmd))
+    os.system(echo_to % (
+        fix_path_cmd if is_windows else '"%s"' % fix_path_cmd)
+      )
   return True
 
 
@@ -340,7 +342,7 @@ def install_py_libs():
     copy(src_path, _get_dest(dir_))
 
   with open(FILE_PIP_RUN, 'w') as pip_run:
-      pip_run.write('Prevents pip execution if newer than requirements.txt')
+    pip_run.write('Prevents pip execution if newer than requirements.txt')
 
 
 def clean_py_libs():
