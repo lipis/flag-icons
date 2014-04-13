@@ -272,7 +272,9 @@ def create_virtualenv(is_windows):
     os.system(echo_to % gae_path)
     os.system(echo_to % os.path.abspath(DIR_LIBX))
     fix_path_cmd = 'import dev_appserver; dev_appserver.fix_sys_path()'
-    os.system(echo_to % (fix_path_cmd if is_windows else '"%s"' % fix_path_cmd))
+    os.system(echo_to % (
+        fix_path_cmd if is_windows else '"%s"' % fix_path_cmd)
+      )
   return True
 
 
