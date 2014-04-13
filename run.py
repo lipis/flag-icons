@@ -94,8 +94,8 @@ FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
 FILE_GRUNT = os.path.join(DIR_BIN, 'grunt')
 FILE_LESS = os.path.join(DIR_BIN, 'lessc')
 FILE_UGLIFYJS = os.path.join(DIR_BIN, 'uglifyjs')
-FILE_VENV = os.path.join(DIR_VENV, 'Scripts', 'activate.bat')\
-    if platform.system() is 'Windows'\
+FILE_VENV = os.path.join(DIR_VENV, 'Scripts', 'activate.bat') \
+    if platform.system() is 'Windows' \
     else os.path.join(DIR_VENV, 'bin', 'activate')
 
 DIR_STORAGE = os.path.join(DIR_TEMP, 'storage')
