@@ -340,7 +340,7 @@ def install_py_libs():
     copy(src_path, _get_dest(dir_))
 
   with open(FILE_PIP_RUN, 'w') as pip_run:
-      pip_run.write('Prevents pip execution if newer than requirements.txt')
+    pip_run.write('Prevents pip execution if newer than requirements.txt')
 
 
 def clean_py_libs():
