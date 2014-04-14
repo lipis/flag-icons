@@ -194,7 +194,7 @@ def is_valid_username(username):
   return True if re.match('^[a-z0-9]+(?:[\.][a-z0-9]+)*$', username) else False
 
 
-def update_query_argument(name, value=None, ignore=None, is_list=False):
+def update_query_argument(name, value=None, ignore='cursor', is_list=False):
   ignore = ignore.split(',') if isinstance(ignore, str) else ignore or []
   arguments = {}
   for key, val in flask.request.args.items():
