@@ -1,5 +1,5 @@
 window.init_announcement = ->
-  ($ '.alert-announcement button.close').click (e) ->
+  ($ '.alert-announcement button.close').click ->
     if sessionStorage
       sessionStorage['closedAnnouncement'] = ($ '.alert-announcement').html()
 
