@@ -7,10 +7,14 @@ body {
 }
 
 .alert-announcement {
-  border-radius: 0;
-  padding-left: 0;
-  padding-right: 0;
-  margin: 0;
+  &.container {
+    border-radius: 0;
+    margin-bottom: 0;
+    padding: @alert-padding;
+  }
+  > .close {
+    right: 0;
+  }
 }
 
 .img-error {
