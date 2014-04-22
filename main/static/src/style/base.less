@@ -6,14 +6,15 @@ body {
   }
 }
 
-.alert-announcement.container {
-  .alert;
-  border-radius: 0;
-  margin-bottom: 0;
-}
-
-.alert-announcement > button.close {
-  right: 0;
+.alert-announcement {
+  &.container {
+    border-radius: 0;
+    margin-bottom: 0;
+    padding: @alert-padding;
+  }
+  > .close {
+    right: 0;
+  }
 }
 
 .img-error {
