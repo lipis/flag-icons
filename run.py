@@ -32,8 +32,8 @@ PARSER.add_argument(
   )
 PARSER.add_argument(
     '-C', '--clean-all', dest='clean_all', action='store_true',
-    help='''Cleans all the Node & Bower related tools / libraries and updates
-    them to their latest versions''',
+    help='''Cleans all the pip, Node & Bower related tools / libraries and
+    updates them to their latest versions''',
   )
 PARSER.add_argument(
     '-m', '--minify', dest='minify', action='store_true',
