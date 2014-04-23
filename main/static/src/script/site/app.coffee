@@ -17,6 +17,3 @@ $ -> ($ 'html.user-merge').each ->
 
 $ -> ($ 'html.admin-config').each ->
   init_admin_config()
-
-$ -> ($ '.alert-announcement').each ->
-  init_announcement()

@@ -54,7 +54,6 @@ SCRIPTS = [
         'src/script/common/service.coffee',
         'src/script/common/util.coffee',
         'src/script/site/app.coffee',
-        'src/script/site/announcement.coffee',
         'src/script/site/admin.coffee',
         'src/script/site/profile.coffee',
         'src/script/site/user.coffee',

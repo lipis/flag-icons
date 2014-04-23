@@ -5,6 +5,7 @@ window.LOG = ->
 window.init_common = ->
   init_loading_button()
   init_time()
+  init_announcement()
 
 
 window.init_loading_button = ->
@@ -25,6 +26,14 @@ window.init_time = ->
         ($ this).attr 'title', date.local().format 'dddd, MMMM Do YYYY, HH:mm:ss Z'
       setTimeout arguments.callee, 1000 * 45
     recalculate()
+
+
+window.init_announcement = ->
+  ($ '.alert-announcement button.close').click ->
+    sessionStorage?.setItem 'closedAnnouncement', ($ '.alert-announcement').html()
+
+  if sessionStorage?.getItem('closedAnnouncement') == ($ '.alert-announcement').html()
+    ($ '.alert-announcement').hide()
 
 
 window.clear_notifications = ->
