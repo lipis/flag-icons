@@ -97,7 +97,7 @@ class FeedbackForm(wtf.Form):
   message = wtf.TextAreaField('Message',
       [wtf.validators.required()], filters=[util.strip_filter],
     )
-  email = wtf.StringField('Email (optional)',
+  email = wtf.StringField('Your email (optional)',
       [wtf.validators.optional(), wtf.validators.email()],
       filters=[util.email_filter],
     )
