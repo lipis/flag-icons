@@ -90,12 +90,7 @@ def is_logged_in():
 # Decorators
 ###############################################################################
 def login_required(f):
-  if f in app.view_functions.values():
-    raise SyntaxError(
-        'Do not use auth.login_required above app.route decorators as it '
-        'would not be checked. Instead move the line below the app.route '
-        'lines.'
-      )
+  decorator_order_guard(f, 'auth.login_required')
   @functools.wraps(f)
   def decorated_function(*args, **kws):
     if is_logged_in():
@@ -107,12 +102,7 @@ def login_required(f):
 
 
 def admin_required(f):
-  if f in app.view_functions.values():
-    raise SyntaxError(
-        'Do not use auth.admin_required above app.route decorators as it '
-        'would not be checked. Instead move the line below the app.route '
-        'lines.'
-      )
+  decorator_order_guard(f, 'auth.admin_required')
   @functools.wraps(f)
   def decorated_function(*args, **kws):
     if is_logged_in() and current_user_db().admin:
@@ -130,12 +120,7 @@ permission_registered = _signals.signal('permission-registered')
 
 def permission_required(permission=None, methods=None):
   def permission_decorator(f):
-    if f in app.view_functions.values():
-      raise SyntaxError(
-          'Do not use auth.permisison_required above app.route decorators as '
-          'it would not be checked. Instead move the line below the app.route '
-          'lines.'
-        )
+    decorator_order_guard(f, 'auth.permission_required')
 
     # default to decorated function name as permission
     perm = permission or f.func_name
@@ -355,6 +340,14 @@ def retrieve_user_from_facebook(response):
 ###############################################################################
 # Helpers
 ###############################################################################
+def decorator_order_guard(f, decorator_name):
+  if f in app.view_functions.values():
+    raise SyntaxError(
+        'Do not use %s above app.route decorators as it would not be checked. '
+        'Instead move the line below the app.route lines.' % decorator_name
+      )
+
+
 def create_user_db(auth_id, name, username, email='', **params):
   username = re.sub(r'_+|-+|\s+', '.', username.split('@')[0].lower().strip())
   new_username = username
