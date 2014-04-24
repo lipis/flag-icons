@@ -181,7 +181,7 @@ def signout():
 @app.route('/signin/google/')
 def signin_google():
   google_url = users.create_login_url(
-      flask.url_for('google_authorized', next=util.get_next_url())
+      flask.url_for('google_authorized', **flask.request.args)
     )
   return flask.redirect(google_url)
 
@@ -257,8 +257,7 @@ def signin_twitter():
   flask.session.pop('oauth_token', None)
   try:
     return twitter.authorize(
-        callback=flask.url_for('twitter_authorized',
-        next=util.get_next_url()),
+        callback=flask.url_for('twitter_authorized', **flask.request.args),
       )
   except:
     flask.flash(
@@ -318,10 +317,9 @@ def get_facebook_oauth_token():
 
 @app.route('/signin/facebook/')
 def signin_facebook():
-  return facebook.authorize(callback=flask.url_for('facebook_authorized',
-      next=util.get_next_url(),
-      _external=True),
-    )
+  return facebook.authorize(callback=flask.url_for(
+      'facebook_authorized', _external=True, **flask.request.args
+    ))
 
 
 def retrieve_user_from_facebook(response):
@@ -373,7 +371,7 @@ def signin_user_db(user_db):
   if not user_db:
     return flask.redirect(flask.url_for('signin'))
   flask_user_db = FlaskUser(user_db)
-  if login.login_user(flask_user_db):
+  if login.login_user(flask_user_db, remember=util.param('remember', bool)):
     user_db.put_async()
     flask.flash('Hello %s, welcome to %s.' % (
         user_db.name, config.CONFIG_DB.brand_name,
