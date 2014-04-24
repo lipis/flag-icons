@@ -91,6 +91,7 @@ def is_logged_in():
 ###############################################################################
 def login_required(f):
   decorator_order_guard(f, 'auth.login_required')
+
   @functools.wraps(f)
   def decorated_function(*args, **kws):
     if is_logged_in():
@@ -103,6 +104,7 @@ def login_required(f):
 
 def admin_required(f):
   decorator_order_guard(f, 'auth.admin_required')
+
   @functools.wraps(f)
   def decorated_function(*args, **kws):
     if is_logged_in() and current_user_db().admin:
