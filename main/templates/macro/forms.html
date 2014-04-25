@@ -82,14 +82,14 @@
   <div class="form-group {{'has-error' if field.errors}}">
     {{field.label(class='control-label')}}
     {{field_description(field)}}
-    # for choice in field.choices
+    # for choice, desc in field.choices.items()
       <div class="checkbox">
         <label>
-          <input type="checkbox" name="{{field.name}}" value="{{choice[0]}}"
-            # if field.data and choice[0] in field.data
+          <input type="checkbox" name="{{field.name}}" value="{{choice}}"
+            # if field.data and choice in field.data
               checked
             # endif
-          > {{choice[1]}}
+          > {{desc}}
         </label>
       </div>
     # endfor
