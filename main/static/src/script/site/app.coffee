@@ -7,6 +7,9 @@ $ -> ($ 'html.welcome').each ->
 $ -> ($ 'html.profile').each ->
   init_profile()
 
+$ -> ($ 'html.signin').each ->
+  init_signin()
+
 $ -> ($ 'html.feedback').each ->
 
 $ -> ($ 'html.user-list').each ->
@@ -17,6 +20,3 @@ $ -> ($ 'html.user-merge').each ->
 
 $ -> ($ 'html.admin-config').each ->
   init_admin_config()
-
-$ -> ($ '.alert-announcement').each ->
-  init_announcement()

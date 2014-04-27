@@ -131,6 +131,8 @@ def is_logged_in():
 # Decorators
 ###############################################################################
 def login_required(f):
+  decorator_order_guard(f, 'auth.login_required')
+
   @functools.wraps(f)
   def decorated_function(*args, **kws):
     if is_logged_in():
@@ -142,6 +144,8 @@ def login_required(f):
 
 
 def admin_required(f):
+  decorator_order_guard(f, 'auth.admin_required')
+
   @functools.wraps(f)
   def decorated_function(*args, **kws):
     if is_logged_in() and current_user_db().admin:
@@ -159,6 +163,8 @@ permission_registered = _signals.signal('permission-registered')
 
 def permission_required(permission=None, methods=None):
   def permission_decorator(f):
+    decorator_order_guard(f, 'auth.permission_required')
+
     # default to decorated function name as permission
     perm = permission or f.func_name
     meths = [m.upper() for m in methods] if methods else None
@@ -217,9 +223,8 @@ def signout():
 ###############################################################################
 @app.route('/signin/google/')
 def signin_google():
-  google_url = users.create_login_url(
-      flask.url_for('google_authorized', next=util.get_next_url())
-    )
+  save_request_params()
+  google_url = users.create_login_url(flask.url_for('google_authorized'))
   return flask.redirect(google_url)
 
 
@@ -292,11 +297,9 @@ def get_twitter_token():
 @app.route('/signin/twitter/')
 def signin_twitter():
   flask.session.pop('oauth_token', None)
+  save_request_params()
   try:
-    return twitter.authorize(
-        callback=flask.url_for('twitter_authorized',
-        next=util.get_next_url()),
-      )
+    return twitter.authorize(callback=flask.url_for('twitter_authorized'))
   except:
     flask.flash(
         __('Something went wrong with Twitter sign in. Please try again.'),
@@ -355,10 +358,10 @@ def get_facebook_oauth_token():
 
 @app.route('/signin/facebook/')
 def signin_facebook():
-  return facebook.authorize(callback=flask.url_for('facebook_authorized',
-      next=util.get_next_url(),
-      _external=True),
-    )
+  save_request_params()
+  return facebook.authorize(callback=flask.url_for(
+      'facebook_authorized', _external=True
+    ))
 
 
 def retrieve_user_from_facebook(response):
@@ -377,6 +380,14 @@ def retrieve_user_from_facebook(response):
 ###############################################################################
 # Helpers
 ###############################################################################
+def decorator_order_guard(f, decorator_name):
+  if f in app.view_functions.values():
+    raise SyntaxError(
+        'Do not use %s above app.route decorators as it would not be checked. '
+        'Instead move the line below the app.route lines.' % decorator_name
+      )
+
+
 def create_user_db(auth_id, name, username, email='', **params):
   username = re.sub(r'_+|-+|\s+', '.', username.split('@')[0].lower().strip())
   new_username = username
@@ -398,14 +409,25 @@ def create_user_db(auth_id, name, username, email='', **params):
   return user_db
 
 
+def save_request_params():
+  flask.session['auth-params'] = {
+      'next': util.get_next_url(),
+      'remember': util.param('remember', bool),
+    }
+
+
 @ndb.toplevel
 def signin_user_db(user_db):
   if not user_db:
     return flask.redirect(flask.url_for('signin'))
   flask_user_db = FlaskUser(user_db)
-  if login.login_user(flask_user_db):
+  auth_params = flask.session.get('auth-params', {
+      'next': flask.url_for('welcome'),
+      'remember': False,
+    })
+  if login.login_user(flask_user_db, remember=auth_params['remember']):
     user_db.put_async()
-    response = flask.redirect(util.get_next_url())
+    response = flask.redirect(auth_params['next'])
     util.set_locale(user_db.locale, response)
     flask.flash(__(
         'Hello %(name)s, welcome to %(brand)s.',
