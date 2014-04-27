@@ -182,9 +182,8 @@ def signout():
 ###############################################################################
 @app.route('/signin/google/')
 def signin_google():
-  google_url = users.create_login_url(
-      flask.url_for('google_authorized', **flask.request.args)
-    )
+  save_request_params()
+  google_url = users.create_login_url(flask.url_for('google_authorized'))
   return flask.redirect(google_url)
 
 
@@ -257,10 +256,9 @@ def get_twitter_token():
 @app.route('/signin/twitter/')
 def signin_twitter():
   flask.session.pop('oauth_token', None)
+  save_request_params()
   try:
-    return twitter.authorize(
-        callback=flask.url_for('twitter_authorized', **flask.request.args),
-      )
+    return twitter.authorize(callback=flask.url_for('twitter_authorized'))
   except:
     flask.flash(
         'Something went wrong with Twitter sign in. Please try again.',
@@ -319,8 +317,9 @@ def get_facebook_oauth_token():
 
 @app.route('/signin/facebook/')
 def signin_facebook():
+  save_request_params()
   return facebook.authorize(callback=flask.url_for(
-      'facebook_authorized', _external=True, **flask.request.args
+      'facebook_authorized', _external=True
     ))
 
 
@@ -368,17 +367,28 @@ def create_user_db(auth_id, name, username, email='', **params):
   return user_db
 
 
+def save_request_params():
+  flask.session['auth-params'] = {
+      'next': util.get_next_url(),
+      'remember': util.param('remember', bool),
+    }
+
+
 @ndb.toplevel
 def signin_user_db(user_db):
   if not user_db:
     return flask.redirect(flask.url_for('signin'))
   flask_user_db = FlaskUser(user_db)
-  if login.login_user(flask_user_db, remember=util.param('remember', bool)):
+  auth_params = flask.session.get('auth-params', {
+      'next': flask.url_for('welcome'),
+      'remember': False,
+    })
+  if login.login_user(flask_user_db, remember=auth_params['remember']):
     user_db.put_async()
     flask.flash('Hello %s, welcome to %s.' % (
         user_db.name, config.CONFIG_DB.brand_name,
       ), category='success')
-    return flask.redirect(util.get_next_url())
+    return flask.redirect(auth_params['next'])
   else:
     flask.flash('Sorry, but you could not sign in.', category='danger')
     return flask.redirect(flask.url_for('signin'))
