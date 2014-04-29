@@ -13,14 +13,14 @@ from main import app
 
 
 class ConfigUpdateForm(wtf.Form):
-  analytics_id = wtf.StringField('Analytics ID', filters=[util.strip_filter])
+  analytics_id = wtf.StringField('Tracking ID', filters=[util.strip_filter])
   announcement_html = wtf.TextAreaField('Announcement HTML', filters=[util.strip_filter])
   announcement_type = wtf.SelectField('Announcement Type', choices=[(t, t.title()) for t in model.Config.announcement_type._choices])
   brand_name = wtf.StringField('Brand Name', [wtf.validators.required()], filters=[util.strip_filter])
   facebook_app_id = wtf.StringField('Facebook App ID', filters=[util.strip_filter])
   facebook_app_secret = wtf.StringField('Facebook App Secret', filters=[util.strip_filter])
   feedback_email = wtf.StringField('Feedback Email', [wtf.validators.optional(), wtf.validators.email()], filters=[util.email_filter])
-  flask_secret_key = wtf.StringField('Flask Secret Key', [wtf.validators.required()], filters=[util.strip_filter])
+  flask_secret_key = wtf.StringField('Secret Key', [wtf.validators.optional()], filters=[util.strip_filter])
   notify_on_new_user = wtf.BooleanField('Send an email notification when a user signs up')
   twitter_consumer_key = wtf.StringField('Twitter Consumer Key', filters=[util.strip_filter])
   twitter_consumer_secret = wtf.StringField('Twitter Consumer Secret', filters=[util.strip_filter])
@@ -34,6 +34,8 @@ def admin_config_update():
   form = ConfigUpdateForm(obj=config_db)
   if form.validate_on_submit():
     form.populate_obj(config_db)
+    if not config_db.flask_secret_key:
+      config_db.flask_secret_key = util.uuid()
     config_db.put()
     reload(config)
     app.config.update(CONFIG_DB=config_db)

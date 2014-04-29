@@ -25,16 +25,16 @@
         {{forms.text_field(form.brand_name, autofocus=True)}}
         {{forms.email_field(form.feedback_email)}}
         {{forms.checkbox_field(form.notify_on_new_user)}}
-        {{forms.text_field(form.analytics_id)}}
-        {{forms.text_field(form.flask_secret_key)}}
         {{forms.textarea_field(form.announcement_html)}}
         {{forms.select_field(form.announcement_type)}}
       </fieldset>
 
       <fieldset class="col-sm-6 col-md-7">
-        <legend>Third Party OAuth</legend>
+        <legend>Keys</legend>
         <div class="panel-group" id="oauth">
+          # include "admin/bit/flask_secret_key.html"
           # include "admin/bit/facebook_oauth.html"
+          # include "admin/bit/google_analytics_tracking_id.html"
           # include "admin/bit/twitter_oauth.html"
         </div>
       </fieldset>
