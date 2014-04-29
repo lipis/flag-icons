@@ -148,8 +148,8 @@ def delete_user_dbs(user_db_keys):
 # User Merge
 ###############################################################################
 class UserMergeForm(wtf.Form):
-  user_key = wtf.StringField(_('User Key'), [wtf.validators.required()])
-  user_keys = wtf.StringField(_('User Keys'), [wtf.validators.required()])
+  user_key = wtf.HiddenField('User Key', [wtf.validators.required()])
+  user_keys = wtf.HiddenField('User Keys', [wtf.validators.required()])
   username = wtf.StringField(_('Username'), [wtf.validators.optional()])
   name = wtf.StringField(_('Name (merged)'),
       [wtf.validators.required()], filters=[util.strip_filter],
