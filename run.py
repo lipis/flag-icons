@@ -55,6 +55,10 @@ PARSER.add_argument(
     '-f', '--flush', dest='flush', action='store_true',
     help='clears the datastore, blobstore, etc',
   )
+PARSER.add_argument(
+    '--appserver-args', dest='args', nargs=argparse.REMAINDER, default=[],
+    help='all following args are passed to dev_appserver.py',
+  )
 ARGS = PARSER.parse_args()
 
 
@@ -575,12 +579,14 @@ def run_start():
       --storage_path=%s
       --clear_datastore=%s
       --skip_sdk_update_check
-    ''' % (DIR_MAIN, ARGS.host, port, port + 1, DIR_STORAGE, clear)
+      %s
+    ''' % (DIR_MAIN, ARGS.host, port, port + 1, DIR_STORAGE, clear,
+           " ".join(ARGS.args))
   os.system(run_command.replace('\n', ' '))
 
 
 def run():
-  if len(sys.argv) == 1:
+  if len(sys.argv) == 1 or (ARGS.args and not ARGS.start):
     PARSER.print_help()
     sys.exit(1)
 
