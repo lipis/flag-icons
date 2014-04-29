@@ -82,7 +82,7 @@
   <div class="form-group {{'has-error' if field.errors}}">
     {{field.label(class='control-label')}}
     {{field_description(field)}}
-    # for key, value in field.choices.items()
+    # for key, value in field.choices
       <div class="checkbox">
         <label>
           <input type="checkbox" name="{{field.name}}" value="{{key}}"

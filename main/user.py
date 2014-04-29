@@ -151,10 +151,10 @@ class UserMergeForm(wtf.Form):
   user_key = wtf.StringField(_('User Key'), [wtf.validators.required()])
   user_keys = wtf.StringField(_('User Keys'), [wtf.validators.required()])
   username = wtf.StringField(_('Username'), [wtf.validators.optional()])
-  name = wtf.StringField(_('Merged Name'),
+  name = wtf.StringField(_('Name (merged)'),
       [wtf.validators.required()], filters=[util.strip_filter],
     )
-  email = wtf.StringField(_('Merged Email'),
+  email = wtf.StringField(_('Email (merged)'),
       [wtf.validators.optional(), wtf.validators.email()],
       filters=[util.email_filter],
     )
