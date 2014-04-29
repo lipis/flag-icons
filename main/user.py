@@ -90,7 +90,7 @@ def user_update(user_id):
   form = UserUpdateForm(obj=user_db)
   for permission in user_db.permissions:
     form.permissions.choices.append((permission, permission))
-  form.permissions.choices = dict(sorted(set(form.permissions.choices)))
+  form.permissions.choices = sorted(set(form.permissions.choices))
   if form.validate_on_submit():
     if not util.is_valid_username(form.username.data):
       form.username.errors.append('This username is invalid.')
