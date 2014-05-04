@@ -97,6 +97,16 @@
   </div>
 # endmacro
 
+# macro radio_field(field)
+    # for value, label, _ in field.iter_choices()
+        <div class="radio">
+            <label>
+                <input type="radio" name="{{ field.id }}" id="{{ field.id }}" value="{{ value }}">{{ label }}
+            </label>
+        </div>
+    # endfor 
+# endmacro
+
 
 # macro oauth_fields(name, fields, checkmark, help)
   <div class="panel panel-default">
