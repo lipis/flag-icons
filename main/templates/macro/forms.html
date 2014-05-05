@@ -78,14 +78,14 @@
 # endmacro
 
 
-# macro multiple_checkbox_field(field)
+# macro list_input_field(field, type)
   <div class="form-group {{'has-error' if field.errors}}">
     {{field.label(class='control-label')}}
     {{field_description(field)}}
     # for key, value in field.choices
-      <div class="checkbox">
+      <div class="{{type}}">
         <label>
-          <input type="checkbox" name="{{field.name}}" value="{{key}}"
+          <input type="{{type}}" name="{{field.name}}" value="{{key}}"
             # if field.data and key in field.data
               checked
             # endif
@@ -97,25 +97,15 @@
   </div>
 # endmacro
 
-# macro radio_field(field)
-  <div class="form-group {{'has-error' if field.errors}}">
-    {{field.label(class='control-label')}}
-    {{field_description(field)}}
-    # for key, value, _ in field.iter_choices()
-        <div class="radio">
-            <label>
-                <input type="radio" name="{{ field.id }}" id="{{ field.id }}" value="{{ key }}"
-                # if field.data and key in field.data
-                  checked
-                # endif
-                >{{ value }}
-            </label>
-        </div>
-    # endfor 
-    {{field_errors(field)}}
-  </div>
+
+# macro multiple_checkbox_field(field)
+  {{list_input_field(field, 'checkbox')}}
 # endmacro
 
+
+# macro radio_field(field)
+  {{list_input_field(field, 'radio')}}
+# endmacro
 
 # macro oauth_fields(name, fields, checkmark, help)
   <div class="panel panel-default">
