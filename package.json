@@ -22,6 +22,7 @@
     "grunt-bower-task": "~0",
     "grunt-cli": "~0",
     "grunt-contrib-clean": "~0",
-    "grunt-contrib-watch": "~0"
+    "grunt-contrib-watch": "~0",
+    "load-grunt-tasks": "~0"
   }
 }
