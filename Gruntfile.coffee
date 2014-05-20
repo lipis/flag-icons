@@ -1,4 +1,5 @@
 module.exports = (grunt) ->
+  require('load-grunt-tasks') grunt
   path = require 'path'
 
   grunt.initConfig
@@ -28,8 +29,5 @@ module.exports = (grunt) ->
       min: 'main/static/min'
       dst: 'main/static/dst'
 
-    grunt.loadNpmTasks 'grunt-bower-task'
-    grunt.loadNpmTasks 'grunt-contrib-clean'
-    grunt.loadNpmTasks 'grunt-contrib-watch'
     grunt.registerTask 'default', ['watch']
     grunt.registerTask 'ext', ['clean:ext', 'bower']
