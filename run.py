@@ -90,8 +90,10 @@ DIR_MIN_SCRIPT = os.path.join(DIR_MIN, DIR_SCRIPT)
 DIR_LIB = os.path.join(DIR_MAIN, 'lib')
 DIR_LIBX = os.path.join(DIR_MAIN, 'libx')
 FILE_LIB = '%s.zip' % DIR_LIB
-FILE_LIB_REQUIREMENTS = 'requirements.txt'
-FILE_PIP_RUN = os.path.join(DIR_TEMP, 'pip.guard')
+FILE_REQUIREMENTS = 'requirements.txt'
+FILE_BOWER = 'bower.json'
+FILE_PIP_GUARD = os.path.join(DIR_TEMP, 'pip.guard')
+FILE_BOWER_GUARD = os.path.join(DIR_TEMP, 'bower.guard')
 
 DIR_BIN = os.path.join(DIR_NODE_MODULES, '.bin')
 FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
@@ -298,17 +300,23 @@ def exec_pip_commands(command):
 
 
 def check_pip_should_run():
-  if not os.path.exists(FILE_PIP_RUN):
+  if not os.path.exists(FILE_PIP_GUARD):
     return True
-  return os.path.getmtime(FILE_PIP_RUN) < \
-      os.path.getmtime(FILE_LIB_REQUIREMENTS)
+  return os.path.getmtime(FILE_PIP_GUARD) < \
+      os.path.getmtime(FILE_REQUIREMENTS)
+
+
+def check_bower_should_run():
+  if not os.path.exists(FILE_BOWER_GUARD):
+    return True
+  return os.path.getmtime(FILE_BOWER_GUARD) < os.path.getmtime(FILE_BOWER)
 
 
 def install_py_libs():
   if not check_pip_should_run():
     return
 
-  exec_pip_commands('pip install -q -r %s' % FILE_LIB_REQUIREMENTS)
+  exec_pip_commands('pip install -q -r %s' % FILE_REQUIREMENTS)
 
   exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info']
   exclude_prefix = ['setuptools-', 'pip-', 'Pillow-']
@@ -345,8 +353,8 @@ def install_py_libs():
     copy = shutil.copy if os.path.isfile(src_path) else shutil.copytree
     copy(src_path, _get_dest(dir_))
 
-  with open(FILE_PIP_RUN, 'w') as pip_run:
-    pip_run.write('Prevents pip execution if newer than requirements.txt')
+  with open(FILE_PIP_GUARD, 'w') as pip_guard:
+    pip_guard.write('Prevents pip execution if newer than requirements.txt')
 
 
 def clean_py_libs():
@@ -367,10 +375,10 @@ def install_dependencies():
       os.system('npm install')
       break
 
-  for dependency in get_dependencies('bower.json'):
-    if not os.path.exists(os.path.join(DIR_BOWER_COMPONENTS, dependency)):
-      os.system('"%s" ext' % FILE_GRUNT)
-      break
+  if check_bower_should_run():
+    with open(FILE_BOWER_GUARD, 'w') as bower_guard:
+      bower_guard.write('Prevents bower execution if newer than bower.json')
+    os.system('"%s" ext' % FILE_GRUNT)
 
   install_py_libs()
 
@@ -512,7 +520,8 @@ def run_clean_all():
   clean_py_libs()
   clean_files()
   remove_file_dir(FILE_LIB)
-  remove_file_dir(FILE_PIP_RUN)
+  remove_file_dir(FILE_PIP_GUARD)
+  remove_file_dir(FILE_BOWER_GUARD)
 
 
 def run_minify():
