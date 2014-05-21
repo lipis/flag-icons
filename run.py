@@ -371,6 +371,7 @@ def clean_py_libs():
 
 
 def install_dependencies():
+  make_dirs(DIR_TEMP)
   if check_npm_should_run():
     with open(FILE_NPM_GUARD, 'w') as npm_guard:
       npm_guard.write('Prevents npm execution if newer than package.json')
@@ -397,7 +398,6 @@ def check_for_update():
         urllib.urlencode({'version': main.__version__}),
       )
     response = urllib2.urlopen(request)
-    make_dirs(DIR_TEMP)
     with open(FILE_UPDATE, 'w') as update_json:
       update_json.write(response.read())
   except urllib2.HTTPError:
