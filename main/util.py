@@ -1,6 +1,7 @@
 # coding: utf-8
 
 from datetime import datetime
+from datetime import date
 from uuid import uuid4
 import re
 import unicodedata
@@ -130,7 +131,7 @@ def model_db_to_object(model_db):
 
 
 def json_value(value):
-  if isinstance(value, datetime):
+  if isinstance(value, datetime) or isinstance(value, date):
     return value.isoformat()
   if isinstance(value, ndb.Key):
     return value.urlsafe()
