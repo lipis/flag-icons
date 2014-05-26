@@ -17,13 +17,13 @@ class ConfigUpdateForm(wtf.Form):
   announcement_html = wtf.TextAreaField('Announcement HTML', filters=[util.strip_filter])
   announcement_type = wtf.SelectField('Announcement Type', choices=[(t, t.title()) for t in model.Config.announcement_type._choices])
   brand_name = wtf.StringField('Brand Name', [wtf.validators.required()], filters=[util.strip_filter])
-  facebook_app_id = wtf.StringField('Facebook App ID', filters=[util.strip_filter])
-  facebook_app_secret = wtf.StringField('Facebook App Secret', filters=[util.strip_filter])
+  facebook_app_id = wtf.StringField('App ID', filters=[util.strip_filter])
+  facebook_app_secret = wtf.StringField('App Secret', filters=[util.strip_filter])
   feedback_email = wtf.StringField('Feedback Email', [wtf.validators.optional(), wtf.validators.email()], filters=[util.email_filter])
   flask_secret_key = wtf.StringField('Secret Key', [wtf.validators.optional()], filters=[util.strip_filter])
   notify_on_new_user = wtf.BooleanField('Send an email notification when a user signs up')
-  twitter_consumer_key = wtf.StringField('Twitter Consumer Key', filters=[util.strip_filter])
-  twitter_consumer_secret = wtf.StringField('Twitter Consumer Secret', filters=[util.strip_filter])
+  twitter_consumer_key = wtf.StringField('Consumer Key', filters=[util.strip_filter])
+  twitter_consumer_secret = wtf.StringField('Consumer Secret', filters=[util.strip_filter])
 
 
 @app.route('/_s/admin/config/', endpoint='admin_config_update_service')
