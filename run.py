@@ -393,6 +393,7 @@ def clean_py_libs():
 
 
 def install_dependencies():
+  make_dirs(DIR_TEMP)
   if check_npm_should_run():
     with open(FILE_NPM_GUARD, 'w') as npm_guard:
       npm_guard.write('Prevents npm execution if newer than package.json')
@@ -419,7 +420,6 @@ def check_for_update():
         urllib.urlencode({'version': main.__version__}),
       )
     response = urllib2.urlopen(request)
-    make_dirs(DIR_TEMP)
     with open(FILE_UPDATE, 'w') as update_json:
       update_json.write(response.read())
   except urllib2.HTTPError:
@@ -473,7 +473,8 @@ def check_requirement(check_func):
 
 
 def find_gae_path():
-  if platform.system() == 'Windows':
+  is_windows = platform.system() == 'Windows'
+  if is_windows:
     gae_path = None
     for path in os.environ['PATH'].split(os.pathsep):
       if os.path.isfile(os.path.join(path, 'dev_appserver.py')):
@@ -484,7 +485,8 @@ def find_gae_path():
       gae_path = os.path.dirname(os.path.realpath(gae_path))
   if not gae_path:
     return ''
-  if not os.path.isfile(os.path.join(gae_path, 'gcloud')):
+  gcloud_exec = 'gcloud.cmd' if is_windows else 'gcloud'
+  if not os.path.isfile(os.path.join(gae_path, gcloud_exec)):
     return gae_path
   gae_path = os.path.join(gae_path, '..', 'platform', 'google_appengine')
   if os.path.exists:
