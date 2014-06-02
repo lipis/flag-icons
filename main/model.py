@@ -3,11 +3,12 @@
 from google.appengine.ext import ndb
 
 import config
+import modelq
 import modelx
 import util
 
 
-class Base(ndb.Model, modelx.Base):
+class Base(ndb.Model, modelq.Base):
   created = ndb.DateTimeProperty(auto_now_add=True)
   modified = ndb.DateTimeProperty(auto_now=True)
   version = ndb.IntegerProperty(default=config.CURRENT_VERSION_TIMESTAMP)
@@ -51,7 +52,7 @@ class Config(Base, modelx.Config):
     })
 
 
-class User(Base, modelx.User):
+class User(Base, modelx.User, modelq.User):
   name = ndb.StringProperty(required=True)
   username = ndb.StringProperty(required=True)
   email = ndb.StringProperty(default='')

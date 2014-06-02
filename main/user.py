@@ -20,15 +20,7 @@ from main import app
 @app.route('/user/')
 @auth.admin_required
 def user_list():
-  user_dbs, more_cursor = util.retrieve_dbs(
-      model.User.query(),
-      limit=util.param('limit', int),
-      cursor=util.param('cursor'),
-      order=util.param('order') or '-created',
-      admin=util.param('admin', bool),
-      active=util.param('active', bool),
-      permissions=util.param('permissions', list),
-    )
+  user_dbs, more_cursor = model.User.get_dbs()
 
   if flask.request.path.startswith('/_s/'):
     return util.jsonify_model_dbs(user_dbs, more_cursor)
