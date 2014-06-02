@@ -7,7 +7,7 @@ import modelx
 import util
 
 
-class Base(ndb.Model, modelx.BaseX):
+class Base(ndb.Model, modelx.Base):
   created = ndb.DateTimeProperty(auto_now_add=True)
   modified = ndb.DateTimeProperty(auto_now=True)
   version = ndb.IntegerProperty(default=config.CURRENT_VERSION_TIMESTAMP)
@@ -21,7 +21,7 @@ class Base(ndb.Model, modelx.BaseX):
     }
 
 
-class Config(Base, modelx.ConfigX):
+class Config(Base, modelx.Config):
   analytics_id = ndb.StringProperty(default='')
   announcement_html = ndb.TextProperty(default='')
   announcement_type = ndb.StringProperty(default='info', choices=[
@@ -51,7 +51,7 @@ class Config(Base, modelx.ConfigX):
     })
 
 
-class User(Base, modelx.UserX):
+class User(Base, modelx.User):
   name = ndb.StringProperty(required=True)
   username = ndb.StringProperty(required=True)
   email = ndb.StringProperty(default='')
