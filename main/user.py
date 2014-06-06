@@ -225,10 +225,6 @@ def merge_user_dbs(user_db, deprecated_keys):
 # Helpers
 ###############################################################################
 def is_username_available(username, self_db=None):
-  user_dbs, user_cursor = util.retrieve_dbs(
-      model.User.query(),
-      username=username,
-      limit=2,
-    )
+  user_dbs, user_cursor = model.User.get_dbs(username=username, limit=2)
   c = len(user_dbs)
   return not (c == 2 or c == 1 and self_db and self_db.key != user_dbs[0].key)
