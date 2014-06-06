@@ -33,6 +33,9 @@ class AnonymousUser(login.AnonymousUserMixin):
   def key(self):
     return None
 
+  def has_permission(self, permission):
+    return False
+
 login_manager.anonymous_user = AnonymousUser
 
 
@@ -57,6 +60,9 @@ class FlaskUser(AnonymousUser):
 
   def is_anonymous(self):
     return False
+
+  def has_permission(self, permission):
+    return self.user_db.has_permission(permission)
 
 
 @login_manager.user_loader
