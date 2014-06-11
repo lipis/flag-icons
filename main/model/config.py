@@ -1,28 +1,15 @@
 # coding: utf-8
 
+from __future__ import absolute_import
+
 from google.appengine.ext import ndb
 
 import config
-import modelq
-import modelx
+import model
 import util
 
 
-class Base(ndb.Model, modelq.Base):
-  created = ndb.DateTimeProperty(auto_now_add=True)
-  modified = ndb.DateTimeProperty(auto_now=True)
-  version = ndb.IntegerProperty(default=config.CURRENT_VERSION_TIMESTAMP)
-
-  _PROPERTIES = {
-      'key',
-      'id',
-      'version',
-      'created',
-      'modified',
-    }
-
-
-class Config(Base, modelx.Config):
+class Config(model.Base):
   analytics_id = ndb.StringProperty(default='')
   announcement_html = ndb.TextProperty(default='')
   announcement_type = ndb.StringProperty(default='info', choices=[
@@ -37,7 +24,15 @@ class Config(Base, modelx.Config):
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
 
-  _PROPERTIES = Base._PROPERTIES.union({
+  @property
+  def has_facebook(self):
+    return bool(self.facebook_app_id and self.facebook_app_secret)
+
+  @property
+  def has_twitter(self):
+    return bool(self.twitter_consumer_key and self.twitter_consumer_secret)
+
+  _PROPERTIES = model.Base._PROPERTIES.union({
       'analytics_id',
       'announcement_html',
       'announcement_type',
@@ -51,23 +46,6 @@ class Config(Base, modelx.Config):
       'twitter_consumer_secret',
     })
 
-
-class User(Base, modelx.User, modelq.User):
-  name = ndb.StringProperty(required=True)
-  username = ndb.StringProperty(required=True)
-  email = ndb.StringProperty(default='')
-  auth_ids = ndb.StringProperty(repeated=True)
-  active = ndb.BooleanProperty(default=True)
-  admin = ndb.BooleanProperty(default=False)
-  permissions = ndb.StringProperty(repeated=True)
-
-  _PROPERTIES = Base._PROPERTIES.union({
-      'active',
-      'admin',
-      'auth_ids',
-      'avatar_url',
-      'email',
-      'name',
-      'username',
-      'permissions',
-    })
+  @classmethod
+  def get_master_db(cls):
+    return cls.get_or_insert('master')
