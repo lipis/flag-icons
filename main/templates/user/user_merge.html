@@ -40,7 +40,7 @@
                 <td>{{user_db.username}}</td>
                 <td>{{user_db.email}}</td>
                 <td>
-                  <time datetime="{{user_db.created.__str__()[:-3]}}">
+                  <time datetime="{{user_db.created}}">
                     {{user_db.created.strftime('%Y-%m-%d')}}
                   </time>
                 </td>
