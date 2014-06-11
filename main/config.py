@@ -11,7 +11,8 @@ try:
   # also used in the run.py script which is used to compile/minify the client
   # side files (*.less, *.coffee, *.js) and is not aware of the GAE
   from google.appengine.api import app_identity
-except ImportError:
+  APPLICATION_ID = app_identity.get_application_id()
+except (ImportError, AttributeError):
   pass
 else:
   from datetime import datetime
@@ -22,7 +23,6 @@ else:
     import calendar
     CURRENT_VERSION_TIMESTAMP = calendar.timegm(datetime.utcnow().timetuple())
   CURRENT_VERSION_DATE = datetime.utcfromtimestamp(CURRENT_VERSION_TIMESTAMP)
-  APPLICATION_ID = app_identity.get_application_id()
 
   import model
 
