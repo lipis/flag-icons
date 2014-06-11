@@ -1,22 +1,22 @@
 $ ->
   init_common()
 
-$ -> ($ 'html.welcome').each ->
+$ -> $('html.welcome').each ->
   LOG('init welcome')
 
-$ -> ($ 'html.profile').each ->
+$ -> $('html.profile').each ->
   init_profile()
 
-$ -> ($ 'html.signin').each ->
+$ -> $('html.signin').each ->
   init_signin()
 
-$ -> ($ 'html.feedback').each ->
+$ -> $('html.feedback').each ->
 
-$ -> ($ 'html.user-list').each ->
+$ -> $('html.user-list').each ->
   init_user_list()
 
-$ -> ($ 'html.user-merge').each ->
+$ -> $('html.user-merge').each ->
   init_user_merge()
 
-$ -> ($ 'html.admin-config').each ->
+$ -> $('html.admin-config').each ->
   init_admin_config()
