@@ -1,6 +1,5 @@
 {
   "name": "flag-icon-css",
-  "version": "0.5.1",
   "devDependencies": {
     "grunt": "0.4.x",
     "grunt-contrib-less": "0.6.x",
