@@ -32,7 +32,7 @@ def user_list():
       html_class='user-list',
       title='User List',
       user_dbs=user_dbs,
-      more_url=util.generate_more_url(user_cursor),
+      next_url=util.generate_next_url(user_cursor),
       has_json=True,
       permissions=sorted(set(permissions)),
     )

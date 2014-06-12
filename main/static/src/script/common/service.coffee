@@ -20,8 +20,8 @@ window.service_call = (method, url, params, data, callback) ->
     success: (data) ->
       if data.status == 'success'
         more = undefined
-        if data.more_url
-          more = (callback) -> service_call(method, data.more_url, {}, callback)
+        if data.next_url
+          more = (callback) -> service_call(method, data.next_url, {}, callback)
         callback? undefined, data.result, more
       else
         callback? data

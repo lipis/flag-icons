@@ -24,10 +24,10 @@
 # endmacro
 
 
-# macro next_link(more_url, caption)
-  # if more_url
+# macro next_link(next_url, caption)
+  # if next_url
     <ul class="pager">
-      <li><a href="{{more_url}}" rel="nofollow">{{caption|safe if caption else 'Next Page'}}</a></li>
+      <li><a href="{{next_url}}" rel="nofollow">{{caption|safe if caption else 'Next Page'}}</a></li>
     </ul>
   # endif
 # endmacro
