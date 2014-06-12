@@ -86,17 +86,17 @@ def get_dbs(
     else:
       query = query.filter(model_class._properties[prop] == filters[prop])
 
-  model_dbs, more_cursor, more = query.fetch_page(
+  model_dbs, next_cursor, more = query.fetch_page(
       limit, start_cursor=cursor, keys_only=keys_only,
     )
-  more_cursor = more_cursor.to_websafe_string() if more else None
-  return list(model_dbs), more_cursor
+  next_cursor = next_cursor.to_websafe_string() if more else None
+  return list(model_dbs), next_cursor
 
 
 ###############################################################################
 # JSON Response Helpers
 ###############################################################################
-def jsonify_model_dbs(model_dbs, more_cursor=None):
+def jsonify_model_dbs(model_dbs, next_cursor=None):
   '''Return a response of a list of dbs as JSON service result
   '''
   result_objects = []
@@ -109,9 +109,9 @@ def jsonify_model_dbs(model_dbs, more_cursor=None):
       'now': datetime.utcnow().isoformat(),
       'result': result_objects,
     }
-  if more_cursor:
-    response_object['more_cursor'] = more_cursor
-    response_object['more_url'] = generate_more_url(more_cursor)
+  if next_cursor:
+    response_object['next_cursor'] = next_cursor
+    response_object['next_url'] = generate_next_url(next_cursor)
   response = jsonpify(response_object)
   return response
 
@@ -174,15 +174,15 @@ def jsonpify(*args, **kwargs):
 ###############################################################################
 # Helpers
 ###############################################################################
-def generate_more_url(more_cursor, base_url=None, cursor_name='cursor'):
+def generate_next_url(next_cursor, base_url=None, cursor_name='cursor'):
   '''Substitutes or alters the current request URL with a new cursor parameter
   for next page of results
   '''
-  if not more_cursor:
+  if not next_cursor:
     return None
   base_url = base_url or flask.request.base_url
   args = flask.request.args.to_dict()
-  args[cursor_name] = more_cursor
+  args[cursor_name] = next_cursor
   return '%s?%s' % (base_url, urllib.urlencode(args))
 
 
@@ -202,8 +202,11 @@ def slugify(text):
   return _slugify_hyphenate_re.sub('-', text)
 
 
+_username_re = re.compile(r'^[a-z0-9]+(?:[\.][a-z0-9]+)*$')
+
+
 def is_valid_username(username):
-  return True if re.match('^[a-z0-9]+(?:[\.][a-z0-9]+)*$', username) else False
+  return True if _username_re.match(username) else False
 
 
 def update_query_argument(name, value=None, ignore='cursor', is_list=False):
