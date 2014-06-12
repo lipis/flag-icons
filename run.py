@@ -301,23 +301,27 @@ def exec_pip_commands(command):
   os.system(script)
 
 
+def make_guard(fname, cmd, spec):
+  with open(fname, 'w') as guard:
+    guard.write('Prevents %s execution if newer than %s' % (cmd, spec))
+
+
+def guard_is_newer(guard, watched):
+  if os.path.exists(guard):
+    return os.path.getmtime(guard) > os.path.getmtime(watched)
+  return False
+
+
 def check_pip_should_run():
-  if not os.path.exists(FILE_PIP_GUARD):
-    return True
-  return os.path.getmtime(FILE_PIP_GUARD) < \
-      os.path.getmtime(FILE_REQUIREMENTS)
+  return not guard_is_newer(FILE_PIP_GUARD, FILE_REQUIREMENTS)
 
 
 def check_npm_should_run():
-  if not os.path.exists(FILE_NPM_GUARD):
-    return True
-  return os.path.getmtime(FILE_NPM_GUARD) < os.path.getmtime(FILE_PACKAGE)
+  return not guard_is_newer(FILE_NPM_GUARD, FILE_PACKAGE)
 
 
 def check_bower_should_run():
-  if not os.path.exists(FILE_BOWER_GUARD):
-    return True
-  return os.path.getmtime(FILE_BOWER_GUARD) < os.path.getmtime(FILE_BOWER)
+  return not guard_is_newer(FILE_BOWER_GUARD, FILE_BOWER)
 
 
 def install_py_libs():
@@ -361,8 +365,7 @@ def install_py_libs():
     copy = shutil.copy if os.path.isfile(src_path) else shutil.copytree
     copy(src_path, _get_dest(dir_))
 
-  with open(FILE_PIP_GUARD, 'w') as pip_guard:
-    pip_guard.write('Prevents pip execution if newer than requirements.txt')
+  make_guard(FILE_PIP_GUARD, 'pip', FILE_REQUIREMENTS)
 
 
 def clean_py_libs():
@@ -373,15 +376,11 @@ def clean_py_libs():
 def install_dependencies():
   make_dirs(DIR_TEMP)
   if check_npm_should_run():
-    with open(FILE_NPM_GUARD, 'w') as npm_guard:
-      npm_guard.write('Prevents npm execution if newer than package.json')
+    make_guard(FILE_NPM_GUARD, 'npm', FILE_PACKAGE)
     os.system('npm install')
-
   if check_bower_should_run():
-    with open(FILE_BOWER_GUARD, 'w') as bower_guard:
-      bower_guard.write('Prevents bower execution if newer than bower.json')
+    make_guard(FILE_BOWER_GUARD, 'bower', FILE_BOWER)
     os.system('"%s" ext' % FILE_GRUNT)
-
   install_py_libs()
 
 
