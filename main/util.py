@@ -61,7 +61,7 @@ def set_locale(locale, response):
 ###############################################################################
 # Model manipulations
 ###############################################################################
-def retrieve_dbs(
+def get_dbs(
     query, order=None, limit=None, cursor=None, keys_only=None, **filters
   ):
   '''Retrieves entities from datastore, by applying cursor pagination

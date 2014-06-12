@@ -5,6 +5,7 @@ from __future__ import absolute_import
 from google.appengine.ext import ndb
 
 import config
+import util
 
 
 class Base(ndb.Model):
@@ -21,5 +22,15 @@ class Base(ndb.Model):
     }
 
   @classmethod
-  def retrieve_one_by(cls, name, value):
+  def get_by(cls, name, value):
     return cls.query(getattr(cls, name) == value).get()
+
+  @classmethod
+  def get_dbs(cls, query=None, order=None, limit=None, cursor=None, **kwgs):
+    return util.get_dbs(
+        query or cls.query(),
+        limit=limit or util.param('limit', int),
+        cursor=cursor or util.param('cursor'),
+        order=order or util.param('order') or '-created',
+        **kwgs
+      )

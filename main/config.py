@@ -11,9 +11,12 @@ try:
   # This part is surrounded in try/except because the config.py file is
   # also used in the run.py script which is used to compile/minify the client
   # side files (*.less, *.coffee, *.js) and is not aware of the GAE
-  from datetime import datetime
   from google.appengine.api import app_identity
-
+  APPLICATION_ID = app_identity.get_application_id()
+except (ImportError, AttributeError):
+  pass
+else:
+  from datetime import datetime
   CURRENT_VERSION_ID = os.environ.get('CURRENT_VERSION_ID')
   CURRENT_VERSION_NAME = CURRENT_VERSION_ID.split('.')[0]
   CURRENT_VERSION_TIMESTAMP = long(CURRENT_VERSION_ID.split('.')[1]) >> 28
@@ -21,15 +24,12 @@ try:
     import calendar
     CURRENT_VERSION_TIMESTAMP = calendar.timegm(datetime.utcnow().timetuple())
   CURRENT_VERSION_DATE = datetime.utcfromtimestamp(CURRENT_VERSION_TIMESTAMP)
-  APPLICATION_ID = app_identity.get_application_id()
 
   import model
 
   CONFIG_DB = model.Config.get_master_db()
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
   LOCALE_DEFAULT = CONFIG_DB.locale
-except:
-  pass
 
 DEFAULT_DB_LIMIT = 64
 

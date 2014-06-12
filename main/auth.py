@@ -74,6 +74,9 @@ class AnonymousUser(login.AnonymousUserMixin):
   def key(self):
     return None
 
+  def has_permission(self, permission):
+    return False
+
 login_manager.anonymous_user = AnonymousUser
 
 
@@ -98,6 +101,9 @@ class FlaskUser(AnonymousUser):
 
   def is_anonymous(self):
     return False
+
+  def has_permission(self, permission):
+    return self.user_db.has_permission(permission)
 
 
 @login_manager.user_loader
@@ -241,7 +247,7 @@ def google_authorized():
 
 def retrieve_user_from_google(google_user):
   auth_id = 'federated_%s' % google_user.user_id()
-  user_db = model.User.retrieve_one_by('auth_ids', auth_id)
+  user_db = model.User.get_by('auth_ids', auth_id)
   if user_db:
     if not user_db.admin and users.is_current_user_admin():
       user_db.admin = True
@@ -310,7 +316,7 @@ def signin_twitter():
 
 def retrieve_user_from_twitter(response):
   auth_id = 'twitter_%s' % response['user_id']
-  user_db = model.User.retrieve_one_by('auth_ids', auth_id)
+  user_db = model.User.get_by('auth_ids', auth_id)
   if user_db:
     return user_db
 
@@ -366,7 +372,7 @@ def signin_facebook():
 
 def retrieve_user_from_facebook(response):
   auth_id = 'facebook_%s' % response['id']
-  user_db = model.User.retrieve_one_by('auth_ids', auth_id)
+  user_db = model.User.get_by('auth_ids', auth_id)
   if user_db:
     return user_db
   return create_user_db(
@@ -392,7 +398,7 @@ def create_user_db(auth_id, name, username, email='', **params):
   username = re.sub(r'_+|-+|\s+', '.', username.split('@')[0].lower().strip())
   new_username = username
   n = 1
-  while model.User.retrieve_one_by('username', new_username) is not None:
+  while model.User.get_by('username', new_username) is not None:
     new_username = '%s%d' % (username, n)
     n += 1
 
