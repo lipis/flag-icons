@@ -16,6 +16,7 @@
         "component": {
             "name": "flag-icon-css",
             "files": [
+                "less/**",
                 "css/**",
                 "flags/**"
             ]
