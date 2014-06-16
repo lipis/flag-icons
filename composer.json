@@ -1,0 +1,25 @@
+{
+    "name": "components/flag-icon-css",
+    "type": "component",
+    "description": "CSS for vector based country flags",
+    "keywords": [],
+    "license": "",
+    "authors": [
+        {
+            "name": "Andreas Lemke",
+            "email": "andreas.lemke@tu-braunschweig.de"
+        }
+    ],
+    "require": {
+    },
+    "extra": {
+        "component": {
+            "name": "flag-icon-css",
+            "files": [
+                "css/**",
+                "flags/**"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
