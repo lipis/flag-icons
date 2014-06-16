@@ -8,10 +8,6 @@
         {
             "name": "Lipis",
             "email": "yo@lip.is"
-        },
-        {
-            "name": "Andreas Lemke",
-            "email": "andreas.lemke@tu-braunschweig.de"
         }
     ],
     "require": {
