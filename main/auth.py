@@ -357,7 +357,7 @@ def create_user_db(auth_id, name, username, email='', **params):
   username = re.sub(r'_+|-+|\s+', '.', username.split('@')[0].lower().strip())
   new_username = username
   n = 1
-  while model.User.get_by('username', new_username) is not None:
+  while not model.User.is_username_available(new_username):
     new_username = '%s%d' % (username, n)
     n += 1
 

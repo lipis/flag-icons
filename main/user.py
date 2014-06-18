@@ -86,7 +86,7 @@ def user_update(user_id):
   if form.validate_on_submit():
     if not util.is_valid_username(form.username.data):
       form.username.errors.append('This username is invalid.')
-    elif not is_username_available(form.username.data, user_db):
+    elif not model.User.is_username_available(form.username.data, user_db):
       form.username.errors.append('This username is already taken.')
     else:
       form.populate_obj(user_db)
@@ -219,12 +219,3 @@ def merge_user_dbs(user_db, deprecated_keys):
     if not deprecated_db.username.startswith('_'):
       deprecated_db.username = '_%s' % deprecated_db.username
   ndb.put_multi(deprecated_dbs)
-
-
-###############################################################################
-# Helpers
-###############################################################################
-def is_username_available(username, self_db=None):
-  user_dbs, user_cursor = model.User.get_dbs(username=username, limit=2)
-  c = len(user_dbs)
-  return not (c == 2 or c == 1 and self_db and self_db.key != user_dbs[0].key)

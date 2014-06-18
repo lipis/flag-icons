@@ -48,3 +48,11 @@ class User(model.Base):
         permissions=permissions or util.param('permissions', list),
         **kwgs
       )
+
+  @classmethod
+  def is_username_available(cls, username, self_db=None):
+    if self_db is None:
+      return cls.get_by('username', username) is None
+    user_dbs, _ = util.get_dbs(cls.query(), username=username, limit=2)
+    c = len(user_dbs)
+    return not (c == 2 or c == 1 and self_db.key != user_dbs[0].key)
