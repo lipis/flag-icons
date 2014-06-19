@@ -26,7 +26,7 @@ class Base(ndb.Model):
     return cls.query(getattr(cls, name) == value).get()
 
   @classmethod
-  def get_dbs(cls, query=None, ancestor=None,order=None, limit=None, cursor=None, **kwargs):
+  def get_dbs(cls, query=None, ancestor=None, order=None, limit=None, cursor=None, **kwargs):
     return util.get_dbs(
         query or cls.query(ancestor=ancestor),
         limit=limit or util.param('limit', int),
