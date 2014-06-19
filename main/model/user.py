@@ -41,12 +41,12 @@ class User(model.Base):
     })
 
   @classmethod
-  def get_dbs(cls, admin=None, active=None, permissions=None, **kwgs):
+  def get_dbs(cls, admin=None, active=None, permissions=None, **kwargs):
     return super(User, cls).get_dbs(
         admin=admin or util.param('admin', bool),
         active=active or util.param('active', bool),
         permissions=permissions or util.param('permissions', list),
-        **kwgs
+        **kwargs
       )
 
   @classmethod
