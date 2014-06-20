@@ -14,7 +14,7 @@
 # macro filter_by_link(property, value, icon=None, ignore='cursor', is_list=False)
   # set value = '%s' % value
   <a href="{{update_query_argument(property, None if request.args.get(property) == value else value, ignore, is_list)}}"
-     class="btn btn-default {{'active' if request.args.get(property, '').find(value) >= 0}}">
+     class="btn btn-default {{'active' if value in request.args.get(property, '').split(',')}}">
     # if icon
       <i class="fa fa-{{icon}}"></i>
     # else

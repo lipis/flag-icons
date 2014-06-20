@@ -26,11 +26,11 @@ class Base(ndb.Model):
     return cls.query(getattr(cls, name) == value).get()
 
   @classmethod
-  def get_dbs(cls, query=None, order=None, limit=None, cursor=None, **kwgs):
+  def get_dbs(cls, query=None, ancestor=None, order=None, limit=None, cursor=None, **kwargs):
     return util.get_dbs(
-        query or cls.query(),
+        query or cls.query(ancestor=ancestor),
         limit=limit or util.param('limit', int),
         cursor=cursor or util.param('cursor'),
         order=order or util.param('order') or '-created',
-        **kwgs
+        **kwargs
       )
