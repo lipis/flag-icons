@@ -11,6 +11,7 @@
     "bootstrap": {
       "js": "js/*.js",
       "less": "less/*.less",
+      "less/mixins": "less/mixins/*.less",
       "font": "fonts/*"
     },
     "font-awesome": {
