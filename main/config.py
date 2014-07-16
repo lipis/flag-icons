@@ -4,8 +4,7 @@ import os
 
 
 PRODUCTION = os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Eng')
-DEVELOPMENT = not PRODUCTION
-DEBUG = DEVELOPMENT
+DEBUG = DEVELOPMENT = not PRODUCTION
 
 try:
   # This part is surrounded in try/except because the config.py file is
