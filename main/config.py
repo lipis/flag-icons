@@ -2,6 +2,7 @@
 
 import os
 
+
 PRODUCTION = os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Eng')
 DEVELOPMENT = not PRODUCTION
 DEBUG = DEVELOPMENT
@@ -30,6 +31,7 @@ else:
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
 
 DEFAULT_DB_LIMIT = 64
+
 
 ###############################################################################
 # Client modules, also used by the run.py script.
