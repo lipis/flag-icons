@@ -440,6 +440,5 @@ def signin_user_db(user_db):
         name=user_db.name, brand=config.CONFIG_DB.brand_name,
       ), category='success')
     return response
-  else:
-    flask.flash(__('Sorry, but you could not sign in.'), category='danger')
-    return flask.redirect(flask.url_for('signin'))
+  flask.flash(__('Sorry, but you could not sign in.'), category='danger')
+  return flask.redirect(flask.url_for('signin'))
