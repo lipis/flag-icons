@@ -107,19 +107,23 @@
   {{list_input_field(field, 'radio')}}
 # endmacro
 
-# macro oauth_fields(name, fields, checkmark, help)
+# macro oauth_fields(name, fields, help)
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#oauth" href="#{{slugify(name)}}">{{name}}</a>
-        <i class="fa fa-check pull-right {{'hide' if not checkmark}}"></i>
+        <i class="fa fa-check pull-right {{'hide' if not check_form_fields(fields)}}"></i>
       </h4>
     </div>
     <div id="{{slugify(name)}}" class="panel-collapse collapse">
       <div class="panel-body">
-        # for field in fields:
-          {{text_field(field)}}
-        # endfor
+        # if is_iterable(fields)
+          # for field in fields:
+            {{text_field(field)}}
+          # endfor
+        #else
+          {{ text_field(fields) }}
+        #endif
         # if help
           <p class="help-block">{{help|safe}}</p>
         # endif
