@@ -29,9 +29,9 @@ def param(name, cast=None):
     value = flask.request.form.get(name, None)
 
   if cast and value is not None:
-    if cast == bool:
+    if cast is bool:
       return value.lower() in ['true', 'yes', '1', '']
-    if cast == list:
+    if cast is list:
       return value.split(',') if len(value) > 0 else []
     return cast(value)
   return value
@@ -163,6 +163,20 @@ def jsonpify(*args, **kwargs):
 ###############################################################################
 # Helpers
 ###############################################################################
+def is_iterable(value):
+  return isinstance(value, (tuple, list))
+
+
+def check_form_fields(*fields):
+  fields_data = []
+  for field in fields:
+    if is_iterable(field):
+      fields_data.extend([field.data for field in field])
+    else:
+      fields_data.append(field.data)
+  return all(fields_data)
+
+
 def generate_next_url(next_cursor, base_url=None, cursor_name='cursor'):
   '''Substitutes or alters the current request URL with a new cursor parameter
   for next page of results
