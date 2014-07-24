@@ -18,11 +18,15 @@
   background-repeat: no-repeat;
 }
 
-.flag-icon(@country) {
+.flag-icon-custom(@country, @flag) {
   .flag-icon-@{country} {
-    background-image: ~"url(@{flag-icon-css-path}@{flag-icon-rect-path}/@{country}.svg)";
+    background-image: ~"url(@{flag-icon-css-path}@{flag-icon-rect-path}/@{flag}.svg)";
     &.flag-icon-squared {
-      background-image: ~"url(@{flag-icon-css-path}@{flag-icon-square-path}/@{country}.svg)";
+      background-image: ~"url(@{flag-icon-css-path}@{flag-icon-square-path}/@{flag}.svg)";
     }
   }
+}
+
+.flag-icon(@country) {
+  .flag-icon-custom(@country, @country);
 }
