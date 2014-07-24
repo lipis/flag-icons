@@ -16,7 +16,7 @@ app.jinja_env.globals.update(
     check_form_fields=util.check_form_fields,
     is_iterable=util.is_iterable,
     slugify=util.slugify,
-    update_query_argument=util.update_query_argument
+    update_query_argument=util.update_query_argument,
   )
 
 
