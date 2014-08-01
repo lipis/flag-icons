@@ -3,3 +3,4 @@ flask
 flask-login==0.2.9
 git+https://github.com/mitsuhiko/flask-oauth.git@0.13
 flask-wtf==0.8.2
+unidecode
