@@ -399,7 +399,7 @@ def check_for_update():
     response = urllib2.urlopen(request)
     with open(FILE_UPDATE, 'w') as update_json:
       update_json.write(response.read())
-  except urllib2.HTTPError:
+  except (urllib2.HTTPError, urllib2.URLError):
     pass
 
 
