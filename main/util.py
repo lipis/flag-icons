@@ -129,7 +129,7 @@ def model_db_to_object(model_db):
 
 
 def json_value(value):
-  if isinstance(value, datetime) or isinstance(value, date):
+  if isinstance(value, (datetime, date)):
     return value.isoformat()
   if isinstance(value, ndb.Key):
     return value.urlsafe()
@@ -137,7 +137,7 @@ def json_value(value):
     return urllib.quote(str(value))
   if isinstance(value, ndb.GeoPt):
     return '%s,%s' % (value.lat, value.lon)
-  if isinstance(value, list):
+  if is_iterable(value):
     return [json_value(v) for v in value]
   if isinstance(value, long):
     # Big numbers are sent as strings for accuracy in JavaScript
