@@ -88,9 +88,7 @@ def get_dbs(
 def jsonify_model_dbs(model_dbs, next_cursor=None):
   '''Return a response of a list of dbs as JSON service result
   '''
-  result_objects = []
-  for model_db in model_dbs:
-    result_objects.append(model_db_to_object(model_db))
+  result_objects = [model_db_to_object(model_db) for model_db in model_dbs]
 
   response_object = {
       'status': 'success',
