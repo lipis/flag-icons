@@ -1,0 +1,16 @@
+# if config.CONFIG_DB.verify_email
+  <div class="form-group has-feedback {{'has-error' if form.email.errors}}">
+    {{form.email.label(class='control-label')}}
+    {{form.email(class='form-control')}}
+    <div class="{{'hide' if request.method == 'POST' or not user_db.email}}">
+      # if user_db.verified
+        <span class="fa fa-check form-control-feedback text-success" title="This email is verified"></span>
+      # else
+        <span class="fa fa-warning form-control-feedback text-warning" title="This email is not verified"></span>
+      # endif
+    </div>
+    {{forms.field_errors(form.email)}}
+  </div>
+# else
+  {{forms.email_field(form.email)}}
+# endif

@@ -74,7 +74,11 @@ def profile():
   form = ProfileUpdateForm(obj=user_db)
 
   if form.validate_on_submit():
+    send_verification = not user_db.token or user_db.email != form.email.data
     form.populate_obj(user_db)
+    if send_verification:
+      user_db.verified = False
+      task.verify_email_notification(user_db)
     user_db.put()
     return flask.redirect(flask.url_for('welcome'))
 

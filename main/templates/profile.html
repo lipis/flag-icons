@@ -18,7 +18,7 @@
           <input id="username" class="form-control" name="username" type="text" value="{{user_db.username}}" readonly="readonly">
         </div>
         {{forms.text_field(form.name, autofocus=True)}}
-        {{forms.email_field(form.email)}}
+        # include 'user/user_email_field.html'
       </div>
       <div class="col-md-2 col-sm-3">
         <div class="form-group">

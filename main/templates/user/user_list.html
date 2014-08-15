@@ -13,7 +13,7 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="btn-group btn-group-sm">
-        <button type="button" class="btn btn-success" disabled >Limit</button>
+        <button type="button" class="btn btn-primary" disabled >Limit</button>
         {{utils.filter_by_link('limit', 16)}}
         {{utils.filter_by_link('limit', 64)}}
         {{utils.filter_by_link('limit', 128)}}
@@ -28,13 +28,20 @@
       </div>
 
       <div class="btn-group btn-group-sm">
-        <button type="button" class="btn btn-primary" disabled >Active</button>
+        <button type="button" class="btn btn-success" disabled >Verified</button>
+        {{utils.filter_by_link('verified', True, 'thumbs-o-up')}}
+        {{utils.filter_by_link('verified', False, 'thumbs-o-down')}}
+      </div>
+
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-info" disabled >Active</button>
         {{utils.filter_by_link('active', True, 'thumbs-o-up')}}
         {{utils.filter_by_link('active', False, 'thumbs-o-down')}}
       </div>
 
+
       <div class="btn-group btn-group-sm {{'hide' if not permissions}}">
-        <button type="button" class="btn btn-info" disabled >Permissions</button>
+        <button type="button" class="btn btn-warning" disabled >Permissions</button>
         # for permission in permissions
           {{utils.filter_by_link('permissions', permission, is_list=True)}}
         # endfor
@@ -101,7 +108,14 @@
                 <i class="fa fa-hand-o-left" title="You"></i>
               # endif
             </td>
-            <td>{{user_db.email}}<br><span class="text-success small">{{user_db.username}}</span></td>
+            <td class="text-nowrap">
+              {{user_db.email}}
+              # if user_db.verified
+                <span class="fa fa-check text-success" title="Verified"></span>
+              # endif
+              <br>
+              <span class="text-success small">{{user_db.username}}</span>
+            </td>
             <td>
               <time datetime="{{user_db.modified}}">
                 {{user_db.modified.strftime('%Y-%m-%d')}}
