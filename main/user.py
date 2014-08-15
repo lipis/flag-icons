@@ -55,6 +55,7 @@ class UserUpdateForm(wtf.Form):
     )
   admin = wtf.BooleanField('Admin')
   active = wtf.BooleanField('Active')
+  verified = wtf.BooleanField('Verified')
   permissions = wtf.SelectMultipleField('Permissions',
       filters=[util.sort_filter],
     )
@@ -109,6 +110,19 @@ def user_update(user_id):
       user_db=user_db,
     )
 
+
+@app.route('/user/verify/<token>/')
+@auth.login_required
+def user_verify(token):
+  user_db = auth.current_user_db()
+  if user_db.token != token:
+    flask.flash('This token is invalid or expired.', category='danger')
+    return flask.redirect(flask.url_for('profile', token=token))
+  user_db.verified = True
+  user_db.token = util.uuid()
+  user_db.put()
+  flask.flash('Hooray! Your email is now verified.', category='success')
+  return flask.redirect(flask.url_for('profile'))
 
 ###############################################################################
 # User Delete
@@ -181,6 +195,7 @@ def user_merge():
   merged_user_db.permissions = permissions
   merged_user_db.admin = is_admin
   merged_user_db.active = is_active
+  merged_user_db.verified = False
 
   form_obj = copy.deepcopy(merged_user_db)
   form_obj.user_key = merged_user_db.key.urlsafe()
