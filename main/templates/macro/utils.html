@@ -1,10 +1,10 @@
 # macro order_by_link(property, title, ignore='cursor')
   # if request.args.get('order') == property
     <a href="{{update_query_argument('order', '-' + property, ignore)}}">{{title}}</a>
-    <i class="fa fa-chevron-up text-muted"></i>
+    <i class="fa fa-sort-up text-muted"></i>
   # elif request.args.get('order') == '-' + property
     <a href="{{update_query_argument('order', property, ignore)}}">{{title}}</a>
-    <i class="fa fa-chevron-down text-muted"></i>
+    <i class="fa fa-sort-down text-muted"></i>
   #else
     <a href="{{update_query_argument('order', property, ignore)}}">{{title}}</a>
   #endif

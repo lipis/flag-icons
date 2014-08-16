@@ -260,6 +260,7 @@ def retrieve_user_from_google(google_user):
       re.sub(r'_+|-+|\.+', ' ', google_user.email().split('@')[0]).title(),
       google_user.email(),
       google_user.email(),
+      verified=True,
       admin=users.is_current_user_admin(),
     )
 
@@ -381,6 +382,7 @@ def retrieve_user_from_facebook(response):
       response['name'],
       response.get('username', response['name']),
       response.get('email', ''),
+      verified=bool(response.get('email', '')),
     )
 
 
@@ -395,7 +397,7 @@ def decorator_order_guard(f, decorator_name):
       )
 
 
-def create_user_db(auth_id, name, username, email='', **params):
+def create_user_db(auth_id, name, username, email='', verified=False, **params):
   username = unidecode.unidecode(username.split('@')[0].lower()).strip()
   username = re.sub(r'[\W_]+', '.', username)
   new_username = username
@@ -409,6 +411,8 @@ def create_user_db(auth_id, name, username, email='', **params):
       email=email.lower(),
       username=new_username,
       auth_ids=[auth_id],
+      verified=verified,
+      token=util.uuid(),
       locale=get_locale(),
       **params
     )

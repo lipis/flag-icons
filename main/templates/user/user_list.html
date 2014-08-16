@@ -13,7 +13,7 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="btn-group btn-group-sm">
-        <button type="button" class="btn btn-success" disabled >{{_('Limit')}}</button>
+        <button type="button" class="btn btn-primary" disabled >{{_('Limit')}}</button>
         {{utils.filter_by_link('limit', 16)}}
         {{utils.filter_by_link('limit', 64)}}
         {{utils.filter_by_link('limit', 128)}}
@@ -28,13 +28,20 @@
       </div>
 
       <div class="btn-group btn-group-sm">
-        <button type="button" class="btn btn-primary" disabled >{{_('Active')}}</button>
+        <button type="button" class="btn btn-success" disabled >{{_('Verified')}}</button>
+        {{utils.filter_by_link('verified', True, 'thumbs-o-up')}}
+        {{utils.filter_by_link('verified', False, 'thumbs-o-down')}}
+      </div>
+
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-info" disabled >{{_('Active')}}</button>
         {{utils.filter_by_link('active', True, 'thumbs-o-up')}}
         {{utils.filter_by_link('active', False, 'thumbs-o-down')}}
       </div>
 
+
       <div class="btn-group btn-group-sm {{'hide' if not permissions}}">
-        <button type="button" class="btn btn-info" disabled >Permissions</button>
+        <button type="button" class="btn btn-warning" disabled >Permissions</button>
         # for permission in permissions
           {{utils.filter_by_link('permissions', permission, is_list=True)}}
         # endfor
@@ -81,44 +88,49 @@
     <table class="table table-bordered table-hover">
       <thead>
         <tr class="text-nowrap">
-          <th class="col-xs-3"><input id="select-all" type="checkbox"> {{utils.order_by_link('name', _('Name'))}}</th>
-          <th class="col-xs-1">{{utils.order_by_link('username', _('Username'))}}</th>
-          <th class="col-xs-2">{{utils.order_by_link('email', _('Email'))}}</th>
+          <th class="col-xs-4"><input id="select-all" type="checkbox"> {{utils.order_by_link('name', _('Name'))}}</th>
+          <th class="col-xs-3">{{utils.order_by_link('email', _('Email'))}}<br><small>{{utils.order_by_link('username', _('Username'))}}</small></th>
+
+          <th class="col-xs-2">{{utils.order_by_link('modified', _('Modified'))}}<br><small>{{utils.order_by_link('created', _('Created'))}}</small></th>
           <th class="col-xs-1">{{utils.order_by_link('locale', _('Language'))}}</th>
-          <th class="col-xs-2">{{utils.order_by_link('created', _('Created'))}}</th>
-          <th class="col-xs-2">{{utils.order_by_link('modified', _('Modified'))}}</th>
-          <th class="col-xs-1">{{_('Permissions')}}</th>
+          <th class="col-xs-2">{{_('Permissions')}}</th>
           <th class="text-center" title="{{_('Accounts')}}"><i class="fa fa-key"></i></th>
         </tr>
       </thead>
       <tbody>
         # for user_db in user_dbs
           <tr id="{{user_db.key.urlsafe()}}" class="{{'text-muted' if not user_db.active}}">
-            <td>
-              <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
-              <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="{{_('Avatar of')}} {{user_db.name}}">
+            <td class="name">
+              <label>
+                <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
+                <img src="{{user_db.avatar_url_size(80)}}" alt="{{_('Avatar of')}} {{user_db.name}}">
+              </label>
               <a href="{{url_for('user_update', user_id=user_db.key.id())}}">{{user_db.name}}</a>
               # if current_user.id == user_db.key.id()
                 <i class="fa fa-hand-o-left" title="{{_('You')}}"></i>
               # endif
             </td>
-            <td>{{user_db.username}}</td>
-            <td>{{user_db.email}}</td>
+            <td class="text-nowrap">
+              {{user_db.email}}
+              # if user_db.verified
+                <span class="fa fa-check text-success" title="Verified"></span>
+              # endif
+              <br>
+              <span class="text-success small">{{user_db.username}}</span>
+            </td>
+            <td>
+              <time datetime="{{user_db.modified}}">
+                {{user_db.modified.strftime('%Y-%m-%d')}}
+              </time><br>
+              <time class="text-success small" datetime="{{user_db.created}}">
+                {{user_db.created.strftime('%Y-%m-%d')}}
+              </time>
+            </td>
             <td class="text-nowrap">
               # if user_db.locale
                 <i class="flag-icon flag-icon-{{user_db.locale}}"></i>
                 {{config.LOCALE[user_db.locale]}}
               # endif
-            </td>
-            <td>
-              <time datetime="{{user_db.created}}">
-                {{user_db.created.strftime('%Y-%m-%d')}}
-              </time>
-            </td>
-            <td>
-              <time datetime="{{user_db.modified}}">
-                {{user_db.modified.strftime('%Y-%m-%d')}}
-              </time>
             </td>
             <td>
               # if user_db.admin

@@ -24,6 +24,7 @@ class Config(model.Base):
   notify_on_new_user = ndb.BooleanProperty(default=True)
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
+  verify_email = ndb.BooleanProperty(default=True)
 
   @property
   def has_facebook(self):
@@ -46,6 +47,7 @@ class Config(model.Base):
       'notify_on_new_user',
       'twitter_consumer_key',
       'twitter_consumer_secret',
+      'verify_email',
     })
 
   @classmethod
