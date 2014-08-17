@@ -28,7 +28,7 @@
     },
     "momentjs": {
       "js": "*.js",
-      "js/lang": "lang/*.js"
+      "js/locale": "locale/*.js"
     },
     "nprogress": {
       "js": "*.js",
