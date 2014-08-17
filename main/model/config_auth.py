@@ -2,7 +2,10 @@
 
 from __future__ import absolute_import
 
+from flask.ext.restful import fields
 from google.appengine.ext import ndb
+
+import model
 
 
 class ConfigAuth(object):
@@ -61,23 +64,26 @@ class ConfigAuth(object):
   def has_yahoo(self):
     return bool(self.yahoo_consumer_key and self.yahoo_consumer_secret)
 
-  _PROPERTIES = {
-      'bitbucket_key',
-      'bitbucket_secret',
-      'dropbox_app_key',
-      'dropbox_app_secret',
-      'facebook_app_id',
-      'facebook_app_secret',
-      'github_client_id',
-      'github_client_secret',
-      'instagram_client_id',
-      'instagram_client_secret',
-      'linkedin_api_key',
-      'linkedin_secret_key',
-      'microsoft_client_id',
-      'microsoft_client_secret',
-      'twitter_consumer_key',
-      'twitter_consumer_secret',
-      'yahoo_consumer_key',
-      'yahoo_consumer_secret',
-    }
+
+CONFIG_AUTH_FIELDS = {
+    'bitbucket_key': fields.String,
+    'bitbucket_secret': fields.String,
+    'dropbox_app_key': fields.String,
+    'dropbox_app_secret': fields.String,
+    'facebook_app_id': fields.String,
+    'facebook_app_secret': fields.String,
+    'github_client_id': fields.String,
+    'github_client_secret': fields.String,
+    'instagram_client_id': fields.String,
+    'instagram_client_secret': fields.String,
+    'linkedin_api_key': fields.String,
+    'linkedin_secret_key': fields.String,
+    'microsoft_client_id': fields.String,
+    'microsoft_client_secret': fields.String,
+    'twitter_consumer_key': fields.String,
+    'twitter_consumer_secret': fields.String,
+    'yahoo_consumer_key': fields.String,
+    'yahoo_consumer_secret': fields.String,
+  }
+
+CONFIG_AUTH_FIELDS.update(model.BASE_FIELDS)

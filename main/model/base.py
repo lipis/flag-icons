@@ -4,6 +4,7 @@ from __future__ import absolute_import
 
 from google.appengine.ext import ndb
 
+from api import fields
 import config
 import util
 
@@ -12,14 +13,6 @@ class Base(ndb.Model):
   created = ndb.DateTimeProperty(auto_now_add=True)
   modified = ndb.DateTimeProperty(auto_now=True)
   version = ndb.IntegerProperty(default=config.CURRENT_VERSION_TIMESTAMP)
-
-  _PROPERTIES = {
-      'key',
-      'id',
-      'version',
-      'created',
-      'modified',
-    }
 
   @classmethod
   def get_by(cls, name, value):
@@ -34,3 +27,12 @@ class Base(ndb.Model):
         order=order or util.param('order'),
         **kwargs
       )
+
+
+BASE_FIELDS = {
+    'key': fields.KeyField,
+    'id': fields.IdField,
+    'version': fields.IntegerField,
+    'created': fields.DateTimeField,
+    'modified': fields.DateTimeField,
+  }

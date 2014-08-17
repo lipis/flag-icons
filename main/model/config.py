@@ -2,6 +2,7 @@
 
 from __future__ import absolute_import
 
+from flask.ext.restful import fields
 from google.appengine.ext import ndb
 
 import config
@@ -39,23 +40,26 @@ class Config(model.Base, model.ConfigAuth):
   def has_recaptcha(self):
     return bool(self.recaptcha_private_key and self.recaptcha_public_key)
 
-  _PROPERTIES = model.Base._PROPERTIES.union({
-      'analytics_id',
-      'announcement_html',
-      'announcement_type',
-      'anonymous_recaptcha',
-      'brand_name',
-      'check_unique_email',
-      'email_authentication',
-      'feedback_email',
-      'flask_secret_key',
-      'notify_on_new_user',
-      'recaptcha_private_key',
-      'recaptcha_public_key',
-      'salt',
-      'verify_email',
-    }).union(model.ConfigAuth._PROPERTIES)
-
   @classmethod
   def get_master_db(cls):
     return cls.get_or_insert('master')
+
+
+CONFIG_FIELDS = {
+    'analytics_id': fields.String,
+    'announcement_html': fields.String,
+    'announcement_type': fields.String,
+    'anonymous_recaptcha': fields.Boolean,
+    'brand_name': fields.String,
+    'check_unique_email': fields.Boolean,
+    'email_authentication': fields.Boolean,
+    'feedback_email': fields.String,
+    'flask_secret_key': fields.String,
+    'notify_on_new_user': fields.Boolean,
+    'recaptcha_private_key': fields.String,
+    'recaptcha_public_key': fields.String,
+    'salt': fields.String,
+    'verify_email': fields.Boolean,
+  }
+
+CONFIG_FIELDS.update(model.BASE_FIELDS)
