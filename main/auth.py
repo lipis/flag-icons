@@ -357,6 +357,16 @@ def decorator_order_guard(f, decorator_name):
 
 
 def create_user_db(auth_id, name, username, email='', verified=False, **params):
+  email = email.lower()
+  if verified and email:
+    user_dbs, _ = model.User.get_dbs(email=email, verified=True, limit=2)
+    if len(user_dbs) == 1:
+      user_db = user_dbs[0]
+      user_db.auth_ids.append(auth_id)
+      user_db.put()
+      task.new_user_notification(user_db)
+      return user_db
+
   username = unidecode.unidecode(username.split('@')[0].lower()).strip()
   username = re.sub(r'[\W_]+', '.', username)
   new_username = username
@@ -367,7 +377,7 @@ def create_user_db(auth_id, name, username, email='', verified=False, **params):
 
   user_db = model.User(
       name=name,
-      email=email.lower(),
+      email=email,
       username=new_username,
       auth_ids=[auth_id],
       verified=verified,
