@@ -231,6 +231,7 @@ def merge_user_dbs(user_db, deprecated_keys):
   for deprecated_db in deprecated_dbs:
     deprecated_db.auth_ids = []
     deprecated_db.active = False
+    deprecated_db.verified = False
     if not deprecated_db.username.startswith('_'):
       deprecated_db.username = '_%s' % deprecated_db.username
   ndb.put_multi(deprecated_dbs)
