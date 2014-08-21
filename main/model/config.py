@@ -16,6 +16,7 @@ class Config(model.Base):
       'info', 'warning', 'success', 'danger',
     ])
   brand_name = ndb.StringProperty(default=config.APPLICATION_ID)
+  check_unique_email = ndb.BooleanProperty(default=True)
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
   feedback_email = ndb.StringProperty(default='')
@@ -24,7 +25,6 @@ class Config(model.Base):
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
   verify_email = ndb.BooleanProperty(default=True)
-  check_unique_email = ndb.BooleanProperty(default=True)
 
   @property
   def has_facebook(self):
@@ -39,6 +39,7 @@ class Config(model.Base):
       'announcement_html',
       'announcement_type',
       'brand_name',
+      'check_unique_email',
       'facebook_app_id',
       'facebook_app_secret',
       'feedback_email',

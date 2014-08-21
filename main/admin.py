@@ -17,6 +17,7 @@ class ConfigUpdateForm(wtf.Form):
   announcement_html = wtf.TextAreaField('Announcement HTML', filters=[util.strip_filter])
   announcement_type = wtf.SelectField('Announcement Type', choices=[(t, t.title()) for t in model.Config.announcement_type._choices])
   brand_name = wtf.StringField('Brand Name', [wtf.validators.required()], filters=[util.strip_filter])
+  check_unique_email = wtf.BooleanField('Check for the uniqueness of the verified emails')
   facebook_app_id = wtf.StringField('App ID', filters=[util.strip_filter])
   facebook_app_secret = wtf.StringField('App Secret', filters=[util.strip_filter])
   feedback_email = wtf.StringField('Feedback Email', [wtf.validators.optional(), wtf.validators.email()], filters=[util.email_filter])
@@ -25,7 +26,6 @@ class ConfigUpdateForm(wtf.Form):
   twitter_consumer_key = wtf.StringField('Consumer Key', filters=[util.strip_filter])
   twitter_consumer_secret = wtf.StringField('Consumer Secret', filters=[util.strip_filter])
   verify_email = wtf.BooleanField('Verify user emails')
-  check_unique_email = wtf.BooleanField('Check for the uniqueness of the verified emails')
 
 
 @app.route('/_s/admin/config/', endpoint='admin_config_update_service')
