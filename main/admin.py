@@ -25,6 +25,7 @@ class ConfigUpdateForm(wtf.Form):
   twitter_consumer_key = wtf.StringField('Consumer Key', filters=[util.strip_filter])
   twitter_consumer_secret = wtf.StringField('Consumer Secret', filters=[util.strip_filter])
   verify_email = wtf.BooleanField('Verify user emails')
+  check_unique_email = wtf.BooleanField('Check for the uniqueness of the verified emails')
 
 
 @app.route('/_s/admin/config/', endpoint='admin_config_update_service')

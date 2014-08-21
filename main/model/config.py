@@ -24,6 +24,7 @@ class Config(model.Base):
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
   verify_email = ndb.BooleanProperty(default=True)
+  check_unique_email = ndb.BooleanProperty(default=True)
 
   @property
   def has_facebook(self):
