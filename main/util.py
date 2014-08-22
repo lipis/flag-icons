@@ -82,6 +82,10 @@ def get_dbs(
   return list(model_dbs), next_cursor
 
 
+def get_keys(*arg, **kwargs):
+  return get_dbs(*arg, keys_only=True, **kwargs)
+
+
 ###############################################################################
 # JSON Response Helpers
 ###############################################################################

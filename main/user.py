@@ -87,7 +87,7 @@ def user_update(user_id):
   if form.validate_on_submit():
     if not util.is_valid_username(form.username.data):
       form.username.errors.append('This username is invalid.')
-    elif not model.User.is_username_available(form.username.data, user_db):
+    elif not model.User.is_username_available(form.username.data, user_db.key):
       form.username.errors.append('This username is already taken.')
     else:
       form.populate_obj(user_db)

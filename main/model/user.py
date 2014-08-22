@@ -55,15 +55,15 @@ class User(model.Base):
       )
 
   @classmethod
-  def is_username_available(cls, username, self_db=None):
-    if self_db is None:
+  def is_username_available(cls, username, self_key=None):
+    if self_key is None:
       return cls.get_by('username', username) is None
-    user_dbs, _ = util.get_dbs(cls.query(), username=username, limit=2)
-    return not user_dbs or self_db in user_dbs and not user_dbs[1:]
+    user_keys, _ = util.get_keys(cls.query(), username=username, limit=2)
+    return not user_keys or self_key in user_keys and not user_keys[1:]
 
   @classmethod
-  def is_email_available(cls, email, self_db=None):
+  def is_email_available(cls, email, self_key=None):
     if not config.CONFIG_DB.check_unique_email:
       return True
-    user_dbs, _ = util.get_dbs(cls.query(), email=email, verified=True, limit=2)
-    return not user_dbs or self_db in user_dbs and not user_dbs[1:]
+    user_keys, _ = util.get_keys(cls.query(), email=email, verified=True, limit=2)
+    return not user_keys or self_key in user_keys and not user_keys[1:]
