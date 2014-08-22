@@ -76,7 +76,7 @@ def profile():
 
   if form.validate_on_submit():
     email = form.email.data
-    if email and not user_db.is_email_available(email, user_db):
+    if email and not user_db.is_email_available(email, user_db.key):
       form.email.errors.append('This email is already taken.')
 
     if not form.errors:
