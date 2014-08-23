@@ -30,7 +30,7 @@ def param(name, cast=None):
 
   if cast and value is not None:
     if cast is bool:
-      return value.lower() in ['true', 'yes', '1', '']
+      return value.lower() in ['true', 'yes', 'y', '1', '']
     if cast is list:
       return value.split(',') if len(value) > 0 else []
     return cast(value)
