@@ -1,6 +1,6 @@
-blinker
-flask
-flask-login==0.2.9
+blinker==1.3
+flask==0.10.1
+flask-login==0.2.11
 git+https://github.com/mitsuhiko/flask-oauth.git@0.13
-flask-wtf==0.8.2
-unidecode
+flask-wtf==0.10
+unidecode==0.4.16

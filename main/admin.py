@@ -3,6 +3,7 @@
 from flask.ext import wtf
 from google.appengine.api import app_identity
 import flask
+import wtforms
 
 import auth
 import config
@@ -13,19 +14,19 @@ from main import app
 
 
 class ConfigUpdateForm(wtf.Form):
-  analytics_id = wtf.StringField('Tracking ID', filters=[util.strip_filter])
-  announcement_html = wtf.TextAreaField('Announcement HTML', filters=[util.strip_filter])
-  announcement_type = wtf.SelectField('Announcement Type', choices=[(t, t.title()) for t in model.Config.announcement_type._choices])
-  brand_name = wtf.StringField('Brand Name', [wtf.validators.required()], filters=[util.strip_filter])
-  check_unique_email = wtf.BooleanField('Check for the uniqueness of the verified emails')
-  facebook_app_id = wtf.StringField('App ID', filters=[util.strip_filter])
-  facebook_app_secret = wtf.StringField('App Secret', filters=[util.strip_filter])
-  feedback_email = wtf.StringField('Feedback Email', [wtf.validators.optional(), wtf.validators.email()], filters=[util.email_filter])
-  flask_secret_key = wtf.StringField('Secret Key', [wtf.validators.optional()], filters=[util.strip_filter])
-  notify_on_new_user = wtf.BooleanField('Send an email notification when a user signs up')
-  twitter_consumer_key = wtf.StringField('Consumer Key', filters=[util.strip_filter])
-  twitter_consumer_secret = wtf.StringField('Consumer Secret', filters=[util.strip_filter])
-  verify_email = wtf.BooleanField('Verify user emails')
+  analytics_id = wtforms.StringField('Tracking ID', filters=[util.strip_filter])
+  announcement_html = wtforms.TextAreaField('Announcement HTML', filters=[util.strip_filter])
+  announcement_type = wtforms.SelectField('Announcement Type', choices=[(t, t.title()) for t in model.Config.announcement_type._choices])
+  brand_name = wtforms.StringField('Brand Name', [wtforms.validators.required()], filters=[util.strip_filter])
+  check_unique_email = wtforms.BooleanField('Check for the uniqueness of the verified emails')
+  facebook_app_id = wtforms.StringField('App ID', filters=[util.strip_filter])
+  facebook_app_secret = wtforms.StringField('App Secret', filters=[util.strip_filter])
+  feedback_email = wtforms.StringField('Feedback Email', [wtforms.validators.optional(), wtforms.validators.email()], filters=[util.email_filter])
+  flask_secret_key = wtforms.StringField('Secret Key', [wtforms.validators.optional()], filters=[util.strip_filter])
+  notify_on_new_user = wtforms.BooleanField('Send an email notification when a user signs up')
+  twitter_consumer_key = wtforms.StringField('Consumer Key', filters=[util.strip_filter])
+  twitter_consumer_secret = wtforms.StringField('Consumer Secret', filters=[util.strip_filter])
+  verify_email = wtforms.BooleanField('Verify user emails')
 
 
 @app.route('/_s/admin/config/', endpoint='admin_config_update_service')
