@@ -21,7 +21,7 @@ def send_mail_notification(subject, body, to=None, **kwargs):
 
 
 ###############################################################################
-# User related
+# Admin Notifications
 ###############################################################################
 def new_user_notification(user_db):
   if not config.CONFIG_DB.notify_on_new_user:
@@ -36,6 +36,9 @@ def new_user_notification(user_db):
   send_mail_notification('New user: %s' % user_db.name, body)
 
 
+###############################################################################
+# User Related
+###############################################################################
 def verify_email_notification(user_db):
   if not (config.CONFIG_DB.verify_email and user_db.email) or user_db.verified:
     return
@@ -51,7 +54,7 @@ In case it was you, please verify it by following this link:
 
 %(link)s
 
-If it wasn't you, we apologize. You can either ignore this email or reply to it 
+If it wasn't you, we apologize. You can either ignore this email or reply to it
 so we can take a look.
 
 Best regards,

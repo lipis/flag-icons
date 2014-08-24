@@ -116,13 +116,14 @@ def user_update(user_id):
 def user_verify(token):
   user_db = auth.current_user_db()
   if user_db.token != token:
-    flask.flash('This token is invalid or expired.', category='danger')
+    flask.flash('That link is either invalid or expired.', category='danger')
     return flask.redirect(flask.url_for('profile', token=token))
   user_db.verified = True
   user_db.token = util.uuid()
   user_db.put()
   flask.flash('Hooray! Your email is now verified.', category='success')
   return flask.redirect(flask.url_for('profile'))
+
 
 ###############################################################################
 # User Delete
