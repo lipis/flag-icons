@@ -4,6 +4,7 @@ window.LOG = ->
 
 window.init_common = ->
   init_loading_button()
+  init_password_show_button()
   init_time()
   init_announcement()
 
@@ -11,6 +12,16 @@ window.init_common = ->
 window.init_loading_button = ->
   $('body').on 'click', '.btn-loading', ->
     $(this).button 'loading'
+
+
+window.init_password_show_button = ->
+  $('body').on 'click', '.btn-password-show', ->
+    $target = $($(this).data 'target')
+    $target.focus()
+    if $(this).hasClass 'active'
+      $target.attr 'type', 'password'
+    else
+      $target.attr 'type', 'text'
 
 
 window.init_time = ->
