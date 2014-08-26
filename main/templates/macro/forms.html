@@ -32,6 +32,23 @@
 # endmacro
 
 
+# macro password_visible_field(field, size='')
+  <div class="form-group {{'has-error' if field.errors}}">
+    {{field.label(class='control-label')}}
+    <div class="input-group {{'input-group-%s' % size if size}}">
+      {{field(class='form-control', type='password', autocomplete='off', **kwargs)}}
+      <span class="input-group-btn">
+        <button class="btn btn-default btn-password-show" type="button" data-target="#{{field.name}}" data-toggle="button" title="Show/Hide Password">
+          <span class="fa fa-eye"></span>
+        </button>
+      </span>
+    </div>
+    {{field_errors(field)}}
+    {{field_description(field)}}
+  </div>
+# endmacro
+
+
 # macro number_field(field)
   {{input_field(field, type='number', **kwargs)}}
 # endmacro
