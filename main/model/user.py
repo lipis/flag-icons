@@ -45,7 +45,9 @@ class User(model.Base):
     })
 
   @classmethod
-  def get_dbs(cls, admin=None, active=None, verified=None, permissions=None, **kwargs):
+  def get_dbs(
+      cls, admin=None, active=None, verified=None, permissions=None, **kwargs
+    ):
     return super(User, cls).get_dbs(
         admin=admin or util.param('admin', bool),
         active=active or util.param('active', bool),
@@ -65,5 +67,7 @@ class User(model.Base):
   def is_email_available(cls, email, self_key=None):
     if not config.CONFIG_DB.check_unique_email:
       return True
-    user_keys, _ = util.get_keys(cls.query(), email=email, verified=True, limit=2)
+    user_keys, _ = util.get_keys(
+        cls.query(), email=email, verified=True, limit=2,
+      )
     return not user_keys or self_key in user_keys and not user_keys[1:]
