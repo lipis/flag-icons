@@ -37,9 +37,11 @@ def param(name, cast=None):
   return value
 
 
-def get_next_url():
-  next_url = param('next') or param('next_url')
+def get_next_url(next_url=''):
+  next_url = next_url or param('next') or param('next_url')
   if next_url:
+    if flask.url_for('signin') in next_url:
+      return flask.url_for('welcome')
     return next_url
   referrer = flask.request.referrer
   if referrer and referrer.startswith(flask.request.host_url):

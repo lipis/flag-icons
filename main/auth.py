@@ -159,8 +159,6 @@ def permission_required(permission=None, methods=None):
 @app.route('/signin/')
 def signin():
   next_url = util.get_next_url()
-  if flask.url_for('signin') in next_url:
-    next_url = flask.url_for('welcome')
 
   google_signin_url = flask.url_for('signin_google', next=next_url)
   twitter_signin_url = flask.url_for('signin_twitter', next=next_url)
@@ -410,6 +408,6 @@ def signin_user_db(user_db):
     flask.flash('Hello %s, welcome to %s.' % (
         user_db.name, config.CONFIG_DB.brand_name,
       ), category='success')
-    return flask.redirect(auth_params['next'])
+    return flask.redirect(util.get_next_url(auth_params['next']))
   flask.flash('Sorry, but you could not sign in.', category='danger')
   return flask.redirect(flask.url_for('signin'))
