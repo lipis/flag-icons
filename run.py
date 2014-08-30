@@ -63,6 +63,12 @@ ARGS = PARSER.parse_args()
 
 
 ###############################################################################
+# Globals
+###############################################################################
+IS_WINDOWS = platform.system() is 'Windows'
+
+
+###############################################################################
 # Directories
 ###############################################################################
 DIR_BOWER_COMPONENTS = 'bower_components'
@@ -103,7 +109,7 @@ FILE_GRUNT = os.path.join(DIR_BIN, 'grunt')
 FILE_LESS = os.path.join(DIR_BIN, 'lessc')
 FILE_UGLIFYJS = os.path.join(DIR_BIN, 'uglifyjs')
 FILE_VENV = os.path.join(DIR_VENV, 'Scripts', 'activate.bat') \
-    if platform.system() is 'Windows' \
+    if IS_WINDOWS \
     else os.path.join(DIR_VENV, 'bin', 'activate')
 
 DIR_STORAGE = os.path.join(DIR_TEMP, 'storage')
@@ -162,7 +168,7 @@ def merge_files(source, target):
 
 def os_execute(executable, args, source, target, append=False):
   operator = '>>' if append else '>'
-  os.system('"%s" %s %s %s %s' % (executable, args, source, operator, target))
+  os.system('%s %s %s %s %s' % (executable, args, source, operator, target))
 
 
 def compile_script(source, target_dir):
@@ -262,17 +268,17 @@ def listdir(directory, split_ext=False):
 
 
 def site_packages_path():
-  if platform.system() == 'Windows':
+  if IS_WINDOWS:
     return os.path.join(DIR_VENV, 'Lib', 'site-packages')
   py_version = 'python%s.%s' % sys.version_info[:2]
   return os.path.join(DIR_VENV, 'lib', py_version, 'site-packages')
 
 
-def create_virtualenv(is_windows):
+def create_virtualenv():
   if not os.path.exists(FILE_VENV):
     os.system('virtualenv --no-site-packages %s' % DIR_VENV)
     os.system('echo %s >> %s' % (
-        'set PYTHONPATH=' if is_windows else 'unset PYTHONPATH', FILE_VENV
+        'set PYTHONPATH=' if IS_WINDOWS else 'unset PYTHONPATH', FILE_VENV
       ))
     gae_path = find_gae_path()
     pth_file = os.path.join(site_packages_path(), 'gae.pth')
@@ -281,22 +287,21 @@ def create_virtualenv(is_windows):
     os.system(echo_to % os.path.abspath(DIR_LIBX))
     fix_path_cmd = 'import dev_appserver; dev_appserver.fix_sys_path()'
     os.system(echo_to % (
-        fix_path_cmd if is_windows else '"%s"' % fix_path_cmd
+        fix_path_cmd if IS_WINDOWS else '"%s"' % fix_path_cmd
       ))
   return True
 
 
 def exec_pip_commands(command):
-  is_windows = platform.system() == 'Windows'
   script = []
-  if create_virtualenv(is_windows):
-    activate_cmd = 'call %s' if is_windows else 'source %s'
+  if create_virtualenv():
+    activate_cmd = 'call %s' if IS_WINDOWS else 'source %s'
     activate_cmd %= FILE_VENV
     script.append(activate_cmd)
 
   script.append('echo %s' % command)
   script.append(command)
-  script = '&'.join(script) if is_windows else \
+  script = '&'.join(script) if IS_WINDOWS else \
       '/bin/bash -c "%s"' % ';'.join(script)
   os.system(script)
 
@@ -452,8 +457,7 @@ def check_requirement(check_func):
 
 
 def find_gae_path():
-  is_windows = platform.system() == 'Windows'
-  if is_windows:
+  if IS_WINDOWS:
     gae_path = None
     for path in os.environ['PATH'].split(os.pathsep):
       if os.path.isfile(os.path.join(path, 'dev_appserver.py')):
@@ -464,7 +468,7 @@ def find_gae_path():
       gae_path = os.path.dirname(os.path.realpath(gae_path))
   if not gae_path:
     return ''
-  gcloud_exec = 'gcloud.cmd' if is_windows else 'gcloud'
+  gcloud_exec = 'gcloud.cmd' if IS_WINDOWS else 'gcloud'
   if not os.path.isfile(os.path.join(gae_path, gcloud_exec)):
     return gae_path
   gae_path = os.path.join(gae_path, '..', 'platform', 'google_appengine')
@@ -539,9 +543,11 @@ def run_minify():
   for source in config.STYLES:
     compile_style(os.path.join(DIR_STATIC, source), DIR_MIN_STYLE)
 
+  cat, separator = ('type', ',') if IS_WINDOWS else ('cat', ' ')
+
   for module, scripts in config.SCRIPTS:
     scripts = uniq(scripts)
-    coffees = ' '.join([
+    coffees = separator.join([
         os.path.join(DIR_STATIC, script)
         for script in scripts if script.endswith('.coffee')
       ])
@@ -551,7 +557,7 @@ def run_minify():
     print_out('COFFEE MIN', ugly_js)
 
     if len(coffees):
-      os_execute(FILE_COFFEE, '--join -cp', coffees, pretty_js, append=True)
+      os_execute(cat, coffees, ' | %s --compile --stdio' % FILE_COFFEE, pretty_js, append=True)
     for script in scripts:
       if not script.endswith('.js'):
         continue
