@@ -110,14 +110,12 @@ def jsonify_model_dbs(model_dbs, next_cursor=None):
 
 
 def jsonify_model_db(model_db):
-  result_object = model_db_to_object(model_db)
-  response = jsonpify({
+  return jsonpify({
       'status': 'success',
       'now': datetime.utcnow().isoformat(),
-      'result': result_object,
+      'result': model_db_to_object(model_db),
     })
-  return response
-
+  
 
 def model_db_to_object(model_db):
   model_db_object = {}
