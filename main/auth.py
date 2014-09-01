@@ -365,6 +365,8 @@ def create_user_db(auth_id, name, username, email='', verified=False, **params):
       task.new_user_notification(user_db)
       return user_db
 
+  if isinstance(username, str):
+    username = username.decode('utf-8')
   username = unidecode.unidecode(username.split('@')[0].lower()).strip()
   username = re.sub(r'[\W_]+', '.', username)
   new_username = username
