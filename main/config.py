@@ -42,7 +42,7 @@ STYLES = [
 SCRIPTS = [
     ('libs', [
         'ext/js/jquery/jquery.js',
-        'ext/js/momentjs/moment.js',
+        'ext/js/moment/moment.js',
         'ext/js/nprogress/nprogress.js',
         'ext/js/bootstrap/alert.js',
         'ext/js/bootstrap/button.js',
