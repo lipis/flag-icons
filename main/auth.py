@@ -179,7 +179,7 @@ def signin():
 def signout():
   login.logout_user()
   flask.flash(u'You have been signed out.', category='success')
-  return flask.redirect(flask.url_for('welcome'))
+  return flask.redirect(flask.url_for('signin'))
 
 
 ###############################################################################
