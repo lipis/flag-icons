@@ -209,7 +209,7 @@ def user_merge():
     merged_user_db.auth_ids = auth_ids
     merged_user_db.put()
 
-    deprecated_keys = [key for key in user_db_keys if key != merged_user_db.key]
+    deprecated_keys = [k for k in user_db_keys if k != merged_user_db.key]
     merge_user_dbs(merged_user_db, deprecated_keys)
     return flask.redirect(
         flask.url_for('user_update', user_id=merged_user_db.key.id()),

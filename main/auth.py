@@ -354,7 +354,7 @@ def decorator_order_guard(f, decorator_name):
       )
 
 
-def create_user_db(auth_id, name, username, email='', verified=False, **params):
+def create_user_db(auth_id, name, username, email='', verified=False, **props):
   email = email.lower()
   if verified and email:
     user_dbs, _ = model.User.get_dbs(email=email, verified=True, limit=2)
@@ -382,7 +382,7 @@ def create_user_db(auth_id, name, username, email='', verified=False, **params):
       auth_ids=[auth_id],
       verified=verified,
       token=util.uuid(),
-      **params
+      **props
     )
   user_db.put()
   task.new_user_notification(user_db)
@@ -405,6 +405,7 @@ def signin_user_db(user_db):
       'next': flask.url_for('welcome'),
       'remember': False,
     })
+  flask.session.pop('auth-params', None)
   if login.login_user(flask_user_db, remember=auth_params['remember']):
     user_db.put_async()
     flask.flash('Hello %s, welcome to %s.' % (
