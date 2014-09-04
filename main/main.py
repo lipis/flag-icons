@@ -59,10 +59,12 @@ def sitemap():
 # Profile stuff
 ###############################################################################
 class ProfileUpdateForm(wtf.Form):
-  name = wtforms.StringField('Name',
+  name = wtforms.StringField(
+      'Name',
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
-  email = wtforms.StringField('Email',
+  email = wtforms.StringField(
+      'Email',
       [wtforms.validators.optional(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
@@ -106,13 +108,16 @@ def profile():
 # Feedback
 ###############################################################################
 class FeedbackForm(wtf.Form):
-  subject = wtforms.StringField('Subject',
+  subject = wtforms.StringField(
+      'Subject',
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
-  message = wtforms.TextAreaField('Message',
+  message = wtforms.TextAreaField(
+      'Message',
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
-  email = wtforms.StringField('Your email (optional)',
+  email = wtforms.StringField(
+      'Your email (optional)',
       [wtforms.validators.optional(), wtforms.validators.email()],
       filters=[util.email_filter],
     )

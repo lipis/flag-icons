@@ -115,7 +115,7 @@ def jsonify_model_db(model_db):
       'now': datetime.utcnow().isoformat(),
       'result': model_db_to_object(model_db),
     })
-  
+
 
 def model_db_to_object(model_db):
   model_db_object = {}

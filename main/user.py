@@ -43,21 +43,25 @@ def user_list():
 # User Update
 ###############################################################################
 class UserUpdateForm(wtf.Form):
-  username = wtforms.StringField('Username',
+  username = wtforms.StringField(
+      'Username',
       [wtforms.validators.required(), wtforms.validators.length(min=3)],
       filters=[util.email_filter],
     )
-  name = wtforms.StringField('Name',
+  name = wtforms.StringField(
+      'Name',
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
-  email = wtforms.StringField('Email',
+  email = wtforms.StringField(
+      'Email',
       [wtforms.validators.optional(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
   admin = wtforms.BooleanField('Admin')
   active = wtforms.BooleanField('Active')
   verified = wtforms.BooleanField('Verified')
-  permissions = wtforms.SelectMultipleField('Permissions',
+  permissions = wtforms.SelectMultipleField(
+      'Permissions',
       filters=[util.sort_filter],
     )
 
@@ -153,10 +157,12 @@ class UserMergeForm(wtf.Form):
   user_key = wtforms.StringField('User Key', [wtforms.validators.required()])
   user_keys = wtforms.StringField('User Keys', [wtforms.validators.required()])
   username = wtforms.StringField('Username', [wtforms.validators.optional()])
-  name = wtforms.StringField('Name (merged)',
+  name = wtforms.StringField(
+      'Name (merged)',
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
-  email = wtforms.StringField('Email (merged)',
+  email = wtforms.StringField(
+      'Email (merged)',
       [wtforms.validators.optional(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
