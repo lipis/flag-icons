@@ -22,6 +22,8 @@ class Config(model.Base):
   feedback_email = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default=util.uuid())
   notify_on_new_user = ndb.BooleanProperty(default=True)
+  recaptcha_private_key = ndb.StringProperty(default='')
+  recaptcha_public_key = ndb.StringProperty(default='')
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
   verify_email = ndb.BooleanProperty(default=True)
@@ -29,6 +31,10 @@ class Config(model.Base):
   @property
   def has_facebook(self):
     return bool(self.facebook_app_id and self.facebook_app_secret)
+
+  @property
+  def has_recaptcha(self):
+    return bool(self.recaptcha_private_key and self.recaptcha_public_key)
 
   @property
   def has_twitter(self):
@@ -45,6 +51,8 @@ class Config(model.Base):
       'feedback_email',
       'flask_secret_key',
       'notify_on_new_user',
+      'recaptcha_private_key',
+      'recaptcha_public_key',
       'twitter_consumer_key',
       'twitter_consumer_secret',
       'verify_email',

@@ -24,6 +24,8 @@ class ConfigUpdateForm(wtf.Form):
   feedback_email = wtforms.StringField('Feedback Email', [wtforms.validators.optional(), wtforms.validators.email()], filters=[util.email_filter])
   flask_secret_key = wtforms.StringField('Flask Secret Key', [wtforms.validators.optional()], filters=[util.strip_filter])
   notify_on_new_user = wtforms.BooleanField('Send an email notification when a user signs up')
+  recaptcha_private_key = wtforms.StringField('Private Key', filters=[util.strip_filter])
+  recaptcha_public_key = wtforms.StringField('Public Key', filters=[util.strip_filter])
   twitter_consumer_key = wtforms.StringField('Consumer Key', filters=[util.strip_filter])
   twitter_consumer_secret = wtforms.StringField('Consumer Secret', filters=[util.strip_filter])
   verify_email = wtforms.BooleanField('Verify user emails')
