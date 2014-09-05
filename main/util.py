@@ -58,9 +58,6 @@ def get_next_url(next_url=''):
 def get_dbs(
     query, order=None, limit=None, cursor=None, keys_only=None, **filters
   ):
-  '''Retrieves entities from datastore, by applying cursor pagination
-  and equality filters. Returns dbs or keys and more cursor value
-  '''
   limit = limit or config.DEFAULT_DB_LIMIT
   cursor = Cursor.from_websafe_string(cursor) if cursor else None
   model_class = ndb.Model._kind_map[query.kind]
@@ -95,8 +92,6 @@ def get_keys(*arg, **kwargs):
 # JSON Response Helpers
 ###############################################################################
 def jsonify_model_dbs(model_dbs, next_cursor=None):
-  '''Return a response of a list of dbs as JSON service result
-  '''
   result_objects = [model_db_to_object(model_db) for model_db in model_dbs]
 
   response_object = {
@@ -183,9 +178,6 @@ def check_form_fields(*fields):
 
 
 def generate_next_url(next_cursor, base_url=None, cursor_name='cursor'):
-  '''Substitutes or alters the current request URL with a new cursor parameter
-  for next page of results
-  '''
   if not next_cursor:
     return None
   base_url = base_url or flask.request.base_url
