@@ -54,8 +54,8 @@
 # endmacro
 
 
-# macro auth_icons(auth_ids)
-  # for auth_id in auth_ids
+# macro auth_icons(user_db)
+  # for auth_id in user_db.auth_ids
     {{auth_icon(auth_id)}}
   # endfor
 # endmacro

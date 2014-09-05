@@ -38,7 +38,7 @@
     <div class="input-group {{'input-group-%s' % size if size}}">
       {{field(class='form-control', type='password', autocomplete='off', **kwargs)}}
       <span class="input-group-btn">
-        <button class="btn btn-default btn-password-show" type="button" data-target="#{{field.name}}" data-toggle="button" title="Show/Hide Password">
+        <button class="btn btn-default btn-password-show" type="button" data-target="#{{field.name}}" data-toggle="button" title="Show/Hide Password" tabindex="-1">
           <span class="fa fa-eye"></span>
         </button>
       </span>
