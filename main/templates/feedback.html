@@ -11,8 +11,7 @@
       <form method="POST" action="." novalidate>
         {{form.csrf_token}}
 
-        {{forms.text_field(form.subject, autofocus=True)}}
-        {{forms.textarea_field(form.message, rows=8)}}
+        {{forms.textarea_field(form.message, rows=8, autofocus=True)}}
         {{forms.email_field(form.email)}}
         {{forms.recaptcha_field(form.recaptcha)}}
 

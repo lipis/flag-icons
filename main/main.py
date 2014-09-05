@@ -31,6 +31,7 @@ import user
 if config.DEVELOPMENT:
   from werkzeug import debug
   app.wsgi_app = debug.DebuggedApplication(app.wsgi_app, evalex=True)
+  app.testing = True
 
 
 ###############################################################################
@@ -108,10 +109,6 @@ def profile():
 # Feedback
 ###############################################################################
 class FeedbackForm(wtf.Form):
-  subject = wtforms.StringField(
-      'Subject',
-      [wtforms.validators.required()], filters=[util.strip_filter],
-    )
   message = wtforms.TextAreaField(
       'Message',
       [wtforms.validators.required()], filters=[util.strip_filter],
@@ -135,7 +132,7 @@ def feedback():
   if form.validate_on_submit():
     body = '%s\n\n%s' % (form.message.data, form.email.data)
     kwargs = {'reply_to': form.email.data} if form.email.data else {}
-    task.send_mail_notification(form.subject.data, body, **kwargs)
+    task.send_mail_notification('%s...' % body[:48].strip(), body, **kwargs)
     flask.flash('Thank you for your feedback!', category='success')
     return flask.redirect(flask.url_for('welcome'))
 
