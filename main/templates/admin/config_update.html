@@ -23,6 +23,7 @@
 
         {{forms.text_field(form.brand_name, autofocus=True)}}
         {{forms.email_field(form.feedback_email)}}
+        {{forms.checkbox_field(form.anonymous_recaptcha)}}
         {{forms.checkbox_field(form.notify_on_new_user)}}
         {{forms.checkbox_field(form.verify_email)}}
         {{forms.checkbox_field(form.check_unique_email)}}

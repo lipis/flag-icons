@@ -11,6 +11,7 @@ import util
 
 class Config(model.Base):
   analytics_id = ndb.StringProperty(default='')
+  anonymous_recaptcha = ndb.BooleanProperty(default=False)
   announcement_html = ndb.TextProperty(default='')
   announcement_type = ndb.StringProperty(default='info', choices=[
       'info', 'warning', 'success', 'danger',
@@ -29,6 +30,10 @@ class Config(model.Base):
   verify_email = ndb.BooleanProperty(default=True)
 
   @property
+  def has_anonymous_recaptcha(self):
+    return bool(self.anonymous_recaptcha and self.has_recaptcha)
+
+  @property
   def has_facebook(self):
     return bool(self.facebook_app_id and self.facebook_app_secret)
 
@@ -42,6 +47,7 @@ class Config(model.Base):
 
   _PROPERTIES = model.Base._PROPERTIES.union({
       'analytics_id',
+      'anonymous_recaptcha',
       'announcement_html',
       'announcement_type',
       'brand_name',

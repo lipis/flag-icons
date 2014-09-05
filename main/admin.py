@@ -15,6 +15,7 @@ from main import app
 
 class ConfigUpdateForm(wtf.Form):
   analytics_id = wtforms.StringField('Tracking ID', filters=[util.strip_filter])
+  anonymous_recaptcha = wtforms.BooleanField('Use reCAPTCHA in forms for unauthorized users')
   announcement_html = wtforms.TextAreaField('Announcement HTML', filters=[util.strip_filter])
   announcement_type = wtforms.SelectField('Announcement Type', choices=[(t, t.title()) for t in model.Config.announcement_type._choices])
   brand_name = wtforms.StringField('Brand Name', [wtforms.validators.required()], filters=[util.strip_filter])

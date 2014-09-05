@@ -14,6 +14,7 @@
         {{forms.text_field(form.subject, autofocus=True)}}
         {{forms.textarea_field(form.message, rows=8)}}
         {{forms.email_field(form.email)}}
+        {{forms.recaptcha_field(form.recaptcha)}}
 
         <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Sending Feedback..">
           Send Feedback
