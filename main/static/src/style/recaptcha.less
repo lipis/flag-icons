@@ -1,0 +1,69 @@
+.recaptcha {
+  .recaptchatable {
+    width: 100%;
+    border: none!important;
+    tr {
+      height: auto!important;
+      td {
+        display: none;
+        height: auto!important;
+        width: 100%!important;
+        padding: 0!important;
+        &:first-child {
+          display: table-cell;
+        }
+      }
+    }
+    center {
+      .text-left;
+      height: auto!important;
+    }
+    #recaptcha_image {
+      width: auto!important;
+      max-width: 100%!important;
+      height: 74px!important;
+      border: none!important;
+      img {
+        .img-thumbnail;
+      }
+    }
+    #recaptcha_response_field {
+      width: 100%!important;
+      border: 1px solid @input-border!important;
+      .form-control;
+    }
+  }
+  &.has-success {
+    #recaptcha_response_field {
+      border-color: @state-success-text!important;
+      .box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+      &:focus {
+        border-color: darken(@state-success-text, 10%);
+        @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@state-success-text, 20%);
+        .box-shadow(@shadow);
+      }
+    }
+  }
+  &.has-warning {
+    #recaptcha_response_field {
+      border-color: @state-warning-text!important;
+      .box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+      &:focus {
+        border-color: darken(@state-warning-text, 10%);
+        @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@state-warning-text, 20%);
+        .box-shadow(@shadow);
+      }
+    }
+  }
+  &.has-error {
+    #recaptcha_response_field {
+      border-color: @state-danger-text!important;
+      .box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+      &:focus {
+        border-color: darken(@state-danger-text, 10%);
+        @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@state-danger-text, 20%);
+        .box-shadow(@shadow);
+      }
+    }
+  }
+}
