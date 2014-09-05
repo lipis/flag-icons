@@ -209,6 +209,10 @@ def is_valid_username(username):
   return True if _username_re.match(username) else False
 
 
+def create_name_from_email(email):
+  return re.sub(r'_+|-+|\.+|\++', ' ', email.split('@')[0]).title()
+
+
 def update_query_argument(name, value=None, ignore='cursor', is_list=False):
   ignore = ignore.split(',') if isinstance(ignore, str) else ignore or []
   arguments = {}

@@ -214,7 +214,7 @@ def retrieve_user_from_google(google_user):
 
   return create_user_db(
       auth_id,
-      re.sub(r'_+|-+|\.+', ' ', google_user.email().split('@')[0]).title(),
+      util.create_name_from_email(google_user.email()),
       google_user.email(),
       google_user.email(),
       verified=True,
