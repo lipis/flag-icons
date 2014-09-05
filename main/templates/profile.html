@@ -5,7 +5,7 @@
 # block content
   <div class="page-header">
     <h1>
-      <small class="pull-right" title="Connected Accounts">{{utils.auth_icons(user_db.auth_ids)}}</small>
+      <small class="pull-right">{{utils.auth_icons(user_db)}}</small>
       {{title}}
     </h1>
   </div>
@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col-md-4 col-sm-6">
         {{form.csrf_token}}
-        <div class="form-group ">
+        <div class="form-group">
           <label class="control-label" for="username">Username</label>
           <input id="username" class="form-control" name="username" type="text" value="{{user_db.username}}" readonly="readonly">
         </div>
