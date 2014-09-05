@@ -22,7 +22,7 @@ class ConfigUpdateForm(wtf.Form):
   facebook_app_id = wtforms.StringField('App ID', filters=[util.strip_filter])
   facebook_app_secret = wtforms.StringField('App Secret', filters=[util.strip_filter])
   feedback_email = wtforms.StringField('Feedback Email', [wtforms.validators.optional(), wtforms.validators.email()], filters=[util.email_filter])
-  flask_secret_key = wtforms.StringField('Secret Key', [wtforms.validators.optional()], filters=[util.strip_filter])
+  flask_secret_key = wtforms.StringField('Flask Secret Key', [wtforms.validators.optional()], filters=[util.strip_filter])
   notify_on_new_user = wtforms.BooleanField('Send an email notification when a user signs up')
   twitter_consumer_key = wtforms.StringField('Consumer Key', filters=[util.strip_filter])
   twitter_consumer_secret = wtforms.StringField('Consumer Secret', filters=[util.strip_filter])
