@@ -65,4 +65,8 @@ Best regards,
       'brand': config.CONFIG_DB.brand_name,
     }
 
-  send_mail_notification('Verify your email!', body, to)
+  flask.flash(
+      'A verification link has been sent to your email address.',
+      category='success',
+    )
+  send_mail_notification('Verify your email.', body, to)
