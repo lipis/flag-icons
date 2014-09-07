@@ -127,7 +127,7 @@ def feedback():
     return flask.abort(418)
 
   form = FeedbackForm(obj=auth.current_user_db())
-  if not config.CONFIG_DB.has_anonymous_recaptcha:
+  if not config.CONFIG_DB.has_anonymous_recaptcha or auth.is_logged_in():
     del form.recaptcha
   if form.validate_on_submit():
     body = '%s\n\n%s' % (form.message.data, form.email.data)
