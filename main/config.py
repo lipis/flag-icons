@@ -30,7 +30,6 @@ else:
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
   RECAPTCHA_PUBLIC_KEY = CONFIG_DB.recaptcha_public_key
   RECAPTCHA_PRIVATE_KEY = CONFIG_DB.recaptcha_private_key
-  RECAPTCHA_OPTIONS = ''
 
 DEFAULT_DB_LIMIT = 64
 
