@@ -1,0 +1,21 @@
+# import 'macro/forms.html' as forms
+
+<form method="POST" action="." novalidate>
+  {{form.csrf_token}}
+  {{forms.hidden_field(form.next_url)}}
+  {{form.remember(class='hide')}}
+  {{forms.email_field(form.email, autofocus=True, class='form-control input-lg')}}
+  {{forms.password_visible_field(form.password, size='lg')}}
+  {{forms.recaptcha_field(form.recaptcha)}}
+  <div class="controls">
+    <button type="submit" class="btn btn-block btn-lg btn-primary btn-loading" data-loading-text="Signing in..">
+      Sign in
+    </button>
+  </div>
+  <div class="form-group">
+    <div class="btn-group btn-group-justified form-control-static">
+      <a class="btn btn-link btn-xs ellipsis" href="{{url_for('user_forgot')}}">Forgot password?</a>
+      <a class="btn btn-link btn-xs ellipsis" href="{{url_for('signup', next=next_url)}}">Create new account</a>
+    </div>
+  </div>
+</form>

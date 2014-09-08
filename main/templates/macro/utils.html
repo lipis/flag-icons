@@ -51,7 +51,9 @@
 
 
 # macro auth_icon(auth_id)
-  # if auth_id.startswith('federated')
+  # if auth_id == 'email_auth'
+    <span class="fa fa-fw fa-lock" title="Password"></span>
+  # elif auth_id.startswith('federated')
     <span class="fa fa-fw fa-google-plus" title="Google"></span>
   # elif auth_id.startswith('facebook')
     <span class="fa fa-fw fa-facebook" title="Facebook"></span>
@@ -66,6 +68,10 @@
 # macro auth_icons(user_db, max=0)
   # set count = user_db.auth_ids|length
   # set max = 3 if max > 0 and max < 3 else max
+  # if user_db.password_hash
+    # set max = max - 1 if max else max
+    {{auth_icon('email_auth')}}
+  # endif
   # set max = max - 1 if max and count > max else max
   # set more = count - max if max else 0
   # for auth_id in user_db.auth_ids

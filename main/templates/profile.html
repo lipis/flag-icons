@@ -19,6 +19,19 @@
         </div>
         {{forms.text_field(form.name, autofocus=True)}}
         # include 'user/user_email_field.html'
+
+        # if config.CONFIG_DB.has_email_authentication
+          # if user_db.password_hash
+            <input class="chrome-autocomplete-hack hide">
+            {{forms.password_visible_field(form.old_password)}}
+            # if form.old_password.errors
+              <div class="alert alert-info">
+                <a class="alert-link" href="{{url_for('user_forgot')}}" target="_blank">Forgot your password?</a>
+              </div>
+            # endif
+          # endif
+          {{forms.password_visible_field(form.new_password)}}
+        # endif
       </div>
       <div class="col-md-2 col-sm-3">
         <div class="form-group">

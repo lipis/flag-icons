@@ -20,6 +20,7 @@ class ConfigUpdateForm(wtf.Form):
   anonymous_recaptcha = wtforms.BooleanField('Use reCAPTCHA in forms for unauthorized users')
   brand_name = wtforms.StringField('Brand Name', [wtforms.validators.required()], filters=[util.strip_filter])
   check_unique_email = wtforms.BooleanField('Check for the uniqueness of the verified emails')
+  email_authentication = wtforms.BooleanField('Email authentication for sign in/sign up')
   facebook_app_id = wtforms.StringField('App ID', filters=[util.strip_filter])
   facebook_app_secret = wtforms.StringField('App Secret', filters=[util.strip_filter])
   feedback_email = wtforms.StringField('Feedback Email', [wtforms.validators.optional(), wtforms.validators.email()], filters=[util.email_filter])
@@ -27,6 +28,7 @@ class ConfigUpdateForm(wtf.Form):
   notify_on_new_user = wtforms.BooleanField('Send an email notification when a user signs up')
   recaptcha_private_key = wtforms.StringField('Private Key', filters=[util.strip_filter])
   recaptcha_public_key = wtforms.StringField('Public Key', filters=[util.strip_filter])
+  salt = wtforms.StringField('Salt', [wtforms.validators.optional()], filters=[util.strip_filter])
   twitter_consumer_key = wtforms.StringField('Consumer Key', filters=[util.strip_filter])
   twitter_consumer_secret = wtforms.StringField('Consumer Secret', filters=[util.strip_filter])
   verify_email = wtforms.BooleanField('Verify user emails')
@@ -42,6 +44,8 @@ def admin_config_update():
     form.populate_obj(config_db)
     if not config_db.flask_secret_key:
       config_db.flask_secret_key = util.uuid()
+    if not config_db.salt:
+      config_db.salt = util.uuid()
     config_db.put()
     reload(config)
     app.config.update(CONFIG_DB=config_db)
