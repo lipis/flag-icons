@@ -241,8 +241,8 @@ twitter_oauth.init_app(app)
 
 
 @app.route('/_s/callback/twitter/oauth-authorized/')
-@twitter.authorized_handler
-def twitter_authorized(resp):
+def twitter_authorized():
+  resp = twitter.authorized_response()
   if resp is None:
     flask.flash(u'You denied the request to sign in.')
     return flask.redirect(util.get_next_url())
@@ -307,8 +307,8 @@ facebook_oauth.init_app(app)
 
 
 @app.route('/_s/callback/facebook/oauth-authorized/')
-@facebook.authorized_handler
-def facebook_authorized(resp):
+def facebook_authorized():
+  resp = facebook.authorized_response()
   if resp is None:
     flask.flash(u'You denied the request to sign in.')
     return flask.redirect(util.get_next_url())
