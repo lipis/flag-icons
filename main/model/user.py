@@ -39,10 +39,10 @@ class User(model.Base):
       'auth_ids',
       'avatar_url',
       'email',
-      'verified',
       'name',
       'permissions',
       'username',
+      'verified',
     })
 
   @classmethod
