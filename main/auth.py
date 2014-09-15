@@ -358,7 +358,7 @@ def decorator_order_guard(f, decorator_name):
 
 
 def create_user_db(auth_id, name, username, email='', verified=False, **props):
-  email = email.lower()
+  email = email.lower() if email else ''
   if verified and email:
     user_dbs, user_cr = model.User.get_dbs(email=email, verified=True, limit=2)
     if len(user_dbs) == 1:
