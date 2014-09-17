@@ -29,6 +29,8 @@ else:
 
   CONFIG_DB = model.Config.get_master_db()
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
+  RECAPTCHA_PUBLIC_KEY = CONFIG_DB.recaptcha_public_key
+  RECAPTCHA_PRIVATE_KEY = CONFIG_DB.recaptcha_private_key
   LOCALE_DEFAULT = CONFIG_DB.locale
 
 DEFAULT_DB_LIMIT = 64
@@ -62,7 +64,7 @@ STYLES = [
 SCRIPTS = [
     ('libs', [
         'ext/js/jquery/jquery.js',
-        'ext/js/momentjs/moment.js',
+        'ext/js/moment/moment.js',
         'ext/js/nprogress/nprogress.js',
         'ext/js/bootstrap/alert.js',
         'ext/js/bootstrap/button.js',
@@ -70,7 +72,7 @@ SCRIPTS = [
         'ext/js/bootstrap/collapse.js',
         'ext/js/bootstrap/dropdown.js',
         'ext/js/bootstrap/tooltip.js',
-      ] + ['ext/js/momentjs/locale/%s.js' % l for l in LANGUAGES if l != 'en']),
+      ] + ['ext/js/moment/locale/%s.js' % l for l in LANGUAGES if l != 'en']),
     ('scripts', [
         'src/script/common/service.coffee',
         'src/script/common/util.coffee',

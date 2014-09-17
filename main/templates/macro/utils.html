@@ -41,22 +41,39 @@
 # endmacro
 
 
+# macro signin_button(brand, class_btn, class_icon, url, is_icon=False)
+  # set caption = _('Sign in with %(brand)s', brand=brand)
+  <a class="btn btn-lg {{'btn-social-icon' if is_icon else 'btn-block btn-social'}} {{class_btn}}" href="{{url}}" title="{{caption if is_icon}}" rel="nofollow">
+    <i class="fa {{class_icon}}"></i>
+    {{caption if not is_icon}}
+  </a>
+# endmacro
+
+
 # macro auth_icon(auth_id)
   # if auth_id.startswith('federated')
-    <span class="fa fa-fw fa-google-plus"></span>
+    <span class="fa fa-fw fa-google-plus" title="{{_('Google')}}"></span>
   # elif auth_id.startswith('facebook')
-    <span class="fa fa-fw fa-facebook"></span>
+    <span class="fa fa-fw fa-facebook" title="{{_('Facebook')}}"></span>
   # elif auth_id.startswith('twitter')
-    <span class="fa fa-fw fa-twitter"></span>
+    <span class="fa fa-fw fa-twitter" title="{{_('Twitter')}}"></span>
   # else
-    <span class="fa fa-fw fa-question"></span>
+    <span class="fa fa-fw fa-question" title="{{_('Unknown')}}"></span>
   # endif
 # endmacro
 
 
-# macro auth_icons(auth_ids)
-  # for auth_id in auth_ids
-    {{auth_icon(auth_id)}}
+# macro auth_icons(user_db, max=0)
+  # set count = user_db.auth_ids|length
+  # set max = 3 if max > 0 and max < 3 else max
+  # set max = max - 1 if max and count > max else max
+  # set more = count - max if max else 0
+  # for auth_id in user_db.auth_ids
+    # if not max or loop.index0 < max
+      {{auth_icon(auth_id)}}
+    # elif max and loop.index0 == max
+      <span class="fa fa-fw fa-ellipsis-h" title="{{'%d more' % more}}"></span>
+    # endif
   # endfor
 # endmacro
 

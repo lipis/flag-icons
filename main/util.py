@@ -30,16 +30,21 @@ def param(name, cast=None):
 
   if cast and value is not None:
     if cast is bool:
-      return value.lower() in ['true', 'yes', '1', '']
+      return value.lower() in ['true', 'yes', 'y', '1', '']
     if cast is list:
       return value.split(',') if len(value) > 0 else []
     return cast(value)
   return value
 
 
-def get_next_url():
-  next_url = param('next')
+def get_next_url(next_url=''):
+  next_url = next_url or param('next') or param('next_url')
   if next_url:
+    do_not_redirect_urls = [
+        flask.url_for('signin'),
+      ]
+    if any(url in next_url for url in do_not_redirect_urls):
+      return flask.url_for('welcome')
     return next_url
   referrer = flask.request.referrer
   if referrer and referrer.startswith(flask.request.host_url):
@@ -64,9 +69,6 @@ def set_locale(locale, response):
 def get_dbs(
     query, order=None, limit=None, cursor=None, keys_only=None, **filters
   ):
-  '''Retrieves entities from datastore, by applying cursor pagination
-  and equality filters. Returns dbs or keys and more cursor value
-  '''
   limit = limit or config.DEFAULT_DB_LIMIT
   cursor = Cursor.from_websafe_string(cursor) if cursor else None
   model_class = ndb.Model._kind_map[query.kind]
@@ -93,12 +95,14 @@ def get_dbs(
   return list(model_dbs), next_cursor
 
 
+def get_keys(*arg, **kwargs):
+  return get_dbs(*arg, keys_only=True, **kwargs)
+
+
 ###############################################################################
 # JSON Response Helpers
 ###############################################################################
 def jsonify_model_dbs(model_dbs, next_cursor=None):
-  '''Return a response of a list of dbs as JSON service result
-  '''
   result_objects = [model_db_to_object(model_db) for model_db in model_dbs]
 
   response_object = {
@@ -115,13 +119,11 @@ def jsonify_model_dbs(model_dbs, next_cursor=None):
 
 
 def jsonify_model_db(model_db):
-  result_object = model_db_to_object(model_db)
-  response = jsonpify({
+  return jsonpify({
       'status': 'success',
       'now': datetime.utcnow().isoformat(),
-      'result': result_object,
+      'result': model_db_to_object(model_db),
     })
-  return response
 
 
 def model_db_to_object(model_db):
@@ -187,9 +189,6 @@ def check_form_fields(*fields):
 
 
 def generate_next_url(next_cursor, base_url=None, cursor_name='cursor'):
-  '''Substitutes or alters the current request URL with a new cursor parameter
-  for next page of results
-  '''
   if not next_cursor:
     return None
   base_url = base_url or flask.request.base_url
@@ -219,6 +218,10 @@ _username_re = re.compile(r'^[a-z0-9]+(?:[\.][a-z0-9]+)*$')
 
 def is_valid_username(username):
   return True if _username_re.match(username) else False
+
+
+def create_name_from_email(email):
+  return re.sub(r'_+|-+|\.+|\++', ' ', email.split('@')[0]).title()
 
 
 def update_query_argument(name, value=None, ignore='cursor', is_list=False):
