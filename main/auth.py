@@ -5,9 +5,9 @@ import re
 
 from babel import localedata
 from flask.ext import login
-from flask.ext import oauth
 from flask.ext.babel import gettext as __
 from flask.ext.babel import lazy_gettext as _
+from flask.ext.oauthlib import client as oauth
 from google.appengine.api import users
 from google.appengine.ext import ndb
 import flask
@@ -268,9 +268,7 @@ def retrieve_user_from_google(google_user):
 ###############################################################################
 twitter_oauth = oauth.OAuth()
 
-
-twitter = twitter_oauth.remote_app(
-    'twitter',
+app.config['TWITTER'] = dict(
     base_url='https://api.twitter.com/1.1/',
     request_token_url='https://api.twitter.com/oauth/request_token',
     access_token_url='https://api.twitter.com/oauth/access_token',
@@ -279,10 +277,13 @@ twitter = twitter_oauth.remote_app(
     consumer_secret=config.CONFIG_DB.twitter_consumer_secret,
   )
 
+twitter = twitter_oauth.remote_app('twitter', app_key='TWITTER')
+twitter_oauth.init_app(app)
+
 
 @app.route('/_s/callback/twitter/oauth-authorized/')
-@twitter.authorized_handler
-def twitter_authorized(resp):
+def twitter_authorized():
+  resp = twitter.authorized_response()
   if resp is None:
     flask.flash(__('You denied the request to sign in.'))
     return flask.redirect(util.get_next_url())
@@ -332,8 +333,7 @@ def retrieve_user_from_twitter(response):
 ###############################################################################
 facebook_oauth = oauth.OAuth()
 
-facebook = facebook_oauth.remote_app(
-    'facebook',
+app.config['FACEBOOK'] = dict(
     base_url='https://graph.facebook.com/',
     request_token_url=None,
     access_token_url='/oauth/access_token',
@@ -343,10 +343,13 @@ facebook = facebook_oauth.remote_app(
     request_token_params={'scope': 'email'},
   )
 
+facebook = facebook_oauth.remote_app('facebook', app_key='FACEBOOK')
+facebook_oauth.init_app(app)
+
 
 @app.route('/_s/callback/facebook/oauth-authorized/')
-@facebook.authorized_handler
-def facebook_authorized(resp):
+def facebook_authorized():
+  resp = facebook.authorized_response()
   if resp is None:
     flask.flash(__('You denied the request to sign in.'))
     return flask.redirect(util.get_next_url())
@@ -396,7 +399,7 @@ def decorator_order_guard(f, decorator_name):
 
 
 def create_user_db(auth_id, name, username, email='', verified=False, **props):
-  email = email.lower()
+  email = email.lower() if email else ''
   if verified and email:
     user_dbs, user_cr = model.User.get_dbs(email=email, verified=True, limit=2)
     if len(user_dbs) == 1:
