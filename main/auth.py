@@ -160,9 +160,9 @@ def permission_required(permission=None, methods=None):
 def signin():
   next_url = util.get_next_url()
 
-  google_signin_url = flask.url_for('signin_google', next=next_url)
-  twitter_signin_url = flask.url_for('signin_twitter', next=next_url)
-  facebook_signin_url = flask.url_for('signin_facebook', next=next_url)
+  google_signin_url = url_for_signin('google', next_url)
+  twitter_signin_url = url_for_signin('twitter', next_url)
+  facebook_signin_url = url_for_signin('facebook', next_url)
 
   return flask.render_template(
       'signin.html',
@@ -262,10 +262,8 @@ def get_twitter_token():
 
 @app.route('/signin/twitter/')
 def signin_twitter():
-  flask.session.pop('oauth_token', None)
-  save_request_params()
   try:
-    return twitter.authorize(callback=flask.url_for('twitter_authorized'))
+    return signin_oauth(twitter)
   except:
     flask.flash(
         'Something went wrong with Twitter sign in. Please try again.',
@@ -326,10 +324,7 @@ def get_facebook_oauth_token():
 
 @app.route('/signin/facebook/')
 def signin_facebook():
-  save_request_params()
-  return facebook.authorize(callback=flask.url_for(
-      'facebook_authorized', _external=True
-    ))
+  return signin_oauth(facebook)
 
 
 def retrieve_user_from_facebook(response):
@@ -397,6 +392,18 @@ def save_request_params():
       'next': util.get_next_url(),
       'remember': util.param('remember', bool),
     }
+
+
+def signin_oauth(oauth_app, scheme='http'):
+  flask.session.pop('oauth_token', None)
+  save_request_params()
+  return oauth_app.authorize(callback=flask.url_for(
+    '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
+  ))
+
+
+def url_for_signin(service_name, next_url):
+  return flask.url_for('signin_%s' % service_name, next=next_url)
 
 
 @ndb.toplevel
