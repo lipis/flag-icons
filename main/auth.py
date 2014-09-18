@@ -213,10 +213,10 @@ def retrieve_user_from_google(google_user):
     return user_db
 
   return create_user_db(
-      auth_id,
-      util.create_name_from_email(google_user.email()),
-      google_user.email(),
-      google_user.email(),
+      auth_id=auth_id,
+      name=util.create_name_from_email(google_user.email()),
+      username=google_user.email(),
+      email=google_user.email(),
       verified=True,
       admin=users.is_current_user_admin(),
     )
@@ -242,16 +242,16 @@ twitter_oauth.init_app(app)
 
 @app.route('/_s/callback/twitter/oauth-authorized/')
 def twitter_authorized():
-  resp = twitter.authorized_response()
-  if resp is None:
+  response = twitter.authorized_response()
+  if response is None:
     flask.flash(u'You denied the request to sign in.')
     return flask.redirect(util.get_next_url())
 
   flask.session['oauth_token'] = (
-      resp['oauth_token'],
-      resp['oauth_token_secret'],
+      response['oauth_token'],
+      response['oauth_token_secret'],
     )
-  user_db = retrieve_user_from_twitter(resp)
+  user_db = retrieve_user_from_twitter(response)
   return signin_user_db(user_db)
 
 
@@ -266,7 +266,7 @@ def signin_twitter():
     return signin_oauth(twitter)
   except:
     flask.flash(
-        'Something went wrong with Twitter sign in. Please try again.',
+        u'Something went wrong with Twitter sign in. Please try again.',
         category='danger',
       )
     return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
@@ -275,13 +275,10 @@ def signin_twitter():
 def retrieve_user_from_twitter(response):
   auth_id = 'twitter_%s' % response['user_id']
   user_db = model.User.get_by('auth_ids', auth_id)
-  if user_db:
-    return user_db
-
-  return create_user_db(
-      auth_id,
-      response['screen_name'],
-      response['screen_name'],
+  return user_db or create_user_db(
+      auth_id=auth_id,
+      name=response['screen_name'],
+      username=response['screen_name'],
     )
 
 
@@ -306,12 +303,12 @@ facebook_oauth.init_app(app)
 
 @app.route('/_s/callback/facebook/oauth-authorized/')
 def facebook_authorized():
-  resp = facebook.authorized_response()
-  if resp is None:
+  response = facebook.authorized_response()
+  if response is None:
     flask.flash(u'You denied the request to sign in.')
     return flask.redirect(util.get_next_url())
 
-  flask.session['oauth_token'] = (resp['access_token'], '')
+  flask.session['oauth_token'] = (response['access_token'], '')
   me = facebook.get('/me')
   user_db = retrieve_user_from_facebook(me.data)
   return signin_user_db(user_db)
@@ -330,13 +327,11 @@ def signin_facebook():
 def retrieve_user_from_facebook(response):
   auth_id = 'facebook_%s' % response['id']
   user_db = model.User.get_by('auth_ids', auth_id)
-  if user_db:
-    return user_db
-  return create_user_db(
-      auth_id,
-      response['name'],
-      response.get('username', response['name']),
-      response.get('email', ''),
+  return user_db or create_user_db(
+      auth_id=auth_id,
+      name=response['name'],
+      username=response.get('username', response['name']),
+      emaol=response.get('email', ''),
       verified=bool(response.get('email', '')),
     )
 
