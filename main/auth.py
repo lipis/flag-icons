@@ -155,6 +155,15 @@ def permission_required(permission=None, methods=None):
 ###############################################################################
 # Sign in stuff
 ###############################################################################
+def create_oauth_app(service_config, name):
+  upper_name = name.upper()
+  app.config[upper_name] = service_config
+  service_oauth = oauth.OAuth()
+  service_app = service_oauth.remote_app(name, app_key=upper_name)
+  service_oauth.init_app(app)
+  return service_app
+
+
 @app.route('/login/')
 @app.route('/signin/')
 def signin():
@@ -225,9 +234,7 @@ def retrieve_user_from_google(google_user):
 ###############################################################################
 # Twitter
 ###############################################################################
-twitter_oauth = oauth.OAuth()
-
-app.config['TWITTER'] = dict(
+twitter_config = dict(
     base_url='https://api.twitter.com/1.1/',
     request_token_url='https://api.twitter.com/oauth/request_token',
     access_token_url='https://api.twitter.com/oauth/access_token',
@@ -236,8 +243,7 @@ app.config['TWITTER'] = dict(
     consumer_secret=config.CONFIG_DB.twitter_consumer_secret,
   )
 
-twitter = twitter_oauth.remote_app('twitter', app_key='TWITTER')
-twitter_oauth.init_app(app)
+twitter = create_oauth_app(twitter_config, 'twitter')
 
 
 @app.route('/_s/callback/twitter/oauth-authorized/')
@@ -285,9 +291,7 @@ def retrieve_user_from_twitter(response):
 ###############################################################################
 # Facebook
 ###############################################################################
-facebook_oauth = oauth.OAuth()
-
-app.config['FACEBOOK'] = dict(
+facebook_config = dict(
     base_url='https://graph.facebook.com/',
     request_token_url=None,
     access_token_url='/oauth/access_token',
@@ -297,8 +301,7 @@ app.config['FACEBOOK'] = dict(
     request_token_params={'scope': 'email'},
   )
 
-facebook = facebook_oauth.remote_app('facebook', app_key='FACEBOOK')
-facebook_oauth.init_app(app)
+facebook = create_oauth_app(facebook_config, 'facebook')
 
 
 @app.route('/_s/callback/facebook/oauth-authorized/')
