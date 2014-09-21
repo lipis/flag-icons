@@ -396,8 +396,8 @@ def signin_oauth(oauth_app, scheme='http'):
   flask.session.pop('oauth_token', None)
   save_request_params()
   return oauth_app.authorize(callback=flask.url_for(
-    '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
-  ))
+      '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
+    ))
 
 
 def url_for_signin(service_name, next_url):
