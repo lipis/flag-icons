@@ -1,0 +1,17 @@
+# import 'macro/forms.html' as forms
+
+<form method="POST" action="." novalidate>
+  {{form.csrf_token}}
+  {{forms.email_field(form.email, autofocus=True, class='form-control input-lg')}}
+  {{forms.recaptcha_field(form.recaptcha)}}
+  <div class="controls">
+    <button type="submit" class="btn btn-block btn-lg btn-primary btn-loading" data-loading-text="Signing up..">
+      Sign up
+    </button>
+  </div>
+  <div class="form-group">
+    <div class="form-control-static">
+      <a class="btn btn-block btn-link btn-xs" href="{{url_for('signin', next=next_url)}}">Already have an account?</a>
+    </div>
+  </div>
+</form>

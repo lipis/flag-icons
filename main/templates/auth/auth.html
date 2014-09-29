@@ -1,0 +1,45 @@
+# extends 'base.html'
+# import 'macro/utils.html' as utils
+
+# block head
+  {{utils.prefetch_link(next_url)}}
+# endblock
+
+# block content
+  <div class="page-header">
+    <h1>{{title}} <small>It only takes 8 seconds</small></h1>
+  </div>
+
+  # if current_user.id == 0
+    <div class="row">
+      <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+        # if config.CONFIG_DB.has_email_authentication
+          # if auth_type == 'signin'
+            # include 'auth/signin_form.html'
+          # endif
+          # if auth_type == 'signup'
+            # include 'auth/signup_form.html'
+          # endif
+          <legend class="text-muted text-center">or</legend>
+        # endif
+
+        # set is_icon = config.CONFIG_DB.has_email_authentication
+        <div class="text-center">
+          {{utils.signin_button('Google', 'btn-google', 'fa-google-plus', google_signin_url, is_icon)}}
+          {{utils.signin_button('Facebook', 'btn-facebook', 'fa-facebook', facebook_signin_url, is_icon) if config.CONFIG_DB.has_facebook}}
+          {{utils.signin_button('Twitter', 'btn-twitter', 'fa-twitter', twitter_signin_url, is_icon) if config.CONFIG_DB.has_twitter}}
+        </div>
+        <hr>
+        <div class="checkbox remember">
+          <label><input type="checkbox" checked>Keep me signed in</label>
+        </div>
+      </div>
+    </div>
+  # else
+    <div class="alert alert-warning text-center">
+      <h3>You are already signed in as {{current_user.user_db.name}}!</h3>
+      Please <a class="alert-link" href="{{url_for('signout')}}">sign out</a>
+      first if you want to sign in with a different account.
+    </div>
+  # endif
+# endblock

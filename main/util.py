@@ -1,8 +1,9 @@
 # coding: utf-8
 
-from datetime import datetime
 from datetime import date
+from datetime import datetime
 from uuid import uuid4
+import hashlib
 import re
 import unicodedata
 import urllib
@@ -42,6 +43,8 @@ def get_next_url(next_url=''):
   if next_url:
     do_not_redirect_urls = [
         flask.url_for('signin'),
+        flask.url_for('signup'),
+        flask.url_for('user_reset'),
       ]
     if any(url in next_url for url in do_not_redirect_urls):
       return flask.url_for('welcome')
@@ -211,6 +214,16 @@ def is_valid_username(username):
 
 def create_name_from_email(email):
   return re.sub(r'_+|-+|\.+|\++', ' ', email.split('@')[0]).title()
+
+
+def password_hash(user_db, password):
+  m = hashlib.sha256()
+  m.update(user_db.key.urlsafe())
+  m.update(user_db.created.isoformat())
+  m.update(m.hexdigest())
+  m.update(password.encode('utf-8'))
+  m.update(config.CONFIG_DB.salt)
+  return m.hexdigest()
 
 
 def update_query_argument(name, value=None, ignore='cursor', is_list=False):

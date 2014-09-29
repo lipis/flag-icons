@@ -52,6 +52,12 @@
               </tr>
             </thead>
             <tbody>
+              # if user_db.password_hash
+                <tr>
+                  <td>{{utils.auth_icon('email_auth')}}</td>
+                  <td>{{'Email Authentication'}}</td>
+                </tr>
+              # endif
               # for auth_id in user_db.auth_ids
                 <tr>
                   <td>{{utils.auth_icon(auth_id)}}</td>
