@@ -1,0 +1,30 @@
+# extends 'base.html'
+# import 'macro/forms.html' as forms
+# import 'macro/utils.html' as utils
+
+# block content
+  <div class="page-header">
+    <h1>
+      {{title}}
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+      <h4 class="well well-sm">
+        <img class="img-thumbnail pull-right" src="{{user_db.avatar_url_size(80)}}" width="40" height="40" alt="Avatar of {{user_db.name}}">
+        {{user_db.name}}<br>
+        <small>{{user_db.email or user_db.username}}</small>
+      </h4>
+      <form method="POST" action="." novalidate>
+        {{form.csrf_token}}
+        {{forms.password_visible_field(form.new_password, autofocus=True, size='lg')}}
+        <div class="controls">
+          <button type="submit" class="btn btn-block btn-lg btn-primary btn-loading" data-loading-text="Reseting..">
+            Reset
+          </button>
+        </div>
+      </form>
+    </div>
+  </div> 
+# endblock

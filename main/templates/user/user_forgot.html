@@ -1,0 +1,30 @@
+# extends 'base.html'
+# import 'macro/forms.html' as forms
+# import 'macro/utils.html' as utils
+
+# block content
+  <div class="page-header">
+    <h1>
+      {{title}}
+      <small>Reset it by providing your email</small>
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+      <form method="POST" action="." novalidate>
+        {{form.csrf_token}}
+        {{forms.email_field(form.email, autofocus=True, class='form-control input-lg', autocomplete='off')}}
+        {{forms.recaptcha_field(form.recaptcha)}}
+        <div class="controls">
+          <button type="submit" class="btn btn-block btn-lg btn-primary btn-loading" data-loading-text="Sending..">
+            Send
+          </button>
+          <a class="btn btn-block btn-link btn-xs" href="{{url_for('signin', next=url_for('welcome'))}}">
+            I think I know it!
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+# endblock

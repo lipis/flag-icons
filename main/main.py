@@ -78,6 +78,13 @@ class ProfileUpdateForm(i18n.Form):
       _('Language'),
       choices=config.LOCALE_SORTED, filters=[util.strip_filter],
     )
+  old_password = wtforms.StringField(
+      _('Old Password'), [wtforms.validators.optional()],
+    )
+  new_password = wtforms.StringField(
+      _('New Password'),
+      [wtforms.validators.optional(), wtforms.validators.length(min=6)]
+    )
 
 
 @app.route('/_s/profile/', endpoint='profile_service')
@@ -90,9 +97,25 @@ def profile():
   if form.validate_on_submit():
     email = form.email.data
     if email and not user_db.is_email_available(email, user_db.key):
-      form.email.errors.append('This email is already taken.')
+      form.email.errors.append(_('This email is already taken.'))
 
-    if not form.errors:
+    errors = False
+    old_password = form.old_password.data
+    new_password = form.new_password.data
+    if new_password or old_password:
+      if user_db.password_hash:
+        if util.password_hash(user_db, old_password) != user_db.password_hash:
+          form.old_password.errors.append(_('Invalid current password'))
+          errors = True
+      if not errors and old_password and not new_password:
+        form.new_password.errors.append(_('This field is required.'))
+        errors = True
+
+      if not (form.errors or errors):
+        user_db.password_hash = util.password_hash(user_db, new_password)
+        flask.flash(__('Your password has been changed.'), category='success')
+
+    if not (form.errors or errors):
       send_verification = not user_db.token or user_db.email != email
       form.populate_obj(user_db)
       if send_verification:
@@ -194,7 +217,7 @@ def error_handler(e):
 
   return flask.render_template(
       'error.html',
-      title='Error %d (%s)!!1' % (e.code, e.name),
+      title=_('Error %(code)d (%(name)s)!!1', code=e.code, name=e.name),
       html_class='error-page',
       error=e,
     ), e.code
