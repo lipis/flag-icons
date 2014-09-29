@@ -159,6 +159,15 @@ def permission_required(permission=None, methods=None):
 ###############################################################################
 # Sign in/up stuff
 ###############################################################################
+def create_oauth_app(service_config, name):
+  upper_name = name.upper()
+  app.config[upper_name] = service_config
+  service_oauth = oauth.OAuth()
+  service_app = service_oauth.remote_app(name, app_key=upper_name)
+  service_oauth.init_app(app)
+  return service_app
+
+
 class SignInForm(wtf.Form):
   email = wtforms.StringField(
       'Email',
@@ -301,10 +310,10 @@ def retrieve_user_from_google(google_user):
     return user_db
 
   return create_user_db(
-      auth_id,
-      util.create_name_from_email(google_user.email()),
-      google_user.email(),
-      google_user.email(),
+      auth_id=auth_id,
+      name=util.create_name_from_email(google_user.email()),
+      username=google_user.email(),
+      email=google_user.email(),
       verified=True,
       admin=users.is_current_user_admin(),
     )
@@ -313,9 +322,7 @@ def retrieve_user_from_google(google_user):
 ###############################################################################
 # Twitter
 ###############################################################################
-twitter_oauth = oauth.OAuth()
-
-app.config['TWITTER'] = dict(
+twitter_config = dict(
     base_url='https://api.twitter.com/1.1/',
     request_token_url='https://api.twitter.com/oauth/request_token',
     access_token_url='https://api.twitter.com/oauth/access_token',
@@ -324,22 +331,21 @@ app.config['TWITTER'] = dict(
     consumer_secret=config.CONFIG_DB.twitter_consumer_secret,
   )
 
-twitter = twitter_oauth.remote_app('twitter', app_key='TWITTER')
-twitter_oauth.init_app(app)
+twitter = create_oauth_app(twitter_config, 'twitter')
 
 
 @app.route('/_s/callback/twitter/oauth-authorized/')
 def twitter_authorized():
-  resp = twitter.authorized_response()
-  if resp is None:
+  response = twitter.authorized_response()
+  if response is None:
     flask.flash(u'You denied the request to sign in.')
     return flask.redirect(util.get_next_url())
 
   flask.session['oauth_token'] = (
-      resp['oauth_token'],
-      resp['oauth_token_secret'],
+      response['oauth_token'],
+      response['oauth_token_secret'],
     )
-  user_db = retrieve_user_from_twitter(resp)
+  user_db = retrieve_user_from_twitter(response)
   return signin_user_db(user_db)
 
 
@@ -354,7 +360,7 @@ def signin_twitter():
     return signin_oauth(twitter)
   except:
     flask.flash(
-        'Something went wrong with Twitter sign in. Please try again.',
+        u'Something went wrong with Twitter sign in. Please try again.',
         category='danger',
       )
     return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
@@ -363,22 +369,17 @@ def signin_twitter():
 def retrieve_user_from_twitter(response):
   auth_id = 'twitter_%s' % response['user_id']
   user_db = model.User.get_by('auth_ids', auth_id)
-  if user_db:
-    return user_db
-
-  return create_user_db(
-      auth_id,
-      response['screen_name'],
-      response['screen_name'],
+  return user_db or create_user_db(
+      auth_id=auth_id,
+      name=response['screen_name'],
+      username=response['screen_name'],
     )
 
 
 ###############################################################################
 # Facebook
 ###############################################################################
-facebook_oauth = oauth.OAuth()
-
-app.config['FACEBOOK'] = dict(
+facebook_config = dict(
     base_url='https://graph.facebook.com/',
     request_token_url=None,
     access_token_url='/oauth/access_token',
@@ -388,18 +389,17 @@ app.config['FACEBOOK'] = dict(
     request_token_params={'scope': 'email'},
   )
 
-facebook = facebook_oauth.remote_app('facebook', app_key='FACEBOOK')
-facebook_oauth.init_app(app)
+facebook = create_oauth_app(facebook_config, 'facebook')
 
 
 @app.route('/_s/callback/facebook/oauth-authorized/')
 def facebook_authorized():
-  resp = facebook.authorized_response()
-  if resp is None:
+  response = facebook.authorized_response()
+  if response is None:
     flask.flash(u'You denied the request to sign in.')
     return flask.redirect(util.get_next_url())
 
-  flask.session['oauth_token'] = (resp['access_token'], '')
+  flask.session['oauth_token'] = (response['access_token'], '')
   me = facebook.get('/me')
   user_db = retrieve_user_from_facebook(me.data)
   return signin_user_db(user_db)
@@ -418,13 +418,11 @@ def signin_facebook():
 def retrieve_user_from_facebook(response):
   auth_id = 'facebook_%s' % response['id']
   user_db = model.User.get_by('auth_ids', auth_id)
-  if user_db:
-    return user_db
-  return create_user_db(
-      auth_id,
-      response['name'],
-      response.get('username', response['name']),
-      response.get('email', ''),
+  return user_db or create_user_db(
+      auth_id=auth_id,
+      name=response['name'],
+      username=response.get('username', response['name']),
+      email=response.get('email', ''),
       verified=bool(response.get('email', '')),
     )
 
@@ -486,8 +484,8 @@ def signin_oauth(oauth_app, scheme='http'):
   flask.session.pop('oauth_token', None)
   save_request_params()
   return oauth_app.authorize(callback=flask.url_for(
-    '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
-  ))
+      '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
+    ))
 
 
 def url_for_signin(service_name, next_url):
