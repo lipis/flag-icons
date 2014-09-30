@@ -284,7 +284,7 @@ def auth():
     if form.validate_on_submit():
       user_db = model.User.get_by('email', form.email.data)
       if user_db:
-        form.email.errors.append(__(u'This email is already taken.'))
+        form.email.errors.append(__('This email is already taken.'))
 
       if not form.errors:
         user_db = create_user_db(
@@ -380,7 +380,7 @@ twitter = create_oauth_app(twitter_config, 'twitter')
 def twitter_authorized():
   response = twitter.authorized_response()
   if response is None:
-    flask.flash(__(u'You denied the request to sign in.'))
+    flask.flash(__('You denied the request to sign in.'))
     return flask.redirect(util.get_next_url())
 
   flask.session['oauth_token'] = (
@@ -402,7 +402,7 @@ def signin_twitter():
     return signin_oauth(twitter)
   except:
     flask.flash(
-        __(u'Something went wrong with Twitter sign in. Please try again.'),
+        __('Something went wrong with Twitter sign in. Please try again.'),
         category='danger',
       )
     return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
@@ -438,8 +438,7 @@ facebook = create_oauth_app(facebook_config, 'facebook')
 def facebook_authorized():
   response = facebook.authorized_response()
   if response is None:
-    flask.flash(__(u'You denied the request to sign in.'))
-    flask.flash(u'You denied the request to sign in.')
+    flask.flash(__('You denied the request to sign in.'))
     return flask.redirect(util.get_next_url())
 
   flask.session['oauth_token'] = (response['access_token'], '')
