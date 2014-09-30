@@ -275,7 +275,7 @@ def auth():
 @app.route('/signout/')
 def signout():
   login.logout_user()
-  flask.flash(u'You have been signed out.', category='success')
+  flask.flash('You have been signed out.', category='success')
   return flask.redirect(util.param('next') or flask.url_for('signin'))
 
 
@@ -293,7 +293,7 @@ def signin_google():
 def google_authorized():
   google_user = users.get_current_user()
   if google_user is None:
-    flask.flash(u'You denied the request to sign in.')
+    flask.flash('You denied the request to sign in.')
     return flask.redirect(util.get_next_url())
 
   user_db = retrieve_user_from_google(google_user)
@@ -338,7 +338,7 @@ twitter = create_oauth_app(twitter_config, 'twitter')
 def twitter_authorized():
   response = twitter.authorized_response()
   if response is None:
-    flask.flash(u'You denied the request to sign in.')
+    flask.flash('You denied the request to sign in.')
     return flask.redirect(util.get_next_url())
 
   flask.session['oauth_token'] = (
@@ -360,7 +360,7 @@ def signin_twitter():
     return signin_oauth(twitter)
   except:
     flask.flash(
-        u'Something went wrong with Twitter sign in. Please try again.',
+        'Something went wrong with Twitter sign in. Please try again.',
         category='danger',
       )
     return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
@@ -396,7 +396,7 @@ facebook = create_oauth_app(facebook_config, 'facebook')
 def facebook_authorized():
   response = facebook.authorized_response()
   if response is None:
-    flask.flash(u'You denied the request to sign in.')
+    flask.flash('You denied the request to sign in.')
     return flask.redirect(util.get_next_url())
 
   flask.session['oauth_token'] = (response['access_token'], '')
