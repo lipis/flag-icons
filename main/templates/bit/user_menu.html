@@ -6,7 +6,7 @@
       <b class="caret"></b>
     </a>
     <ul class="dropdown-menu">
-      <li><a href="{{url_for('profile')}}"><i class="fa fa-fw fa-edit"></i> Profile Settings</a></li>
+      <li><a href="{{url_for('profile')}}"><i class="fa fa-fw fa-user"></i> Profile</a></li>
       # if current_user.admin
         <li class="divider"></li>
         <li><a href="{{url_for('admin_config_update')}}"><i class="fa fa-fw fa-cog"></i> Admin Config</a></li>
