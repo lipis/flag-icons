@@ -1,0 +1,17 @@
+# extends 'profile/profile_base.html'
+# import 'macro/forms.html' as forms
+# import 'macro/utils.html' as utils
+
+# block profile_content
+  <h3 title="Username"><span class="fa fa-at fa-fw"></span> {{user_db.username}}</h3>
+  <h3 title="Email">
+    <span class="fa fa-envelope-o fa-fw"></span> {{user_db.email}}
+    # if user_db.verified
+      <span class="fa fa-check fa-fw text-success" title="This email is verified"></span>
+    # else
+      <span class="fa fa-warning fa-fw text-warning" title="This email is not verified"></span>
+    # endif
+  </h3>
+  <hr>
+  <h3 class="text-muted">{{utils.auth_icons(user_db)}}</h3>
+# endblock

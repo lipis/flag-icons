@@ -1,0 +1,16 @@
+# extends 'profile/profile_base.html'
+# import 'macro/forms.html' as forms
+
+# block profile_content
+  <form method="POST" action="." novalidate>
+    {{form.csrf_token}}
+    {{forms.text_field(form.name, autofocus=True)}}
+    # include 'user/user_email_field.html'
+
+    <div class="controls">
+      <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Please wait..">
+        Update Profile
+      </button>
+    </div>
+  </form>
+# endblock

@@ -20,13 +20,12 @@ app.jinja_env.globals.update(
     update_query_argument=util.update_query_argument,
   )
 
-
+import user
 import admin
 import auth
 import model
+import profile
 import task
-import user
-
 
 if config.DEVELOPMENT:
   from werkzeug import debug
@@ -54,78 +53,6 @@ def sitemap():
     ))
   response.headers['Content-Type'] = 'application/xml'
   return response
-
-
-###############################################################################
-# Profile stuff
-###############################################################################
-class ProfileUpdateForm(wtf.Form):
-  name = wtforms.StringField(
-      'Name',
-      [wtforms.validators.required()], filters=[util.strip_filter],
-    )
-  email = wtforms.StringField(
-      'Email',
-      [wtforms.validators.optional(), wtforms.validators.email()],
-      filters=[util.email_filter],
-    )
-  old_password = wtforms.StringField(
-      'Old Password', [wtforms.validators.optional()],
-    )
-  new_password = wtforms.StringField(
-      'New Password',
-      [wtforms.validators.optional(), wtforms.validators.length(min=6)]
-    )
-
-
-@app.route('/_s/profile/', endpoint='profile_service')
-@app.route('/profile/', methods=['GET', 'POST'])
-@auth.login_required
-def profile():
-  user_db = auth.current_user_db()
-  form = ProfileUpdateForm(obj=user_db)
-
-  if form.validate_on_submit():
-    email = form.email.data
-    if email and not user_db.is_email_available(email, user_db.key):
-      form.email.errors.append('This email is already taken.')
-
-    errors = False
-    old_password = form.old_password.data
-    new_password = form.new_password.data
-    if new_password or old_password:
-      if user_db.password_hash:
-        if util.password_hash(user_db, old_password) != user_db.password_hash:
-          form.old_password.errors.append('Invalid current password')
-          errors = True
-      if not errors and old_password and not new_password:
-        form.new_password.errors.append('This field is required.')
-        errors = True
-
-      if not (form.errors or errors):
-        user_db.password_hash = util.password_hash(user_db, new_password)
-        flask.flash('Your password has been changed.', category='success')
-
-    if not (form.errors or errors):
-      send_verification = not user_db.token or user_db.email != email
-      form.populate_obj(user_db)
-      if send_verification:
-        user_db.verified = False
-        task.verify_email_notification(user_db)
-      user_db.put()
-      return flask.redirect(flask.url_for('welcome'))
-
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_db(user_db)
-
-  return flask.render_template(
-      'profile.html',
-      title=user_db.name,
-      html_class='profile',
-      form=form,
-      user_db=user_db,
-      has_json=True,
-    )
 
 
 ###############################################################################

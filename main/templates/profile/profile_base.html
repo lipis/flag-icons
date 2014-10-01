@@ -1,0 +1,52 @@
+# extends 'base.html'
+# import 'macro/forms.html' as forms
+# import 'macro/utils.html' as utils
+
+# block content
+  <div class="page-header">
+    <h1>
+      # if html_class == 'profile-view'
+        <div class="pull-right">
+          <div class="btn-group">
+            <a class="btn btn-default btn-xs" href="{{url_for('profile_update')}}">
+              <span class="fa fa-edit"></span>
+              Edit
+            </a>
+            # if config.CONFIG_DB.has_email_authentication
+              <a class="btn btn-default btn-xs" href="{{url_for('profile_password')}}">
+                <span class="fa fa-lock fa-fw"></span>
+                # if not user_db.password_hash
+                  Set Password
+                # else
+                  Change Password
+                # endif
+              </a>
+            # endif
+          </div>
+        </div>
+      # else
+        <small>
+          <a href="{{url_for('profile')}}" class="text-muted" title="Back to profile"><i class="fa fa-fw fa-chevron-left"></i></a>
+        </small>
+      # endif
+
+      {{title}}
+    </h1>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3 col-sm-4 col-xs-5">
+      <img class="img-thumbnail" src="{{user_db.avatar_url_size(512)}}" alt="Avatar of {{user_db.name}}">
+      # if html_class == 'profile-update'
+        <p class="help-block">
+          Change on <a href="//gravatar.com" target="_blank">Gravatar</a>
+        </p>
+      # endif
+    </div>
+
+    <div class="col-md-5 col-sm-8 col-xs-12">
+      # block profile_content
+      # endblock
+    </div>
+  </div>
+# endblock
