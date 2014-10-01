@@ -24,6 +24,13 @@
 # endmacro
 
 
+# macro back_link(title, route)
+  <small>
+    <a href="{{url_for(route, **kwargs)}}" class="text-muted" title="{{title}}"><i class="fa fa-fw fa-chevron-left"></i></a>
+  </small>
+# endmacro
+
+
 # macro next_link(next_url, caption)
   # if next_url
     <ul class="pager">

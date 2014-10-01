@@ -5,9 +5,7 @@
 # block content
   <div class="page-header">
     <h1>
-      <small>
-        <a href="{{url_for('user_list', order='-modified', active=user_db.active)}}" class="text-muted" title="Back to user list"><i class="fa fa-fw fa-chevron-left"></i></a>
-      </small>
+      {{utils.back_link('Back to user list', 'user_list', order='-modified', active=user_db.active)}}
       {{title}}
       # if current_user.id == user_db.key.id()
         <small><i class="fa fa-hand-o-left" title="You"></i></small>

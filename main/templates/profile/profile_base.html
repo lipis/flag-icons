@@ -25,9 +25,7 @@
           </div>
         </div>
       # else
-        <small>
-          <a href="{{url_for('profile')}}" class="text-muted" title="Back to profile"><i class="fa fa-fw fa-chevron-left"></i></a>
-        </small>
+        {{utils.back_link('Back to profile', 'profile')}}
       # endif
 
       {{title}}
