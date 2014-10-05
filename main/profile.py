@@ -16,7 +16,7 @@ from main import app
 # Profile View
 ###############################################################################
 @app.route('/_s/profile/', endpoint='profile_service')
-@app.route('/profile/', methods=['GET', 'POST'])
+@app.route('/profile/')
 @auth.login_required
 def profile():
   user_db = auth.current_user_db()
