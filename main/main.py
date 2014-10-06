@@ -48,7 +48,6 @@ def welcome():
 def sitemap():
   response = flask.make_response(flask.render_template(
       'sitemap.xml',
-      host_url=flask.request.host_url[:-1],
       lastmod=config.CURRENT_VERSION_DATE.strftime('%Y-%m-%d'),
     ))
   response.headers['Content-Type'] = 'application/xml'
