@@ -6,6 +6,7 @@
     {{form.csrf_token}}
     {{forms.text_field(form.name, autofocus=True)}}
     # include 'user/user_email_field.html'
+    {{forms.select_field(form.locale)}}
 
     <div class="controls">
       <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="{{_('Please wait..')}}">

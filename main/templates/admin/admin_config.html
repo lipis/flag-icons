@@ -8,6 +8,7 @@
         {{form.csrf_token}}
         {{forms.text_field(form.brand_name, autofocus=True)}}
         {{forms.email_field(form.feedback_email)}}
+        {{forms.select_field(form.locale)}}
         {{forms.textarea_field(form.announcement_html)}}
         {{forms.select_field(form.announcement_type)}}
       </fieldset>

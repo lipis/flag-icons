@@ -12,6 +12,7 @@
       <span class="fa fa-warning fa-fw text-warning" title="{{_('This email is not verified')}}"></span>
     # endif
   </h3>
+  <h3 title="{{_('Language')}}"><span class="fa fa-flag fa-fw"></span> {{config.LOCALE[user_db.locale]}}</h3>
   <hr>
   <h3 class="text-muted">{{utils.auth_icons(user_db)}}</h3>
 # endblock
