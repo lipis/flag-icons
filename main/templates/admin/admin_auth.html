@@ -1,0 +1,19 @@
+# extends 'admin/admin_base.html'
+
+# block admin_content
+  <div class="row">
+    <div class="col-md-6">
+      <form method="POST" action="." novalidate>
+        {{form.csrf_token}}
+        <div class="panel-group">
+          # import 'macro/forms.html' as forms
+          # include 'admin/bit/facebook_oauth.html'
+          # include 'admin/bit/twitter_oauth.html'
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg btn-block btn-loading" data-loading-text="Updating Config..">
+          Update Config
+        </button>
+      </form>
+    </div>
+  </div>
+# endblock

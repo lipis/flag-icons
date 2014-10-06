@@ -1,0 +1,25 @@
+# extends 'base.html'
+# import 'macro/forms.html' as forms
+
+
+# block content
+  <div class="page-header">
+    <h1>{{title}}</h1>
+  </div>
+
+  <ul class="nav nav-justified text-center h4">
+    {{admin_link('User List', 'group', url_for('user_list', order='-modified', active=True))}}
+    {{admin_link('App Config', 'cog', url_for('admin_config'))}}
+    {{admin_link('Auth Config', 'lock', url_for('admin_auth'))}}
+  </ul>
+# endblock
+
+
+# macro admin_link(title, icon, url)
+  <li>
+    <a class="text-muted" href="{{url}}">
+      <i class="fa fa-fw fa-3x fa-{{icon}}"></i><br>
+      {{title}}
+    </a>
+  </li>
+# endmacro
