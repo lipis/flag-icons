@@ -303,7 +303,7 @@ def auth():
 
   return flask.render_template(
       'auth/auth.html',
-      title=_('Sign up') if auth_type == 'signup' else ('Sign in'),
+      title=_('Sign up') if auth_type == 'signup' else _('Sign in'),
       html_class='auth %s' % auth_type,
       google_signin_url=google_signin_url,
       twitter_signin_url=twitter_signin_url,
