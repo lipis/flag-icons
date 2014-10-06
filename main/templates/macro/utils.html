@@ -49,10 +49,9 @@
 
 
 # macro signin_button(brand, class_btn, class_icon, url, is_icon=False)
-  # set caption = _('Sign in with %(brand)s', brand=brand)
-  <a class="btn btn-lg {{'btn-social-icon' if is_icon else 'btn-block btn-social'}} {{class_btn}}" href="{{url}}" title="{{caption if is_icon}}" rel="nofollow">
+  <a class="btn btn-lg {{'btn-social-icon' if is_icon else 'btn-block btn-social'}} {{class_btn}}" href="{{url}}" title="{{_('Sign in with %(brand)s', brand=brand) if is_icon}}" rel="nofollow">
     <i class="fa {{class_icon}}"></i>
-    {{caption if not is_icon}}
+    {{_('Sign in with %(brand)s', brand=brand) if not is_icon}}
   </a>
 # endmacro
 
