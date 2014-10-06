@@ -5,9 +5,7 @@
 # block content
   <div class="page-header">
     <h1>
-      <small>
-        <a href="{{url_for('user_list', order='-modified', active=user_db.active)}}" class="text-muted" title="{{_('Back to user list')}}"><i class="fa fa-fw fa-chevron-left"></i></a>
-      </small>
+      {{utils.back_link(_('Back to user list'), 'user_list', order='-modified', active=user_db.active)}}
       {{title}}
       # if current_user.id == user_db.key.id()
         <small><i class="fa fa-hand-o-left" title="{{_('You')}}"></i></small>
@@ -38,7 +36,7 @@
         <div class="form-group">
           <label class="control-label">{{_('Avatar')}}</label>
           <div>
-            <img class="img-thumbnail" src="{{user_db.avatar_url_size(170)}}" alt="{{_('Avatar of')}} {{user_db.name}}">
+            <img class="img-thumbnail" src="{{user_db.avatar_url_size(170)}}" alt="{{_('Avatar of %(name)s', name=user_db.name)}}">
           </div>
         </div>
       </div>

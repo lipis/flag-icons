@@ -335,7 +335,7 @@ def signin_google():
 def google_authorized():
   google_user = users.get_current_user()
   if google_user is None:
-    flask.flash(__('You denied the request to sign in.'))
+    flask.flash('You denied the request to sign in.')
     return flask.redirect(util.get_next_url())
 
   user_db = retrieve_user_from_google(google_user)

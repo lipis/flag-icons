@@ -1,0 +1,36 @@
+# extends 'admin/admin_base.html'
+# import 'macro/forms.html' as forms
+
+# block admin_content
+  <form method="POST" action="." novalidate>
+    <div class="row">
+      <fieldset class="col-sm-6">
+        {{form.csrf_token}}
+        {{forms.text_field(form.brand_name, autofocus=True)}}
+        {{forms.email_field(form.feedback_email)}}
+        {{forms.textarea_field(form.announcement_html)}}
+        {{forms.select_field(form.announcement_type)}}
+      </fieldset>
+      <fieldset class="col-sm-6">
+        {{forms.checkbox_field(form.notify_on_new_user)}}
+        {{forms.checkbox_field(form.verify_email)}}
+        {{forms.checkbox_field(form.check_unique_email)}}
+        {{forms.checkbox_field(form.email_authentication)}}
+        {{forms.checkbox_field(form.anonymous_recaptcha)}}
+        <div class="panel-group">
+          # include 'admin/bit/security.html'
+          # include 'admin/bit/google_analytics_tracking_id.html'
+          # include 'admin/bit/recaptcha.html'
+        </div>
+      </fieldset>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <button type="submit" class="btn btn-primary btn-lg btn-block btn-loading" data-loading-text="Updating Config..">
+          Update Config
+        </button>
+      </div>
+    </div>
+  </form>
+# endblock

@@ -1,15 +1,11 @@
-# extends 'base.html'
+# extends 'admin/admin_base.html'
 # import 'macro/utils.html' as utils
 
 # block head
   {{utils.prefetch_link(next_url)}}
 # endblock
 
-# block content
-  <div class="page-header">
-    <h1>{{title}}</h1>
-  </div>
-
+# block admin_content
   <div class="panel panel-default">
     <div class="panel-body">
       <div class="btn-group btn-group-sm">
