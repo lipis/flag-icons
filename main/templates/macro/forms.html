@@ -156,11 +156,11 @@
 # endmacro
 
 
-# macro oauth_fields(name, fields, help)
+# macro panel_fields(name, fields, help)
   <div class="panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
-        <a data-toggle="collapse" data-parent="#oauth" href="#{{slugify(name)}}">{{name}}</a>
+        <a data-toggle="collapse" data-parent=".panel-group" href="#{{slugify(name)}}">{{name}}</a>
         <i class="fa fa-check pull-right {{'hide' if not check_form_fields(fields)}}"></i>
       </h4>
     </div>
@@ -171,7 +171,7 @@
             {{text_field(field)}}
           # endfor
         #else
-          {{ text_field(fields) }}
+          {{text_field(fields)}}
         #endif
         # if help
           <p class="help-block">{{help|safe}}</p>
