@@ -1,12 +1,13 @@
 # coding: utf-8
 
+from __future__ import absolute_import
+
 import functools
 import re
 
 from flask.ext import login
 from flask.ext import wtf
 from flask.ext.oauthlib import client as oauth
-from google.appengine.api import users
 from google.appengine.ext import ndb
 import flask
 import unidecode
@@ -22,6 +23,7 @@ import util
 from main import app
 
 _signals = flask.signals.Namespace()
+
 
 ###############################################################################
 # Flask Login
@@ -277,154 +279,6 @@ def signout():
   login.logout_user()
   flask.flash('You have been signed out.', category='success')
   return flask.redirect(util.param('next') or flask.url_for('signin'))
-
-
-###############################################################################
-# Google
-###############################################################################
-@app.route('/signin/google/')
-def signin_google():
-  save_request_params()
-  google_url = users.create_login_url(flask.url_for('google_authorized'))
-  return flask.redirect(google_url)
-
-
-@app.route('/_s/callback/google/authorized/')
-def google_authorized():
-  google_user = users.get_current_user()
-  if google_user is None:
-    flask.flash('You denied the request to sign in.')
-    return flask.redirect(util.get_next_url())
-
-  user_db = retrieve_user_from_google(google_user)
-  return signin_user_db(user_db)
-
-
-def retrieve_user_from_google(google_user):
-  auth_id = 'federated_%s' % google_user.user_id()
-  user_db = model.User.get_by('auth_ids', auth_id)
-  if user_db:
-    if not user_db.admin and users.is_current_user_admin():
-      user_db.admin = True
-      user_db.put()
-    return user_db
-
-  return create_user_db(
-      auth_id=auth_id,
-      name=util.create_name_from_email(google_user.email()),
-      username=google_user.email(),
-      email=google_user.email(),
-      verified=True,
-      admin=users.is_current_user_admin(),
-    )
-
-
-###############################################################################
-# Twitter
-###############################################################################
-twitter_config = dict(
-    base_url='https://api.twitter.com/1.1/',
-    request_token_url='https://api.twitter.com/oauth/request_token',
-    access_token_url='https://api.twitter.com/oauth/access_token',
-    authorize_url='https://api.twitter.com/oauth/authorize',
-    consumer_key=config.CONFIG_DB.twitter_consumer_key,
-    consumer_secret=config.CONFIG_DB.twitter_consumer_secret,
-  )
-
-twitter = create_oauth_app(twitter_config, 'twitter')
-
-
-@app.route('/_s/callback/twitter/oauth-authorized/')
-def twitter_authorized():
-  response = twitter.authorized_response()
-  if response is None:
-    flask.flash('You denied the request to sign in.')
-    return flask.redirect(util.get_next_url())
-
-  flask.session['oauth_token'] = (
-      response['oauth_token'],
-      response['oauth_token_secret'],
-    )
-  user_db = retrieve_user_from_twitter(response)
-  return signin_user_db(user_db)
-
-
-@twitter.tokengetter
-def get_twitter_token():
-  return flask.session.get('oauth_token')
-
-
-@app.route('/signin/twitter/')
-def signin_twitter():
-  try:
-    return signin_oauth(twitter)
-  except:
-    flask.flash(
-        'Something went wrong with Twitter sign in. Please try again.',
-        category='danger',
-      )
-    return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
-
-
-def retrieve_user_from_twitter(response):
-  auth_id = 'twitter_%s' % response['user_id']
-  user_db = model.User.get_by('auth_ids', auth_id)
-  return user_db or create_user_db(
-      auth_id=auth_id,
-      name=response['screen_name'],
-      username=response['screen_name'],
-    )
-
-
-###############################################################################
-# Facebook
-###############################################################################
-facebook_config = dict(
-    base_url='https://graph.facebook.com/',
-    request_token_url=None,
-    access_token_url='/oauth/access_token',
-    authorize_url='https://www.facebook.com/dialog/oauth',
-    consumer_key=config.CONFIG_DB.facebook_app_id,
-    consumer_secret=config.CONFIG_DB.facebook_app_secret,
-    request_token_params={'scope': 'email'},
-  )
-
-facebook = create_oauth_app(facebook_config, 'facebook')
-
-
-@app.route('/_s/callback/facebook/oauth-authorized/')
-def facebook_authorized():
-  response = facebook.authorized_response()
-  if response is None:
-    flask.flash('You denied the request to sign in.')
-    return flask.redirect(util.get_next_url())
-
-  flask.session['oauth_token'] = (response['access_token'], '')
-  me = facebook.get('/me')
-  user_db = retrieve_user_from_facebook(me.data)
-  return signin_user_db(user_db)
-
-
-@facebook.tokengetter
-def get_facebook_oauth_token():
-  return flask.session.get('oauth_token')
-
-
-@app.route('/signin/facebook/')
-def signin_facebook():
-  return signin_oauth(facebook)
-
-
-def retrieve_user_from_facebook(response):
-  auth_id = 'facebook_%s' % response['id']
-  user_db = model.User.get_by('auth_ids', auth_id)
-  return user_db or create_user_db(
-      auth_id=auth_id,
-      name=response['name'],
-      username=response.get('username', response['name']),
-      email=response.get('email', ''),
-      verified=bool(response.get('email', '')),
-    )
 
 
 ###############################################################################
