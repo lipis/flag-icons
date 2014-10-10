@@ -47,6 +47,7 @@ SCRIPTS = [
         'ext/js/jquery/jquery.js',
         'ext/js/moment/moment.js',
         'ext/js/nprogress/nprogress.js',
+        'ext/js/bootstrap-sweetalert/sweet-alert.js',
         'ext/js/bootstrap/alert.js',
         'ext/js/bootstrap/button.js',
         'ext/js/bootstrap/transition.js',
