@@ -3,9 +3,7 @@
 # block content
   <div class="page-header">
     <h1>
-      <small>
-        <a href="{{url_for('admin')}}" class="text-muted" title="Back to admin"><i class="fa fa-fw fa-chevron-left"></i></a>
-      </small>
+      {{utils.back_link('Back to admin', 'admin')}}
       {{title}}
     </h1>
 
