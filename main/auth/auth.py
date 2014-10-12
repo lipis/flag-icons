@@ -159,17 +159,8 @@ def permission_required(permission=None, methods=None):
 
 
 ###############################################################################
-# Sign in/up stuff
+# Sign in stuff
 ###############################################################################
-def create_oauth_app(service_config, name):
-  upper_name = name.upper()
-  app.config[upper_name] = service_config
-  service_oauth = oauth.OAuth()
-  service_app = service_oauth.remote_app(name, app_key=upper_name)
-  service_oauth.init_app(app)
-  return service_app
-
-
 class SignInForm(wtf.Form):
   email = wtforms.StringField(
       'Email',
@@ -188,41 +179,15 @@ class SignInForm(wtf.Form):
   next_url = wtforms.HiddenField()
 
 
-class SignUpForm(wtf.Form):
-  email = wtforms.StringField(
-      'Email',
-      [wtforms.validators.required(), wtforms.validators.email()],
-      filters=[util.email_filter],
-    )
-  recaptcha = wtf.RecaptchaField('Are you human?')
-
-
-@app.route('/signup/', methods=['GET', 'POST'], endpoint='signup')
 @app.route('/signin/', methods=['GET', 'POST'], endpoint='signin')
-def auth():
-  auth_type = 'open'
-  if config.CONFIG_DB.has_email_authentication:
-    auth_type = 'signin'
-    if flask.url_for('signup') in flask.request.path:
-      auth_type = 'signup'
-
+def signin():
   next_url = util.get_next_url()
-  google_signin_url = url_for_signin('google', next_url)
-  twitter_signin_url = url_for_signin('twitter', next_url)
-  facebook_signin_url = url_for_signin('facebook', next_url)
   form = None
-  hide_recaptcha = cache.get_auth_attempt() < config.RECAPTCHA_LIMIT
-
-  # --------------
-  # Sign in stuff
-  # --------------
-  if auth_type == 'signin':
-    form = SignInForm()
-    if hide_recaptcha or not config.CONFIG_DB.has_recaptcha:
-      del form.recaptcha
+  if config.CONFIG_DB.has_email_authentication:
+    form = form_with_recaptcha(SignInForm())
     save_request_params()
     if form.validate_on_submit():
-      result = retrieve_user_from_email(form.email.data, form.password.data)
+      result = get_user_db_from_email(form.email.data, form.password.data)
       if result:
         cache.reset_auth_attempt()
         return signin_user_db(result)
@@ -233,13 +198,38 @@ def auth():
     if not form.errors:
       form.next_url.data = next_url
 
-  # --------------
-  # Sign up stuff
-  # --------------
-  if auth_type == 'signup':
-    form = SignUpForm()
-    if hide_recaptcha or not config.CONFIG_DB.has_recaptcha:
-      del form.recaptcha
+  if form and form.errors:
+    cache.bump_auth_attempt()
+
+  return flask.render_template(
+      'auth/auth.html',
+      title='Sign in',
+      html_class='auth',
+      next_url=next_url,
+      form=form,
+      form_type='signin' if config.CONFIG_DB.has_email_authentication else '',
+      **urls_for_oauth(next_url)
+    )
+
+
+###############################################################################
+# Sign up stuff
+###############################################################################
+class SignUpForm(wtf.Form):
+  email = wtforms.StringField(
+      'Email',
+      [wtforms.validators.required(), wtforms.validators.email()],
+      filters=[util.email_filter],
+    )
+  recaptcha = wtf.RecaptchaField('Are you human?')
+
+
+@app.route('/signup/', methods=['GET', 'POST'], endpoint='signup')
+def signup():
+  next_url = util.get_next_url()
+  form = None
+  if config.CONFIG_DB.has_email_authentication:
+    form = form_with_recaptcha(SignUpForm())
     save_request_params()
     if form.validate_on_submit():
       user_db = model.User.get_by('email', form.email.data)
@@ -261,19 +251,20 @@ def auth():
   if form and form.errors:
     cache.bump_auth_attempt()
 
+  title = 'Sign up' if config.CONFIG_DB.has_email_authentication else 'Sign in'
   return flask.render_template(
       'auth/auth.html',
-      title='Sign up' if auth_type == 'signup' else 'Sign in',
-      html_class='auth %s' % auth_type,
-      google_signin_url=google_signin_url,
-      twitter_signin_url=twitter_signin_url,
-      facebook_signin_url=facebook_signin_url,
+      title=title,
+      html_class='auth',
       next_url=next_url,
       form=form,
-      auth_type=auth_type,
+      **urls_for_oauth(next_url)
     )
 
 
+###############################################################################
+# Sign out stuff
+###############################################################################
 @app.route('/signout/')
 def signout():
   login.logout_user()
@@ -284,6 +275,27 @@ def signout():
 ###############################################################################
 # Helpers
 ###############################################################################
+def url_for_signin(service_name, next_url):
+  return flask.url_for('signin_%s' % service_name, next=next_url)
+
+
+def urls_for_oauth(next_url):
+  return {
+      'google_signin_url': url_for_signin('google', next_url),
+      'twitter_signin_url': url_for_signin('twitter', next_url),
+      'facebook_signin_url': url_for_signin('facebook', next_url),
+    }
+
+
+def create_oauth_app(service_config, name):
+  upper_name = name.upper()
+  app.config[upper_name] = service_config
+  service_oauth = oauth.OAuth()
+  service_app = service_oauth.remote_app(name, app_key=upper_name)
+  service_oauth.init_app(app)
+  return service_app
+
+
 def decorator_order_guard(f, decorator_name):
   if f in app.view_functions.values():
     raise SyntaxError(
@@ -292,6 +304,31 @@ def decorator_order_guard(f, decorator_name):
       )
 
 
+def save_request_params():
+  flask.session['auth-params'] = {
+      'next': util.get_next_url(),
+      'remember': util.param('remember', bool),
+    }
+
+
+def signin_oauth(oauth_app, scheme='http'):
+  flask.session.pop('oauth_token', None)
+  save_request_params()
+  return oauth_app.authorize(callback=flask.url_for(
+      '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
+    ))
+
+
+def form_with_recaptcha(form):
+  should_have_recaptcha = cache.get_auth_attempt() >= config.RECAPTCHA_LIMIT
+  if not (should_have_recaptcha and config.CONFIG_DB.has_recaptcha):
+    del form.recaptcha
+  return form
+
+
+###############################################################################
+# User related stuff
+###############################################################################
 def create_user_db(auth_id, name, username, email='', verified=False, **props):
   email = email.lower() if email else ''
   if verified and email:
@@ -327,25 +364,6 @@ def create_user_db(auth_id, name, username, email='', verified=False, **props):
   return user_db
 
 
-def save_request_params():
-  flask.session['auth-params'] = {
-      'next': util.get_next_url(),
-      'remember': util.param('remember', bool),
-    }
-
-
-def signin_oauth(oauth_app, scheme='http'):
-  flask.session.pop('oauth_token', None)
-  save_request_params()
-  return oauth_app.authorize(callback=flask.url_for(
-      '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
-    ))
-
-
-def url_for_signin(service_name, next_url):
-  return flask.url_for('signin_%s' % service_name, next=next_url)
-
-
 @ndb.toplevel
 def signin_user_db(user_db):
   if not user_db:
@@ -366,7 +384,7 @@ def signin_user_db(user_db):
   return flask.redirect(flask.url_for('signin'))
 
 
-def retrieve_user_from_email(email, password):
+def get_user_db_from_email(email, password):
   user_dbs, user_cursor = model.User.get_dbs(email=email, active=True, limit=2)
   if not user_dbs:
     return None

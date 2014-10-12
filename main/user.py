@@ -154,10 +154,7 @@ def user_forgot(token=None):
   if not config.CONFIG_DB.has_email_authentication:
     flask.abort(418)
 
-  form = UserForgotForm(obj=auth.current_user_db())
-  hide_recaptcha = cache.get_auth_attempt() < config.RECAPTCHA_LIMIT
-  if hide_recaptcha or not config.CONFIG_DB.has_recaptcha:
-    del form.recaptcha
+  form = auth.form_with_recaptcha(UserForgotForm(obj=auth.current_user_db()))
   if form.validate_on_submit():
     cache.bump_auth_attempt()
     email = form.email.data
