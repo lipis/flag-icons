@@ -6,9 +6,9 @@
   <h3 title="Username"><span class="fa fa-at fa-fw"></span> {{user_db.username}}</h3>
   <h3 title="Email">
     <span class="fa fa-envelope-o fa-fw"></span> {{user_db.email}}
-    # if user_db.verified
+    # if config.CONFIG_DB.verify_email and user_db.email and user_db.verified
       <span class="fa fa-check fa-fw text-success" title="This email is verified"></span>
-    # else
+    # elif config.CONFIG_DB.verify_email and user_db.email
       <span class="fa fa-warning fa-fw text-warning" title="This email is not verified"></span>
     # endif
   </h3>
