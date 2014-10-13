@@ -44,16 +44,16 @@ STYLES = [
 
 SCRIPTS = [
     ('libs', [
-        'ext/js/jquery/jquery.js',
-        'ext/js/moment/moment.js',
-        'ext/js/nprogress/nprogress.js',
-        'ext/js/bootstrap-sweetalert/sweet-alert.js',
-        'ext/js/bootstrap/alert.js',
-        'ext/js/bootstrap/button.js',
-        'ext/js/bootstrap/transition.js',
-        'ext/js/bootstrap/collapse.js',
-        'ext/js/bootstrap/dropdown.js',
-        'ext/js/bootstrap/tooltip.js',
+        'ext/jquery/dist/jquery.js',
+        'ext/moment/moment.js',
+        'ext/nprogress/nprogress.js',
+        'ext/bootstrap-sweetalert/lib/sweet-alert.js',
+        'ext/bootstrap/js/alert.js',
+        'ext/bootstrap/js/button.js',
+        'ext/bootstrap/js/transition.js',
+        'ext/bootstrap/js/collapse.js',
+        'ext/bootstrap/js/dropdown.js',
+        'ext/bootstrap/js/tooltip.js',
       ]),
     ('scripts', [
         'src/script/common/service.coffee',

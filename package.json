@@ -18,11 +18,12 @@
   },
   "devDependencies": {
     "bower": "~1",
-    "grunt": "~0",
-    "grunt-bower-task": "~0",
-    "grunt-cli": "~0",
-    "grunt-contrib-clean": "~0",
-    "grunt-contrib-watch": "~0",
-    "load-grunt-tasks": "~0"
+    "del": "~0",
+    "gulp": "~3",
+    "gulp-bower": "~0",
+    "gulp-livereload": "~2",
+    "gulp-load-plugins": "~0",
+    "main-bower-files": "~2",
+    "minimist": "~1"
   }
 }

@@ -89,6 +89,8 @@ DIR_DST = os.path.join(DIR_STATIC, 'dst')
 DIR_DST_STYLE = os.path.join(DIR_DST, DIR_STYLE)
 DIR_DST_SCRIPT = os.path.join(DIR_DST, DIR_SCRIPT)
 
+DIR_EXT = os.path.join(DIR_STATIC, 'ext')
+
 DIR_MIN = os.path.join(DIR_STATIC, 'min')
 DIR_MIN_STYLE = os.path.join(DIR_MIN, DIR_STYLE)
 DIR_MIN_SCRIPT = os.path.join(DIR_MIN, DIR_SCRIPT)
@@ -105,7 +107,7 @@ FILE_BOWER_GUARD = os.path.join(DIR_TEMP, 'bower.guard')
 
 DIR_BIN = os.path.join(DIR_NODE_MODULES, '.bin')
 FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
-FILE_GRUNT = os.path.join(DIR_BIN, 'grunt')
+FILE_GULP = os.path.join(DIR_BIN, 'gulp')
 FILE_LESS = os.path.join(DIR_BIN, 'lessc')
 FILE_UGLIFYJS = os.path.join(DIR_BIN, 'uglifyjs')
 FILE_VENV = os.path.join(DIR_VENV, 'Scripts', 'activate.bat') \
@@ -139,11 +141,15 @@ def make_dirs(directory):
 
 
 def remove_file_dir(file_dir):
-  if os.path.exists(file_dir):
-    if os.path.isdir(file_dir):
-      shutil.rmtree(file_dir)
-    else:
-      os.remove(file_dir)
+  if isinstance(file_dir, list) or isinstance(file_dir, tuple):
+    for file_ in file_dir:
+      remove_file_dir(file_)
+  else:
+    if os.path.exists(file_dir):
+      if os.path.isdir(file_dir):
+        shutil.rmtree(file_dir)
+      else:
+        os.remove(file_dir)
 
 
 def clean_files():
@@ -374,8 +380,7 @@ def install_py_libs():
 
 
 def clean_py_libs():
-  remove_file_dir(DIR_LIB)
-  remove_file_dir(DIR_VENV)
+  remove_file_dir([DIR_LIB, DIR_VENV])
 
 
 def install_dependencies():
@@ -385,7 +390,7 @@ def install_dependencies():
     os.system('npm install')
   if check_bower_should_run():
     make_guard(FILE_BOWER_GUARD, 'bower', FILE_BOWER)
-    os.system('"%s" ext' % FILE_GRUNT)
+    os.system('"%s" ext' % FILE_GULP)
   install_py_libs()
 
 
@@ -523,14 +528,14 @@ def run_clean():
 
 def run_clean_all():
   print_out('CLEAN ALL')
-  remove_file_dir(DIR_BOWER_COMPONENTS)
-  remove_file_dir(DIR_NODE_MODULES)
+  remove_file_dir([
+      DIR_BOWER_COMPONENTS, DIR_NODE_MODULES, DIR_EXT, DIR_MIN, DIR_DST
+    ])
+  remove_file_dir([
+      FILE_PIP_GUARD, FILE_NPM_GUARD, FILE_BOWER_GUARD
+    ])
   clean_py_libs()
   clean_files()
-  remove_file_dir(FILE_LIB)
-  remove_file_dir(FILE_PIP_GUARD)
-  remove_file_dir(FILE_NPM_GUARD)
-  remove_file_dir(FILE_BOWER_GUARD)
 
 
 def run_minify():
