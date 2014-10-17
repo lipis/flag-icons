@@ -1,5 +1,7 @@
 # coding: utf-8
 
+import logging
+
 import flask
 from google.appengine.api import mail
 from google.appengine.ext import deferred
@@ -17,6 +19,14 @@ def send_mail_notification(subject, body, to=None, **kwargs):
   brand_name = config.CONFIG_DB.brand_name
   sender = '%s <%s>' % (brand_name, config.CONFIG_DB.feedback_email)
   subject = '[%s] %s' % (brand_name, subject)
+  if config.DEVELOPMENT:
+    logging.info(
+        '\n'
+        '######### Deferring to send this email: #############################'
+        '\nFrom: %s\nTo: %s\nSubject: %s\n\n%s\n'
+        '#####################################################################'
+        % (sender, to or sender, subject, body)
+      )
   deferred.defer(mail.send_mail, sender, to or sender, subject, body, **kwargs)
 
 
