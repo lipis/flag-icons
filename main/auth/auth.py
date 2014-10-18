@@ -1,5 +1,7 @@
 # coding: utf-8
 
+from __future__ import absolute_import
+
 import functools
 import re
 
@@ -9,7 +11,6 @@ from flask.ext import wtf
 from flask.ext.babel import gettext as __
 from flask.ext.babel import lazy_gettext as _
 from flask.ext.oauthlib import client as oauth
-from google.appengine.api import users
 from google.appengine.ext import ndb
 import flask
 import unidecode
@@ -18,13 +19,14 @@ import wtforms
 
 import cache
 import config
-import i18n
 import model
 import task
 import util
 
 from main import app
 from main import babel
+
+_signals = flask.signals.Namespace()
 
 
 ###############################################################################
@@ -63,7 +65,6 @@ def set_locale(locale):
   util.set_locale(check_locale(locale), response)
   return response
 
-_signals = flask.signals.Namespace()
 
 ###############################################################################
 # Flask Login
@@ -199,18 +200,9 @@ def permission_required(permission=None, methods=None):
 
 
 ###############################################################################
-# Sign in/up stuff
+# Sign in stuff
 ###############################################################################
-def create_oauth_app(service_config, name):
-  upper_name = name.upper()
-  app.config[upper_name] = service_config
-  service_oauth = oauth.OAuth()
-  service_app = service_oauth.remote_app(name, app_key=upper_name)
-  service_oauth.init_app(app)
-  return service_app
-
-
-class SignInForm(i18n.Form):
+class SignInForm(wtf.Form):
   email = wtforms.StringField(
       _('Email'),
       [wtforms.validators.required()],
@@ -228,9 +220,45 @@ class SignInForm(i18n.Form):
   next_url = wtforms.HiddenField()
 
 
-class SignUpForm(i18n.Form):
+@app.route('/signin/', methods=['GET', 'POST'], endpoint='signin')
+def signin():
+  next_url = util.get_next_url()
+  form = None
+  if config.CONFIG_DB.has_email_authentication:
+    form = form_with_recaptcha(SignInForm())
+    save_request_params()
+    if form.validate_on_submit():
+      result = get_user_db_from_email(form.email.data, form.password.data)
+      if result:
+        cache.reset_auth_attempt()
+        return signin_user_db(result)
+      if result is None:
+        form.email.errors.append(__('Email or Password do not match'))
+      if result is False:
+        return flask.redirect(flask.url_for('welcome'))
+    if not form.errors:
+      form.next_url.data = next_url
+
+  if form and form.errors:
+    cache.bump_auth_attempt()
+
+  return flask.render_template(
+      'auth/auth.html',
+      title=_('Sign in'),
+      html_class='auth',
+      next_url=next_url,
+      form=form,
+      form_type='signin' if config.CONFIG_DB.has_email_authentication else '',
+      **urls_for_oauth(next_url)
+    )
+
+
+###############################################################################
+# Sign up stuff
+###############################################################################
+class SignUpForm(wtf.Form):
   email = wtforms.StringField(
-      'Email',
+      _('Email'),
       [wtforms.validators.required(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
@@ -238,48 +266,11 @@ class SignUpForm(i18n.Form):
 
 
 @app.route('/signup/', methods=['GET', 'POST'], endpoint='signup')
-@app.route('/signin/', methods=['GET', 'POST'], endpoint='signin')
-def auth():
-  auth_type = 'open'
-  if config.CONFIG_DB.has_email_authentication:
-    auth_type = 'signin'
-    if flask.url_for('signup') in flask.request.path:
-      auth_type = 'signup'
-
+def signup():
   next_url = util.get_next_url()
-  google_signin_url = url_for_signin('google', next_url)
-  twitter_signin_url = url_for_signin('twitter', next_url)
-  facebook_signin_url = url_for_signin('facebook', next_url)
   form = None
-  hide_recaptcha = cache.get_auth_attempt() < config.RECAPTCHA_LIMIT
-
-  # --------------
-  # Sign in stuff
-  # --------------
-  if auth_type == 'signin':
-    form = SignInForm()
-    if hide_recaptcha or not config.CONFIG_DB.has_recaptcha:
-      del form.recaptcha
-    save_request_params()
-    if form.validate_on_submit():
-      result = retrieve_user_from_email(form.email.data, form.password.data)
-      if result:
-        cache.reset_auth_attempt()
-        return signin_user_db(result)
-      if result is None:
-        form.email.errors.append(_('Email or Password do not match'))
-      if result is False:
-        return flask.redirect(flask.url_for('welcome'))
-    if not form.errors:
-      form.next_url.data = next_url
-
-  # --------------
-  # Sign up stuff
-  # --------------
-  if auth_type == 'signup':
-    form = SignUpForm()
-    if hide_recaptcha or not config.CONFIG_DB.has_recaptcha:
-      del form.recaptcha
+  if config.CONFIG_DB.has_email_authentication:
+    form = form_with_recaptcha(SignUpForm())
     save_request_params()
     if form.validate_on_submit():
       user_db = model.User.get_by('email', form.email.data)
@@ -301,19 +292,20 @@ def auth():
   if form and form.errors:
     cache.bump_auth_attempt()
 
+  title = _('Sign up') if config.CONFIG_DB.has_email_authentication else _('Sign in')
   return flask.render_template(
       'auth/auth.html',
-      title=_('Sign up') if auth_type == 'signup' else _('Sign in'),
-      html_class='auth %s' % auth_type,
-      google_signin_url=google_signin_url,
-      twitter_signin_url=twitter_signin_url,
-      facebook_signin_url=facebook_signin_url,
+      title=title,
+      html_class='auth',
       next_url=next_url,
       form=form,
-      auth_type=auth_type,
+      **urls_for_oauth(next_url)
     )
 
 
+###############################################################################
+# Sign out stuff
+###############################################################################
 @app.route('/signout/')
 def signout():
   login.logout_user()
@@ -322,156 +314,29 @@ def signout():
 
 
 ###############################################################################
-# Google
-###############################################################################
-@app.route('/signin/google/')
-def signin_google():
-  save_request_params()
-  google_url = users.create_login_url(flask.url_for('google_authorized'))
-  return flask.redirect(google_url)
-
-
-@app.route('/_s/callback/google/authorized/')
-def google_authorized():
-  google_user = users.get_current_user()
-  if google_user is None:
-    flask.flash('You denied the request to sign in.')
-    return flask.redirect(util.get_next_url())
-
-  user_db = retrieve_user_from_google(google_user)
-  return signin_user_db(user_db)
-
-
-def retrieve_user_from_google(google_user):
-  auth_id = 'federated_%s' % google_user.user_id()
-  user_db = model.User.get_by('auth_ids', auth_id)
-  if user_db:
-    if not user_db.admin and users.is_current_user_admin():
-      user_db.admin = True
-      user_db.put()
-    return user_db
-
-  return create_user_db(
-      auth_id=auth_id,
-      name=util.create_name_from_email(google_user.email()),
-      username=google_user.email(),
-      email=google_user.email(),
-      verified=True,
-      admin=users.is_current_user_admin(),
-    )
-
-
-###############################################################################
-# Twitter
-###############################################################################
-twitter_config = dict(
-    base_url='https://api.twitter.com/1.1/',
-    request_token_url='https://api.twitter.com/oauth/request_token',
-    access_token_url='https://api.twitter.com/oauth/access_token',
-    authorize_url='https://api.twitter.com/oauth/authorize',
-    consumer_key=config.CONFIG_DB.twitter_consumer_key,
-    consumer_secret=config.CONFIG_DB.twitter_consumer_secret,
-  )
-
-twitter = create_oauth_app(twitter_config, 'twitter')
-
-
-@app.route('/_s/callback/twitter/oauth-authorized/')
-def twitter_authorized():
-  response = twitter.authorized_response()
-  if response is None:
-    flask.flash(__('You denied the request to sign in.'))
-    return flask.redirect(util.get_next_url())
-
-  flask.session['oauth_token'] = (
-      response['oauth_token'],
-      response['oauth_token_secret'],
-    )
-  user_db = retrieve_user_from_twitter(response)
-  return signin_user_db(user_db)
-
-
-@twitter.tokengetter
-def get_twitter_token():
-  return flask.session.get('oauth_token')
-
-
-@app.route('/signin/twitter/')
-def signin_twitter():
-  try:
-    return signin_oauth(twitter)
-  except:
-    flask.flash(
-        __('Something went wrong with Twitter sign in. Please try again.'),
-        category='danger',
-      )
-    return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
-
-
-def retrieve_user_from_twitter(response):
-  auth_id = 'twitter_%s' % response['user_id']
-  user_db = model.User.get_by('auth_ids', auth_id)
-  return user_db or create_user_db(
-      auth_id=auth_id,
-      name=response['screen_name'],
-      username=response['screen_name'],
-    )
-
-
-###############################################################################
-# Facebook
-###############################################################################
-facebook_config = dict(
-    base_url='https://graph.facebook.com/',
-    request_token_url=None,
-    access_token_url='/oauth/access_token',
-    authorize_url='https://www.facebook.com/dialog/oauth',
-    consumer_key=config.CONFIG_DB.facebook_app_id,
-    consumer_secret=config.CONFIG_DB.facebook_app_secret,
-    request_token_params={'scope': 'email'},
-  )
-
-facebook = create_oauth_app(facebook_config, 'facebook')
-
-
-@app.route('/_s/callback/facebook/oauth-authorized/')
-def facebook_authorized():
-  response = facebook.authorized_response()
-  if response is None:
-    flask.flash(__('You denied the request to sign in.'))
-    return flask.redirect(util.get_next_url())
-
-  flask.session['oauth_token'] = (response['access_token'], '')
-  me = facebook.get('/me')
-  user_db = retrieve_user_from_facebook(me.data)
-  return signin_user_db(user_db)
-
-
-@facebook.tokengetter
-def get_facebook_oauth_token():
-  return flask.session.get('oauth_token')
-
-
-@app.route('/signin/facebook/')
-def signin_facebook():
-  return signin_oauth(facebook)
-
-
-def retrieve_user_from_facebook(response):
-  auth_id = 'facebook_%s' % response['id']
-  user_db = model.User.get_by('auth_ids', auth_id)
-  return user_db or create_user_db(
-      auth_id=auth_id,
-      name=response['name'],
-      username=response.get('username', response['name']),
-      email=response.get('email', ''),
-      verified=bool(response.get('email', '')),
-    )
-
-
-###############################################################################
 # Helpers
 ###############################################################################
+def url_for_signin(service_name, next_url):
+  return flask.url_for('signin_%s' % service_name, next=next_url)
+
+
+def urls_for_oauth(next_url):
+  return {
+      'google_signin_url': url_for_signin('google', next_url),
+      'twitter_signin_url': url_for_signin('twitter', next_url),
+      'facebook_signin_url': url_for_signin('facebook', next_url),
+    }
+
+
+def create_oauth_app(service_config, name):
+  upper_name = name.upper()
+  app.config[upper_name] = service_config
+  service_oauth = oauth.OAuth()
+  service_app = service_oauth.remote_app(name, app_key=upper_name)
+  service_oauth.init_app(app)
+  return service_app
+
+
 def decorator_order_guard(f, decorator_name):
   if f in app.view_functions.values():
     raise SyntaxError(
@@ -480,6 +345,31 @@ def decorator_order_guard(f, decorator_name):
       )
 
 
+def save_request_params():
+  flask.session['auth-params'] = {
+      'next': util.get_next_url(),
+      'remember': util.param('remember', bool),
+    }
+
+
+def signin_oauth(oauth_app, scheme='http'):
+  flask.session.pop('oauth_token', None)
+  save_request_params()
+  return oauth_app.authorize(callback=flask.url_for(
+      '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
+    ))
+
+
+def form_with_recaptcha(form):
+  should_have_recaptcha = cache.get_auth_attempt() >= config.RECAPTCHA_LIMIT
+  if not (should_have_recaptcha and config.CONFIG_DB.has_recaptcha):
+    del form.recaptcha
+  return form
+
+
+###############################################################################
+# User related stuff
+###############################################################################
 def create_user_db(auth_id, name, username, email='', verified=False, **props):
   email = email.lower() if email else ''
   if verified and email:
@@ -508,31 +398,11 @@ def create_user_db(auth_id, name, username, email='', verified=False, **props):
       auth_ids=[auth_id] if auth_id else [],
       verified=verified,
       token=util.uuid(),
-      locale=get_locale(),
       **props
     )
   user_db.put()
   task.new_user_notification(user_db)
   return user_db
-
-
-def save_request_params():
-  flask.session['auth-params'] = {
-      'next': util.get_next_url(),
-      'remember': util.param('remember', bool),
-    }
-
-
-def signin_oauth(oauth_app, scheme='http'):
-  flask.session.pop('oauth_token', None)
-  save_request_params()
-  return oauth_app.authorize(callback=flask.url_for(
-      '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
-    ))
-
-
-def url_for_signin(service_name, next_url):
-  return flask.url_for('signin_%s' % service_name, next=next_url)
 
 
 @ndb.toplevel
@@ -547,8 +417,6 @@ def signin_user_db(user_db):
   flask.session.pop('auth-params', None)
   if login.login_user(flask_user_db, remember=auth_params['remember']):
     user_db.put_async()
-    response = flask.redirect(auth_params['next'])
-    util.set_locale(user_db.locale, response)
     flask.flash(__(
         'Hello %(name)s, welcome to %(brand)s.',
         name=user_db.name, brand=config.CONFIG_DB.brand_name,
@@ -558,7 +426,7 @@ def signin_user_db(user_db):
   return flask.redirect(flask.url_for('signin'))
 
 
-def retrieve_user_from_email(email, password):
+def get_user_db_from_email(email, password):
   user_dbs, user_cursor = model.User.get_dbs(email=email, active=True, limit=2)
   if not user_dbs:
     return None

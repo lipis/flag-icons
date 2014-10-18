@@ -2,19 +2,19 @@
 
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>{{host_url}}{{url_for('welcome')}}</loc>
+    <loc>{{url_for('welcome', _external=True)}}</loc>
     <lastmod>{{lastmod}}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>{{host_url}}{{url_for('feedback')}}</loc>
+    <loc>{{url_for('feedback', _external=True)}}</loc>
     <lastmod>{{lastmod}}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>{{host_url}}{{url_for('signin')}}</loc>
+    <loc>{{url_for('signin', _external=True)}}</loc>
     <lastmod>{{lastmod}}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
