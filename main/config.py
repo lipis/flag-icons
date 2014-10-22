@@ -31,11 +31,6 @@ else:
   RECAPTCHA_PRIVATE_KEY = CONFIG_DB.recaptcha_private_key
   RECAPTCHA_LIMIT = 8
 
-  import flask
-  DO_NOT_REDIRECT_URLS = [flask.url_for(u) for u in [
-      'signin', 'signup', 'user_forgot', 'user_reset',
-    ]]
-
 
 DEFAULT_DB_LIMIT = 64
 SIGNIN_RETRY_LIMIT = 4
