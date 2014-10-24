@@ -46,23 +46,31 @@ init_user_delete_btn = ->
     clear_notifications()
     e.preventDefault()
     confirm_message = ($(this).data 'confirm').replace '{users}', $('input[name=user_db]:checked').length
-    if confirm confirm_message
+    delete_url = $(this).data 'service-url'
+    success_message = $(this).data 'success'
+    error_message = $(this).data 'error'
+    swal
+      title: 'Delete?'
+      text: confirm_message
+      type: 'warning'
+      showCancelButton: true
+      confirmButtonClass: 'btn-danger'
+      confirmButtonText: 'Yes'
+      closeOnConfirm: false
+    , ->
       user_keys = []
       $('input[name=user_db]:checked').each ->
         $(this).attr 'disabled', true
         user_keys.push $(this).val()
-      delete_url = $(this).data 'service-url'
-      success_message = $(this).data 'success'
-      error_message = $(this).data 'error'
       service_call 'DELETE', delete_url, {user_keys: user_keys.join(',')}, (err, result) ->
         if err
           $('input[name=user_db]:disabled').removeAttr 'disabled'
-          show_notification error_message.replace('{users}', user_keys.length), 'danger'
+          swal 'Failed!', error_message.replace('{users}', user_keys.length), 'error'
           return
         $("##{result.join(', #')}").fadeOut ->
           $(this).remove()
           update_user_selections()
-          show_notification success_message.replace('{users}', user_keys.length), 'success'
+          swal 'Deleted!', success_message.replace('{users}', user_keys.length), 'success'
 
 
 ###############################################################################
