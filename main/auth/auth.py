@@ -220,7 +220,7 @@ class SignInForm(wtf.Form):
   next_url = wtforms.HiddenField()
 
 
-@app.route('/signin/', methods=['GET', 'POST'], endpoint='signin')
+@app.route('/signin/', methods=['GET', 'POST'])
 def signin():
   next_url = util.get_next_url()
   form = None
@@ -265,7 +265,7 @@ class SignUpForm(wtf.Form):
   recaptcha = wtf.RecaptchaField(_('Are you human?'))
 
 
-@app.route('/signup/', methods=['GET', 'POST'], endpoint='signup')
+@app.route('/signup/', methods=['GET', 'POST'])
 def signup():
   next_url = util.get_next_url()
   form = None

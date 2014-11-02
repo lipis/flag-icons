@@ -26,7 +26,6 @@ else:
   CURRENT_VERSION_DATE = datetime.utcfromtimestamp(CURRENT_VERSION_TIMESTAMP)
 
   import model
-
   CONFIG_DB = model.Config.get_master_db()
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
   RECAPTCHA_PUBLIC_KEY = CONFIG_DB.recaptcha_public_key
@@ -68,6 +67,7 @@ SCRIPTS = [
         'ext/js/jquery/jquery.js',
         'ext/js/moment/moment.js',
         'ext/js/nprogress/nprogress.js',
+        'ext/js/bootstrap-sweetalert/sweet-alert.js',
         'ext/js/bootstrap/alert.js',
         'ext/js/bootstrap/button.js',
         'ext/js/bootstrap/transition.js',

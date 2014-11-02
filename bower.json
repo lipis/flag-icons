@@ -3,6 +3,7 @@
   "dependencies": {
     "bootstrap": "~3",
     "flag-icon-css": "~0",
+    "bootstrap-sweetalert": "~0",
     "font-awesome": "~4",
     "jquery": "~2",
     "moment": "~2",
@@ -33,6 +34,10 @@
     "nprogress": {
       "js": "*.js",
       "less": "*.less"
+    },
+    "bootstrap-sweetalert": {
+      "js": "lib/sweet-alert.js",
+      "less": "lib/*.less"
     }
   }
 }

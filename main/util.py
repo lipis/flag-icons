@@ -40,12 +40,10 @@ def param(name, cast=None):
 
 def get_next_url(next_url=''):
   next_url = next_url or param('next') or param('next_url')
+  do_not_redirect_urls = [flask.url_for(u) for u in [
+      'signin', 'signup', 'user_forgot', 'user_reset',
+    ]]
   if next_url:
-    do_not_redirect_urls = [
-        flask.url_for('signin'),
-        flask.url_for('signup'),
-        flask.url_for('user_reset'),
-      ]
     if any(url in next_url for url in do_not_redirect_urls):
       return flask.url_for('welcome')
     return next_url
