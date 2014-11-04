@@ -5,9 +5,9 @@ from __future__ import absolute_import
 from google.appengine.api import users
 import flask
 
+import auth
 import model
 import util
-import auth
 
 from main import app
 

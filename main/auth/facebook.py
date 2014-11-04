@@ -2,10 +2,10 @@
 
 import flask
 
+import auth
 import config
 import model
 import util
-import auth
 
 from main import app
 

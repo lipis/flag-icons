@@ -23,6 +23,8 @@ class Config(model.Base):
   facebook_app_secret = ndb.StringProperty(default='')
   feedback_email = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default=util.uuid())
+  github_client_id = ndb.StringProperty(default='')
+  github_client_secret = ndb.StringProperty(default='')
   notify_on_new_user = ndb.BooleanProperty(default=True)
   recaptcha_private_key = ndb.StringProperty(default='')
   recaptcha_public_key = ndb.StringProperty(default='')
@@ -44,6 +46,10 @@ class Config(model.Base):
     return bool(self.facebook_app_id and self.facebook_app_secret)
 
   @property
+  def has_github(self):
+    return bool(self.github_client_id and self.github_client_secret)
+
+  @property
   def has_recaptcha(self):
     return bool(self.recaptcha_private_key and self.recaptcha_public_key)
 
@@ -63,6 +69,8 @@ class Config(model.Base):
       'facebook_app_secret',
       'feedback_email',
       'flask_secret_key',
+      'github_client_id',
+      'github_client_secret',
       'notify_on_new_user',
       'recaptcha_private_key',
       'recaptcha_public_key',
