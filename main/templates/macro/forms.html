@@ -12,7 +12,7 @@
 # endmacro
 
 
-# macro input_field(field, type='text', prefix='', suffix='')
+# macro input_field(field, prefix='', suffix='')
   <div class="form-group {{'has-error' if field.errors}}">
     {{field.label(class='control-label')}}
     # if prefix or suffix
@@ -20,13 +20,13 @@
         # if prefix
           <span class="input-group-addon">{{prefix}}</span>
         # endif
-        {{field(class='form-control', type=type, **kwargs)}}
+        {{field(class='form-control', **kwargs)}}
         # if suffix
           <span class="input-group-addon">{{suffix}}</span>
         # endif
       </div>
     # else
-      {{field(class='form-control', type=type, **kwargs)}}
+      {{field(class='form-control', **kwargs)}}
     # endif
     {{field_errors(field)}}
     {{field_description(field)}}
@@ -35,7 +35,7 @@
 
 
 # macro text_field(field)
-  {{input_field(field, **kwargs)}}
+  {{input_field(field, type='text', **kwargs)}}
 # endmacro
 
 
