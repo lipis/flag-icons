@@ -3,10 +3,10 @@
 from flask.ext.babel import gettext as __
 import flask
 
+import auth
 import config
 import model
 import util
-import auth
 
 from main import app
 

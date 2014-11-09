@@ -1,0 +1,52 @@
+# extends 'admin/admin_base.html'
+# import 'macro/utils.html' as utils
+
+
+# block admin_header
+  <div class="lead">
+    # for test in tests
+      <a href="#{{test}}"><span class="label label-success">{{test.title()}}</span></a>
+    # endfor
+  </div>
+  <div class="lead">
+    <a href="{{url_for('sitemap')}}"><span class="label label-warning">{{url_for('sitemap')}}</span></a>
+    <a href="/robots.txt"><span class="label label-warning">/robots.txt</span></a>
+    <a href="/404"><span class="label label-warning">/404</span></a>
+  </div>
+# endblock
+
+
+# block admin_content
+  <div class="row hide">
+    <div class="col-xs-6 col-sm-offset-1 col-sm-5">
+      <h3>Contents</h3>
+      <ul class="list-unstyled">
+        # for test in tests
+          <li><a href="#{{test}}">{{test.title()}}</a></li>
+        # endfor
+      </ul>
+    </div>
+    <div class="col-xs-6">
+      <h3>Other</h3>
+      <ul class="list-unstyled">
+        <li><a href="{{url_for('sitemap')}}">{{url_for('sitemap')}}</a></li>
+        <li><a href="/robots.txt">/robots.txt</a></li>
+        <li><a href="/404">/404</a></li>
+      </ul>
+    </div>
+  </div>
+
+  # for test in tests
+    <div id="{{test}}" class="anchor"></div>
+    <section class="{{'%s-%s' % (html_class, test)}}">
+      <h2>
+        <a class="pull-right" href="#" title="Back to top"><span class="text-muted fa fa-angle-up fa-fw"></span></a>
+        <a href="#{{test}}">{{test.title()}}</a>
+        <small class="on-hover">
+          <a href="{{url_for('admin_test', test=test)}}" title="Just this test"><span class="fa fa-link fa-fw"></span></a>
+        </small>
+      </h2>
+      # include 'test/test_%s.html' % test
+    </section>
+  # endfor
+# endblock

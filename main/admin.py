@@ -82,6 +82,8 @@ def admin_config():
 class AuthUpdateForm(i18n.Form):
   facebook_app_id = wtforms.StringField('App ID', filters=[util.strip_filter])
   facebook_app_secret = wtforms.StringField('App Secret', filters=[util.strip_filter])
+  github_client_id = wtforms.StringField('Client ID', filters=[util.strip_filter])
+  github_client_secret = wtforms.StringField('Client Secret', filters=[util.strip_filter])
   twitter_consumer_key = wtforms.StringField('Consumer Key', filters=[util.strip_filter])
   twitter_consumer_secret = wtforms.StringField('Consumer Secret', filters=[util.strip_filter])
 

@@ -1,0 +1,46 @@
+# import 'macro/forms.html' as forms
+
+<form method="POST" action=".#form" novalidate>
+  {{form.csrf_token}}
+
+  <div class="row">
+    <div class="col-sm-4">
+      {{forms.text_field(form.name)}}
+      {{forms.number_field(form.number)}}
+      {{forms.email_field(form.email, placeholder='steve@apple.com')}}
+      {{forms.date_field(form.date)}}
+      {{forms.textarea_field(form.textarea, rows=3)}}
+      {{forms.checkbox_field(form.boolean)}}
+    </div>
+    <div class="col-sm-4">
+      {{forms.password_field(form.password)}}
+      {{forms.password_visible_field(form.password_visible)}}
+      {{forms.text_field(form.prefix, prefix='@')}}
+      {{forms.text_field(form.suffix, suffix='@example.com')}}
+      {{forms.number_field(form.both, prefix='$', suffix='.00')}}
+      {{forms.select_field(form.select)}}
+    </div>
+    <div class="col-sm-4">
+      {{forms.multiple_checkbox_field(form.checkboxes)}}
+      {{forms.radio_field(form.radios)}}
+      {{
+        forms.panel_fields(
+            'Secret Keys',
+            (form.public, form.private),
+            'You can see how they are used in <a href="%s">app config</a>.' % url_for('admin_config')
+          )
+      }}
+      # if config.CONFIG_DB.has_recaptcha
+        {{forms.recaptcha_field(form.recaptcha)}}
+      # endif
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-sm-offset-3 col-sm-6">
+      <button type="submit" class="btn btn-primary btn-lg btn-block btn-loading" data-loading-text="Please wait..">
+        Submit this Form
+      </button>
+    </div>
+  </div>
+</form>

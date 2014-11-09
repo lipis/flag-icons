@@ -6,9 +6,9 @@ from flask.ext.babel import gettext as __
 from google.appengine.api import users
 import flask
 
+import auth
 import model
 import util
-import auth
 
 from main import app
 
