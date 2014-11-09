@@ -1,0 +1,20 @@
+# import 'macro/utils.html' as utils
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="btn-group btn-group-sm">
+      <button type="button" class="btn btn-primary" disabled >Limit</button>
+      {{utils.filter_by_link('limit', 16)}}
+      {{utils.filter_by_link('limit', 64)}}
+      {{utils.filter_by_link('limit', 128)}}
+      {{utils.filter_by_link('limit', 512)}}
+      {{utils.filter_by_link('limit', 1024)}}
+    </div>
+
+    <div class="btn-group btn-group-sm">
+      <button type="button" class="btn btn-danger" disabled >Admins</button>
+      {{utils.filter_by_link('admin', True, 'thumbs-o-up')}}
+      {{utils.filter_by_link('admin', False, 'thumbs-o-down')}}
+    </div>
+  </div>
+</div>
