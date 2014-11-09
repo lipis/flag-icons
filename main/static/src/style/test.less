@@ -1,0 +1,49 @@
+.test {
+  section {
+    padding: @line-height-computed 0;
+    > h2 {
+      margin-bottom: @line-height-computed;
+      border-bottom: 1px solid @hr-border;
+      a {
+        color: @headings-color;
+        text-decoration: none;
+      }
+
+      .on-hover {
+        display: none;
+      }
+      &:hover {
+        .on-hover {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .test-button,
+  .test-social {
+    .btn {
+      margin-bottom: (@line-height-computed / 2);
+    }
+  }
+
+  .test-grid {
+    .cell {
+      .text-center;
+      .bg-info;
+      .text-info;
+      .small;
+      border-radius: @border-radius-base;
+      border: 1px solid darken(@brand-info, 20%);
+      overflow: hidden;
+      margin-bottom: 8px;
+      padding: @padding-base-vertical 0;
+    }
+  }
+
+  .test-font {
+    p::first-line {
+      font-size: @font-size-large;
+    }
+  }
+}

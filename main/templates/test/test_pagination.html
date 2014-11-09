@@ -1,0 +1,15 @@
+# import 'macro/utils.html' as utils
+
+<div class="row">
+  <div class="col-xs-4">
+    <h2>
+      {{utils.back_link('Back to pagination', 'admin_test', test='pagination')}}
+    </h2>
+  </div>
+  <div class="col-xs-4">
+    {{utils.next_link('#%s' % test)}}
+  </div>
+  <div class="col-xs-4">
+    {{utils.next_link('#%s' % test, 'Load More')}}
+  </div>
+</div>

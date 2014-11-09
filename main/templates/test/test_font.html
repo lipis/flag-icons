@@ -1,0 +1,29 @@
+# set lorem = '''
+The quick brown fox jumps over the lazy dog.
+%s lorem ipsum dolor sit amet, consectetur adipiscing elit, feugiat nec metus.
+''' % config.CONFIG_DB.brand_name
+
+
+<table class="table table-bordered table-hover">
+  <thead>
+    <tr>
+      <th>Weight</th>
+      <th class="col-xs-6">Normal</th>
+      <th class="col-xs-6">Italic</th>
+    </tr>
+  </thead>
+  <tbody>
+    # for w in range(1, 10):
+      # set weight = w * 100
+      <tr style="font-weight: {{weight}};">
+        <td>{{weight}}</td>
+        <td>
+          <p>{{lorem}}</p>
+        </td>
+        <td style="font-style: italic;">
+          <p>{{lorem}}</p>
+        </td>
+      </tr>
+    # endfor
+  </tbody>
+</table>

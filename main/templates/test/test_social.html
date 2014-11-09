@@ -1,0 +1,18 @@
+# import 'macro/utils.html' as utils
+
+<div class="row">
+  <div class="col-sm-6">
+    {{utils.signin_button('Google', 'btn-google', 'fa-google-plus', 'javascript:')}}
+  </div>
+  <div class="col-sm-6">
+    {{utils.signin_button('Facebook', 'btn-facebook', 'fa-facebook', 'javascript:')}}
+  </div>
+  <div class="col-sm-6">
+    {{utils.signin_button('Twitter', 'btn-twitter', 'fa-twitter', 'javascript:')}}
+  </div>
+  <div class="col-sm-6 text-center">
+    {{utils.signin_button('Google', 'btn-google', 'fa-google-plus', 'javascript:', True)}}
+    {{utils.signin_button('Facebook', 'btn-facebook', 'fa-facebook', 'javascript:', True)}}
+    {{utils.signin_button('Twitter', 'btn-twitter', 'fa-twitter', 'javascript:', True)}}
+  </div>
+</div>

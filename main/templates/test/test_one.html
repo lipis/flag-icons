@@ -1,0 +1,8 @@
+# extends 'admin/admin_base.html'
+
+
+# block admin_content
+  <section class="{{'%s-%s' % (html_class, test)}}">
+    # include 'test/test_%s.html' % test
+  </section>
+# endblock
