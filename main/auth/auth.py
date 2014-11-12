@@ -284,6 +284,7 @@ def urls_for_oauth(next_url):
       'facebook_signin_url': url_for_signin('facebook', next_url),
       'github_signin_url': url_for_signin('github', next_url),
       'google_signin_url': url_for_signin('google', next_url),
+      'microsoft_signin_url': url_for_signin('microsoft', next_url),
       'twitter_signin_url': url_for_signin('twitter', next_url),
     }
 
