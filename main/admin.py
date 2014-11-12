@@ -78,6 +78,8 @@ def admin_config():
 # Auth Stuff
 ###############################################################################
 class AuthUpdateForm(wtf.Form):
+  bitbucket_key = wtforms.StringField('Key', filters=[util.strip_filter])
+  bitbucket_secret = wtforms.StringField('Secret', filters=[util.strip_filter])
   facebook_app_id = wtforms.StringField('App ID', filters=[util.strip_filter])
   facebook_app_secret = wtforms.StringField('App Secret', filters=[util.strip_filter])
   github_client_id = wtforms.StringField('Client ID', filters=[util.strip_filter])

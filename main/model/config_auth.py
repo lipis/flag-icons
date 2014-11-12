@@ -6,12 +6,18 @@ from google.appengine.ext import ndb
 
 
 class ConfigAuth(object):
+  bitbucket_key = ndb.StringProperty(default='')
+  bitbucket_secret = ndb.StringProperty(default='')
   facebook_app_id = ndb.StringProperty(default='')
   facebook_app_secret = ndb.StringProperty(default='')
   github_client_id = ndb.StringProperty(default='')
   github_client_secret = ndb.StringProperty(default='')
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
+
+  @property
+  def has_bitbucket(self):
+    return bool(self.bitbucket_key and self.bitbucket_secret)
 
   @property
   def has_facebook(self):
@@ -26,6 +32,8 @@ class ConfigAuth(object):
     return bool(self.twitter_consumer_key and self.twitter_consumer_secret)
 
   _PROPERTIES = {
+      'bitbucket_key',
+      'bitbucket_secret',
       'facebook_app_id',
       'facebook_app_secret',
       'github_client_id',
