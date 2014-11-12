@@ -44,14 +44,7 @@ def get_twitter_token():
 
 @app.route('/signin/twitter/')
 def signin_twitter():
-  try:
-    return auth.signin_oauth(twitter)
-  except:
-    flask.flash(
-        'Something went wrong with Twitter sign in. Please try again.',
-        category='danger',
-      )
-    return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
+  return auth.signin_oauth(twitter)
 
 
 def retrieve_user_from_twitter(response):
