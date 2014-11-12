@@ -60,6 +60,8 @@
 # macro auth_icon(auth_id)
   # if auth_id == 'email_auth'
     <span class="fa fa-fw fa-lock" title="Password"></span>
+  # elif auth_id.startswith('dropbox')
+    <span class="fa fa-fw fa-dropbox" title="Dropbox"></span>
   # elif auth_id.startswith('federated')
     <span class="fa fa-fw fa-google-plus" title="Google"></span>
   # elif auth_id.startswith('facebook')
