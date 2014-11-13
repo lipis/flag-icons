@@ -313,11 +313,18 @@ def save_request_params():
 
 
 def signin_oauth(oauth_app, scheme='http'):
-  flask.session.pop('oauth_token', None)
-  save_request_params()
-  return oauth_app.authorize(callback=flask.url_for(
-      '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
-    ))
+  try:
+    flask.session.pop('oauth_token', None)
+    save_request_params()
+    return oauth_app.authorize(callback=flask.url_for(
+        '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
+      ))
+  except oauth.OAuthException:
+    flask.flash(
+        'Something went wrong with sign in. Please try again.',
+        category='danger',
+      )
+    return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
 
 
 def form_with_recaptcha(form):
