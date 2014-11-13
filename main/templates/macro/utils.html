@@ -1,19 +1,19 @@
-# macro order_by_link(property, title, ignore='cursor')
+# macro order_by_link(property, title, ignore='cursor', hash=None)
   # if request.args.get('order') == property
-    <a href="{{update_query_argument('order', '-' + property, ignore)}}" rel="nofollow">{{title}}</a>
+    <a href="{{update_query_argument('order', '-' + property, ignore)}}{{'#%s' % hash if hash}}" rel="nofollow">{{title}}</a>
     <i class="fa fa-sort-up text-muted"></i>
   # elif request.args.get('order') == '-' + property
-    <a href="{{update_query_argument('order', property, ignore)}}" rel="nofollow">{{title}}</a>
+    <a href="{{update_query_argument('order', property, ignore)}}{{'#%s' % hash if hash}}" rel="nofollow">{{title}}</a>
     <i class="fa fa-sort-down text-muted"></i>
   #else
-    <a href="{{update_query_argument('order', property, ignore)}}" rel="nofollow">{{title}}</a>
+    <a href="{{update_query_argument('order', property, ignore)}}{{'#%s' % hash if hash}}" rel="nofollow">{{title}}</a>
   #endif
 # endmacro
 
 
-# macro filter_by_link(property, value, icon=None, ignore='cursor', is_list=False)
+# macro filter_by_link(property, value, icon=None, ignore='cursor', is_list=False, hash=None)
   # set value = '%s' % value
-  <a href="{{update_query_argument(property, None if request.args.get(property) == value else value, ignore, is_list)}}"
+  <a href="{{update_query_argument(property, None if request.args.get(property) == value else value, ignore, is_list)}}{{'#%s' % hash if hash}}"
      class="btn btn-default {{'active' if value in request.args.get(property, '').split(',')}}" rel="nofollow">
     # if icon
       <i class="fa fa-{{icon}}"></i>
