@@ -84,6 +84,8 @@ class AuthUpdateForm(wtf.Form):
   github_client_secret = wtforms.StringField('Client Secret', filters=[util.strip_filter])
   twitter_consumer_key = wtforms.StringField('Consumer Key', filters=[util.strip_filter])
   twitter_consumer_secret = wtforms.StringField('Consumer Secret', filters=[util.strip_filter])
+  yahoo_consumer_key = wtforms.StringField('Consumer Key', filters=[util.strip_filter])
+  yahoo_consumer_secret = wtforms.StringField('Consumer Secret', filters=[util.strip_filter])
 
 
 @app.route('/_s/admin/auth/', endpoint='admin_auth_service')

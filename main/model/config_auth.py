@@ -12,6 +12,8 @@ class ConfigAuth(object):
   github_client_secret = ndb.StringProperty(default='')
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
+  yahoo_consumer_key = ndb.StringProperty(default='')
+  yahoo_consumer_secret = ndb.StringProperty(default='')
 
   @property
   def has_facebook(self):
@@ -25,6 +27,10 @@ class ConfigAuth(object):
   def has_twitter(self):
     return bool(self.twitter_consumer_key and self.twitter_consumer_secret)
 
+  @property
+  def has_yahoo(self):
+    return bool(self.yahoo_consumer_key and self.yahoo_consumer_secret)
+
   _PROPERTIES = {
       'facebook_app_id',
       'facebook_app_secret',
@@ -32,4 +38,6 @@ class ConfigAuth(object):
       'github_client_secret',
       'twitter_consumer_key',
       'twitter_consumer_secret',
+      'yahoo_consumer_key',
+      'yahoo_consumer_secret',
     }

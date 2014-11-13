@@ -5,3 +5,4 @@ from .google import *
 from .facebook import *
 from .github import *
 from .twitter import *
+from .yahoo import *
