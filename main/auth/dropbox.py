@@ -3,6 +3,7 @@
 import flask
 
 import auth
+import config
 import model
 import util
 
@@ -16,8 +17,8 @@ dropbox_config = dict(
     access_token_method='POST',
     access_token_url='https://api.dropbox.com/1/oauth2/token',
     authorize_url='https://www.dropbox.com/1/oauth2/authorize',
-    consumer_key=model.Config.get_master_db().dropbox_app_key,
-    consumer_secret=model.Config.get_master_db().dropbox_app_secret,
+    consumer_key=config.CONFIG_DB.dropbox_app_key,
+    consumer_secret=config.CONFIG_DB.dropbox_app_secret,
   )
 
 dropbox = auth.create_oauth_app(dropbox_config, 'dropbox')

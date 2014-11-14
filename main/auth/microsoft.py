@@ -3,6 +3,7 @@
 import flask
 
 import auth
+import config
 import model
 import util
 
@@ -15,8 +16,8 @@ microsoft_config = dict(
     access_token_url='https://login.live.com/oauth20_token.srf',
     access_token_method='POST',
     authorize_url='https://login.live.com/oauth20_authorize.srf',
-    consumer_key=model.Config.get_master_db().microsoft_client_id,
-    consumer_secret=model.Config.get_master_db().microsoft_client_secret,
+    consumer_key=config.CONFIG_DB.microsoft_client_id,
+    consumer_secret=config.CONFIG_DB.microsoft_client_secret,
     request_token_params={'scope': 'wl.emails'},
   )
 
