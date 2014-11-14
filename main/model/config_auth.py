@@ -12,6 +12,8 @@ class ConfigAuth(object):
   facebook_app_secret = ndb.StringProperty(default='')
   github_client_id = ndb.StringProperty(default='')
   github_client_secret = ndb.StringProperty(default='')
+  microsoft_client_id = ndb.StringProperty(default='')
+  microsoft_client_secret = ndb.StringProperty(default='')
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
 
@@ -28,6 +30,10 @@ class ConfigAuth(object):
     return bool(self.github_client_id and self.github_client_secret)
 
   @property
+  def has_microsoft(self):
+    return bool(self.microsoft_client_id and self.microsoft_client_secret)
+
+  @property
   def has_twitter(self):
     return bool(self.twitter_consumer_key and self.twitter_consumer_secret)
 
@@ -38,6 +44,8 @@ class ConfigAuth(object):
       'facebook_app_secret',
       'github_client_id',
       'github_client_secret',
+      'microsoft_client_id',
+      'microsoft_client_secret',
       'twitter_consumer_key',
       'twitter_consumer_secret',
     }
