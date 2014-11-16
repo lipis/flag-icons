@@ -1,6 +1,7 @@
 # coding: utf-8
 
 from .auth import *
+from .bitbucket import *
 from .dropbox import *
 from .facebook import *
 from .github import *

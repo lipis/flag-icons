@@ -281,6 +281,7 @@ def url_for_signin(service_name, next_url):
 
 def urls_for_oauth(next_url):
   return {
+      'bitbucket_signin_url': url_for_signin('bitbucket', next_url),
       'dropbox_signin_url': url_for_signin('dropbox', next_url),
       'facebook_signin_url': url_for_signin('facebook', next_url),
       'github_signin_url': url_for_signin('github', next_url),
