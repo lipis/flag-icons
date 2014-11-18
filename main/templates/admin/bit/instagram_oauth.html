@@ -1,0 +1,10 @@
+{{
+  forms.panel_fields(
+      'Instagram',
+      (form.instagram_client_id, form.instagram_client_secret),
+      '''
+        Redirect URI for <a href="http://instagram.com/developer/clients/manage/" target="_blank">Instagram application</a>:
+        <em>%s</em>
+      ''' % url_for('instagram_authorized', _external=True)
+    )
+}}
