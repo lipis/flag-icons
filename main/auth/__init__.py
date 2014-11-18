@@ -9,3 +9,4 @@ from .google import *
 from .linkedin import *
 from .microsoft import *
 from .twitter import *
+from .yahoo import *
