@@ -86,6 +86,8 @@ class AuthUpdateForm(wtf.Form):
   facebook_app_secret = wtforms.StringField('App Secret', filters=[util.strip_filter])
   github_client_id = wtforms.StringField('Client ID', filters=[util.strip_filter])
   github_client_secret = wtforms.StringField('Client Secret', filters=[util.strip_filter])
+  linkedin_api_key = wtforms.StringField('API Key', filters=[util.strip_filter])
+  linkedin_secret_key = wtforms.StringField('Secret Key', filters=[util.strip_filter])
   microsoft_client_id = wtforms.StringField('Client ID', filters=[util.strip_filter])
   microsoft_client_secret = wtforms.StringField('Client Secret', filters=[util.strip_filter])
   twitter_consumer_key = wtforms.StringField('Consumer Key', filters=[util.strip_filter])
