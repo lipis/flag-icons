@@ -11,10 +11,9 @@ from main import app
 
 
 facebook_config = dict(
-    base_url='https://graph.facebook.com/',
-    request_token_url=None,
     access_token_url='/oauth/access_token',
     authorize_url='https://www.facebook.com/dialog/oauth',
+    base_url='https://graph.facebook.com/',
     consumer_key=config.CONFIG_DB.facebook_app_id,
     consumer_secret=config.CONFIG_DB.facebook_app_secret,
     request_token_params={'scope': 'email'},

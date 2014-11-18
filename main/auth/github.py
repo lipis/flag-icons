@@ -11,11 +11,10 @@ from main import app
 
 
 github_config = dict(
-    base_url='https://api.github.com/',
-    request_token_url=None,
     access_token_method='POST',
     access_token_url='https://github.com/login/oauth/access_token',
     authorize_url='https://github.com/login/oauth/authorize',
+    base_url='https://api.github.com/',
     consumer_key=config.CONFIG_DB.github_client_id,
     consumer_secret=config.CONFIG_DB.github_client_secret,
     request_token_params={'scope': 'user:email'},

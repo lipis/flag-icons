@@ -11,12 +11,12 @@ from main import app
 
 
 twitter_config = dict(
-    base_url='https://api.twitter.com/1.1/',
-    request_token_url='https://api.twitter.com/oauth/request_token',
     access_token_url='https://api.twitter.com/oauth/access_token',
     authorize_url='https://api.twitter.com/oauth/authorize',
+    base_url='https://api.twitter.com/1.1/',
     consumer_key=config.CONFIG_DB.twitter_consumer_key,
     consumer_secret=config.CONFIG_DB.twitter_consumer_secret,
+    request_token_url='https://api.twitter.com/oauth/request_token',
   )
 
 twitter = auth.create_oauth_app(twitter_config, 'twitter')
