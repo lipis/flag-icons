@@ -11,11 +11,10 @@ from main import app
 
 
 linkedin_config = dict(
-    base_url='https://api.linkedin.com/v1/',
-    request_token_url=None,
-    access_token_url='https://www.linkedin.com/uas/oauth2/accessToken',
     access_token_method='POST',
+    access_token_url='https://www.linkedin.com/uas/oauth2/accessToken',
     authorize_url='https://www.linkedin.com/uas/oauth2/authorization',
+    base_url='https://api.linkedin.com/v1/',
     consumer_key=config.CONFIG_DB.linkedin_api_key,
     consumer_secret=config.CONFIG_DB.linkedin_secret_key,
     request_token_params={
@@ -25,6 +24,14 @@ linkedin_config = dict(
   )
 
 linkedin = auth.create_oauth_app(linkedin_config, 'linkedin')
+
+
+def change_linkedin_query(uri, headers, body):
+  headers['x-li-format'] = 'json'
+  return uri, headers, body
+
+
+linkedin.pre_request = change_linkedin_query
 
 
 @app.route('/_s/callback/linkedin/oauth-authorized/')

@@ -60,14 +60,20 @@
 # macro auth_icon(auth_id)
   # if auth_id == 'email_auth'
     <span class="fa fa-fw fa-lock" title="Password"></span>
+  # elif auth_id.startswith('bitbucket')
+    <span class="fa fa-fw fa-bitbucket" title="Bitbucket"></span>
+  # elif auth_id.startswith('dropbox')
+    <span class="fa fa-fw fa-dropbox" title="Dropbox"></span>
+  # elif auth_id.startswith('facebook')
+    <span class="fa fa-fw fa-facebook" title="Facebook"></span>
   # elif auth_id.startswith('github')
     <span class="fa fa-fw fa-github" title="GitHub"></span>
   # elif auth_id.startswith('federated')
     <span class="fa fa-fw fa-google-plus" title="Google"></span>
-  # elif auth_id.startswith('facebook')
-    <span class="fa fa-fw fa-facebook" title="Facebook"></span>
   # elif auth_id.startswith('linkedin')
     <span class="fa fa-fw fa-linkedin" title="LinkedIn"></span>
+  # elif auth_id.startswith('microsoft')
+    <span class="fa fa-fw fa-windows" title="Microsoft"></span>
   # elif auth_id.startswith('twitter')
     <span class="fa fa-fw fa-twitter" title="Twitter"></span>
   # else
