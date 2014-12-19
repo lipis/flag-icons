@@ -29,18 +29,18 @@ automatically to `*.css` & `*.js` execute in another bash:
 
 For a complete list of commands:
 
-    $ ./run -h
+    $ ./run.py -h
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-Grunt is used only for watching for changes and live reloading the page.
-Install [grunt command line interface][grunt-cli] as a global package:
+Gulp is used only for watching for changes and live reloading the page.
+Install [Gulp][] as a global package:
 
-    $ npm install -g grunt-cli
+    $ npm install -g gulp
 
 and then from the root execute with no arguments:
 
-    $ grunt
+    $ gulp
 
 Deploying on Google App Engine
 ------------------------------
@@ -61,7 +61,7 @@ Tech Stack
   - [jQuery][], [NProgress][], [Moment.js][]
   - [OpenID][] sign in (Google, Facebook, Twitter)
   - [Python 2.7][], [pip][], [virtualenv][]
-  - [Grunt][], [Bower][]
+  - [Gulp][], [Bower][]
 
 Requirements
 ------------
@@ -99,8 +99,7 @@ Author
 [gmist]: https://github.com/gmist
 [google app engine sdk for python]: https://developers.google.com/appengine/downloads
 [google app engine]: https://developers.google.com/appengine/
-[grunt-cli]: https://github.com/gruntjs/grunt-cli
-[grunt]: http://gruntjs.com/
+[gulp]: http://gulpjs.com
 [jinja2]: http://jinja.pocoo.org/docs/
 [joernhees]: https://github.com/joernhees
 [jquery]: http://jquery.com/
