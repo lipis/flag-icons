@@ -121,6 +121,8 @@ FILE_UPDATE = os.path.join(DIR_TEMP, 'update.json')
 ###############################################################################
 # Other global variables
 ###############################################################################
+CORE_VERSION_URL = 'https://gae-init.appspot.com/_s/version/'
+INERNET_TEST_URL = 'http://74.125.228.100'
 REQUIREMENTS_URL = 'http://docs.gae-init.appspot.com/requirement/'
 
 
@@ -323,20 +325,20 @@ def guard_is_newer(guard, watched):
   return False
 
 
-def check_pip_should_run():
+def check_if_pip_should_run():
   return not guard_is_newer(FILE_PIP_GUARD, FILE_REQUIREMENTS)
 
 
-def check_npm_should_run():
+def check_if_npm_should_run():
   return not guard_is_newer(FILE_NPM_GUARD, FILE_PACKAGE)
 
 
-def check_bower_should_run():
+def check_if_bower_should_run():
   return not guard_is_newer(FILE_BOWER_GUARD, FILE_BOWER)
 
 
 def install_py_libs():
-  if not check_pip_should_run():
+  if not check_if_pip_should_run():
     return
 
   exec_pip_commands('pip install -q -r %s' % FILE_REQUIREMENTS)
@@ -385,10 +387,10 @@ def clean_py_libs():
 
 def install_dependencies():
   make_dirs(DIR_TEMP)
-  if check_npm_should_run():
+  if check_if_npm_should_run():
     make_guard(FILE_NPM_GUARD, 'npm', FILE_PACKAGE)
     os.system('npm install')
-  if check_bower_should_run():
+  if check_if_bower_should_run():
     make_guard(FILE_BOWER_GUARD, 'bower', FILE_BOWER)
     os.system('"%s" ext' % FILE_GULP)
   install_py_libs()
@@ -403,7 +405,7 @@ def check_for_update():
       return
   try:
     request = urllib2.Request(
-        'https://gae-init.appspot.com/_s/version/',
+        CORE_VERSION_URL,
         urllib.urlencode({'version': main.__version__}),
       )
     response = urllib2.urlopen(request)
@@ -445,7 +447,7 @@ def uniq(seq):
 ###############################################################################
 def internet_on():
   try:
-    urllib2.urlopen('http://74.125.228.100', timeout=2)
+    urllib2.urlopen(INERNET_TEST_URL, timeout=2)
     return True
   except (urllib2.URLError, socket.timeout):
     return False
