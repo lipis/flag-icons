@@ -106,9 +106,9 @@ def login_required(f):
   decorator_order_guard(f, 'auth.login_required')
 
   @functools.wraps(f)
-  def decorated_function(*args, **kws):
+  def decorated_function(*args, **kwargs):
     if is_logged_in():
-      return f(*args, **kws)
+      return f(*args, **kwargs)
     if flask.request.path.startswith('/_s/'):
       return flask.abort(401)
     return flask.redirect(flask.url_for('signin', next=flask.request.url))
@@ -119,9 +119,9 @@ def admin_required(f):
   decorator_order_guard(f, 'auth.admin_required')
 
   @functools.wraps(f)
-  def decorated_function(*args, **kws):
+  def decorated_function(*args, **kwargs):
     if is_logged_in() and current_user_db().admin:
-      return f(*args, **kws)
+      return f(*args, **kwargs)
     if not is_logged_in() and flask.request.path.startswith('/_s/'):
       return flask.abort(401)
     if not is_logged_in():
@@ -144,11 +144,11 @@ def permission_required(permission=None, methods=None):
     permission_registered.send(f, permission=perm)
 
     @functools.wraps(f)
-    def decorated_function(*args, **kws):
+    def decorated_function(*args, **kwargs):
       if meths and flask.request.method.upper() not in meths:
-        return f(*args, **kws)
+        return f(*args, **kwargs)
       if is_logged_in() and current_user_db().has_permission(perm):
-        return f(*args, **kws)
+        return f(*args, **kwargs)
       if not is_logged_in():
         if flask.request.path.startswith('/_s/'):
           return flask.abort(401)
