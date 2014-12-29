@@ -65,6 +65,8 @@ ARGS = PARSER.parse_args()
 ###############################################################################
 # Globals
 ###############################################################################
+BAD_ENDINGS = ['pyc', 'pyo', '~']
+GAE_PATH = ''
 IS_WINDOWS = platform.system() is 'Windows'
 
 
@@ -147,20 +149,20 @@ def remove_file_dir(file_dir):
     for file_ in file_dir:
       remove_file_dir(file_)
   else:
-    if os.path.exists(file_dir):
-      if os.path.isdir(file_dir):
-        shutil.rmtree(file_dir)
-      else:
-        os.remove(file_dir)
+    if not os.path.exists(file_dir):
+      return
+    if os.path.isdir(file_dir):
+      shutil.rmtree(file_dir, ignore_errors=True)
+    else:
+      os.remove(file_dir)
 
 
-def clean_files():
-  bad_endings = ['pyc', 'pyo', '~']
+def clean_files(bad_endings=BAD_ENDINGS, in_dir='.'):
   print_out(
       'CLEAN FILES',
       'Removing files: %s' % ', '.join(['*%s' % e for e in bad_endings]),
     )
-  for root, _, files in os.walk('.'):
+  for root, _, files in os.walk(in_dir):
     for filename in files:
       for bad_ending in bad_endings:
         if filename.endswith(bad_ending):
@@ -288,10 +290,9 @@ def create_virtualenv():
     os.system('echo %s >> %s' % (
         'set PYTHONPATH=' if IS_WINDOWS else 'unset PYTHONPATH', FILE_VENV
       ))
-    gae_path = find_gae_path()
     pth_file = os.path.join(site_packages_path(), 'gae.pth')
     echo_to = 'echo %s >> {pth}'.format(pth=pth_file)
-    os.system(echo_to % gae_path)
+    os.system(echo_to % find_gae_path())
     os.system(echo_to % os.path.abspath(DIR_LIBX))
     fix_path_cmd = 'import dev_appserver; dev_appserver.fix_sys_path()'
     os.system(echo_to % (
@@ -464,6 +465,9 @@ def check_requirement(check_func):
 
 
 def find_gae_path():
+  global GAE_PATH
+  if GAE_PATH:
+    return GAE_PATH
   if IS_WINDOWS:
     gae_path = None
     for path in os.environ['PATH'].split(os.pathsep):
@@ -477,11 +481,12 @@ def find_gae_path():
     return ''
   gcloud_exec = 'gcloud.cmd' if IS_WINDOWS else 'gcloud'
   if not os.path.isfile(os.path.join(gae_path, gcloud_exec)):
-    return gae_path
-  gae_path = os.path.join(gae_path, '..', 'platform', 'google_appengine')
-  if os.path.exists:
-    return os.path.realpath(gae_path)
-  return ''
+    GAE_PATH = gae_path
+  else:
+    gae_path = os.path.join(gae_path, '..', 'platform', 'google_appengine')
+    if os.path.exists(gae_path):
+      GAE_PATH = os.path.realpath(gae_path)
+  return GAE_PATH
 
 
 def check_internet():
@@ -522,7 +527,10 @@ def run_clean():
   print_out('CLEAN')
   clean_files()
   make_lib_zip(force=True)
-  remove_file_dir(DIR_DST)
+  if IS_WINDOWS:
+    clean_files(['css', 'js'], DIR_DST)
+  else:
+    remove_file_dir(DIR_DST)
   make_dirs(DIR_DST)
   compile_all_dst()
   print_out('DONE')
@@ -598,18 +606,17 @@ def run_start():
   make_dirs(DIR_STORAGE)
   clear = 'yes' if ARGS.flush else 'no'
   port = int(ARGS.port)
-  run_command = '''
-      dev_appserver.py %s
-      --host %s
-      --port %s
-      --admin_port %s
-      --storage_path=%s
-      --clear_datastore=%s
-      --skip_sdk_update_check
-      %s
-    ''' % (DIR_MAIN, ARGS.host, port, port + 1, DIR_STORAGE, clear,
-           " ".join(ARGS.args))
-  os.system(run_command.replace('\n', ' '))
+  run_command = ' '.join(map(str, [
+      '"%s"' % os.path.join(find_gae_path(), 'dev_appserver.py'),
+      DIR_MAIN,
+      '--host %s' % ARGS.host,
+      '--port %s' % port,
+      '--admin_port %s' % (port + 1),
+      '--storage_path=%s' % DIR_STORAGE,
+      '--clear_datastore=%s' % clear,
+      '--skip_sdk_update_check',
+    ] + ARGS.args))
+  os.system(run_command)
 
 
 def run():
