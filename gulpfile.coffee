@@ -23,8 +23,8 @@ paths =
 
 
 run = (option) ->
-  proc = exec "PYTHONUNBUFFERED=1 ./run.py -#{option}"
-  proc.stderr.on 'data', (data) -> process.stdout.write data
+  proc = exec "python -u run.py -#{option}"
+  proc.stderr.on 'data', (data) -> process.stderr.write data
   proc.stdout.on 'data', (data) -> process.stdout.write data
 
 
@@ -39,11 +39,11 @@ gulp.task 'ext', ['bower_install'], ->
     base: 'bower_components'
   ).pipe gulp.dest("#{static_dir}/ext")
 
-gulp.task 'watch', ->
+gulp.task 'reload', ->
   $.livereload.listen()
   gulp.watch(paths.watch).on 'change', $.livereload.changed
 
-gulp.task 'run_watch', ->
+gulp.task 'watch', ->
   run 'w'
 
 gulp.task 'run', ->
@@ -66,4 +66,4 @@ gulp.task 'run', ->
         run k
         break
 
-gulp.task 'default', ['watch', 'run', 'run_watch']
+gulp.task 'default', ['run', 'watch', 'reload']
