@@ -8,7 +8,7 @@
       {{utils.back_link('Back to user list', 'user_list', order='-modified', active=user_db.active)}}
       {{title}}
       # if current_user.id == user_db.key.id()
-        <small><i class="fa fa-hand-o-left" title="You"></i></small>
+        <small><span class="fa fa-hand-o-left" title="You"></span></small>
       # endif
     </h1>
   </div>
@@ -45,7 +45,7 @@
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
-                <th><i class="fa fa-key"></i></th>
+                <th><span class="fa fa-key"></span></th>
                 <th class="col-xs-12">Auth ID</th>
               </tr>
             </thead>

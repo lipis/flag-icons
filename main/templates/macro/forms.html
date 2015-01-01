@@ -161,7 +161,7 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent=".panel-group" href="#{{slugify(name)}}">{{name}}</a>
-        <i class="fa fa-check pull-right {{'hide' if not check_form_fields(fields)}}"></i>
+        <span class="fa fa-check pull-right {{'hide' if not check_form_fields(fields)}}"></span>
       </h4>
     </div>
     <div id="{{slugify(name)}}" class="panel-collapse collapse">

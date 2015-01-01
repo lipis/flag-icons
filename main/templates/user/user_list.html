@@ -42,7 +42,7 @@
           {{utils.filter_by_link('permissions', permission, is_list=True)}}
         # endfor
         # if request.args.get('permissions')
-          <a href="{{update_query_argument('permissions', ignore='cursor')}}" class="btn btn-default" title="Clear all permissions"><i class="fa fa-times"></i></a>
+          <a href="{{update_query_argument('permissions', ignore='cursor')}}" class="btn btn-default" title="Clear all permissions"><span class="fa fa-times"></span></a>
         # endif
       </div>
 
@@ -60,13 +60,13 @@
                 data-error="Something went wrong while deleting. Please try again."
                 href="#"
               >
-              <i class="fa fa-fw fa-trash-o"></i>
+              <span class="fa fa-fw fa-trash-o"></span>
               Delete Selected
             </a>
           </li>
           <li>
             <a id="user-merge" data-user-merge-url="{{url_for('user_merge')}}" href="#">
-              <i class="fa fa-fw fa-code-fork"></i>
+              <span class="fa fa-fw fa-code-fork"></span>
               Merge Selected
             </a>
           </li>
@@ -88,7 +88,7 @@
           <th class="col-xs-3">{{utils.order_by_link('email', 'Email')}}<br><small>{{utils.order_by_link('username', 'Username')}}</small></th>
           <th class="col-xs-2">{{utils.order_by_link('modified', 'Modified')}}<br><small>{{utils.order_by_link('created', 'Created')}}</small></th>
           <th class="col-xs-2">Permissions</th>
-          <th class="text-center" title="Accounts"><i class="fa fa-key"></i></th>
+          <th class="text-center" title="Accounts"><span class="fa fa-key"></span></th>
         </tr>
       </thead>
       <tbody>
@@ -101,7 +101,7 @@
               </label>
               <a href="{{url_for('user_update', user_id=user_db.key.id())}}">{{user_db.name}}</a>
               # if current_user.id == user_db.key.id()
-                <i class="fa fa-hand-o-left" title="You"></i>
+                <span class="fa fa-hand-o-left" title="You"></span>
               # endif
             </td>
             <td class="text-nowrap">
@@ -122,10 +122,10 @@
             </td>
             <td>
               # if user_db.admin
-                <a href="{{update_query_argument('admin', True)}}" class="label label-danger"><i class="fa fa-cog"></i> admin</a>
+                <a href="{{update_query_argument('admin', True)}}" class="label label-danger"><span class="fa fa-cog"></span> admin</a>
               # endif
               # if not user_db.active
-                <a href="{{update_query_argument('active', False)}}" class="label label-default"><i class="fa fa-ban"></i> inactive</a>
+                <a href="{{update_query_argument('active', False)}}" class="label label-default"><span class="fa fa-ban"></span> inactive</a>
               # endif
               # for permission in user_db.permissions
                 <a href="{{update_query_argument('permissions', permission)}}" class="label label-info">{{permission}}</a>

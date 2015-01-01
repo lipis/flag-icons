@@ -1,10 +1,10 @@
 # macro order_by_link(property, title, ignore='cursor', hash=None)
   # if request.args.get('order') == property
     <a href="{{update_query_argument('order', '-' + property, ignore)}}{{'#%s' % hash if hash}}" rel="nofollow">{{title}}</a>
-    <i class="fa fa-sort-up text-muted"></i>
+    <span class="fa fa-sort-up text-muted"></span>
   # elif request.args.get('order') == '-' + property
     <a href="{{update_query_argument('order', property, ignore)}}{{'#%s' % hash if hash}}" rel="nofollow">{{title}}</a>
-    <i class="fa fa-sort-down text-muted"></i>
+    <span class="fa fa-sort-down text-muted"></span>
   #else
     <a href="{{update_query_argument('order', property, ignore)}}{{'#%s' % hash if hash}}" rel="nofollow">{{title}}</a>
   #endif
@@ -16,7 +16,7 @@
   <a href="{{update_query_argument(property, None if request.args.get(property) == value else value, ignore, is_list)}}{{'#%s' % hash if hash}}"
      class="btn btn-default {{'active' if value in request.args.get(property, '').split(',')}}" rel="nofollow">
     # if icon
-      <i class="fa fa-{{icon}}"></i>
+      <span class="fa fa-{{icon}}"></span>
     # else
       {{value}}
     # endif
@@ -26,7 +26,7 @@
 
 # macro back_link(title, route)
   <small>
-    <a href="{{url_for(route, **kwargs)}}" class="text-muted" title="{{title}}"><i class="fa fa-fw fa-chevron-left"></i></a>
+    <a href="{{url_for(route, **kwargs)}}" class="text-muted" title="{{title}}"><span class="fa fa-fw fa-chevron-left"></span></a>
   </small>
 # endmacro
 
@@ -51,7 +51,7 @@
 # macro signin_button(brand, class_btn, class_icon, url, is_icon=False)
   # set caption = 'Sign in with %s' % brand
   <a class="btn btn-lg {{'btn-social-icon' if is_icon else 'btn-block btn-social'}} {{class_btn}}" href="{{url}}" title="{{caption if is_icon}}" rel="nofollow">
-    <i class="fa {{class_icon}}"></i>
+    <span class="fa {{class_icon}}"></span>
     {{caption if not is_icon}}
   </a>
 # endmacro
