@@ -33,7 +33,7 @@
   </div>
 
   <div class="row">
-    <div class="col-md-3 col-sm-4 col-xs-5">
+    <div class="col-xs-5 col-sm-4 col-md-3">
       <img class="img-thumbnail" src="{{user_db.avatar_url_size(512)}}" alt="Avatar of {{user_db.name}}">
       # if html_class == 'profile-update'
         <p class="help-block">
@@ -42,7 +42,7 @@
       # endif
     </div>
 
-    <div class="col-md-5 col-sm-8 col-xs-12">
+    <div class="col-xs-12 col-sm-8 {% if html_class == 'profile-view' %} col-md-9 {% else %} col-md-6 {% endif %}">
       # block profile_content
       # endblock
     </div>
