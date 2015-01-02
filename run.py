@@ -67,7 +67,7 @@ ARGS = PARSER.parse_args()
 ###############################################################################
 BAD_ENDINGS = ['pyc', 'pyo', '~']
 GAE_PATH = ''
-IS_WINDOWS = platform.system() is 'Windows'
+IS_WINDOWS = platform.system() == 'Windows'
 
 
 ###############################################################################
