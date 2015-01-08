@@ -66,4 +66,4 @@ gulp.task 'run', ->
         run k
         break
 
-gulp.task 'default', ['run', 'watch', 'reload']
+gulp.task 'default', ['reload', 'run', 'watch']
