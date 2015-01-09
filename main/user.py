@@ -197,7 +197,8 @@ class UserResetForm(wtf.Form):
 
 
 @app.route('/user/reset/<token>/', methods=['GET', 'POST'])
-def user_reset(token):
+@app.route('/user/reset/')
+def user_reset(token=None):
   user_db = model.User.get_by('token', token)
   if not user_db:
     flask.flash('That link is either invalid or expired.', category='danger')
