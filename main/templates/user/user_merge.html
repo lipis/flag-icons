@@ -19,9 +19,9 @@
               <th class="col-xs-3">Name</th>
               <th class="col-xs-2">Username</th>
               <th class="col-xs-2">Email</th>
-              <th class="col-xs-2">Created <i class="fa fa-chevron-up text-muted"></i></th>
+              <th class="col-xs-2">Created <span class="fa fa-chevron-up text-muted"></span></th>
               <th class="col-xs-3">Permissions</th>
-              <th class="text-center" title="Accounts"><i class="fa fa-key"></i></th>
+              <th class="text-center" title="Accounts"><span class="fa fa-key"></span></th>
             </tr>
           </thead>
           <tbody>
@@ -32,7 +32,7 @@
                   <img src="{{user_db.avatar_url_size(36)}}" width="18" alt="Avatar of {{user_db.name}}">
                   {{user_db.name}}
                   # if current_user.id == user_db.key.id()
-                    <i class="fa fa-hand-o-left" title="You"></i>
+                    <span class="fa fa-hand-o-left" title="You"></span>
                   # endif
                 </td>
                 <td>{{user_db.username}}</td>
@@ -44,10 +44,10 @@
                 </td>
                 <td>
                   # if user_db.admin
-                    <span class="label label-danger"><i class="fa fa-cog"></i> admin</span>
+                    <span class="label label-danger"><span class="fa fa-cog"></span> admin</span>
                   # endif
                   # if not user_db.active
-                    <span class="label label-default"><i class="fa fa-ban"></i> inactive</span>
+                    <span class="label label-default"><span class="fa fa-ban"></span> inactive</span>
                   # endif
                   # for permission in user_db.permissions
                     <span class="label label-info">{{permission}}</span>
@@ -80,7 +80,7 @@
           <table class="table table-bordered table-hover">
             <thead>
               <tr>
-                <th><i class="fa fa-fw fa-key"></i></th>
+                <th><span class="fa fa-fw fa-key"></span></th>
                 <th class="col-xs-12">Auth ID</th>
               </tr>
             </thead>
