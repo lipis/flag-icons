@@ -64,7 +64,7 @@ class FeedbackForm(wtf.Form):
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
   email = wtforms.StringField(
-      'Your email (optional)',
+      'Your email',
       [wtforms.validators.optional(), wtforms.validators.email()],
       filters=[util.email_filter],
     )

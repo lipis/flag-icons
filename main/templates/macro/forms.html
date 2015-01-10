@@ -12,9 +12,17 @@
 # endmacro
 
 
+# macro field_optional(field)
+  # if not field.flags.required
+    <small class="text-muted">(optional)</small>
+  # endif
+# endmacro
+
+
 # macro input_field(field, prefix='', suffix='')
   <div class="form-group {{'has-error' if field.errors}}">
     {{field.label(class='control-label')}}
+    {{field_optional(field)}}
     # if prefix or suffix
       <div class="input-group">
         # if prefix
@@ -47,6 +55,7 @@
 # macro password_visible_field(field, size='')
   <div class="form-group {{'has-error' if field.errors}}">
     {{field.label(class='control-label')}}
+    {{field_optional(field)}}
     <div class="input-group {{'input-group-%s' % size if size}}">
       {{field(class='form-control', type='password', autocomplete='off', **kwargs)}}
       <span class="input-group-btn">
@@ -89,6 +98,7 @@
 # macro textarea_field(field, rows=4)
   <div class="form-group {{'has-error' if field.errors}}">
     {{field.label(class='control-label')}}
+    {{field_optional(field)}}
     {{field(class='form-control', rows=rows, **kwargs)}}
     {{field_errors(field)}}
     {{field_description(field)}}
@@ -110,6 +120,7 @@
 # macro list_input_field(field, type)
   <div class="form-group {{'has-error' if field.errors}}">
     {{field.label(class='control-label')}}
+    {{field_optional(field)}}
     {{field_description(field)}}
     # for key, value in field.choices
       <div class="{{type}}">
