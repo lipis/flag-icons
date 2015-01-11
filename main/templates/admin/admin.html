@@ -21,6 +21,7 @@
 
   <ul class="nav nav-justified text-center h4">
     {{admin_link('Overview', 'tachometer', 'https://console.developers.google.com/project/%s' % config.APPLICATION_ID, '_gae')}}
+    {{admin_link('Datastore', 'database', 'https://console.developers.google.com/project/%s/datastore/query' % config.APPLICATION_ID, '_gae')}}
     {{admin_link('Instances', 'bolt', 'https://console.developers.google.com/project/%s/appengine/instances' % config.APPLICATION_ID, '_gae')}}
     {{admin_link('Versions', 'archive', 'https://console.developers.google.com/project/%s/appengine/versions' % config.APPLICATION_ID, '_gae')}}
     {{admin_link('Logs', 'bullhorn', 'https://console.developers.google.com/project/%s/logs' % config.APPLICATION_ID, '_gae')}}
