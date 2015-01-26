@@ -2,5 +2,5 @@ blinker==1.3
 flask==0.10.1
 flask-login==0.2.11
 flask-oauthlib==0.8.0
-flask-wtf==0.11
+flask-wtf==0.10.3
 unidecode==0.4.17
