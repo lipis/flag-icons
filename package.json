@@ -13,12 +13,12 @@
   },
   "dependencies": {
     "coffee-script": "~1",
-    "less": "~1",
+    "less": "~2",
     "uglify-js": "~2"
   },
   "devDependencies": {
     "bower": "~1",
-    "del": "~0",
+    "del": "~1",
     "gulp": "~3",
     "gulp-bower": "~0",
     "gulp-livereload": "~3",
