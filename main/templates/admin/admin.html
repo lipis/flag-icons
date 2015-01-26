@@ -24,7 +24,7 @@
     {{admin_link('Datastore', 'database', 'https://console.developers.google.com/project/%s/datastore/query' % config.APPLICATION_ID, '_gae')}}
     {{admin_link('Instances', 'bolt', 'https://console.developers.google.com/project/%s/appengine/instances' % config.APPLICATION_ID, '_gae')}}
     {{admin_link('Versions', 'archive', 'https://console.developers.google.com/project/%s/appengine/versions' % config.APPLICATION_ID, '_gae')}}
-    {{admin_link('Logs', 'bullhorn', 'https://console.developers.google.com/project/%s/logs' % config.APPLICATION_ID, '_gae')}}
+    {{admin_link('Logs', 'bullhorn', 'https://console.developers.google.com/project/%s/logs?versionId=%s' % (config.APPLICATION_ID, config.CURRENT_VERSION_NAME), '_gae')}}
     {{admin_link('Settings', 'cogs', 'https://console.developers.google.com/project/%s/settings' % config.APPLICATION_ID, '_gae')}}
   </ul>
 
