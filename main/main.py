@@ -20,13 +20,13 @@ app.jinja_env.globals.update(
     update_query_argument=util.update_query_argument,
   )
 
-import user
-import admin
+from control import user
+from control import admin
+from control import profile
+from control import test
 import auth
 import model
-import profile
 import task
-import test
 
 if config.DEVELOPMENT:
   from werkzeug import debug
