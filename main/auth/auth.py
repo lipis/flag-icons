@@ -175,7 +175,7 @@ class SignInForm(wtf.Form):
       'Keep me signed in',
       [wtforms.validators.optional()],
     )
-  recaptcha = wtf.RecaptchaField('Are you human?')
+  recaptcha = wtf.RecaptchaField()
   next_url = wtforms.HiddenField()
 
 
@@ -221,7 +221,7 @@ class SignUpForm(wtf.Form):
       [wtforms.validators.required(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
-  recaptcha = wtf.RecaptchaField('Are you human?')
+  recaptcha = wtf.RecaptchaField()
 
 
 @app.route('/signup/', methods=['GET', 'POST'])
