@@ -146,7 +146,7 @@ class UserForgotForm(wtf.Form):
       [wtforms.validators.required(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
-  recaptcha = wtf.RecaptchaField('Are you human?')
+  recaptcha = wtf.RecaptchaField()
 
 
 @app.route('/user/forgot/', methods=['GET', 'POST'])

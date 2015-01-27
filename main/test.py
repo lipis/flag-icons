@@ -75,7 +75,7 @@ class TestForm(wtf.Form):
     )
   public = wtforms.StringField('Public Key', [wtforms.validators.optional()])
   private = wtforms.StringField('Private Key', [wtforms.validators.optional()])
-  recaptcha = wtf.RecaptchaField('Are you human?')
+  recaptcha = wtf.RecaptchaField()
 
 
 @app.route('/admin/test/<test>/', methods=['GET', 'POST'])
