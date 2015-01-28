@@ -8,6 +8,10 @@
 # block admin_content
   <div class="panel panel-default">
     <div class="panel-body">
+      <a class="btn btn-sm btn-primary" href="{{url_for('user_update')}}">
+        <span class="fa fa-user-plus"></span> New User
+      </a>
+
       <div class="btn-group btn-group-sm">
         <button type="button" class="btn btn-primary" disabled >Limit</button>
         {{utils.filter_by_link('limit', 16)}}
@@ -106,7 +110,7 @@
             </td>
             <td class="text-nowrap">
               {{user_db.email}}
-              # if user_db.verified
+              # if user_db.email and user_db.verified
                 <span class="fa fa-check text-success" title="Verified"></span>
               # endif
               <br>

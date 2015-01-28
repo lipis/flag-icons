@@ -82,10 +82,14 @@ class UserUpdateForm(wtf.Form):
     UserUpdateForm._permission_choices.add(permission)
 
 
+@app.route('/admin/user/create/', methods=['GET', 'POST'])
 @app.route('/admin/user/<int:user_id>/update/', methods=['GET', 'POST'])
 @auth.admin_required
-def user_update(user_id):
-  user_db = model.User.get_by_id(user_id)
+def user_update(user_id=0):
+  if user_id:
+    user_db = model.User.get_by_id(user_id)
+  else:
+    user_db = model.User(name='', username='')
   if not user_db:
     flask.abort(404)
 
@@ -100,7 +104,7 @@ def user_update(user_id):
       form.username.errors.append('This username is already taken.')
     else:
       form.populate_obj(user_db)
-      if auth.current_user_id() == user_db.key.id():
+      if auth.current_user_key() == user_db.key:
         user_db.admin = True
         user_db.active = True
       user_db.put()
@@ -113,7 +117,7 @@ def user_update(user_id):
 
   return flask.render_template(
       'user/user_update.html',
-      title=user_db.name,
+      title=user_db.name or 'New User',
       html_class='user-update',
       form=form,
       user_db=user_db,
