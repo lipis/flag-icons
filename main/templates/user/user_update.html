@@ -7,7 +7,7 @@
     <h1>
       {{utils.back_link('Back to user list', 'user_list', order='-modified', active=user_db.active)}}
       {{title}}
-      # if current_user.id == user_db.key.id()
+      # if current_user.user_db.key == user_db.key
         <small><span class="fa fa-hand-o-left" title="You"></span></small>
       # endif
     </h1>
@@ -20,7 +20,7 @@
         {{forms.text_field(form.username, autocomplete='off')}}
         # include 'user/user_email_field.html'
         {{forms.checkbox_field(form.verified)}}
-        # if current_user.id != user_db.key.id()
+        # if current_user.user_db.key != user_db.key
           {{forms.checkbox_field(form.admin)}}
           {{forms.checkbox_field(form.active)}}
         # else
@@ -42,7 +42,10 @@
       <div class="col-md-6 col-sm-12">
         <div class="form-group">
           <label class="control-label">Accounts</label>
-          <table class="table table-bordered table-hover">
+          <div class="alert alert-warning {{'hide' if user_db.password_hash or user_db.auth_ids}}">
+            No associated accounts
+          </div>
+          <table class="table table-bordered table-hover {{'hide' if not (user_db.password_hash or user_db.auth_ids)}}">
             <thead>
               <tr>
                 <th><span class="fa fa-key"></span></th>
@@ -70,8 +73,12 @@
     <hr>
     <div class="row">
       <div class="col-md-6 col-md-offset-3">
-        <button type="submit" class="btn btn-primary btn-lg btn-block btn-loading" data-loading-text="Updating..">
-          Update
+        <button type="submit" class="btn btn-primary btn-lg btn-block btn-loading" data-loading-text="Please wait..">
+          # if user_db.key
+            Update
+          # else
+            Create
+          # endif
         </button>
       </div>
     </div>
