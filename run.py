@@ -417,10 +417,11 @@ def check_for_update():
 
 
 def print_out_update():
-  import pip
   try:
+    import pip
     SemVer = pip.util.version.SemanticVersion
   except AttributeError:
+    import pip._vendor.distlib.version
     SemVer = pip._vendor.distlib.version.SemanticVersion
 
   try:
