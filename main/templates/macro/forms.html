@@ -36,6 +36,7 @@
     # else
       {{field(class='form-control', **kwargs)}}
     # endif
+    {{field_errors(field)}}
     {{field_description(field)}}
   </div>
 # endmacro
