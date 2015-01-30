@@ -21,8 +21,10 @@
 .flag-icon(@country) {
   .flag-icon-@{country} {
     background-image: ~"url(@{flag-icon-css-path}@{flag-icon-rect-path}/@{country}.svg)";
+    filter: ~"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{flag-icon-css-path}@{flag-icon-rect-path}/@{country}.png',sizingMethod='scale')";
     &.flag-icon-squared {
       background-image: ~"url(@{flag-icon-css-path}@{flag-icon-square-path}/@{country}.svg)";
+      filter: ~"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{flag-icon-css-path}@{flag-icon-square-path}/@{country}.png',sizingMethod='scale')";
     }
   }
 }
