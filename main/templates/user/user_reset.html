@@ -20,7 +20,7 @@
         {{form.csrf_token}}
         {{forms.password_visible_field(form.new_password, autofocus=True, size='lg')}}
         <div class="controls">
-          <button type="submit" class="btn btn-block btn-lg btn-primary btn-loading" data-loading-text="Reseting..">
+          <button type="submit" class="btn btn-block btn-lg btn-primary btn-loading" {{forms.data_loading_text()}}>
             Reset
           </button>
         </div>

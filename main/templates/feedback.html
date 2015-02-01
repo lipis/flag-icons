@@ -15,7 +15,7 @@
         {{forms.email_field(form.email)}}
         {{forms.recaptcha_field(form.recaptcha)}}
 
-        <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="Sending Feedback..">
+        <button type="submit" class="btn btn-primary btn-block btn-loading" {{forms.data_loading_text()}}>
           Send Feedback
         </button>
       </form>

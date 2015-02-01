@@ -8,7 +8,7 @@
   {{forms.password_visible_field(form.password, size='lg')}}
   {{forms.recaptcha_field(form.recaptcha)}}
   <div class="controls">
-    <button type="submit" class="btn btn-block btn-lg btn-primary btn-loading" data-loading-text="Signing in..">
+    <button type="submit" class="btn btn-block btn-lg btn-primary btn-loading" {{forms.data_loading_text()}}>
       Sign in
     </button>
   </div>
