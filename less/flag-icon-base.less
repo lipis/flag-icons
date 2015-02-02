@@ -18,11 +18,20 @@
   background-repeat: no-repeat;
 }
 
+.flag-icon-image(@image) {
+  background-image: ~"url(@{image}.svg)";
+  .no-svg & {
+    background-image: ~"url(@{image}.png)";
+    filter: ~"progid:DXImageTransform.Microsoft.AlphaImageLoader(src='@{image}.png',sizingMethod='scale')";
+  }
+}
+
 .flag-icon(@country) {
   .flag-icon-@{country} {
-    background-image: ~"url(@{flag-icon-css-path}@{flag-icon-rect-path}/@{country}.svg)";
+    .flag-icon-image(~"@{flag-icon-css-path}@{flag-icon-rect-path}/@{country}");
+    
     &.flag-icon-squared {
-      background-image: ~"url(@{flag-icon-css-path}@{flag-icon-square-path}/@{country}.svg)";
+      .flag-icon-image(~"@{flag-icon-css-path}@{flag-icon-square-path}/@{country}");
     }
   }
 }
