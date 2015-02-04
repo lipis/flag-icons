@@ -9,7 +9,7 @@
     {{forms.select_field(form.locale)}}
 
     <div class="controls">
-      <button type="submit" class="btn btn-primary btn-block btn-loading" data-loading-text="{{_('Please wait..')}}">
+      <button type="submit" class="btn btn-primary btn-block btn-loading" {{forms.data_loading_text()}}>
         {{_('Update Profile')}}
       </button>
     </div>

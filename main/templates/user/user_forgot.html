@@ -17,7 +17,7 @@
         {{forms.email_field(form.email, autofocus=True, class='form-control input-lg', autocomplete='off')}}
         {{forms.recaptcha_field(form.recaptcha)}}
         <div class="controls">
-          <button type="submit" class="btn btn-block btn-lg btn-primary btn-loading" data-loading-text="Sending..">
+          <button type="submit" class="btn btn-block btn-lg btn-primary btn-loading" {{forms.data_loading_text()}}>
             Send
           </button>
           <a class="btn btn-block btn-link btn-xs" href="{{url_for('signin', next=url_for('welcome'))}}">
