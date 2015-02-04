@@ -17,25 +17,6 @@
 
 
 # block admin_content
-  <div class="row hide">
-    <div class="col-xs-6 col-sm-offset-1 col-sm-5">
-      <h3>Contents</h3>
-      <ul class="list-unstyled">
-        # for test in tests
-          <li><a href="#{{test}}">{{test.title()}}</a></li>
-        # endfor
-      </ul>
-    </div>
-    <div class="col-xs-6">
-      <h3>Other</h3>
-      <ul class="list-unstyled">
-        <li><a href="{{url_for('sitemap')}}">{{url_for('sitemap')}}</a></li>
-        <li><a href="/robots.txt">/robots.txt</a></li>
-        <li><a href="/404">/404</a></li>
-      </ul>
-    </div>
-  </div>
-
   # for test in tests
     <div id="{{test}}" class="anchor"></div>
     <section class="{{'%s-%s' % (html_class, test)}}">

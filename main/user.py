@@ -23,8 +23,8 @@ from main import app
 ###############################################################################
 # User List
 ###############################################################################
-@app.route('/_s/user/', endpoint='user_list_service')
-@app.route('/user/')
+@app.route('/_s/admin/user/', endpoint='user_list_service')
+@app.route('/admin/user/')
 @auth.admin_required
 def user_list():
   user_dbs, user_cursor = model.User.get_dbs(email=util.param('email'))
@@ -88,10 +88,14 @@ class UserUpdateForm(i18n.Form):
     UserUpdateForm._permission_choices.add(permission)
 
 
-@app.route('/user/<int:user_id>/update/', methods=['GET', 'POST'])
+@app.route('/admin/user/create/', methods=['GET', 'POST'])
+@app.route('/admin/user/<int:user_id>/update/', methods=['GET', 'POST'])
 @auth.admin_required
-def user_update(user_id):
-  user_db = model.User.get_by_id(user_id)
+def user_update(user_id=0):
+  if user_id:
+    user_db = model.User.get_by_id(user_id)
+  else:
+    user_db = model.User(name='', username='')
   if not user_db:
     flask.abort(404)
 
@@ -106,7 +110,7 @@ def user_update(user_id):
       form.username.errors.append(_('This username is already taken.'))
     else:
       form.populate_obj(user_db)
-      if auth.current_user_id() == user_db.key.id():
+      if auth.current_user_key() == user_db.key:
         user_db.admin = True
         user_db.active = True
       user_db.put()
@@ -119,7 +123,7 @@ def user_update(user_id):
 
   return flask.render_template(
       'user/user_update.html',
-      title=user_db.name,
+      title=user_db.name or 'New User',
       html_class='user-update',
       form=form,
       user_db=user_db,
@@ -152,7 +156,7 @@ class UserForgotForm(wtf.Form):
       [wtforms.validators.required(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
-  recaptcha = wtf.RecaptchaField('Are you human?')
+  recaptcha = wtf.RecaptchaField()
 
 
 @app.route('/user/forgot/', methods=['GET', 'POST'])
@@ -203,11 +207,8 @@ class UserResetForm(wtf.Form):
 
 
 @app.route('/user/reset/<token>/', methods=['GET', 'POST'])
-@app.route('/user/reset/', methods=['GET', 'POST'])
+@app.route('/user/reset/')
 def user_reset(token=None):
-  if token is None:
-    flask.abort(404)
-
   user_db = model.User.get_by('token', token)
   if not user_db:
     flask.flash('That link is either invalid or expired.', category='danger')
@@ -281,7 +282,7 @@ def user_activate(token):
 ###############################################################################
 # User Delete
 ###############################################################################
-@app.route('/_s/user/delete/', methods=['DELETE'])
+@app.route('/_s/admin/user/delete/', methods=['DELETE'])
 @auth.admin_required
 def user_delete_service():
   user_keys = util.param('user_keys', list)
@@ -316,8 +317,8 @@ class UserMergeForm(i18n.Form):
     )
 
 
-@app.route('/_s/user/merge/')
-@app.route('/user/merge/', methods=['GET', 'POST'])
+@app.route('/_s/admin/user/merge/')
+@app.route('/admin/user/merge/', methods=['GET', 'POST'])
 @auth.admin_required
 def user_merge():
   user_keys = util.param('user_keys', list)

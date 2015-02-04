@@ -1,7 +1,13 @@
 # coding: utf-8
 
 from .auth import *
-from .google import *
+from .bitbucket import *
+from .dropbox import *
 from .facebook import *
 from .github import *
+from .google import *
+from .instagram import *
+from .linkedin import *
+from .microsoft import *
 from .twitter import *
+from .yahoo import *

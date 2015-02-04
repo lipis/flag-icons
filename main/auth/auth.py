@@ -147,9 +147,9 @@ def login_required(f):
   decorator_order_guard(f, 'auth.login_required')
 
   @functools.wraps(f)
-  def decorated_function(*args, **kws):
+  def decorated_function(*args, **kwargs):
     if is_logged_in():
-      return f(*args, **kws)
+      return f(*args, **kwargs)
     if flask.request.path.startswith('/_s/'):
       return flask.abort(401)
     return flask.redirect(flask.url_for('signin', next=flask.request.url))
@@ -160,9 +160,9 @@ def admin_required(f):
   decorator_order_guard(f, 'auth.admin_required')
 
   @functools.wraps(f)
-  def decorated_function(*args, **kws):
+  def decorated_function(*args, **kwargs):
     if is_logged_in() and current_user_db().admin:
-      return f(*args, **kws)
+      return f(*args, **kwargs)
     if not is_logged_in() and flask.request.path.startswith('/_s/'):
       return flask.abort(401)
     if not is_logged_in():
@@ -185,11 +185,11 @@ def permission_required(permission=None, methods=None):
     permission_registered.send(f, permission=perm)
 
     @functools.wraps(f)
-    def decorated_function(*args, **kws):
+    def decorated_function(*args, **kwargs):
       if meths and flask.request.method.upper() not in meths:
-        return f(*args, **kws)
+        return f(*args, **kwargs)
       if is_logged_in() and current_user_db().has_permission(perm):
-        return f(*args, **kws)
+        return f(*args, **kwargs)
       if not is_logged_in():
         if flask.request.path.startswith('/_s/'):
           return flask.abort(401)
@@ -216,7 +216,7 @@ class SignInForm(wtf.Form):
       _('Keep me signed in'),
       [wtforms.validators.optional()],
     )
-  recaptcha = wtf.RecaptchaField(_('Are you human?'))
+  recaptcha = wtf.RecaptchaField()
   next_url = wtforms.HiddenField()
 
 
@@ -262,7 +262,7 @@ class SignUpForm(wtf.Form):
       [wtforms.validators.required(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
-  recaptcha = wtf.RecaptchaField(_('Are you human?'))
+  recaptcha = wtf.RecaptchaField()
 
 
 @app.route('/signup/', methods=['GET', 'POST'])
@@ -322,10 +322,16 @@ def url_for_signin(service_name, next_url):
 
 def urls_for_oauth(next_url):
   return {
+      'bitbucket_signin_url': url_for_signin('bitbucket', next_url),
+      'dropbox_signin_url': url_for_signin('dropbox', next_url),
       'facebook_signin_url': url_for_signin('facebook', next_url),
       'github_signin_url': url_for_signin('github', next_url),
       'google_signin_url': url_for_signin('google', next_url),
+      'instagram_signin_url': url_for_signin('instagram', next_url),
+      'linkedin_signin_url': url_for_signin('linkedin', next_url),
+      'microsoft_signin_url': url_for_signin('microsoft', next_url),
       'twitter_signin_url': url_for_signin('twitter', next_url),
+      'yahoo_signin_url': url_for_signin('yahoo', next_url),
     }
 
 
@@ -354,11 +360,18 @@ def save_request_params():
 
 
 def signin_oauth(oauth_app, scheme='http'):
-  flask.session.pop('oauth_token', None)
-  save_request_params()
-  return oauth_app.authorize(callback=flask.url_for(
-      '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
-    ))
+  try:
+    flask.session.pop('oauth_token', None)
+    save_request_params()
+    return oauth_app.authorize(callback=flask.url_for(
+        '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
+      ))
+  except oauth.OAuthException:
+    flask.flash(
+        'Something went wrong with sign in. Please try again.',
+        category='danger',
+      )
+    return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
 
 
 def form_with_recaptcha(form):

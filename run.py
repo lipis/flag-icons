@@ -83,7 +83,9 @@ ARGS = PARSER.parse_args()
 ###############################################################################
 # Globals
 ###############################################################################
-IS_WINDOWS = platform.system() is 'Windows'
+BAD_ENDINGS = ['pyc', 'pyo', '~']
+GAE_PATH = ''
+IS_WINDOWS = platform.system() == 'Windows'
 
 
 ###############################################################################
@@ -107,6 +109,8 @@ DIR_DST = os.path.join(DIR_STATIC, 'dst')
 DIR_DST_STYLE = os.path.join(DIR_DST, DIR_STYLE)
 DIR_DST_SCRIPT = os.path.join(DIR_DST, DIR_SCRIPT)
 
+DIR_EXT = os.path.join(DIR_STATIC, 'ext')
+
 DIR_MIN = os.path.join(DIR_STATIC, 'min')
 DIR_MIN_STYLE = os.path.join(DIR_MIN, DIR_STYLE)
 DIR_MIN_SCRIPT = os.path.join(DIR_MIN, DIR_SCRIPT)
@@ -123,7 +127,7 @@ FILE_BOWER_GUARD = os.path.join(DIR_TEMP, 'bower.guard')
 
 DIR_BIN = os.path.join(DIR_NODE_MODULES, '.bin')
 FILE_COFFEE = os.path.join(DIR_BIN, 'coffee')
-FILE_GRUNT = os.path.join(DIR_BIN, 'grunt')
+FILE_GULP = os.path.join(DIR_BIN, 'gulp')
 FILE_LESS = os.path.join(DIR_BIN, 'lessc')
 FILE_UGLIFYJS = os.path.join(DIR_BIN, 'uglifyjs')
 FILE_VENV = os.path.join(DIR_VENV, 'Scripts', 'activate.bat') \
@@ -141,6 +145,8 @@ FILE_MESSAGES_POT = os.path.join(DIR_TRANSLATIONS, 'messages.pot')
 ###############################################################################
 # Other global variables
 ###############################################################################
+CORE_VERSION_URL = 'https://gae-init.appspot.com/_s/version/'
+INERNET_TEST_URL = 'http://74.125.228.100'
 REQUIREMENTS_URL = 'http://docs.gae-init.appspot.com/requirement/'
 
 
@@ -161,20 +167,24 @@ def make_dirs(directory):
 
 
 def remove_file_dir(file_dir):
-  if os.path.exists(file_dir):
+  if isinstance(file_dir, list) or isinstance(file_dir, tuple):
+    for file_ in file_dir:
+      remove_file_dir(file_)
+  else:
+    if not os.path.exists(file_dir):
+      return
     if os.path.isdir(file_dir):
-      shutil.rmtree(file_dir)
+      shutil.rmtree(file_dir, ignore_errors=True)
     else:
       os.remove(file_dir)
 
 
-def clean_files():
-  bad_endings = ['pyc', 'pyo', '~']
+def clean_files(bad_endings=BAD_ENDINGS, in_dir='.'):
   print_out(
       'CLEAN FILES',
       'Removing files: %s' % ', '.join(['*%s' % e for e in bad_endings]),
     )
-  for root, _, files in os.walk('.'):
+  for root, _, files in os.walk(in_dir):
     for filename in files:
       for bad_ending in bad_endings:
         if filename.endswith(bad_ending):
@@ -302,10 +312,9 @@ def create_virtualenv():
     os.system('echo %s >> %s' % (
         'set PYTHONPATH=' if IS_WINDOWS else 'unset PYTHONPATH', FILE_VENV
       ))
-    gae_path = find_gae_path()
     pth_file = os.path.join(site_packages_path(), 'gae.pth')
     echo_to = 'echo %s >> {pth}'.format(pth=pth_file)
-    os.system(echo_to % gae_path)
+    os.system(echo_to % find_gae_path())
     os.system(echo_to % os.path.abspath(DIR_LIBX))
     fix_path_cmd = 'import dev_appserver; dev_appserver.fix_sys_path()'
     os.system(echo_to % (
@@ -339,20 +348,20 @@ def guard_is_newer(guard, watched):
   return False
 
 
-def check_pip_should_run():
+def check_if_pip_should_run():
   return not guard_is_newer(FILE_PIP_GUARD, FILE_REQUIREMENTS)
 
 
-def check_npm_should_run():
+def check_if_npm_should_run():
   return not guard_is_newer(FILE_NPM_GUARD, FILE_PACKAGE)
 
 
-def check_bower_should_run():
+def check_if_bower_should_run():
   return not guard_is_newer(FILE_BOWER_GUARD, FILE_BOWER)
 
 
 def install_py_libs():
-  if not check_pip_should_run():
+  if not check_if_pip_should_run():
     return
 
   exec_pip_commands('pip install -q -r %s' % FILE_REQUIREMENTS)
@@ -396,18 +405,17 @@ def install_py_libs():
 
 
 def clean_py_libs():
-  remove_file_dir(DIR_LIB)
-  remove_file_dir(DIR_VENV)
+  remove_file_dir([DIR_LIB, DIR_VENV])
 
 
 def install_dependencies():
   make_dirs(DIR_TEMP)
-  if check_npm_should_run():
+  if check_if_npm_should_run():
     make_guard(FILE_NPM_GUARD, 'npm', FILE_PACKAGE)
     os.system('npm install')
-  if check_bower_should_run():
+  if check_if_bower_should_run():
     make_guard(FILE_BOWER_GUARD, 'bower', FILE_BOWER)
-    os.system('"%s" ext' % FILE_GRUNT)
+    os.system('"%s" ext' % FILE_GULP)
   install_py_libs()
 
 
@@ -420,7 +428,7 @@ def check_for_update():
       return
   try:
     request = urllib2.Request(
-        'https://gae-init.appspot.com/_s/version/',
+        CORE_VERSION_URL,
         urllib.urlencode({'version': main.__version__}),
       )
     response = urllib2.urlopen(request)
@@ -431,8 +439,13 @@ def check_for_update():
 
 
 def print_out_update():
-  import pip
-  SemVer = pip.util.version.SemanticVersion
+  try:
+    import pip
+    SemVer = pip.util.version.SemanticVersion
+  except AttributeError:
+    import pip._vendor.distlib.version
+    SemVer = pip._vendor.distlib.version.SemanticVersion
+
   try:
     with open(FILE_UPDATE, 'r') as update_json:
       data = json.load(update_json)
@@ -462,7 +475,7 @@ def uniq(seq):
 ###############################################################################
 def internet_on():
   try:
-    urllib2.urlopen('http://74.125.228.100', timeout=2)
+    urllib2.urlopen(INERNET_TEST_URL, timeout=2)
     return True
   except (urllib2.URLError, socket.timeout):
     return False
@@ -479,6 +492,9 @@ def check_requirement(check_func):
 
 
 def find_gae_path():
+  global GAE_PATH
+  if GAE_PATH:
+    return GAE_PATH
   if IS_WINDOWS:
     gae_path = None
     for path in os.environ['PATH'].split(os.pathsep):
@@ -492,11 +508,12 @@ def find_gae_path():
     return ''
   gcloud_exec = 'gcloud.cmd' if IS_WINDOWS else 'gcloud'
   if not os.path.isfile(os.path.join(gae_path, gcloud_exec)):
-    return gae_path
-  gae_path = os.path.join(gae_path, '..', 'platform', 'google_appengine')
-  if os.path.exists:
-    return os.path.realpath(gae_path)
-  return ''
+    GAE_PATH = gae_path
+  else:
+    gae_path = os.path.join(gae_path, '..', 'platform', 'google_appengine')
+    if os.path.exists(gae_path):
+      GAE_PATH = os.path.realpath(gae_path)
+  return GAE_PATH
 
 
 def check_internet():
@@ -571,7 +588,10 @@ def run_clean():
   print_out('CLEAN')
   clean_files()
   make_lib_zip(force=True)
-  remove_file_dir(DIR_DST)
+  if IS_WINDOWS:
+    clean_files(['css', 'js'], DIR_DST)
+  else:
+    remove_file_dir(DIR_DST)
   make_dirs(DIR_DST)
   compile_all_dst()
   print_out('DONE')
@@ -579,14 +599,14 @@ def run_clean():
 
 def run_clean_all():
   print_out('CLEAN ALL')
-  remove_file_dir(DIR_BOWER_COMPONENTS)
-  remove_file_dir(DIR_NODE_MODULES)
+  remove_file_dir([
+      DIR_BOWER_COMPONENTS, DIR_NODE_MODULES, DIR_EXT, DIR_MIN, DIR_DST
+    ])
+  remove_file_dir([
+      FILE_PIP_GUARD, FILE_NPM_GUARD, FILE_BOWER_GUARD
+    ])
   clean_py_libs()
   clean_files()
-  remove_file_dir(FILE_LIB)
-  remove_file_dir(FILE_PIP_GUARD)
-  remove_file_dir(FILE_NPM_GUARD)
-  remove_file_dir(FILE_BOWER_GUARD)
 
 
 def run_minify():
@@ -653,18 +673,17 @@ def run_start():
   make_dirs(DIR_STORAGE)
   clear = 'yes' if ARGS.flush else 'no'
   port = int(ARGS.port)
-  run_command = '''
-      dev_appserver.py %s
-      --host %s
-      --port %s
-      --admin_port %s
-      --storage_path=%s
-      --clear_datastore=%s
-      --skip_sdk_update_check
-      %s
-    ''' % (DIR_MAIN, ARGS.host, port, port + 1, DIR_STORAGE, clear,
-           " ".join(ARGS.args))
-  os.system(run_command.replace('\n', ' '))
+  run_command = ' '.join(map(str, [
+      '"%s"' % os.path.join(find_gae_path(), 'dev_appserver.py'),
+      DIR_MAIN,
+      '--host %s' % ARGS.host,
+      '--port %s' % port,
+      '--admin_port %s' % (port + 1),
+      '--storage_path=%s' % DIR_STORAGE,
+      '--clear_datastore=%s' % clear,
+      '--skip_sdk_update_check',
+    ] + ARGS.args))
+  os.system(run_command)
 
 
 def run():

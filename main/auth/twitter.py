@@ -12,12 +12,12 @@ from main import app
 
 
 twitter_config = dict(
-    base_url='https://api.twitter.com/1.1/',
-    request_token_url='https://api.twitter.com/oauth/request_token',
     access_token_url='https://api.twitter.com/oauth/access_token',
     authorize_url='https://api.twitter.com/oauth/authorize',
+    base_url='https://api.twitter.com/1.1/',
     consumer_key=config.CONFIG_DB.twitter_consumer_key,
     consumer_secret=config.CONFIG_DB.twitter_consumer_secret,
+    request_token_url='https://api.twitter.com/oauth/request_token',
   )
 
 twitter = auth.create_oauth_app(twitter_config, 'twitter')
@@ -45,14 +45,7 @@ def get_twitter_token():
 
 @app.route('/signin/twitter/')
 def signin_twitter():
-  try:
-    return auth.signin_oauth(twitter)
-  except:
-    flask.flash(
-        __('Something went wrong with Twitter sign in. Please try again.'),
-        category='danger',
-      )
-    return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
+  return auth.signin_oauth(twitter)
 
 
 def retrieve_user_from_twitter(response):

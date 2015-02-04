@@ -1,0 +1,10 @@
+{{
+  forms.panel_fields(
+      'LinkedIn',
+      (form.linkedin_api_key, form.linkedin_secret_key),
+      '''
+        OAuth 2.0 Redirect URL for <a href="https://www.linkedin.com/secure/developer" target="_blank">LinkedIn Application</a>:
+        <em>%s</em>
+      ''' % url_for('linkedin_authorized', _external=True)
+    )
+}}

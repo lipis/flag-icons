@@ -37,7 +37,7 @@ import test
 if config.DEVELOPMENT:
   from werkzeug import debug
   app.wsgi_app = debug.DebuggedApplication(app.wsgi_app, evalex=True)
-  app.testing = True
+  app.testing = False
 
 
 ###############################################################################
@@ -70,11 +70,11 @@ class FeedbackForm(i18n.Form):
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
   email = wtforms.StringField(
-      _('Your email (optional)'),
+      _('Your email'),
       [wtforms.validators.optional(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
-  recaptcha = wtf.RecaptchaField(_('Are you human?'))
+  recaptcha = wtf.RecaptchaField()
 
 
 @app.route('/feedback/', methods=['GET', 'POST'])

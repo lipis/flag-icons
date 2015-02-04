@@ -10,9 +10,9 @@
 
     # if html_class in ['admin-config', 'admin-auth']
       <p class="text-muted">
-        # set instances_url = 'https://appengine.google.com/instances?app_id=%s&version_id=%s' % (
+        # set instances_url = 'https://console.developers.google.com/project/%s/appengine/instances?moduleId=default&versionId=%s' % (
               config.APPLICATION_ID,
-              config.CURRENT_VERSION_ID,
+              config.CURRENT_VERSION_NAME,
             ) if config.PRODUCTION else ''
 
         For most of the settings to be applied for everyone, you will

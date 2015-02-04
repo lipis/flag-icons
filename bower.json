@@ -9,35 +9,21 @@
     "moment": "~2",
     "nprogress": "https://github.com/lipis/nprogress.git#master"
   },
-  "exportsOverride": {
+  "overrides": {
     "bootstrap": {
-      "js": "js/*.js",
-      "less": "less/*.less",
-      "less/mixins": "less/mixins/*.less",
-      "font": "fonts/*"
-    },
-    "flag-icon-css": {
-      "less": "less/*.less",
-      "flag": "flags"
-    },
-    "font-awesome": {
-      "less": "less/*.less",
-      "font": "fonts/*"
-    },
-    "jquery": {
-      "js": "dist/jquery.js"
-    },
-    "moment": {
-      "js": "*.js",
-      "js/locale": "locale/*.js"
-    },
-    "nprogress": {
-      "js": "*.js",
-      "less": "*.less"
+      "main": ["less/**", "fonts/*", "js/*"]
     },
     "bootstrap-sweetalert": {
-      "js": "lib/sweet-alert.js",
-      "less": "lib/*.less"
+      "main": ["lib/*.less", "lib/sweet-alert.js"]
+    },
+    "flag-icon-css": {
+      "main": ["less/*", "flags/**"]
+    },
+    "font-awesome": {
+      "main": ["less/*", "fonts/*"]
+    },
+    "moment": {
+      "main": ["moment.js", "locale/*"]
     }
   }
 }

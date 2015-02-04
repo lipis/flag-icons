@@ -13,16 +13,17 @@
   },
   "dependencies": {
     "coffee-script": "~1",
-    "less": "~1",
+    "less": "~2",
     "uglify-js": "~2"
   },
   "devDependencies": {
     "bower": "~1",
-    "grunt": "~0",
-    "grunt-bower-task": "~0",
-    "grunt-cli": "~0",
-    "grunt-contrib-clean": "~0",
-    "grunt-contrib-watch": "~0",
-    "load-grunt-tasks": "~0"
+    "del": "~1",
+    "gulp": "~3",
+    "gulp-bower": "~0",
+    "gulp-livereload": "~3",
+    "gulp-load-plugins": "~0",
+    "main-bower-files": "~2",
+    "minimist": "~1"
   }
 }

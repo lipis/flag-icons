@@ -12,9 +12,17 @@
 # endmacro
 
 
+# macro field_optional(field)
+  # if not field.flags.required
+    <small class="text-muted">(optional)</small>
+  # endif
+# endmacro
+
+
 # macro input_field(field, prefix='', suffix='')
   <div class="form-group {{'has-error' if field.errors}}">
     {{field.label(class='control-label')}}
+    {{field_optional(field)}}
     # if prefix or suffix
       <div class="input-group">
         # if prefix
@@ -47,6 +55,7 @@
 # macro password_visible_field(field, size='')
   <div class="form-group {{'has-error' if field.errors}}">
     {{field.label(class='control-label')}}
+    {{field_optional(field)}}
     <div class="input-group {{'input-group-%s' % size if size}}">
       {{field(class='form-control', type='password', autocomplete='off', **kwargs)}}
       <span class="input-group-btn">
@@ -89,6 +98,7 @@
 # macro textarea_field(field, rows=4)
   <div class="form-group {{'has-error' if field.errors}}">
     {{field.label(class='control-label')}}
+    {{field_optional(field)}}
     {{field(class='form-control', rows=rows, **kwargs)}}
     {{field_errors(field)}}
     {{field_description(field)}}
@@ -110,6 +120,7 @@
 # macro list_input_field(field, type)
   <div class="form-group {{'has-error' if field.errors}}">
     {{field.label(class='control-label')}}
+    {{field_optional(field)}}
     {{field_description(field)}}
     # for key, value in field.choices
       <div class="{{type}}">
@@ -143,11 +154,6 @@
       {{field.widget.server}}
       {{field.widget.script_url}}
       {{field.widget.frame_url}}
-      {{field.label(class='control-label', for='recaptcha_response_field')}}
-      <div class="small pull-right">
-        <a id="recaptcha_reload_btn" href="#" title="Get a new challenge" tabindex="-1"><span class="fa fa-refresh"></span></a> |
-        <a href="http://www.google.com/intl/en/policies/" target="_blank" tabindex="-1">Privacy & Terms</a>
-      </div>
       {{field}}
       {{field_errors(field)}}
       {{field_description(field)}}
@@ -161,7 +167,7 @@
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent=".panel-group" href="#{{slugify(name)}}">{{name}}</a>
-        <i class="fa fa-check pull-right {{'hide' if not check_form_fields(fields)}}"></i>
+        <span class="fa fa-check pull-right {{'hide' if not check_form_fields(fields)}}"></span>
       </h4>
     </div>
     <div id="{{slugify(name)}}" class="panel-collapse collapse">
