@@ -4,6 +4,7 @@ from __future__ import absolute_import
 
 import hashlib
 
+from flask.ext.restful import fields
 from google.appengine.ext import ndb
 
 import model
@@ -34,18 +35,6 @@ class User(model.Base):
       }
   avatar_url = property(avatar_url_size)
 
-  _PROPERTIES = model.Base._PROPERTIES.union({
-      'active',
-      'admin',
-      'auth_ids',
-      'avatar_url',
-      'email',
-      'name',
-      'permissions',
-      'username',
-      'verified',
-    })
-
   @classmethod
   def get_dbs(
       cls, admin=None, active=None, verified=None, permissions=None, **kwargs
@@ -73,3 +62,18 @@ class User(model.Base):
         cls.query(), email=email, verified=True, limit=2,
       )
     return not user_keys or self_key in user_keys and not user_keys[1:]
+
+
+USER_FIELDS = {
+    'active': fields.Boolean,
+    'admin': fields.Boolean,
+    'auth_ids': fields.String,
+    'avatar_url': fields.String,
+    'email': fields.String,
+    'name': fields.String,
+    'permissions': fields.String,
+    'username': fields.String,
+    'verified': fields.Boolean,
+  }
+
+USER_FIELDS.update(model.BASE_FIELDS)

@@ -1,7 +1,5 @@
 # coding: utf-8
 
-from datetime import date
-from datetime import datetime
 from uuid import uuid4
 import hashlib
 import re
@@ -9,7 +7,6 @@ import unicodedata
 import urllib
 
 from google.appengine.datastore.datastore_query import Cursor
-from google.appengine.ext import blobstore
 from google.appengine.ext import ndb
 import flask
 
@@ -92,65 +89,6 @@ def get_keys(*arg, **kwargs):
 ###############################################################################
 # JSON Response Helpers
 ###############################################################################
-def jsonify_model_dbs(model_dbs, next_cursor=None):
-  result_objects = [model_db_to_object(model_db) for model_db in model_dbs]
-
-  response_object = {
-      'status': 'success',
-      'count': len(result_objects),
-      'now': datetime.utcnow().isoformat(),
-      'result': result_objects,
-    }
-  if next_cursor:
-    response_object['next_cursor'] = next_cursor
-    response_object['next_url'] = generate_next_url(next_cursor)
-  response = jsonpify(response_object)
-  return response
-
-
-def jsonify_model_db(model_db):
-  return jsonpify({
-      'status': 'success',
-      'now': datetime.utcnow().isoformat(),
-      'result': model_db_to_object(model_db),
-    })
-
-
-def model_db_to_object(model_db):
-  model_db_object = {}
-  for prop in model_db._PROPERTIES:
-    if prop == 'id':
-      try:
-        value = json_value(getattr(model_db, 'key', None).id())
-      except AttributeError:
-        value = None
-    else:
-      value = json_value(getattr(model_db, prop, None))
-    if value is not None:
-      model_db_object[prop] = value
-  return model_db_object
-
-
-def json_value(value):
-  if isinstance(value, (datetime, date)):
-    return value.isoformat()
-  if isinstance(value, ndb.Key):
-    return value.urlsafe()
-  if isinstance(value, blobstore.BlobKey):
-    return urllib.quote(str(value))
-  if isinstance(value, ndb.GeoPt):
-    return '%s,%s' % (value.lat, value.lon)
-  if is_iterable(value):
-    return [json_value(v) for v in value]
-  if isinstance(value, long):
-    # Big numbers are sent as strings for accuracy in JavaScript
-    if value > 9007199254740992 or value < -9007199254740992:
-      return str(value)
-  if isinstance(value, ndb.Model):
-    return model_db_to_object(value)
-  return value
-
-
 def jsonpify(*args, **kwargs):
   if param('callback'):
     content = '%s(%s)' % (

@@ -21,15 +21,10 @@ from main import app
 ###############################################################################
 # User List
 ###############################################################################
-@app.route('/_s/admin/user/', endpoint='user_list_service')
 @app.route('/admin/user/')
 @auth.admin_required
 def user_list():
   user_dbs, user_cursor = model.User.get_dbs(email=util.param('email'))
-
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_dbs(user_dbs, user_cursor)
-
   permissions = list(UserUpdateForm._permission_choices)
   permissions += util.param('permissions', list) or []
   return flask.render_template(
@@ -38,7 +33,7 @@ def user_list():
       title='User List',
       user_dbs=user_dbs,
       next_url=util.generate_next_url(user_cursor),
-      has_json=True,
+      api_url=flask.url_for('api.users'),
       permissions=sorted(set(permissions)),
     )
 
@@ -112,15 +107,13 @@ def user_update(user_id=0):
           'user_list', order='-modified', active=user_db.active,
         ))
 
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_db(user_db)
-
   return flask.render_template(
       'user/user_update.html',
       title=user_db.name or 'New User',
       html_class='user-update',
       form=form,
       user_db=user_db,
+      api_url=flask.url_for('api.user', key=user_db.key.urlsafe()) if user_db.key else ''
     )
 
 
@@ -274,26 +267,6 @@ def user_activate(token):
 
 
 ###############################################################################
-# User Delete
-###############################################################################
-@app.route('/_s/admin/user/delete/', methods=['DELETE'])
-@auth.admin_required
-def user_delete_service():
-  user_keys = util.param('user_keys', list)
-  user_db_keys = [ndb.Key(urlsafe=k) for k in user_keys]
-  delete_user_dbs(user_db_keys)
-  return flask.jsonify({
-      'result': user_keys,
-      'status': 'success',
-    })
-
-
-@ndb.transactional(xg=True)
-def delete_user_dbs(user_db_keys):
-  ndb.delete_multi(user_db_keys)
-
-
-###############################################################################
 # User Merge
 ###############################################################################
 class UserMergeForm(wtf.Form):
@@ -311,7 +284,6 @@ class UserMergeForm(wtf.Form):
     )
 
 
-@app.route('/_s/admin/user/merge/')
 @app.route('/admin/user/merge/', methods=['GET', 'POST'])
 @auth.admin_required
 def user_merge():
@@ -323,9 +295,6 @@ def user_merge():
   user_dbs = ndb.get_multi(user_db_keys)
   if len(user_dbs) < 2:
     flask.abort(400)
-
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_dbs(user_dbs)
 
   user_dbs.sort(key=lambda user_db: user_db.created)
   merged_user_db = user_dbs[0]
@@ -372,6 +341,7 @@ def user_merge():
       merged_user_db=merged_user_db,
       form=form,
       auth_ids=auth_ids,
+      api_url=flask.url_for('api.users', user_keys=','.join(user_keys)),
     )
 
 

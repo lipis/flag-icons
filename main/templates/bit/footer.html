@@ -4,8 +4,8 @@
       <p>
         Version: {{config.CURRENT_VERSION_NAME}}
         (<time datetime="{{config.CURRENT_VERSION_DATE}}">{{config.CURRENT_VERSION_DATE}}</time>)
-        # if has_json
-          | <a href="/_s/{{request.url.replace(request.host_url, '')}}" target="_blank">View in JSON</a>
+        # if api_url
+          | <a class='api-url' href="{{api_url}}{% if request.query_string %}?{{request.query_string}}{% endif %}" target="_blank" data-api-url="{{api_url}}">View in JSON</a>
         # endif
       </p>
     # endif
