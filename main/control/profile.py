@@ -15,21 +15,16 @@ from main import app
 ###############################################################################
 # Profile View
 ###############################################################################
-@app.route('/_s/profile/', endpoint='profile_service')
 @app.route('/profile/')
 @auth.login_required
 def profile():
   user_db = auth.current_user_db()
-
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_db(user_db)
 
   return flask.render_template(
       'profile/profile.html',
       title=user_db.name,
       html_class='profile-view',
       user_db=user_db,
-      has_json=True,
     )
 
 
