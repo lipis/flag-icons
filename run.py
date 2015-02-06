@@ -405,6 +405,7 @@ def check_for_update():
     if last == today:
       return
   try:
+    open(FILE_UPDATE, 'wa').close()
     request = urllib2.Request(
         CORE_VERSION_URL,
         urllib.urlencode({'version': main.__version__}),
