@@ -43,24 +43,24 @@ def user_list():
 ###############################################################################
 class UserUpdateForm(wtf.Form):
   username = wtforms.StringField(
-      'Username',
+      model.User.username._verbose_name,
       [wtforms.validators.required(), wtforms.validators.length(min=3)],
       filters=[util.email_filter],
     )
   name = wtforms.StringField(
-      'Name',
+      model.User.name._verbose_name,
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
   email = wtforms.StringField(
-      'Email',
+      model.User.email._verbose_name,
       [wtforms.validators.optional(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
-  admin = wtforms.BooleanField('Admin')
-  active = wtforms.BooleanField('Active')
-  verified = wtforms.BooleanField('Verified')
+  admin = wtforms.BooleanField(model.User.admin._verbose_name)
+  active = wtforms.BooleanField(model.User.active._verbose_name)
+  verified = wtforms.BooleanField(model.User.verified._verbose_name)
   permissions = wtforms.SelectMultipleField(
-      'Permissions',
+      model.User.permissions._verbose_name,
       filters=[util.sort_filter],
     )
 
@@ -228,7 +228,7 @@ def user_reset(token=None):
 ###############################################################################
 class UserActivateForm(wtf.Form):
   name = wtforms.StringField(
-      'Name',
+      model.User.name._verbose_name,
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
   password = wtforms.StringField(
