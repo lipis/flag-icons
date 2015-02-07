@@ -14,4 +14,4 @@ from main import api
 class ConfigAPI(restful.Resource):
   @auth.admin_required
   def get(self):
-    return helpers.make_response(config.CONFIG_DB, model.CONFIG_FIELDS)
+    return helpers.make_response(config.CONFIG_DB, model.Config.FIELDS)
