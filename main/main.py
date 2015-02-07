@@ -26,13 +26,13 @@ app.jinja_env.globals.update(
 app.config['BABEL_DEFAULT_LOCALE'] = config.LOCALE_DEFAULT
 babel = Babel(app)
 
-import user
-import admin
+from control import user
+from control import admin
+from control import profile
+from control import test
 import auth
 import model
-import profile
 import task
-import test
 
 if config.DEVELOPMENT:
   from werkzeug import debug
