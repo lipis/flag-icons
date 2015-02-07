@@ -4,9 +4,9 @@ from __future__ import absolute_import
 
 import hashlib
 
-from flask.ext.restful import fields
 from google.appengine.ext import ndb
 
+from api import fields
 import model
 import util
 import config
