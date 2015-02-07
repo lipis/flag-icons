@@ -20,11 +20,11 @@ class UsersAPI(restful.Resource):
     if user_keys:
       user_db_keys = [ndb.Key(urlsafe=k) for k in user_keys]
       user_dbs = ndb.get_multi(user_db_keys)
-      return helpers.make_response(user_dbs, model.USER_FIELDS)
+      return helpers.make_response(user_dbs, model.User.FIELDS)
 
     user_dbs, next_cursor = model.User.get_dbs()
     return helpers.make_response(
-        user_dbs, model.USER_FIELDS, next_cursor)
+        user_dbs, model.User.FIELDS, next_cursor)
 
   @auth.admin_required
   def delete(self):
@@ -50,7 +50,7 @@ class UserAPI(restful.Resource):
       helpers.make_not_found_exception(
           'User %s not found' % key
         )
-    return helpers.make_response(user_db, model.USER_FIELDS)
+    return helpers.make_response(user_db, model.User.FIELDS)
 
   @auth.admin_required
   def delete(self, key):

@@ -44,22 +44,21 @@ class Config(model.Base, model.ConfigAuth):
   def get_master_db(cls):
     return cls.get_or_insert('master')
 
+  FIELDS = {
+      'analytics_id': fields.String,
+      'announcement_html': fields.String,
+      'announcement_type': fields.String,
+      'anonymous_recaptcha': fields.Boolean,
+      'brand_name': fields.String,
+      'check_unique_email': fields.Boolean,
+      'email_authentication': fields.Boolean,
+      'feedback_email': fields.String,
+      'flask_secret_key': fields.String,
+      'notify_on_new_user': fields.Boolean,
+      'recaptcha_private_key': fields.String,
+      'recaptcha_public_key': fields.String,
+      'salt': fields.String,
+      'verify_email': fields.Boolean,
+    }
 
-CONFIG_FIELDS = {
-    'analytics_id': fields.String,
-    'announcement_html': fields.String,
-    'announcement_type': fields.String,
-    'anonymous_recaptcha': fields.Boolean,
-    'brand_name': fields.String,
-    'check_unique_email': fields.Boolean,
-    'email_authentication': fields.Boolean,
-    'feedback_email': fields.String,
-    'flask_secret_key': fields.String,
-    'notify_on_new_user': fields.Boolean,
-    'recaptcha_private_key': fields.String,
-    'recaptcha_public_key': fields.String,
-    'salt': fields.String,
-    'verify_email': fields.Boolean,
-  }
-
-CONFIG_FIELDS.update(model.BASE_FIELDS)
+  FIELDS.update(model.Base.FIELDS)
