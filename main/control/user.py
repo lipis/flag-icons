@@ -21,7 +21,7 @@ from main import app
 ###############################################################################
 # User List
 ###############################################################################
-@app.route('/admin/user/')
+@app.route('/admin/users/')
 @auth.admin_required
 def user_list():
   user_dbs, user_cursor = model.User.get_dbs(email=util.param('email'))
@@ -113,7 +113,7 @@ def user_update(user_id=0):
       html_class='user-update',
       form=form,
       user_db=user_db,
-      api_url=flask.url_for('api.user', key=user_db.key.urlsafe()) if user_db.key else ''
+      api_url=flask.url_for('api.user', user_key=user_db.key.urlsafe()) if user_db.key else ''
     )
 
 

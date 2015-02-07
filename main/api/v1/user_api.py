@@ -22,8 +22,8 @@ class UsersAPI(restful.Resource):
       user_dbs = ndb.get_multi(user_db_keys)
       return helpers.make_response(user_dbs, model.User.FIELDS)
 
-    user_dbs, next_cursor = model.User.get_dbs()
-    return helpers.make_response(user_dbs, model.User.FIELDS, next_cursor)
+    user_dbs, user_cursor = model.User.get_dbs()
+    return helpers.make_response(user_dbs, model.User.FIELDS, user_cursor)
 
   @auth.admin_required
   def delete(self):
@@ -38,25 +38,22 @@ class UsersAPI(restful.Resource):
       })
 
 
-@api.resource('/api/v1/user/<string:key>/', endpoint='api.user')
+@api.resource('/api/v1/user/<string:user_key>/', endpoint='api.user')
 class UserAPI(restful.Resource):
   @auth.admin_required
-  def get(self, key):
-    user_db = ndb.Key(urlsafe=key).get()
+  def get(self, user_key):
+    user_db = ndb.Key(urlsafe=user_key).get()
     if not user_db:
-      helpers.make_not_found_exception('User %s not found' % key)
+      helpers.make_not_found_exception('User %s not found' % user_key)
     return helpers.make_response(user_db, model.User.FIELDS)
 
   @auth.admin_required
-  def delete(self, key):
-    user_db = ndb.Key(urlsafe=key).get()
+  def delete(self, user_key):
+    user_db = ndb.Key(urlsafe=user_key).get()
     if not user_db:
-      helpers.make_not_found_exception('User %s not found' % key)
+      helpers.make_not_found_exception('User %s not found' % user_key)
     user_db.key.delete()
-    return flask.jsonify({
-        'result': key,
-        'status': 'success',
-      })
+    return helpers.make_response(user_db, model.User.FIELDS)
 
 
 ###############################################################################
