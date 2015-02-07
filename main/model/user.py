@@ -63,17 +63,16 @@ class User(model.Base):
       )
     return not user_keys or self_key in user_keys and not user_keys[1:]
 
+  FIELDS = {
+      'active': fields.Boolean,
+      'admin': fields.Boolean,
+      'auth_ids': fields.String,
+      'avatar_url': fields.String,
+      'email': fields.String,
+      'name': fields.String,
+      'permissions': fields.String,
+      'username': fields.String,
+      'verified': fields.Boolean,
+    }
 
-USER_FIELDS = {
-    'active': fields.Boolean,
-    'admin': fields.Boolean,
-    'auth_ids': fields.String,
-    'avatar_url': fields.String,
-    'email': fields.String,
-    'name': fields.String,
-    'permissions': fields.String,
-    'username': fields.String,
-    'verified': fields.Boolean,
-  }
-
-USER_FIELDS.update(model.BASE_FIELDS)
+  FIELDS.update(model.Base.FIELDS)

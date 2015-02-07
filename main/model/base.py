@@ -28,11 +28,10 @@ class Base(ndb.Model):
         **kwargs
       )
 
-
-BASE_FIELDS = {
-    'key': fields.KeyField,
-    'id': fields.IdField,
-    'version': fields.IntegerField,
-    'created': fields.DateTimeField,
-    'modified': fields.DateTimeField,
-  }
+  FIELDS = {
+      'key': fields.KeyField,
+      'id': fields.IdField,
+      'version': fields.IntegerField,
+      'created': fields.DateTimeField,
+      'modified': fields.DateTimeField,
+    }

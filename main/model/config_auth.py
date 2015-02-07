@@ -64,26 +64,25 @@ class ConfigAuth(object):
   def has_yahoo(self):
     return bool(self.yahoo_consumer_key and self.yahoo_consumer_secret)
 
+  FIELDS = {
+      'bitbucket_key': fields.String,
+      'bitbucket_secret': fields.String,
+      'dropbox_app_key': fields.String,
+      'dropbox_app_secret': fields.String,
+      'facebook_app_id': fields.String,
+      'facebook_app_secret': fields.String,
+      'github_client_id': fields.String,
+      'github_client_secret': fields.String,
+      'instagram_client_id': fields.String,
+      'instagram_client_secret': fields.String,
+      'linkedin_api_key': fields.String,
+      'linkedin_secret_key': fields.String,
+      'microsoft_client_id': fields.String,
+      'microsoft_client_secret': fields.String,
+      'twitter_consumer_key': fields.String,
+      'twitter_consumer_secret': fields.String,
+      'yahoo_consumer_key': fields.String,
+      'yahoo_consumer_secret': fields.String,
+    }
 
-CONFIG_AUTH_FIELDS = {
-    'bitbucket_key': fields.String,
-    'bitbucket_secret': fields.String,
-    'dropbox_app_key': fields.String,
-    'dropbox_app_secret': fields.String,
-    'facebook_app_id': fields.String,
-    'facebook_app_secret': fields.String,
-    'github_client_id': fields.String,
-    'github_client_secret': fields.String,
-    'instagram_client_id': fields.String,
-    'instagram_client_secret': fields.String,
-    'linkedin_api_key': fields.String,
-    'linkedin_secret_key': fields.String,
-    'microsoft_client_id': fields.String,
-    'microsoft_client_secret': fields.String,
-    'twitter_consumer_key': fields.String,
-    'twitter_consumer_secret': fields.String,
-    'yahoo_consumer_key': fields.String,
-    'yahoo_consumer_secret': fields.String,
-  }
-
-CONFIG_AUTH_FIELDS.update(model.BASE_FIELDS)
+  FIELDS.update(model.Base.FIELDS)
