@@ -1,4 +1,4 @@
-window.service_call = (method, url, params, data, callback) ->
+window.api_call = (method, url, params, data, callback) ->
   callback = callback || data || params
   data = data || params
   if arguments.length == 4
@@ -21,7 +21,7 @@ window.service_call = (method, url, params, data, callback) ->
       if data.status == 'success'
         more = undefined
         if data.next_url
-          more = (callback) -> service_call(method, data.next_url, {}, callback)
+          more = (callback) -> api_call(method, data.next_url, {}, callback)
         callback? undefined, data.result, more
       else
         callback? data
@@ -35,5 +35,5 @@ window.service_call = (method, url, params, data, callback) ->
         error = $.parseJSON(jqXHR.responseText) if jqXHR.responseText
       catch e
         error = error
-      LOG 'service_call error', error
+      LOG 'api_call error', error
       callback? error

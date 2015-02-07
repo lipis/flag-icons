@@ -76,7 +76,7 @@ SCRIPTS = [
         'ext/bootstrap/js/tooltip.js',
       ] + ['ext/moment/locale/%s.js' % l for l in LANGUAGES if l != 'en']),
     ('scripts', [
-        'src/script/common/service.coffee',
+        'src/script/common/api.coffee',
         'src/script/common/util.coffee',
         'src/script/site/app.coffee',
         'src/script/site/admin.coffee',

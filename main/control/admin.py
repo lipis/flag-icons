@@ -47,7 +47,6 @@ class ConfigUpdateForm(i18n.Form):
   verify_email = wtforms.BooleanField('Verify user emails')
 
 
-@app.route('/_s/admin/config/', endpoint='admin_config_update_service')
 @app.route('/admin/config/', methods=['GET', 'POST'])
 @auth.admin_required
 def admin_config():
@@ -64,15 +63,12 @@ def admin_config():
     app.config.update(CONFIG_DB=config_db)
     return flask.redirect(flask.url_for('admin'))
 
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_db(config_db)
-
   return flask.render_template(
       'admin/admin_config.html',
       title=_('App Config'),
       html_class='admin-config',
       form=form,
-      has_json=True,
+      api_url=flask.url_for('api.config'),
     )
 
 
@@ -100,7 +96,6 @@ class AuthUpdateForm(i18n.Form):
   yahoo_consumer_secret = wtforms.StringField('Consumer Secret', filters=[util.strip_filter])
 
 
-@app.route('/_s/admin/auth/', endpoint='admin_auth_service')
 @app.route('/admin/auth/', methods=['GET', 'POST'])
 @auth.admin_required
 def admin_auth():
@@ -113,13 +108,10 @@ def admin_auth():
     app.config.update(CONFIG_DB=config_db)
     return flask.redirect(flask.url_for('admin'))
 
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_db(config_db)
-
   return flask.render_template(
       'admin/admin_auth.html',
       title=_('Auth Config'),
       html_class='admin-auth',
       form=form,
-      has_json=True,
+      api_url=flask.url_for('api.auth'),
     )

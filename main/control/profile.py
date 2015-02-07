@@ -1,6 +1,5 @@
 # coding: utf-8
 
-from flask.ext import wtf
 from flask.ext.babel import gettext as __
 from flask.ext.babel import lazy_gettext as _
 import flask
@@ -8,6 +7,7 @@ import wtforms
 
 import auth
 import config
+import i18n
 import util
 import task
 
@@ -17,28 +17,23 @@ from main import app
 ###############################################################################
 # Profile View
 ###############################################################################
-@app.route('/_s/profile/', endpoint='profile_service')
 @app.route('/profile/')
 @auth.login_required
 def profile():
   user_db = auth.current_user_db()
-
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_db(user_db)
 
   return flask.render_template(
       'profile/profile.html',
       title=user_db.name,
       html_class='profile-view',
       user_db=user_db,
-      has_json=True,
     )
 
 
 ###############################################################################
 # Profile Update
 ###############################################################################
-class ProfileUpdateForm(wtf.Form):
+class ProfileUpdateForm(i18n.Form):
   name = wtforms.StringField(
       _('Name'),
       [wtforms.validators.required()], filters=[util.strip_filter],
@@ -88,7 +83,7 @@ def profile_update():
 ###############################################################################
 # Profile Password
 ###############################################################################
-class ProfilePasswordForm(wtf.Form):
+class ProfilePasswordForm(i18n.Form):
   old_password = wtforms.StringField(
       _('Old Password'), [wtforms.validators.optional()],
     )

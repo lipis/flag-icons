@@ -23,7 +23,6 @@ from main import app
 ###############################################################################
 # User List
 ###############################################################################
-@app.route('/_s/admin/user/', endpoint='user_list_service')
 @app.route('/admin/user/')
 @auth.admin_required
 def user_list():
@@ -40,7 +39,7 @@ def user_list():
       title=_('User List'),
       user_dbs=user_dbs,
       next_url=util.generate_next_url(user_cursor),
-      has_json=True,
+      api_url=flask.url_for('api.users'),
       permissions=sorted(set(permissions)),
     )
 
@@ -118,15 +117,13 @@ def user_update(user_id=0):
           'user_list', order='-modified', active=user_db.active,
         ))
 
-  if flask.request.path.startswith('/_s/'):
-    return util.jsonify_model_db(user_db)
-
   return flask.render_template(
       'user/user_update.html',
       title=user_db.name or 'New User',
       html_class='user-update',
       form=form,
       user_db=user_db,
+      api_url=flask.url_for('api.user', key=user_db.key.urlsafe()) if user_db.key else ''
     )
 
 
@@ -150,7 +147,7 @@ def user_verify(token):
 ###############################################################################
 # User Forgot
 ###############################################################################
-class UserForgotForm(wtf.Form):
+class UserForgotForm(i18n.Form):
   email = wtforms.StringField(
       'Email',
       [wtforms.validators.required(), wtforms.validators.email()],
@@ -199,7 +196,7 @@ def user_forgot(token=None):
 ###############################################################################
 # User Reset
 ###############################################################################
-class UserResetForm(wtf.Form):
+class UserResetForm(i18n.Form):
   new_password = wtforms.StringField(
       'New Password',
       [wtforms.validators.required(), wtforms.validators.length(min=6)],
@@ -239,7 +236,7 @@ def user_reset(token=None):
 ###############################################################################
 # User Activate
 ###############################################################################
-class UserActivateForm(wtf.Form):
+class UserActivateForm(i18n.Form):
   name = wtforms.StringField(
       'Name',
       [wtforms.validators.required()], filters=[util.strip_filter],
@@ -280,26 +277,6 @@ def user_activate(token):
 
 
 ###############################################################################
-# User Delete
-###############################################################################
-@app.route('/_s/admin/user/delete/', methods=['DELETE'])
-@auth.admin_required
-def user_delete_service():
-  user_keys = util.param('user_keys', list)
-  user_db_keys = [ndb.Key(urlsafe=k) for k in user_keys]
-  delete_user_dbs(user_db_keys)
-  return flask.jsonify({
-      'result': user_keys,
-      'status': 'success',
-    })
-
-
-@ndb.transactional(xg=True)
-def delete_user_dbs(user_db_keys):
-  ndb.delete_multi(user_db_keys)
-
-
-###############################################################################
 # User Merge
 ###############################################################################
 class UserMergeForm(i18n.Form):
@@ -317,7 +294,6 @@ class UserMergeForm(i18n.Form):
     )
 
 
-@app.route('/_s/admin/user/merge/')
 @app.route('/admin/user/merge/', methods=['GET', 'POST'])
 @auth.admin_required
 def user_merge():
