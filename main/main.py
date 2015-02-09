@@ -32,7 +32,6 @@ import task
 from api import helpers as restful
 api = restful.Api(app)
 
-from api.v1 import auth_api
 from api.v1 import config_api
 from api.v1 import user_api
 

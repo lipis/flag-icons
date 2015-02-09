@@ -46,7 +46,7 @@ init_user_delete_btn = ->
     clear_notifications()
     e.preventDefault()
     confirm_message = ($(this).data 'confirm').replace '{users}', $('input[name=user_db]:checked').length
-    delete_url = $(this).data 'service-url'
+    delete_url = $(this).data 'api-url'
     success_message = $(this).data 'success'
     error_message = $(this).data 'error'
     swal
