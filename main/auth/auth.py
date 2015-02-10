@@ -13,7 +13,6 @@ import flask
 import unidecode
 import wtforms
 
-
 import cache
 import config
 import model
