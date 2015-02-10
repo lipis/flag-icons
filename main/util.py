@@ -145,7 +145,7 @@ _username_re = re.compile(r'^[a-z0-9]+(?:[\.][a-z0-9]+)*$')
 
 
 def is_valid_username(username):
-  return True if _username_re.match(username) else False
+  return bool(_username_re.match(username))
 
 
 def create_name_from_email(email):
