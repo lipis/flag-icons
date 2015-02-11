@@ -2,9 +2,7 @@
 
 import logging
 
-from flask.ext import wtf
 import flask
-import wtforms
 
 import config
 import util
@@ -20,10 +18,11 @@ app.jinja_env.globals.update(
     update_query_argument=util.update_query_argument,
   )
 
-from control import user
 from control import admin
+from control import feedback
 from control import profile
 from control import test
+from control import user
 import auth
 import model
 import task
@@ -61,45 +60,6 @@ def sitemap():
     ))
   response.headers['Content-Type'] = 'application/xml'
   return response
-
-
-###############################################################################
-# Feedback
-###############################################################################
-class FeedbackForm(wtf.Form):
-  message = wtforms.TextAreaField(
-      'Message',
-      [wtforms.validators.required()], filters=[util.strip_filter],
-    )
-  email = wtforms.StringField(
-      'Your email',
-      [wtforms.validators.optional(), wtforms.validators.email()],
-      filters=[util.email_filter],
-    )
-  recaptcha = wtf.RecaptchaField()
-
-
-@app.route('/feedback/', methods=['GET', 'POST'])
-def feedback():
-  if not config.CONFIG_DB.feedback_email:
-    return flask.abort(418)
-
-  form = FeedbackForm(obj=auth.current_user_db())
-  if not config.CONFIG_DB.has_anonymous_recaptcha or auth.is_logged_in():
-    del form.recaptcha
-  if form.validate_on_submit():
-    body = '%s\n\n%s' % (form.message.data, form.email.data)
-    kwargs = {'reply_to': form.email.data} if form.email.data else {}
-    task.send_mail_notification('%s...' % body[:48].strip(), body, **kwargs)
-    flask.flash('Thank you for your feedback!', category='success')
-    return flask.redirect(flask.url_for('welcome'))
-
-  return flask.render_template(
-      'feedback.html',
-      title='Feedback',
-      html_class='feedback',
-      form=form,
-    )
 
 
 ###############################################################################
