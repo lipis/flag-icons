@@ -31,6 +31,8 @@ def param(name, cast=None):
       return value.lower() in ['true', 'yes', 'y', '1', '']
     if cast is list:
       return value.split(',') if len(value) > 0 else []
+    if cast is ndb.Key:
+      return ndb.Key(urlsafe=value)
     return cast(value)
   return value
 
