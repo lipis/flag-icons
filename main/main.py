@@ -18,11 +18,12 @@ app.jinja_env.globals.update(
     update_query_argument=util.update_query_argument,
   )
 
+from control import user
+
 from control import admin
 from control import feedback
 from control import profile
 from control import test
-from control import user
 import auth
 import model
 import task
