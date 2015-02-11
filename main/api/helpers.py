@@ -42,12 +42,12 @@ def make_response(data, marshal_table, next_cursor=None):
     if next_cursor:
       response['next_cursor'] = next_cursor
       response['next_url'] = util.generate_next_url(next_cursor)
-    return response
-  return {
+    return util.jsonpify(response)
+  return util.jsonpify({
       'status': 'success',
       'now': datetime.utcnow().isoformat(),
-      'result': restful.marshal(data, marshal_table)
-    }
+      'result': restful.marshal(data, marshal_table),
+    })
 
 
 def make_not_found_exception(description):
