@@ -38,7 +38,7 @@ class IdField(fields.Raw):
 class IntegerField(fields.Raw):
   def format(self, value):
     if value > 9007199254740992 or value < -9007199254740992:
-      return repr(value)
+      return str(value)
     return value
 
 
