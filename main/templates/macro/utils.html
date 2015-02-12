@@ -11,12 +11,14 @@
 # endmacro
 
 
-# macro filter_by_link(property, value, icon=None, ignore='cursor', is_list=False, hash=None)
+# macro filter_by_link(property, value, icon=None, ignore='cursor', is_list=False, hash=None, label=None)
   # set value = '%s' % value
   <a href="{{update_query_argument(property, None if request.args.get(property) == value else value, ignore, is_list)}}{{'#%s' % hash if hash}}"
      class="btn btn-default {{'active' if value in request.args.get(property, '').split(',')}}" rel="nofollow">
     # if icon
       <span class="fa fa-{{icon}}"></span>
+    # elif label
+      {{label}}
     # else
       {{value}}
     # endif
