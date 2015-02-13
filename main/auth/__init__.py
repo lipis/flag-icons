@@ -5,6 +5,7 @@ from .bitbucket import *
 from .dropbox import *
 from .facebook import *
 from .github import *
+from .gae import *
 from .google import *
 from .instagram import *
 from .linkedin import *

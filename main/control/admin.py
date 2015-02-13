@@ -82,6 +82,8 @@ class AuthUpdateForm(wtf.Form):
   facebook_app_secret = wtforms.StringField(model.Config.facebook_app_secret._verbose_name, filters=[util.strip_filter])
   github_client_id = wtforms.StringField(model.Config.github_client_id._verbose_name, filters=[util.strip_filter])
   github_client_secret = wtforms.StringField(model.Config.github_client_secret._verbose_name, filters=[util.strip_filter])
+  google_client_id = wtforms.StringField(model.Config.google_client_id._verbose_name, filters=[util.strip_filter])
+  google_client_secret = wtforms.StringField(model.Config.google_client_secret._verbose_name, filters=[util.strip_filter])
   instagram_client_id = wtforms.StringField(model.Config.instagram_client_id._verbose_name, filters=[util.strip_filter])
   instagram_client_secret = wtforms.StringField(model.Config.instagram_client_secret._verbose_name, filters=[util.strip_filter])
   linkedin_api_key = wtforms.StringField(model.Config.linkedin_api_key._verbose_name, filters=[util.strip_filter])
