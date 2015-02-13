@@ -16,23 +16,15 @@ app.jinja_env.globals.update(
     update_query_argument=util.update_query_argument,
   )
 
-from control import user
-
-from control import admin
-from control import error
-from control import feedback
-from control import profile
-from control import test
 import auth
+import control
 import model
 import task
 
+from api import helpers
+api = helpers.Api(app)
 
-from api import helpers as restful
-api = restful.Api(app)
-
-from api.v1 import config_api
-from api.v1 import user_api
+import api.v1
 
 
 if config.DEVELOPMENT:
