@@ -97,13 +97,13 @@
       </thead>
       <tbody>
         # for user_db in user_dbs
-          <tr id="{{user_db.key.urlsafe()}}" class="{{'text-muted' if not user_db.active}}">
+          <tr id="{{user_db.key.urlsafe()}}" class="row-link {{'text-muted' if not user_db.active}}" data-href="{{url_for('user_update', user_id=user_db.key.id())}}">
             <td class="name">
-              <label>
+              <label class="not-link">
                 <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
                 <img src="{{user_db.avatar_url_size(80)}}" alt="Avatar of {{user_db.name}}">
               </label>
-              <a href="{{url_for('user_update', user_id=user_db.key.id())}}">{{user_db.name}}</a>
+              <span>{{user_db.name}}</span>
               # if current_user.id == user_db.key.id()
                 <span class="fa fa-hand-o-left" title="You"></span>
               # endif
@@ -124,7 +124,7 @@
                 {{user_db.created.strftime('%Y-%m-%d')}}
               </time>
             </td>
-            <td>
+            <td class="not-link">
               # if user_db.admin
                 <a href="{{update_query_argument('admin', True)}}" class="label label-danger"><span class="fa fa-cog"></span> admin</a>
               # endif

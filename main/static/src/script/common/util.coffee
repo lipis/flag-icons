@@ -7,6 +7,7 @@ window.init_common = ->
   init_password_show_button()
   init_time()
   init_announcement()
+  init_row_link()
 
 
 window.init_loading_button = ->
@@ -45,6 +46,14 @@ window.init_announcement = ->
 
   if sessionStorage?.getItem('closedAnnouncement') != $('.alert-announcement').html()
     $('.alert-announcement').show()
+
+
+window.init_row_link = ->
+  $('body').on 'click', '.row-link', ->
+    window.location.href = $(this).data 'href'
+
+  $('body').on 'click', '.not-link', (e) ->
+    e.stopPropagation()
 
 
 window.clear_notifications = ->
