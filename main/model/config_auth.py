@@ -25,6 +25,8 @@ class ConfigAuth(object):
   microsoft_client_secret = ndb.StringProperty(default='')
   twitter_consumer_key = ndb.StringProperty(default='')
   twitter_consumer_secret = ndb.StringProperty(default='')
+  vk_app_id = ndb.StringProperty(default='')
+  vk_app_secret = ndb.StringProperty(default='')
   yahoo_consumer_key = ndb.StringProperty(default='')
   yahoo_consumer_secret = ndb.StringProperty(default='')
 
@@ -61,6 +63,10 @@ class ConfigAuth(object):
     return bool(self.twitter_consumer_key and self.twitter_consumer_secret)
 
   @property
+  def has_vk(self):
+    return bool(self.vk_app_id and self.vk_app_secret)
+
+  @property
   def has_yahoo(self):
     return bool(self.yahoo_consumer_key and self.yahoo_consumer_secret)
 
@@ -81,6 +87,8 @@ class ConfigAuth(object):
       'microsoft_client_secret': fields.String,
       'twitter_consumer_key': fields.String,
       'twitter_consumer_secret': fields.String,
+      'vk_app_id': fields.String,
+      'vk_app_secret': fields.String,
       'yahoo_consumer_key': fields.String,
       'yahoo_consumer_secret': fields.String,
     }
