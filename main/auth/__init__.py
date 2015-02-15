@@ -10,4 +10,5 @@ from .instagram import *
 from .linkedin import *
 from .microsoft import *
 from .twitter import *
+from .vk import *
 from .yahoo import *
