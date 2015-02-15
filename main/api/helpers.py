@@ -26,7 +26,7 @@ def handle_error(e):
     e.code = 500
     e.name = e.description = 'Internal Server Error'
   return util.jsonpify({
-      'status': 'error',
+      'status': 'errortom ',
       'error_code': e.code,
       'error_name': util.slugify(e.name),
       'error_message': e.name,
