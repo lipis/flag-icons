@@ -13,7 +13,7 @@
       </a>
 
       <div class="btn-group btn-group-sm">
-        <button type="button" class="btn btn-primary" disabled >Limit</button>
+        <button type="button" class="btn btn-primary" disabled>Limit</button>
         {{utils.filter_by_link('limit', 16)}}
         {{utils.filter_by_link('limit', 64)}}
         {{utils.filter_by_link('limit', 128)}}
@@ -22,26 +22,26 @@
       </div>
 
       <div class="btn-group btn-group-sm">
-        <button type="button" class="btn btn-danger" disabled >Admins</button>
+        <button type="button" class="btn btn-danger" disabled>Admins</button>
         {{utils.filter_by_link('admin', True, 'thumbs-o-up')}}
         {{utils.filter_by_link('admin', False, 'thumbs-o-down')}}
       </div>
 
       <div class="btn-group btn-group-sm">
-        <button type="button" class="btn btn-success" disabled >Verified</button>
+        <button type="button" class="btn btn-success" disabled>Verified</button>
         {{utils.filter_by_link('verified', True, 'thumbs-o-up')}}
         {{utils.filter_by_link('verified', False, 'thumbs-o-down')}}
       </div>
 
       <div class="btn-group btn-group-sm">
-        <button type="button" class="btn btn-info" disabled >Active</button>
+        <button type="button" class="btn btn-info" disabled>Active</button>
         {{utils.filter_by_link('active', True, 'thumbs-o-up')}}
         {{utils.filter_by_link('active', False, 'thumbs-o-down')}}
       </div>
 
 
       <div class="btn-group btn-group-sm {{'hide' if not permissions}}">
-        <button type="button" class="btn btn-warning" disabled >Permissions</button>
+        <button type="button" class="btn btn-warning" disabled>Permissions</button>
         # for permission in permissions
           {{utils.filter_by_link('permissions', permission, is_list=True)}}
         # endfor

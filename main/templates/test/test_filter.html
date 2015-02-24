@@ -3,7 +3,7 @@
 <div class="panel panel-default">
   <div class="panel-body">
     <div class="btn-group btn-group-sm">
-      <button type="button" class="btn btn-primary" disabled >Limit</button>
+      <button type="button" class="btn btn-primary" disabled>Limit</button>
       {{utils.filter_by_link('limit', 16, hash=test)}}
       {{utils.filter_by_link('limit', 64, hash=test)}}
       {{utils.filter_by_link('limit', 128, hash=test)}}
@@ -12,7 +12,7 @@
     </div>
 
     <div class="btn-group btn-group-sm">
-      <button type="button" class="btn btn-danger" disabled >Admins</button>
+      <button type="button" class="btn btn-danger" disabled>Admins</button>
       {{utils.filter_by_link('admin', True, 'thumbs-o-up', hash=test)}}
       {{utils.filter_by_link('admin', False, 'thumbs-o-down', hash=test)}}
     </div>
