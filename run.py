@@ -489,10 +489,8 @@ def find_gae_path():
   gcloud_exec = 'gcloud.cmd' if IS_WINDOWS else 'gcloud'
   if not os.path.isfile(os.path.join(gae_path, gcloud_exec)):
     GAE_PATH = gae_path
-  else:
-    gae_path = os.path.join(gae_path, '..', 'platform', 'google_appengine')
-    if os.path.exists(gae_path):
-      GAE_PATH = os.path.realpath(gae_path)
+  elif os.path.exists(gae_path):
+    GAE_PATH = os.path.realpath(gae_path)
   return GAE_PATH
 
 
