@@ -489,8 +489,10 @@ def find_gae_path():
   gcloud_exec = 'gcloud.cmd' if IS_WINDOWS else 'gcloud'
   if not os.path.isfile(os.path.join(gae_path, gcloud_exec)):
     GAE_PATH = gae_path
-  elif os.path.exists(gae_path):
-    GAE_PATH = os.path.realpath(gae_path)
+  else:
+    gae_path = os.path.join(gae_path, '..', 'platform', 'google_appengine')
+    if os.path.exists(gae_path):
+      GAE_PATH = os.path.realpath(gae_path)
   return GAE_PATH
 
 
@@ -612,7 +614,7 @@ def run_start():
   clear = 'yes' if ARGS.flush else 'no'
   port = int(ARGS.port)
   run_command = ' '.join(map(str, [
-      '"%s"' % os.path.join(find_gae_path(), 'dev_appserver.py'),
+      '"dev_appserver.py"',
       DIR_MAIN,
       '--host %s' % ARGS.host,
       '--port %s' % port,
