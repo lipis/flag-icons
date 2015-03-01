@@ -5,6 +5,7 @@
     "bootstrap-sweetalert": "~0",
     "font-awesome": "~4",
     "jquery": "~2",
+    "lesshat": "~3",
     "moment": "~2",
     "nprogress": "https://github.com/lipis/nprogress.git#master"
   },
