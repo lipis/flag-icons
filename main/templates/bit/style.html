@@ -1,7 +1,5 @@
-# for style in config.STYLES
-  # if config.DEVELOPMENT
-    <link rel="stylesheet" href="/p/{{style.replace('.less', '.css').replace('src/style/', 'dst/style/')}}?{{config.CURRENT_VERSION_ID}}">
-  # else
-    <link rel="stylesheet" href="/p/{{style.replace('.less', '.min.css').replace('src/style/', 'min/style/')}}?{{config.CURRENT_VERSION_ID}}">
-  # endif
-# endfor
+# if config.DEVELOPMENT
+  <link rel="stylesheet" href="/p/dev/style/style.css?{{config.CURRENT_VERSION_ID}}">
+# else
+  <link rel="stylesheet" href="/p/min/style/style.css?{{config.CURRENT_VERSION_ID}}">
+# endif
