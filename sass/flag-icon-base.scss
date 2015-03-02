@@ -6,15 +6,13 @@
 
 .flag-icon {
   @include flag-icon-background();
-  display: inline-block;
-  line-height: 1em;
   position: relative;
+  display: inline-block;
   width: (4 / 3) * 1em;
-
+  line-height: 1em;
   &:before {
     content: '\00a0';
   }
-
   &.flag-icon-squared {
     width: 1em;
   }
@@ -23,7 +21,6 @@
 @mixin flag-icon($country) {
   .flag-icon-#{$country} {
     background-image: url(#{$flag-icon-css-path}#{$flag-icon-rect-path}/#{$country}.svg);
-
     &.flag-icon-squared {
       background-image: url(#{$flag-icon-css-path}#{$flag-icon-square-path}/#{$country}.svg);
     }
