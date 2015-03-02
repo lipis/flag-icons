@@ -496,6 +496,12 @@ def find_gae_path():
   return GAE_PATH
 
 
+def fix_gcloud_gae_path():
+  gae_path = find_gae_path()
+  if os.path.exists(os.path.join(gae_path, '..', '..', 'bin', 'dev_appserver.py')):
+    return os.path.join(gae_path, '..', '..', 'bin')
+  return gae_path
+
 def check_internet():
   return internet_on(), 'Internet', ''
 
@@ -613,8 +619,9 @@ def run_start():
   make_dirs(DIR_STORAGE)
   clear = 'yes' if ARGS.flush else 'no'
   port = int(ARGS.port)
+  base_cmd = '"python -u %s"' if IS_WINDOWS else '"%s"'
   run_command = ' '.join(map(str, [
-      '"dev_appserver.py"',
+      base_cmd % os.path.join(fix_gcloud_gae_path(), 'dev_appserver.py'),
       DIR_MAIN,
       '--host %s' % ARGS.host,
       '--port %s' % port,
