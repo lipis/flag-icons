@@ -1,21 +1,21 @@
+.flag-icon-background {
+  background-size: contain;
+  background-position: 50%;
+  background-repeat: no-repeat;
+}
+
 .flag-icon {
+  .flag-icon-background;
   position: relative;
   display: inline-block;
   width: unit(4 / 3, em);
   line-height: 1em;
-  .flag-icon-background;
   &:before {
     content: "\00a0";
   }
   &.flag-icon-squared {
     width: 1em;
   }
-}
-
-.flag-icon-background {
-  background-size: contain;
-  background-position: 50%;
-  background-repeat: no-repeat;
 }
 
 .flag-icon(@country) {
