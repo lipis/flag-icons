@@ -619,7 +619,7 @@ def run_start():
   make_dirs(DIR_STORAGE)
   clear = 'yes' if ARGS.flush else 'no'
   port = int(ARGS.port)
-  base_cmd = '"python -u %s"' if IS_WINDOWS else '"%s"'
+  base_cmd = 'python -u "%s"' if IS_WINDOWS else '"%s"'
   run_command = ' '.join(map(str, [
       base_cmd % os.path.join(fix_gcloud_gae_path(), 'dev_appserver.py'),
       DIR_MAIN,
