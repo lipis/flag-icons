@@ -5,12 +5,19 @@
     <h1>{{title}}</h1>
   </div>
 
-  <ul class="nav nav-justified text-center h4">
-    {{admin_link('User List', 'group', url_for('user_list', order='-modified', active=True))}}
+  <div class="row text-center">
     {{admin_link('App Config', 'cog', url_for('admin_config'))}}
     {{admin_link('Auth Config', 'lock', url_for('admin_auth'))}}
     {{admin_link('Test', 'sliders', url_for('admin_test'))}}
-  </ul>
+  </div>
+
+  <div class="page-header">
+    <h2>Models</h2>
+  </div>
+
+  <div class="row text-center">
+    {{admin_link('User List', 'group', url_for('user_list', order='-modified', active=True))}}
+  </div>
 
   <div class="page-header">
     <h2>
@@ -19,23 +26,23 @@
     </h2>
   </div>
 
-  <ul class="nav nav-justified text-center h4">
+  <div class="row text-center">
     {{admin_link('Overview', 'tachometer', 'https://console.developers.google.com/project/%s' % config.APPLICATION_ID, '_gae')}}
     {{admin_link('Datastore', 'database', 'https://console.developers.google.com/project/%s/datastore/query' % config.APPLICATION_ID, '_gae')}}
     {{admin_link('Instances', 'bolt', 'https://console.developers.google.com/project/%s/appengine/instances' % config.APPLICATION_ID, '_gae')}}
     {{admin_link('Versions', 'archive', 'https://console.developers.google.com/project/%s/appengine/versions' % config.APPLICATION_ID, '_gae')}}
     {{admin_link('Logs', 'bullhorn', 'https://console.developers.google.com/project/%s/logs?versionId=%s' % (config.APPLICATION_ID, config.CURRENT_VERSION_NAME), '_gae')}}
     {{admin_link('Settings', 'cogs', 'https://console.developers.google.com/project/%s/settings' % config.APPLICATION_ID, '_gae')}}
-  </ul>
+  </div>
 
 # endblock
 
 
 # macro admin_link(title, icon, url, target='')
-  <li>
+  <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
     <a class="text-muted" href="{{url}}" target="{{target}}">
-      <span class="fa fa-fw fa-3x fa-{{icon}}"></span><br>
-      {{title}}
+      <h4><span class="fa fa-fw fa-3x fa-{{icon}}"></span></h4>
+      <h4 class="ellipsis">{{title}}</h4>
     </a>
-  </li>
+  </div>
 # endmacro
