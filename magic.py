@@ -15,7 +15,7 @@ import urllib2
 ###############################################################################
 MAGIC_URL = 'http://magic.gae-init.appspot.com'
 
-PARSER = argparse.ArgumentParser()
+PARSER = argparse.ArgumentParser(description='Visit %s for more.' % MAGIC_URL)
 PARSER.add_argument(
     '-p', '--project', dest='project_id', action='store',
     help='project ID of the project that you want to sync',
