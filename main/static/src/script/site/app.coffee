@@ -4,9 +4,6 @@ $ ->
 $ -> $('html.welcome').each ->
   LOG('init welcome')
 
-$ -> $('html.profile').each ->
-  init_profile()
-
 $ -> $('html.auth').each ->
   init_auth()
 

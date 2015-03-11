@@ -60,7 +60,6 @@ SCRIPTS = [
         'src/script/common/util.coffee',
         'src/script/site/app.coffee',
         'src/script/site/admin.coffee',
-        'src/script/site/profile.coffee',
         'src/script/site/auth.coffee',
         'src/script/site/user.coffee',
       ]),
