@@ -10,7 +10,8 @@
   </rdf:RDF>
  </metadata>
  <g id="flag" stroke-width="1pt" fill-rule="evenodd">
-  <rect id="rect171" height="480" width="640" y="0" x="0" fill="#fa000b"/>
+  <rect id="rect171" height="480" width="640" y="0" x="0" fill="#ffffff"/>
+  <rect id="rect172" height="480" width="480" y="0" x="80" fill="#fa000b"/>
   <rect id="rect554" height="0" width=".76815" y="177.19" x="328.01" fill="#808080"/>
   <g id="g566" transform="matrix(.67733 0 0 .67733 -40 .00024489)" fill="#fff">
    <rect id="rect557" height="132.87" width="442.91" y="287.89" x="310.04"/>
