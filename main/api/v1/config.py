@@ -10,7 +10,7 @@ import model
 from main import api
 
 
-@api.resource('/api/v1/config/', endpoint='api.config')
+@api.resource('/config/', endpoint='api.config')
 class ConfigAPI(restful.Resource):
   @auth.admin_required
   def get(self):
