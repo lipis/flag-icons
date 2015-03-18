@@ -11,22 +11,20 @@ import util
 
 
 class Config(model.Base, model.ConfigAuth):
-  analytics_id = ndb.StringProperty(default='')
-  announcement_html = ndb.TextProperty(default='')
-  announcement_type = ndb.StringProperty(default='info', choices=[
-      'info', 'warning', 'success', 'danger',
-    ])
-  anonymous_recaptcha = ndb.BooleanProperty(default=False)
+  analytics_id = ndb.StringProperty(default='', verbose_name='Tracking ID')
+  announcement_html = ndb.TextProperty(default='', verbose_name='Announcement HTML')
+  announcement_type = ndb.StringProperty(default='info', choices=['info', 'warning', 'success', 'danger'])
+  anonymous_recaptcha = ndb.BooleanProperty(default=False, verbose_name='Use reCAPTCHA in forms for unauthorized users')
   brand_name = ndb.StringProperty(default=config.APPLICATION_ID)
-  check_unique_email = ndb.BooleanProperty(default=True)
-  email_authentication = ndb.BooleanProperty(default=False)
+  check_unique_email = ndb.BooleanProperty(default=True, verbose_name='Check for uniqueness of the verified emails')
+  email_authentication = ndb.BooleanProperty(default=False, verbose_name='Email authentication for sign in/sign up')
   feedback_email = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default=util.uuid())
-  notify_on_new_user = ndb.BooleanProperty(default=True)
-  recaptcha_private_key = ndb.StringProperty(default='')
-  recaptcha_public_key = ndb.StringProperty(default='')
+  notify_on_new_user = ndb.BooleanProperty(default=True, verbose_name='Send an email notification when a user signs up')
+  recaptcha_private_key = ndb.StringProperty(default='', verbose_name='Private Key')
+  recaptcha_public_key = ndb.StringProperty(default='', verbose_name='Public Key')
   salt = ndb.StringProperty(default=util.uuid())
-  verify_email = ndb.BooleanProperty(default=True)
+  verify_email = ndb.BooleanProperty(default=True, verbose_name='Verify user emails')
 
   @property
   def has_anonymous_recaptcha(self):
