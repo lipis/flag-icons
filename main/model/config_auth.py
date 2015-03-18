@@ -17,6 +17,8 @@ class ConfigAuth(object):
   facebook_app_secret = ndb.StringProperty(default='', verbose_name='App Secret')
   github_client_id = ndb.StringProperty(default='', verbose_name='Client ID')
   github_client_secret = ndb.StringProperty(default='', verbose_name='Client Secret')
+  google_client_id = ndb.StringProperty(default='', verbose_name='Client ID')
+  google_client_secret = ndb.StringProperty(default='', verbose_name='Client Secret')
   instagram_client_id = ndb.StringProperty(default='', verbose_name='Client ID')
   instagram_client_secret = ndb.StringProperty(default='', verbose_name='Client Secret')
   linkedin_api_key = ndb.StringProperty(default='', verbose_name='API Key')
@@ -41,6 +43,10 @@ class ConfigAuth(object):
   @property
   def has_facebook(self):
     return bool(self.facebook_app_id and self.facebook_app_secret)
+
+  @property
+  def has_google(self):
+    return bool(self.google_client_id and self.google_client_secret)
 
   @property
   def has_github(self):
@@ -79,6 +85,8 @@ class ConfigAuth(object):
       'facebook_app_secret': fields.String,
       'github_client_id': fields.String,
       'github_client_secret': fields.String,
+      'google_client_id': fields.String,
+      'google_client_secret': fields.String,
       'instagram_client_id': fields.String,
       'instagram_client_secret': fields.String,
       'linkedin_api_key': fields.String,
