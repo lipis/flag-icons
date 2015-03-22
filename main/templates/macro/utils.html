@@ -16,7 +16,7 @@
   <a href="{{update_query_argument(property, None if request.args.get(property) == value else value, ignore, is_list)}}{{'#%s' % hash if hash}}"
      class="btn btn-default {{'active' if value in request.args.get(property, '').split(',')}}" rel="nofollow">
     # if icon
-      <span class="fa fa-{{icon}}"></span>
+      <span class="fa fa-fw fa-{{icon}}"></span>
     # elif label
       {{label}}
     # else
