@@ -14,8 +14,8 @@ import util
 from main import api_v1
 
 
-@api_v1.resource('/users/', endpoint='api.users')
-class UsersAPI(restful.Resource):
+@api_v1.resource('/user/', endpoint='api.user.list')
+class UserListAPI(restful.Resource):
   @auth.admin_required
   def get(self):
     user_keys = util.param('user_keys', list)

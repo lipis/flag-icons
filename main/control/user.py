@@ -21,7 +21,7 @@ from main import app
 ###############################################################################
 # User List
 ###############################################################################
-@app.route('/admin/users/')
+@app.route('/admin/user/')
 @auth.admin_required
 def user_list():
   user_dbs, user_cursor = model.User.get_dbs(email=util.param('email'))
@@ -33,7 +33,7 @@ def user_list():
       title='User List',
       user_dbs=user_dbs,
       next_url=util.generate_next_url(user_cursor),
-      api_url=flask.url_for('api.users'),
+      api_url=flask.url_for('api.user.list'),
       permissions=sorted(set(permissions)),
     )
 
@@ -341,7 +341,7 @@ def user_merge():
       merged_user_db=merged_user_db,
       form=form,
       auth_ids=auth_ids,
-      api_url=flask.url_for('api.users', user_keys=','.join(user_keys)),
+      api_url=flask.url_for('api.user.list', user_keys=','.join(user_keys)),
     )
 
 
