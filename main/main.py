@@ -22,7 +22,7 @@ import model
 import task
 
 from api import helpers
-api = helpers.Api(app, prefix='/api/v1')
+api_v1 = helpers.Api(app, prefix='/api/v1')
 
 import api.v1
 

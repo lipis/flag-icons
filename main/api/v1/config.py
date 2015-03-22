@@ -9,10 +9,10 @@ import auth
 import config
 import model
 
-from main import api
+from main import api_v1
 
 
-@api.resource('/config/', endpoint='api.config')
+@api_v1.resource('/config/', endpoint='api.config')
 class ConfigAPI(restful.Resource):
   @auth.admin_required
   def get(self):

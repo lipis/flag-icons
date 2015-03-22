@@ -11,10 +11,10 @@ import auth
 import model
 import util
 
-from main import api
+from main import api_v1
 
 
-@api.resource('/users/', endpoint='api.users')
+@api_v1.resource('/users/', endpoint='api.users')
 class UsersAPI(restful.Resource):
   @auth.admin_required
   def get(self):
@@ -40,7 +40,7 @@ class UsersAPI(restful.Resource):
       })
 
 
-@api.resource('/user/<string:user_key>/', endpoint='api.user')
+@api_v1.resource('/user/<string:user_key>/', endpoint='api.user')
 class UserAPI(restful.Resource):
   @auth.admin_required
   def get(self, user_key):
