@@ -2,7 +2,6 @@
   "name": "gae-init",
   "dependencies": {
     "bootstrap": "~3",
-    "bootstrap-sweetalert": "~0",
     "font-awesome": "~4",
     "jquery": "~2",
     "lesshat": "~3",
@@ -12,9 +11,6 @@
   "overrides": {
     "bootstrap": {
       "main": ["less/**", "fonts/*", "js/*"]
-    },
-    "bootstrap-sweetalert": {
-      "main": ["lib/*.less", "lib/sweet-alert.js"]
     },
     "font-awesome": {
       "main": ["less/*", "fonts/*"]
