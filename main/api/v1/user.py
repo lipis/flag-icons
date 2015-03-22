@@ -14,7 +14,7 @@ import util
 from main import api
 
 
-@api.resource('/api/v1/users/', endpoint='api.users')
+@api.resource('/users/', endpoint='api.users')
 class UsersAPI(restful.Resource):
   @auth.admin_required
   def get(self):
@@ -40,7 +40,7 @@ class UsersAPI(restful.Resource):
       })
 
 
-@api.resource('/api/v1/user/<string:user_key>/', endpoint='api.user')
+@api.resource('/user/<string:user_key>/', endpoint='api.user')
 class UserAPI(restful.Resource):
   @auth.admin_required
   def get(self, user_key):
