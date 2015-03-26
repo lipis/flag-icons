@@ -648,6 +648,12 @@
 .flag-icon-in.flag-icon-squared {
   background-image: url(../flags/1x1/in.svg);
 }
+.flag-icon-int {
+  background-image: url(../flags/4x3/int.svg);
+}
+.flag-icon-int.flag-icon-squared {
+  background-image: url(../flags/1x1/int.svg);
+}
 .flag-icon-io {
   background-image: url(../flags/4x3/io.svg);
 }
