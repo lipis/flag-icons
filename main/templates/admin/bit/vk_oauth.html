@@ -1,0 +1,10 @@
+{{
+  forms.panel_fields(
+      'VK',
+      (form.vk_app_id, form.vk_app_secret),
+      '''
+        Base domain for <a href="https://vk.com/apps?act=manage" target="_blank">VK application</a>:
+        <em>%s</em>
+      ''' % request.host
+    )
+}}

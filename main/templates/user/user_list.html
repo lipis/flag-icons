@@ -9,7 +9,7 @@
   <div class="panel panel-default">
     <div class="panel-body">
       <a class="btn btn-sm btn-primary" href="{{url_for('user_update')}}">
-        <span class="fa fa-user-plus"></span> New User
+        <span class="fa fa-fw fa-user-plus"></span> _('New User')
       </a>
 
       <div class="btn-group btn-group-sm">
@@ -58,7 +58,7 @@
         <ul class="dropdown-menu">
           <li>
             <a id="user-delete"
-                data-service-url="{{url_for('api.users')}}"
+                data-api-url="{{url_for('api.user.list')}}"
                 data-confirm="{{_('Are you sure you want to delete {users} selected user(s)?')}}"
                 data-success="{{_('{users} user(s) deleted.')}}"
                 data-error="{{_('Something went wrong while deleting. Please try again.')}}"
@@ -98,13 +98,13 @@
       </thead>
       <tbody>
         # for user_db in user_dbs
-          <tr id="{{user_db.key.urlsafe()}}" class="{{'text-muted' if not user_db.active}}">
+          <tr id="{{user_db.key.urlsafe()}}" class="row-link {{'text-muted' if not user_db.active}}" data-href="{{url_for('user_update', user_id=user_db.key.id())}}">
             <td class="name">
-              <label>
+              <label class="not-link">
                 <input type="checkbox" name="user_db" value="{{user_db.key.urlsafe()}}">
                 <img src="{{user_db.avatar_url_size(80)}}" alt="{{_('Avatar of')}} {{user_db.name}}">
               </label>
-              <a href="{{url_for('user_update', user_id=user_db.key.id())}}">{{user_db.name}}</a>
+              <span>{{user_db.name}}</span>
               # if current_user.id == user_db.key.id()
                 <span class="fa fa-hand-o-left" title="{{_('You')}}"></span>
               # endif
@@ -131,7 +131,7 @@
                 {{config.LOCALE[user_db.locale]}}
               # endif
             </td>
-            <td>
+            <td class="not-link">
               # if user_db.admin
                 <a href="{{update_query_argument('admin', True)}}" class="label label-danger"><span class="fa fa-cog"></span> {{_('admin')}}</a>
               # endif

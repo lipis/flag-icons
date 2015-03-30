@@ -1,0 +1,11 @@
+{{
+  forms.panel_fields(
+      'Google',
+      (form.google_client_id, form.google_client_secret),
+      '''
+        Redirect URI for <a href="https://console.developers.google.com/project/%s/apiui/credential" target="_blank">Google application</a>:
+        <em>%s</em><br>
+        Do not forget to enable "Google+ API" in your <a href="https://console.developers.google.com/project/%s/apiui/api" target="_blank">console</a>.
+      ''' % (config.APPLICATION_ID, url_for('google_authorized', _external=True), config.APPLICATION_ID)
+    )
+}}

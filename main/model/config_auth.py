@@ -9,24 +9,28 @@ import model
 
 
 class ConfigAuth(object):
-  bitbucket_key = ndb.StringProperty(default='')
-  bitbucket_secret = ndb.StringProperty(default='')
-  dropbox_app_key = ndb.StringProperty(default='')
-  dropbox_app_secret = ndb.StringProperty(default='')
-  facebook_app_id = ndb.StringProperty(default='')
-  facebook_app_secret = ndb.StringProperty(default='')
-  github_client_id = ndb.StringProperty(default='')
-  github_client_secret = ndb.StringProperty(default='')
-  instagram_client_id = ndb.StringProperty(default='')
-  instagram_client_secret = ndb.StringProperty(default='')
-  linkedin_api_key = ndb.StringProperty(default='')
-  linkedin_secret_key = ndb.StringProperty(default='')
-  microsoft_client_id = ndb.StringProperty(default='')
-  microsoft_client_secret = ndb.StringProperty(default='')
-  twitter_consumer_key = ndb.StringProperty(default='')
-  twitter_consumer_secret = ndb.StringProperty(default='')
-  yahoo_consumer_key = ndb.StringProperty(default='')
-  yahoo_consumer_secret = ndb.StringProperty(default='')
+  bitbucket_key = ndb.StringProperty(default='', verbose_name='Key')
+  bitbucket_secret = ndb.StringProperty(default='', verbose_name='Secret')
+  dropbox_app_key = ndb.StringProperty(default='', verbose_name='App Key')
+  dropbox_app_secret = ndb.StringProperty(default='', verbose_name='App Secret')
+  facebook_app_id = ndb.StringProperty(default='', verbose_name='App ID')
+  facebook_app_secret = ndb.StringProperty(default='', verbose_name='App Secret')
+  github_client_id = ndb.StringProperty(default='', verbose_name='Client ID')
+  github_client_secret = ndb.StringProperty(default='', verbose_name='Client Secret')
+  google_client_id = ndb.StringProperty(default='', verbose_name='Client ID')
+  google_client_secret = ndb.StringProperty(default='', verbose_name='Client Secret')
+  instagram_client_id = ndb.StringProperty(default='', verbose_name='Client ID')
+  instagram_client_secret = ndb.StringProperty(default='', verbose_name='Client Secret')
+  linkedin_api_key = ndb.StringProperty(default='', verbose_name='API Key')
+  linkedin_secret_key = ndb.StringProperty(default='', verbose_name='Secret Key')
+  microsoft_client_id = ndb.StringProperty(default='', verbose_name='Client ID')
+  microsoft_client_secret = ndb.StringProperty(default='', verbose_name='Client Secret')
+  twitter_consumer_key = ndb.StringProperty(default='', verbose_name='Consumer Key')
+  twitter_consumer_secret = ndb.StringProperty(default='', verbose_name='Consumer Secret')
+  vk_app_id = ndb.StringProperty(default='', verbose_name='App ID')
+  vk_app_secret = ndb.StringProperty(default='', verbose_name='App Secret')
+  yahoo_consumer_key = ndb.StringProperty(default='', verbose_name='Consumer Key')
+  yahoo_consumer_secret = ndb.StringProperty(default='', verbose_name='Consumer Secret')
 
   @property
   def has_bitbucket(self):
@@ -39,6 +43,10 @@ class ConfigAuth(object):
   @property
   def has_facebook(self):
     return bool(self.facebook_app_id and self.facebook_app_secret)
+
+  @property
+  def has_google(self):
+    return bool(self.google_client_id and self.google_client_secret)
 
   @property
   def has_github(self):
@@ -61,6 +69,10 @@ class ConfigAuth(object):
     return bool(self.twitter_consumer_key and self.twitter_consumer_secret)
 
   @property
+  def has_vk(self):
+    return bool(self.vk_app_id and self.vk_app_secret)
+
+  @property
   def has_yahoo(self):
     return bool(self.yahoo_consumer_key and self.yahoo_consumer_secret)
 
@@ -73,6 +85,8 @@ class ConfigAuth(object):
       'facebook_app_secret': fields.String,
       'github_client_id': fields.String,
       'github_client_secret': fields.String,
+      'google_client_id': fields.String,
+      'google_client_secret': fields.String,
       'instagram_client_id': fields.String,
       'instagram_client_secret': fields.String,
       'linkedin_api_key': fields.String,
@@ -81,6 +95,8 @@ class ConfigAuth(object):
       'microsoft_client_secret': fields.String,
       'twitter_consumer_key': fields.String,
       'twitter_consumer_secret': fields.String,
+      'vk_app_id': fields.String,
+      'vk_app_secret': fields.String,
       'yahoo_consumer_key': fields.String,
       'yahoo_consumer_secret': fields.String,
     }

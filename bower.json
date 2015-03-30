@@ -3,18 +3,15 @@
   "dependencies": {
     "bootstrap": "~3",
     "flag-icon-css": "~0",
-    "bootstrap-sweetalert": "~0",
     "font-awesome": "~4",
     "jquery": "~2",
+    "lesshat": "~3",
     "moment": "~2",
     "nprogress": "https://github.com/lipis/nprogress.git#master"
   },
   "overrides": {
     "bootstrap": {
       "main": ["less/**", "fonts/*", "js/*"]
-    },
-    "bootstrap-sweetalert": {
-      "main": ["lib/*.less", "lib/sweet-alert.js"]
     },
     "flag-icon-css": {
       "main": ["less/*", "flags/**"]

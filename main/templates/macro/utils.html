@@ -11,12 +11,14 @@
 # endmacro
 
 
-# macro filter_by_link(property, value, icon=None, ignore='cursor', is_list=False, hash=None)
+# macro filter_by_link(property, value, icon=None, ignore='cursor', is_list=False, hash=None, label=None)
   # set value = '%s' % value
   <a href="{{update_query_argument(property, None if request.args.get(property) == value else value, ignore, is_list)}}{{'#%s' % hash if hash}}"
      class="btn btn-default {{'active' if value in request.args.get(property, '').split(',')}}" rel="nofollow">
     # if icon
-      <span class="fa fa-{{icon}}"></span>
+      <span class="fa fa-fw fa-{{icon}}"></span>
+    # elif label
+      {{label}}
     # else
       {{value}}
     # endif
@@ -68,8 +70,10 @@
     <span class="fa fa-fw fa-facebook" title="{{_('Facebook')}}"></span>
   # elif auth_id.startswith('github')
     <span class="fa fa-fw fa-github" title={{_('GitHub')}}></span>
-  # elif auth_id.startswith('federated')
+  # elif auth_id.startswith('google')
     <span class="fa fa-fw fa-google-plus" title="{{_('Google')}}"></span>
+  # elif auth_id.startswith('federated')
+    <span class="fa fa-fw fa-google" title="{{_('Google App Engine')}}"></span>
   # elif auth_id.startswith('instagram')
     <span class="fa fa-fw fa-instagram" title={{_('Instagram')}}></span>
   # elif auth_id.startswith('linkedin')

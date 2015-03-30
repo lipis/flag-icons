@@ -31,6 +31,8 @@ def param(name, cast=None):
       return value.lower() in ['true', 'yes', 'y', '1', '']
     if cast is list:
       return value.split(',') if len(value) > 0 else []
+    if cast is ndb.Key:
+      return ndb.Key(urlsafe=value)
     return cast(value)
   return value
 
@@ -156,7 +158,7 @@ _username_re = re.compile(r'^[a-z0-9]+(?:[\.][a-z0-9]+)*$')
 
 
 def is_valid_username(username):
-  return True if _username_re.match(username) else False
+  return bool(_username_re.match(username))
 
 
 def create_name_from_email(email):

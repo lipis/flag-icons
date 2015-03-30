@@ -16,7 +16,6 @@ import flask
 import unidecode
 import wtforms
 
-
 import cache
 import config
 import model
@@ -335,10 +334,12 @@ def urls_for_oauth(next_url):
       'facebook_signin_url': url_for_signin('facebook', next_url),
       'github_signin_url': url_for_signin('github', next_url),
       'google_signin_url': url_for_signin('google', next_url),
+      'gae_signin_url': url_for_signin('gae', next_url),
       'instagram_signin_url': url_for_signin('instagram', next_url),
       'linkedin_signin_url': url_for_signin('linkedin', next_url),
       'microsoft_signin_url': url_for_signin('microsoft', next_url),
       'twitter_signin_url': url_for_signin('twitter', next_url),
+      'vk_signin_url': url_for_signin('vk', next_url),
       'yahoo_signin_url': url_for_signin('yahoo', next_url),
     }
 

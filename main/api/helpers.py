@@ -15,20 +15,24 @@ class Api(restful.Api):
     flask.abort(401)
 
   def handle_error(self, e):
-    logging.exception(e)
-    try:
-      e.code
-    except AttributeError:
-      e.code = 500
-      e.name = e.description = 'Internal Server Error'
-    return util.jsonpify({
-        'status': 'error',
-        'error_code': e.code,
-        'error_name': util.slugify(e.name),
-        'error_message': e.name,
-        'error_class': e.__class__.__name__,
-        'description': e.description,
-      }), e.code
+    return handle_error(e)
+
+
+def handle_error(e):
+  logging.exception(e)
+  try:
+    e.code
+  except AttributeError:
+    e.code = 500
+    e.name = e.description = 'Internal Server Error'
+  return util.jsonpify({
+      'status': 'error',
+      'error_code': e.code,
+      'error_name': util.slugify(e.name),
+      'error_message': e.name,
+      'error_class': e.__class__.__name__,
+      'description': e.description,
+    }), e.code
 
 
 def make_response(data, marshal_table, next_cursor=None):
@@ -42,12 +46,12 @@ def make_response(data, marshal_table, next_cursor=None):
     if next_cursor:
       response['next_cursor'] = next_cursor
       response['next_url'] = util.generate_next_url(next_cursor)
-    return response
-  return {
+    return util.jsonpify(response)
+  return util.jsonpify({
       'status': 'success',
       'now': datetime.utcnow().isoformat(),
-      'result': restful.marshal(data, marshal_table)
-    }
+      'result': restful.marshal(data, marshal_table),
+    })
 
 
 def make_not_found_exception(description):

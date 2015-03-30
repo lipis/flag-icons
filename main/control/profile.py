@@ -8,6 +8,7 @@ import wtforms
 import auth
 import config
 import i18n
+import model
 import util
 import task
 
@@ -35,16 +36,16 @@ def profile():
 ###############################################################################
 class ProfileUpdateForm(i18n.Form):
   name = wtforms.StringField(
-      _('Name'),
+      model.User.name._verbose_name,
       [wtforms.validators.required()], filters=[util.strip_filter],
     )
   email = wtforms.StringField(
-      _('Email'),
+      model.User.email._verbose_name,
       [wtforms.validators.optional(), wtforms.validators.email()],
       filters=[util.email_filter],
     )
   locale = wtforms.SelectField(
-      _('Language'),
+      model.User.locale._verbose_name,
       choices=config.LOCALE_SORTED, filters=[util.strip_filter],
     )
 
