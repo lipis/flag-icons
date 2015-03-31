@@ -309,6 +309,8 @@ def exec_pip_commands(command):
     script.append(activate_cmd)
 
   script.append('echo %s' % command)
+  script.append('%s SKIP_GOOGLEAPICLIENT_COMPAT_CHECK=1' %
+      ('set' if IS_WINDOWS else 'export'))
   script.append(command)
   script = '&'.join(script) if IS_WINDOWS else \
       '/bin/bash -c "%s"' % ';'.join(script)
