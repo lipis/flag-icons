@@ -559,19 +559,19 @@ def doctor_says_ok():
 # Babel Stuff
 ###############################################################################
 def pybabel_extract():
-  os.system('"pybabel" extract -k _ -k __ -F %s --sort-by-file --omit-header -o %s %s' % (
-      FILE_BABEL_CFG, FILE_MESSAGES_POT, DIR_MAIN,
+  exec_pip_commands(
+    '"pybabel" extract -k _ -k __ -F %s --sort-by-file --omit-header -o %s %s' % (
+        FILE_BABEL_CFG, FILE_MESSAGES_POT, DIR_MAIN,
     ))
 
-
 def pybabel_update():
-  os.system('"pybabel" update -i %s -d %s --no-wrap' % (
+  exec_pip_commands('"pybabel" update -i %s -d %s --no-wrap' % (
       FILE_MESSAGES_POT, DIR_TRANSLATIONS,
     ))
 
 
 def pybabel_init(locale):
-  os.system('"pybabel" init -i %s -d %s -l %s' % (
+  exec_pip_commands('"pybabel" init -i %s -d %s -l %s' % (
       FILE_MESSAGES_POT, DIR_TRANSLATIONS, locale,
     ))
 
@@ -586,7 +586,7 @@ def pybabel_init_missing():
 
 
 def pybabel_compile():
-  os.system('"pybabel" compile -f -d %s' % (DIR_TRANSLATIONS))
+  exec_pip_commands('"pybabel" compile -f -d %s' % (DIR_TRANSLATIONS))
 
 
 ###############################################################################

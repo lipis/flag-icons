@@ -68,8 +68,6 @@ Requirements
 ------------
 
   - Being familiar with [gae-init][]
-  - [Babel][] - `easy_install Babel`
-  - [Jinja2][] - `easy_install Jinja2`
 
 Support
 -------
