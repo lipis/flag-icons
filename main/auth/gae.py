@@ -20,6 +20,7 @@ def signin_gae():
 
 
 @app.route('/_s/callback/gae/authorized/')
+@app.route('/api/auth/callback/gae/')
 def gae_authorized():
   gae_user = users.get_current_user()
   if gae_user is None:
