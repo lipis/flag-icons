@@ -23,6 +23,7 @@ twitter = auth.create_oauth_app(twitter_config, 'twitter')
 
 
 @app.route('/_s/callback/twitter/oauth-authorized/')
+@app.route('/api/auth/callback/twitter/')
 def twitter_authorized():
   response = twitter.authorized_response()
   if response is None:

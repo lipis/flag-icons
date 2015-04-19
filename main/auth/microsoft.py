@@ -24,6 +24,7 @@ microsoft = auth.create_oauth_app(microsoft_config, 'microsoft')
 
 
 @app.route('/_s/callback/microsoft/oauth-authorized/')
+@app.route('/api/auth/callback/microsoft/')
 def microsoft_authorized():
   response = microsoft.authorized_response()
   if response is None:
