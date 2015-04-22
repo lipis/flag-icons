@@ -124,7 +124,7 @@ FILE_UPDATE = os.path.join(DIR_TEMP, 'update.json')
 # Other global variables
 ###############################################################################
 CORE_VERSION_URL = 'https://gae-init.appspot.com/_s/version/'
-INERNET_TEST_URL = 'http://74.125.228.100'
+INERNET_TEST_URL = 'https://www.google.com'
 REQUIREMENTS_URL = 'http://docs.gae-init.appspot.com/requirement/'
 
 
