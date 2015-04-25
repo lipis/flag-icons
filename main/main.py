@@ -1,6 +1,5 @@
 # coding: utf-8
 
-
 from flask.ext.babel import Babel
 import flask
 
@@ -29,6 +28,7 @@ from api import helpers
 api_v1 = helpers.Api(app, prefix='/api/v1')
 
 import api.v1
+
 
 if config.DEVELOPMENT:
   from werkzeug import debug

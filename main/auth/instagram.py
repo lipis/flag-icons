@@ -22,6 +22,7 @@ instagram = auth.create_oauth_app(instagram_config, 'instagram')
 
 
 @app.route('/_s/callback/instagram/oauth-authorized/')
+@app.route('/api/auth/callback/instagram/')
 def instagram_authorized():
   response = instagram.authorized_response()
   if response is None:

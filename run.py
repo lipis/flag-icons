@@ -146,7 +146,7 @@ FILE_MESSAGES_POT = os.path.join(DIR_TRANSLATIONS, 'messages.pot')
 # Other global variables
 ###############################################################################
 CORE_VERSION_URL = 'https://gae-init.appspot.com/_s/version/'
-INERNET_TEST_URL = 'http://74.125.228.100'
+INERNET_TEST_URL = 'https://www.google.com'
 REQUIREMENTS_URL = 'http://docs.gae-init.appspot.com/requirement/'
 
 
@@ -331,6 +331,8 @@ def exec_pip_commands(command):
     script.append(activate_cmd)
 
   script.append('echo %s' % command)
+  script.append('%s SKIP_GOOGLEAPICLIENT_COMPAT_CHECK=1' %
+      ('set' if IS_WINDOWS else 'export'))
   script.append(command)
   script = '&'.join(script) if IS_WINDOWS else \
       '/bin/bash -c "%s"' % ';'.join(script)
