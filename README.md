@@ -51,9 +51,3 @@ To have only specific countries in the css file, remove the ones that you don't
 need from the
 [`flag-icon-list.less`](https://github.com/lipis/flag-icon-css/blob/master/less/flag-icon-list.less)
 file and build it again.
-
-Credits
--------
-
-This project wouldn't exist without the awesome collection of svg flags:
-[koppi/iso-country-flags-svg-collection](https://github.com/koppi/iso-country-flags-svg-collection)
