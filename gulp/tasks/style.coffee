@@ -2,12 +2,12 @@ gulp = require('gulp-help') require 'gulp'
 $ = do require 'gulp-load-plugins'
 config = require '../config'
 paths = require '../paths'
-utils = require '../utils'
+util = require '../util'
 
 
 gulp.task 'style', false, ->
   gulp.src config.style
-  .pipe $.plumber(errorHandler: utils.onError)
+  .pipe $.plumber(errorHandler: util.onError)
   .pipe do $.less
   .pipe $.autoprefixer {cascade: false}
   .pipe do $.minifyCss
@@ -17,7 +17,7 @@ gulp.task 'style', false, ->
 
 gulp.task 'style:dev', false, ->
   gulp.src config.style
-  .pipe $.plumber(errorHandler: utils.onError)
+  .pipe $.plumber(errorHandler: util.onError)
   .pipe do $.sourcemaps.init
   .pipe do $.less
   .pipe $.autoprefixer {map: true}

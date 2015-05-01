@@ -22,7 +22,7 @@ gulp.task 'bower', false, ->
 
 
 gulp.task 'copy_bower_files', false, ['bower'], ->
-  gulp.src do main_bower_files, base: paths.deps.bower_components
+  gulp.src do main_bower_files, base: paths.dep.bower_components
   .pipe gulp.dest paths.static.ext
 
 

@@ -17,15 +17,15 @@ gulp.task 'clean:dev', false, ->
 
 gulp.task 'clean:venv', false, ->
   del [paths.py.lib, paths.py.lib_file]
-  del paths.deps.py
-  del paths.deps.py_guard
+  del paths.dep.py
+  del paths.dep.py_guard
 
 
 gulp.task 'initial',
 'Complete cleaning the project: cleans all the
 Pip requirements, temp files, Node & Bower related tools and libraries.',
 ['clean', 'clean:venv'], ->
-  del [paths.deps.bower_components, paths.deps.node_modules]
+  del [paths.dep.bower_components, paths.dep.node_modules]
 
 
 gulp.task 'flush', 'Clears the datastore, blobstore, etc', ->

@@ -2,12 +2,12 @@ gulp = require('gulp-help') require 'gulp'
 $ = do require 'gulp-load-plugins'
 config = require '../config'
 paths = require '../paths'
-utils = require '../utils'
+util = require '../util'
 
 
 gulp.task 'script', false, ->
   gulp.src config.script
-  .pipe $.plumber(errorHandler: utils.onError)
+  .pipe $.plumber(errorHandler: util.onError)
   .pipe $.coffee()
   .pipe $.concat 'script.js'
   .pipe do $.uglify
@@ -17,7 +17,7 @@ gulp.task 'script', false, ->
 
 gulp.task 'script:dev', false, ->
   gulp.src config.script
-  .pipe $.plumber(errorHandler: utils.onError)
+  .pipe $.plumber(errorHandler: util.onError)
   .pipe do $.sourcemaps.init
   .pipe $.coffee()
   .pipe $.concat 'script.js'
