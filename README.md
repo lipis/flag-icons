@@ -34,7 +34,7 @@ Initializing or Resetting the project
 
 If something goes wrong you can always do:
 
-    $ gulp initial
+    $ gulp reset
     $ npm install
     $ gulp
 
