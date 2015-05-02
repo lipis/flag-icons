@@ -4,11 +4,11 @@ paths = require '../paths'
 
 
 gulp.task 'clean',
-'Clean the project from temp files, Python compiled files
-and minified styles and scripts.', ['clean:dev'], ->
-  del './**/*.pyc'
-  del './**/*.pyo'
-  del './**/*.~'
+  'Clean project from temporarty files, generated CSS & JS and compiled Python
+  files.', ['clean:dev'], ->
+    del './**/*.pyc'
+    del './**/*.pyo'
+    del './**/*.~'
 
 
 gulp.task 'clean:dev', false, ->
@@ -21,13 +21,11 @@ gulp.task 'clean:venv', false, ->
   del paths.dep.py_guard
 
 
-gulp.task 'initial',
-'Complete cleaning the project: cleans all the
-Pip requirements, temp files, Node & Bower related tools and libraries.',
-['clean', 'clean:venv'], ->
-  del [paths.dep.bower_components, paths.dep.node_modules]
+gulp.task 'reset',
+  'Complete reset of project. Run "npm install" after this procedure.',
+  ['clean', 'clean:dev', 'clean:venv'], ->
+    del [paths.dep.bower_components, paths.dep.node_modules]
 
 
-gulp.task 'flush', 'Clears the datastore, blobstore, etc', ->
+gulp.task 'flush', 'Clear local datastore, blobstore, etc.', ->
   del paths.temp.storage
-

@@ -7,7 +7,7 @@ util = require '../util'
 
 gulp.task 'script', false, ->
   gulp.src config.script
-  .pipe $.plumber(errorHandler: util.onError)
+  .pipe $.plumber errorHandler: util.onError
   .pipe $.coffee()
   .pipe $.concat 'script.js'
   .pipe do $.uglify
@@ -17,7 +17,7 @@ gulp.task 'script', false, ->
 
 gulp.task 'script:dev', false, ->
   gulp.src config.script
-  .pipe $.plumber(errorHandler: util.onError)
+  .pipe $.plumber errorHandler: util.onError
   .pipe do $.sourcemaps.init
   .pipe $.coffee()
   .pipe $.concat 'script.js'

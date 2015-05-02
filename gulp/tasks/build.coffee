@@ -5,26 +5,26 @@ paths = require '../paths'
 
 
 gulp.task 'build',
-  "Compiles styles & scripts files into minified version
-  and pack python dependencies into #{paths.py.lib_file}.",
+  "Build project to prepare it for a deployment. Minify CSS & JS files and pack
+  Python dependencies into #{paths.py.lib_file}.",
   $.sequence 'clean:venv', 'clean', 'install_dependencies', 'ext', ['script', 'style', 'zip']
 
 
 gulp.task 'rebuild',
-  'Re-build the project: complete cleaning and install & build all requirements again.',
-  $.sequence 'initial', 'build'
+  'Re-build project from scratch. Equivalent to "reset" and "build" tasks.',
+  $.sequence 'reset', 'build'
 
 
-gulp.task 'deploy', 'Deploying your project on Google App Engine', ['build'], ->
+gulp.task 'deploy', 'Deploy project to Google App Engine.', ['build'], ->
   gulp.src('run.py').pipe $.start [
       {match: /run.py$/, cmd: 'appcfg.py update main --skip_sdk_update_check'}
     ]
 
 
 gulp.task 'run',
-  'Start the dev_appserver.py. Available options:\n
-  -o HOST - the host to start the dev_appserver.py\n
-  -p PORT - the port to start the dev_appserver.py\n
+  'Start the local server. Available options:\n
+  -o HOST  - the host to start the dev_appserver.py\n
+  -p PORT  - the port to start the dev_appserver.py\n
   -a="..." - all following args are passed to dev_appserver.py\n', ->
     $.sequence('install_dependencies', ['ext:dev', 'script:dev', 'style:dev']) ->
       argv = process.argv.slice 2

@@ -6,7 +6,7 @@ paths = require '../paths'
 
 
 gulp.task 'npm', false, ->
-  gulp.src('package.json')
+  gulp.src 'package.json'
   .pipe $.plumber()
   .pipe do $.start
 
@@ -16,7 +16,7 @@ gulp.task 'bower', false, ->
   if /^win/.test process.platform
     cmd = cmd.replace /\//g, '\\'
   start_map = [{match: /bower.json$/, cmd: cmd}]
-  gulp.src('bower.json')
+  gulp.src 'bower.json'
   .pipe $.plumber()
   .pipe $.start start_map
 
