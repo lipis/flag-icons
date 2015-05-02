@@ -316,7 +316,6 @@ def signup():
 @app.route('/signout/')
 def signout():
   login.logout_user()
-  flask.flash(__('You have been signed out.'), category='success')
   return flask.redirect(util.param('next') or flask.url_for('signin'))
 
 
@@ -440,10 +439,6 @@ def signin_user_db(user_db):
   flask.session.pop('auth-params', None)
   if login.login_user(flask_user_db, remember=auth_params['remember']):
     user_db.put_async()
-    flask.flash(__(
-        'Hello %(name)s, welcome to %(brand)s.',
-        name=user_db.name, brand=config.CONFIG_DB.brand_name,
-      ), category='success')
     return flask.redirect(util.get_next_url(auth_params['next']))
   flask.flash(__('Sorry, but you could not sign in.'), category='danger')
   return flask.redirect(flask.url_for('signin'))

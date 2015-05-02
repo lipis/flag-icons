@@ -37,6 +37,7 @@ else:
 DEFAULT_DB_LIMIT = 64
 SIGNIN_RETRY_LIMIT = 4
 
+
 ###############################################################################
 # i18n Stuff
 ###############################################################################
@@ -54,32 +55,3 @@ LOCALE = {
 
 LOCALE_SORTED = sorted(LOCALE.iteritems(), key=operator.itemgetter(1))
 LANGUAGES = [l.lower().replace('_', '-') for l in LOCALE.keys()]
-
-###############################################################################
-# Client modules, also used by the run.py script.
-###############################################################################
-STYLES = [
-    'src/style/style.less',
-  ]
-
-SCRIPTS = [
-    ('libs', [
-        'ext/jquery/dist/jquery.js',
-        'ext/moment/moment.js',
-        'ext/nprogress/nprogress.js',
-        'ext/bootstrap/js/alert.js',
-        'ext/bootstrap/js/button.js',
-        'ext/bootstrap/js/transition.js',
-        'ext/bootstrap/js/collapse.js',
-        'ext/bootstrap/js/dropdown.js',
-        'ext/bootstrap/js/tooltip.js',
-      ] + ['ext/moment/locale/%s.js' % l for l in LANGUAGES if l != 'en']),
-    ('scripts', [
-        'src/script/common/api.coffee',
-        'src/script/common/util.coffee',
-        'src/script/site/app.coffee',
-        'src/script/site/admin.coffee',
-        'src/script/site/auth.coffee',
-        'src/script/site/user.coffee',
-      ]),
-  ]
