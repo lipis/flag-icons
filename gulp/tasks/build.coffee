@@ -37,7 +37,7 @@ gulp.task 'run',
 
       options = minimist argv, known_options
 
-      options_str = ''
+      options_str = '-s'
       for k of known_options.default
         if options[k]
           if k == 'a'
@@ -45,4 +45,4 @@ gulp.task 'run',
           else
             options_str += " -#{k} #{options[k]}"
 
-      gulp.src('run.py').pipe $.start [{match: /run.py$/, cmd: 'python run.py -s'}]
+      gulp.src('run.py').pipe $.start [{match: /run.py$/, cmd: "python run.py #{options_str}"}]
