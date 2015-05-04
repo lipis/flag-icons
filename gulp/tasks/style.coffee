@@ -7,7 +7,7 @@ util = require '../util'
 
 gulp.task 'style', false, ->
   gulp.src config.style
-  .pipe $.plumber(errorHandler: util.onError)
+  .pipe $.plumber errorHandler: util.onError
   .pipe do $.less
   .pipe $.autoprefixer {cascade: false}
   .pipe do $.minifyCss
@@ -17,7 +17,7 @@ gulp.task 'style', false, ->
 
 gulp.task 'style:dev', false, ->
   gulp.src config.style
-  .pipe $.plumber(errorHandler: util.onError)
+  .pipe $.plumber errorHandler: util.onError
   .pipe do $.sourcemaps.init
   .pipe do $.less
   .pipe $.autoprefixer {map: true}
