@@ -1,0 +1,10 @@
+{{
+  forms.panel_fields(
+      'Reddit',
+      (form.reddit_client_id, form.reddit_client_secret),
+      '''
+        Redirect URL for <a href="https://ssl.reddit.com/prefs/apps/" target="_blank">Reddit application</a>:
+        <em>%s</em>
+      ''' % url_for('reddit_authorized', _external=True)
+    )
+}}

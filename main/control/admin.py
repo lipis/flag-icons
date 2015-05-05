@@ -90,6 +90,8 @@ class AuthUpdateForm(wtf.Form):
   linkedin_secret_key = wtforms.StringField(model.Config.linkedin_secret_key._verbose_name, filters=[util.strip_filter])
   microsoft_client_id = wtforms.StringField(model.Config.microsoft_client_id._verbose_name, filters=[util.strip_filter])
   microsoft_client_secret = wtforms.StringField(model.Config.microsoft_client_secret._verbose_name, filters=[util.strip_filter])
+  reddit_client_id = wtforms.StringField(model.Config.reddit_client_id._verbose_name, filters=[util.strip_filter])
+  reddit_client_secret = wtforms.StringField(model.Config.reddit_client_secret._verbose_name, filters=[util.strip_filter])
   twitter_consumer_key = wtforms.StringField(model.Config.twitter_consumer_key._verbose_name, filters=[util.strip_filter])
   twitter_consumer_secret = wtforms.StringField(model.Config.twitter_consumer_secret._verbose_name, filters=[util.strip_filter])
   vk_app_id = wtforms.StringField(model.Config.vk_app_id._verbose_name, filters=[util.strip_filter])

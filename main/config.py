@@ -23,6 +23,7 @@ else:
     import calendar
     CURRENT_VERSION_TIMESTAMP = calendar.timegm(datetime.utcnow().timetuple())
   CURRENT_VERSION_DATE = datetime.utcfromtimestamp(CURRENT_VERSION_TIMESTAMP)
+  USER_AGENT = '%s/%s' % (APPLICATION_ID, CURRENT_VERSION_ID)
 
   import model
   CONFIG_DB = model.Config.get_master_db()
