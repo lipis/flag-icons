@@ -5,6 +5,7 @@ import flask
 import wtforms
 
 import auth
+import i18n
 import util
 
 from main import app
@@ -28,7 +29,7 @@ TESTS = [
   ]
 
 
-class TestForm(wtf.Form):
+class TestForm(i18n.Form):
   name = wtforms.StringField(
       'Text',
       [wtforms.validators.required()], filters=[util.strip_filter],

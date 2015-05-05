@@ -18,6 +18,7 @@ import wtforms
 
 import cache
 import config
+import i18n
 import model
 import task
 import util
@@ -209,7 +210,7 @@ def permission_required(permission=None, methods=None):
 ###############################################################################
 # Sign in stuff
 ###############################################################################
-class SignInForm(wtf.Form):
+class SignInForm(i18n.Form):
   email = wtforms.StringField(
       _('Email'),
       [wtforms.validators.required()],
@@ -263,7 +264,7 @@ def signin():
 ###############################################################################
 # Sign up stuff
 ###############################################################################
-class SignUpForm(wtf.Form):
+class SignUpForm(i18n.Form):
   email = wtforms.StringField(
       _('Email'),
       [wtforms.validators.required(), wtforms.validators.email()],
