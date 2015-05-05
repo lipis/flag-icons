@@ -13,6 +13,6 @@ main/lib.zip
 main/static/dst
 main/static/ext
 main/static/min
+main/translations/messages.pot
 node_modules
 temp/
-translations/messages.pot
