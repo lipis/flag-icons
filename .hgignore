@@ -9,7 +9,7 @@ bower_components
 main/index.yaml
 main/lib
 main/lib.zip
-main/static/dst
+main/static/dev
 main/static/ext
 main/static/min
 node_modules
