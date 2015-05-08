@@ -188,6 +188,12 @@ def update_query_argument(name, value=None, ignore='cursor', is_list=False):
   return '%s%s' % (flask.request.path, '?%s' % query if query else '')
 
 
+def parse_tags(tags, separator=None):
+  if not is_iterable(tags):
+    tags = str(tags.strip()).split(separator or config.TAG_SEPARATOR)
+  return filter(None, sorted(list(set(tags))))
+
+
 ###############################################################################
 # Lambdas
 ###############################################################################
