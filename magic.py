@@ -107,7 +107,7 @@ def create_file(project_url, destination):
   response = urllib2.urlopen('%smagic/%s' % (project_url, destination))
   if response.getcode() == 200:
     with open(destination, 'w') as dest:
-      dest.write(HTMLParser().unescape(response.read()))
+      dest.write('%s\n' % HTMLParser().unescape(response.read()))
       print_out('CREATE', destination)
 
 
