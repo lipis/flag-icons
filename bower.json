@@ -2,6 +2,7 @@
   "name": "gae-init",
   "dependencies": {
     "bootstrap": "~3",
+    "bootswatch": "~3",
     "font-awesome": "~4",
     "jquery": "~2",
     "lesshat": "~3",
@@ -11,6 +12,9 @@
   "overrides": {
     "bootstrap": {
       "main": ["less/**", "fonts/*", "js/*"]
+    },
+    "bootswatch": {
+      "main": ["**/*.less"]
     },
     "font-awesome": {
       "main": ["less/*", "fonts/*"]
