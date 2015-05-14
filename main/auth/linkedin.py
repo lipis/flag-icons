@@ -34,7 +34,6 @@ def change_linkedin_query(uri, headers, body):
 linkedin.pre_request = change_linkedin_query
 
 
-@app.route('/_s/callback/linkedin/oauth-authorized/')
 @app.route('/api/auth/callback/linkedin/')
 def linkedin_authorized():
   response = linkedin.authorized_response()

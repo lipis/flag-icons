@@ -21,7 +21,6 @@ yahoo_config = dict(
 yahoo = auth.create_oauth_app(yahoo_config, 'yahoo')
 
 
-@app.route('/_s/callback/yahoo/oauth-authorized/')
 @app.route('/api/auth/callback/yahoo/')
 def yahoo_authorized():
   response = yahoo.authorized_response()

@@ -22,7 +22,6 @@ dropbox_config = dict(
 dropbox = auth.create_oauth_app(dropbox_config, 'dropbox')
 
 
-@app.route('/_s/callback/dropbox/oauth-authorized/')
 @app.route('/api/auth/callback/dropbox/')
 def dropbox_authorized():
   response = dropbox.authorized_response()

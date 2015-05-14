@@ -60,7 +60,6 @@ def reddit_handle_oauth2_response():
 reddit.handle_oauth2_response = reddit_handle_oauth2_response
 
 
-@app.route('/_s/callback/reddit/oauth-authorized/')
 @app.route('/api/auth/callback/reddit/')
 def reddit_authorized():
   response = reddit.authorized_response()
@@ -81,7 +80,7 @@ def get_reddit_oauth_token():
 
 @app.route('/signin/reddit/')
 def signin_reddit():
-  return auth.signin_oauth(reddit, flask.request.scheme)
+  return auth.signin_oauth(reddit)
 
 
 def retrieve_user_from_reddit(response):

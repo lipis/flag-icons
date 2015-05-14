@@ -319,7 +319,7 @@ def save_request_params():
     }
 
 
-def signin_oauth(oauth_app, scheme='http'):
+def signin_oauth(oauth_app, scheme=None):
   try:
     flask.session.pop('oauth_token', None)
     save_request_params()

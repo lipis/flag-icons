@@ -23,7 +23,6 @@ github_config = dict(
 github = auth.create_oauth_app(github_config, 'github')
 
 
-@app.route('/_s/callback/github/oauth-authorized/')
 @app.route('/api/auth/callback/github/')
 def github_authorized():
   response = github.authorized_response()

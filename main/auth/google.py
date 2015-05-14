@@ -23,7 +23,6 @@ google_config = dict(
 google = auth.create_oauth_app(google_config, 'google')
 
 
-@app.route('/_s/callback/google/oauth-authorized/')
 @app.route('/api/auth/callback/google/')
 def google_authorized():
   response = google.authorized_response()
