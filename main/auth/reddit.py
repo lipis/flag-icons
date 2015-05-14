@@ -81,7 +81,7 @@ def get_reddit_oauth_token():
 
 @app.route('/signin/reddit/')
 def signin_reddit():
-  return auth.signin_oauth(reddit, flask.request.scheme)
+  return auth.signin_oauth(reddit)
 
 
 def retrieve_user_from_reddit(response):
