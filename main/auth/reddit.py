@@ -60,7 +60,6 @@ def reddit_handle_oauth2_response():
 reddit.handle_oauth2_response = reddit_handle_oauth2_response
 
 
-@app.route('/_s/callback/reddit/oauth-authorized/')
 @app.route('/api/auth/callback/reddit/')
 def reddit_authorized():
   response = reddit.authorized_response()

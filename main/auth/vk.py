@@ -21,7 +21,6 @@ vk_config = dict(
 vk = auth.create_oauth_app(vk_config, 'vk')
 
 
-@app.route('/_s/callback/vk/oauth-authorized/')
 @app.route('/api/auth/callback/vk/')
 def vk_authorized():
   response = vk.authorized_response()

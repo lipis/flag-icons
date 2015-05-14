@@ -22,7 +22,6 @@ facebook_config = dict(
 facebook = auth.create_oauth_app(facebook_config, 'facebook')
 
 
-@app.route('/_s/callback/facebook/oauth-authorized/')
 @app.route('/api/auth/callback/facebook/')
 def facebook_authorized():
   response = facebook.authorized_response()
