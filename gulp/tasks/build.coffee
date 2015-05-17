@@ -16,8 +16,16 @@ gulp.task 'rebuild',
 
 
 gulp.task 'deploy', 'Deploy project to Google App Engine.', ['build'], ->
+  options = minimist process.argv
+  delete options['_']
+  options_str = '--skip_sdk_update_check'
+  for k of options
+    if options[k] == true
+      options[k] = ''
+    options_str += if k.length > 1 then " --#{k} #{options[k]}" else " -#{k} #{options[k]}"
+
   gulp.src('run.py').pipe $.start [
-      {match: /run.py$/, cmd: 'appcfg.py update main --skip_sdk_update_check'}
+      {match: /run.py$/, cmd: "appcfg.py update main #{options_str}"}
     ]
 
 
@@ -37,7 +45,7 @@ gulp.task 'run',
 
       options = minimist argv, known_options
 
-      options_str = ''
+      options_str = '-s'
       for k of known_options.default
         if options[k]
           if k == 'a'
@@ -45,4 +53,4 @@ gulp.task 'run',
           else
             options_str += " -#{k} #{options[k]}"
 
-      gulp.src('run.py').pipe $.start [{match: /run.py$/, cmd: 'python run.py -s'}]
+      gulp.src('run.py').pipe $.start [{match: /run.py$/, cmd: "python run.py #{options_str}"}]

@@ -22,7 +22,6 @@ bitbucket_config = dict(
 bitbucket = auth.create_oauth_app(bitbucket_config, 'bitbucket')
 
 
-@app.route('/_s/callback/bitbucket/oauth-authorized/')
 @app.route('/api/auth/callback/bitbucket/')
 def bitbucket_authorized():
   response = bitbucket.authorized_response()
