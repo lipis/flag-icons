@@ -13,9 +13,10 @@
   },
   "devDependencies": {
     "grunt": "0.4.x",
-    "grunt-contrib-less": "1.0.x",
+    "grunt-contrib-connect": "0.10.x",
     "grunt-contrib-cssmin": "0.12.x",
-    "grunt-contrib-watch": "0.6.x",
-    "grunt-contrib-connect": "0.10.x"
+    "grunt-contrib-less": "1.0.x",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-watch": "0.6.x"
   }
 }
