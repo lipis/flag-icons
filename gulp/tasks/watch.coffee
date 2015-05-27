@@ -6,10 +6,8 @@ paths = require '../paths'
 gulp.task 'reload', false, ->
   do $.livereload.listen
   gulp.watch([
-    "#{paths.static.root}/**/*.css"
-    "#{paths.static.root}/**/*.js"
-    "#{paths.main}/**/*.html"
-    "#{paths.main}/**/*.py"
+    "#{paths.static.dev}/**/*.{css,js}"
+    "#{paths.main}/**/*.{html,py}"
   ]).on 'change', $.livereload.changed
 
 
