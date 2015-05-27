@@ -1,8 +1,9 @@
-flag-icon-css
+GPQuery\Livery-Flags
 =============
 
-CSS for vector based country flags. See the
-[demo](http://lipis.github.io/flag-icon-css/).
+Original project [flag-icon-css by lipis](http://lipis.github.io/flag-icon-css/).
+
+Adapted for GPQuery project by Joho.
 
 Usage
 -----
@@ -15,6 +16,7 @@ then add the class `flag-icon-squared` as well. Example:
 
     <span class="flag-icon flag-icon-gr"></span>
     <span class="flag-icon flag-icon-gr flag-icon-squared"></span>
+    <span class="flag-icon flag-icon-greece flag-icon-squared"></span>
 
 You could also apply this to any element, but in that case you'll have to use the
 `flag-icon-background` instead of `flag-icon` and you're set. This will add the
@@ -39,7 +41,7 @@ To watch for changes and live reload if served
 
     $ grunt
 
-To build `*.less` files
+To build `*.scss` files
 
     $ grunt build
 
@@ -49,5 +51,5 @@ To serve it on `localhost:8000`
 
 To have only specific countries in the css file, remove the ones that you don't
 need from the
-[`flag-icon-list.less`](https://github.com/lipis/flag-icon-css/blob/master/less/flag-icon-list.less)
+[`flag-icon-list.scss`](https://github.com/gpquery/livery-flags/blob/master/scss/flag-icon-list.scss)
 file and build it again.
