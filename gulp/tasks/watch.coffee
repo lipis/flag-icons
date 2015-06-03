@@ -21,7 +21,7 @@ gulp.task 'watch', false, ->
   gulp.watch 'requirements.txt', ['pip']
   gulp.watch 'package.json', ['npm']
   gulp.watch 'bower.json', ['ext_watch_rebuild']
-  gulp.watch 'gulp/config.coffee', ['style:dev', 'script:dev']
+  gulp.watch 'gulp/config.coffee', ['ext:dev', 'style:dev', 'script:dev']
   gulp.watch paths.static.ext, ['ext:dev']
   gulp.watch "#{paths.src.script}/**/*.coffee", ['script:dev']
   gulp.watch "#{paths.src.style}/**/*.less", ['style:dev']
