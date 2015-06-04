@@ -171,7 +171,7 @@ def install_py_libs():
 
   exec_pip_commands('pip install -q -r %s' % FILE_REQUIREMENTS)
 
-  exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info']
+  exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info', '.so']
   exclude_prefix = ['setuptools-', 'pip-', 'Pillow-']
   exclude = [
       'test', 'tests', 'pip', 'setuptools', '_markerlib', 'PIL',
