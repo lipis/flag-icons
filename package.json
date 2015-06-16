@@ -1,15 +1,10 @@
 {
   "name": "gae-init",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
-  ],
-  "repository": {
+  "license": "MIT",
+   "repository": {
     "type": "git",
-    "url": "http://github.com/gae-init"
+    "url": "https://github.com/gae-init"
   },
   "dependencies": {
     "coffee-script": "~1",
