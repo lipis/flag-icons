@@ -6,10 +6,8 @@ paths = require '../paths'
 gulp.task 'reload', false, ->
   do $.livereload.listen
   gulp.watch([
-    "#{paths.static.root}/**/*.css"
-    "#{paths.static.root}/**/*.js"
-    "#{paths.main}/**/*.html"
-    "#{paths.main}/**/*.py"
+    "#{paths.static.dev}/**/*.{css,js}"
+    "#{paths.main}/**/*.{html,py}"
   ]).on 'change', $.livereload.changed
 
 
@@ -21,7 +19,7 @@ gulp.task 'watch', false, ->
   gulp.watch 'requirements.txt', ['pip']
   gulp.watch 'package.json', ['npm']
   gulp.watch 'bower.json', ['ext_watch_rebuild']
-  gulp.watch 'gulp/config.coffee', ['style:dev', 'script:dev']
+  gulp.watch 'gulp/config.coffee', ['ext:dev', 'style:dev', 'script:dev']
   gulp.watch paths.static.ext, ['ext:dev']
   gulp.watch "#{paths.src.script}/**/*.coffee", ['script:dev']
   gulp.watch "#{paths.src.style}/**/*.less", ['style:dev']
