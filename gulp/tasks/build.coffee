@@ -7,7 +7,7 @@ paths = require '../paths'
 gulp.task 'build',
   "Build project to prepare it for a deployment. Minify CSS & JS files and pack
   Python dependencies into #{paths.py.lib_file}.",
-  $.sequence 'clean:venv', 'clean', 'install_dependencies', 'ext', ['script', 'style', 'zip']
+  $.sequence 'clean:min', 'install_dependencies', 'ext', ['script', 'style', 'zip']
 
 
 gulp.task 'rebuild',
