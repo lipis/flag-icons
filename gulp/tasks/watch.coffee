@@ -12,7 +12,7 @@ gulp.task 'reload', false, ->
 
 
 gulp.task 'ext_watch_rebuild', false, (callback) ->
-  $.sequence('copy_bower_files', 'ext:dev', 'style:dev') callback
+  $.sequence('clean:dev', 'copy_bower_files', 'ext:dev', 'style:dev') callback
 
 
 gulp.task 'watch', false, ->

@@ -5,26 +5,34 @@ paths = require '../paths'
 
 gulp.task 'clean',
   'Clean project from temporarty files, generated CSS & JS and compiled Python
-  files.', ['clean:dev'], ->
+  files.', ->
     del './**/*.pyc'
     del './**/*.pyo'
     del './**/*.~'
 
 
 gulp.task 'clean:dev', false, ->
-  del [paths.static.dev, paths.static.ext, paths.static.min]
+  del paths.static.ext
+  del paths.static.dev
+
+
+gulp.task 'clean:min', false, ->
+  del paths.static.ext
+  del paths.static.min
 
 
 gulp.task 'clean:venv', false, ->
-  del [paths.py.lib, paths.py.lib_file]
+  del paths.py.lib
+  del paths.py.lib_file
   del paths.dep.py
   del paths.dep.py_guard
 
 
 gulp.task 'reset',
   'Complete reset of project. Run "npm install" after this procedure.',
-  ['clean', 'clean:dev', 'clean:venv'], ->
-    del [paths.dep.bower_components, paths.dep.node_modules]
+  ['clean', 'clean:dev', 'clean:min', 'clean:venv'], ->
+    del paths.dep.bower_components
+    del paths.dep.node_modules
 
 
 gulp.task 'flush', 'Clear local datastore, blobstore, etc.', ->
