@@ -33,10 +33,15 @@
 # endmacro
 
 
-# macro next_link(next_url, caption)
-  # if next_url
+# macro next_link(next_url, prev_url=None, next_caption='', prev_caption='')
+  # if next_url or prev_url
     <ul class="pager">
-      <li><a href="{{next_url}}" rel="nofollow">{{caption|safe if caption else 'Next Page'}}</a></li>
+      # if prev_url
+        <li><a href="{{prev_url}}" rel="nofollow"><span class="fa fa-long-arrow-left"></span> {{prev_caption|safe if prev_caption else 'Prev Page'}}</a></li>
+      # endif
+      # if next_url
+        <li><a href="{{next_url}}" rel="nofollow">{{next_caption|safe if next_caption else 'Next Page'}} <span class="fa fa-long-arrow-right"></span> </a></li>
+      # endif
     </ul>
   # endif
 # endmacro

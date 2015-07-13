@@ -24,7 +24,9 @@ from main import app
 @app.route('/admin/user/')
 @auth.admin_required
 def user_list():
-  user_dbs, user_cursor = model.User.get_dbs(email=util.param('email'))
+  user_dbs, next_cursor, prev_cursor = model.User.get_dbs(
+      email=util.param('email'), prev_cursor=True,
+    )
   permissions = list(UserUpdateForm._permission_choices)
   permissions += util.param('permissions', list) or []
   return flask.render_template(
@@ -32,7 +34,8 @@ def user_list():
       html_class='user-list',
       title='User List',
       user_dbs=user_dbs,
-      next_url=util.generate_next_url(user_cursor),
+      next_url=util.generate_next_url(next_cursor),
+      prev_url=util.generate_next_url(prev_cursor),
       api_url=flask.url_for('api.user.list'),
       permissions=sorted(set(permissions)),
     )
