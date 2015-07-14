@@ -68,14 +68,11 @@ def get_dbs(
       else:
         query = query.order(model_class._properties[o])
 
-  for prop in filters:
-    if filters.get(prop, None) is None:
+  for prop, value in filters.iteritems():
+    if value is None:
       continue
-    if isinstance(filters[prop], list):
-      for value in filters[prop]:
-        query = query.filter(model_class._properties[prop] == value)
-    else:
-      query = query.filter(model_class._properties[prop] == filters[prop])
+    for val in value if isinstance(value, list) else [value]:
+      query = query.filter(model_class._properties[prop] == val)
 
   model_dbs, next_cursor, more = query.fetch_page(
       limit, start_cursor=cursor, keys_only=keys_only,
