@@ -56,8 +56,9 @@ def get_next_url(next_url=''):
 # Model manipulations
 ###############################################################################
 def get_dbs(
-    query, order=None, limit=0, cursor=None, keys_only=None, **filters
+    query, order=None, limit=None, cursor=None, keys_only=None, **filters
   ):
+  limit = limit or config.DEFAULT_DB_LIMIT
   cursor = Cursor.from_websafe_string(cursor) if cursor else None
   model_class = ndb.Model._kind_map[query.kind]
   if order:
@@ -73,9 +74,6 @@ def get_dbs(
     for val in value if isinstance(value, list) else [value]:
       query = query.filter(model_class._properties[prop] == val)
 
-  limit = limit if limit != 0 else config.DEFAULT_DB_LIMIT
-  if limit is None:
-    return list(query.fetch(keys_only=keys_only)), None
   model_dbs, next_cursor, more = query.fetch_page(
       limit, start_cursor=cursor, keys_only=keys_only,
     )
