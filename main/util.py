@@ -59,8 +59,6 @@ def get_dbs(
     query, order=None, limit=None, cursor=None, prev_cursor=False,
     keys_only=None, **filters
   ):
-  limit = limit or config.DEFAULT_DB_LIMIT
-  cursor = Cursor.from_websafe_string(cursor) if cursor else None
   model_class = ndb.Model._kind_map[query.kind]
   query_prev = query
   if order:
@@ -82,6 +80,13 @@ def get_dbs(
       if prev_cursor:
         query_prev = query_prev.filter(model_class._properties[prop] == val)
 
+  limit = limit or config.DEFAULT_DB_LIMIT
+  if limit is -1:
+    if prev_cursor:
+      return list(query.fetch(keys_only=keys_only)), None, None
+    return list(query.fetch(keys_only=keys_only)), None
+
+  cursor = Cursor.from_websafe_string(cursor) if cursor else None
   model_dbs, next_cursor, more = query.fetch_page(
       limit, start_cursor=cursor, keys_only=keys_only,
     )

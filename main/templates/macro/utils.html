@@ -18,7 +18,7 @@
     # if icon
       <span class="fa fa-fw fa-{{icon}}"></span>
     # elif label
-      {{label}}
+      {{label|safe}}
     # else
       {{value}}
     # endif
