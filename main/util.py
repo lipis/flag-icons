@@ -56,29 +56,44 @@ def get_next_url(next_url=''):
 # Model manipulations
 ###############################################################################
 def get_dbs(
-    query, order=None, limit=None, cursor=None, keys_only=None, **filters
+    query, order=None, limit=None, cursor=None, prev_cursor=False,
+    keys_only=None, **filters
   ):
   limit = limit or config.DEFAULT_DB_LIMIT
   cursor = Cursor.from_websafe_string(cursor) if cursor else None
   model_class = ndb.Model._kind_map[query.kind]
+  query_prev = query
   if order:
     for o in order.split(','):
       if o.startswith('-'):
         query = query.order(-model_class._properties[o[1:]])
+        if prev_cursor:
+          query_prev = query_prev.order(model_class._properties[o[1:]])
       else:
         query = query.order(model_class._properties[o])
+        if prev_cursor:
+          query_prev = query_prev.order(-model_class._properties[o])
 
   for prop, value in filters.iteritems():
     if value is None:
       continue
     for val in value if isinstance(value, list) else [value]:
       query = query.filter(model_class._properties[prop] == val)
+      if prev_cursor:
+        query_prev = query_prev.filter(model_class._properties[prop] == val)
 
   model_dbs, next_cursor, more = query.fetch_page(
       limit, start_cursor=cursor, keys_only=keys_only,
     )
   next_cursor = next_cursor.to_websafe_string() if more else None
-  return list(model_dbs), next_cursor
+  if not prev_cursor:
+    return list(model_dbs), next_cursor
+  model_dbs_prev, prev_cursor, prev_more = query_prev.fetch_page(
+      limit, start_cursor=cursor.reversed() if cursor else None, keys_only=True
+    )
+  prev_cursor = prev_cursor.reversed().to_websafe_string()\
+      if prev_cursor and cursor else None
+  return list(model_dbs), next_cursor, prev_cursor
 
 
 def get_keys(*arg, **kwargs):

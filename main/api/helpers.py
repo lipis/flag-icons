@@ -35,7 +35,7 @@ def handle_error(e):
     }), e.code
 
 
-def make_response(data, marshal_table, next_cursor=None):
+def make_response(data, marshal_table, next_cursor=None, prev_cursor=None):
   if util.is_iterable(data):
     response = {
         'status': 'success',
@@ -46,6 +46,9 @@ def make_response(data, marshal_table, next_cursor=None):
     if next_cursor:
       response['next_cursor'] = next_cursor
       response['next_url'] = util.generate_next_url(next_cursor)
+    if prev_cursor:
+      response['prev_cursor'] = prev_cursor
+      response['prev_url'] = util.generate_next_url(prev_cursor)
     return util.jsonpify(response)
   return util.jsonpify({
       'status': 'success',
