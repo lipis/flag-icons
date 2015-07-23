@@ -82,9 +82,7 @@ def get_dbs(
 
   limit = limit or config.DEFAULT_DB_LIMIT
   if limit is -1:
-    if prev_cursor:
-      return list(query.fetch(keys_only=keys_only)), None, None
-    return list(query.fetch(keys_only=keys_only)), None
+    return list(query.fetch(keys_only=keys_only)), {'next': None, 'prev': None}
 
   cursor = Cursor.from_websafe_string(cursor) if cursor else None
   model_dbs, next_cursor, more = query.fetch_page(
@@ -92,13 +90,13 @@ def get_dbs(
     )
   next_cursor = next_cursor.to_websafe_string() if more else None
   if not prev_cursor:
-    return list(model_dbs), next_cursor
+    return list(model_dbs), {'next': next_cursor, 'prev': None}
   model_dbs_prev, prev_cursor, prev_more = query_prev.fetch_page(
       limit, start_cursor=cursor.reversed() if cursor else None, keys_only=True
     )
   prev_cursor = prev_cursor.reversed().to_websafe_string()\
       if prev_cursor and cursor else None
-  return list(model_dbs), next_cursor, prev_cursor
+  return list(model_dbs), {'next': next_cursor, 'prev': prev_cursor}
 
 
 def get_keys(*arg, **kwargs):
@@ -136,6 +134,8 @@ def check_form_fields(*fields):
 
 
 def generate_next_url(next_cursor, base_url=None, cursor_name='cursor'):
+  if isinstance(next_cursor, dict):
+    next_cursor = next_cursor.get('next')
   if not next_cursor:
     return None
   base_url = base_url or flask.request.base_url

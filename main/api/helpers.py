@@ -35,7 +35,7 @@ def handle_error(e):
     }), e.code
 
 
-def make_response(data, marshal_table, next_cursor=None, prev_cursor=None):
+def make_response(data, marshal_table, cursors=None):
   if util.is_iterable(data):
     response = {
         'status': 'success',
@@ -43,12 +43,16 @@ def make_response(data, marshal_table, next_cursor=None, prev_cursor=None):
         'now': datetime.utcnow().isoformat(),
         'result': map(lambda l: restful.marshal(l, marshal_table), data),
       }
-    if next_cursor:
-      response['next_cursor'] = next_cursor
-      response['next_url'] = util.generate_next_url(next_cursor)
-    if prev_cursor:
-      response['prev_cursor'] = prev_cursor
-      response['prev_url'] = util.generate_next_url(prev_cursor)
+    if cursors:
+      if isinstance(cursors, dict):
+        response['next_cursor'] = cursors['next']
+        response['next_url'] = util.generate_next_url(cursors['next'])
+        if cursors.get('prev'):
+          response['prev_cursor'] = cursors['prev']
+          response['prev_url'] = util.generate_next_url(cursors['prev'])
+      else:
+        response['next_cursor'] = cursors
+        response['next_url'] = util.generate_next_url(cursors)
     return util.jsonpify(response)
   return util.jsonpify({
       'status': 'success',

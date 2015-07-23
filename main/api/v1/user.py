@@ -24,10 +24,8 @@ class UserListAPI(restful.Resource):
       user_dbs = ndb.get_multi(user_db_keys)
       return helpers.make_response(user_dbs, model.User.FIELDS)
 
-    user_dbs, next_cursor, prev_cursor = model.User.get_dbs(prev_cursor=True)
-    return helpers.make_response(
-        user_dbs, model.User.FIELDS, next_cursor, prev_cursor,
-      )
+    user_dbs, cursors = model.User.get_dbs(prev_cursor=True)
+    return helpers.make_response(user_dbs, model.User.FIELDS, cursors)
 
   @auth.admin_required
   def delete(self):

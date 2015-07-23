@@ -347,7 +347,7 @@ def form_with_recaptcha(form):
 def create_user_db(auth_id, name, username, email='', verified=False, **props):
   email = email.lower() if email else ''
   if verified and email:
-    user_dbs, user_cr = model.User.get_dbs(email=email, verified=True, limit=2)
+    user_dbs, cursors = model.User.get_dbs(email=email, verified=True, limit=2)
     if len(user_dbs) == 1:
       user_db = user_dbs[0]
       user_db.auth_ids.append(auth_id)
@@ -397,7 +397,7 @@ def signin_user_db(user_db):
 
 
 def get_user_db_from_email(email, password):
-  user_dbs, user_cursor = model.User.get_dbs(email=email, active=True, limit=2)
+  user_dbs, cursors = model.User.get_dbs(email=email, active=True, limit=2)
   if not user_dbs:
     return None
   if len(user_dbs) > 1:
