@@ -67,32 +67,49 @@ def set_locale(locale, response):
 # Model manipulations
 ###############################################################################
 def get_dbs(
-    query, order=None, limit=None, cursor=None, keys_only=None, **filters
+    query, order=None, limit=None, cursor=None, prev_cursor=False,
+    keys_only=None, **filters
   ):
-  limit = limit or config.DEFAULT_DB_LIMIT
-  cursor = Cursor.from_websafe_string(cursor) if cursor else None
   model_class = ndb.Model._kind_map[query.kind]
+  query_prev = query
   if order:
     for o in order.split(','):
       if o.startswith('-'):
         query = query.order(-model_class._properties[o[1:]])
+        if prev_cursor:
+          query_prev = query_prev.order(model_class._properties[o[1:]])
       else:
         query = query.order(model_class._properties[o])
+        if prev_cursor:
+          query_prev = query_prev.order(-model_class._properties[o])
 
-  for prop in filters:
-    if filters.get(prop, None) is None:
+  for prop, value in filters.iteritems():
+    if value is None:
       continue
-    if isinstance(filters[prop], list):
-      for value in filters[prop]:
-        query = query.filter(model_class._properties[prop] == value)
-    else:
-      query = query.filter(model_class._properties[prop] == filters[prop])
+    for val in value if isinstance(value, list) else [value]:
+      query = query.filter(model_class._properties[prop] == val)
+      if prev_cursor:
+        query_prev = query_prev.filter(model_class._properties[prop] == val)
 
+  limit = limit or config.DEFAULT_DB_LIMIT
+  if limit is -1:
+    if prev_cursor:
+      return list(query.fetch(keys_only=keys_only)), None, None
+    return list(query.fetch(keys_only=keys_only)), None
+
+  cursor = Cursor.from_websafe_string(cursor) if cursor else None
   model_dbs, next_cursor, more = query.fetch_page(
       limit, start_cursor=cursor, keys_only=keys_only,
     )
   next_cursor = next_cursor.to_websafe_string() if more else None
-  return list(model_dbs), next_cursor
+  if not prev_cursor:
+    return list(model_dbs), next_cursor
+  model_dbs_prev, prev_cursor, prev_more = query_prev.fetch_page(
+      limit, start_cursor=cursor.reversed() if cursor else None, keys_only=True
+    )
+  prev_cursor = prev_cursor.reversed().to_websafe_string()\
+      if prev_cursor and cursor else None
+  return list(model_dbs), next_cursor, prev_cursor
 
 
 def get_keys(*arg, **kwargs):
