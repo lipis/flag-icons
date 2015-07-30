@@ -45,8 +45,9 @@ def make_response(data, marshal_table, cursors=None):
       }
     if cursors:
       if isinstance(cursors, dict):
-        response['next_cursor'] = cursors['next']
-        response['next_url'] = util.generate_next_url(cursors['next'])
+        if cursors.get('next'):
+          response['next_cursor'] = cursors['next']
+          response['next_url'] = util.generate_next_url(cursors['next'])
         if cursors.get('prev'):
           response['prev_cursor'] = cursors['prev']
           response['prev_url'] = util.generate_next_url(cursors['prev'])
