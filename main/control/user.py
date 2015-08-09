@@ -50,7 +50,7 @@ def user_list():
 class UserUpdateForm(i18n.Form):
   username = wtforms.StringField(
       model.User.username._verbose_name,
-      [wtforms.validators.required(), wtforms.validators.length(min=3)],
+      [wtforms.validators.required(), wtforms.validators.length(min=2)],
       filters=[util.email_filter],
     )
   name = wtforms.StringField(
