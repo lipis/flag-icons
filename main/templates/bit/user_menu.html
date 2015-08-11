@@ -1,7 +1,7 @@
 # if current_user.id > 0
   <li class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-      <span class="fa fa-user"></span>
+      <span class="fa fa-fw fa-user"></span>
       {{current_user.name}}
       <b class="caret"></b>
     </a>
@@ -17,6 +17,6 @@
   </li>
 # else
   <li class="{{'active' if html_class.find('auth') != -1}}">
-    <a href="{{url_for('signin')}}"><span class="fa fa-sign-in"></span> Sign in</a>
+    <a href="{{url_for('signin')}}"><span class="fa fa-fw fa-sign-in"></span> Sign in</a>
   </li>
 # endif
