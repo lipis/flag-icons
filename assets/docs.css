@@ -30,3 +30,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 8px;
   overflow: hidden;
 }
+
+.all-flags .flag-icon-background {
+  cursor: pointer;
+}
