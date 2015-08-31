@@ -1,21 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
-<svg id="svg548" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata4108">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <g id="flag">
-  <rect id="rect551" fill-rule="evenodd" height="480" width="640" y="2.5925e-15" x="0" stroke-width="1pt" fill="#f31930"/>
-  <g id="g3005" transform="matrix(.9375 0 0 .9375 132.01 7.2462)">
-   <path id="path670" d="m393.35 220.64" stroke="#000" stroke-width=".77658pt" fill="none"/>
-   <path id="path614" d="m178.37 445.64c0 100.69-81.622 182.31-182.31 182.31s-182.31-81.622-182.31-182.31 81.622-182.31 182.31-182.31 182.31 81.622 182.31 182.31z" fill-rule="evenodd" transform="matrix(.71362 0 0 .70145 166.01 -56.352)" fill="#fff"/>
-   <path id="path615" d="m-15.739 157.09c0 44.186-35.82 80.006-80.006 80.006s-80.006-35.82-80.006-80.006 35.82-80.006 80.006-80.006 80.006 35.82 80.006 80.006z" fill-rule="evenodd" transform="matrix(1.3009 0 0 1.2787 320.28 55.365)" fill="#f31830"/>
-   <path id="path563" d="m318.63 196.5-1.0501 47.273-44.103 11.973 43.473 15.482-1.0501 43.351 28.352-33.854 42.842 14.863-24.782-36.332 30.242-36.125-46.413 12.798-27.512-39.428z" fill-rule="evenodd" stroke-width="1pt" fill="#fff"/>
-  </g>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
+    <g fill-rule="evenodd">
+        <path fill="#f31930" d="M0 0h640v480H0z"/>
+        <path d="M406.977 247.473c0 66.215-54.606 119.89-121.97 119.89S163.04 313.686 163.04 247.472s54.606-119.89 121.968-119.89 121.97 53.677 121.97 119.89z" fill="#fff"/>
+        <path d="M413.077 247.467c0 52.97-43.686 95.91-97.575 95.91s-97.574-42.94-97.574-95.91 43.686-95.91 97.574-95.91 97.575 42.94 97.575 95.91z" fill="#f31830"/>
+        <path d="M430.726 191.465l-.985 44.318-41.345 11.225 40.756 14.514-.984 40.642 26.58-31.738 40.164 13.934-23.233-34.06 28.352-33.868-43.513 11.998-25.793-36.964z" fill="#fff"/>
+    </g>
 </svg>
