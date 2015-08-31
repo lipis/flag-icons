@@ -17,7 +17,7 @@ window.onload = function () {
     var top = (screen.height / 2) - (h / 2);
 
     if (flag) {
-      window.open('/flags/4x3/' + flag + '.svg', 'flag-4x3', 'width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+      window.open('flags/4x3/' + flag + '.svg', 'flag-4x3', 'width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
     }
   });
 }
