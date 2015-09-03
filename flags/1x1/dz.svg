@@ -1,22 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
-<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata9942">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <g id="flag" stroke-width="1pt" fill-rule="evenodd">
-  <g id="g10429" transform="matrix(.48166 0 0 .72249 0 .0000024116)">
-   <rect id="rect171" height="708.66" width="1063" y="0" x="0" fill="#fff"/>
-   <rect id="rect186" height="708.66" width="531.5" y="0" x="0" fill="#00bf13"/>
-  </g>
-  <g id="g10433" transform="matrix(.67903 0 0 .67903 -106.73 24.003)" fill="#f21930">
-   <path id="path184" d="m692.45 439.71c-50.15 90.2-160.76 122.25-248.65 73.84s-119.93-159.03-71.52-246.92c48.409-87.887 159.02-119.93 246.91-71.519 32.491 17.896 55.625 41.423 73.819 74.936-6.64-9.132-14.053-16.67-23.784-24.32-59.948-47.132-146.85-36.73-193.98 23.218-47.13 59.947-36.729 146.85 23.218 193.98 59.948 47.131 146.85 36.729 193.98-23.218z"/>
-   <polygon id="polygon185" transform="translate(2.1812 -2.9051)" points="532.15 298.04 604.03 322.5 648.59 261.03 647.53 336.95 719.76 360.33 647.24 382.78 647.32 458.71 647.32 458.71 603.55 396.67 531.37 420.21 576.84 359.41"/>
-  </g>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
+    <g stroke-width="1pt" fill-rule="evenodd">
+        <path fill="#fff" d="M0 0h512.005v512H0z"/>
+        <path fill="#00bf13" d="M0 0h256.002v512H0z"/>
+        <g fill="#f21930">
+            <path d="M363.464 322.58c-34.053 61.248-109.16 83.01-168.84 50.14s-81.437-107.987-48.565-167.667c32.87-59.678 107.98-81.436 167.66-48.564 22.06 12.15 37.77 28.127 50.124 50.883-4.51-6.2-9.543-11.32-16.15-16.514-40.707-32.005-99.716-24.942-131.718 15.765-32.003 40.706-24.94 99.715 15.765 131.718 40.708 32.003 99.717 24.94 131.72-15.766z"/>
+            <path d="M256.097 224.408l48.81 16.61 30.256-41.74-.72 51.552 49.047 15.875-49.244 15.244.055 51.558-29.72-42.127-49.013 15.986 30.876-41.285"/>
+        </g>
+    </g>
 </svg>
