@@ -2,11 +2,13 @@
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
+  background-color: #fff;
 }
 .flag-icon {
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
+  background-color: #fff;
   position: relative;
   display: inline-block;
   width: 1.33333333em;
@@ -20,1495 +22,1993 @@
 }
 .flag-icon-ad {
   background-image: url(../flags/4x3/ad.svg);
+  background-color: transparent;
 }
 .flag-icon-ad.flag-icon-squared {
   background-image: url(../flags/1x1/ad.svg);
+  background-color: transparent;
 }
 .flag-icon-ae {
   background-image: url(../flags/4x3/ae.svg);
+  background-color: transparent;
 }
 .flag-icon-ae.flag-icon-squared {
   background-image: url(../flags/1x1/ae.svg);
+  background-color: transparent;
 }
 .flag-icon-af {
   background-image: url(../flags/4x3/af.svg);
+  background-color: transparent;
 }
 .flag-icon-af.flag-icon-squared {
   background-image: url(../flags/1x1/af.svg);
+  background-color: transparent;
 }
 .flag-icon-ag {
   background-image: url(../flags/4x3/ag.svg);
+  background-color: transparent;
 }
 .flag-icon-ag.flag-icon-squared {
   background-image: url(../flags/1x1/ag.svg);
+  background-color: transparent;
 }
 .flag-icon-ai {
   background-image: url(../flags/4x3/ai.svg);
+  background-color: transparent;
 }
 .flag-icon-ai.flag-icon-squared {
   background-image: url(../flags/1x1/ai.svg);
+  background-color: transparent;
 }
 .flag-icon-al {
   background-image: url(../flags/4x3/al.svg);
+  background-color: transparent;
 }
 .flag-icon-al.flag-icon-squared {
   background-image: url(../flags/1x1/al.svg);
+  background-color: transparent;
 }
 .flag-icon-am {
   background-image: url(../flags/4x3/am.svg);
+  background-color: transparent;
 }
 .flag-icon-am.flag-icon-squared {
   background-image: url(../flags/1x1/am.svg);
+  background-color: transparent;
 }
 .flag-icon-ao {
   background-image: url(../flags/4x3/ao.svg);
+  background-color: transparent;
 }
 .flag-icon-ao.flag-icon-squared {
   background-image: url(../flags/1x1/ao.svg);
+  background-color: transparent;
 }
 .flag-icon-aq {
   background-image: url(../flags/4x3/aq.svg);
+  background-color: transparent;
 }
 .flag-icon-aq.flag-icon-squared {
   background-image: url(../flags/1x1/aq.svg);
+  background-color: transparent;
 }
 .flag-icon-ar {
   background-image: url(../flags/4x3/ar.svg);
+  background-color: transparent;
 }
 .flag-icon-ar.flag-icon-squared {
   background-image: url(../flags/1x1/ar.svg);
+  background-color: transparent;
 }
 .flag-icon-as {
   background-image: url(../flags/4x3/as.svg);
+  background-color: transparent;
 }
 .flag-icon-as.flag-icon-squared {
   background-image: url(../flags/1x1/as.svg);
+  background-color: transparent;
 }
 .flag-icon-at {
   background-image: url(../flags/4x3/at.svg);
+  background-color: transparent;
 }
 .flag-icon-at.flag-icon-squared {
   background-image: url(../flags/1x1/at.svg);
+  background-color: transparent;
 }
 .flag-icon-au {
   background-image: url(../flags/4x3/au.svg);
+  background-color: transparent;
 }
 .flag-icon-au.flag-icon-squared {
   background-image: url(../flags/1x1/au.svg);
+  background-color: transparent;
 }
 .flag-icon-aw {
   background-image: url(../flags/4x3/aw.svg);
+  background-color: transparent;
 }
 .flag-icon-aw.flag-icon-squared {
   background-image: url(../flags/1x1/aw.svg);
+  background-color: transparent;
 }
 .flag-icon-ax {
   background-image: url(../flags/4x3/ax.svg);
+  background-color: transparent;
 }
 .flag-icon-ax.flag-icon-squared {
   background-image: url(../flags/1x1/ax.svg);
+  background-color: transparent;
 }
 .flag-icon-az {
   background-image: url(../flags/4x3/az.svg);
+  background-color: transparent;
 }
 .flag-icon-az.flag-icon-squared {
   background-image: url(../flags/1x1/az.svg);
+  background-color: transparent;
 }
 .flag-icon-ba {
   background-image: url(../flags/4x3/ba.svg);
+  background-color: transparent;
 }
 .flag-icon-ba.flag-icon-squared {
   background-image: url(../flags/1x1/ba.svg);
+  background-color: transparent;
 }
 .flag-icon-bb {
   background-image: url(../flags/4x3/bb.svg);
+  background-color: transparent;
 }
 .flag-icon-bb.flag-icon-squared {
   background-image: url(../flags/1x1/bb.svg);
+  background-color: transparent;
 }
 .flag-icon-bd {
   background-image: url(../flags/4x3/bd.svg);
+  background-color: transparent;
 }
 .flag-icon-bd.flag-icon-squared {
   background-image: url(../flags/1x1/bd.svg);
+  background-color: transparent;
 }
 .flag-icon-be {
   background-image: url(../flags/4x3/be.svg);
+  background-color: transparent;
 }
 .flag-icon-be.flag-icon-squared {
   background-image: url(../flags/1x1/be.svg);
+  background-color: transparent;
 }
 .flag-icon-bf {
   background-image: url(../flags/4x3/bf.svg);
+  background-color: transparent;
 }
 .flag-icon-bf.flag-icon-squared {
   background-image: url(../flags/1x1/bf.svg);
+  background-color: transparent;
 }
 .flag-icon-bg {
   background-image: url(../flags/4x3/bg.svg);
+  background-color: transparent;
 }
 .flag-icon-bg.flag-icon-squared {
   background-image: url(../flags/1x1/bg.svg);
+  background-color: transparent;
 }
 .flag-icon-bh {
   background-image: url(../flags/4x3/bh.svg);
+  background-color: transparent;
 }
 .flag-icon-bh.flag-icon-squared {
   background-image: url(../flags/1x1/bh.svg);
+  background-color: transparent;
 }
 .flag-icon-bi {
   background-image: url(../flags/4x3/bi.svg);
+  background-color: transparent;
 }
 .flag-icon-bi.flag-icon-squared {
   background-image: url(../flags/1x1/bi.svg);
+  background-color: transparent;
 }
 .flag-icon-bj {
   background-image: url(../flags/4x3/bj.svg);
+  background-color: transparent;
 }
 .flag-icon-bj.flag-icon-squared {
   background-image: url(../flags/1x1/bj.svg);
+  background-color: transparent;
 }
 .flag-icon-bl {
   background-image: url(../flags/4x3/bl.svg);
+  background-color: transparent;
 }
 .flag-icon-bl.flag-icon-squared {
   background-image: url(../flags/1x1/bl.svg);
+  background-color: transparent;
 }
 .flag-icon-bm {
   background-image: url(../flags/4x3/bm.svg);
+  background-color: transparent;
 }
 .flag-icon-bm.flag-icon-squared {
   background-image: url(../flags/1x1/bm.svg);
+  background-color: transparent;
 }
 .flag-icon-bn {
   background-image: url(../flags/4x3/bn.svg);
+  background-color: transparent;
 }
 .flag-icon-bn.flag-icon-squared {
   background-image: url(../flags/1x1/bn.svg);
+  background-color: transparent;
 }
 .flag-icon-bo {
   background-image: url(../flags/4x3/bo.svg);
+  background-color: transparent;
 }
 .flag-icon-bo.flag-icon-squared {
   background-image: url(../flags/1x1/bo.svg);
+  background-color: transparent;
 }
 .flag-icon-bq {
   background-image: url(../flags/4x3/bq.svg);
+  background-color: transparent;
 }
 .flag-icon-bq.flag-icon-squared {
   background-image: url(../flags/1x1/bq.svg);
+  background-color: transparent;
 }
 .flag-icon-br {
   background-image: url(../flags/4x3/br.svg);
+  background-color: transparent;
 }
 .flag-icon-br.flag-icon-squared {
   background-image: url(../flags/1x1/br.svg);
+  background-color: transparent;
 }
 .flag-icon-bs {
   background-image: url(../flags/4x3/bs.svg);
+  background-color: transparent;
 }
 .flag-icon-bs.flag-icon-squared {
   background-image: url(../flags/1x1/bs.svg);
+  background-color: transparent;
 }
 .flag-icon-bt {
   background-image: url(../flags/4x3/bt.svg);
+  background-color: transparent;
 }
 .flag-icon-bt.flag-icon-squared {
   background-image: url(../flags/1x1/bt.svg);
+  background-color: transparent;
 }
 .flag-icon-bv {
   background-image: url(../flags/4x3/bv.svg);
+  background-color: transparent;
 }
 .flag-icon-bv.flag-icon-squared {
   background-image: url(../flags/1x1/bv.svg);
+  background-color: transparent;
 }
 .flag-icon-bw {
   background-image: url(../flags/4x3/bw.svg);
+  background-color: transparent;
 }
 .flag-icon-bw.flag-icon-squared {
   background-image: url(../flags/1x1/bw.svg);
+  background-color: transparent;
 }
 .flag-icon-by {
   background-image: url(../flags/4x3/by.svg);
+  background-color: transparent;
 }
 .flag-icon-by.flag-icon-squared {
   background-image: url(../flags/1x1/by.svg);
+  background-color: transparent;
 }
 .flag-icon-bz {
   background-image: url(../flags/4x3/bz.svg);
+  background-color: transparent;
 }
 .flag-icon-bz.flag-icon-squared {
   background-image: url(../flags/1x1/bz.svg);
+  background-color: transparent;
 }
 .flag-icon-ca {
   background-image: url(../flags/4x3/ca.svg);
+  background-color: transparent;
 }
 .flag-icon-ca.flag-icon-squared {
   background-image: url(../flags/1x1/ca.svg);
+  background-color: transparent;
 }
 .flag-icon-cc {
   background-image: url(../flags/4x3/cc.svg);
+  background-color: transparent;
 }
 .flag-icon-cc.flag-icon-squared {
   background-image: url(../flags/1x1/cc.svg);
+  background-color: transparent;
 }
 .flag-icon-cd {
   background-image: url(../flags/4x3/cd.svg);
+  background-color: transparent;
 }
 .flag-icon-cd.flag-icon-squared {
   background-image: url(../flags/1x1/cd.svg);
+  background-color: transparent;
 }
 .flag-icon-cf {
   background-image: url(../flags/4x3/cf.svg);
+  background-color: transparent;
 }
 .flag-icon-cf.flag-icon-squared {
   background-image: url(../flags/1x1/cf.svg);
+  background-color: transparent;
 }
 .flag-icon-cg {
   background-image: url(../flags/4x3/cg.svg);
+  background-color: transparent;
 }
 .flag-icon-cg.flag-icon-squared {
   background-image: url(../flags/1x1/cg.svg);
+  background-color: transparent;
 }
 .flag-icon-ch {
   background-image: url(../flags/4x3/ch.svg);
+  background-color: transparent;
 }
 .flag-icon-ch.flag-icon-squared {
   background-image: url(../flags/1x1/ch.svg);
+  background-color: transparent;
 }
 .flag-icon-ci {
   background-image: url(../flags/4x3/ci.svg);
+  background-color: transparent;
 }
 .flag-icon-ci.flag-icon-squared {
   background-image: url(../flags/1x1/ci.svg);
+  background-color: transparent;
 }
 .flag-icon-ck {
   background-image: url(../flags/4x3/ck.svg);
+  background-color: transparent;
 }
 .flag-icon-ck.flag-icon-squared {
   background-image: url(../flags/1x1/ck.svg);
+  background-color: transparent;
 }
 .flag-icon-cl {
   background-image: url(../flags/4x3/cl.svg);
+  background-color: transparent;
 }
 .flag-icon-cl.flag-icon-squared {
   background-image: url(../flags/1x1/cl.svg);
+  background-color: transparent;
 }
 .flag-icon-cm {
   background-image: url(../flags/4x3/cm.svg);
+  background-color: transparent;
 }
 .flag-icon-cm.flag-icon-squared {
   background-image: url(../flags/1x1/cm.svg);
+  background-color: transparent;
 }
 .flag-icon-cn {
   background-image: url(../flags/4x3/cn.svg);
+  background-color: transparent;
 }
 .flag-icon-cn.flag-icon-squared {
   background-image: url(../flags/1x1/cn.svg);
+  background-color: transparent;
 }
 .flag-icon-co {
   background-image: url(../flags/4x3/co.svg);
+  background-color: transparent;
 }
 .flag-icon-co.flag-icon-squared {
   background-image: url(../flags/1x1/co.svg);
+  background-color: transparent;
 }
 .flag-icon-cr {
   background-image: url(../flags/4x3/cr.svg);
+  background-color: transparent;
 }
 .flag-icon-cr.flag-icon-squared {
   background-image: url(../flags/1x1/cr.svg);
+  background-color: transparent;
 }
 .flag-icon-cu {
   background-image: url(../flags/4x3/cu.svg);
+  background-color: transparent;
 }
 .flag-icon-cu.flag-icon-squared {
   background-image: url(../flags/1x1/cu.svg);
+  background-color: transparent;
 }
 .flag-icon-cv {
   background-image: url(../flags/4x3/cv.svg);
+  background-color: transparent;
 }
 .flag-icon-cv.flag-icon-squared {
   background-image: url(../flags/1x1/cv.svg);
+  background-color: transparent;
 }
 .flag-icon-cw {
   background-image: url(../flags/4x3/cw.svg);
+  background-color: transparent;
 }
 .flag-icon-cw.flag-icon-squared {
   background-image: url(../flags/1x1/cw.svg);
+  background-color: transparent;
 }
 .flag-icon-cx {
   background-image: url(../flags/4x3/cx.svg);
+  background-color: transparent;
 }
 .flag-icon-cx.flag-icon-squared {
   background-image: url(../flags/1x1/cx.svg);
+  background-color: transparent;
 }
 .flag-icon-cy {
   background-image: url(../flags/4x3/cy.svg);
+  background-color: transparent;
 }
 .flag-icon-cy.flag-icon-squared {
   background-image: url(../flags/1x1/cy.svg);
+  background-color: transparent;
 }
 .flag-icon-cz {
   background-image: url(../flags/4x3/cz.svg);
+  background-color: transparent;
 }
 .flag-icon-cz.flag-icon-squared {
   background-image: url(../flags/1x1/cz.svg);
+  background-color: transparent;
 }
 .flag-icon-de {
   background-image: url(../flags/4x3/de.svg);
+  background-color: transparent;
 }
 .flag-icon-de.flag-icon-squared {
   background-image: url(../flags/1x1/de.svg);
+  background-color: transparent;
 }
 .flag-icon-dj {
   background-image: url(../flags/4x3/dj.svg);
+  background-color: transparent;
 }
 .flag-icon-dj.flag-icon-squared {
   background-image: url(../flags/1x1/dj.svg);
+  background-color: transparent;
 }
 .flag-icon-dk {
   background-image: url(../flags/4x3/dk.svg);
+  background-color: transparent;
 }
 .flag-icon-dk.flag-icon-squared {
   background-image: url(../flags/1x1/dk.svg);
+  background-color: transparent;
 }
 .flag-icon-dm {
   background-image: url(../flags/4x3/dm.svg);
+  background-color: transparent;
 }
 .flag-icon-dm.flag-icon-squared {
   background-image: url(../flags/1x1/dm.svg);
+  background-color: transparent;
 }
 .flag-icon-do {
   background-image: url(../flags/4x3/do.svg);
+  background-color: transparent;
 }
 .flag-icon-do.flag-icon-squared {
   background-image: url(../flags/1x1/do.svg);
+  background-color: transparent;
 }
 .flag-icon-dz {
   background-image: url(../flags/4x3/dz.svg);
+  background-color: transparent;
 }
 .flag-icon-dz.flag-icon-squared {
   background-image: url(../flags/1x1/dz.svg);
+  background-color: transparent;
 }
 .flag-icon-ec {
   background-image: url(../flags/4x3/ec.svg);
+  background-color: transparent;
 }
 .flag-icon-ec.flag-icon-squared {
   background-image: url(../flags/1x1/ec.svg);
+  background-color: transparent;
 }
 .flag-icon-ee {
   background-image: url(../flags/4x3/ee.svg);
+  background-color: transparent;
 }
 .flag-icon-ee.flag-icon-squared {
   background-image: url(../flags/1x1/ee.svg);
+  background-color: transparent;
 }
 .flag-icon-eg {
   background-image: url(../flags/4x3/eg.svg);
+  background-color: transparent;
 }
 .flag-icon-eg.flag-icon-squared {
   background-image: url(../flags/1x1/eg.svg);
+  background-color: transparent;
 }
 .flag-icon-eh {
   background-image: url(../flags/4x3/eh.svg);
+  background-color: transparent;
 }
 .flag-icon-eh.flag-icon-squared {
   background-image: url(../flags/1x1/eh.svg);
+  background-color: transparent;
 }
 .flag-icon-er {
   background-image: url(../flags/4x3/er.svg);
+  background-color: transparent;
 }
 .flag-icon-er.flag-icon-squared {
   background-image: url(../flags/1x1/er.svg);
+  background-color: transparent;
 }
 .flag-icon-es {
   background-image: url(../flags/4x3/es.svg);
+  background-color: transparent;
 }
 .flag-icon-es.flag-icon-squared {
   background-image: url(../flags/1x1/es.svg);
+  background-color: transparent;
 }
 .flag-icon-et {
   background-image: url(../flags/4x3/et.svg);
+  background-color: transparent;
 }
 .flag-icon-et.flag-icon-squared {
   background-image: url(../flags/1x1/et.svg);
+  background-color: transparent;
 }
 .flag-icon-fi {
   background-image: url(../flags/4x3/fi.svg);
+  background-color: transparent;
 }
 .flag-icon-fi.flag-icon-squared {
   background-image: url(../flags/1x1/fi.svg);
+  background-color: transparent;
 }
 .flag-icon-fj {
   background-image: url(../flags/4x3/fj.svg);
+  background-color: transparent;
 }
 .flag-icon-fj.flag-icon-squared {
   background-image: url(../flags/1x1/fj.svg);
+  background-color: transparent;
 }
 .flag-icon-fk {
   background-image: url(../flags/4x3/fk.svg);
+  background-color: transparent;
 }
 .flag-icon-fk.flag-icon-squared {
   background-image: url(../flags/1x1/fk.svg);
+  background-color: transparent;
 }
 .flag-icon-fm {
   background-image: url(../flags/4x3/fm.svg);
+  background-color: transparent;
 }
 .flag-icon-fm.flag-icon-squared {
   background-image: url(../flags/1x1/fm.svg);
+  background-color: transparent;
 }
 .flag-icon-fo {
   background-image: url(../flags/4x3/fo.svg);
+  background-color: transparent;
 }
 .flag-icon-fo.flag-icon-squared {
   background-image: url(../flags/1x1/fo.svg);
+  background-color: transparent;
 }
 .flag-icon-fr {
   background-image: url(../flags/4x3/fr.svg);
+  background-color: transparent;
 }
 .flag-icon-fr.flag-icon-squared {
   background-image: url(../flags/1x1/fr.svg);
+  background-color: transparent;
 }
 .flag-icon-ga {
   background-image: url(../flags/4x3/ga.svg);
+  background-color: transparent;
 }
 .flag-icon-ga.flag-icon-squared {
   background-image: url(../flags/1x1/ga.svg);
+  background-color: transparent;
 }
 .flag-icon-gb {
   background-image: url(../flags/4x3/gb.svg);
+  background-color: transparent;
 }
 .flag-icon-gb.flag-icon-squared {
   background-image: url(../flags/1x1/gb.svg);
+  background-color: transparent;
 }
 .flag-icon-gd {
   background-image: url(../flags/4x3/gd.svg);
+  background-color: transparent;
 }
 .flag-icon-gd.flag-icon-squared {
   background-image: url(../flags/1x1/gd.svg);
+  background-color: transparent;
 }
 .flag-icon-ge {
   background-image: url(../flags/4x3/ge.svg);
+  background-color: transparent;
 }
 .flag-icon-ge.flag-icon-squared {
   background-image: url(../flags/1x1/ge.svg);
+  background-color: transparent;
 }
 .flag-icon-gf {
   background-image: url(../flags/4x3/gf.svg);
+  background-color: transparent;
 }
 .flag-icon-gf.flag-icon-squared {
   background-image: url(../flags/1x1/gf.svg);
+  background-color: transparent;
 }
 .flag-icon-gg {
   background-image: url(../flags/4x3/gg.svg);
+  background-color: transparent;
 }
 .flag-icon-gg.flag-icon-squared {
   background-image: url(../flags/1x1/gg.svg);
+  background-color: transparent;
 }
 .flag-icon-gh {
   background-image: url(../flags/4x3/gh.svg);
+  background-color: transparent;
 }
 .flag-icon-gh.flag-icon-squared {
   background-image: url(../flags/1x1/gh.svg);
+  background-color: transparent;
 }
 .flag-icon-gi {
   background-image: url(../flags/4x3/gi.svg);
+  background-color: transparent;
 }
 .flag-icon-gi.flag-icon-squared {
   background-image: url(../flags/1x1/gi.svg);
+  background-color: transparent;
 }
 .flag-icon-gl {
   background-image: url(../flags/4x3/gl.svg);
+  background-color: transparent;
 }
 .flag-icon-gl.flag-icon-squared {
   background-image: url(../flags/1x1/gl.svg);
+  background-color: transparent;
 }
 .flag-icon-gm {
   background-image: url(../flags/4x3/gm.svg);
+  background-color: transparent;
 }
 .flag-icon-gm.flag-icon-squared {
   background-image: url(../flags/1x1/gm.svg);
+  background-color: transparent;
 }
 .flag-icon-gn {
   background-image: url(../flags/4x3/gn.svg);
+  background-color: transparent;
 }
 .flag-icon-gn.flag-icon-squared {
   background-image: url(../flags/1x1/gn.svg);
+  background-color: transparent;
 }
 .flag-icon-gp {
   background-image: url(../flags/4x3/gp.svg);
+  background-color: transparent;
 }
 .flag-icon-gp.flag-icon-squared {
   background-image: url(../flags/1x1/gp.svg);
+  background-color: transparent;
 }
 .flag-icon-gq {
   background-image: url(../flags/4x3/gq.svg);
+  background-color: transparent;
 }
 .flag-icon-gq.flag-icon-squared {
   background-image: url(../flags/1x1/gq.svg);
+  background-color: transparent;
 }
 .flag-icon-gr {
   background-image: url(../flags/4x3/gr.svg);
+  background-color: transparent;
 }
 .flag-icon-gr.flag-icon-squared {
   background-image: url(../flags/1x1/gr.svg);
+  background-color: transparent;
 }
 .flag-icon-gs {
   background-image: url(../flags/4x3/gs.svg);
+  background-color: transparent;
 }
 .flag-icon-gs.flag-icon-squared {
   background-image: url(../flags/1x1/gs.svg);
+  background-color: transparent;
 }
 .flag-icon-gt {
   background-image: url(../flags/4x3/gt.svg);
+  background-color: transparent;
 }
 .flag-icon-gt.flag-icon-squared {
   background-image: url(../flags/1x1/gt.svg);
+  background-color: transparent;
 }
 .flag-icon-gu {
   background-image: url(../flags/4x3/gu.svg);
+  background-color: transparent;
 }
 .flag-icon-gu.flag-icon-squared {
   background-image: url(../flags/1x1/gu.svg);
+  background-color: transparent;
 }
 .flag-icon-gw {
   background-image: url(../flags/4x3/gw.svg);
+  background-color: transparent;
 }
 .flag-icon-gw.flag-icon-squared {
   background-image: url(../flags/1x1/gw.svg);
+  background-color: transparent;
 }
 .flag-icon-gy {
   background-image: url(../flags/4x3/gy.svg);
+  background-color: transparent;
 }
 .flag-icon-gy.flag-icon-squared {
   background-image: url(../flags/1x1/gy.svg);
+  background-color: transparent;
 }
 .flag-icon-hk {
   background-image: url(../flags/4x3/hk.svg);
+  background-color: transparent;
 }
 .flag-icon-hk.flag-icon-squared {
   background-image: url(../flags/1x1/hk.svg);
+  background-color: transparent;
 }
 .flag-icon-hm {
   background-image: url(../flags/4x3/hm.svg);
+  background-color: transparent;
 }
 .flag-icon-hm.flag-icon-squared {
   background-image: url(../flags/1x1/hm.svg);
+  background-color: transparent;
 }
 .flag-icon-hn {
   background-image: url(../flags/4x3/hn.svg);
+  background-color: transparent;
 }
 .flag-icon-hn.flag-icon-squared {
   background-image: url(../flags/1x1/hn.svg);
+  background-color: transparent;
 }
 .flag-icon-hr {
   background-image: url(../flags/4x3/hr.svg);
+  background-color: transparent;
 }
 .flag-icon-hr.flag-icon-squared {
   background-image: url(../flags/1x1/hr.svg);
+  background-color: transparent;
 }
 .flag-icon-ht {
   background-image: url(../flags/4x3/ht.svg);
+  background-color: transparent;
 }
 .flag-icon-ht.flag-icon-squared {
   background-image: url(../flags/1x1/ht.svg);
+  background-color: transparent;
 }
 .flag-icon-hu {
   background-image: url(../flags/4x3/hu.svg);
+  background-color: transparent;
 }
 .flag-icon-hu.flag-icon-squared {
   background-image: url(../flags/1x1/hu.svg);
+  background-color: transparent;
 }
 .flag-icon-id {
   background-image: url(../flags/4x3/id.svg);
+  background-color: transparent;
 }
 .flag-icon-id.flag-icon-squared {
   background-image: url(../flags/1x1/id.svg);
+  background-color: transparent;
 }
 .flag-icon-ie {
   background-image: url(../flags/4x3/ie.svg);
+  background-color: transparent;
 }
 .flag-icon-ie.flag-icon-squared {
   background-image: url(../flags/1x1/ie.svg);
+  background-color: transparent;
 }
 .flag-icon-il {
   background-image: url(../flags/4x3/il.svg);
+  background-color: transparent;
 }
 .flag-icon-il.flag-icon-squared {
   background-image: url(../flags/1x1/il.svg);
+  background-color: transparent;
 }
 .flag-icon-im {
   background-image: url(../flags/4x3/im.svg);
+  background-color: transparent;
 }
 .flag-icon-im.flag-icon-squared {
   background-image: url(../flags/1x1/im.svg);
+  background-color: transparent;
 }
 .flag-icon-in {
   background-image: url(../flags/4x3/in.svg);
+  background-color: transparent;
 }
 .flag-icon-in.flag-icon-squared {
   background-image: url(../flags/1x1/in.svg);
+  background-color: transparent;
 }
 .flag-icon-io {
   background-image: url(../flags/4x3/io.svg);
+  background-color: transparent;
 }
 .flag-icon-io.flag-icon-squared {
   background-image: url(../flags/1x1/io.svg);
+  background-color: transparent;
 }
 .flag-icon-iq {
   background-image: url(../flags/4x3/iq.svg);
+  background-color: transparent;
 }
 .flag-icon-iq.flag-icon-squared {
   background-image: url(../flags/1x1/iq.svg);
+  background-color: transparent;
 }
 .flag-icon-ir {
   background-image: url(../flags/4x3/ir.svg);
+  background-color: transparent;
 }
 .flag-icon-ir.flag-icon-squared {
   background-image: url(../flags/1x1/ir.svg);
+  background-color: transparent;
 }
 .flag-icon-is {
   background-image: url(../flags/4x3/is.svg);
+  background-color: transparent;
 }
 .flag-icon-is.flag-icon-squared {
   background-image: url(../flags/1x1/is.svg);
+  background-color: transparent;
 }
 .flag-icon-it {
   background-image: url(../flags/4x3/it.svg);
+  background-color: transparent;
 }
 .flag-icon-it.flag-icon-squared {
   background-image: url(../flags/1x1/it.svg);
+  background-color: transparent;
 }
 .flag-icon-je {
   background-image: url(../flags/4x3/je.svg);
+  background-color: transparent;
 }
 .flag-icon-je.flag-icon-squared {
   background-image: url(../flags/1x1/je.svg);
+  background-color: transparent;
 }
 .flag-icon-jm {
   background-image: url(../flags/4x3/jm.svg);
+  background-color: transparent;
 }
 .flag-icon-jm.flag-icon-squared {
   background-image: url(../flags/1x1/jm.svg);
+  background-color: transparent;
 }
 .flag-icon-jo {
   background-image: url(../flags/4x3/jo.svg);
+  background-color: transparent;
 }
 .flag-icon-jo.flag-icon-squared {
   background-image: url(../flags/1x1/jo.svg);
+  background-color: transparent;
 }
 .flag-icon-jp {
   background-image: url(../flags/4x3/jp.svg);
+  background-color: transparent;
 }
 .flag-icon-jp.flag-icon-squared {
   background-image: url(../flags/1x1/jp.svg);
+  background-color: transparent;
 }
 .flag-icon-ke {
   background-image: url(../flags/4x3/ke.svg);
+  background-color: transparent;
 }
 .flag-icon-ke.flag-icon-squared {
   background-image: url(../flags/1x1/ke.svg);
+  background-color: transparent;
 }
 .flag-icon-kg {
   background-image: url(../flags/4x3/kg.svg);
+  background-color: transparent;
 }
 .flag-icon-kg.flag-icon-squared {
   background-image: url(../flags/1x1/kg.svg);
+  background-color: transparent;
 }
 .flag-icon-kh {
   background-image: url(../flags/4x3/kh.svg);
+  background-color: transparent;
 }
 .flag-icon-kh.flag-icon-squared {
   background-image: url(../flags/1x1/kh.svg);
+  background-color: transparent;
 }
 .flag-icon-ki {
   background-image: url(../flags/4x3/ki.svg);
+  background-color: transparent;
 }
 .flag-icon-ki.flag-icon-squared {
   background-image: url(../flags/1x1/ki.svg);
+  background-color: transparent;
 }
 .flag-icon-km {
   background-image: url(../flags/4x3/km.svg);
+  background-color: transparent;
 }
 .flag-icon-km.flag-icon-squared {
   background-image: url(../flags/1x1/km.svg);
+  background-color: transparent;
 }
 .flag-icon-kn {
   background-image: url(../flags/4x3/kn.svg);
+  background-color: transparent;
 }
 .flag-icon-kn.flag-icon-squared {
   background-image: url(../flags/1x1/kn.svg);
+  background-color: transparent;
 }
 .flag-icon-kp {
   background-image: url(../flags/4x3/kp.svg);
+  background-color: transparent;
 }
 .flag-icon-kp.flag-icon-squared {
   background-image: url(../flags/1x1/kp.svg);
+  background-color: transparent;
 }
 .flag-icon-kr {
   background-image: url(../flags/4x3/kr.svg);
+  background-color: transparent;
 }
 .flag-icon-kr.flag-icon-squared {
   background-image: url(../flags/1x1/kr.svg);
+  background-color: transparent;
 }
 .flag-icon-kw {
   background-image: url(../flags/4x3/kw.svg);
+  background-color: transparent;
 }
 .flag-icon-kw.flag-icon-squared {
   background-image: url(../flags/1x1/kw.svg);
+  background-color: transparent;
 }
 .flag-icon-ky {
   background-image: url(../flags/4x3/ky.svg);
+  background-color: transparent;
 }
 .flag-icon-ky.flag-icon-squared {
   background-image: url(../flags/1x1/ky.svg);
+  background-color: transparent;
 }
 .flag-icon-kz {
   background-image: url(../flags/4x3/kz.svg);
+  background-color: transparent;
 }
 .flag-icon-kz.flag-icon-squared {
   background-image: url(../flags/1x1/kz.svg);
+  background-color: transparent;
 }
 .flag-icon-la {
   background-image: url(../flags/4x3/la.svg);
+  background-color: transparent;
 }
 .flag-icon-la.flag-icon-squared {
   background-image: url(../flags/1x1/la.svg);
+  background-color: transparent;
 }
 .flag-icon-lb {
   background-image: url(../flags/4x3/lb.svg);
+  background-color: transparent;
 }
 .flag-icon-lb.flag-icon-squared {
   background-image: url(../flags/1x1/lb.svg);
+  background-color: transparent;
 }
 .flag-icon-lc {
   background-image: url(../flags/4x3/lc.svg);
+  background-color: transparent;
 }
 .flag-icon-lc.flag-icon-squared {
   background-image: url(../flags/1x1/lc.svg);
+  background-color: transparent;
 }
 .flag-icon-li {
   background-image: url(../flags/4x3/li.svg);
+  background-color: transparent;
 }
 .flag-icon-li.flag-icon-squared {
   background-image: url(../flags/1x1/li.svg);
+  background-color: transparent;
 }
 .flag-icon-lk {
   background-image: url(../flags/4x3/lk.svg);
+  background-color: transparent;
 }
 .flag-icon-lk.flag-icon-squared {
   background-image: url(../flags/1x1/lk.svg);
+  background-color: transparent;
 }
 .flag-icon-lr {
   background-image: url(../flags/4x3/lr.svg);
+  background-color: transparent;
 }
 .flag-icon-lr.flag-icon-squared {
   background-image: url(../flags/1x1/lr.svg);
+  background-color: transparent;
 }
 .flag-icon-ls {
   background-image: url(../flags/4x3/ls.svg);
+  background-color: transparent;
 }
 .flag-icon-ls.flag-icon-squared {
   background-image: url(../flags/1x1/ls.svg);
+  background-color: transparent;
 }
 .flag-icon-lt {
   background-image: url(../flags/4x3/lt.svg);
+  background-color: transparent;
 }
 .flag-icon-lt.flag-icon-squared {
   background-image: url(../flags/1x1/lt.svg);
+  background-color: transparent;
 }
 .flag-icon-lu {
   background-image: url(../flags/4x3/lu.svg);
+  background-color: transparent;
 }
 .flag-icon-lu.flag-icon-squared {
   background-image: url(../flags/1x1/lu.svg);
+  background-color: transparent;
 }
 .flag-icon-lv {
   background-image: url(../flags/4x3/lv.svg);
+  background-color: transparent;
 }
 .flag-icon-lv.flag-icon-squared {
   background-image: url(../flags/1x1/lv.svg);
+  background-color: transparent;
 }
 .flag-icon-ly {
   background-image: url(../flags/4x3/ly.svg);
+  background-color: transparent;
 }
 .flag-icon-ly.flag-icon-squared {
   background-image: url(../flags/1x1/ly.svg);
+  background-color: transparent;
 }
 .flag-icon-ma {
   background-image: url(../flags/4x3/ma.svg);
+  background-color: transparent;
 }
 .flag-icon-ma.flag-icon-squared {
   background-image: url(../flags/1x1/ma.svg);
+  background-color: transparent;
 }
 .flag-icon-mc {
   background-image: url(../flags/4x3/mc.svg);
+  background-color: transparent;
 }
 .flag-icon-mc.flag-icon-squared {
   background-image: url(../flags/1x1/mc.svg);
+  background-color: transparent;
 }
 .flag-icon-md {
   background-image: url(../flags/4x3/md.svg);
+  background-color: transparent;
 }
 .flag-icon-md.flag-icon-squared {
   background-image: url(../flags/1x1/md.svg);
+  background-color: transparent;
 }
 .flag-icon-me {
   background-image: url(../flags/4x3/me.svg);
+  background-color: transparent;
 }
 .flag-icon-me.flag-icon-squared {
   background-image: url(../flags/1x1/me.svg);
+  background-color: transparent;
 }
 .flag-icon-mf {
   background-image: url(../flags/4x3/mf.svg);
+  background-color: transparent;
 }
 .flag-icon-mf.flag-icon-squared {
   background-image: url(../flags/1x1/mf.svg);
+  background-color: transparent;
 }
 .flag-icon-mg {
   background-image: url(../flags/4x3/mg.svg);
+  background-color: transparent;
 }
 .flag-icon-mg.flag-icon-squared {
   background-image: url(../flags/1x1/mg.svg);
+  background-color: transparent;
 }
 .flag-icon-mh {
   background-image: url(../flags/4x3/mh.svg);
+  background-color: transparent;
 }
 .flag-icon-mh.flag-icon-squared {
   background-image: url(../flags/1x1/mh.svg);
+  background-color: transparent;
 }
 .flag-icon-mk {
   background-image: url(../flags/4x3/mk.svg);
+  background-color: transparent;
 }
 .flag-icon-mk.flag-icon-squared {
   background-image: url(../flags/1x1/mk.svg);
+  background-color: transparent;
 }
 .flag-icon-ml {
   background-image: url(../flags/4x3/ml.svg);
+  background-color: transparent;
 }
 .flag-icon-ml.flag-icon-squared {
   background-image: url(../flags/1x1/ml.svg);
+  background-color: transparent;
 }
 .flag-icon-mm {
   background-image: url(../flags/4x3/mm.svg);
+  background-color: transparent;
 }
 .flag-icon-mm.flag-icon-squared {
   background-image: url(../flags/1x1/mm.svg);
+  background-color: transparent;
 }
 .flag-icon-mn {
   background-image: url(../flags/4x3/mn.svg);
+  background-color: transparent;
 }
 .flag-icon-mn.flag-icon-squared {
   background-image: url(../flags/1x1/mn.svg);
+  background-color: transparent;
 }
 .flag-icon-mo {
   background-image: url(../flags/4x3/mo.svg);
+  background-color: transparent;
 }
 .flag-icon-mo.flag-icon-squared {
   background-image: url(../flags/1x1/mo.svg);
+  background-color: transparent;
 }
 .flag-icon-mp {
   background-image: url(../flags/4x3/mp.svg);
+  background-color: transparent;
 }
 .flag-icon-mp.flag-icon-squared {
   background-image: url(../flags/1x1/mp.svg);
+  background-color: transparent;
 }
 .flag-icon-mq {
   background-image: url(../flags/4x3/mq.svg);
+  background-color: transparent;
 }
 .flag-icon-mq.flag-icon-squared {
   background-image: url(../flags/1x1/mq.svg);
+  background-color: transparent;
 }
 .flag-icon-mr {
   background-image: url(../flags/4x3/mr.svg);
+  background-color: transparent;
 }
 .flag-icon-mr.flag-icon-squared {
   background-image: url(../flags/1x1/mr.svg);
+  background-color: transparent;
 }
 .flag-icon-ms {
   background-image: url(../flags/4x3/ms.svg);
+  background-color: transparent;
 }
 .flag-icon-ms.flag-icon-squared {
   background-image: url(../flags/1x1/ms.svg);
+  background-color: transparent;
 }
 .flag-icon-mt {
   background-image: url(../flags/4x3/mt.svg);
+  background-color: transparent;
 }
 .flag-icon-mt.flag-icon-squared {
   background-image: url(../flags/1x1/mt.svg);
+  background-color: transparent;
 }
 .flag-icon-mu {
   background-image: url(../flags/4x3/mu.svg);
+  background-color: transparent;
 }
 .flag-icon-mu.flag-icon-squared {
   background-image: url(../flags/1x1/mu.svg);
+  background-color: transparent;
 }
 .flag-icon-mv {
   background-image: url(../flags/4x3/mv.svg);
+  background-color: transparent;
 }
 .flag-icon-mv.flag-icon-squared {
   background-image: url(../flags/1x1/mv.svg);
+  background-color: transparent;
 }
 .flag-icon-mw {
   background-image: url(../flags/4x3/mw.svg);
+  background-color: transparent;
 }
 .flag-icon-mw.flag-icon-squared {
   background-image: url(../flags/1x1/mw.svg);
+  background-color: transparent;
 }
 .flag-icon-mx {
   background-image: url(../flags/4x3/mx.svg);
+  background-color: transparent;
 }
 .flag-icon-mx.flag-icon-squared {
   background-image: url(../flags/1x1/mx.svg);
+  background-color: transparent;
 }
 .flag-icon-my {
   background-image: url(../flags/4x3/my.svg);
+  background-color: transparent;
 }
 .flag-icon-my.flag-icon-squared {
   background-image: url(../flags/1x1/my.svg);
+  background-color: transparent;
 }
 .flag-icon-mz {
   background-image: url(../flags/4x3/mz.svg);
+  background-color: transparent;
 }
 .flag-icon-mz.flag-icon-squared {
   background-image: url(../flags/1x1/mz.svg);
+  background-color: transparent;
 }
 .flag-icon-na {
   background-image: url(../flags/4x3/na.svg);
+  background-color: transparent;
 }
 .flag-icon-na.flag-icon-squared {
   background-image: url(../flags/1x1/na.svg);
+  background-color: transparent;
 }
 .flag-icon-nc {
   background-image: url(../flags/4x3/nc.svg);
+  background-color: transparent;
 }
 .flag-icon-nc.flag-icon-squared {
   background-image: url(../flags/1x1/nc.svg);
+  background-color: transparent;
 }
 .flag-icon-ne {
   background-image: url(../flags/4x3/ne.svg);
+  background-color: transparent;
 }
 .flag-icon-ne.flag-icon-squared {
   background-image: url(../flags/1x1/ne.svg);
+  background-color: transparent;
 }
 .flag-icon-nf {
   background-image: url(../flags/4x3/nf.svg);
+  background-color: transparent;
 }
 .flag-icon-nf.flag-icon-squared {
   background-image: url(../flags/1x1/nf.svg);
+  background-color: transparent;
 }
 .flag-icon-ng {
   background-image: url(../flags/4x3/ng.svg);
+  background-color: transparent;
 }
 .flag-icon-ng.flag-icon-squared {
   background-image: url(../flags/1x1/ng.svg);
+  background-color: transparent;
 }
 .flag-icon-ni {
   background-image: url(../flags/4x3/ni.svg);
+  background-color: transparent;
 }
 .flag-icon-ni.flag-icon-squared {
   background-image: url(../flags/1x1/ni.svg);
+  background-color: transparent;
 }
 .flag-icon-nl {
   background-image: url(../flags/4x3/nl.svg);
+  background-color: transparent;
 }
 .flag-icon-nl.flag-icon-squared {
   background-image: url(../flags/1x1/nl.svg);
+  background-color: transparent;
 }
 .flag-icon-no {
   background-image: url(../flags/4x3/no.svg);
+  background-color: transparent;
 }
 .flag-icon-no.flag-icon-squared {
   background-image: url(../flags/1x1/no.svg);
+  background-color: transparent;
 }
 .flag-icon-np {
   background-image: url(../flags/4x3/np.svg);
+  background-color: transparent;
 }
 .flag-icon-np.flag-icon-squared {
   background-image: url(../flags/1x1/np.svg);
+  background-color: transparent;
 }
 .flag-icon-nr {
   background-image: url(../flags/4x3/nr.svg);
+  background-color: transparent;
 }
 .flag-icon-nr.flag-icon-squared {
   background-image: url(../flags/1x1/nr.svg);
+  background-color: transparent;
 }
 .flag-icon-nu {
   background-image: url(../flags/4x3/nu.svg);
+  background-color: transparent;
 }
 .flag-icon-nu.flag-icon-squared {
   background-image: url(../flags/1x1/nu.svg);
+  background-color: transparent;
 }
 .flag-icon-nz {
   background-image: url(../flags/4x3/nz.svg);
+  background-color: transparent;
 }
 .flag-icon-nz.flag-icon-squared {
   background-image: url(../flags/1x1/nz.svg);
+  background-color: transparent;
 }
 .flag-icon-om {
   background-image: url(../flags/4x3/om.svg);
+  background-color: transparent;
 }
 .flag-icon-om.flag-icon-squared {
   background-image: url(../flags/1x1/om.svg);
+  background-color: transparent;
 }
 .flag-icon-pa {
   background-image: url(../flags/4x3/pa.svg);
+  background-color: transparent;
 }
 .flag-icon-pa.flag-icon-squared {
   background-image: url(../flags/1x1/pa.svg);
+  background-color: transparent;
 }
 .flag-icon-pe {
   background-image: url(../flags/4x3/pe.svg);
+  background-color: transparent;
 }
 .flag-icon-pe.flag-icon-squared {
   background-image: url(../flags/1x1/pe.svg);
+  background-color: transparent;
 }
 .flag-icon-pf {
   background-image: url(../flags/4x3/pf.svg);
+  background-color: transparent;
 }
 .flag-icon-pf.flag-icon-squared {
   background-image: url(../flags/1x1/pf.svg);
+  background-color: transparent;
 }
 .flag-icon-pg {
   background-image: url(../flags/4x3/pg.svg);
+  background-color: transparent;
 }
 .flag-icon-pg.flag-icon-squared {
   background-image: url(../flags/1x1/pg.svg);
+  background-color: transparent;
 }
 .flag-icon-ph {
   background-image: url(../flags/4x3/ph.svg);
+  background-color: transparent;
 }
 .flag-icon-ph.flag-icon-squared {
   background-image: url(../flags/1x1/ph.svg);
+  background-color: transparent;
 }
 .flag-icon-pk {
   background-image: url(../flags/4x3/pk.svg);
+  background-color: transparent;
 }
 .flag-icon-pk.flag-icon-squared {
   background-image: url(../flags/1x1/pk.svg);
+  background-color: transparent;
 }
 .flag-icon-pl {
   background-image: url(../flags/4x3/pl.svg);
+  background-color: transparent;
 }
 .flag-icon-pl.flag-icon-squared {
   background-image: url(../flags/1x1/pl.svg);
+  background-color: transparent;
 }
 .flag-icon-pm {
   background-image: url(../flags/4x3/pm.svg);
+  background-color: transparent;
 }
 .flag-icon-pm.flag-icon-squared {
   background-image: url(../flags/1x1/pm.svg);
+  background-color: transparent;
 }
 .flag-icon-pn {
   background-image: url(../flags/4x3/pn.svg);
+  background-color: transparent;
 }
 .flag-icon-pn.flag-icon-squared {
   background-image: url(../flags/1x1/pn.svg);
+  background-color: transparent;
 }
 .flag-icon-pr {
   background-image: url(../flags/4x3/pr.svg);
+  background-color: transparent;
 }
 .flag-icon-pr.flag-icon-squared {
   background-image: url(../flags/1x1/pr.svg);
+  background-color: transparent;
 }
 .flag-icon-ps {
   background-image: url(../flags/4x3/ps.svg);
+  background-color: transparent;
 }
 .flag-icon-ps.flag-icon-squared {
   background-image: url(../flags/1x1/ps.svg);
+  background-color: transparent;
 }
 .flag-icon-pt {
   background-image: url(../flags/4x3/pt.svg);
+  background-color: transparent;
 }
 .flag-icon-pt.flag-icon-squared {
   background-image: url(../flags/1x1/pt.svg);
+  background-color: transparent;
 }
 .flag-icon-pw {
   background-image: url(../flags/4x3/pw.svg);
+  background-color: transparent;
 }
 .flag-icon-pw.flag-icon-squared {
   background-image: url(../flags/1x1/pw.svg);
+  background-color: transparent;
 }
 .flag-icon-py {
   background-image: url(../flags/4x3/py.svg);
+  background-color: transparent;
 }
 .flag-icon-py.flag-icon-squared {
   background-image: url(../flags/1x1/py.svg);
+  background-color: transparent;
 }
 .flag-icon-qa {
   background-image: url(../flags/4x3/qa.svg);
+  background-color: transparent;
 }
 .flag-icon-qa.flag-icon-squared {
   background-image: url(../flags/1x1/qa.svg);
+  background-color: transparent;
 }
 .flag-icon-re {
   background-image: url(../flags/4x3/re.svg);
+  background-color: transparent;
 }
 .flag-icon-re.flag-icon-squared {
   background-image: url(../flags/1x1/re.svg);
+  background-color: transparent;
 }
 .flag-icon-ro {
   background-image: url(../flags/4x3/ro.svg);
+  background-color: transparent;
 }
 .flag-icon-ro.flag-icon-squared {
   background-image: url(../flags/1x1/ro.svg);
+  background-color: transparent;
 }
 .flag-icon-rs {
   background-image: url(../flags/4x3/rs.svg);
+  background-color: transparent;
 }
 .flag-icon-rs.flag-icon-squared {
   background-image: url(../flags/1x1/rs.svg);
+  background-color: transparent;
 }
 .flag-icon-ru {
   background-image: url(../flags/4x3/ru.svg);
+  background-color: transparent;
 }
 .flag-icon-ru.flag-icon-squared {
   background-image: url(../flags/1x1/ru.svg);
+  background-color: transparent;
 }
 .flag-icon-rw {
   background-image: url(../flags/4x3/rw.svg);
+  background-color: transparent;
 }
 .flag-icon-rw.flag-icon-squared {
   background-image: url(../flags/1x1/rw.svg);
+  background-color: transparent;
 }
 .flag-icon-sa {
   background-image: url(../flags/4x3/sa.svg);
+  background-color: transparent;
 }
 .flag-icon-sa.flag-icon-squared {
   background-image: url(../flags/1x1/sa.svg);
+  background-color: transparent;
 }
 .flag-icon-sb {
   background-image: url(../flags/4x3/sb.svg);
+  background-color: transparent;
 }
 .flag-icon-sb.flag-icon-squared {
   background-image: url(../flags/1x1/sb.svg);
+  background-color: transparent;
 }
 .flag-icon-sc {
   background-image: url(../flags/4x3/sc.svg);
+  background-color: transparent;
 }
 .flag-icon-sc.flag-icon-squared {
   background-image: url(../flags/1x1/sc.svg);
+  background-color: transparent;
 }
 .flag-icon-sd {
   background-image: url(../flags/4x3/sd.svg);
+  background-color: transparent;
 }
 .flag-icon-sd.flag-icon-squared {
   background-image: url(../flags/1x1/sd.svg);
+  background-color: transparent;
 }
 .flag-icon-se {
   background-image: url(../flags/4x3/se.svg);
+  background-color: transparent;
 }
 .flag-icon-se.flag-icon-squared {
   background-image: url(../flags/1x1/se.svg);
+  background-color: transparent;
 }
 .flag-icon-sg {
   background-image: url(../flags/4x3/sg.svg);
+  background-color: transparent;
 }
 .flag-icon-sg.flag-icon-squared {
   background-image: url(../flags/1x1/sg.svg);
+  background-color: transparent;
 }
 .flag-icon-sh {
   background-image: url(../flags/4x3/sh.svg);
+  background-color: transparent;
 }
 .flag-icon-sh.flag-icon-squared {
   background-image: url(../flags/1x1/sh.svg);
+  background-color: transparent;
 }
 .flag-icon-si {
   background-image: url(../flags/4x3/si.svg);
+  background-color: transparent;
 }
 .flag-icon-si.flag-icon-squared {
   background-image: url(../flags/1x1/si.svg);
+  background-color: transparent;
 }
 .flag-icon-sj {
   background-image: url(../flags/4x3/sj.svg);
+  background-color: transparent;
 }
 .flag-icon-sj.flag-icon-squared {
   background-image: url(../flags/1x1/sj.svg);
+  background-color: transparent;
 }
 .flag-icon-sk {
   background-image: url(../flags/4x3/sk.svg);
+  background-color: transparent;
 }
 .flag-icon-sk.flag-icon-squared {
   background-image: url(../flags/1x1/sk.svg);
+  background-color: transparent;
 }
 .flag-icon-sl {
   background-image: url(../flags/4x3/sl.svg);
+  background-color: transparent;
 }
 .flag-icon-sl.flag-icon-squared {
   background-image: url(../flags/1x1/sl.svg);
+  background-color: transparent;
 }
 .flag-icon-sm {
   background-image: url(../flags/4x3/sm.svg);
+  background-color: transparent;
 }
 .flag-icon-sm.flag-icon-squared {
   background-image: url(../flags/1x1/sm.svg);
+  background-color: transparent;
 }
 .flag-icon-sn {
   background-image: url(../flags/4x3/sn.svg);
+  background-color: transparent;
 }
 .flag-icon-sn.flag-icon-squared {
   background-image: url(../flags/1x1/sn.svg);
+  background-color: transparent;
 }
 .flag-icon-so {
   background-image: url(../flags/4x3/so.svg);
+  background-color: transparent;
 }
 .flag-icon-so.flag-icon-squared {
   background-image: url(../flags/1x1/so.svg);
+  background-color: transparent;
 }
 .flag-icon-sr {
   background-image: url(../flags/4x3/sr.svg);
+  background-color: transparent;
 }
 .flag-icon-sr.flag-icon-squared {
   background-image: url(../flags/1x1/sr.svg);
+  background-color: transparent;
 }
 .flag-icon-ss {
   background-image: url(../flags/4x3/ss.svg);
+  background-color: transparent;
 }
 .flag-icon-ss.flag-icon-squared {
   background-image: url(../flags/1x1/ss.svg);
+  background-color: transparent;
 }
 .flag-icon-st {
   background-image: url(../flags/4x3/st.svg);
+  background-color: transparent;
 }
 .flag-icon-st.flag-icon-squared {
   background-image: url(../flags/1x1/st.svg);
+  background-color: transparent;
 }
 .flag-icon-sv {
   background-image: url(../flags/4x3/sv.svg);
+  background-color: transparent;
 }
 .flag-icon-sv.flag-icon-squared {
   background-image: url(../flags/1x1/sv.svg);
+  background-color: transparent;
 }
 .flag-icon-sx {
   background-image: url(../flags/4x3/sx.svg);
+  background-color: transparent;
 }
 .flag-icon-sx.flag-icon-squared {
   background-image: url(../flags/1x1/sx.svg);
+  background-color: transparent;
 }
 .flag-icon-sy {
   background-image: url(../flags/4x3/sy.svg);
+  background-color: transparent;
 }
 .flag-icon-sy.flag-icon-squared {
   background-image: url(../flags/1x1/sy.svg);
+  background-color: transparent;
 }
 .flag-icon-sz {
   background-image: url(../flags/4x3/sz.svg);
+  background-color: transparent;
 }
 .flag-icon-sz.flag-icon-squared {
   background-image: url(../flags/1x1/sz.svg);
+  background-color: transparent;
 }
 .flag-icon-tc {
   background-image: url(../flags/4x3/tc.svg);
+  background-color: transparent;
 }
 .flag-icon-tc.flag-icon-squared {
   background-image: url(../flags/1x1/tc.svg);
+  background-color: transparent;
 }
 .flag-icon-td {
   background-image: url(../flags/4x3/td.svg);
+  background-color: transparent;
 }
 .flag-icon-td.flag-icon-squared {
   background-image: url(../flags/1x1/td.svg);
+  background-color: transparent;
 }
 .flag-icon-tf {
   background-image: url(../flags/4x3/tf.svg);
+  background-color: transparent;
 }
 .flag-icon-tf.flag-icon-squared {
   background-image: url(../flags/1x1/tf.svg);
+  background-color: transparent;
 }
 .flag-icon-tg {
   background-image: url(../flags/4x3/tg.svg);
+  background-color: transparent;
 }
 .flag-icon-tg.flag-icon-squared {
   background-image: url(../flags/1x1/tg.svg);
+  background-color: transparent;
 }
 .flag-icon-th {
   background-image: url(../flags/4x3/th.svg);
+  background-color: transparent;
 }
 .flag-icon-th.flag-icon-squared {
   background-image: url(../flags/1x1/th.svg);
+  background-color: transparent;
 }
 .flag-icon-tj {
   background-image: url(../flags/4x3/tj.svg);
+  background-color: transparent;
 }
 .flag-icon-tj.flag-icon-squared {
   background-image: url(../flags/1x1/tj.svg);
+  background-color: transparent;
 }
 .flag-icon-tk {
   background-image: url(../flags/4x3/tk.svg);
+  background-color: transparent;
 }
 .flag-icon-tk.flag-icon-squared {
   background-image: url(../flags/1x1/tk.svg);
+  background-color: transparent;
 }
 .flag-icon-tl {
   background-image: url(../flags/4x3/tl.svg);
+  background-color: transparent;
 }
 .flag-icon-tl.flag-icon-squared {
   background-image: url(../flags/1x1/tl.svg);
+  background-color: transparent;
 }
 .flag-icon-tm {
   background-image: url(../flags/4x3/tm.svg);
+  background-color: transparent;
 }
 .flag-icon-tm.flag-icon-squared {
   background-image: url(../flags/1x1/tm.svg);
+  background-color: transparent;
 }
 .flag-icon-tn {
   background-image: url(../flags/4x3/tn.svg);
+  background-color: transparent;
 }
 .flag-icon-tn.flag-icon-squared {
   background-image: url(../flags/1x1/tn.svg);
+  background-color: transparent;
 }
 .flag-icon-to {
   background-image: url(../flags/4x3/to.svg);
+  background-color: transparent;
 }
 .flag-icon-to.flag-icon-squared {
   background-image: url(../flags/1x1/to.svg);
+  background-color: transparent;
 }
 .flag-icon-tr {
   background-image: url(../flags/4x3/tr.svg);
+  background-color: transparent;
 }
 .flag-icon-tr.flag-icon-squared {
   background-image: url(../flags/1x1/tr.svg);
+  background-color: transparent;
 }
 .flag-icon-tt {
   background-image: url(../flags/4x3/tt.svg);
+  background-color: transparent;
 }
 .flag-icon-tt.flag-icon-squared {
   background-image: url(../flags/1x1/tt.svg);
+  background-color: transparent;
 }
 .flag-icon-tv {
   background-image: url(../flags/4x3/tv.svg);
+  background-color: transparent;
 }
 .flag-icon-tv.flag-icon-squared {
   background-image: url(../flags/1x1/tv.svg);
+  background-color: transparent;
 }
 .flag-icon-tw {
   background-image: url(../flags/4x3/tw.svg);
+  background-color: transparent;
 }
 .flag-icon-tw.flag-icon-squared {
   background-image: url(../flags/1x1/tw.svg);
+  background-color: transparent;
 }
 .flag-icon-tz {
   background-image: url(../flags/4x3/tz.svg);
+  background-color: transparent;
 }
 .flag-icon-tz.flag-icon-squared {
   background-image: url(../flags/1x1/tz.svg);
+  background-color: transparent;
 }
 .flag-icon-ua {
   background-image: url(../flags/4x3/ua.svg);
+  background-color: transparent;
 }
 .flag-icon-ua.flag-icon-squared {
   background-image: url(../flags/1x1/ua.svg);
+  background-color: transparent;
 }
 .flag-icon-ug {
   background-image: url(../flags/4x3/ug.svg);
+  background-color: transparent;
 }
 .flag-icon-ug.flag-icon-squared {
   background-image: url(../flags/1x1/ug.svg);
+  background-color: transparent;
 }
 .flag-icon-um {
   background-image: url(../flags/4x3/um.svg);
+  background-color: transparent;
 }
 .flag-icon-um.flag-icon-squared {
   background-image: url(../flags/1x1/um.svg);
+  background-color: transparent;
 }
 .flag-icon-us {
   background-image: url(../flags/4x3/us.svg);
+  background-color: transparent;
 }
 .flag-icon-us.flag-icon-squared {
   background-image: url(../flags/1x1/us.svg);
+  background-color: transparent;
 }
 .flag-icon-uy {
   background-image: url(../flags/4x3/uy.svg);
+  background-color: transparent;
 }
 .flag-icon-uy.flag-icon-squared {
   background-image: url(../flags/1x1/uy.svg);
+  background-color: transparent;
 }
 .flag-icon-uz {
   background-image: url(../flags/4x3/uz.svg);
+  background-color: transparent;
 }
 .flag-icon-uz.flag-icon-squared {
   background-image: url(../flags/1x1/uz.svg);
+  background-color: transparent;
 }
 .flag-icon-va {
   background-image: url(../flags/4x3/va.svg);
+  background-color: transparent;
 }
 .flag-icon-va.flag-icon-squared {
   background-image: url(../flags/1x1/va.svg);
+  background-color: transparent;
 }
 .flag-icon-vc {
   background-image: url(../flags/4x3/vc.svg);
+  background-color: transparent;
 }
 .flag-icon-vc.flag-icon-squared {
   background-image: url(../flags/1x1/vc.svg);
+  background-color: transparent;
 }
 .flag-icon-ve {
   background-image: url(../flags/4x3/ve.svg);
+  background-color: transparent;
 }
 .flag-icon-ve.flag-icon-squared {
   background-image: url(../flags/1x1/ve.svg);
+  background-color: transparent;
 }
 .flag-icon-vg {
   background-image: url(../flags/4x3/vg.svg);
+  background-color: transparent;
 }
 .flag-icon-vg.flag-icon-squared {
   background-image: url(../flags/1x1/vg.svg);
+  background-color: transparent;
 }
 .flag-icon-vi {
   background-image: url(../flags/4x3/vi.svg);
+  background-color: transparent;
 }
 .flag-icon-vi.flag-icon-squared {
   background-image: url(../flags/1x1/vi.svg);
+  background-color: transparent;
 }
 .flag-icon-vn {
   background-image: url(../flags/4x3/vn.svg);
+  background-color: transparent;
 }
 .flag-icon-vn.flag-icon-squared {
   background-image: url(../flags/1x1/vn.svg);
+  background-color: transparent;
 }
 .flag-icon-vu {
   background-image: url(../flags/4x3/vu.svg);
+  background-color: transparent;
 }
 .flag-icon-vu.flag-icon-squared {
   background-image: url(../flags/1x1/vu.svg);
+  background-color: transparent;
 }
 .flag-icon-wf {
   background-image: url(../flags/4x3/wf.svg);
+  background-color: transparent;
 }
 .flag-icon-wf.flag-icon-squared {
   background-image: url(../flags/1x1/wf.svg);
+  background-color: transparent;
 }
 .flag-icon-ws {
   background-image: url(../flags/4x3/ws.svg);
+  background-color: transparent;
 }
 .flag-icon-ws.flag-icon-squared {
   background-image: url(../flags/1x1/ws.svg);
+  background-color: transparent;
 }
 .flag-icon-ye {
   background-image: url(../flags/4x3/ye.svg);
+  background-color: transparent;
 }
 .flag-icon-ye.flag-icon-squared {
   background-image: url(../flags/1x1/ye.svg);
+  background-color: transparent;
 }
 .flag-icon-yt {
   background-image: url(../flags/4x3/yt.svg);
+  background-color: transparent;
 }
 .flag-icon-yt.flag-icon-squared {
   background-image: url(../flags/1x1/yt.svg);
+  background-color: transparent;
 }
 .flag-icon-za {
   background-image: url(../flags/4x3/za.svg);
+  background-color: transparent;
 }
 .flag-icon-za.flag-icon-squared {
   background-image: url(../flags/1x1/za.svg);
+  background-color: transparent;
 }
 .flag-icon-zm {
   background-image: url(../flags/4x3/zm.svg);
+  background-color: transparent;
 }
 .flag-icon-zm.flag-icon-squared {
   background-image: url(../flags/1x1/zm.svg);
+  background-color: transparent;
 }
 .flag-icon-zw {
   background-image: url(../flags/4x3/zw.svg);
+  background-color: transparent;
 }
 .flag-icon-zw.flag-icon-squared {
   background-image: url(../flags/1x1/zw.svg);
+  background-color: transparent;
 }

@@ -2,6 +2,7 @@
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
+  background-color: #fff;
 }
 
 .flag-icon {
@@ -21,8 +22,10 @@
 .flag-icon(@country) {
   .flag-icon-@{country} {
     background-image: ~"url(@{flag-icon-css-path}@{flag-icon-rect-path}/@{country}.svg)";
+    background-color: transparent;
     &.flag-icon-squared {
       background-image: ~"url(@{flag-icon-css-path}@{flag-icon-square-path}/@{country}.svg)";
+      background-color: transparent;
     }
   }
 }
