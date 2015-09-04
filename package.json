@@ -1,6 +1,9 @@
 {
-  "name": "flag-icon-css",
-  "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
+  "name": "livery-flags",
+  "authors": [
+    "Panayiotis Lipiridis <lipiridis@gmail.com>",
+    "Jonathan Ho <joho1710@gmail.com>"
+  ],
   "licenses": [
     {
       "type": "MIT",
@@ -9,13 +12,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/lipis/flag-icon-css"
+    "url": "http://github.com/GPQuery/livery-flags"
   },
   "devDependencies": {
     "grunt": "0.4.x",
-    "grunt-contrib-less": "1.0.x",
+    "grunt-contrib-connect": "0.10.x",
     "grunt-contrib-cssmin": "0.12.x",
-    "grunt-contrib-watch": "0.6.x",
-    "grunt-contrib-connect": "0.10.x"
+    "grunt-contrib-imagemin": "^0.9.4",
+    "grunt-contrib-less": "1.0.x",
+    "grunt-contrib-sass": "^0.9.2",
+    "grunt-contrib-watch": "0.6.x"
   }
 }
