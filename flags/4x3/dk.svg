@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
-    <defs>
-        <clipPath id="a">
-            <path fill-opacity=".67" d="M-64 0h682.67v512H-64z"/>
-        </clipPath>
-    </defs>
-    <g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(.94 0 0 .94 60 0)" stroke-width="1pt">
-        <path fill="#fb1b22" d="M-64 0h676.57v512H-64z"/>
-        <path fill="#fff" d="M-64 219.43h676.57v73.143H-64z"/>
-        <path fill="#fff" d="M155.43 0h73.143v512H155.43z"/>
-    </g>
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".67" d="M-64 0h682.67v512H-64z"/>
+    </clipPath>
+  </defs>
+  <g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(.94 0 0 .94 60 0)" stroke-width="1pt">
+    <path fill="#fb1b22" d="M-64 0h676.57v512H-64z"/>
+    <path fill="#fff" d="M-64 219.43h676.57v73.143H-64z"/>
+    <path fill="#fff" d="M155.43 0h73.143v512H155.43z"/>
+  </g>
 </svg>

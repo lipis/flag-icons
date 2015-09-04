@@ -4,12 +4,12 @@
 <!--
 
 <rdf:RDF xmlns="http://web.resource.org/cc/"
-    xmlns:dc="http://purl.org/dc/elements/1.1/"
-    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 <Work rdf:about="">
    <dc:title>SVG graphic of Puerto Rico flag</dc:title>
    <dc:rights><Agent>
-      <dc:title>Ricardo Veguilla González</dc:title>
+    <dc:title>Ricardo Veguilla González</dc:title>
    </Agent></dc:rights>
    <license rdf:resource="http://web.resource.org/cc/PublicDomain" />
 </Work>
@@ -25,8 +25,8 @@
  <metadata id="metadata3702">
   <rdf:RDF>
    <cc:Work rdf:about="">
-    <dc:format>image/svg+xml</dc:format>
-    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+  <dc:format>image/svg+xml</dc:format>
+  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
    </cc:Work>
   </rdf:RDF>
  </metadata>

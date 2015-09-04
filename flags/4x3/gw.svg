@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-    <defs>
-        <clipPath id="a">
-            <path fill-opacity=".67" d="M0 77.588h503.67v377.75H0z"/>
-        </clipPath>
-    </defs>
-    <g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(1.27 0 0 1.27 0 -98.59)">
-        <path fill="#fff41e" d="M159.45-60.328h375.7v327.84h-375.7z"/>
-        <path fill="#1f7848" d="M207.32 258.67H512v253.07H207.32z"/>
-        <path fill="#e80006" d="M0 0h207.32v512H0z"/>
-        <path d="M160.61 325.58l-55.86-39.888-55.587 40.28 20.674-65.457-55.485-40.42 68.645-.563 21.29-65.258 21.748 65.108 68.645.086-55.2 40.8 21.13 65.312z"/>
-    </g>
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".67" d="M0 77.588h503.67v377.75H0z"/>
+    </clipPath>
+  </defs>
+  <g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(1.27 0 0 1.27 0 -98.59)">
+    <path fill="#fff41e" d="M159.45-60.328h375.7v327.84h-375.7z"/>
+    <path fill="#1f7848" d="M207.32 258.67H512v253.07H207.32z"/>
+    <path fill="#e80006" d="M0 0h207.32v512H0z"/>
+    <path d="M160.61 325.58l-55.86-39.888-55.587 40.28 20.674-65.457-55.485-40.42 68.645-.563 21.29-65.258 21.748 65.108 68.645.086-55.2 40.8 21.13 65.312z"/>
+  </g>
 </svg>

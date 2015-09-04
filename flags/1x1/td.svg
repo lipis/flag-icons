@@ -41,62 +41,62 @@ methods that have not yet been invented or conceived.
    inkscape:version="0.48.4 r9939"
    sodipodi:docname="td.svg">
   <defs
-     id="defs10" />
+   id="defs10" />
   <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1215"
-     inkscape:window-height="776"
-     id="namedview8"
-     showgrid="false"
-     inkscape:zoom="0.49166667"
-     inkscape:cx="320"
-     inkscape:cy="240"
-     inkscape:window-x="65"
-     inkscape:window-y="24"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="canada" />
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1215"
+   inkscape:window-height="776"
+   id="namedview8"
+   showgrid="false"
+   inkscape:zoom="0.49166667"
+   inkscape:cx="320"
+   inkscape:cy="240"
+   inkscape:window-x="65"
+   inkscape:window-y="24"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="canada" />
   <metadata
-     id="metadata3698">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
+   id="metadata3698">
+  <rdf:RDF>
+    <cc:Work
+     rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+    </cc:Work>
+  </rdf:RDF>
   </metadata>
   <g
-     id="flag"
-     style="fill-rule:evenodd"
-     transform="scale(0.8,1.0666667)">
-    <rect
-       id="rect555"
-       height="480"
-       width="213.97"
-       y="0"
-       x="0"
-       style="fill:#000067" />
-    <rect
-       id="rect557"
-       height="480"
-       width="213.97"
-       y="0"
-       x="426.03"
-       style="fill:#ff0000" />
-    <rect
-       id="rect556"
-       height="480"
-       width="212.06"
-       y="0"
-       x="213.97"
-       style="fill:#ffff00" />
+   id="flag"
+   style="fill-rule:evenodd"
+   transform="scale(0.8,1.0666667)">
+  <rect
+     id="rect555"
+     height="480"
+     width="213.97"
+     y="0"
+     x="0"
+     style="fill:#000067" />
+  <rect
+     id="rect557"
+     height="480"
+     width="213.97"
+     y="0"
+     x="426.03"
+     style="fill:#ff0000" />
+  <rect
+     id="rect556"
+     height="480"
+     width="212.06"
+     y="0"
+     x="213.97"
+     style="fill:#ffff00" />
   </g>
 </svg>
