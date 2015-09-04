@@ -432,6 +432,12 @@
 .flag-icon-et.flag-icon-squared {
   background-image: url(../flags/1x1/et.svg);
 }
+.flag-icon-eu {
+  background-image: url(../flags/4x3/eu.svg);
+}
+.flag-icon-eu.flag-icon-squared {
+  background-image: url(../flags/1x1/eu.svg);
+}
 .flag-icon-fi {
   background-image: url(../flags/4x3/fi.svg);
 }
