@@ -1,6 +1,6 @@
 {
   "name": "flag-icon-css",
-  "version": "0.8.1"
+  "version": "0.8.2",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "licenses": [
     {
@@ -18,5 +18,5 @@
     "grunt-contrib-cssmin": "0.12.x",
     "grunt-contrib-watch": "0.6.x",
     "grunt-contrib-connect": "0.10.x"
-  },
+  }
 }
