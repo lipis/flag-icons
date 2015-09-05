@@ -17,5 +17,6 @@
     "grunt-contrib-cssmin": "0.12.x",
     "grunt-contrib-watch": "0.6.x",
     "grunt-contrib-connect": "0.10.x"
-  }
+  },
+  "version": "0.8.1"
 }
