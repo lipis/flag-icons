@@ -30,7 +30,7 @@ def facebook_authorized():
     return flask.redirect(util.get_next_url())
 
   flask.session['oauth_token'] = (response['access_token'], '')
-  me = facebook.get('/me')
+  me = facebook.get('/me?fields=name,email')
   user_db = retrieve_user_from_facebook(me.data)
   return auth.signin_user_db(user_db)
 
