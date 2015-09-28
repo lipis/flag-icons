@@ -15,12 +15,11 @@ from main import app
 
 
 reddit_config = dict(
-    base_url='https://oauth.reddit.com/api/v1/',
-    request_token_url=None,
-    access_token_url='https://ssl.reddit.com/api/v1/access_token',
-    access_token_params={'grant_type': 'authorization_code'},
     access_token_method='POST',
+    access_token_params={'grant_type': 'authorization_code'},
+    access_token_url='https://ssl.reddit.com/api/v1/access_token',
     authorize_url='https://ssl.reddit.com/api/v1/authorize',
+    base_url='https://oauth.reddit.com/api/v1/',
     consumer_key=model.Config.get_master_db().reddit_client_id,
     consumer_secret=model.Config.get_master_db().reddit_client_secret,
     request_token_params={'scope': 'identity', 'state': util.uuid()},
