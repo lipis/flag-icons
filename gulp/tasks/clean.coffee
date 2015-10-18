@@ -4,7 +4,7 @@ paths = require '../paths'
 
 
 gulp.task 'clean',
-  'Clean project from temporarty files, generated CSS & JS and compiled Python
+  'Clean project from temporary files, generated CSS & JS and compiled Python
   files.', ->
     del './**/*.pyc'
     del './**/*.pyo'
