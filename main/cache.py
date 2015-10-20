@@ -38,4 +38,4 @@ def get_auth_attempt():
 
 
 def bump_auth_attempt():
-  bump_counter(get_auth_attempt_key(), config.SIGNIN_RETRY_LIMIT)
+  bump_counter(get_auth_attempt_key(), limit=config.SIGNIN_RETRY_LIMIT)
