@@ -4,4 +4,4 @@ flask-login==0.3.0
 flask-oauthlib==0.9.1
 flask-restful==0.3.4
 flask-wtf==0.12
-unidecode==0.4.17
+unidecode==0.4.18
