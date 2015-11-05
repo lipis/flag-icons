@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
   <path fill="#fff" d="M0 0h640v480H0z"/>
   <path fill="gray" fill-rule="evenodd" d="M299.104 219.732l1.696-2.236-.882-2.663 2.652.92 2.258-1.66-.056 2.802 2.275 1.64-2.68.81-.854 2.673-1.6-2.303"/>
