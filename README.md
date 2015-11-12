@@ -1,6 +1,8 @@
 gae-init
 ========
 
+[![Slack Status](https://gae-init-slack.herokuapp.com/badge.svg)](https://gae-init-slack.herokuapp.com)
+
 **gae-init** is the easiest way to kick start new applications on Google
 App Engine using Flask, Bootstrap and tons of other cool features.
 
