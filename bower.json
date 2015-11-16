@@ -5,8 +5,7 @@
     "font-awesome": "~4",
     "jquery": "~2",
     "moment": "~2",
-    "nprogress": "https://github.com/lipis/nprogress.git#master",
-    "selectize": "~0"
+    "nprogress": "https://github.com/lipis/nprogress.git#master"
   },
   "overrides": {
     "bootstrap": {
@@ -14,9 +13,6 @@
     },
     "font-awesome": {
       "main": ["less/*", "fonts/*"]
-    },
-    "selectize": {
-      "main": ["dist/**/*.{js,less}"]
     }
   }
 }
