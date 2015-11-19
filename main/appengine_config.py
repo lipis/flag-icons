@@ -14,3 +14,9 @@ else:
   stubs.FakeFile._skip_files = re_
   sys.path.insert(0, 'lib')
 sys.path.insert(0, 'libx')
+
+
+def webapp_add_wsgi_middleware(app):
+  from google.appengine.ext.appstats import recording
+  app = recording.appstats_wsgi_middleware(app)
+  return app
