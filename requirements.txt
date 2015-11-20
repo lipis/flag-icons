@@ -1,9 +1,9 @@
 blinker==1.4
 flask-babel==0.9
 flask-login==0.3.0
-flask-oauthlib==0.9.1
+flask-oauthlib==0.9.2
 flask-restful==0.3.4
 flask-wtf==0.12
 flask==0.10.1
 git+https://github.com/joernhees/babel@zipcompat-build
-unidecode==0.4.17
+unidecode==0.4.18

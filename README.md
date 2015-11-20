@@ -1,5 +1,6 @@
 gae-init-babel
 ==============
+[![Slack Status](https://gae-init-slack.herokuapp.com/badge.svg)](https://gae-init-slack.herokuapp.com)
 
 **gae-init-babel** is the easiest way to kick start new applications on Google
 App Engine using Flask, Bootstrap, Babel and tons of other cool features.
