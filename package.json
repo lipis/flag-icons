@@ -6,6 +6,9 @@
     "type": "git",
     "url": "https://github.com/gae-init"
   },
+  "scripts": {
+    "preinstall": "gulp init"
+  },
   "dependencies": {
     "coffee-script": "~1",
     "less": "~2",
