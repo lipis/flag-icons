@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 640" height="480" width="640">
   <g fill-rule="evenodd" stroke-width="1pt">
     <path fill="#0000bd" d="M0 0h214.4v479.984H0z"/>
     <path fill="#cc1900" d="M425.6 0H640v479.984H425.6z"/>
