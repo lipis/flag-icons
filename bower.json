@@ -4,8 +4,7 @@
     "bootstrap": "~3",
     "font-awesome": "~4",
     "jquery": "~2",
-    "moment": "~2",
-    "nprogress": "https://github.com/lipis/nprogress.git#master"
+    "moment": "~2"
   },
   "overrides": {
     "bootstrap": {
