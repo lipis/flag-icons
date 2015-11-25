@@ -11,7 +11,7 @@
  </metadata>
  <defs id="defs674">
   <clipPath id="clipPath8657" clipPathUnits="userSpaceOnUse">
-   <rect id="rect8659" fill-opacity="0.67" height="480" width="640" y="32" x="-88"/>
+   <rect id="rect8659" fill-opacity="0.67" viewBox="0 0 480 640" height="480" width="640" y="32" x="-88"/>
   </clipPath>
  </defs>
  <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath8657)" transform="translate(88 -32)">
