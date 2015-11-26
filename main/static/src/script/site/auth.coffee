@@ -7,7 +7,7 @@ window.init_auth = ->
         $(button).prop 'href', "#{href}&remember=true"
         $('#remember').prop 'checked', true
       else
-        $(button).prop 'href', href.replace('&remember=true', '')
+        $(button).prop 'href', href.replace '&remember=true', ''
         $('#remember').prop 'checked', false
 
   $('.remember').change()
