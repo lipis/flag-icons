@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" viewBox="0 0 0.5160635 3.096381">
-  <path fill="red" d="M-1.806 0h4.128v1.032h-4.128z"/>
-  <path fill="#00f" d="M-1.806 1.032h4.128v1.032h-4.128z"/>
-  <path fill="orange" d="M-1.806 2.064h4.128v1.032h-4.128z"/>
+<svg width="640px" height="480px" viewBox="0 0 640 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>am</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flag_of_Armenia" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-path" fill="#F2A800" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="480"></rect>
+            <rect id="Rectangle-path" fill="#0033A0" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="320"></rect>
+            <rect id="Rectangle-path" fill="#D90012" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="160"></rect>
+        </g>
+    </g>
 </svg>
