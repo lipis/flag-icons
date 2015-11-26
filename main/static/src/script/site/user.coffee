@@ -84,8 +84,8 @@ window.init_user_merge = ->
 
 
 select_default_user = (user_key) ->
-  $('.user-row').removeClass('success').addClass('danger')
-  $("##{user_key}").removeClass('danger').addClass('success')
+  $('.user-row').removeClass('success').addClass 'danger'
+  $("##{user_key}").removeClass('danger').addClass 'success'
 
   for user_db in user_dbs
     if user_key == user_db.key
