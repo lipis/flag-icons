@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" viewBox="0 0 512 512" width="640">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".67" d="M106.25 0h1133.3v850H106.25z"/>
-    </clipPath>
-  </defs>
-  <g clip-path="url(#a)" transform="matrix(.6024 0 0 .6024 -149.33 0)">
-    <path fill="#0053a5" d="M0 0h1300v850H0z"/>
-    <g fill="#ffce00">
-      <path d="M400 0h250v850H400z"/>
-      <path d="M0 300h1300v250H0z"/>
+<svg width="640px" height="480px" viewBox="0 0 640 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>Flag_of_Aland</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flag_of_Aland" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-path" fill="#0053A5" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="480"></rect>
+            <g id="Group" fill="#FFCE00" sketch:type="MSShapeGroup">
+                <rect id="Rectangle-path" x="196.923077" y="0" width="123.076923" height="480"></rect>
+                <rect id="Rectangle-path" x="0" y="169.411765" width="640" height="141.176471"></rect>
+            </g>
+            <g id="Group" fill="#D21034" sketch:type="MSShapeGroup">
+                <rect id="Rectangle-path" x="233.846154" y="0" width="49.2307692" height="480"></rect>
+                <rect id="Rectangle-path" x="0" y="211.764706" width="640" height="56.4705882"></rect>
+            </g>
+        </g>
     </g>
-    <g fill="#d21034">
-      <path d="M475 0h100v850H475z"/>
-      <path d="M0 375h1300v100H0z"/>
-    </g>
-  </g>
 </svg>
