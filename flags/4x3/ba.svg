@@ -1,13 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" viewBox="0 0 512 512" width="640" version="1">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".67" d="M-85.333 0h682.67v512h-682.67z"/>
-    </clipPath>
-  </defs>
-  <g fill-rule="evenodd" clip-path="url(#a)">
-    <path fill="#009" d="M-85.333 0h682.67v512h-682.67z"/>
-    <path d="M-85.333 0l682.67 512V0h-682.67z" fill="#fc0"/>
-    <path fill="#fff" d="M-21.46 75.087L-45.857 57.36l-24.397 17.727 9.32-28.68-24.398-17.726h30.155L-45.857 0l9.32 28.68h30.154L-30.78 46.407M30.093 111.977L5.696 129.703l9.32-28.68-24.398-17.726h30.155l9.32-28.68 9.32 28.68h30.154L45.17 101.022l9.32 28.68M81.64 184.313l9.318-28.68-24.397-17.726h30.156l9.32-28.68 9.32 28.68h30.154l-24.397 17.725 9.32 28.68-24.397-17.725M166.906 210.252l-24.397-17.725h30.154l9.32-28.68 9.32 28.68h30.154l-24.397 17.725 9.32 28.68-24.396-17.725-24.397 17.726M218.458 247.137h30.155l9.32-28.68 9.32 28.68h30.154l-24.397 17.725 9.32 28.68-24.397-17.725-24.397 17.726 9.32-28.68M324.563 301.747l9.32-28.68 9.32 28.68h30.154l-24.397 17.725 9.32 28.68-24.397-17.725-24.397 17.726 9.32-28.68-24.398-17.726M409.823 327.687l9.32 28.68h30.154L424.9 374.092l9.32 28.68-24.397-17.725-24.397 17.726 9.32-28.68-24.398-17.726h30.155M485.773 382.297l9.32 28.68h30.154l-24.397 17.725 9.32 28.68-24.397-17.725-24.397 17.726 9.32-28.68-24.398-17.726h30.155M571.042 465.597h30.155L576.8 483.322l9.32 28.68-24.397-17.725-24.397 17.726 9.32-28.68-24.398-17.726h30.155l9.32-28.68"/>
-  </g>
+<svg width="641px" height="480px" viewBox="0 0 641 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>Flag_of_Bosnia_and_Herzegovina</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flag_of_Bosnia_and_Herzegovina" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-path" fill="#002395" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="480"></rect>
+            <path d="M160.4,0 L640.4,0 L640.4,480 L160.4,0 L160.4,0 Z" id="Shape" fill="#FECB00" sketch:type="MSShapeGroup"></path>
+            <path d="M150.56,60 L177.32,40.56 L144.2,40.56 L134,9 L123.8,40.56 L90.68,40.56 L117.44,60 L107.24,91.44 L134,72 L160.76,91.44 L150.56,60 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M210.56,120 L237.32,100.56 L204.2,100.56 L194,69 L183.8,100.56 L150.68,100.56 L177.44,120 L167.24,151.44 L194,132 L220.76,151.44 L210.56,120 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M270.56,180 L297.32,160.56 L264.2,160.56 L254,129 L243.8,160.56 L210.68,160.56 L237.44,180 L227.24,211.44 L254,192 L280.76,211.44 L270.56,180 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M330.56,240 L357.32,220.56 L324.2,220.56 L314,189 L303.8,220.56 L270.68,220.56 L297.44,240 L287.24,271.44 L314,252 L340.76,271.44 L330.56,240 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M390.56,300 L417.32,280.56 L384.2,280.56 L374,249 L363.8,280.56 L330.68,280.56 L357.44,300 L347.24,331.44 L374,312 L400.76,331.44 L390.56,300 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M450.56,360 L477.32,340.56 L444.2,340.56 L434,309 L423.8,340.56 L390.68,340.56 L417.44,360 L407.24,391.44 L434,372 L460.76,391.44 L450.56,360 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M510.56,420 L537.32,400.56 L504.2,400.56 L494,369 L483.8,400.56 L450.68,400.56 L477.44,420 L467.24,451.44 L494,432 L520.76,451.44 L510.56,420 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M537.44,480 L570.56,480 L570.56,480 L597.32,460.56 L564.2,460.56 L554,429 L543.8,460.56 L510.68,460.56 L537.44,480 L537.44,480 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M57.44,0 L47.24,31.44 L74,12 L100.76,31.44 L90.56,0 L57.44,0 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
 </svg>

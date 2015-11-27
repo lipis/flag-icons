@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-  <g fill-rule="evenodd">
-    <path fill="#de0000" d="M640.003 479.578H.378V0h639.625z"/>
-    <path fill="#35a100" d="M639.628 480H.003V240.216h639.625z"/>
-    <path fill="#fff300" d="M254.612 276.188l-106.066-72.434 131.043.122 40.386-117.322 40.388 117.322 131.043-.087-106.085 72.398 40.59 117.27-105.954-72.573-105.955 72.556"/>
-  </g>
+<svg width="640px" height="480px" viewBox="0 0 640 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>Flag_of_Burkina_Faso</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flag_of_Burkina_Faso" sketch:type="MSLayerGroup">
+            <rect id="green" fill="#009E49" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="479.625293"></rect>
+            <rect id="red" fill="#EF2B2D" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="239.812646"></rect>
+            <path d="M359.887761,256.999735 L425.10408,209.640265 L344.581891,209.640265 L319.626667,133 L294.671443,209.640265 L214.149254,209.640265 L279.365572,256.999735 L254.410348,333.64 L319.626667,286.280531 L384.842985,333.64 L359.887761,256.999735 Z" id="star" fill="#FCD116" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
 </svg>

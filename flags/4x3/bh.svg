@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".67" d="M0 0h640v480H0z"/>
-    </clipPath>
-  </defs>
-  <g fill-rule="evenodd" stroke-width="1pt" clip-path="url(#a)">
-    <path fill="#e10011" d="M-32.5 0h720v480h-720z"/>
-    <path d="M114.25 479.77L-32.5 480V0l146.06.075 94.242 30.306-93.554 29.542 93.554 30.458-93.554 29.542 93.554 30.458-93.554 29.54 93.554 30.46-93.554 29.54 93.554 30.46-93.554 29.54 93.554 30.46-93.554 29.54 93.554 30.46-93.554 29.54 93.554 30.46-93.554 29.54" fill="#fff"/>
-  </g>
+<svg width="640px" height="480px" viewBox="0 0 640 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>Flag_of_Bahrain</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flag_of_Bahrain" sketch:type="MSLayerGroup">
+            <path d="M0,0 L640,0 L640,480 L0,480" id="white" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            <path d="M640,0 L157.866667,0 L256,48 L157.866667,96 L256,144 L157.866667,192 L256,240 L157.866667,288 L256,336 L157.866667,384 L256,432 L157.866667,480 L640,480" id="red" fill="#CE1126" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
 </svg>

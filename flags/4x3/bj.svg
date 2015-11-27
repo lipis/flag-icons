@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
-  <defs>
-    <clipPath id="a">
-      <path fill="gray" d="M67.64-154h666v666h-666z"/>
-    </clipPath>
-  </defs>
-  <g transform="matrix(.961 0 0 .7207 -65 110.99)" clip-path="url(#a)">
-    <g fill-rule="evenodd" stroke-width="1pt">
-      <path fill="#319400" d="M0-154h333v666H0z"/>
-      <path fill="#ffd600" d="M333-154h666v333H333z"/>
-      <path fill="#de2110" d="M333 179h666v333H333z"/>
+<svg width="640px" height="480px" viewBox="0 0 640 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>Flag_of_Benin</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flag_of_Benin" sketch:type="MSLayerGroup">
+            <rect id="red" fill="#E8112D" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="480"></rect>
+            <rect id="yellow" fill="#FCD116" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="240"></rect>
+            <rect id="green" fill="#008751" sketch:type="MSShapeGroup" x="0" y="0" width="256" height="480"></rect>
+        </g>
     </g>
-  </g>
 </svg>
