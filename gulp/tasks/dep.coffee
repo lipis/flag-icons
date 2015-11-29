@@ -41,4 +41,4 @@ gulp.task 'zip', false, ->
           .pipe gulp.dest paths.main
 
 
-gulp.task 'install_dependencies', false, $.sequence 'npm', 'pip', 'copy_bower_files'
+gulp.task 'init', false, $.sequence 'pip', 'copy_bower_files'
