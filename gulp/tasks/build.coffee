@@ -7,7 +7,7 @@ paths = require '../paths'
 gulp.task 'build',
   "Build project to prepare it for a deployment. Minify CSS & JS files and pack
   Python dependencies into #{paths.py.lib_file}.",
-  $.sequence 'clean:min', 'install_dependencies', 'ext', ['script', 'style', 'zip']
+  $.sequence 'clean:min', 'init', 'ext', ['script', 'style', 'zip']
 
 
 gulp.task 'rebuild',
@@ -34,7 +34,7 @@ gulp.task 'run',
   -o HOST  - the host to start the dev_appserver.py\n
   -p PORT  - the port to start the dev_appserver.py\n
   -a="..." - all following args are passed to dev_appserver.py\n', ->
-    $.sequence('install_dependencies', ['ext:dev', 'script:dev', 'style:dev']) ->
+    $.sequence('init', ['ext:dev', 'script:dev', 'style:dev']) ->
       argv = process.argv.slice 2
 
       known_options =
