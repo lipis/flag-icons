@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".67" d="M0 0h640v480H0z"/>
-    </clipPath>
-  </defs>
-  <g fill-rule="evenodd" stroke-width="1pt" clip-path="url(#a)">
-    <path fill="#fff" d="M-28 0h699.74v512H-28z"/>
-    <path fill="#d72828" d="M-52.992-77.837h218.72v276.26h-218.72zM289.42-.572h380.91v199H289.42zM-27.545 320.01h190.33v190.33h-190.33zM292 322.12h378.34v188.21H292z"/>
-    <path fill="#003897" d="M196.65-25.447h64.425v535.78H196.65z"/>
-    <path fill="#003897" d="M-27.545 224.84h697.88v63.444h-697.88z"/>
-  </g>
+<svg width="640px" height="480px" viewBox="0 0 640 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.3 (16618) - http://www.bohemiancoding.com/sketch -->
+    <title>Flag_of_Norway</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flag_of_Norway" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-path" fill="#EF2B2D" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="480"></rect>
+            <rect id="Rectangle-path" fill="#FFFFFF" sketch:type="MSShapeGroup" x="174.545455" y="0" width="116.363636" height="480"></rect>
+            <rect id="Rectangle-path" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="180" width="640" height="120"></rect>
+            <rect id="Rectangle-path" fill="#002868" sketch:type="MSShapeGroup" x="203.636364" y="0" width="58.1818182" height="480"></rect>
+            <rect id="Rectangle-path" fill="#002868" sketch:type="MSShapeGroup" x="0" y="210" width="640" height="60"></rect>
+        </g>
+    </g>
 </svg>
