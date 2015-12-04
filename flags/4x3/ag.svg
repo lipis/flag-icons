@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".67" d="M-79.698 0h682.67v512h-682.67z"/>
-    </clipPath>
-  </defs>
-  <g clip-path="url(#a)" fill-rule="evenodd" transform="translate(74.717) scale(.9375)">
-    <path fill="#fff" d="M-120 0h763.27v511.49H-120z"/>
-    <path d="M-118.31.617h760.88v216.09h-760.88z"/>
-    <path fill="#0061ff" d="M21.3 203.23h505.01v113.82H21.3z"/>
-    <path d="M642.75 1.753v510.25H262.03L642.75 1.753z" fill="#e20000"/>
-    <path d="M-118.69 1.753v510.25h380.72L-118.69 1.753z" fill="#e20000"/>
-    <path d="M440.37 203.34l-76.31-19.363L428.98 135l-79.726 11.39 41.003-69.475-70.616 41.003 12.53-80.867-47.837 63.783L264.97 26.8l-21.64 76.31-47.837-64.92 13.667 83.145-70.615-43.282 41.003 69.476-77.45-12.53 63.783 47.838-79.727 20.5h354.22z" fill="#ffd600"/>
-  </g>
+<svg width="680px" height="480px" viewBox="0 0 680 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
+    <title>Flag_of_Antigua_and_Barbuda</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flag_of_Antigua_and_Barbuda" sketch:type="MSLayerGroup">
+            <rect id="white" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="680" height="479.625293"></rect>
+            <rect id="black" fill="#000000" sketch:type="MSShapeGroup" x="0" y="0" width="680" height="187.679462"></rect>
+            <path d="M340,202.647868 L340,217.616274 L192.173913,187.679462 L267.507175,172.423443 L203.426504,127.827945 L278.54355,144.233995 L235.471171,77.0882786 L298.936113,122.658725 L283.429406,43.1851174 L325.580281,110.982273 L340,31.2799104 L354.419719,110.982273 L396.570594,43.1851174 L381.063887,122.658725 L444.528829,77.0882786 L401.45645,144.233995 L476.573496,127.827945 L412.492825,172.423443 L487.826087,187.679462 L340,217.616274 L340,202.647868 L340,202.647868 Z" id="sun" fill="#FCD116" sketch:type="MSShapeGroup"></path>
+            <rect id="blue" fill="#0072C6" sketch:type="MSShapeGroup" x="0" y="187.679462" width="680" height="104.266368"></rect>
+            <path d="M0,0 L0,479.625293 L680,479.625293 L680,0 L340,479.625293 L0,0 Z" id="red" fill="#CE1126" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
 </svg>
