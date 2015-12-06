@@ -36,7 +36,7 @@ def user_list():
       user_dbs=user_dbs,
       next_url=util.generate_next_url(cursors['next']),
       prev_url=util.generate_next_url(cursors['prev']),
-      api_url=flask.url_for('api.user.list'),
+      api_url=flask.url_for('api.admin.user.list'),
       permissions=sorted(set(permissions)),
     )
 
@@ -116,7 +116,7 @@ def user_update(user_id=0):
       html_class='user-update',
       form=form,
       user_db=user_db,
-      api_url=flask.url_for('api.user', user_key=user_db.key.urlsafe()) if user_db.key else ''
+      api_url=flask.url_for('api.admin.user', user_key=user_db.key.urlsafe()) if user_db.key else ''
     )
 
 
@@ -344,7 +344,7 @@ def user_merge():
       merged_user_db=merged_user_db,
       form=form,
       auth_ids=auth_ids,
-      api_url=flask.url_for('api.user.list', user_keys=','.join(user_keys)),
+      api_url=flask.url_for('api.admin.user.list', user_keys=','.join(user_keys)),
     )
 
 

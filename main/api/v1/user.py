@@ -14,8 +14,8 @@ import util
 from main import api_v1
 
 
-@api_v1.resource('/user/', endpoint='api.user.list')
-class UserListAPI(restful.Resource):
+@api_v1.resource('/admin/user/', endpoint='api.admin.user.list')
+class AdminUserListAPI(restful.Resource):
   @auth.admin_required
   def get(self):
     user_keys = util.param('user_keys', list)
@@ -40,8 +40,8 @@ class UserListAPI(restful.Resource):
       })
 
 
-@api_v1.resource('/user/<string:user_key>/', endpoint='api.user')
-class UserAPI(restful.Resource):
+@api_v1.resource('/admin/user/<string:user_key>/', endpoint='api.admin.user')
+class AdminUserAPI(restful.Resource):
   @auth.admin_required
   def get(self, user_key):
     user_db = ndb.Key(urlsafe=user_key).get()
@@ -54,7 +54,7 @@ class UserAPI(restful.Resource):
     user_db = ndb.Key(urlsafe=user_key).get()
     if not user_db:
       helpers.make_not_found_exception('User %s not found' % user_key)
-    user_db.key.delete()
+    delete_user_dbs([user_db.key])
     return helpers.make_response(user_db, model.User.FIELDS)
 
 
