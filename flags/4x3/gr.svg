@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".67" d="M0 0h120v90H0z"/>
-    </clipPath>
-  </defs>
-  <g fill-rule="evenodd" clip-path="url(#a)" transform="scale(5.33)" stroke-width="1pt">
-    <path fill="#0061f3" d="M0 0h135v10H0z"/>
-    <path fill="#fff" d="M0 10h135v10H0z"/>
-    <path fill="#0061f3" d="M0 20h135v10H0z"/>
-    <path fill="#fff" d="M0 30h135v10H0z"/>
-    <path fill="#0061f3" d="M0 40h135v10H0z"/>
-    <path fill="#fff" d="M0 50h135v10H0z"/>
-    <path fill="#0061f3" d="M0 60h135v10H0z"/>
-    <path fill="#fff" d="M0 70h135v10H0z"/>
-    <path fill="#0061f3" d="M0 80h135v10H0zM0 0h50v50H0z"/>
-    <g fill="#fff">
-      <path d="M20 0h10v50H20z"/>
-      <path d="M0 20h50v10H0z"/>
+<svg width="640px" height="480px" viewBox="0 0 640 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.3 (16618) - http://www.bohemiancoding.com/sketch -->
+    <title>Flag_of_Greece</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flag_of_Greece" sketch:type="MSLayerGroup">
+            <rect id="Rectangle-path" fill="#0D5EAF" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="480"></rect>
+            <path d="M106.666667,106.666667 L106.666667,0 L160,0 L160,106.666667 L266.666667,106.666667 L266.666667,160 L160,160 L160,266.666667 L106.666667,266.666667 L106.666667,160 L0,160 L0,106.666667 L106.666667,106.666667 L106.666667,106.666667 Z M639.50174,106.666667 L639.50174,53.3333333 L266.666667,53.3333333 L266.666667,106.666667 L639.50174,106.666667 L639.50174,106.666667 Z M266.666667,213.333333 L639.50174,213.333333 L639.50174,160 L266.666667,160 L266.666667,213.333333 L266.666667,213.333333 Z M0,320 L639.50174,320 L639.50174,266.666667 L0,266.666667 L0,320 L0,320 Z M0,426.666667 L639.50174,426.666667 L639.50174,373.333333 L0,373.333333 L0,426.666667 L0,426.666667 Z" id="Shape" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+        </g>
     </g>
-  </g>
 </svg>

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-  <g fill-rule="evenodd" stroke-width="1pt">
-    <path fill="#ffe800" d="M0 0h640v480H0z"/>
-    <path fill="#00148e" d="M0 240h640v240H0z"/>
-    <path fill="#da0010" d="M0 360h640v120H0z"/>
-  </g>
+<svg width="640px" height="480px" viewBox="0 0 640 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.3 (16618) - http://www.bohemiancoding.com/sketch -->
+    <title>Flag_of_Colombia</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flag_of_Colombia" sketch:type="MSLayerGroup">
+            <rect id="red" fill="#CE1126" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="480"></rect>
+            <rect id="blue" fill="#003893" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="360"></rect>
+            <rect id="yellow" fill="#FCD116" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="240"></rect>
+        </g>
+    </g>
 </svg>

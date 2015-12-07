@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".67" d="M-74 0h682.67v512H-74z"/>
-    </clipPath>
-  </defs>
-  <g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(.94 0 0 .94 69.38 0)" stroke-width="1pt">
-    <path fill="#e80000" d="M-74 0h768v512H-74z"/>
-    <path fill="#fff" d="M-74 0h768v256H-74z"/>
-    <path d="M-74 0l382.73 255.67L-74 511.01V0z" fill="#00006f"/>
-  </g>
+<svg width="640px" height="480px" viewBox="0 0 640 480" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.3 (16618) - http://www.bohemiancoding.com/sketch -->
+    <title>Flag_of_the_Czech_Republic</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Flag_of_the_Czech_Republic" sketch:type="MSLayerGroup">
+            <rect id="red" fill="#D7141A" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="480"></rect>
+            <rect id="white" fill="#FFFFFF" sketch:type="MSShapeGroup" x="0" y="0" width="640" height="240"></rect>
+            <path d="M320,240 L0,0 L0,480 L320,240 Z" id="blue" fill="#11457E" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
 </svg>
