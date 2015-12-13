@@ -18,10 +18,20 @@ from main import app
 @app.route('/admin/')
 @auth.admin_required
 def admin():
+  localhost = None
+  if config.DEVELOPMENT and ':' in flask.request.host:
+    try:
+      parts = flask.request.host.split(':')
+      port = int(parts[1]) + 1
+      localhost = 'http://%s:%s/' % (parts[0], port)
+    except:
+      pass
+
   return flask.render_template(
       'admin/admin.html',
       title='Admin',
       html_class='admin',
+      localhost=localhost,
     )
 
 
