@@ -320,7 +320,7 @@ def decorator_order_guard(f, decorator_name):
 def save_request_params():
   flask.session['auth-params'] = {
     'next': util.get_next_url(),
-    'remember': util.param('remember', bool),
+    'remember': util.param('remember'),
   }
 
 

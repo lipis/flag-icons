@@ -3,6 +3,8 @@
 from __future__ import absolute_import
 
 from flask.ext import restful
+from webargs.flaskparser import parser
+from webargs import fields as wf
 import flask
 
 from api import helpers
@@ -16,8 +18,13 @@ from main import api_v1
 @api_v1.resource('/auth/signin/', endpoint='api.auth.signin')
 class AuthAPI(restful.Resource):
   def post(self):
-    username = util.param('username') or util.param('email')
-    password = util.param('password')
+    args = parser.parse({
+      'username': wf.Str(missing=None),
+      'email': wf.Str(missing=None),
+      'password': wf.Str(missing=None),
+    })
+    username = args['username'] or args['email']
+    password = args['password']
     if not username or not password:
       return flask.abort(400)
 

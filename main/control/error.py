@@ -17,6 +17,7 @@ from main import app
 @app.errorhandler(405)  # Method Not Allowed
 @app.errorhandler(410)  # Gone
 @app.errorhandler(418)  # I'm a Teapot
+@app.errorhandler(422)  # Unprocessable Entity
 @app.errorhandler(500)  # Internal Server Error
 def error_handler(e):
   logging.exception(e)
