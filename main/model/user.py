@@ -33,6 +33,7 @@ class User(model.Base):
             (self.email or self.username).encode('utf-8')).hexdigest(),
         'size': '&s=%d' % size if size > 0 else '',
       }
+
   avatar_url = property(avatar_url_size)
 
   @classmethod
