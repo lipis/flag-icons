@@ -9,7 +9,6 @@ import util
 
 from main import app
 
-
 twitter_config = dict(
     access_token_url='https://api.twitter.com/oauth/access_token',
     authorize_url='https://api.twitter.com/oauth/authorize',

@@ -42,6 +42,7 @@ class AnonymousUser(login.AnonymousUserMixin):
   def has_permission(self, permission):
     return False
 
+
 login_manager.anonymous_user = AnonymousUser
 
 
@@ -111,6 +112,7 @@ def login_required(f):
     if flask.request.path.startswith('/api/'):
       return flask.abort(401)
     return flask.redirect(flask.url_for('signin', next=flask.request.url))
+
   return decorated_function
 
 
@@ -126,6 +128,7 @@ def admin_required(f):
     if not is_logged_in():
       return flask.redirect(flask.url_for('signin', next=flask.request.url))
     return flask.abort(403)
+
   return decorated_function
 
 
@@ -153,7 +156,9 @@ def permission_required(permission=None, methods=None):
           return flask.abort(401)
         return flask.redirect(flask.url_for('signin', next=flask.request.url))
       return flask.abort(403)
+
     return decorated_function
+
   return permission_decorator
 
 

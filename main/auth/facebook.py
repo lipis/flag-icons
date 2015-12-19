@@ -9,7 +9,6 @@ import util
 
 from main import app
 
-
 facebook_config = dict(
     access_token_url='/oauth/access_token',
     authorize_url='/oauth/authorize',

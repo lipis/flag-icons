@@ -9,7 +9,6 @@ import util
 
 from main import app
 
-
 microsoft_config = dict(
     access_token_method='POST',
     access_token_url='https://login.live.com/oauth20_token.srf',

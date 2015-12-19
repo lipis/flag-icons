@@ -185,5 +185,6 @@ def magic():
     print 'Project ID is not provided.'
     PARSER.print_help()
 
+
 if __name__ == '__main__':
   magic()

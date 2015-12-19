@@ -9,7 +9,6 @@ import util
 
 from main import app
 
-
 linkedin_config = dict(
     access_token_method='POST',
     access_token_url='https://www.linkedin.com/uas/oauth2/accessToken',

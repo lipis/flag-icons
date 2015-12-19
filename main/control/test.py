@@ -9,7 +9,6 @@ import util
 
 from main import app
 
-
 TESTS = [
     'responsive',
     'grid',

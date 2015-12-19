@@ -8,7 +8,6 @@ import util
 
 from main import app
 
-
 yahoo_config = dict(
     access_token_url='https://api.login.yahoo.com/oauth/v2/get_token',
     authorize_url='https://api.login.yahoo.com/oauth/v2/request_auth',

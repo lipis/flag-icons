@@ -9,7 +9,6 @@ import util
 
 from main import app
 
-
 dropbox_config = dict(
     access_token_method='POST',
     access_token_url='https://api.dropbox.com/1/oauth2/token',

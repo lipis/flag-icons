@@ -9,7 +9,6 @@ import util
 
 from main import app
 
-
 bitbucket_config = dict(
     access_token_url='https://bitbucket.org/api/1.0/oauth/access_token',
     authorize_url='https://bitbucket.org/api/1.0/oauth/authenticate',
