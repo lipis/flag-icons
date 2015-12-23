@@ -1,24 +1,27 @@
 module.exports = (grunt)->
-  SRC_DIR = "less"
-  TARGET_DIR = "css"
+  less = 'less'
+  TARGET_DIR = 'css'
 
   grunt.initConfig
     less:
-      app_css:
-        src: "#{SRC_DIR}/flag-icon.less"
-        dest: "#{TARGET_DIR}/flag-icon.css"
+      flag:
+        src: 'less/flag-icon.less'
+        dest: 'css/flag-icon.css'
+      docs:
+        src: 'assets/docs.less'
+        dest: 'assets/docs.css'
 
     cssmin:
-      app_css:
-        src: "#{TARGET_DIR}/flag-icon.css"
-        dest: "#{TARGET_DIR}/flag-icon.min.css"
+      flag:
+        src: 'css/flag-icon.css'
+        dest: 'css/flag-icon.min.css'
 
     watch:
       css:
         options:
           livereload: true
-        files: "#{SRC_DIR}/*.less"
-        tasks: ["build"]
+        files: '**/*.less'
+        tasks: ['build']
 
       assets:
         options:
@@ -32,10 +35,10 @@ module.exports = (grunt)->
           keepalive: true
 
 
-    grunt.loadNpmTasks("grunt-contrib-less")
-    grunt.loadNpmTasks("grunt-contrib-cssmin")
-    grunt.loadNpmTasks("grunt-contrib-watch")
-    grunt.loadNpmTasks('grunt-contrib-connect')
+    grunt.loadNpmTasks 'grunt-contrib-less'
+    grunt.loadNpmTasks 'grunt-contrib-cssmin'
+    grunt.loadNpmTasks 'grunt-contrib-watch'
+    grunt.loadNpmTasks 'grunt-contrib-connect'
 
-    grunt.registerTask("default", ["build", "watch"])
-    grunt.registerTask("build", ["less", "cssmin"])
+    grunt.registerTask 'build',   ['less', 'cssmin']
+    grunt.registerTask 'default', ['build', 'watch']

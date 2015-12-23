@@ -1,3 +1,15 @@
+body {
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+}
 .flag-wrapper {
   width: 100%;
   display: inline-block;
@@ -6,31 +18,136 @@
   overflow: hidden;
   margin-bottom: 20px;
 }
-
 .flag-wrapper:after {
-  padding-top: 75%; /* ratio */
+  padding-top: 75%;
+  /* ratio */
   display: block;
   content: '';
 }
-
 .flag-wrapper .flag {
   position: absolute;
-  top: 0; bottom: 0; right: 0; left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background-size: cover;
 }
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 300;
-}
-
 .no-wrap {
   white-space: nowrap;
   margin-bottom: 8px;
   overflow: hidden;
 }
-
 .all-flags .flag-icon-background {
   cursor: pointer;
+}
+.jumbotron {
+  position: relative;
+  font-size: 16px;
+  color: #fff;
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+  border-radius: 0;
+  padding-bottom: 80px;
+  background: linear-gradient(to right, #0d6632, #f4c01a);
+}
+.jumbotron h1 {
+  margin-bottom: 15px;
+  font-weight: 300;
+  letter-spacing: -1px;
+  color: #fff;
+}
+.jumbotron iframe {
+  width: 100px!important;
+  height: 20px!important;
+  border: none;
+  overflow: hidden;
+  margin: 2px;
+}
+.jumbotron p a,
+.jumbotron .jumbotron-links a {
+  font-weight: 500;
+  color: #fff;
+}
+.jumbotron .jumbotron-links {
+  margin-top: 15px;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  font-size: 14px;
+}
+.jumbotron .jumbotron-links li {
+  display: inline;
+}
+.jumbotron .jumbotron-links li + li {
+  margin-left: 20px;
+}
+.jumbotron .bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 18px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.btn-outline {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 18px 24px;
+  font-size: inherit;
+  font-weight: 500;
+  color: #fff;
+  /* redeclare to override the `.jumbotron a` */
+  background-color: transparent;
+  border-color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.1s ease-in-out;
+}
+.btn-outline:hover,
+.btn-outline:active {
+  color: #0d6632;
+  background-color: #fff;
+  border-color: #fff;
+}
+.how-to {
+  padding: 20px;
+}
+.how-to h2 {
+  text-align: center;
+}
+.how-to li {
+  font-size: 21px;
+  line-height: 1.7;
+  margin-top: 20px;
+}
+.how-to li p {
+  font-size: 16px;
+  color: #555;
+}
+.how-to code {
+  font-size: 85%;
+  word-wrap: break-word;
+  white-space: normal;
+}
+footer {
+  text-align: center;
+  opacity: .8;
+  padding: 50px;
+  background: linear-gradient(to right, #f4c01a, #0d6632);
+}
+footer a {
+  color: #fff;
+}
+footer a:hover {
+  color: #fff;
+}
+.links {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+}
+.links li {
+  display: inline;
+  padding: 0 10px;
 }
