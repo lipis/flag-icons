@@ -10,14 +10,14 @@ import util
 from main import app
 
 google_config = dict(
-    access_token_method='POST',
-    access_token_url='https://accounts.google.com/o/oauth2/token',
-    authorize_url='https://accounts.google.com/o/oauth2/auth',
-    base_url='https://www.googleapis.com/plus/v1/people/',
-    consumer_key=config.CONFIG_DB.google_client_id,
-    consumer_secret=config.CONFIG_DB.google_client_secret,
-    request_token_params={'scope': 'email profile'},
-  )
+  access_token_method='POST',
+  access_token_url='https://accounts.google.com/o/oauth2/token',
+  authorize_url='https://accounts.google.com/o/oauth2/auth',
+  base_url='https://www.googleapis.com/plus/v1/people/',
+  consumer_key=config.CONFIG_DB.google_client_id,
+  consumer_secret=config.CONFIG_DB.google_client_secret,
+  request_token_params={'scope': 'email profile'},
+)
 
 google = auth.create_oauth_app(google_config, 'google')
 
@@ -69,9 +69,9 @@ def retrieve_user_from_google(response):
     name = 'google_user_%s' % id
 
   return auth.create_user_db(
-      auth_id=auth_id,
-      name=name,
-      username=email or name,
-      email=email,
-      verified=bool(email),
-    )
+    auth_id=auth_id,
+    name=name,
+    username=email or name,
+    email=email,
+    verified=bool(email),
+  )

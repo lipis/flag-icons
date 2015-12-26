@@ -10,14 +10,14 @@ import util
 from main import app
 
 github_config = dict(
-    access_token_method='POST',
-    access_token_url='https://github.com/login/oauth/access_token',
-    authorize_url='https://github.com/login/oauth/authorize',
-    base_url='https://api.github.com/',
-    consumer_key=config.CONFIG_DB.github_client_id,
-    consumer_secret=config.CONFIG_DB.github_client_secret,
-    request_token_params={'scope': 'user:email'},
-  )
+  access_token_method='POST',
+  access_token_url='https://github.com/login/oauth/access_token',
+  authorize_url='https://github.com/login/oauth/authorize',
+  base_url='https://api.github.com/',
+  consumer_key=config.CONFIG_DB.github_client_id,
+  consumer_secret=config.CONFIG_DB.github_client_secret,
+  request_token_params={'scope': 'user:email'},
+)
 
 github = auth.create_oauth_app(github_config, 'github')
 
@@ -48,9 +48,9 @@ def retrieve_user_from_github(response):
   auth_id = 'github_%s' % str(response['id'])
   user_db = model.User.get_by('auth_ids', auth_id)
   return user_db or auth.create_user_db(
-      auth_id,
-      response.get('name', response.get('login')),
-      response.get('login'),
-      response.get('email', ''),
-      verified=bool(response.get('email', '')),
-    )
+    auth_id,
+    response.get('name', response.get('login')),
+    response.get('login'),
+    response.get('email', ''),
+    verified=bool(response.get('email', '')),
+  )

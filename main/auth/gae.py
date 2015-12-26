@@ -40,10 +40,10 @@ def retrieve_user_from_gae(gae_user):
     return user_db
 
   return auth.create_user_db(
-      auth_id=auth_id,
-      name=util.create_name_from_email(gae_user.email()),
-      username=gae_user.email(),
-      email=gae_user.email(),
-      verified=True,
-      admin=users.is_current_user_admin(),
-    )
+    auth_id=auth_id,
+    name=util.create_name_from_email(gae_user.email()),
+    username=gae_user.email(),
+    email=gae_user.email(),
+    verified=True,
+    admin=users.is_current_user_admin(),
+  )

@@ -25,20 +25,20 @@ from main import app
 @auth.admin_required
 def user_list():
   user_dbs, cursors = model.User.get_dbs(
-      email=util.param('email'), prev_cursor=True,
-    )
+    email=util.param('email'), prev_cursor=True,
+  )
   permissions = list(UserUpdateForm._permission_choices)
   permissions += util.param('permissions', list) or []
   return flask.render_template(
-      'user/user_list.html',
-      html_class='user-list',
-      title='User List',
-      user_dbs=user_dbs,
-      next_url=util.generate_next_url(cursors['next']),
-      prev_url=util.generate_next_url(cursors['prev']),
-      api_url=flask.url_for('api.admin.user.list'),
-      permissions=sorted(set(permissions)),
-    )
+    'user/user_list.html',
+    html_class='user-list',
+    title='User List',
+    user_dbs=user_dbs,
+    next_url=util.generate_next_url(cursors['next']),
+    prev_url=util.generate_next_url(cursors['prev']),
+    api_url=flask.url_for('api.admin.user.list'),
+    permissions=sorted(set(permissions)),
+  )
 
 
 ###############################################################################
@@ -46,33 +46,33 @@ def user_list():
 ###############################################################################
 class UserUpdateForm(wtf.Form):
   username = wtforms.StringField(
-      model.User.username._verbose_name,
-      [wtforms.validators.required(), wtforms.validators.length(min=2)],
-      filters=[util.email_filter],
-    )
+    model.User.username._verbose_name,
+    [wtforms.validators.required(), wtforms.validators.length(min=2)],
+    filters=[util.email_filter],
+  )
   name = wtforms.StringField(
-      model.User.name._verbose_name,
-      [wtforms.validators.required()], filters=[util.strip_filter],
-    )
+    model.User.name._verbose_name,
+    [wtforms.validators.required()], filters=[util.strip_filter],
+  )
   email = wtforms.StringField(
-      model.User.email._verbose_name,
-      [wtforms.validators.optional(), wtforms.validators.email()],
-      filters=[util.email_filter],
-    )
+    model.User.email._verbose_name,
+    [wtforms.validators.optional(), wtforms.validators.email()],
+    filters=[util.email_filter],
+  )
   admin = wtforms.BooleanField(model.User.admin._verbose_name)
   active = wtforms.BooleanField(model.User.active._verbose_name)
   verified = wtforms.BooleanField(model.User.verified._verbose_name)
   permissions = wtforms.SelectMultipleField(
-      model.User.permissions._verbose_name,
-      filters=[util.sort_filter],
-    )
+    model.User.permissions._verbose_name,
+    filters=[util.sort_filter],
+  )
 
   _permission_choices = set()
 
   def __init__(self, *args, **kwds):
     super(UserUpdateForm, self).__init__(*args, **kwds)
     self.permissions.choices = [
-        (p, p) for p in sorted(UserUpdateForm._permission_choices)
+      (p, p) for p in sorted(UserUpdateForm._permission_choices)
       ]
 
   @auth.permission_registered.connect
@@ -107,17 +107,17 @@ def user_update(user_id=0):
         user_db.active = True
       user_db.put()
       return flask.redirect(flask.url_for(
-          'user_list', order='-modified', active=user_db.active,
-        ))
+        'user_list', order='-modified', active=user_db.active,
+      ))
 
   return flask.render_template(
-      'user/user_update.html',
-      title=user_db.name or 'New User',
-      html_class='user-update',
-      form=form,
-      user_db=user_db,
-      api_url=flask.url_for('api.admin.user', user_key=user_db.key.urlsafe()) if user_db.key else ''
-    )
+    'user/user_update.html',
+    title=user_db.name or 'New User',
+    html_class='user-update',
+    form=form,
+    user_db=user_db,
+    api_url=flask.url_for('api.admin.user', user_key=user_db.key.urlsafe()) if user_db.key else ''
+  )
 
 
 ###############################################################################
@@ -142,10 +142,10 @@ def user_verify(token):
 ###############################################################################
 class UserForgotForm(wtf.Form):
   email = wtforms.StringField(
-      'Email',
-      [wtforms.validators.required(), wtforms.validators.email()],
-      filters=[util.email_filter],
-    )
+    'Email',
+    [wtforms.validators.required(), wtforms.validators.email()],
+    filters=[util.email_filter],
+  )
   recaptcha = wtf.RecaptchaField()
 
 
@@ -159,8 +159,8 @@ def user_forgot(token=None):
     cache.bump_auth_attempt()
     email = form.email.data
     user_dbs, cursors = util.get_dbs(
-        model.User.query(), email=email, active=True, limit=2,
-      )
+      model.User.query(), email=email, active=True, limit=2,
+    )
     count = len(user_dbs)
     if count == 1:
       task.reset_password_notification(user_dbs[0])
@@ -170,20 +170,20 @@ def user_forgot(token=None):
     elif count == 2:
       task.email_conflict_notification(email)
       form.email.errors.append(
-          '''We are sorry but it looks like there is a conflict with your
-          account. Our support team is already informed and we will get back to
-          you as soon as possible.'''
-        )
+        '''We are sorry but it looks like there is a conflict with your
+        account. Our support team is already informed and we will get back to
+        you as soon as possible.'''
+      )
 
   if form.errors:
     cache.bump_auth_attempt()
 
   return flask.render_template(
-      'user/user_forgot.html',
-      title='Forgot Password?',
-      html_class='user-forgot',
-      form=form,
-    )
+    'user/user_forgot.html',
+    title='Forgot Password?',
+    html_class='user-forgot',
+    form=form,
+  )
 
 
 ###############################################################################
@@ -191,9 +191,9 @@ def user_forgot(token=None):
 ###############################################################################
 class UserResetForm(wtf.Form):
   new_password = wtforms.StringField(
-      'New Password',
-      [wtforms.validators.required(), wtforms.validators.length(min=6)],
-    )
+    'New Password',
+    [wtforms.validators.required(), wtforms.validators.length(min=6)],
+  )
 
 
 @app.route('/user/reset/<token>/', methods=['GET', 'POST'])
@@ -218,12 +218,12 @@ def user_reset(token=None):
     return auth.signin_user_db(user_db)
 
   return flask.render_template(
-      'user/user_reset.html',
-      title='Reset Password',
-      html_class='user-reset',
-      form=form,
-      user_db=user_db,
-    )
+    'user/user_reset.html',
+    title='Reset Password',
+    html_class='user-reset',
+    form=form,
+    user_db=user_db,
+  )
 
 
 ###############################################################################
@@ -231,13 +231,13 @@ def user_reset(token=None):
 ###############################################################################
 class UserActivateForm(wtf.Form):
   name = wtforms.StringField(
-      model.User.name._verbose_name,
-      [wtforms.validators.required()], filters=[util.strip_filter],
-    )
+    model.User.name._verbose_name,
+    [wtforms.validators.required()], filters=[util.strip_filter],
+  )
   password = wtforms.StringField(
-      'Password',
-      [wtforms.validators.required(), wtforms.validators.length(min=6)],
-    )
+    'Password',
+    [wtforms.validators.required(), wtforms.validators.length(min=6)],
+  )
 
 
 @app.route('/user/activate/<token>/', methods=['GET', 'POST'])
@@ -261,12 +261,12 @@ def user_activate(token):
     return auth.signin_user_db(user_db)
 
   return flask.render_template(
-      'user/user_activate.html',
-      title='Activate Account',
-      html_class='user-activate',
-      user_db=user_db,
-      form=form,
-    )
+    'user/user_activate.html',
+    title='Activate Account',
+    html_class='user-activate',
+    user_db=user_db,
+    form=form,
+  )
 
 
 ###############################################################################
@@ -277,14 +277,14 @@ class UserMergeForm(wtf.Form):
   user_keys = wtforms.StringField('User Keys', [wtforms.validators.required()])
   username = wtforms.StringField('Username', [wtforms.validators.optional()])
   name = wtforms.StringField(
-      'Name (merged)',
-      [wtforms.validators.required()], filters=[util.strip_filter],
-    )
+    'Name (merged)',
+    [wtforms.validators.required()], filters=[util.strip_filter],
+  )
   email = wtforms.StringField(
-      'Email (merged)',
-      [wtforms.validators.optional(), wtforms.validators.email()],
-      filters=[util.email_filter],
-    )
+    'Email (merged)',
+    [wtforms.validators.optional(), wtforms.validators.email()],
+    filters=[util.email_filter],
+  )
 
 
 @app.route('/admin/user/merge/', methods=['GET', 'POST'])
@@ -333,19 +333,19 @@ def user_merge():
     deprecated_keys = [k for k in user_db_keys if k != merged_user_db.key]
     merge_user_dbs(merged_user_db, deprecated_keys)
     return flask.redirect(
-        flask.url_for('user_update', user_id=merged_user_db.key.id()),
-      )
+      flask.url_for('user_update', user_id=merged_user_db.key.id()),
+    )
 
   return flask.render_template(
-      'user/user_merge.html',
-      title='Merge Users',
-      html_class='user-merge',
-      user_dbs=user_dbs,
-      merged_user_db=merged_user_db,
-      form=form,
-      auth_ids=auth_ids,
-      api_url=flask.url_for('api.admin.user.list'),
-    )
+    'user/user_merge.html',
+    title='Merge Users',
+    html_class='user-merge',
+    user_dbs=user_dbs,
+    merged_user_db=merged_user_db,
+    form=form,
+    auth_ids=auth_ids,
+    api_url=flask.url_for('api.admin.user.list'),
+  )
 
 
 @ndb.transactional(xg=True)

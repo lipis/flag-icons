@@ -21,29 +21,29 @@ import main
 ###############################################################################
 PARSER = argparse.ArgumentParser()
 PARSER.add_argument(
-    '-d', '--dependencies', dest='install_dependencies', action='store_true',
-    help='install virtualenv and python dependencies',
-  )
+  '-d', '--dependencies', dest='install_dependencies', action='store_true',
+  help='install virtualenv and python dependencies',
+)
 PARSER.add_argument(
-    '-s', '--start', dest='start', action='store_true',
-    help='starts the dev_appserver.py with storage_path pointing to temp',
-  )
+  '-s', '--start', dest='start', action='store_true',
+  help='starts the dev_appserver.py with storage_path pointing to temp',
+)
 PARSER.add_argument(
-    '-o', '--host', dest='host', action='store', default='127.0.0.1',
-    help='the host to start the dev_appserver.py',
-  )
+  '-o', '--host', dest='host', action='store', default='127.0.0.1',
+  help='the host to start the dev_appserver.py',
+)
 PARSER.add_argument(
-    '-p', '--port', dest='port', action='store', default='8080',
-    help='the port to start the dev_appserver.py',
-  )
+  '-p', '--port', dest='port', action='store', default='8080',
+  help='the port to start the dev_appserver.py',
+)
 PARSER.add_argument(
-    '--appserver-args', dest='args', nargs=argparse.REMAINDER, default=[],
-    help='all following args are passed to dev_appserver.py',
-  )
+  '--appserver-args', dest='args', nargs=argparse.REMAINDER, default=[],
+  help='all following args are passed to dev_appserver.py',
+)
 PARSER.add_argument(
-    '-v', '--version', dest='show_version', action='store_true',
-    help='Show gae-init version',
-  )
+  '-v', '--version', dest='show_version', action='store_true',
+  help='Show gae-init version',
+)
 ARGS = PARSER.parse_args()
 
 
@@ -69,8 +69,8 @@ FILE_REQUIREMENTS = 'requirements.txt'
 FILE_PIP_GUARD = os.path.join(DIR_TEMP, 'pip.guard')
 
 FILE_VENV = os.path.join(DIR_VENV, 'Scripts', 'activate.bat') \
-    if IS_WINDOWS \
-    else os.path.join(DIR_VENV, 'bin', 'activate')
+  if IS_WINDOWS \
+  else os.path.join(DIR_VENV, 'bin', 'activate')
 
 DIR_STORAGE = os.path.join(DIR_TEMP, 'storage')
 FILE_UPDATE = os.path.join(DIR_TEMP, 'update.json')
@@ -121,16 +121,16 @@ def create_virtualenv():
   if not os.path.exists(FILE_VENV):
     os.system('virtualenv --no-site-packages %s' % DIR_VENV)
     os.system('echo %s >> %s' % (
-        'set PYTHONPATH=' if IS_WINDOWS else 'unset PYTHONPATH', FILE_VENV
-      ))
+      'set PYTHONPATH=' if IS_WINDOWS else 'unset PYTHONPATH', FILE_VENV
+    ))
     pth_file = os.path.join(site_packages_path(), 'gae.pth')
     echo_to = 'echo %s >> {pth}'.format(pth=pth_file)
     os.system(echo_to % find_gae_path())
     os.system(echo_to % os.path.abspath(DIR_LIBX))
     fix_path_cmd = 'import dev_appserver; dev_appserver.fix_sys_path()'
     os.system(echo_to % (
-        fix_path_cmd if IS_WINDOWS else '"%s"' % fix_path_cmd
-      ))
+      fix_path_cmd if IS_WINDOWS else '"%s"' % fix_path_cmd
+    ))
   return True
 
 
@@ -143,10 +143,10 @@ def exec_pip_commands(command):
 
   script.append('echo %s' % command)
   script.append('%s SKIP_GOOGLEAPICLIENT_COMPAT_CHECK=1' %
-      ('set' if IS_WINDOWS else 'export'))
+                ('set' if IS_WINDOWS else 'export'))
   script.append(command)
   script = '&'.join(script) if IS_WINDOWS else \
-      '/bin/bash -c "%s"' % ';'.join(script)
+    '/bin/bash -c "%s"' % ';'.join(script)
   os.system(script)
 
 
@@ -174,9 +174,9 @@ def install_py_libs():
   exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info', '.so']
   exclude_prefix = ['setuptools-', 'pip-', 'Pillow-']
   exclude = [
-      'test', 'tests', 'pip', 'setuptools', '_markerlib', 'PIL',
-      'easy_install.py', 'pkg_resources.py'
-    ]
+    'test', 'tests', 'pip', 'setuptools', '_markerlib', 'PIL',
+    'easy_install.py', 'pkg_resources.py'
+  ]
 
   def _exclude_prefix(pkg):
     for prefix in exclude_prefix:
@@ -225,9 +225,9 @@ def check_for_update():
     with open(FILE_UPDATE, 'a'):
       os.utime(FILE_UPDATE, None)
     request = urllib2.Request(
-        CORE_VERSION_URL,
-        urllib.urlencode({'version': main.__version__}),
-      )
+      CORE_VERSION_URL,
+      urllib.urlencode({'version': main.__version__}),
+    )
     response = urllib2.urlopen(request)
     with open(FILE_UPDATE, 'w') as update_json:
       update_json.write(response.read())
@@ -341,14 +341,14 @@ def run_start():
   make_dirs(DIR_STORAGE)
   port = int(ARGS.port)
   run_command = ' '.join(map(str, [
-      'dev_appserver.py',
-      DIR_MAIN,
-      '--host %s' % ARGS.host,
-      '--port %s' % port,
-      '--admin_port %s' % (port + 1),
-      '--storage_path=%s' % DIR_STORAGE,
-      '--skip_sdk_update_check',
-    ] + ARGS.args))
+    'dev_appserver.py',
+    DIR_MAIN,
+    '--host %s' % ARGS.host,
+    '--port %s' % port,
+    '--admin_port %s' % (port + 1),
+    '--storage_path=%s' % DIR_STORAGE,
+    '--skip_sdk_update_check',
+  ] + ARGS.args))
   os.system(run_command)
 
 

@@ -10,17 +10,17 @@ import util
 from main import app
 
 linkedin_config = dict(
-    access_token_method='POST',
-    access_token_url='https://www.linkedin.com/uas/oauth2/accessToken',
-    authorize_url='https://www.linkedin.com/uas/oauth2/authorization',
-    base_url='https://api.linkedin.com/v1/',
-    consumer_key=config.CONFIG_DB.linkedin_api_key,
-    consumer_secret=config.CONFIG_DB.linkedin_secret_key,
-    request_token_params={
-        'scope': 'r_basicprofile r_emailaddress',
-        'state': util.uuid(),
-      },
-  )
+  access_token_method='POST',
+  access_token_url='https://www.linkedin.com/uas/oauth2/accessToken',
+  authorize_url='https://www.linkedin.com/uas/oauth2/authorization',
+  base_url='https://api.linkedin.com/v1/',
+  consumer_key=config.CONFIG_DB.linkedin_api_key,
+  consumer_secret=config.CONFIG_DB.linkedin_secret_key,
+  request_token_params={
+    'scope': 'r_basicprofile r_emailaddress',
+    'state': util.uuid(),
+  },
+)
 
 linkedin = auth.create_oauth_app(linkedin_config, 'linkedin')
 
@@ -66,9 +66,9 @@ def retrieve_user_from_linkedin(response):
   name = ' '.join(names).strip()
   email = response.get('emailAddress', '')
   return auth.create_user_db(
-      auth_id=auth_id,
-      name=name,
-      username=email or name,
-      email=email,
-      verified=bool(email),
-    )
+    auth_id=auth_id,
+    name=name,
+    username=email or name,
+    email=email,
+    verified=bool(email),
+  )

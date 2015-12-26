@@ -30,11 +30,11 @@ def error_handler(e):
     return helpers.handle_error(e)
 
   return flask.render_template(
-      'error.html',
-      title='Error %d (%s)!!1' % (e.code, e.name),
-      html_class='error-page',
-      error=e,
-    ), e.code
+    'error.html',
+    title='Error %d (%s)!!1' % (e.code, e.name),
+    html_class='error-page',
+    error=e,
+  ), e.code
 
 
 if config.PRODUCTION:
