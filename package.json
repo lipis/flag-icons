@@ -2,7 +2,7 @@
   "name": "gae-init",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "license": "MIT",
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/gae-init"
   },
