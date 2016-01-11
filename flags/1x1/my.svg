@@ -1,28 +1,104 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata4199">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <g id="flag" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.50098 0 0 1.0013 0 15.301)">
-  <rect id="rect149" height="511.34" width="1022" y="-15.281" x="0" fill="#e80008"/>
-  <rect id="rect299" height="36.525" width="1022" y="21.244" x="0" fill="#fff"/>
-  <rect id="rect300" height="36.525" width="1022" y="94.293" x="0" fill="#fff"/>
-  <rect id="rect301" height="36.525" width="1022" y="167.34" x="0" fill="#fff"/>
-  <rect id="rect302" height="36.525" width="1022" y="240.39" x="0" fill="#fff"/>
-  <rect id="rect303" height="36.525" width="1022" y="313.44" x="0" fill="#fff"/>
-  <rect id="rect304" height="36.525" width="1022" y="386.49" x="0" fill="#fff"/>
-  <rect id="rect305" height="36.525" width="1022" y="459.54" x="0" fill="#fff"/>
- </g>
- <g id="g4539" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.51574 0 0 .51574 -.96191 7.5535)">
-  <rect id="rect298" height="292.81" width="507.72" y="-15.937" x="0" fill="#000689"/>
-  <g id="g4518" fill="#fe0">
-   <path id="path297" d="m257.76 232.94c-54.627 30.397-122.92 9.8571-152.44-45.2-29.517-55.058-9.1377-123.89 45.49-153.64 33.777-18.395 70.875-18.76 104.58-0.66665-19.02-4.578-36.004-4.3319-54.459 1.1505-53.759 15.97-84.662 73.362-68.979 128.11 15.683 54.745 72.042 86.214 125.8 70.244z"/>
-   <polygon id="polygon291" transform="matrix(.84992 0 0 .84992 34.931 -42.019)" points="240.04 122.22 307.06 162.22 284.58 87.482 327.6 152.6 339.78 75.507 350.28 152.85 394.7 88.666 370.61 162.91 438.48 124.35 384.56 180.79 462.44 175.5 389.37 202.96 461.83 231.98 384.09 225.02 436.78 282.6 369.76 242.6 392.24 317.34 349.22 252.22 337.04 329.31 337.04 329.31 326.54 251.97 282.12 316.16 306.21 241.91 238.34 280.47 292.26 224.03 214.38 229.32 287.45 201.86 214.99 172.84 292.73 179.8"/>
-  </g>
- </g>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   id="svg2"
+   height="512"
+   width="512">
+  <metadata
+     id="metadata19">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs17" />
+  <rect
+     y="0"
+     x="0"
+     style="fill:#cc0001"
+     id="red"
+     height="512"
+     width="512" />
+  <rect
+     x="0"
+     style="fill:#ffffff"
+     id="white"
+     y="475.42859"
+     height="36.571426"
+     width="512" />
+  <use
+     height="100%"
+     width="100%"
+     y="0"
+     x="0"
+     xlink:href="#white"
+     id="use3035"
+     transform="translate(-3.4765625e-7,-73.142854)" />
+  <use
+     height="100%"
+     width="100%"
+     y="0"
+     x="0"
+     xlink:href="#white"
+     id="use3038"
+     transform="translate(-3.4765625e-7,-146.28572)" />
+  <use
+     height="100%"
+     width="100%"
+     y="0"
+     x="0"
+     xlink:href="#white"
+     id="use3062"
+     transform="translate(-3.4765625e-7,-219.42857)" />
+  <use
+     height="100%"
+     width="100%"
+     y="0"
+     x="0"
+     xlink:href="#white"
+     id="use3064"
+     transform="translate(-3.4765625e-7,-292.57142)" />
+  <use
+     height="100%"
+     width="100%"
+     y="0"
+     x="0"
+     xlink:href="#white"
+     id="use3066"
+     transform="translate(-3.4765625e-7,-365.71428)" />
+  <use
+     height="100%"
+     width="100%"
+     y="0"
+     x="0"
+     xlink:href="#white"
+     id="use3068"
+     transform="translate(-3.4765625e-7,-438.85713)" />
+  <rect
+     y="0"
+     x="0"
+     style="fill:#010066"
+     id="blue"
+     height="292.57141"
+     width="256" />
+  <path
+     style="fill:#ffcc00"
+     id="path4945"
+     d="m 103.83207,84.872246 c -36.474481,0 -66.079201,31.195144 -66.079201,69.629154 0,38.43403 29.60472,69.62917 66.079201,69.62917 13.178,0 25.456,-4.07663 35.76792,-11.09036 -6.00504,2.19088 -12.4496,3.38918 -19.15888,3.38918 -32.343041,0 -58.592401,-27.65958 -58.592401,-61.74016 0,-34.08055 26.24936,-61.74012 58.592401,-61.74012 7.14752,0 13.99416,1.34958 20.32912,3.821993 -10.54648,-7.509895 -23.26,-11.898857 -36.93816,-11.898857 z" />
+  <path
+     style="fill:#ffcc00"
+     id="path4959"
+     d="m 213.41551,190.74895 -27.83456,-15.35387 8.22984,31.42326 -18.61712,-26.28581 -5.80816,31.99319 -5.71248,-32.01149 -18.69544,26.22643 8.3236,-31.39692 -27.88024,15.26525 20.71128,-24.56381 -31.54304,1.28058 28.9968,-12.86553 -28.958,-12.95771 31.53888,1.38093 -20.63768,-24.62958 27.83456,15.35386 -8.22992,-31.42324 18.6172,26.28578 5.80816,-31.993159 5.7124,32.011469 18.69552,-26.22643 -8.32368,31.39692 27.88032,-15.26524 -20.71136,24.5638 31.54304,-1.28059 -28.9968,12.86554 28.95808,12.9577 -31.53888,-1.38091 z" />
 </svg>
