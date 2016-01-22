@@ -2,7 +2,7 @@
   "name": "gae-init",
   "dependencies": {
     "bootstrap": "~3",
-    "flag-icon-css": "~0",
+    "flag-icon-css": "~1",
     "font-awesome": "~4",
     "jquery": "~2",
     "moment": "~2"
