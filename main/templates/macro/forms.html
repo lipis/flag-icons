@@ -80,6 +80,11 @@
 # endmacro
 
 
+# macro datetime_field(field)
+  {{input_field(field, type='datetime-local', **kwargs)}}
+# endmacro
+
+
 # macro email_field(field)
   {{input_field(field, type='email', **kwargs)}}
 # endmacro
