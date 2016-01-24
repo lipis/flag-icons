@@ -167,18 +167,18 @@ def permission_required(permission=None, methods=None):
 ###############################################################################
 class SignInForm(wtf.Form):
   email = wtforms.StringField(
-      'Email',
-      [wtforms.validators.required()],
-      filters=[util.email_filter],
-    )
+    'Email',
+    [wtforms.validators.required()],
+    filters=[util.email_filter],
+  )
   password = wtforms.StringField(
-      'Password',
-      [wtforms.validators.required()],
-    )
+    'Password',
+    [wtforms.validators.required()],
+  )
   remember = wtforms.BooleanField(
-      'Keep me signed in',
-      [wtforms.validators.optional()],
-    )
+    'Keep me signed in',
+    [wtforms.validators.optional()],
+  )
   recaptcha = wtf.RecaptchaField()
   next_url = wtforms.HiddenField()
 
@@ -206,14 +206,14 @@ def signin():
     cache.bump_auth_attempt()
 
   return flask.render_template(
-      'auth/auth.html',
-      title='Sign in',
-      html_class='auth',
-      next_url=next_url,
-      form=form,
-      form_type='signin' if config.CONFIG_DB.has_email_authentication else '',
-      **urls_for_oauth(next_url)
-    )
+    'auth/auth.html',
+    title='Sign in',
+    html_class='auth',
+    next_url=next_url,
+    form=form,
+    form_type='signin' if config.CONFIG_DB.has_email_authentication else '',
+    **urls_for_oauth(next_url)
+  )
 
 
 ###############################################################################
@@ -221,10 +221,10 @@ def signin():
 ###############################################################################
 class SignUpForm(wtf.Form):
   email = wtforms.StringField(
-      'Email',
-      [wtforms.validators.required(), wtforms.validators.email()],
-      filters=[util.email_filter],
-    )
+    'Email',
+    [wtforms.validators.required(), wtforms.validators.email()],
+    filters=[util.email_filter],
+  )
   recaptcha = wtf.RecaptchaField()
 
 
@@ -242,11 +242,11 @@ def signup():
 
       if not form.errors:
         user_db = create_user_db(
-            None,
-            util.create_name_from_email(form.email.data),
-            form.email.data,
-            form.email.data,
-          )
+          None,
+          util.create_name_from_email(form.email.data),
+          form.email.data,
+          form.email.data,
+        )
         user_db.put()
         task.activate_user_notification(user_db)
         cache.bump_auth_attempt()
@@ -257,13 +257,13 @@ def signup():
 
   title = 'Sign up' if config.CONFIG_DB.has_email_authentication else 'Sign in'
   return flask.render_template(
-      'auth/auth.html',
-      title=title,
-      html_class='auth',
-      next_url=next_url,
-      form=form,
-      **urls_for_oauth(next_url)
-    )
+    'auth/auth.html',
+    title=title,
+    html_class='auth',
+    next_url=next_url,
+    form=form,
+    **urls_for_oauth(next_url)
+  )
 
 
 ###############################################################################
@@ -284,20 +284,20 @@ def url_for_signin(service_name, next_url):
 
 def urls_for_oauth(next_url):
   return {
-      'bitbucket_signin_url': url_for_signin('bitbucket', next_url),
-      'dropbox_signin_url': url_for_signin('dropbox', next_url),
-      'facebook_signin_url': url_for_signin('facebook', next_url),
-      'github_signin_url': url_for_signin('github', next_url),
-      'google_signin_url': url_for_signin('google', next_url),
-      'gae_signin_url': url_for_signin('gae', next_url),
-      'instagram_signin_url': url_for_signin('instagram', next_url),
-      'linkedin_signin_url': url_for_signin('linkedin', next_url),
-      'microsoft_signin_url': url_for_signin('microsoft', next_url),
-      'reddit_signin_url': url_for_signin('reddit', next_url),
-      'twitter_signin_url': url_for_signin('twitter', next_url),
-      'vk_signin_url': url_for_signin('vk', next_url),
-      'yahoo_signin_url': url_for_signin('yahoo', next_url),
-    }
+    'bitbucket_signin_url': url_for_signin('bitbucket', next_url),
+    'dropbox_signin_url': url_for_signin('dropbox', next_url),
+    'facebook_signin_url': url_for_signin('facebook', next_url),
+    'github_signin_url': url_for_signin('github', next_url),
+    'google_signin_url': url_for_signin('google', next_url),
+    'gae_signin_url': url_for_signin('gae', next_url),
+    'instagram_signin_url': url_for_signin('instagram', next_url),
+    'linkedin_signin_url': url_for_signin('linkedin', next_url),
+    'microsoft_signin_url': url_for_signin('microsoft', next_url),
+    'reddit_signin_url': url_for_signin('reddit', next_url),
+    'twitter_signin_url': url_for_signin('twitter', next_url),
+    'vk_signin_url': url_for_signin('vk', next_url),
+    'yahoo_signin_url': url_for_signin('yahoo', next_url),
+  }
 
 
 def create_oauth_app(service_config, name):
@@ -312,16 +312,16 @@ def create_oauth_app(service_config, name):
 def decorator_order_guard(f, decorator_name):
   if f in app.view_functions.values():
     raise SyntaxError(
-        'Do not use %s above app.route decorators as it would not be checked. '
-        'Instead move the line below the app.route lines.' % decorator_name
-      )
+      'Do not use %s above app.route decorators as it would not be checked. '
+      'Instead move the line below the app.route lines.' % decorator_name
+    )
 
 
 def save_request_params():
   flask.session['auth-params'] = {
-      'next': util.get_next_url(),
-      'remember': util.param('remember', bool),
-    }
+    'next': util.get_next_url(),
+    'remember': util.param('remember', bool),
+  }
 
 
 def signin_oauth(oauth_app, scheme=None):
@@ -329,13 +329,13 @@ def signin_oauth(oauth_app, scheme=None):
     flask.session.pop('oauth_token', None)
     save_request_params()
     return oauth_app.authorize(callback=flask.url_for(
-        '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
-      ))
+      '%s_authorized' % oauth_app.name, _external=True, _scheme=scheme
+    ))
   except oauth.OAuthException:
     flask.flash(
-        'Something went wrong with sign in. Please try again.',
-        category='danger',
-      )
+      'Something went wrong with sign in. Please try again.',
+      category='danger',
+    )
     return flask.redirect(flask.url_for('signin', next=util.get_next_url()))
 
 
@@ -371,14 +371,14 @@ def create_user_db(auth_id, name, username, email='', verified=False, **props):
     n += 1
 
   user_db = model.User(
-      name=name,
-      email=email,
-      username=new_username,
-      auth_ids=[auth_id] if auth_id else [],
-      verified=verified,
-      token=util.uuid(),
-      **props
-    )
+    name=name,
+    email=email,
+    username=new_username,
+    auth_ids=[auth_id] if auth_id else [],
+    verified=verified,
+    token=util.uuid(),
+    **props
+  )
   user_db.put()
   task.new_user_notification(user_db)
   return user_db
@@ -390,9 +390,9 @@ def signin_user_db(user_db):
     return flask.redirect(flask.url_for('signin'))
   flask_user_db = FlaskUser(user_db)
   auth_params = flask.session.get('auth-params', {
-      'next': flask.url_for('welcome'),
-      'remember': False,
-    })
+    'next': flask.url_for('welcome'),
+    'remember': False,
+  })
   flask.session.pop('auth-params', None)
   if login.login_user(flask_user_db, remember=auth_params['remember']):
     user_db.put_async()

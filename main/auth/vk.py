@@ -10,12 +10,12 @@ import util
 from main import app
 
 vk_config = dict(
-    access_token_url='https://oauth.vk.com/access_token',
-    authorize_url='https://oauth.vk.com/authorize',
-    base_url='https://api.vk.com/',
-    consumer_key=config.CONFIG_DB.vk_app_id,
-    consumer_secret=config.CONFIG_DB.vk_app_secret,
-  )
+  access_token_url='https://oauth.vk.com/access_token',
+  authorize_url='https://oauth.vk.com/authorize',
+  base_url='https://api.vk.com/',
+  consumer_key=config.CONFIG_DB.vk_app_id,
+  consumer_secret=config.CONFIG_DB.vk_app_secret,
+)
 
 vk = auth.create_oauth_app(vk_config, 'vk')
 
@@ -30,12 +30,12 @@ def vk_authorized():
   access_token = response['access_token']
   flask.session['oauth_token'] = (access_token, '')
   me = vk.get(
-      '/method/users.get',
-      data={
-          'access_token': access_token,
-          'format': 'json',
-        },
-    )
+    '/method/users.get',
+    data={
+      'access_token': access_token,
+      'format': 'json',
+    },
+  )
   user_db = retrieve_user_from_vk(me.data['response'][0])
   return auth.signin_user_db(user_db)
 
@@ -58,7 +58,7 @@ def retrieve_user_from_vk(response):
 
   name = ' '.join((response['first_name'], response['last_name'])).strip()
   return auth.create_user_db(
-      auth_id=auth_id,
-      name=name,
-      username=name,
-    )
+    auth_id=auth_id,
+    name=name,
+    username=name,
+  )

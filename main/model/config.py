@@ -45,23 +45,23 @@ class Config(model.Base, model.ConfigAuth):
     return cls.get_or_insert('master')
 
   FIELDS = {
-      'analytics_id': fields.String,
-      'announcement_html': fields.String,
-      'announcement_type': fields.String,
-      'anonymous_recaptcha': fields.Boolean,
-      'brand_name': fields.String,
-      'check_unique_email': fields.Boolean,
-      'email_authentication': fields.Boolean,
-      'feedback_email': fields.String,
-      'flask_secret_key': fields.String,
-      'letsencrypt_challenge': fields.String,
-      'letsencrypt_response': fields.String,
-      'notify_on_new_user': fields.Boolean,
-      'recaptcha_private_key': fields.String,
-      'recaptcha_public_key': fields.String,
-      'salt': fields.String,
-      'verify_email': fields.Boolean,
-    }
+    'analytics_id': fields.String,
+    'announcement_html': fields.String,
+    'announcement_type': fields.String,
+    'anonymous_recaptcha': fields.Boolean,
+    'brand_name': fields.String,
+    'check_unique_email': fields.Boolean,
+    'email_authentication': fields.Boolean,
+    'feedback_email': fields.String,
+    'flask_secret_key': fields.String,
+    'letsencrypt_challenge': fields.String,
+    'letsencrypt_response': fields.String,
+    'notify_on_new_user': fields.Boolean,
+    'recaptcha_private_key': fields.String,
+    'recaptcha_public_key': fields.String,
+    'salt': fields.String,
+    'verify_email': fields.Boolean,
+  }
 
   FIELDS.update(model.Base.FIELDS)
   FIELDS.update(model.ConfigAuth.FIELDS)

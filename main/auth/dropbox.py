@@ -10,13 +10,13 @@ import util
 from main import app
 
 dropbox_config = dict(
-    access_token_method='POST',
-    access_token_url='https://api.dropbox.com/1/oauth2/token',
-    authorize_url='https://www.dropbox.com/1/oauth2/authorize',
-    base_url='https://www.dropbox.com/1/',
-    consumer_key=config.CONFIG_DB.dropbox_app_key,
-    consumer_secret=config.CONFIG_DB.dropbox_app_secret,
-  )
+  access_token_method='POST',
+  access_token_url='https://api.dropbox.com/1/oauth2/token',
+  authorize_url='https://www.dropbox.com/1/oauth2/authorize',
+  base_url='https://www.dropbox.com/1/',
+  consumer_key=config.CONFIG_DB.dropbox_app_key,
+  consumer_secret=config.CONFIG_DB.dropbox_app_secret,
+)
 
 dropbox = auth.create_oauth_app(dropbox_config, 'dropbox')
 
@@ -50,7 +50,7 @@ def retrieve_user_from_dropbox(response):
     return user_db
 
   return auth.create_user_db(
-      auth_id=auth_id,
-      name=response['display_name'],
-      username=response['display_name'],
-    )
+    auth_id=auth_id,
+    name=response['display_name'],
+    username=response['display_name'],
+  )

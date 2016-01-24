@@ -28,11 +28,11 @@ def admin():
       pass
 
   return flask.render_template(
-      'admin/admin.html',
-      title='Admin',
-      html_class='admin',
-      localhost=localhost,
-    )
+    'admin/admin.html',
+    title='Admin',
+    html_class='admin',
+    localhost=localhost,
+  )
 
 
 ###############################################################################
@@ -74,12 +74,12 @@ def admin_config():
     return flask.redirect(flask.url_for('admin'))
 
   return flask.render_template(
-      'admin/admin_config.html',
-      title='App Config',
-      html_class='admin-config',
-      form=form,
-      api_url=flask.url_for('api.config'),
-    )
+    'admin/admin_config.html',
+    title='App Config',
+    html_class='admin-config',
+    form=form,
+    api_url=flask.url_for('api.config'),
+  )
 
 
 ###############################################################################
@@ -125,9 +125,9 @@ def admin_auth():
     return flask.redirect(flask.url_for('admin'))
 
   return flask.render_template(
-      'admin/admin_auth.html',
-      title='Auth Config',
-      html_class='admin-auth',
-      form=form,
-      api_url=flask.url_for('api.config'),
-    )
+    'admin/admin_auth.html',
+    title='Auth Config',
+    html_class='admin-auth',
+    form=form,
+    api_url=flask.url_for('api.config'),
+  )

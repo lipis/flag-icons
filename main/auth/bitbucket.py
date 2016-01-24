@@ -10,13 +10,13 @@ import util
 from main import app
 
 bitbucket_config = dict(
-    access_token_url='https://bitbucket.org/api/1.0/oauth/access_token',
-    authorize_url='https://bitbucket.org/api/1.0/oauth/authenticate',
-    base_url='https://api.bitbucket.org/1.0/',
-    consumer_key=config.CONFIG_DB.bitbucket_key,
-    consumer_secret=config.CONFIG_DB.bitbucket_secret,
-    request_token_url='https://bitbucket.org/api/1.0/oauth/request_token',
-  )
+  access_token_url='https://bitbucket.org/api/1.0/oauth/access_token',
+  authorize_url='https://bitbucket.org/api/1.0/oauth/authenticate',
+  base_url='https://api.bitbucket.org/1.0/',
+  consumer_key=config.CONFIG_DB.bitbucket_key,
+  consumer_secret=config.CONFIG_DB.bitbucket_secret,
+  request_token_url='https://bitbucket.org/api/1.0/oauth/request_token',
+)
 
 bitbucket = auth.create_oauth_app(bitbucket_config, 'bitbucket')
 
@@ -29,9 +29,9 @@ def bitbucket_authorized():
     return flask.redirect(util.get_next_url())
 
   flask.session['oauth_token'] = (
-      response['oauth_token'],
-      response['oauth_token_secret'],
-    )
+    response['oauth_token'],
+    response['oauth_token_secret'],
+  )
   me = bitbucket.get('user')
   user_db = retrieve_user_from_bitbucket(me.data['user'])
   return auth.signin_user_db(user_db)
@@ -59,9 +59,9 @@ def retrieve_user_from_bitbucket(response):
   emails = bitbucket.get('users/%s/emails' % response['username'])
   email = ''.join([e['email'] for e in emails.data if e['primary']][0:1])
   return auth.create_user_db(
-      auth_id=auth_id,
-      name=name,
-      username=response['username'],
-      email=email,
-      verified=bool(email),
-    )
+    auth_id=auth_id,
+    name=name,
+    username=response['username'],
+    email=email,
+    verified=bool(email),
+  )

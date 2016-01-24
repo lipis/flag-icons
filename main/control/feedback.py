@@ -14,14 +14,14 @@ from main import app
 
 class FeedbackForm(wtf.Form):
   message = wtforms.TextAreaField(
-      'Message',
-      [wtforms.validators.required()], filters=[util.strip_filter],
-    )
+    'Message',
+    [wtforms.validators.required()], filters=[util.strip_filter],
+  )
   email = wtforms.StringField(
-      'Your email',
-      [wtforms.validators.optional(), wtforms.validators.email()],
-      filters=[util.email_filter],
-    )
+    'Your email',
+    [wtforms.validators.optional(), wtforms.validators.email()],
+    filters=[util.email_filter],
+  )
   recaptcha = wtf.RecaptchaField()
 
 
@@ -41,8 +41,8 @@ def feedback():
     return flask.redirect(flask.url_for('welcome'))
 
   return flask.render_template(
-      'feedback.html',
-      title='Feedback',
-      html_class='feedback',
-      form=form,
-    )
+    'feedback.html',
+    title='Feedback',
+    html_class='feedback',
+    form=form,
+  )

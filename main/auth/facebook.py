@@ -10,13 +10,13 @@ import util
 from main import app
 
 facebook_config = dict(
-    access_token_url='/oauth/access_token',
-    authorize_url='/oauth/authorize',
-    base_url='https://graph.facebook.com/',
-    consumer_key=config.CONFIG_DB.facebook_app_id,
-    consumer_secret=config.CONFIG_DB.facebook_app_secret,
-    request_token_params={'scope': 'email'},
-  )
+  access_token_url='/oauth/access_token',
+  authorize_url='/oauth/authorize',
+  base_url='https://graph.facebook.com/',
+  consumer_key=config.CONFIG_DB.facebook_app_id,
+  consumer_secret=config.CONFIG_DB.facebook_app_secret,
+  request_token_params={'scope': 'email'},
+)
 
 facebook = auth.create_oauth_app(facebook_config, 'facebook')
 
@@ -48,9 +48,9 @@ def retrieve_user_from_facebook(response):
   auth_id = 'facebook_%s' % response['id']
   user_db = model.User.get_by('auth_ids', auth_id)
   return user_db or auth.create_user_db(
-      auth_id=auth_id,
-      name=response['name'],
-      username=response.get('username', response['name']),
-      email=response.get('email', ''),
-      verified=bool(response.get('email', '')),
-    )
+    auth_id=auth_id,
+    name=response['name'],
+    username=response.get('username', response['name']),
+    email=response.get('email', ''),
+    verified=bool(response.get('email', '')),
+  )
