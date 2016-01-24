@@ -11,8 +11,8 @@
  <g id="flag" transform="matrix(.64508 0 0 .96762 0 .000077450)">
   <g id="g2479" fill-rule="evenodd" stroke-width="1pt" transform="matrix(1.3333 0 0 1 0 -212.6)">
    <rect id="rect171" height="496.06" width="744.09" y="212.6" x="0" fill="#fff"/>
-   <rect id="rect135" height="496.06" width="248.03" y="212.6" x="496.06" fill="#36a100"/>
-   <rect id="rect403" height="496.06" width="248.03" y="212.6" x="0" fill="#36a100"/>
+   <rect id="rect135" height="496.06" width="248.03" y="212.6" x="496.06" fill="#008751"/>
+   <rect id="rect403" height="496.06" width="248.03" y="212.6" x="0" fill="#008751"/>
   </g>
  </g>
 </svg>
