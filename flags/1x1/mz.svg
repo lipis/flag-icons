@@ -14,14 +14,14 @@
   </clipPath>
  </defs>
  <g id="flag" clip-path="url(#clipPath4451)" transform="matrix(1.0321 0 0 1.0321 0 .000083212)">
-  <rect id="rect937" fill-rule="evenodd" height="155.02" width="744.09" y="-0.00003" x="0" stroke-width="1pt" fill="#009a00"/>
+  <rect id="rect937" fill-rule="evenodd" height="155.02" width="744.09" y="-0.00003" x="0" stroke-width="1pt" fill="#007168"/>
   <rect id="rect935" fill-rule="evenodd" height="15.52" width="744.09" y="154.98" x="0" stroke-width="1pt" fill="#fff"/>
   <rect id="rect934" fill-rule="evenodd" height="155.02" width="744.09" y="170.5" x="0" stroke-width="1pt"/>
   <rect id="rect933" fill-rule="evenodd" height="15.52" width="744.09" y="325.52" x="0" stroke-width="1pt" fill="#fff"/>
-  <rect id="rect931" fill-rule="evenodd" height="155.02" width="744.09" y="341.04" x="0" stroke-width="1pt" fill="#ffca00"/>
-  <path id="path932" d="m0-0.000076294v496.06l325.56-248.03-325.56-248.03z" fill-rule="evenodd" stroke-width="1pt" fill="#f00"/>
+  <rect id="rect931" fill-rule="evenodd" height="155.02" width="744.09" y="341.04" x="0" stroke-width="1pt" fill="#fce100"/>
+  <path id="path932" d="m0-0.000076294v496.06l325.56-248.03-325.56-248.03z" fill-rule="evenodd" stroke-width="1pt" fill="#d21034"/>
   <g id="g938" transform="matrix(.85471 0 0 .85471 33.727 138.34)">
-   <polygon id="polygon916" fill="#ffca00" fill-rule="evenodd" transform="matrix(.96989 .020185 -.020185 .96989 6.077 3.6535)" d="m 189.54603,214.56867 -60.76034,-42.57244 -58.855159,45.07437 21.71282,-70.94213 -61.055514,-42.04584 74.179603,-1.2722 21.12078,-71.060124 24.13269,70.155864 74.10887,-1.87174 -59.26477,44.63092 z" stroke-width="1pt" points="189.55 214.57 128.79 172 69.93 217.07 91.643 146.13 30.588 104.08 104.77 102.81 125.89 31.75 150.02 101.91 224.13 100.03 164.86 144.66"/>
+   <polygon id="polygon916" fill="#fce100" fill-rule="evenodd" transform="matrix(.96989 .020185 -.020185 .96989 6.077 3.6535)" d="m 189.54603,214.56867 -60.76034,-42.57244 -58.855159,45.07437 21.71282,-70.94213 -61.055514,-42.04584 74.179603,-1.2722 21.12078,-71.060124 24.13269,70.155864 74.10887,-1.87174 -59.26477,44.63092 z" stroke-width="1pt" points="189.55 214.57 128.79 172 69.93 217.07 91.643 146.13 30.588 104.08 104.77 102.81 125.89 31.75 150.02 101.91 224.13 100.03 164.86 144.66"/>
    <path id="path919" stroke-linejoin="round" d="m77.112 167.91h41.834c3.366 3.776 10.876 5.316 18.029-0.045 13.112-7.18 38.479 0.045 38.479 0.045l4.995-5.307-12.176-39.961-4.371-4.683s-9.365-5.619-27.161-3.746c-17.795 1.873-24.039-0.624-24.039-0.624s-15.609 1.873-19.98 4.058c-0.4805 0.389-4.9951 4.995-4.9951 4.995l-10.615 45.268z" fill-rule="evenodd" stroke="#000" stroke-linecap="round" stroke-width="1.25" fill="#fff"/>
    <path id="path918" stroke-linejoin="round" d="m85.542 157.61s39.96-4.995 51.512 10.302c-6.524 4.464-12.268 4.832-18.42 0.313 0.98-1.633 14.361-15.61 48.39-10.927" stroke="#000" stroke-linecap="round" stroke-width="1.25" fill="none"/>
    <path id="path920" d="m128.31 117.65-0.31 44.02" stroke="#000" stroke-width="1pt" fill="none"/>
