@@ -8,6 +8,8 @@ import urllib
 
 from google.appengine.datastore.datastore_query import Cursor
 from google.appengine.ext import ndb
+from webargs import fields as wf
+from webargs.flaskparser import parser
 import flask
 
 import config
@@ -17,28 +19,25 @@ import config
 # Request Parameters
 ###############################################################################
 def param(name, cast=None):
-  value = None
-  if flask.request.json:
-    return flask.request.json.get(name, None)
-
-  if value is None:
-    value = flask.request.args.get(name, None)
-  if value is None and flask.request.form:
-    value = flask.request.form.get(name, None)
-
-  if cast and value is not None:
-    if cast is bool:
-      return value.lower() in ['true', 'yes', 'y', '1', '']
-    if cast is list:
-      return value.split(',') if len(value) > 0 else []
-    if cast is ndb.Key:
-      return ndb.Key(urlsafe=value)
-    return cast(value)
-  return value
+  def switch(case):
+    return {
+      int: wf.Int(missing=None),
+      bool: wf.Bool(missing=None),
+      list: wf.DelimitedList(wf.Str(), delimiter=',', missing=[]),
+    }.get(case)
+  if cast is None or cast is ndb.Key:
+    cast_ = wf.Str(missing=None)
+  else:
+    cast_ = switch(cast) or cast
+  args = parser.parse({name: cast_})
+  return ndb.Key(urlsafe=args[name]) if cast is ndb.Key else args[name]
 
 
 def get_next_url(next_url=''):
-  next_url = next_url or param('next') or param('next_url')
+  args = parser.parse({
+    'next': wf.Str(missing=None), 'next_url': wf.Str(missing=None)
+  })
+  next_url = next_url or args['next'] or args['next_url']
   do_not_redirect_urls = [flask.url_for(u) for u in [
     'signin', 'signup', 'user_forgot', 'user_reset',
   ]]
@@ -107,9 +106,10 @@ def get_keys(*arg, **kwargs):
 # JSON Response Helpers
 ###############################################################################
 def jsonpify(*args, **kwargs):
-  if param('callback'):
+  params = parser.parse({'callback': wf.Str(missing=None)})
+  if params['callback']:
     content = '%s(%s)' % (
-      param('callback'), flask.jsonify(*args, **kwargs).data,
+      params['callback'], flask.jsonify(*args, **kwargs).data,
     )
     mimetype = 'application/javascript'
     return flask.current_app.response_class(content, mimetype=mimetype)

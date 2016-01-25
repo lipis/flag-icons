@@ -5,6 +5,8 @@ import copy
 from flask.ext import login
 from flask.ext import wtf
 from google.appengine.ext import ndb
+from webargs.flaskparser import parser
+from webargs import fields as wf
 import flask
 import wtforms
 
@@ -24,11 +26,15 @@ from main import app
 @app.route('/admin/user/')
 @auth.admin_required
 def user_list():
+  args = parser.parse({
+    'email': wf.Str(missing=None),
+    'permissions': wf.DelimitedList(wf.Str(), delimiter=',', missing=[]),
+  })
   user_dbs, cursors = model.User.get_dbs(
-    email=util.param('email'), prev_cursor=True,
+    email=args['email'], prev_cursor=True,
   )
   permissions = list(UserUpdateForm._permission_choices)
-  permissions += util.param('permissions', list) or []
+  permissions += args['permissions']
   return flask.render_template(
     'user/user_list.html',
     html_class='user-list',
@@ -290,11 +296,12 @@ class UserMergeForm(wtf.Form):
 @app.route('/admin/user/merge/', methods=['GET', 'POST'])
 @auth.admin_required
 def user_merge():
-  user_keys = util.param('user_keys', list)
-  if not user_keys:
-    flask.abort(400)
+  args = parser.parse({
+    'user_key': wf.Str(missing=None),
+    'user_keys': wf.DelimitedList(wf.Str(), delimiter=',', required=True),
+  })
 
-  user_db_keys = [ndb.Key(urlsafe=k) for k in user_keys]
+  user_db_keys = [ndb.Key(urlsafe=k) for k in args['user_keys']]
   user_dbs = ndb.get_multi(user_db_keys)
   if len(user_dbs) < 2:
     flask.abort(400)
@@ -310,7 +317,7 @@ def user_merge():
     permissions.extend(user_db.permissions)
     is_admin = is_admin or user_db.admin
     is_active = is_active or user_db.active
-    if user_db.key.urlsafe() == util.param('user_key'):
+    if user_db.key.urlsafe() == args['user_key']:
       merged_user_db = user_db
 
   auth_ids = sorted(list(set(auth_ids)))
@@ -322,7 +329,7 @@ def user_merge():
 
   form_obj = copy.deepcopy(merged_user_db)
   form_obj.user_key = merged_user_db.key.urlsafe()
-  form_obj.user_keys = ','.join(user_keys)
+  form_obj.user_keys = ','.join(args['user_keys'])
 
   form = UserMergeForm(obj=form_obj)
   if form.validate_on_submit():

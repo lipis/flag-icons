@@ -5,6 +5,8 @@ from __future__ import absolute_import
 import hashlib
 
 from google.appengine.ext import ndb
+from webargs.flaskparser import parser
+from webargs import fields as wf
 
 from api import fields
 import model
@@ -40,11 +42,17 @@ class User(model.Base):
   def get_dbs(
     cls, admin=None, active=None, verified=None, permissions=None, **kwargs
   ):
+    args = parser.parse({
+      'admin': wf.Bool(missing=None),
+      'active': wf.Bool(missing=None),
+      'verified': wf.Bool(missing=None),
+      'permissions': wf.DelimitedList(wf.Str(), delimiter=',', missing=[]),
+    })
     return super(User, cls).get_dbs(
-      admin=admin or util.param('admin', bool),
-      active=active or util.param('active', bool),
-      verified=verified or util.param('verified', bool),
-      permissions=permissions or util.param('permissions', list),
+      admin=admin or args['admin'],
+      active=active or args['active'],
+      verified=verified or args['verified'],
+      permissions=permissions or args['permissions'],
       **kwargs
     )
 
