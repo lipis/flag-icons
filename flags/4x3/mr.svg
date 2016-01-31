@@ -1,21 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata3652">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs id="defs380">
-  <clipPath id="clipPath7229" clipPathUnits="userSpaceOnUse">
-   <rect id="rect7231" fill-opacity="0.67" height="480" width="640" y="0" x="0"/>
-  </clipPath>
- </defs>
- <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath7229)">
-  <rect id="rect149" transform="scale(-1)" height="480" width="685.71" y="-480" x="-662.86" fill="#2d9c4b"/>
-  <path id="path673" d="m67.255 175.27c69.077 191.41 277.65 198.43 353.18 0-0.53734 265.16-348.61 277.45-353.18 0z" fill="#ffe900"/>
-  <polygon id="polygon638" transform="matrix(.57539 -.021671 .010838 .56753 -68.784 7.4629)" points="533.78 256.9 555.61 324.28 626.44 324.23 569.1 365.81 591.04 433.16 591.04 433.16 533.77 391.48 476.5 433.15 498.45 365.81 441.12 324.21 511.95 324.28" fill="#ffe900"/>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="480" width="640" version="1">
+  <path fill="#006233" d="M0 0h640v480H0z"/>
+  <circle cx="320" cy="180" r="155" fill="#ffc400"/>
+  <path d="M243.425 11.216A150 150 0 0 0 170 140a150 150 0 0 0 150 150 150 150 0 0 0 150-150 150 150 0 0 0-73.433-128.784H243.425z" fill="#006233"/>
+  <g id="b" transform="matrix(5 0 0 5 320 140)">
+    <path id="a" d="M0-12L-3.708-.587l5.706 1.854" fill="#ffc400"/>
+    <use height="100%" width="100%" xlink:href="#a" transform="scale(-1 1)"/>
+  </g>
+  <use height="100%" width="100%" xlink:href="#b" transform="rotate(72 320 140)"/>
+  <use height="100%" width="100%" xlink:href="#b" transform="rotate(144 320 140)"/>
+  <use height="100%" width="100%" xlink:href="#b" transform="rotate(-144 320 140)"/>
+  <use height="100%" width="100%" xlink:href="#b" transform="rotate(-72 320 140)"/>
 </svg>
