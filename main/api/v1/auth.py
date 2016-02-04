@@ -23,15 +23,14 @@ class AuthAPI(restful.Resource):
       'email': wf.Str(missing=None),
       'password': wf.Str(missing=None),
     })
-    username = args['username'] or args['email']
+    handler = args['username'] or args['email']
     password = args['password']
-    if not username or not password:
+    if not handler or not password:
       return flask.abort(400)
 
-    if username.find('@') > 0:
-      user_db = model.User.get_by('email', username.lower())
-    else:
-      user_db = model.User.get_by('username', username.lower())
+    user_db = model.User.get_by(
+      'email' if '@' in handler else 'username', handler.lower()
+    )
 
     if user_db and user_db.password_hash == util.password_hash(user_db, password):
       auth.signin_user_db(user_db)
