@@ -132,6 +132,22 @@ def admin_required(f):
   return decorated_function
 
 
+def cron_required(f):
+  decorator_order_guard(f, 'auth.cron_required')
+
+  @functools.wraps(f)
+  def decorated_function(*args, **kwargs):
+    if 'X-Appengine-Cron' in flask.request.headers:
+      return f(*args, **kwargs)
+    if is_logged_in() and current_user_db().admin:
+      return f(*args, **kwargs)
+    if not is_logged_in():
+      return flask.redirect(flask.url_for('signin', next=flask.request.url))
+    return flask.abort(403)
+
+  return decorated_function
+
+
 permission_registered = _signals.signal('permission-registered')
 
 
