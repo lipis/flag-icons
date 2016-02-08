@@ -1,28 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata4199">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <g id="flag" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.50098 0 0 1.0013 0 15.301)">
-  <rect id="rect149" height="511.34" width="1022" y="-15.281" x="0" fill="#e80008"/>
-  <rect id="rect299" height="36.525" width="1022" y="21.244" x="0" fill="#fff"/>
-  <rect id="rect300" height="36.525" width="1022" y="94.293" x="0" fill="#fff"/>
-  <rect id="rect301" height="36.525" width="1022" y="167.34" x="0" fill="#fff"/>
-  <rect id="rect302" height="36.525" width="1022" y="240.39" x="0" fill="#fff"/>
-  <rect id="rect303" height="36.525" width="1022" y="313.44" x="0" fill="#fff"/>
-  <rect id="rect304" height="36.525" width="1022" y="386.49" x="0" fill="#fff"/>
-  <rect id="rect305" height="36.525" width="1022" y="459.54" x="0" fill="#fff"/>
- </g>
- <g id="g4539" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.51574 0 0 .51574 -.96191 7.5535)">
-  <rect id="rect298" height="292.81" width="507.72" y="-15.937" x="0" fill="#000689"/>
-  <g id="g4518" fill="#fe0">
-   <path id="path297" d="m257.76 232.94c-54.627 30.397-122.92 9.8571-152.44-45.2-29.517-55.058-9.1377-123.89 45.49-153.64 33.777-18.395 70.875-18.76 104.58-0.66665-19.02-4.578-36.004-4.3319-54.459 1.1505-53.759 15.97-84.662 73.362-68.979 128.11 15.683 54.745 72.042 86.214 125.8 70.244z"/>
-   <polygon id="polygon291" transform="matrix(.84992 0 0 .84992 34.931 -42.019)" points="240.04 122.22 307.06 162.22 284.58 87.482 327.6 152.6 339.78 75.507 350.28 152.85 394.7 88.666 370.61 162.91 438.48 124.35 384.56 180.79 462.44 175.5 389.37 202.96 461.83 231.98 384.09 225.02 436.78 282.6 369.76 242.6 392.24 317.34 349.22 252.22 337.04 329.31 337.04 329.31 326.54 251.97 282.12 316.16 306.21 241.91 238.34 280.47 292.26 224.03 214.38 229.32 287.45 201.86 214.99 172.84 292.73 179.8"/>
-  </g>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512" width="512" version="1">
+    <path fill="#cc0001" d="M0 .05h512v512H0z"/>
+    <path id="a" fill="#fff" d="M0 475.48h512v36.57H0z"/>
+    <use height="100%" width="100%" transform="translate(0 -73.143)" xlink:href="#a"/>
+    <use height="100%" width="100%" transform="translate(0 -146.286)" xlink:href="#a"/>
+    <use height="100%" width="100%" transform="translate(0 -219.43)" xlink:href="#a"/>
+    <use height="100%" width="100%" transform="translate(0 -292.57)" xlink:href="#a"/>
+    <use height="100%" width="100%" transform="translate(0 -365.714)" xlink:href="#a"/>
+    <use height="100%" width="100%" transform="translate(0 -438.857)" xlink:href="#a"/>
+    <path fill="#010066" d="M0 .05h512v292.57H0z"/>
+    <path d="M210.65 36.62c-60.76 0-110.08 49.155-110.08 109.716 0 60.56 49.32 109.714 110.08 109.714 21.954 0 42.408-6.424 59.586-17.475a97.658 97.658 0 0 1-31.916 5.34c-53.88 0-97.608-43.583-97.608-97.283s43.728-97.284 97.608-97.284c11.907 0 23.313 2.127 33.866 6.022-17.57-11.833-38.75-18.75-61.535-18.75z" fill="#fc0"/>
+    <path d="M393.204 203.45l-46.37-24.192 13.71 49.513-31.013-41.417-9.675 50.41-9.516-50.44-31.145 41.326 13.866-49.473-46.444 24.053 34.502-38.705-52.547 2.018 48.306-20.272-48.24-20.417 52.54 2.176-34.38-38.81 46.37 24.194-13.71-49.514 31.013 41.42 9.675-50.413 9.516 50.44 31.146-41.324-13.867 49.472 46.444-24.054-34.502 38.706 52.547-2.018-48.306 20.273 48.24 20.418-52.54-2.176z" fill="#fc0"/>
 </svg>
