@@ -1,12 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="512" width="512" version="1">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".67" d="M218.92 2.603h494.61v494.61H218.92z"/>
-    </clipPath>
-  </defs>
-  <g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(1.04 0 0 1.04 -226.62 -2.69)" stroke-width="1pt">
-    <path fill="#fff" d="M0 136.96h959.78v208.93H0z"/>
-    <path fill="#087bce" d="M957.996 497.184H1.98V330.19h956.016zM960.347 164.978H0V2.595h960.347zM481.092 262.515l-19.243 13.263 7.56-21.32-18.96-13.054 23.612-.093 7.522-21.33 7.033 21.26 23.612-.13-19.267 13.235 7.07 21.25M619.182 298.065l-19.243 13.263 7.56-21.32-18.96-13.054 23.612-.093 7.522-21.33 7.033 21.26 23.612-.13-19.267 13.235 7.07 21.25M619.182 224.235l-19.243 13.263 7.56-21.32-18.96-13.054 23.612-.093 7.522-21.33 7.033 21.26 23.612-.13-19.267 13.235 7.07 21.25M314.292 298.065l-19.243 13.263 7.56-21.32-18.96-13.054 23.612-.093 7.522-21.33 7.033 21.26 23.612-.13-19.267 13.235 7.07 21.25M314.292 224.235l-19.243 13.263 7.56-21.32-18.96-13.054 23.612-.093 7.522-21.33 7.033 21.26 23.612-.13-19.267 13.235 7.07 21.25"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 409.6 546.13333" height="512" width="512" version="1">
+  <path fill="#0073cf" d="M-68.267 0h546.133v546.133H-68.267z"/>
+  <path fill="#fff" d="M-68.267 182.044h546.133v182.044H-68.267z"/>
+  <g id="c" transform="matrix(30.34074 0 0 30.34074 204.8 273.067)" fill="#0073cf">
+    <g id="b">
+      <path id="a" d="M0-1l-.31.95.477.156z"/>
+      <use height="100%" width="100%" xlink:href="#a" transform="scale(-1 1)"/>
+    </g>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(72)"/>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(-72)"/>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(144)"/>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(-144)"/>
   </g>
+  <use height="100%" width="100%" xlink:href="#c" transform="translate(151.704 -48.545)"/>
+  <use height="100%" width="100%" xlink:href="#c" transform="translate(151.704 42.477)"/>
+  <use height="100%" width="100%" xlink:href="#c" transform="translate(-151.704 -48.545)"/>
+  <use height="100%" width="100%" xlink:href="#c" transform="translate(-151.704 42.477)"/>
 </svg>
