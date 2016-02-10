@@ -1,166 +1,23 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   id="svg548"
-   height="512"
-   width="512"
-   version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="ke.svg">
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1385"
-     inkscape:window-height="855"
-     id="namedview3832"
-     showgrid="false"
-     inkscape:zoom="0.68500969"
-     inkscape:cx="320"
-     inkscape:cy="240"
-     inkscape:window-x="55"
-     inkscape:window-y="1"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg548" />
-  <metadata
-     id="metadata4657">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs550">
-    <clipPath
-       id="clipPath5873"
-       clipPathUnits="userSpaceOnUse">
-      <rect
-         id="rect5875"
-         height="514.10999"
-         width="685.47998"
-         y="-2.1096001"
-         x="-84.324997"
-         style="fill-opacity:0.67000002" />
-    </clipPath>
-    <path
-       stroke-miterlimit="10"
-       d="m -28.58,47.5 1.733,1 46.713,-80.91 c 2.732,-0.73 4.232,-3.33 5.732,-5.927 1,-1.732 5,-8.66 6.734,-17.663 -6.93,6.003 -10.93,12.93 -11.93,14.663 -1.5,2.598 -3,5.196 -2.268,7.928 z"
-       id="a"
-       inkscape:connector-curvature="0"
-       style="stroke-miterlimit:10" />
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512" width="512">
+  <defs>
+    <path stroke-miterlimit="10" d="M-28.58 47.5l1.733 1 46.713-80.91c2.732-.73 4.232-3.33 5.732-5.927 1-1.732 5-8.66 6.734-17.663-6.93 6.003-10.93 12.93-11.93 14.663-1.5 2.598-3 5.196-2.268 7.928z" id="a"/>
   </defs>
-  <path
-     style="fill:#ffffff"
-     inkscape:connector-curvature="0"
-     d="M 1.5e-6,-7.6e-6 512,-7.6e-6 512,512.00001 l -511.9999985,0 z"
-     id="path4064" />
-  <path
-     inkscape:connector-curvature="0"
-     d="M 1.5e-6,-7.6e-6 512,-7.6e-6 512,153.6 1.5e-6,153.6 Z"
-     id="path4066" />
-  <path
-     style="fill:#006600"
-     inkscape:connector-curvature="0"
-     d="M 1.5e-6,358.4 512,358.4 l 0,153.60001 -511.9999985,0 z"
-     id="path4068" />
-  <g
-     id="b"
-     transform="matrix(3.2000001,0,0,3.2000001,255.85417,256)">
-    <use
-       height="100%"
-       width="100%"
-       y="0"
-       x="0"
-       style="stroke:#000000"
-       xlink:href="#a"
-       id="use4071" />
-    <use
-       height="100%"
-       width="100%"
-       y="0"
-       x="0"
-       style="fill:#ffffff"
-       xlink:href="#a"
-       id="use4073" />
+  <path d="M0 0h512v512H0z" fill="#fff"/>
+  <path d="M0 0h512v153.6H0z"/>
+  <path d="M0 358.4h512V512H0z" fill="#060"/>
+  <g id="b" transform="matrix(3.2 0 0 3.2 255.854 256)">
+    <use height="100%" width="100%" xlink:href="#a" stroke="#000"/>
+    <use height="100%" width="100%" xlink:href="#a" fill="#fff"/>
   </g>
-  <use
-     height="100%"
-     width="100%"
-     y="0"
-     x="0"
-     xlink:href="#b"
-     transform="matrix(-1,0,0,1,511.70833,0)"
-     id="use4075" />
-  <path
-     style="fill:#bb0000"
-     d="M 255.85352 102.40039 C 236.65352 102.40039 204.65469 153.59922 195.05469 179.19922 L 0 179.19922 L 0 332.80078 L 195.05469 332.80078 C 204.65469 358.40078 236.65352 409.59961 255.85352 409.59961 C 275.05352 409.59961 307.0543 358.40078 316.6543 332.80078 L 512 332.80078 L 512 179.19922 L 316.6543 179.19922 C 307.0543 153.59922 275.05352 102.40039 255.85352 102.40039 z "
-     id="path4229" />
-  <path
-     inkscape:connector-curvature="0"
-     id="c"
-     d="m 316.65417,332.8 c 9.6,-25.6 16,-51.2 16,-76.8 0,-25.6 -6.4,-51.2 -16,-76.8 -9.6,25.6 -16,51.2 -16,76.8 0,25.6 6.4,51.2 16,76.8" />
-  <use
-     height="100%"
-     width="100%"
-     y="0"
-     x="0"
-     xlink:href="#c"
-     transform="matrix(-1,0,0,1,511.70833,0)"
-     id="use4080" />
-  <g
-     style="fill:#ffffff"
-     id="g4082"
-     transform="matrix(3.2000001,0,0,3.2000001,255.85417,256)">
-    <ellipse
-       cy="0"
-       cx="0"
-       rx="4"
-       ry="6"
-       id="ellipse4084" />
-    <path
-       inkscape:connector-curvature="0"
-       id="d"
-       d="m 1,5.85 c 0,0 4,8 4,21 0,13 -4,21 -4,21 z" />
-    <use
-       height="100%"
-       width="100%"
-       y="0"
-       x="0"
-       xlink:href="#d"
-       transform="scale(-1,-1)"
-       id="use4087" />
-    <use
-       height="100%"
-       width="100%"
-       y="0"
-       x="0"
-       xlink:href="#d"
-       transform="scale(-1,1)"
-       id="use4089" />
-    <use
-       height="100%"
-       width="100%"
-       y="0"
-       x="0"
-       xlink:href="#d"
-       transform="scale(1,-1)"
-       id="use4091" />
+  <use height="100%" width="100%" xlink:href="#b" transform="matrix(-1 0 0 1 511.708 0)"/>
+  <path d="M255.854 102.4c-19.2 0-51.2 51.2-60.8 76.8H0v153.6h195.055c9.6 25.6 41.6 76.8 60.8 76.8 19.2 0 51.2-51.2 60.8-76.8H512V179.2H316.654c-9.6-25.6-41.6-76.8-60.8-76.8z" fill="#b00"/>
+  <path id="c" d="M316.654 332.8c9.6-25.6 16-51.2 16-76.8 0-25.6-6.4-51.2-16-76.8-9.6 25.6-16 51.2-16 76.8 0 25.6 6.4 51.2 16 76.8"/>
+  <use height="100%" width="100%" xlink:href="#c" transform="matrix(-1 0 0 1 511.708 0)"/>
+  <g transform="matrix(3.2 0 0 3.2 255.854 256)" fill="#fff">
+    <ellipse rx="4" ry="6"/>
+    <path id="d" d="M1 5.85s4 8 4 21-4 21-4 21z"/>
+    <use height="100%" width="100%" xlink:href="#d" transform="scale(-1)"/>
+    <use height="100%" width="100%" xlink:href="#d" transform="scale(-1 1)"/>
+    <use height="100%" width="100%" xlink:href="#d" transform="scale(1 -1)"/>
   </g>
 </svg>
