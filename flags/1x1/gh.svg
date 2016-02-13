@@ -1,14 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".67" d="M177.17 0h708.66v708.66H177.17z"/>
-    </clipPath>
-  </defs>
-  <g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(.722 0 0 .722 -128 0)">
-    <path fill="#fff41e" d="M0 0h1063v708.66H0z"/>
-    <path fill="#1f7848" d="M0 472.44h1063v236.22H0z"/>
-    <path fill="#e80006" d="M0 0h1063v236.22H0z"/>
-    <path d="M608.404 473.093l-77.355-55.237-76.978 55.78 28.63-90.645-76.836-55.972 95.06-.78 29.483-90.37 30.115 90.162 95.06.12-76.442 56.5 29.26 90.443z"/>
-  </g>
+  <path fill="#006b3f" d="M0 0h512v512H0z"/>
+  <path fill="#fcd116" d="M0 0h512v341.333H0z"/>
+  <path fill="#ce1126" d="M0 0h512v170.667H0z"/>
+  <path d="M256 170.667l55.453 170.666-145.178-105.477h179.45L200.547 341.333z"/>
 </svg>
