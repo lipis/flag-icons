@@ -28,21 +28,21 @@
 
   <div class="row text-center">
     # if localhost
-      {{admin_link('Localhost', 'home', localhost, '_gae')}}
+      {{admin_link('Localhost', 'home', localhost, 'gae')}}
     # endif
-    {{admin_link('Overview', 'tachometer', 'https://console.developers.google.com/home/dashboard?project=%s' % config.APPLICATION_ID, '_gae')}}
-    {{admin_link('Datastore', 'database', 'https://console.developers.google.com/datastore/query?project=%s' % config.APPLICATION_ID, '_gae')}}
-    {{admin_link('Instances', 'bolt', 'https://console.developers.google.com/appengine/instances?project=%s' % config.APPLICATION_ID, '_gae')}}
-    {{admin_link('Versions', 'archive', 'https://console.developers.google.com/appengine/versions?project=%s' % config.APPLICATION_ID, '_gae')}}
-    {{admin_link('Logs', 'bullhorn', 'https://console.developers.google.com/logs?project=%s&versionId=%s' % (config.APPLICATION_ID, config.CURRENT_VERSION_NAME), '_gae')}}
-    {{admin_link('Settings', 'cogs', 'https://console.developers.google.com/settings?project=%s' % config.APPLICATION_ID, '_gae')}}
-    {{admin_link('Billing', 'credit-card', 'https://console.developers.google.com/billing', '_gae')}}
+    {{admin_link('Overview', 'tachometer', 'https://console.developers.google.com/home/dashboard?project=%s' % config.APPLICATION_ID, 'gae')}}
+    {{admin_link('Datastore', 'database', 'https://console.developers.google.com/datastore/query?project=%s' % config.APPLICATION_ID, 'gae')}}
+    {{admin_link('Instances', 'bolt', 'https://console.developers.google.com/appengine/instances?project=%s' % config.APPLICATION_ID, 'gae')}}
+    {{admin_link('Versions', 'archive', 'https://console.developers.google.com/appengine/versions?project=%s' % config.APPLICATION_ID, 'gae')}}
+    {{admin_link('Logs', 'bullhorn', 'https://console.developers.google.com/logs?project=%s&versionId=%s' % (config.APPLICATION_ID, config.CURRENT_VERSION_NAME), 'gae')}}
+    {{admin_link('Settings', 'cogs', 'https://console.developers.google.com/settings?project=%s' % config.APPLICATION_ID, 'gae')}}
+    {{admin_link('Billing', 'credit-card', 'https://console.developers.google.com/billing', 'gae')}}
   </div>
 
 # endblock
 
 
-# macro admin_link(title, icon, url, target='')
+# macro admin_link(title, icon, url, target='_self')
   <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
     <a class="text-muted" href="{{url}}" target="{{target}}">
       <h4><span class="fa fa-fw fa-3x fa-{{icon}}"></span></h4>
