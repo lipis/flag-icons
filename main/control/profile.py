@@ -78,7 +78,7 @@ def profile_update():
 ###############################################################################
 class ProfilePasswordForm(wtf.Form):
   old_password = wtforms.StringField(
-    'Old Password', [wtforms.validators.optional()],
+    'Old Password', [wtforms.validators.required()],
   )
   new_password = wtforms.StringField(
     'New Password',
@@ -94,18 +94,18 @@ def profile_password():
   user_db = auth.current_user_db()
   form = ProfilePasswordForm(obj=user_db)
 
+  if not user_db.password_hash:
+    del form.old_password
+
   if form.validate_on_submit():
     errors = False
-    old_password = form.old_password.data
+    old_password = form.old_password.data if form.old_password else None
     new_password = form.new_password.data
     if new_password or old_password:
       if user_db.password_hash:
         if util.password_hash(user_db, old_password) != user_db.password_hash:
           form.old_password.errors.append('Invalid current password')
           errors = True
-      if not errors and old_password and not new_password:
-        form.new_password.errors.append('This field is required.')
-        errors = True
 
       if not (form.errors or errors):
         user_db.password_hash = util.password_hash(user_db, new_password)
