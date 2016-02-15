@@ -5,6 +5,6 @@
       '''
         Redirect domain for <a href="https://account.live.com/developers/applications" target="_blank">Microsoft Accounts</a>:
         <em>%s</em>
-      ''' % request.host_url[:-1]
+      ''' % url_for('microsoft_authorized', _external=True)
     )
 }}
