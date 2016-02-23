@@ -22,6 +22,7 @@ def param(name, cast=None):
   def switch(case):
     return {
       int: wf.Int(missing=None),
+      float: wf.Float(missing=None),
       bool: wf.Bool(missing=None),
       list: wf.DelimitedList(wf.Str(), delimiter=',', missing=[]),
     }.get(case)
