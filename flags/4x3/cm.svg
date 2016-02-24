@@ -1,14 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".67" d="M0 0h640v480H0z"/>
-    </clipPath>
-  </defs>
-  <g clip-path="url(#a)">
-    <path fill-rule="evenodd" fill="#fff001" d="M426.662-80H640v640H426.662z"/>
-    <path fill-rule="evenodd" fill="#009811" d="M0-80h212.013v640H0z"/>
-    <path fill-rule="evenodd" fill="#c20000" d="M212.013-80H428v640H212.013z"/>
-    <path d="M386.238 329.438l-58.624-44.32-64.234 45.677 24.41-76.032-66.563-45.123 79.945-1.394 21.017-73.935 24.975 74.242 78.32-1.05-65.455 48.162z" fill="#fff001"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="480" width="640">
+  <path fill="#007a5e" d="M0 0h213.333v480H0z"/>
+  <path fill="#ce1126" d="M213.333 0h213.333v480H213.333z"/>
+  <path fill="#fcd116" d="M426.667 0H640v480H426.667z"/>
+  <g transform="translate(320 240) scale(7.1111)" fill="#fcd116">
+    <g id="b">
+      <path id="a" d="M0-8L-2.472-.392 1.332.845z"/>
+      <use height="100%" width="100%" xlink:href="#a" transform="scale(-1 1)"/>
+    </g>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(72)"/>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(144)"/>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(-144)"/>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(-72)"/>
   </g>
 </svg>
