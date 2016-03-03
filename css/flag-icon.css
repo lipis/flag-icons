@@ -1536,3 +1536,9 @@
 .flag-icon-gb-wls.flag-icon-squared {
   background-image: url(../flags/1x1/gb-wls.svg);
 }
+.flag-icon-un {
+  background-image: url(../flags/4x3/un.svg);
+}
+.flag-icon-un.flag-icon-squared {
+  background-image: url(../flags/1x1/un.svg);
+}
