@@ -13,4 +13,4 @@ License MIT, see LICENSE for more details.
 
 """
 
-__version__ = '3.6.3'
+__version__ = '4.0.1'

@@ -24,11 +24,11 @@ def profile():
   user_db = auth.current_user_db()
 
   return flask.render_template(
-      'profile/profile.html',
-      title=user_db.name,
-      html_class='profile-view',
-      user_db=user_db,
-    )
+    'profile/profile.html',
+    title=user_db.name,
+    html_class='profile-view',
+    user_db=user_db,
+  )
 
 
 ###############################################################################
@@ -36,18 +36,18 @@ def profile():
 ###############################################################################
 class ProfileUpdateForm(i18n.Form):
   name = wtforms.StringField(
-      model.User.name._verbose_name,
-      [wtforms.validators.required()], filters=[util.strip_filter],
-    )
+    model.User.name._verbose_name,
+    [wtforms.validators.required()], filters=[util.strip_filter],
+  )
   email = wtforms.StringField(
-      model.User.email._verbose_name,
-      [wtforms.validators.optional(), wtforms.validators.email()],
-      filters=[util.email_filter],
-    )
+    model.User.email._verbose_name,
+    [wtforms.validators.optional(), wtforms.validators.email()],
+    filters=[util.email_filter],
+  )
   locale = wtforms.SelectField(
-      model.User.locale._verbose_name,
-      choices=config.LOCALE_SORTED, filters=[util.strip_filter],
-    )
+    model.User.locale._verbose_name,
+    choices=config.LOCALE_SORTED, filters=[util.strip_filter],
+  )
 
 
 @app.route('/profile/update/', methods=['GET', 'POST'])
@@ -73,12 +73,12 @@ def profile_update():
         ))
 
   return flask.render_template(
-      'profile/profile_update.html',
-      title=user_db.name,
-      html_class='profile-update',
-      form=form,
-      user_db=user_db,
-    )
+    'profile/profile_update.html',
+    title=user_db.name,
+    html_class='profile-update',
+    form=form,
+    user_db=user_db,
+  )
 
 
 ###############################################################################
@@ -86,12 +86,12 @@ def profile_update():
 ###############################################################################
 class ProfilePasswordForm(i18n.Form):
   old_password = wtforms.StringField(
-      _('Old Password'), [wtforms.validators.optional()],
-    )
+    _('Old Password'), [wtforms.validators.optional()],
+  )
   new_password = wtforms.StringField(
-      _('New Password'),
-      [wtforms.validators.required(), wtforms.validators.length(min=6)]
-    )
+    _('New Password'),
+    [wtforms.validators.required(), wtforms.validators.length(min=6)]
+  )
 
 
 @app.route('/profile/password/', methods=['GET', 'POST'])
@@ -102,18 +102,18 @@ def profile_password():
   user_db = auth.current_user_db()
   form = ProfilePasswordForm(obj=user_db)
 
+  if not user_db.password_hash:
+    del form.old_password
+
   if form.validate_on_submit():
     errors = False
-    old_password = form.old_password.data
+    old_password = form.old_password.data if form.old_password else None
     new_password = form.new_password.data
     if new_password or old_password:
       if user_db.password_hash:
         if util.password_hash(user_db, old_password) != user_db.password_hash:
           form.old_password.errors.append(_('Invalid current password'))
           errors = True
-      if not errors and old_password and not new_password:
-        form.new_password.errors.append(_('This field is required.'))
-        errors = True
 
       if not (form.errors or errors):
         user_db.password_hash = util.password_hash(user_db, new_password)
@@ -124,9 +124,9 @@ def profile_password():
       return flask.redirect(flask.url_for('profile'))
 
   return flask.render_template(
-      'profile/profile_password.html',
-      title=user_db.name,
-      html_class='profile-password',
-      form=form,
-      user_db=user_db,
-    )
+    'profile/profile_password.html',
+    title=user_db.name,
+    html_class='profile-password',
+    form=form,
+    user_db=user_db,
+  )

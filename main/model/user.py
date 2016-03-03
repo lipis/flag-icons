@@ -6,6 +6,8 @@ import hashlib
 
 from flask.ext.babel import lazy_gettext as _
 from google.appengine.ext import ndb
+from webargs.flaskparser import parser
+from webargs import fields as wf
 
 from api import fields
 import model
@@ -31,23 +33,30 @@ class User(model.Base):
 
   def avatar_url_size(self, size=None):
     return '//gravatar.com/avatar/%(hash)s?d=identicon&r=x%(size)s' % {
-        'hash': hashlib.md5(
-            (self.email or self.username).encode('utf-8')).hexdigest(),
-        'size': '&s=%d' % size if size > 0 else '',
-      }
+      'hash': hashlib.md5(
+        (self.email or self.username).encode('utf-8')).hexdigest(),
+      'size': '&s=%d' % size if size > 0 else '',
+    }
+
   avatar_url = property(avatar_url_size)
 
   @classmethod
   def get_dbs(
-      cls, admin=None, active=None, verified=None, permissions=None, **kwargs
-    ):
+    cls, admin=None, active=None, verified=None, permissions=None, **kwargs
+  ):
+    args = parser.parse({
+      'admin': wf.Bool(missing=None),
+      'active': wf.Bool(missing=None),
+      'verified': wf.Bool(missing=None),
+      'permissions': wf.DelimitedList(wf.Str(), delimiter=',', missing=[]),
+    })
     return super(User, cls).get_dbs(
-        admin=admin or util.param('admin', bool),
-        active=active or util.param('active', bool),
-        verified=verified or util.param('verified', bool),
-        permissions=permissions or util.param('permissions', list),
-        **kwargs
-      )
+      admin=admin or args['admin'],
+      active=active or args['active'],
+      verified=verified or args['verified'],
+      permissions=permissions or args['permissions'],
+      **kwargs
+    )
 
   @classmethod
   def is_username_available(cls, username, self_key=None):
@@ -61,21 +70,21 @@ class User(model.Base):
     if not config.CONFIG_DB.check_unique_email:
       return True
     user_keys, _ = util.get_keys(
-        cls.query(), email=email, verified=True, limit=2,
-      )
+      cls.query(), email=email, verified=True, limit=2,
+    )
     return not user_keys or self_key in user_keys and not user_keys[1:]
 
   FIELDS = {
-      'active': fields.Boolean,
-      'admin': fields.Boolean,
-      'auth_ids': fields.List(fields.String),
-      'avatar_url': fields.String,
-      'email': fields.String,
-      'locale': fields.String,
-      'name': fields.String,
-      'permissions': fields.List(fields.String),
-      'username': fields.String,
-      'verified': fields.Boolean,
-    }
+    'active': fields.Boolean,
+    'admin': fields.Boolean,
+    'auth_ids': fields.List(fields.String),
+    'avatar_url': fields.String,
+    'email': fields.String,
+    'locale': fields.String,
+    'name': fields.String,
+    'permissions': fields.List(fields.String),
+    'username': fields.String,
+    'verified': fields.Boolean,
+  }
 
   FIELDS.update(model.Base.FIELDS)

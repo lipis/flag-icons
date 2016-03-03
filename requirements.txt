@@ -6,4 +6,5 @@ flask-restful==0.3.5
 flask-wtf==0.12
 flask==0.10.1
 git+https://github.com/joernhees/babel@zipcompat-build
-unidecode==0.4.18
+unidecode==0.4.19
+webargs==1.2.0

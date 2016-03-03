@@ -26,23 +26,23 @@ def handle_error(e):
     e.code = 500
     e.name = e.description = 'Internal Server Error'
   return util.jsonpify({
-      'status': 'error',
-      'error_code': e.code,
-      'error_name': util.slugify(e.name),
-      'error_message': e.name,
-      'error_class': e.__class__.__name__,
-      'description': e.description,
-    }), e.code
+    'status': 'error',
+    'error_code': e.code,
+    'error_name': util.slugify(e.name),
+    'error_message': e.name,
+    'error_class': e.__class__.__name__,
+    'description': e.description,
+  }), e.code
 
 
 def make_response(data, marshal_table, cursors=None):
   if util.is_iterable(data):
     response = {
-        'status': 'success',
-        'count': len(data),
-        'now': datetime.utcnow().isoformat(),
-        'result': map(lambda l: restful.marshal(l, marshal_table), data),
-      }
+      'status': 'success',
+      'count': len(data),
+      'now': datetime.utcnow().isoformat(),
+      'result': map(lambda l: restful.marshal(l, marshal_table), data),
+    }
     if cursors:
       if isinstance(cursors, dict):
         if cursors.get('next'):
@@ -56,10 +56,10 @@ def make_response(data, marshal_table, cursors=None):
         response['next_url'] = util.generate_next_url(cursors)
     return util.jsonpify(response)
   return util.jsonpify({
-      'status': 'success',
-      'now': datetime.utcnow().isoformat(),
-      'result': restful.marshal(data, marshal_table),
-    })
+    'status': 'success',
+    'now': datetime.utcnow().isoformat(),
+    'result': restful.marshal(data, marshal_table),
+  })
 
 
 def make_not_found_exception(description):

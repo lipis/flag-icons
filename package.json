@@ -2,7 +2,7 @@
   "name": "gae-init",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "license": "MIT",
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "https://github.com/gae-init"
   },
@@ -22,11 +22,11 @@
     "gulp-bower": "~0",
     "gulp-coffee": "~2",
     "gulp-concat": "~2",
+    "gulp-cssnano": "~2",
     "gulp-help": "~1",
     "gulp-less": "~3",
     "gulp-livereload": "~3",
     "gulp-load-plugins": "~1",
-    "gulp-minify-css": "~1",
     "gulp-plumber": "~1",
     "gulp-sequence": "~0",
     "gulp-size": "~2",

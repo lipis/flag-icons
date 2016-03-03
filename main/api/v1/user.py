@@ -35,9 +35,9 @@ class AdminUserListAPI(restful.Resource):
     user_db_keys = [ndb.Key(urlsafe=k) for k in user_keys]
     delete_user_dbs(user_db_keys)
     return flask.jsonify({
-        'result': user_keys,
-        'status': 'success',
-      })
+      'result': user_keys,
+      'status': 'success',
+    })
 
 
 @api_v1.resource('/admin/user/<string:user_key>/', endpoint='api.admin.user')
