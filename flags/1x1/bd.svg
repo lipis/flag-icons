@@ -1,7 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
-  <g stroke-width="1pt" fill-rule="evenodd">
-    <path fill="#0a5c12" d="M0 0h512v512H0z"/>
-    <ellipse cx="470.77" cy="360.7" rx="231.97" transform="matrix(.581 0 0 .581 -57.648 46.55)" ry="231.97" fill="#fc000f"/>
-  </g>
+  <path fill="#006a4e" d="M0 0h512v512H0z"/>
+  <circle cx="230" cy="256" r="170.667" fill="#f42a41"/>
 </svg>
