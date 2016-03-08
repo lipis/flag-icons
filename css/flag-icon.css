@@ -18,1527 +18,5083 @@
 .flag-icon.flag-icon-squared {
   width: 1em;
 }
-.flag-icon-ad {
-  background-image: url(../flags/4x3/ad.svg);
-}
-.flag-icon-ad.flag-icon-squared {
-  background-image: url(../flags/1x1/ad.svg);
-}
-.flag-icon-ae {
-  background-image: url(../flags/4x3/ae.svg);
-}
-.flag-icon-ae.flag-icon-squared {
-  background-image: url(../flags/1x1/ae.svg);
-}
-.flag-icon-af {
-  background-image: url(../flags/4x3/af.svg);
-}
-.flag-icon-af.flag-icon-squared {
-  background-image: url(../flags/1x1/af.svg);
-}
-.flag-icon-ag {
-  background-image: url(../flags/4x3/ag.svg);
-}
-.flag-icon-ag.flag-icon-squared {
-  background-image: url(../flags/1x1/ag.svg);
-}
-.flag-icon-ai {
-  background-image: url(../flags/4x3/ai.svg);
-}
-.flag-icon-ai.flag-icon-squared {
-  background-image: url(../flags/1x1/ai.svg);
-}
-.flag-icon-al {
-  background-image: url(../flags/4x3/al.svg);
-}
-.flag-icon-al.flag-icon-squared {
-  background-image: url(../flags/1x1/al.svg);
-}
-.flag-icon-am {
-  background-image: url(../flags/4x3/am.svg);
-}
-.flag-icon-am.flag-icon-squared {
-  background-image: url(../flags/1x1/am.svg);
-}
-.flag-icon-ao {
-  background-image: url(../flags/4x3/ao.svg);
-}
-.flag-icon-ao.flag-icon-squared {
-  background-image: url(../flags/1x1/ao.svg);
-}
-.flag-icon-aq {
-  background-image: url(../flags/4x3/aq.svg);
-}
-.flag-icon-aq.flag-icon-squared {
-  background-image: url(../flags/1x1/aq.svg);
-}
-.flag-icon-ar {
-  background-image: url(../flags/4x3/ar.svg);
-}
-.flag-icon-ar.flag-icon-squared {
-  background-image: url(../flags/1x1/ar.svg);
-}
-.flag-icon-as {
-  background-image: url(../flags/4x3/as.svg);
-}
-.flag-icon-as.flag-icon-squared {
-  background-image: url(../flags/1x1/as.svg);
-}
-.flag-icon-at {
-  background-image: url(../flags/4x3/at.svg);
-}
-.flag-icon-at.flag-icon-squared {
-  background-image: url(../flags/1x1/at.svg);
-}
-.flag-icon-au {
-  background-image: url(../flags/4x3/au.svg);
-}
-.flag-icon-au.flag-icon-squared {
-  background-image: url(../flags/1x1/au.svg);
-}
-.flag-icon-aw {
-  background-image: url(../flags/4x3/aw.svg);
-}
-.flag-icon-aw.flag-icon-squared {
-  background-image: url(../flags/1x1/aw.svg);
-}
-.flag-icon-ax {
-  background-image: url(../flags/4x3/ax.svg);
-}
-.flag-icon-ax.flag-icon-squared {
-  background-image: url(../flags/1x1/ax.svg);
-}
-.flag-icon-az {
-  background-image: url(../flags/4x3/az.svg);
-}
-.flag-icon-az.flag-icon-squared {
-  background-image: url(../flags/1x1/az.svg);
-}
-.flag-icon-ba {
-  background-image: url(../flags/4x3/ba.svg);
-}
-.flag-icon-ba.flag-icon-squared {
-  background-image: url(../flags/1x1/ba.svg);
-}
-.flag-icon-bb {
-  background-image: url(../flags/4x3/bb.svg);
-}
-.flag-icon-bb.flag-icon-squared {
-  background-image: url(../flags/1x1/bb.svg);
-}
-.flag-icon-bd {
-  background-image: url(../flags/4x3/bd.svg);
-}
-.flag-icon-bd.flag-icon-squared {
-  background-image: url(../flags/1x1/bd.svg);
-}
-.flag-icon-be {
-  background-image: url(../flags/4x3/be.svg);
-}
-.flag-icon-be.flag-icon-squared {
-  background-image: url(../flags/1x1/be.svg);
-}
-.flag-icon-bf {
-  background-image: url(../flags/4x3/bf.svg);
-}
-.flag-icon-bf.flag-icon-squared {
-  background-image: url(../flags/1x1/bf.svg);
-}
-.flag-icon-bg {
-  background-image: url(../flags/4x3/bg.svg);
-}
-.flag-icon-bg.flag-icon-squared {
-  background-image: url(../flags/1x1/bg.svg);
-}
-.flag-icon-bh {
-  background-image: url(../flags/4x3/bh.svg);
-}
-.flag-icon-bh.flag-icon-squared {
-  background-image: url(../flags/1x1/bh.svg);
-}
-.flag-icon-bi {
-  background-image: url(../flags/4x3/bi.svg);
-}
-.flag-icon-bi.flag-icon-squared {
-  background-image: url(../flags/1x1/bi.svg);
-}
-.flag-icon-bj {
-  background-image: url(../flags/4x3/bj.svg);
-}
-.flag-icon-bj.flag-icon-squared {
-  background-image: url(../flags/1x1/bj.svg);
-}
-.flag-icon-bl {
-  background-image: url(../flags/4x3/bl.svg);
-}
-.flag-icon-bl.flag-icon-squared {
-  background-image: url(../flags/1x1/bl.svg);
-}
-.flag-icon-bm {
-  background-image: url(../flags/4x3/bm.svg);
-}
-.flag-icon-bm.flag-icon-squared {
-  background-image: url(../flags/1x1/bm.svg);
-}
-.flag-icon-bn {
-  background-image: url(../flags/4x3/bn.svg);
-}
-.flag-icon-bn.flag-icon-squared {
-  background-image: url(../flags/1x1/bn.svg);
-}
-.flag-icon-bo {
-  background-image: url(../flags/4x3/bo.svg);
-}
-.flag-icon-bo.flag-icon-squared {
-  background-image: url(../flags/1x1/bo.svg);
-}
-.flag-icon-bq {
-  background-image: url(../flags/4x3/bq.svg);
-}
-.flag-icon-bq.flag-icon-squared {
-  background-image: url(../flags/1x1/bq.svg);
-}
-.flag-icon-br {
-  background-image: url(../flags/4x3/br.svg);
-}
-.flag-icon-br.flag-icon-squared {
-  background-image: url(../flags/1x1/br.svg);
-}
-.flag-icon-bs {
-  background-image: url(../flags/4x3/bs.svg);
-}
-.flag-icon-bs.flag-icon-squared {
-  background-image: url(../flags/1x1/bs.svg);
-}
-.flag-icon-bt {
-  background-image: url(../flags/4x3/bt.svg);
-}
-.flag-icon-bt.flag-icon-squared {
-  background-image: url(../flags/1x1/bt.svg);
-}
-.flag-icon-bv {
-  background-image: url(../flags/4x3/bv.svg);
-}
-.flag-icon-bv.flag-icon-squared {
-  background-image: url(../flags/1x1/bv.svg);
-}
-.flag-icon-bw {
-  background-image: url(../flags/4x3/bw.svg);
-}
-.flag-icon-bw.flag-icon-squared {
-  background-image: url(../flags/1x1/bw.svg);
-}
-.flag-icon-by {
-  background-image: url(../flags/4x3/by.svg);
-}
-.flag-icon-by.flag-icon-squared {
-  background-image: url(../flags/1x1/by.svg);
-}
-.flag-icon-bz {
-  background-image: url(../flags/4x3/bz.svg);
-}
-.flag-icon-bz.flag-icon-squared {
-  background-image: url(../flags/1x1/bz.svg);
-}
-.flag-icon-ca {
-  background-image: url(../flags/4x3/ca.svg);
-}
-.flag-icon-ca.flag-icon-squared {
-  background-image: url(../flags/1x1/ca.svg);
-}
-.flag-icon-cc {
-  background-image: url(../flags/4x3/cc.svg);
-}
-.flag-icon-cc.flag-icon-squared {
-  background-image: url(../flags/1x1/cc.svg);
-}
-.flag-icon-cd {
-  background-image: url(../flags/4x3/cd.svg);
-}
-.flag-icon-cd.flag-icon-squared {
-  background-image: url(../flags/1x1/cd.svg);
-}
-.flag-icon-cf {
-  background-image: url(../flags/4x3/cf.svg);
-}
-.flag-icon-cf.flag-icon-squared {
-  background-image: url(../flags/1x1/cf.svg);
-}
-.flag-icon-cg {
-  background-image: url(../flags/4x3/cg.svg);
-}
-.flag-icon-cg.flag-icon-squared {
-  background-image: url(../flags/1x1/cg.svg);
-}
-.flag-icon-ch {
-  background-image: url(../flags/4x3/ch.svg);
-}
-.flag-icon-ch.flag-icon-squared {
-  background-image: url(../flags/1x1/ch.svg);
-}
-.flag-icon-ci {
-  background-image: url(../flags/4x3/ci.svg);
-}
-.flag-icon-ci.flag-icon-squared {
-  background-image: url(../flags/1x1/ci.svg);
-}
-.flag-icon-ck {
-  background-image: url(../flags/4x3/ck.svg);
-}
-.flag-icon-ck.flag-icon-squared {
-  background-image: url(../flags/1x1/ck.svg);
-}
-.flag-icon-cl {
-  background-image: url(../flags/4x3/cl.svg);
-}
-.flag-icon-cl.flag-icon-squared {
-  background-image: url(../flags/1x1/cl.svg);
-}
-.flag-icon-cm {
-  background-image: url(../flags/4x3/cm.svg);
-}
-.flag-icon-cm.flag-icon-squared {
-  background-image: url(../flags/1x1/cm.svg);
-}
-.flag-icon-cn {
-  background-image: url(../flags/4x3/cn.svg);
-}
-.flag-icon-cn.flag-icon-squared {
-  background-image: url(../flags/1x1/cn.svg);
-}
-.flag-icon-co {
-  background-image: url(../flags/4x3/co.svg);
-}
-.flag-icon-co.flag-icon-squared {
-  background-image: url(../flags/1x1/co.svg);
-}
-.flag-icon-cr {
-  background-image: url(../flags/4x3/cr.svg);
-}
-.flag-icon-cr.flag-icon-squared {
-  background-image: url(../flags/1x1/cr.svg);
-}
-.flag-icon-cu {
-  background-image: url(../flags/4x3/cu.svg);
-}
-.flag-icon-cu.flag-icon-squared {
-  background-image: url(../flags/1x1/cu.svg);
-}
-.flag-icon-cv {
-  background-image: url(../flags/4x3/cv.svg);
-}
-.flag-icon-cv.flag-icon-squared {
-  background-image: url(../flags/1x1/cv.svg);
-}
-.flag-icon-cw {
-  background-image: url(../flags/4x3/cw.svg);
-}
-.flag-icon-cw.flag-icon-squared {
-  background-image: url(../flags/1x1/cw.svg);
-}
-.flag-icon-cx {
-  background-image: url(../flags/4x3/cx.svg);
-}
-.flag-icon-cx.flag-icon-squared {
-  background-image: url(../flags/1x1/cx.svg);
-}
-.flag-icon-cy {
-  background-image: url(../flags/4x3/cy.svg);
-}
-.flag-icon-cy.flag-icon-squared {
-  background-image: url(../flags/1x1/cy.svg);
-}
-.flag-icon-cz {
-  background-image: url(../flags/4x3/cz.svg);
-}
-.flag-icon-cz.flag-icon-squared {
-  background-image: url(../flags/1x1/cz.svg);
-}
-.flag-icon-de {
-  background-image: url(../flags/4x3/de.svg);
-}
-.flag-icon-de.flag-icon-squared {
-  background-image: url(../flags/1x1/de.svg);
-}
-.flag-icon-dj {
-  background-image: url(../flags/4x3/dj.svg);
-}
-.flag-icon-dj.flag-icon-squared {
-  background-image: url(../flags/1x1/dj.svg);
-}
-.flag-icon-dk {
-  background-image: url(../flags/4x3/dk.svg);
-}
-.flag-icon-dk.flag-icon-squared {
-  background-image: url(../flags/1x1/dk.svg);
-}
-.flag-icon-dm {
-  background-image: url(../flags/4x3/dm.svg);
-}
-.flag-icon-dm.flag-icon-squared {
-  background-image: url(../flags/1x1/dm.svg);
-}
-.flag-icon-do {
-  background-image: url(../flags/4x3/do.svg);
-}
-.flag-icon-do.flag-icon-squared {
-  background-image: url(../flags/1x1/do.svg);
-}
-.flag-icon-dz {
-  background-image: url(../flags/4x3/dz.svg);
-}
-.flag-icon-dz.flag-icon-squared {
-  background-image: url(../flags/1x1/dz.svg);
-}
-.flag-icon-ec {
-  background-image: url(../flags/4x3/ec.svg);
-}
-.flag-icon-ec.flag-icon-squared {
-  background-image: url(../flags/1x1/ec.svg);
-}
-.flag-icon-ee {
-  background-image: url(../flags/4x3/ee.svg);
-}
-.flag-icon-ee.flag-icon-squared {
-  background-image: url(../flags/1x1/ee.svg);
-}
-.flag-icon-eg {
-  background-image: url(../flags/4x3/eg.svg);
-}
-.flag-icon-eg.flag-icon-squared {
-  background-image: url(../flags/1x1/eg.svg);
-}
-.flag-icon-eh {
-  background-image: url(../flags/4x3/eh.svg);
-}
-.flag-icon-eh.flag-icon-squared {
-  background-image: url(../flags/1x1/eh.svg);
-}
-.flag-icon-er {
-  background-image: url(../flags/4x3/er.svg);
-}
-.flag-icon-er.flag-icon-squared {
-  background-image: url(../flags/1x1/er.svg);
-}
-.flag-icon-es {
-  background-image: url(../flags/4x3/es.svg);
-}
-.flag-icon-es.flag-icon-squared {
-  background-image: url(../flags/1x1/es.svg);
-}
-.flag-icon-et {
-  background-image: url(../flags/4x3/et.svg);
-}
-.flag-icon-et.flag-icon-squared {
-  background-image: url(../flags/1x1/et.svg);
-}
-.flag-icon-fi {
-  background-image: url(../flags/4x3/fi.svg);
-}
-.flag-icon-fi.flag-icon-squared {
-  background-image: url(../flags/1x1/fi.svg);
-}
-.flag-icon-fj {
-  background-image: url(../flags/4x3/fj.svg);
-}
-.flag-icon-fj.flag-icon-squared {
-  background-image: url(../flags/1x1/fj.svg);
-}
-.flag-icon-fk {
-  background-image: url(../flags/4x3/fk.svg);
-}
-.flag-icon-fk.flag-icon-squared {
-  background-image: url(../flags/1x1/fk.svg);
-}
-.flag-icon-fm {
-  background-image: url(../flags/4x3/fm.svg);
-}
-.flag-icon-fm.flag-icon-squared {
-  background-image: url(../flags/1x1/fm.svg);
-}
-.flag-icon-fo {
-  background-image: url(../flags/4x3/fo.svg);
-}
-.flag-icon-fo.flag-icon-squared {
-  background-image: url(../flags/1x1/fo.svg);
-}
-.flag-icon-fr {
-  background-image: url(../flags/4x3/fr.svg);
-}
-.flag-icon-fr.flag-icon-squared {
-  background-image: url(../flags/1x1/fr.svg);
-}
-.flag-icon-ga {
-  background-image: url(../flags/4x3/ga.svg);
-}
-.flag-icon-ga.flag-icon-squared {
-  background-image: url(../flags/1x1/ga.svg);
-}
-.flag-icon-gb {
-  background-image: url(../flags/4x3/gb.svg);
-}
-.flag-icon-gb.flag-icon-squared {
-  background-image: url(../flags/1x1/gb.svg);
-}
-.flag-icon-gd {
-  background-image: url(../flags/4x3/gd.svg);
-}
-.flag-icon-gd.flag-icon-squared {
-  background-image: url(../flags/1x1/gd.svg);
-}
-.flag-icon-ge {
-  background-image: url(../flags/4x3/ge.svg);
-}
-.flag-icon-ge.flag-icon-squared {
-  background-image: url(../flags/1x1/ge.svg);
-}
-.flag-icon-gf {
-  background-image: url(../flags/4x3/gf.svg);
-}
-.flag-icon-gf.flag-icon-squared {
-  background-image: url(../flags/1x1/gf.svg);
-}
-.flag-icon-gg {
-  background-image: url(../flags/4x3/gg.svg);
-}
-.flag-icon-gg.flag-icon-squared {
-  background-image: url(../flags/1x1/gg.svg);
-}
-.flag-icon-gh {
-  background-image: url(../flags/4x3/gh.svg);
-}
-.flag-icon-gh.flag-icon-squared {
-  background-image: url(../flags/1x1/gh.svg);
-}
-.flag-icon-gi {
-  background-image: url(../flags/4x3/gi.svg);
-}
-.flag-icon-gi.flag-icon-squared {
-  background-image: url(../flags/1x1/gi.svg);
-}
-.flag-icon-gl {
-  background-image: url(../flags/4x3/gl.svg);
-}
-.flag-icon-gl.flag-icon-squared {
-  background-image: url(../flags/1x1/gl.svg);
-}
-.flag-icon-gm {
-  background-image: url(../flags/4x3/gm.svg);
-}
-.flag-icon-gm.flag-icon-squared {
-  background-image: url(../flags/1x1/gm.svg);
-}
-.flag-icon-gn {
-  background-image: url(../flags/4x3/gn.svg);
-}
-.flag-icon-gn.flag-icon-squared {
-  background-image: url(../flags/1x1/gn.svg);
-}
-.flag-icon-gp {
-  background-image: url(../flags/4x3/gp.svg);
-}
-.flag-icon-gp.flag-icon-squared {
-  background-image: url(../flags/1x1/gp.svg);
-}
-.flag-icon-gq {
-  background-image: url(../flags/4x3/gq.svg);
-}
-.flag-icon-gq.flag-icon-squared {
-  background-image: url(../flags/1x1/gq.svg);
-}
-.flag-icon-gr {
-  background-image: url(../flags/4x3/gr.svg);
-}
-.flag-icon-gr.flag-icon-squared {
-  background-image: url(../flags/1x1/gr.svg);
-}
-.flag-icon-gs {
-  background-image: url(../flags/4x3/gs.svg);
-}
-.flag-icon-gs.flag-icon-squared {
-  background-image: url(../flags/1x1/gs.svg);
-}
-.flag-icon-gt {
-  background-image: url(../flags/4x3/gt.svg);
-}
-.flag-icon-gt.flag-icon-squared {
-  background-image: url(../flags/1x1/gt.svg);
-}
-.flag-icon-gu {
-  background-image: url(../flags/4x3/gu.svg);
-}
-.flag-icon-gu.flag-icon-squared {
-  background-image: url(../flags/1x1/gu.svg);
-}
-.flag-icon-gw {
-  background-image: url(../flags/4x3/gw.svg);
-}
-.flag-icon-gw.flag-icon-squared {
-  background-image: url(../flags/1x1/gw.svg);
-}
-.flag-icon-gy {
-  background-image: url(../flags/4x3/gy.svg);
-}
-.flag-icon-gy.flag-icon-squared {
-  background-image: url(../flags/1x1/gy.svg);
-}
-.flag-icon-hk {
-  background-image: url(../flags/4x3/hk.svg);
-}
-.flag-icon-hk.flag-icon-squared {
-  background-image: url(../flags/1x1/hk.svg);
-}
-.flag-icon-hm {
-  background-image: url(../flags/4x3/hm.svg);
-}
-.flag-icon-hm.flag-icon-squared {
-  background-image: url(../flags/1x1/hm.svg);
-}
-.flag-icon-hn {
-  background-image: url(../flags/4x3/hn.svg);
-}
-.flag-icon-hn.flag-icon-squared {
-  background-image: url(../flags/1x1/hn.svg);
-}
-.flag-icon-hr {
-  background-image: url(../flags/4x3/hr.svg);
-}
-.flag-icon-hr.flag-icon-squared {
-  background-image: url(../flags/1x1/hr.svg);
-}
-.flag-icon-ht {
-  background-image: url(../flags/4x3/ht.svg);
-}
-.flag-icon-ht.flag-icon-squared {
-  background-image: url(../flags/1x1/ht.svg);
-}
-.flag-icon-hu {
-  background-image: url(../flags/4x3/hu.svg);
-}
-.flag-icon-hu.flag-icon-squared {
-  background-image: url(../flags/1x1/hu.svg);
-}
-.flag-icon-id {
-  background-image: url(../flags/4x3/id.svg);
-}
-.flag-icon-id.flag-icon-squared {
-  background-image: url(../flags/1x1/id.svg);
-}
-.flag-icon-ie {
-  background-image: url(../flags/4x3/ie.svg);
-}
-.flag-icon-ie.flag-icon-squared {
-  background-image: url(../flags/1x1/ie.svg);
-}
-.flag-icon-il {
-  background-image: url(../flags/4x3/il.svg);
-}
-.flag-icon-il.flag-icon-squared {
-  background-image: url(../flags/1x1/il.svg);
-}
-.flag-icon-im {
-  background-image: url(../flags/4x3/im.svg);
-}
-.flag-icon-im.flag-icon-squared {
-  background-image: url(../flags/1x1/im.svg);
-}
-.flag-icon-in {
-  background-image: url(../flags/4x3/in.svg);
-}
-.flag-icon-in.flag-icon-squared {
-  background-image: url(../flags/1x1/in.svg);
-}
-.flag-icon-io {
-  background-image: url(../flags/4x3/io.svg);
-}
-.flag-icon-io.flag-icon-squared {
-  background-image: url(../flags/1x1/io.svg);
-}
-.flag-icon-iq {
-  background-image: url(../flags/4x3/iq.svg);
-}
-.flag-icon-iq.flag-icon-squared {
-  background-image: url(../flags/1x1/iq.svg);
-}
-.flag-icon-ir {
-  background-image: url(../flags/4x3/ir.svg);
-}
-.flag-icon-ir.flag-icon-squared {
-  background-image: url(../flags/1x1/ir.svg);
-}
-.flag-icon-is {
-  background-image: url(../flags/4x3/is.svg);
-}
-.flag-icon-is.flag-icon-squared {
-  background-image: url(../flags/1x1/is.svg);
-}
-.flag-icon-it {
-  background-image: url(../flags/4x3/it.svg);
-}
-.flag-icon-it.flag-icon-squared {
-  background-image: url(../flags/1x1/it.svg);
-}
-.flag-icon-je {
-  background-image: url(../flags/4x3/je.svg);
-}
-.flag-icon-je.flag-icon-squared {
-  background-image: url(../flags/1x1/je.svg);
-}
-.flag-icon-jm {
-  background-image: url(../flags/4x3/jm.svg);
-}
-.flag-icon-jm.flag-icon-squared {
-  background-image: url(../flags/1x1/jm.svg);
-}
-.flag-icon-jo {
-  background-image: url(../flags/4x3/jo.svg);
-}
-.flag-icon-jo.flag-icon-squared {
-  background-image: url(../flags/1x1/jo.svg);
-}
-.flag-icon-jp {
-  background-image: url(../flags/4x3/jp.svg);
-}
-.flag-icon-jp.flag-icon-squared {
-  background-image: url(../flags/1x1/jp.svg);
-}
-.flag-icon-ke {
-  background-image: url(../flags/4x3/ke.svg);
-}
-.flag-icon-ke.flag-icon-squared {
-  background-image: url(../flags/1x1/ke.svg);
-}
-.flag-icon-kg {
-  background-image: url(../flags/4x3/kg.svg);
-}
-.flag-icon-kg.flag-icon-squared {
-  background-image: url(../flags/1x1/kg.svg);
-}
-.flag-icon-kh {
-  background-image: url(../flags/4x3/kh.svg);
-}
-.flag-icon-kh.flag-icon-squared {
-  background-image: url(../flags/1x1/kh.svg);
-}
-.flag-icon-ki {
-  background-image: url(../flags/4x3/ki.svg);
-}
-.flag-icon-ki.flag-icon-squared {
-  background-image: url(../flags/1x1/ki.svg);
-}
-.flag-icon-km {
-  background-image: url(../flags/4x3/km.svg);
-}
-.flag-icon-km.flag-icon-squared {
-  background-image: url(../flags/1x1/km.svg);
-}
-.flag-icon-kn {
-  background-image: url(../flags/4x3/kn.svg);
-}
-.flag-icon-kn.flag-icon-squared {
-  background-image: url(../flags/1x1/kn.svg);
-}
-.flag-icon-kp {
-  background-image: url(../flags/4x3/kp.svg);
-}
-.flag-icon-kp.flag-icon-squared {
-  background-image: url(../flags/1x1/kp.svg);
-}
-.flag-icon-kr {
-  background-image: url(../flags/4x3/kr.svg);
-}
-.flag-icon-kr.flag-icon-squared {
-  background-image: url(../flags/1x1/kr.svg);
-}
-.flag-icon-kw {
-  background-image: url(../flags/4x3/kw.svg);
-}
-.flag-icon-kw.flag-icon-squared {
-  background-image: url(../flags/1x1/kw.svg);
-}
-.flag-icon-ky {
-  background-image: url(../flags/4x3/ky.svg);
-}
-.flag-icon-ky.flag-icon-squared {
-  background-image: url(../flags/1x1/ky.svg);
-}
-.flag-icon-kz {
-  background-image: url(../flags/4x3/kz.svg);
-}
-.flag-icon-kz.flag-icon-squared {
-  background-image: url(../flags/1x1/kz.svg);
-}
-.flag-icon-la {
-  background-image: url(../flags/4x3/la.svg);
-}
-.flag-icon-la.flag-icon-squared {
-  background-image: url(../flags/1x1/la.svg);
-}
-.flag-icon-lb {
-  background-image: url(../flags/4x3/lb.svg);
-}
-.flag-icon-lb.flag-icon-squared {
-  background-image: url(../flags/1x1/lb.svg);
-}
-.flag-icon-lc {
-  background-image: url(../flags/4x3/lc.svg);
-}
-.flag-icon-lc.flag-icon-squared {
-  background-image: url(../flags/1x1/lc.svg);
-}
-.flag-icon-li {
-  background-image: url(../flags/4x3/li.svg);
-}
-.flag-icon-li.flag-icon-squared {
-  background-image: url(../flags/1x1/li.svg);
-}
-.flag-icon-lk {
-  background-image: url(../flags/4x3/lk.svg);
-}
-.flag-icon-lk.flag-icon-squared {
-  background-image: url(../flags/1x1/lk.svg);
-}
-.flag-icon-lr {
-  background-image: url(../flags/4x3/lr.svg);
-}
-.flag-icon-lr.flag-icon-squared {
-  background-image: url(../flags/1x1/lr.svg);
-}
-.flag-icon-ls {
-  background-image: url(../flags/4x3/ls.svg);
-}
-.flag-icon-ls.flag-icon-squared {
-  background-image: url(../flags/1x1/ls.svg);
-}
-.flag-icon-lt {
-  background-image: url(../flags/4x3/lt.svg);
-}
-.flag-icon-lt.flag-icon-squared {
-  background-image: url(../flags/1x1/lt.svg);
-}
-.flag-icon-lu {
-  background-image: url(../flags/4x3/lu.svg);
-}
-.flag-icon-lu.flag-icon-squared {
-  background-image: url(../flags/1x1/lu.svg);
-}
-.flag-icon-lv {
-  background-image: url(../flags/4x3/lv.svg);
-}
-.flag-icon-lv.flag-icon-squared {
-  background-image: url(../flags/1x1/lv.svg);
-}
-.flag-icon-ly {
-  background-image: url(../flags/4x3/ly.svg);
-}
-.flag-icon-ly.flag-icon-squared {
-  background-image: url(../flags/1x1/ly.svg);
-}
-.flag-icon-ma {
-  background-image: url(../flags/4x3/ma.svg);
-}
-.flag-icon-ma.flag-icon-squared {
-  background-image: url(../flags/1x1/ma.svg);
-}
-.flag-icon-mc {
-  background-image: url(../flags/4x3/mc.svg);
-}
-.flag-icon-mc.flag-icon-squared {
-  background-image: url(../flags/1x1/mc.svg);
-}
-.flag-icon-md {
-  background-image: url(../flags/4x3/md.svg);
-}
-.flag-icon-md.flag-icon-squared {
-  background-image: url(../flags/1x1/md.svg);
-}
-.flag-icon-me {
-  background-image: url(../flags/4x3/me.svg);
-}
-.flag-icon-me.flag-icon-squared {
-  background-image: url(../flags/1x1/me.svg);
-}
-.flag-icon-mf {
-  background-image: url(../flags/4x3/mf.svg);
-}
-.flag-icon-mf.flag-icon-squared {
-  background-image: url(../flags/1x1/mf.svg);
-}
-.flag-icon-mg {
-  background-image: url(../flags/4x3/mg.svg);
-}
-.flag-icon-mg.flag-icon-squared {
-  background-image: url(../flags/1x1/mg.svg);
-}
-.flag-icon-mh {
-  background-image: url(../flags/4x3/mh.svg);
-}
-.flag-icon-mh.flag-icon-squared {
-  background-image: url(../flags/1x1/mh.svg);
-}
-.flag-icon-mk {
-  background-image: url(../flags/4x3/mk.svg);
-}
-.flag-icon-mk.flag-icon-squared {
-  background-image: url(../flags/1x1/mk.svg);
-}
-.flag-icon-ml {
-  background-image: url(../flags/4x3/ml.svg);
-}
-.flag-icon-ml.flag-icon-squared {
-  background-image: url(../flags/1x1/ml.svg);
-}
-.flag-icon-mm {
-  background-image: url(../flags/4x3/mm.svg);
-}
-.flag-icon-mm.flag-icon-squared {
-  background-image: url(../flags/1x1/mm.svg);
-}
-.flag-icon-mn {
-  background-image: url(../flags/4x3/mn.svg);
-}
-.flag-icon-mn.flag-icon-squared {
-  background-image: url(../flags/1x1/mn.svg);
-}
-.flag-icon-mo {
-  background-image: url(../flags/4x3/mo.svg);
-}
-.flag-icon-mo.flag-icon-squared {
-  background-image: url(../flags/1x1/mo.svg);
-}
-.flag-icon-mp {
-  background-image: url(../flags/4x3/mp.svg);
-}
-.flag-icon-mp.flag-icon-squared {
-  background-image: url(../flags/1x1/mp.svg);
-}
-.flag-icon-mq {
-  background-image: url(../flags/4x3/mq.svg);
-}
-.flag-icon-mq.flag-icon-squared {
-  background-image: url(../flags/1x1/mq.svg);
-}
-.flag-icon-mr {
-  background-image: url(../flags/4x3/mr.svg);
-}
-.flag-icon-mr.flag-icon-squared {
-  background-image: url(../flags/1x1/mr.svg);
-}
-.flag-icon-ms {
-  background-image: url(../flags/4x3/ms.svg);
-}
-.flag-icon-ms.flag-icon-squared {
-  background-image: url(../flags/1x1/ms.svg);
-}
-.flag-icon-mt {
-  background-image: url(../flags/4x3/mt.svg);
-}
-.flag-icon-mt.flag-icon-squared {
-  background-image: url(../flags/1x1/mt.svg);
-}
-.flag-icon-mu {
-  background-image: url(../flags/4x3/mu.svg);
-}
-.flag-icon-mu.flag-icon-squared {
-  background-image: url(../flags/1x1/mu.svg);
-}
-.flag-icon-mv {
-  background-image: url(../flags/4x3/mv.svg);
-}
-.flag-icon-mv.flag-icon-squared {
-  background-image: url(../flags/1x1/mv.svg);
-}
-.flag-icon-mw {
-  background-image: url(../flags/4x3/mw.svg);
-}
-.flag-icon-mw.flag-icon-squared {
-  background-image: url(../flags/1x1/mw.svg);
-}
-.flag-icon-mx {
-  background-image: url(../flags/4x3/mx.svg);
-}
-.flag-icon-mx.flag-icon-squared {
-  background-image: url(../flags/1x1/mx.svg);
-}
-.flag-icon-my {
-  background-image: url(../flags/4x3/my.svg);
-}
-.flag-icon-my.flag-icon-squared {
-  background-image: url(../flags/1x1/my.svg);
-}
-.flag-icon-mz {
-  background-image: url(../flags/4x3/mz.svg);
-}
-.flag-icon-mz.flag-icon-squared {
-  background-image: url(../flags/1x1/mz.svg);
-}
-.flag-icon-na {
-  background-image: url(../flags/4x3/na.svg);
-}
-.flag-icon-na.flag-icon-squared {
-  background-image: url(../flags/1x1/na.svg);
-}
-.flag-icon-nc {
-  background-image: url(../flags/4x3/nc.svg);
-}
-.flag-icon-nc.flag-icon-squared {
-  background-image: url(../flags/1x1/nc.svg);
-}
-.flag-icon-ne {
-  background-image: url(../flags/4x3/ne.svg);
-}
-.flag-icon-ne.flag-icon-squared {
-  background-image: url(../flags/1x1/ne.svg);
-}
-.flag-icon-nf {
-  background-image: url(../flags/4x3/nf.svg);
-}
-.flag-icon-nf.flag-icon-squared {
-  background-image: url(../flags/1x1/nf.svg);
-}
-.flag-icon-ng {
-  background-image: url(../flags/4x3/ng.svg);
-}
-.flag-icon-ng.flag-icon-squared {
-  background-image: url(../flags/1x1/ng.svg);
-}
-.flag-icon-ni {
-  background-image: url(../flags/4x3/ni.svg);
-}
-.flag-icon-ni.flag-icon-squared {
-  background-image: url(../flags/1x1/ni.svg);
-}
-.flag-icon-nl {
-  background-image: url(../flags/4x3/nl.svg);
-}
-.flag-icon-nl.flag-icon-squared {
-  background-image: url(../flags/1x1/nl.svg);
-}
-.flag-icon-no {
-  background-image: url(../flags/4x3/no.svg);
-}
-.flag-icon-no.flag-icon-squared {
-  background-image: url(../flags/1x1/no.svg);
-}
-.flag-icon-np {
-  background-image: url(../flags/4x3/np.svg);
-}
-.flag-icon-np.flag-icon-squared {
-  background-image: url(../flags/1x1/np.svg);
-}
-.flag-icon-nr {
-  background-image: url(../flags/4x3/nr.svg);
-}
-.flag-icon-nr.flag-icon-squared {
-  background-image: url(../flags/1x1/nr.svg);
-}
-.flag-icon-nu {
-  background-image: url(../flags/4x3/nu.svg);
-}
-.flag-icon-nu.flag-icon-squared {
-  background-image: url(../flags/1x1/nu.svg);
-}
-.flag-icon-nz {
-  background-image: url(../flags/4x3/nz.svg);
-}
-.flag-icon-nz.flag-icon-squared {
-  background-image: url(../flags/1x1/nz.svg);
-}
-.flag-icon-om {
-  background-image: url(../flags/4x3/om.svg);
-}
-.flag-icon-om.flag-icon-squared {
-  background-image: url(../flags/1x1/om.svg);
-}
-.flag-icon-pa {
-  background-image: url(../flags/4x3/pa.svg);
-}
-.flag-icon-pa.flag-icon-squared {
-  background-image: url(../flags/1x1/pa.svg);
-}
-.flag-icon-pe {
-  background-image: url(../flags/4x3/pe.svg);
-}
-.flag-icon-pe.flag-icon-squared {
-  background-image: url(../flags/1x1/pe.svg);
-}
-.flag-icon-pf {
-  background-image: url(../flags/4x3/pf.svg);
-}
-.flag-icon-pf.flag-icon-squared {
-  background-image: url(../flags/1x1/pf.svg);
-}
-.flag-icon-pg {
-  background-image: url(../flags/4x3/pg.svg);
-}
-.flag-icon-pg.flag-icon-squared {
-  background-image: url(../flags/1x1/pg.svg);
-}
-.flag-icon-ph {
-  background-image: url(../flags/4x3/ph.svg);
-}
-.flag-icon-ph.flag-icon-squared {
-  background-image: url(../flags/1x1/ph.svg);
-}
-.flag-icon-pk {
-  background-image: url(../flags/4x3/pk.svg);
-}
-.flag-icon-pk.flag-icon-squared {
-  background-image: url(../flags/1x1/pk.svg);
-}
-.flag-icon-pl {
-  background-image: url(../flags/4x3/pl.svg);
-}
-.flag-icon-pl.flag-icon-squared {
-  background-image: url(../flags/1x1/pl.svg);
-}
-.flag-icon-pm {
-  background-image: url(../flags/4x3/pm.svg);
-}
-.flag-icon-pm.flag-icon-squared {
-  background-image: url(../flags/1x1/pm.svg);
-}
-.flag-icon-pn {
-  background-image: url(../flags/4x3/pn.svg);
-}
-.flag-icon-pn.flag-icon-squared {
-  background-image: url(../flags/1x1/pn.svg);
-}
-.flag-icon-pr {
-  background-image: url(../flags/4x3/pr.svg);
-}
-.flag-icon-pr.flag-icon-squared {
-  background-image: url(../flags/1x1/pr.svg);
-}
-.flag-icon-ps {
-  background-image: url(../flags/4x3/ps.svg);
-}
-.flag-icon-ps.flag-icon-squared {
-  background-image: url(../flags/1x1/ps.svg);
-}
-.flag-icon-pt {
-  background-image: url(../flags/4x3/pt.svg);
-}
-.flag-icon-pt.flag-icon-squared {
-  background-image: url(../flags/1x1/pt.svg);
-}
-.flag-icon-pw {
-  background-image: url(../flags/4x3/pw.svg);
-}
-.flag-icon-pw.flag-icon-squared {
-  background-image: url(../flags/1x1/pw.svg);
-}
-.flag-icon-py {
-  background-image: url(../flags/4x3/py.svg);
-}
-.flag-icon-py.flag-icon-squared {
-  background-image: url(../flags/1x1/py.svg);
-}
-.flag-icon-qa {
-  background-image: url(../flags/4x3/qa.svg);
-}
-.flag-icon-qa.flag-icon-squared {
-  background-image: url(../flags/1x1/qa.svg);
-}
-.flag-icon-re {
-  background-image: url(../flags/4x3/re.svg);
-}
-.flag-icon-re.flag-icon-squared {
-  background-image: url(../flags/1x1/re.svg);
-}
-.flag-icon-ro {
-  background-image: url(../flags/4x3/ro.svg);
-}
-.flag-icon-ro.flag-icon-squared {
-  background-image: url(../flags/1x1/ro.svg);
-}
-.flag-icon-rs {
-  background-image: url(../flags/4x3/rs.svg);
-}
-.flag-icon-rs.flag-icon-squared {
-  background-image: url(../flags/1x1/rs.svg);
-}
-.flag-icon-ru {
-  background-image: url(../flags/4x3/ru.svg);
-}
-.flag-icon-ru.flag-icon-squared {
-  background-image: url(../flags/1x1/ru.svg);
-}
-.flag-icon-rw {
-  background-image: url(../flags/4x3/rw.svg);
-}
-.flag-icon-rw.flag-icon-squared {
-  background-image: url(../flags/1x1/rw.svg);
-}
-.flag-icon-sa {
-  background-image: url(../flags/4x3/sa.svg);
-}
-.flag-icon-sa.flag-icon-squared {
-  background-image: url(../flags/1x1/sa.svg);
-}
-.flag-icon-sb {
-  background-image: url(../flags/4x3/sb.svg);
-}
-.flag-icon-sb.flag-icon-squared {
-  background-image: url(../flags/1x1/sb.svg);
-}
-.flag-icon-sc {
-  background-image: url(../flags/4x3/sc.svg);
-}
-.flag-icon-sc.flag-icon-squared {
-  background-image: url(../flags/1x1/sc.svg);
-}
-.flag-icon-sd {
-  background-image: url(../flags/4x3/sd.svg);
-}
-.flag-icon-sd.flag-icon-squared {
-  background-image: url(../flags/1x1/sd.svg);
-}
-.flag-icon-se {
-  background-image: url(../flags/4x3/se.svg);
-}
-.flag-icon-se.flag-icon-squared {
-  background-image: url(../flags/1x1/se.svg);
-}
-.flag-icon-sg {
-  background-image: url(../flags/4x3/sg.svg);
-}
-.flag-icon-sg.flag-icon-squared {
-  background-image: url(../flags/1x1/sg.svg);
-}
-.flag-icon-sh {
-  background-image: url(../flags/4x3/sh.svg);
-}
-.flag-icon-sh.flag-icon-squared {
-  background-image: url(../flags/1x1/sh.svg);
-}
-.flag-icon-si {
-  background-image: url(../flags/4x3/si.svg);
-}
-.flag-icon-si.flag-icon-squared {
-  background-image: url(../flags/1x1/si.svg);
-}
-.flag-icon-sj {
-  background-image: url(../flags/4x3/sj.svg);
-}
-.flag-icon-sj.flag-icon-squared {
-  background-image: url(../flags/1x1/sj.svg);
-}
-.flag-icon-sk {
-  background-image: url(../flags/4x3/sk.svg);
-}
-.flag-icon-sk.flag-icon-squared {
-  background-image: url(../flags/1x1/sk.svg);
-}
-.flag-icon-sl {
-  background-image: url(../flags/4x3/sl.svg);
-}
-.flag-icon-sl.flag-icon-squared {
-  background-image: url(../flags/1x1/sl.svg);
-}
-.flag-icon-sm {
-  background-image: url(../flags/4x3/sm.svg);
-}
-.flag-icon-sm.flag-icon-squared {
-  background-image: url(../flags/1x1/sm.svg);
-}
-.flag-icon-sn {
-  background-image: url(../flags/4x3/sn.svg);
-}
-.flag-icon-sn.flag-icon-squared {
-  background-image: url(../flags/1x1/sn.svg);
-}
-.flag-icon-so {
-  background-image: url(../flags/4x3/so.svg);
-}
-.flag-icon-so.flag-icon-squared {
-  background-image: url(../flags/1x1/so.svg);
-}
-.flag-icon-sr {
-  background-image: url(../flags/4x3/sr.svg);
-}
-.flag-icon-sr.flag-icon-squared {
-  background-image: url(../flags/1x1/sr.svg);
-}
-.flag-icon-ss {
-  background-image: url(../flags/4x3/ss.svg);
-}
-.flag-icon-ss.flag-icon-squared {
-  background-image: url(../flags/1x1/ss.svg);
-}
-.flag-icon-st {
-  background-image: url(../flags/4x3/st.svg);
-}
-.flag-icon-st.flag-icon-squared {
-  background-image: url(../flags/1x1/st.svg);
-}
-.flag-icon-sv {
-  background-image: url(../flags/4x3/sv.svg);
-}
-.flag-icon-sv.flag-icon-squared {
-  background-image: url(../flags/1x1/sv.svg);
-}
-.flag-icon-sx {
-  background-image: url(../flags/4x3/sx.svg);
-}
-.flag-icon-sx.flag-icon-squared {
-  background-image: url(../flags/1x1/sx.svg);
-}
-.flag-icon-sy {
-  background-image: url(../flags/4x3/sy.svg);
-}
-.flag-icon-sy.flag-icon-squared {
-  background-image: url(../flags/1x1/sy.svg);
-}
-.flag-icon-sz {
-  background-image: url(../flags/4x3/sz.svg);
-}
-.flag-icon-sz.flag-icon-squared {
-  background-image: url(../flags/1x1/sz.svg);
-}
-.flag-icon-tc {
-  background-image: url(../flags/4x3/tc.svg);
-}
-.flag-icon-tc.flag-icon-squared {
-  background-image: url(../flags/1x1/tc.svg);
-}
-.flag-icon-td {
-  background-image: url(../flags/4x3/td.svg);
-}
-.flag-icon-td.flag-icon-squared {
-  background-image: url(../flags/1x1/td.svg);
-}
-.flag-icon-tf {
-  background-image: url(../flags/4x3/tf.svg);
-}
-.flag-icon-tf.flag-icon-squared {
-  background-image: url(../flags/1x1/tf.svg);
-}
-.flag-icon-tg {
-  background-image: url(../flags/4x3/tg.svg);
-}
-.flag-icon-tg.flag-icon-squared {
-  background-image: url(../flags/1x1/tg.svg);
-}
-.flag-icon-th {
-  background-image: url(../flags/4x3/th.svg);
-}
-.flag-icon-th.flag-icon-squared {
-  background-image: url(../flags/1x1/th.svg);
-}
-.flag-icon-tj {
-  background-image: url(../flags/4x3/tj.svg);
-}
-.flag-icon-tj.flag-icon-squared {
-  background-image: url(../flags/1x1/tj.svg);
-}
-.flag-icon-tk {
-  background-image: url(../flags/4x3/tk.svg);
-}
-.flag-icon-tk.flag-icon-squared {
-  background-image: url(../flags/1x1/tk.svg);
-}
-.flag-icon-tl {
-  background-image: url(../flags/4x3/tl.svg);
-}
-.flag-icon-tl.flag-icon-squared {
-  background-image: url(../flags/1x1/tl.svg);
-}
-.flag-icon-tm {
-  background-image: url(../flags/4x3/tm.svg);
-}
-.flag-icon-tm.flag-icon-squared {
-  background-image: url(../flags/1x1/tm.svg);
-}
-.flag-icon-tn {
-  background-image: url(../flags/4x3/tn.svg);
-}
-.flag-icon-tn.flag-icon-squared {
-  background-image: url(../flags/1x1/tn.svg);
-}
-.flag-icon-to {
-  background-image: url(../flags/4x3/to.svg);
-}
-.flag-icon-to.flag-icon-squared {
-  background-image: url(../flags/1x1/to.svg);
-}
-.flag-icon-tr {
-  background-image: url(../flags/4x3/tr.svg);
-}
-.flag-icon-tr.flag-icon-squared {
-  background-image: url(../flags/1x1/tr.svg);
-}
-.flag-icon-tt {
-  background-image: url(../flags/4x3/tt.svg);
-}
-.flag-icon-tt.flag-icon-squared {
-  background-image: url(../flags/1x1/tt.svg);
-}
-.flag-icon-tv {
-  background-image: url(../flags/4x3/tv.svg);
-}
-.flag-icon-tv.flag-icon-squared {
-  background-image: url(../flags/1x1/tv.svg);
-}
-.flag-icon-tw {
-  background-image: url(../flags/4x3/tw.svg);
-}
-.flag-icon-tw.flag-icon-squared {
-  background-image: url(../flags/1x1/tw.svg);
-}
-.flag-icon-tz {
-  background-image: url(../flags/4x3/tz.svg);
-}
-.flag-icon-tz.flag-icon-squared {
-  background-image: url(../flags/1x1/tz.svg);
-}
-.flag-icon-ua {
-  background-image: url(../flags/4x3/ua.svg);
-}
-.flag-icon-ua.flag-icon-squared {
-  background-image: url(../flags/1x1/ua.svg);
-}
-.flag-icon-ug {
-  background-image: url(../flags/4x3/ug.svg);
-}
-.flag-icon-ug.flag-icon-squared {
-  background-image: url(../flags/1x1/ug.svg);
-}
-.flag-icon-um {
-  background-image: url(../flags/4x3/um.svg);
-}
-.flag-icon-um.flag-icon-squared {
-  background-image: url(../flags/1x1/um.svg);
-}
-.flag-icon-us {
-  background-image: url(../flags/4x3/us.svg);
-}
-.flag-icon-us.flag-icon-squared {
-  background-image: url(../flags/1x1/us.svg);
-}
-.flag-icon-uy {
-  background-image: url(../flags/4x3/uy.svg);
-}
-.flag-icon-uy.flag-icon-squared {
-  background-image: url(../flags/1x1/uy.svg);
-}
-.flag-icon-uz {
-  background-image: url(../flags/4x3/uz.svg);
-}
-.flag-icon-uz.flag-icon-squared {
-  background-image: url(../flags/1x1/uz.svg);
-}
-.flag-icon-va {
-  background-image: url(../flags/4x3/va.svg);
-}
-.flag-icon-va.flag-icon-squared {
-  background-image: url(../flags/1x1/va.svg);
-}
-.flag-icon-vc {
-  background-image: url(../flags/4x3/vc.svg);
-}
-.flag-icon-vc.flag-icon-squared {
-  background-image: url(../flags/1x1/vc.svg);
-}
-.flag-icon-ve {
-  background-image: url(../flags/4x3/ve.svg);
-}
-.flag-icon-ve.flag-icon-squared {
-  background-image: url(../flags/1x1/ve.svg);
-}
-.flag-icon-vg {
-  background-image: url(../flags/4x3/vg.svg);
-}
-.flag-icon-vg.flag-icon-squared {
-  background-image: url(../flags/1x1/vg.svg);
-}
-.flag-icon-vi {
-  background-image: url(../flags/4x3/vi.svg);
-}
-.flag-icon-vi.flag-icon-squared {
-  background-image: url(../flags/1x1/vi.svg);
-}
-.flag-icon-vn {
-  background-image: url(../flags/4x3/vn.svg);
-}
-.flag-icon-vn.flag-icon-squared {
-  background-image: url(../flags/1x1/vn.svg);
-}
-.flag-icon-vu {
-  background-image: url(../flags/4x3/vu.svg);
-}
-.flag-icon-vu.flag-icon-squared {
-  background-image: url(../flags/1x1/vu.svg);
-}
-.flag-icon-wf {
-  background-image: url(../flags/4x3/wf.svg);
-}
-.flag-icon-wf.flag-icon-squared {
-  background-image: url(../flags/1x1/wf.svg);
-}
-.flag-icon-ws {
-  background-image: url(../flags/4x3/ws.svg);
-}
-.flag-icon-ws.flag-icon-squared {
-  background-image: url(../flags/1x1/ws.svg);
-}
-.flag-icon-ye {
-  background-image: url(../flags/4x3/ye.svg);
-}
-.flag-icon-ye.flag-icon-squared {
-  background-image: url(../flags/1x1/ye.svg);
-}
-.flag-icon-yt {
-  background-image: url(../flags/4x3/yt.svg);
-}
-.flag-icon-yt.flag-icon-squared {
-  background-image: url(../flags/1x1/yt.svg);
-}
-.flag-icon-za {
-  background-image: url(../flags/4x3/za.svg);
-}
-.flag-icon-za.flag-icon-squared {
-  background-image: url(../flags/1x1/za.svg);
-}
-.flag-icon-zm {
-  background-image: url(../flags/4x3/zm.svg);
-}
-.flag-icon-zm.flag-icon-squared {
-  background-image: url(../flags/1x1/zm.svg);
-}
-.flag-icon-zw {
-  background-image: url(../flags/4x3/zw.svg);
-}
-.flag-icon-zw.flag-icon-squared {
-  background-image: url(../flags/1x1/zw.svg);
-}
-.flag-icon-eu {
-  background-image: url(../flags/4x3/eu.svg);
-}
-.flag-icon-eu.flag-icon-squared {
-  background-image: url(../flags/1x1/eu.svg);
-}
-.flag-icon-gb-eng {
-  background-image: url(../flags/4x3/gb-eng.svg);
-}
-.flag-icon-gb-eng.flag-icon-squared {
-  background-image: url(../flags/1x1/gb-eng.svg);
-}
-.flag-icon-gb-sct {
-  background-image: url(../flags/4x3/gb-sct.svg);
-}
-.flag-icon-gb-sct.flag-icon-squared {
-  background-image: url(../flags/1x1/gb-sct.svg);
-}
-.flag-icon-gb-wls {
-  background-image: url(../flags/4x3/gb-wls.svg);
-}
-.flag-icon-gb-wls.flag-icon-squared {
-  background-image: url(../flags/1x1/gb-wls.svg);
-}
-.flag-icon-un {
-  background-image: url(../flags/4x3/un.svg);
-}
-.flag-icon-un.flag-icon-squared {
-  background-image: url(../flags/1x1/un.svg);
+@media print {
+  .flag-icon-ad {
+    content: url(../flags/4x3/ad.svg);
+  }
+}
+@media screen {
+  .flag-icon-ad {
+    background-image: url(../flags/4x3/ad.svg);
+  }
+}
+@media print {
+  .flag-icon-ad.flag-icon-squared {
+    content: url(../flags/1x1/ad.svg);
+  }
+}
+@media screen {
+  .flag-icon-ad.flag-icon-squared {
+    background-image: url(../flags/1x1/ad.svg);
+  }
+}
+@media print {
+  .flag-icon-ae {
+    content: url(../flags/4x3/ae.svg);
+  }
+}
+@media screen {
+  .flag-icon-ae {
+    background-image: url(../flags/4x3/ae.svg);
+  }
+}
+@media print {
+  .flag-icon-ae.flag-icon-squared {
+    content: url(../flags/1x1/ae.svg);
+  }
+}
+@media screen {
+  .flag-icon-ae.flag-icon-squared {
+    background-image: url(../flags/1x1/ae.svg);
+  }
+}
+@media print {
+  .flag-icon-af {
+    content: url(../flags/4x3/af.svg);
+  }
+}
+@media screen {
+  .flag-icon-af {
+    background-image: url(../flags/4x3/af.svg);
+  }
+}
+@media print {
+  .flag-icon-af.flag-icon-squared {
+    content: url(../flags/1x1/af.svg);
+  }
+}
+@media screen {
+  .flag-icon-af.flag-icon-squared {
+    background-image: url(../flags/1x1/af.svg);
+  }
+}
+@media print {
+  .flag-icon-ag {
+    content: url(../flags/4x3/ag.svg);
+  }
+}
+@media screen {
+  .flag-icon-ag {
+    background-image: url(../flags/4x3/ag.svg);
+  }
+}
+@media print {
+  .flag-icon-ag.flag-icon-squared {
+    content: url(../flags/1x1/ag.svg);
+  }
+}
+@media screen {
+  .flag-icon-ag.flag-icon-squared {
+    background-image: url(../flags/1x1/ag.svg);
+  }
+}
+@media print {
+  .flag-icon-ai {
+    content: url(../flags/4x3/ai.svg);
+  }
+}
+@media screen {
+  .flag-icon-ai {
+    background-image: url(../flags/4x3/ai.svg);
+  }
+}
+@media print {
+  .flag-icon-ai.flag-icon-squared {
+    content: url(../flags/1x1/ai.svg);
+  }
+}
+@media screen {
+  .flag-icon-ai.flag-icon-squared {
+    background-image: url(../flags/1x1/ai.svg);
+  }
+}
+@media print {
+  .flag-icon-al {
+    content: url(../flags/4x3/al.svg);
+  }
+}
+@media screen {
+  .flag-icon-al {
+    background-image: url(../flags/4x3/al.svg);
+  }
+}
+@media print {
+  .flag-icon-al.flag-icon-squared {
+    content: url(../flags/1x1/al.svg);
+  }
+}
+@media screen {
+  .flag-icon-al.flag-icon-squared {
+    background-image: url(../flags/1x1/al.svg);
+  }
+}
+@media print {
+  .flag-icon-am {
+    content: url(../flags/4x3/am.svg);
+  }
+}
+@media screen {
+  .flag-icon-am {
+    background-image: url(../flags/4x3/am.svg);
+  }
+}
+@media print {
+  .flag-icon-am.flag-icon-squared {
+    content: url(../flags/1x1/am.svg);
+  }
+}
+@media screen {
+  .flag-icon-am.flag-icon-squared {
+    background-image: url(../flags/1x1/am.svg);
+  }
+}
+@media print {
+  .flag-icon-ao {
+    content: url(../flags/4x3/ao.svg);
+  }
+}
+@media screen {
+  .flag-icon-ao {
+    background-image: url(../flags/4x3/ao.svg);
+  }
+}
+@media print {
+  .flag-icon-ao.flag-icon-squared {
+    content: url(../flags/1x1/ao.svg);
+  }
+}
+@media screen {
+  .flag-icon-ao.flag-icon-squared {
+    background-image: url(../flags/1x1/ao.svg);
+  }
+}
+@media print {
+  .flag-icon-aq {
+    content: url(../flags/4x3/aq.svg);
+  }
+}
+@media screen {
+  .flag-icon-aq {
+    background-image: url(../flags/4x3/aq.svg);
+  }
+}
+@media print {
+  .flag-icon-aq.flag-icon-squared {
+    content: url(../flags/1x1/aq.svg);
+  }
+}
+@media screen {
+  .flag-icon-aq.flag-icon-squared {
+    background-image: url(../flags/1x1/aq.svg);
+  }
+}
+@media print {
+  .flag-icon-ar {
+    content: url(../flags/4x3/ar.svg);
+  }
+}
+@media screen {
+  .flag-icon-ar {
+    background-image: url(../flags/4x3/ar.svg);
+  }
+}
+@media print {
+  .flag-icon-ar.flag-icon-squared {
+    content: url(../flags/1x1/ar.svg);
+  }
+}
+@media screen {
+  .flag-icon-ar.flag-icon-squared {
+    background-image: url(../flags/1x1/ar.svg);
+  }
+}
+@media print {
+  .flag-icon-as {
+    content: url(../flags/4x3/as.svg);
+  }
+}
+@media screen {
+  .flag-icon-as {
+    background-image: url(../flags/4x3/as.svg);
+  }
+}
+@media print {
+  .flag-icon-as.flag-icon-squared {
+    content: url(../flags/1x1/as.svg);
+  }
+}
+@media screen {
+  .flag-icon-as.flag-icon-squared {
+    background-image: url(../flags/1x1/as.svg);
+  }
+}
+@media print {
+  .flag-icon-at {
+    content: url(../flags/4x3/at.svg);
+  }
+}
+@media screen {
+  .flag-icon-at {
+    background-image: url(../flags/4x3/at.svg);
+  }
+}
+@media print {
+  .flag-icon-at.flag-icon-squared {
+    content: url(../flags/1x1/at.svg);
+  }
+}
+@media screen {
+  .flag-icon-at.flag-icon-squared {
+    background-image: url(../flags/1x1/at.svg);
+  }
+}
+@media print {
+  .flag-icon-au {
+    content: url(../flags/4x3/au.svg);
+  }
+}
+@media screen {
+  .flag-icon-au {
+    background-image: url(../flags/4x3/au.svg);
+  }
+}
+@media print {
+  .flag-icon-au.flag-icon-squared {
+    content: url(../flags/1x1/au.svg);
+  }
+}
+@media screen {
+  .flag-icon-au.flag-icon-squared {
+    background-image: url(../flags/1x1/au.svg);
+  }
+}
+@media print {
+  .flag-icon-aw {
+    content: url(../flags/4x3/aw.svg);
+  }
+}
+@media screen {
+  .flag-icon-aw {
+    background-image: url(../flags/4x3/aw.svg);
+  }
+}
+@media print {
+  .flag-icon-aw.flag-icon-squared {
+    content: url(../flags/1x1/aw.svg);
+  }
+}
+@media screen {
+  .flag-icon-aw.flag-icon-squared {
+    background-image: url(../flags/1x1/aw.svg);
+  }
+}
+@media print {
+  .flag-icon-ax {
+    content: url(../flags/4x3/ax.svg);
+  }
+}
+@media screen {
+  .flag-icon-ax {
+    background-image: url(../flags/4x3/ax.svg);
+  }
+}
+@media print {
+  .flag-icon-ax.flag-icon-squared {
+    content: url(../flags/1x1/ax.svg);
+  }
+}
+@media screen {
+  .flag-icon-ax.flag-icon-squared {
+    background-image: url(../flags/1x1/ax.svg);
+  }
+}
+@media print {
+  .flag-icon-az {
+    content: url(../flags/4x3/az.svg);
+  }
+}
+@media screen {
+  .flag-icon-az {
+    background-image: url(../flags/4x3/az.svg);
+  }
+}
+@media print {
+  .flag-icon-az.flag-icon-squared {
+    content: url(../flags/1x1/az.svg);
+  }
+}
+@media screen {
+  .flag-icon-az.flag-icon-squared {
+    background-image: url(../flags/1x1/az.svg);
+  }
+}
+@media print {
+  .flag-icon-ba {
+    content: url(../flags/4x3/ba.svg);
+  }
+}
+@media screen {
+  .flag-icon-ba {
+    background-image: url(../flags/4x3/ba.svg);
+  }
+}
+@media print {
+  .flag-icon-ba.flag-icon-squared {
+    content: url(../flags/1x1/ba.svg);
+  }
+}
+@media screen {
+  .flag-icon-ba.flag-icon-squared {
+    background-image: url(../flags/1x1/ba.svg);
+  }
+}
+@media print {
+  .flag-icon-bb {
+    content: url(../flags/4x3/bb.svg);
+  }
+}
+@media screen {
+  .flag-icon-bb {
+    background-image: url(../flags/4x3/bb.svg);
+  }
+}
+@media print {
+  .flag-icon-bb.flag-icon-squared {
+    content: url(../flags/1x1/bb.svg);
+  }
+}
+@media screen {
+  .flag-icon-bb.flag-icon-squared {
+    background-image: url(../flags/1x1/bb.svg);
+  }
+}
+@media print {
+  .flag-icon-bd {
+    content: url(../flags/4x3/bd.svg);
+  }
+}
+@media screen {
+  .flag-icon-bd {
+    background-image: url(../flags/4x3/bd.svg);
+  }
+}
+@media print {
+  .flag-icon-bd.flag-icon-squared {
+    content: url(../flags/1x1/bd.svg);
+  }
+}
+@media screen {
+  .flag-icon-bd.flag-icon-squared {
+    background-image: url(../flags/1x1/bd.svg);
+  }
+}
+@media print {
+  .flag-icon-be {
+    content: url(../flags/4x3/be.svg);
+  }
+}
+@media screen {
+  .flag-icon-be {
+    background-image: url(../flags/4x3/be.svg);
+  }
+}
+@media print {
+  .flag-icon-be.flag-icon-squared {
+    content: url(../flags/1x1/be.svg);
+  }
+}
+@media screen {
+  .flag-icon-be.flag-icon-squared {
+    background-image: url(../flags/1x1/be.svg);
+  }
+}
+@media print {
+  .flag-icon-bf {
+    content: url(../flags/4x3/bf.svg);
+  }
+}
+@media screen {
+  .flag-icon-bf {
+    background-image: url(../flags/4x3/bf.svg);
+  }
+}
+@media print {
+  .flag-icon-bf.flag-icon-squared {
+    content: url(../flags/1x1/bf.svg);
+  }
+}
+@media screen {
+  .flag-icon-bf.flag-icon-squared {
+    background-image: url(../flags/1x1/bf.svg);
+  }
+}
+@media print {
+  .flag-icon-bg {
+    content: url(../flags/4x3/bg.svg);
+  }
+}
+@media screen {
+  .flag-icon-bg {
+    background-image: url(../flags/4x3/bg.svg);
+  }
+}
+@media print {
+  .flag-icon-bg.flag-icon-squared {
+    content: url(../flags/1x1/bg.svg);
+  }
+}
+@media screen {
+  .flag-icon-bg.flag-icon-squared {
+    background-image: url(../flags/1x1/bg.svg);
+  }
+}
+@media print {
+  .flag-icon-bh {
+    content: url(../flags/4x3/bh.svg);
+  }
+}
+@media screen {
+  .flag-icon-bh {
+    background-image: url(../flags/4x3/bh.svg);
+  }
+}
+@media print {
+  .flag-icon-bh.flag-icon-squared {
+    content: url(../flags/1x1/bh.svg);
+  }
+}
+@media screen {
+  .flag-icon-bh.flag-icon-squared {
+    background-image: url(../flags/1x1/bh.svg);
+  }
+}
+@media print {
+  .flag-icon-bi {
+    content: url(../flags/4x3/bi.svg);
+  }
+}
+@media screen {
+  .flag-icon-bi {
+    background-image: url(../flags/4x3/bi.svg);
+  }
+}
+@media print {
+  .flag-icon-bi.flag-icon-squared {
+    content: url(../flags/1x1/bi.svg);
+  }
+}
+@media screen {
+  .flag-icon-bi.flag-icon-squared {
+    background-image: url(../flags/1x1/bi.svg);
+  }
+}
+@media print {
+  .flag-icon-bj {
+    content: url(../flags/4x3/bj.svg);
+  }
+}
+@media screen {
+  .flag-icon-bj {
+    background-image: url(../flags/4x3/bj.svg);
+  }
+}
+@media print {
+  .flag-icon-bj.flag-icon-squared {
+    content: url(../flags/1x1/bj.svg);
+  }
+}
+@media screen {
+  .flag-icon-bj.flag-icon-squared {
+    background-image: url(../flags/1x1/bj.svg);
+  }
+}
+@media print {
+  .flag-icon-bl {
+    content: url(../flags/4x3/bl.svg);
+  }
+}
+@media screen {
+  .flag-icon-bl {
+    background-image: url(../flags/4x3/bl.svg);
+  }
+}
+@media print {
+  .flag-icon-bl.flag-icon-squared {
+    content: url(../flags/1x1/bl.svg);
+  }
+}
+@media screen {
+  .flag-icon-bl.flag-icon-squared {
+    background-image: url(../flags/1x1/bl.svg);
+  }
+}
+@media print {
+  .flag-icon-bm {
+    content: url(../flags/4x3/bm.svg);
+  }
+}
+@media screen {
+  .flag-icon-bm {
+    background-image: url(../flags/4x3/bm.svg);
+  }
+}
+@media print {
+  .flag-icon-bm.flag-icon-squared {
+    content: url(../flags/1x1/bm.svg);
+  }
+}
+@media screen {
+  .flag-icon-bm.flag-icon-squared {
+    background-image: url(../flags/1x1/bm.svg);
+  }
+}
+@media print {
+  .flag-icon-bn {
+    content: url(../flags/4x3/bn.svg);
+  }
+}
+@media screen {
+  .flag-icon-bn {
+    background-image: url(../flags/4x3/bn.svg);
+  }
+}
+@media print {
+  .flag-icon-bn.flag-icon-squared {
+    content: url(../flags/1x1/bn.svg);
+  }
+}
+@media screen {
+  .flag-icon-bn.flag-icon-squared {
+    background-image: url(../flags/1x1/bn.svg);
+  }
+}
+@media print {
+  .flag-icon-bo {
+    content: url(../flags/4x3/bo.svg);
+  }
+}
+@media screen {
+  .flag-icon-bo {
+    background-image: url(../flags/4x3/bo.svg);
+  }
+}
+@media print {
+  .flag-icon-bo.flag-icon-squared {
+    content: url(../flags/1x1/bo.svg);
+  }
+}
+@media screen {
+  .flag-icon-bo.flag-icon-squared {
+    background-image: url(../flags/1x1/bo.svg);
+  }
+}
+@media print {
+  .flag-icon-bq {
+    content: url(../flags/4x3/bq.svg);
+  }
+}
+@media screen {
+  .flag-icon-bq {
+    background-image: url(../flags/4x3/bq.svg);
+  }
+}
+@media print {
+  .flag-icon-bq.flag-icon-squared {
+    content: url(../flags/1x1/bq.svg);
+  }
+}
+@media screen {
+  .flag-icon-bq.flag-icon-squared {
+    background-image: url(../flags/1x1/bq.svg);
+  }
+}
+@media print {
+  .flag-icon-br {
+    content: url(../flags/4x3/br.svg);
+  }
+}
+@media screen {
+  .flag-icon-br {
+    background-image: url(../flags/4x3/br.svg);
+  }
+}
+@media print {
+  .flag-icon-br.flag-icon-squared {
+    content: url(../flags/1x1/br.svg);
+  }
+}
+@media screen {
+  .flag-icon-br.flag-icon-squared {
+    background-image: url(../flags/1x1/br.svg);
+  }
+}
+@media print {
+  .flag-icon-bs {
+    content: url(../flags/4x3/bs.svg);
+  }
+}
+@media screen {
+  .flag-icon-bs {
+    background-image: url(../flags/4x3/bs.svg);
+  }
+}
+@media print {
+  .flag-icon-bs.flag-icon-squared {
+    content: url(../flags/1x1/bs.svg);
+  }
+}
+@media screen {
+  .flag-icon-bs.flag-icon-squared {
+    background-image: url(../flags/1x1/bs.svg);
+  }
+}
+@media print {
+  .flag-icon-bt {
+    content: url(../flags/4x3/bt.svg);
+  }
+}
+@media screen {
+  .flag-icon-bt {
+    background-image: url(../flags/4x3/bt.svg);
+  }
+}
+@media print {
+  .flag-icon-bt.flag-icon-squared {
+    content: url(../flags/1x1/bt.svg);
+  }
+}
+@media screen {
+  .flag-icon-bt.flag-icon-squared {
+    background-image: url(../flags/1x1/bt.svg);
+  }
+}
+@media print {
+  .flag-icon-bv {
+    content: url(../flags/4x3/bv.svg);
+  }
+}
+@media screen {
+  .flag-icon-bv {
+    background-image: url(../flags/4x3/bv.svg);
+  }
+}
+@media print {
+  .flag-icon-bv.flag-icon-squared {
+    content: url(../flags/1x1/bv.svg);
+  }
+}
+@media screen {
+  .flag-icon-bv.flag-icon-squared {
+    background-image: url(../flags/1x1/bv.svg);
+  }
+}
+@media print {
+  .flag-icon-bw {
+    content: url(../flags/4x3/bw.svg);
+  }
+}
+@media screen {
+  .flag-icon-bw {
+    background-image: url(../flags/4x3/bw.svg);
+  }
+}
+@media print {
+  .flag-icon-bw.flag-icon-squared {
+    content: url(../flags/1x1/bw.svg);
+  }
+}
+@media screen {
+  .flag-icon-bw.flag-icon-squared {
+    background-image: url(../flags/1x1/bw.svg);
+  }
+}
+@media print {
+  .flag-icon-by {
+    content: url(../flags/4x3/by.svg);
+  }
+}
+@media screen {
+  .flag-icon-by {
+    background-image: url(../flags/4x3/by.svg);
+  }
+}
+@media print {
+  .flag-icon-by.flag-icon-squared {
+    content: url(../flags/1x1/by.svg);
+  }
+}
+@media screen {
+  .flag-icon-by.flag-icon-squared {
+    background-image: url(../flags/1x1/by.svg);
+  }
+}
+@media print {
+  .flag-icon-bz {
+    content: url(../flags/4x3/bz.svg);
+  }
+}
+@media screen {
+  .flag-icon-bz {
+    background-image: url(../flags/4x3/bz.svg);
+  }
+}
+@media print {
+  .flag-icon-bz.flag-icon-squared {
+    content: url(../flags/1x1/bz.svg);
+  }
+}
+@media screen {
+  .flag-icon-bz.flag-icon-squared {
+    background-image: url(../flags/1x1/bz.svg);
+  }
+}
+@media print {
+  .flag-icon-ca {
+    content: url(../flags/4x3/ca.svg);
+  }
+}
+@media screen {
+  .flag-icon-ca {
+    background-image: url(../flags/4x3/ca.svg);
+  }
+}
+@media print {
+  .flag-icon-ca.flag-icon-squared {
+    content: url(../flags/1x1/ca.svg);
+  }
+}
+@media screen {
+  .flag-icon-ca.flag-icon-squared {
+    background-image: url(../flags/1x1/ca.svg);
+  }
+}
+@media print {
+  .flag-icon-cc {
+    content: url(../flags/4x3/cc.svg);
+  }
+}
+@media screen {
+  .flag-icon-cc {
+    background-image: url(../flags/4x3/cc.svg);
+  }
+}
+@media print {
+  .flag-icon-cc.flag-icon-squared {
+    content: url(../flags/1x1/cc.svg);
+  }
+}
+@media screen {
+  .flag-icon-cc.flag-icon-squared {
+    background-image: url(../flags/1x1/cc.svg);
+  }
+}
+@media print {
+  .flag-icon-cd {
+    content: url(../flags/4x3/cd.svg);
+  }
+}
+@media screen {
+  .flag-icon-cd {
+    background-image: url(../flags/4x3/cd.svg);
+  }
+}
+@media print {
+  .flag-icon-cd.flag-icon-squared {
+    content: url(../flags/1x1/cd.svg);
+  }
+}
+@media screen {
+  .flag-icon-cd.flag-icon-squared {
+    background-image: url(../flags/1x1/cd.svg);
+  }
+}
+@media print {
+  .flag-icon-cf {
+    content: url(../flags/4x3/cf.svg);
+  }
+}
+@media screen {
+  .flag-icon-cf {
+    background-image: url(../flags/4x3/cf.svg);
+  }
+}
+@media print {
+  .flag-icon-cf.flag-icon-squared {
+    content: url(../flags/1x1/cf.svg);
+  }
+}
+@media screen {
+  .flag-icon-cf.flag-icon-squared {
+    background-image: url(../flags/1x1/cf.svg);
+  }
+}
+@media print {
+  .flag-icon-cg {
+    content: url(../flags/4x3/cg.svg);
+  }
+}
+@media screen {
+  .flag-icon-cg {
+    background-image: url(../flags/4x3/cg.svg);
+  }
+}
+@media print {
+  .flag-icon-cg.flag-icon-squared {
+    content: url(../flags/1x1/cg.svg);
+  }
+}
+@media screen {
+  .flag-icon-cg.flag-icon-squared {
+    background-image: url(../flags/1x1/cg.svg);
+  }
+}
+@media print {
+  .flag-icon-ch {
+    content: url(../flags/4x3/ch.svg);
+  }
+}
+@media screen {
+  .flag-icon-ch {
+    background-image: url(../flags/4x3/ch.svg);
+  }
+}
+@media print {
+  .flag-icon-ch.flag-icon-squared {
+    content: url(../flags/1x1/ch.svg);
+  }
+}
+@media screen {
+  .flag-icon-ch.flag-icon-squared {
+    background-image: url(../flags/1x1/ch.svg);
+  }
+}
+@media print {
+  .flag-icon-ci {
+    content: url(../flags/4x3/ci.svg);
+  }
+}
+@media screen {
+  .flag-icon-ci {
+    background-image: url(../flags/4x3/ci.svg);
+  }
+}
+@media print {
+  .flag-icon-ci.flag-icon-squared {
+    content: url(../flags/1x1/ci.svg);
+  }
+}
+@media screen {
+  .flag-icon-ci.flag-icon-squared {
+    background-image: url(../flags/1x1/ci.svg);
+  }
+}
+@media print {
+  .flag-icon-ck {
+    content: url(../flags/4x3/ck.svg);
+  }
+}
+@media screen {
+  .flag-icon-ck {
+    background-image: url(../flags/4x3/ck.svg);
+  }
+}
+@media print {
+  .flag-icon-ck.flag-icon-squared {
+    content: url(../flags/1x1/ck.svg);
+  }
+}
+@media screen {
+  .flag-icon-ck.flag-icon-squared {
+    background-image: url(../flags/1x1/ck.svg);
+  }
+}
+@media print {
+  .flag-icon-cl {
+    content: url(../flags/4x3/cl.svg);
+  }
+}
+@media screen {
+  .flag-icon-cl {
+    background-image: url(../flags/4x3/cl.svg);
+  }
+}
+@media print {
+  .flag-icon-cl.flag-icon-squared {
+    content: url(../flags/1x1/cl.svg);
+  }
+}
+@media screen {
+  .flag-icon-cl.flag-icon-squared {
+    background-image: url(../flags/1x1/cl.svg);
+  }
+}
+@media print {
+  .flag-icon-cm {
+    content: url(../flags/4x3/cm.svg);
+  }
+}
+@media screen {
+  .flag-icon-cm {
+    background-image: url(../flags/4x3/cm.svg);
+  }
+}
+@media print {
+  .flag-icon-cm.flag-icon-squared {
+    content: url(../flags/1x1/cm.svg);
+  }
+}
+@media screen {
+  .flag-icon-cm.flag-icon-squared {
+    background-image: url(../flags/1x1/cm.svg);
+  }
+}
+@media print {
+  .flag-icon-cn {
+    content: url(../flags/4x3/cn.svg);
+  }
+}
+@media screen {
+  .flag-icon-cn {
+    background-image: url(../flags/4x3/cn.svg);
+  }
+}
+@media print {
+  .flag-icon-cn.flag-icon-squared {
+    content: url(../flags/1x1/cn.svg);
+  }
+}
+@media screen {
+  .flag-icon-cn.flag-icon-squared {
+    background-image: url(../flags/1x1/cn.svg);
+  }
+}
+@media print {
+  .flag-icon-co {
+    content: url(../flags/4x3/co.svg);
+  }
+}
+@media screen {
+  .flag-icon-co {
+    background-image: url(../flags/4x3/co.svg);
+  }
+}
+@media print {
+  .flag-icon-co.flag-icon-squared {
+    content: url(../flags/1x1/co.svg);
+  }
+}
+@media screen {
+  .flag-icon-co.flag-icon-squared {
+    background-image: url(../flags/1x1/co.svg);
+  }
+}
+@media print {
+  .flag-icon-cr {
+    content: url(../flags/4x3/cr.svg);
+  }
+}
+@media screen {
+  .flag-icon-cr {
+    background-image: url(../flags/4x3/cr.svg);
+  }
+}
+@media print {
+  .flag-icon-cr.flag-icon-squared {
+    content: url(../flags/1x1/cr.svg);
+  }
+}
+@media screen {
+  .flag-icon-cr.flag-icon-squared {
+    background-image: url(../flags/1x1/cr.svg);
+  }
+}
+@media print {
+  .flag-icon-cu {
+    content: url(../flags/4x3/cu.svg);
+  }
+}
+@media screen {
+  .flag-icon-cu {
+    background-image: url(../flags/4x3/cu.svg);
+  }
+}
+@media print {
+  .flag-icon-cu.flag-icon-squared {
+    content: url(../flags/1x1/cu.svg);
+  }
+}
+@media screen {
+  .flag-icon-cu.flag-icon-squared {
+    background-image: url(../flags/1x1/cu.svg);
+  }
+}
+@media print {
+  .flag-icon-cv {
+    content: url(../flags/4x3/cv.svg);
+  }
+}
+@media screen {
+  .flag-icon-cv {
+    background-image: url(../flags/4x3/cv.svg);
+  }
+}
+@media print {
+  .flag-icon-cv.flag-icon-squared {
+    content: url(../flags/1x1/cv.svg);
+  }
+}
+@media screen {
+  .flag-icon-cv.flag-icon-squared {
+    background-image: url(../flags/1x1/cv.svg);
+  }
+}
+@media print {
+  .flag-icon-cw {
+    content: url(../flags/4x3/cw.svg);
+  }
+}
+@media screen {
+  .flag-icon-cw {
+    background-image: url(../flags/4x3/cw.svg);
+  }
+}
+@media print {
+  .flag-icon-cw.flag-icon-squared {
+    content: url(../flags/1x1/cw.svg);
+  }
+}
+@media screen {
+  .flag-icon-cw.flag-icon-squared {
+    background-image: url(../flags/1x1/cw.svg);
+  }
+}
+@media print {
+  .flag-icon-cx {
+    content: url(../flags/4x3/cx.svg);
+  }
+}
+@media screen {
+  .flag-icon-cx {
+    background-image: url(../flags/4x3/cx.svg);
+  }
+}
+@media print {
+  .flag-icon-cx.flag-icon-squared {
+    content: url(../flags/1x1/cx.svg);
+  }
+}
+@media screen {
+  .flag-icon-cx.flag-icon-squared {
+    background-image: url(../flags/1x1/cx.svg);
+  }
+}
+@media print {
+  .flag-icon-cy {
+    content: url(../flags/4x3/cy.svg);
+  }
+}
+@media screen {
+  .flag-icon-cy {
+    background-image: url(../flags/4x3/cy.svg);
+  }
+}
+@media print {
+  .flag-icon-cy.flag-icon-squared {
+    content: url(../flags/1x1/cy.svg);
+  }
+}
+@media screen {
+  .flag-icon-cy.flag-icon-squared {
+    background-image: url(../flags/1x1/cy.svg);
+  }
+}
+@media print {
+  .flag-icon-cz {
+    content: url(../flags/4x3/cz.svg);
+  }
+}
+@media screen {
+  .flag-icon-cz {
+    background-image: url(../flags/4x3/cz.svg);
+  }
+}
+@media print {
+  .flag-icon-cz.flag-icon-squared {
+    content: url(../flags/1x1/cz.svg);
+  }
+}
+@media screen {
+  .flag-icon-cz.flag-icon-squared {
+    background-image: url(../flags/1x1/cz.svg);
+  }
+}
+@media print {
+  .flag-icon-de {
+    content: url(../flags/4x3/de.svg);
+  }
+}
+@media screen {
+  .flag-icon-de {
+    background-image: url(../flags/4x3/de.svg);
+  }
+}
+@media print {
+  .flag-icon-de.flag-icon-squared {
+    content: url(../flags/1x1/de.svg);
+  }
+}
+@media screen {
+  .flag-icon-de.flag-icon-squared {
+    background-image: url(../flags/1x1/de.svg);
+  }
+}
+@media print {
+  .flag-icon-dj {
+    content: url(../flags/4x3/dj.svg);
+  }
+}
+@media screen {
+  .flag-icon-dj {
+    background-image: url(../flags/4x3/dj.svg);
+  }
+}
+@media print {
+  .flag-icon-dj.flag-icon-squared {
+    content: url(../flags/1x1/dj.svg);
+  }
+}
+@media screen {
+  .flag-icon-dj.flag-icon-squared {
+    background-image: url(../flags/1x1/dj.svg);
+  }
+}
+@media print {
+  .flag-icon-dk {
+    content: url(../flags/4x3/dk.svg);
+  }
+}
+@media screen {
+  .flag-icon-dk {
+    background-image: url(../flags/4x3/dk.svg);
+  }
+}
+@media print {
+  .flag-icon-dk.flag-icon-squared {
+    content: url(../flags/1x1/dk.svg);
+  }
+}
+@media screen {
+  .flag-icon-dk.flag-icon-squared {
+    background-image: url(../flags/1x1/dk.svg);
+  }
+}
+@media print {
+  .flag-icon-dm {
+    content: url(../flags/4x3/dm.svg);
+  }
+}
+@media screen {
+  .flag-icon-dm {
+    background-image: url(../flags/4x3/dm.svg);
+  }
+}
+@media print {
+  .flag-icon-dm.flag-icon-squared {
+    content: url(../flags/1x1/dm.svg);
+  }
+}
+@media screen {
+  .flag-icon-dm.flag-icon-squared {
+    background-image: url(../flags/1x1/dm.svg);
+  }
+}
+@media print {
+  .flag-icon-do {
+    content: url(../flags/4x3/do.svg);
+  }
+}
+@media screen {
+  .flag-icon-do {
+    background-image: url(../flags/4x3/do.svg);
+  }
+}
+@media print {
+  .flag-icon-do.flag-icon-squared {
+    content: url(../flags/1x1/do.svg);
+  }
+}
+@media screen {
+  .flag-icon-do.flag-icon-squared {
+    background-image: url(../flags/1x1/do.svg);
+  }
+}
+@media print {
+  .flag-icon-dz {
+    content: url(../flags/4x3/dz.svg);
+  }
+}
+@media screen {
+  .flag-icon-dz {
+    background-image: url(../flags/4x3/dz.svg);
+  }
+}
+@media print {
+  .flag-icon-dz.flag-icon-squared {
+    content: url(../flags/1x1/dz.svg);
+  }
+}
+@media screen {
+  .flag-icon-dz.flag-icon-squared {
+    background-image: url(../flags/1x1/dz.svg);
+  }
+}
+@media print {
+  .flag-icon-ec {
+    content: url(../flags/4x3/ec.svg);
+  }
+}
+@media screen {
+  .flag-icon-ec {
+    background-image: url(../flags/4x3/ec.svg);
+  }
+}
+@media print {
+  .flag-icon-ec.flag-icon-squared {
+    content: url(../flags/1x1/ec.svg);
+  }
+}
+@media screen {
+  .flag-icon-ec.flag-icon-squared {
+    background-image: url(../flags/1x1/ec.svg);
+  }
+}
+@media print {
+  .flag-icon-ee {
+    content: url(../flags/4x3/ee.svg);
+  }
+}
+@media screen {
+  .flag-icon-ee {
+    background-image: url(../flags/4x3/ee.svg);
+  }
+}
+@media print {
+  .flag-icon-ee.flag-icon-squared {
+    content: url(../flags/1x1/ee.svg);
+  }
+}
+@media screen {
+  .flag-icon-ee.flag-icon-squared {
+    background-image: url(../flags/1x1/ee.svg);
+  }
+}
+@media print {
+  .flag-icon-eg {
+    content: url(../flags/4x3/eg.svg);
+  }
+}
+@media screen {
+  .flag-icon-eg {
+    background-image: url(../flags/4x3/eg.svg);
+  }
+}
+@media print {
+  .flag-icon-eg.flag-icon-squared {
+    content: url(../flags/1x1/eg.svg);
+  }
+}
+@media screen {
+  .flag-icon-eg.flag-icon-squared {
+    background-image: url(../flags/1x1/eg.svg);
+  }
+}
+@media print {
+  .flag-icon-eh {
+    content: url(../flags/4x3/eh.svg);
+  }
+}
+@media screen {
+  .flag-icon-eh {
+    background-image: url(../flags/4x3/eh.svg);
+  }
+}
+@media print {
+  .flag-icon-eh.flag-icon-squared {
+    content: url(../flags/1x1/eh.svg);
+  }
+}
+@media screen {
+  .flag-icon-eh.flag-icon-squared {
+    background-image: url(../flags/1x1/eh.svg);
+  }
+}
+@media print {
+  .flag-icon-er {
+    content: url(../flags/4x3/er.svg);
+  }
+}
+@media screen {
+  .flag-icon-er {
+    background-image: url(../flags/4x3/er.svg);
+  }
+}
+@media print {
+  .flag-icon-er.flag-icon-squared {
+    content: url(../flags/1x1/er.svg);
+  }
+}
+@media screen {
+  .flag-icon-er.flag-icon-squared {
+    background-image: url(../flags/1x1/er.svg);
+  }
+}
+@media print {
+  .flag-icon-es {
+    content: url(../flags/4x3/es.svg);
+  }
+}
+@media screen {
+  .flag-icon-es {
+    background-image: url(../flags/4x3/es.svg);
+  }
+}
+@media print {
+  .flag-icon-es.flag-icon-squared {
+    content: url(../flags/1x1/es.svg);
+  }
+}
+@media screen {
+  .flag-icon-es.flag-icon-squared {
+    background-image: url(../flags/1x1/es.svg);
+  }
+}
+@media print {
+  .flag-icon-et {
+    content: url(../flags/4x3/et.svg);
+  }
+}
+@media screen {
+  .flag-icon-et {
+    background-image: url(../flags/4x3/et.svg);
+  }
+}
+@media print {
+  .flag-icon-et.flag-icon-squared {
+    content: url(../flags/1x1/et.svg);
+  }
+}
+@media screen {
+  .flag-icon-et.flag-icon-squared {
+    background-image: url(../flags/1x1/et.svg);
+  }
+}
+@media print {
+  .flag-icon-fi {
+    content: url(../flags/4x3/fi.svg);
+  }
+}
+@media screen {
+  .flag-icon-fi {
+    background-image: url(../flags/4x3/fi.svg);
+  }
+}
+@media print {
+  .flag-icon-fi.flag-icon-squared {
+    content: url(../flags/1x1/fi.svg);
+  }
+}
+@media screen {
+  .flag-icon-fi.flag-icon-squared {
+    background-image: url(../flags/1x1/fi.svg);
+  }
+}
+@media print {
+  .flag-icon-fj {
+    content: url(../flags/4x3/fj.svg);
+  }
+}
+@media screen {
+  .flag-icon-fj {
+    background-image: url(../flags/4x3/fj.svg);
+  }
+}
+@media print {
+  .flag-icon-fj.flag-icon-squared {
+    content: url(../flags/1x1/fj.svg);
+  }
+}
+@media screen {
+  .flag-icon-fj.flag-icon-squared {
+    background-image: url(../flags/1x1/fj.svg);
+  }
+}
+@media print {
+  .flag-icon-fk {
+    content: url(../flags/4x3/fk.svg);
+  }
+}
+@media screen {
+  .flag-icon-fk {
+    background-image: url(../flags/4x3/fk.svg);
+  }
+}
+@media print {
+  .flag-icon-fk.flag-icon-squared {
+    content: url(../flags/1x1/fk.svg);
+  }
+}
+@media screen {
+  .flag-icon-fk.flag-icon-squared {
+    background-image: url(../flags/1x1/fk.svg);
+  }
+}
+@media print {
+  .flag-icon-fm {
+    content: url(../flags/4x3/fm.svg);
+  }
+}
+@media screen {
+  .flag-icon-fm {
+    background-image: url(../flags/4x3/fm.svg);
+  }
+}
+@media print {
+  .flag-icon-fm.flag-icon-squared {
+    content: url(../flags/1x1/fm.svg);
+  }
+}
+@media screen {
+  .flag-icon-fm.flag-icon-squared {
+    background-image: url(../flags/1x1/fm.svg);
+  }
+}
+@media print {
+  .flag-icon-fo {
+    content: url(../flags/4x3/fo.svg);
+  }
+}
+@media screen {
+  .flag-icon-fo {
+    background-image: url(../flags/4x3/fo.svg);
+  }
+}
+@media print {
+  .flag-icon-fo.flag-icon-squared {
+    content: url(../flags/1x1/fo.svg);
+  }
+}
+@media screen {
+  .flag-icon-fo.flag-icon-squared {
+    background-image: url(../flags/1x1/fo.svg);
+  }
+}
+@media print {
+  .flag-icon-fr {
+    content: url(../flags/4x3/fr.svg);
+  }
+}
+@media screen {
+  .flag-icon-fr {
+    background-image: url(../flags/4x3/fr.svg);
+  }
+}
+@media print {
+  .flag-icon-fr.flag-icon-squared {
+    content: url(../flags/1x1/fr.svg);
+  }
+}
+@media screen {
+  .flag-icon-fr.flag-icon-squared {
+    background-image: url(../flags/1x1/fr.svg);
+  }
+}
+@media print {
+  .flag-icon-ga {
+    content: url(../flags/4x3/ga.svg);
+  }
+}
+@media screen {
+  .flag-icon-ga {
+    background-image: url(../flags/4x3/ga.svg);
+  }
+}
+@media print {
+  .flag-icon-ga.flag-icon-squared {
+    content: url(../flags/1x1/ga.svg);
+  }
+}
+@media screen {
+  .flag-icon-ga.flag-icon-squared {
+    background-image: url(../flags/1x1/ga.svg);
+  }
+}
+@media print {
+  .flag-icon-gb {
+    content: url(../flags/4x3/gb.svg);
+  }
+}
+@media screen {
+  .flag-icon-gb {
+    background-image: url(../flags/4x3/gb.svg);
+  }
+}
+@media print {
+  .flag-icon-gb.flag-icon-squared {
+    content: url(../flags/1x1/gb.svg);
+  }
+}
+@media screen {
+  .flag-icon-gb.flag-icon-squared {
+    background-image: url(../flags/1x1/gb.svg);
+  }
+}
+@media print {
+  .flag-icon-gd {
+    content: url(../flags/4x3/gd.svg);
+  }
+}
+@media screen {
+  .flag-icon-gd {
+    background-image: url(../flags/4x3/gd.svg);
+  }
+}
+@media print {
+  .flag-icon-gd.flag-icon-squared {
+    content: url(../flags/1x1/gd.svg);
+  }
+}
+@media screen {
+  .flag-icon-gd.flag-icon-squared {
+    background-image: url(../flags/1x1/gd.svg);
+  }
+}
+@media print {
+  .flag-icon-ge {
+    content: url(../flags/4x3/ge.svg);
+  }
+}
+@media screen {
+  .flag-icon-ge {
+    background-image: url(../flags/4x3/ge.svg);
+  }
+}
+@media print {
+  .flag-icon-ge.flag-icon-squared {
+    content: url(../flags/1x1/ge.svg);
+  }
+}
+@media screen {
+  .flag-icon-ge.flag-icon-squared {
+    background-image: url(../flags/1x1/ge.svg);
+  }
+}
+@media print {
+  .flag-icon-gf {
+    content: url(../flags/4x3/gf.svg);
+  }
+}
+@media screen {
+  .flag-icon-gf {
+    background-image: url(../flags/4x3/gf.svg);
+  }
+}
+@media print {
+  .flag-icon-gf.flag-icon-squared {
+    content: url(../flags/1x1/gf.svg);
+  }
+}
+@media screen {
+  .flag-icon-gf.flag-icon-squared {
+    background-image: url(../flags/1x1/gf.svg);
+  }
+}
+@media print {
+  .flag-icon-gg {
+    content: url(../flags/4x3/gg.svg);
+  }
+}
+@media screen {
+  .flag-icon-gg {
+    background-image: url(../flags/4x3/gg.svg);
+  }
+}
+@media print {
+  .flag-icon-gg.flag-icon-squared {
+    content: url(../flags/1x1/gg.svg);
+  }
+}
+@media screen {
+  .flag-icon-gg.flag-icon-squared {
+    background-image: url(../flags/1x1/gg.svg);
+  }
+}
+@media print {
+  .flag-icon-gh {
+    content: url(../flags/4x3/gh.svg);
+  }
+}
+@media screen {
+  .flag-icon-gh {
+    background-image: url(../flags/4x3/gh.svg);
+  }
+}
+@media print {
+  .flag-icon-gh.flag-icon-squared {
+    content: url(../flags/1x1/gh.svg);
+  }
+}
+@media screen {
+  .flag-icon-gh.flag-icon-squared {
+    background-image: url(../flags/1x1/gh.svg);
+  }
+}
+@media print {
+  .flag-icon-gi {
+    content: url(../flags/4x3/gi.svg);
+  }
+}
+@media screen {
+  .flag-icon-gi {
+    background-image: url(../flags/4x3/gi.svg);
+  }
+}
+@media print {
+  .flag-icon-gi.flag-icon-squared {
+    content: url(../flags/1x1/gi.svg);
+  }
+}
+@media screen {
+  .flag-icon-gi.flag-icon-squared {
+    background-image: url(../flags/1x1/gi.svg);
+  }
+}
+@media print {
+  .flag-icon-gl {
+    content: url(../flags/4x3/gl.svg);
+  }
+}
+@media screen {
+  .flag-icon-gl {
+    background-image: url(../flags/4x3/gl.svg);
+  }
+}
+@media print {
+  .flag-icon-gl.flag-icon-squared {
+    content: url(../flags/1x1/gl.svg);
+  }
+}
+@media screen {
+  .flag-icon-gl.flag-icon-squared {
+    background-image: url(../flags/1x1/gl.svg);
+  }
+}
+@media print {
+  .flag-icon-gm {
+    content: url(../flags/4x3/gm.svg);
+  }
+}
+@media screen {
+  .flag-icon-gm {
+    background-image: url(../flags/4x3/gm.svg);
+  }
+}
+@media print {
+  .flag-icon-gm.flag-icon-squared {
+    content: url(../flags/1x1/gm.svg);
+  }
+}
+@media screen {
+  .flag-icon-gm.flag-icon-squared {
+    background-image: url(../flags/1x1/gm.svg);
+  }
+}
+@media print {
+  .flag-icon-gn {
+    content: url(../flags/4x3/gn.svg);
+  }
+}
+@media screen {
+  .flag-icon-gn {
+    background-image: url(../flags/4x3/gn.svg);
+  }
+}
+@media print {
+  .flag-icon-gn.flag-icon-squared {
+    content: url(../flags/1x1/gn.svg);
+  }
+}
+@media screen {
+  .flag-icon-gn.flag-icon-squared {
+    background-image: url(../flags/1x1/gn.svg);
+  }
+}
+@media print {
+  .flag-icon-gp {
+    content: url(../flags/4x3/gp.svg);
+  }
+}
+@media screen {
+  .flag-icon-gp {
+    background-image: url(../flags/4x3/gp.svg);
+  }
+}
+@media print {
+  .flag-icon-gp.flag-icon-squared {
+    content: url(../flags/1x1/gp.svg);
+  }
+}
+@media screen {
+  .flag-icon-gp.flag-icon-squared {
+    background-image: url(../flags/1x1/gp.svg);
+  }
+}
+@media print {
+  .flag-icon-gq {
+    content: url(../flags/4x3/gq.svg);
+  }
+}
+@media screen {
+  .flag-icon-gq {
+    background-image: url(../flags/4x3/gq.svg);
+  }
+}
+@media print {
+  .flag-icon-gq.flag-icon-squared {
+    content: url(../flags/1x1/gq.svg);
+  }
+}
+@media screen {
+  .flag-icon-gq.flag-icon-squared {
+    background-image: url(../flags/1x1/gq.svg);
+  }
+}
+@media print {
+  .flag-icon-gr {
+    content: url(../flags/4x3/gr.svg);
+  }
+}
+@media screen {
+  .flag-icon-gr {
+    background-image: url(../flags/4x3/gr.svg);
+  }
+}
+@media print {
+  .flag-icon-gr.flag-icon-squared {
+    content: url(../flags/1x1/gr.svg);
+  }
+}
+@media screen {
+  .flag-icon-gr.flag-icon-squared {
+    background-image: url(../flags/1x1/gr.svg);
+  }
+}
+@media print {
+  .flag-icon-gs {
+    content: url(../flags/4x3/gs.svg);
+  }
+}
+@media screen {
+  .flag-icon-gs {
+    background-image: url(../flags/4x3/gs.svg);
+  }
+}
+@media print {
+  .flag-icon-gs.flag-icon-squared {
+    content: url(../flags/1x1/gs.svg);
+  }
+}
+@media screen {
+  .flag-icon-gs.flag-icon-squared {
+    background-image: url(../flags/1x1/gs.svg);
+  }
+}
+@media print {
+  .flag-icon-gt {
+    content: url(../flags/4x3/gt.svg);
+  }
+}
+@media screen {
+  .flag-icon-gt {
+    background-image: url(../flags/4x3/gt.svg);
+  }
+}
+@media print {
+  .flag-icon-gt.flag-icon-squared {
+    content: url(../flags/1x1/gt.svg);
+  }
+}
+@media screen {
+  .flag-icon-gt.flag-icon-squared {
+    background-image: url(../flags/1x1/gt.svg);
+  }
+}
+@media print {
+  .flag-icon-gu {
+    content: url(../flags/4x3/gu.svg);
+  }
+}
+@media screen {
+  .flag-icon-gu {
+    background-image: url(../flags/4x3/gu.svg);
+  }
+}
+@media print {
+  .flag-icon-gu.flag-icon-squared {
+    content: url(../flags/1x1/gu.svg);
+  }
+}
+@media screen {
+  .flag-icon-gu.flag-icon-squared {
+    background-image: url(../flags/1x1/gu.svg);
+  }
+}
+@media print {
+  .flag-icon-gw {
+    content: url(../flags/4x3/gw.svg);
+  }
+}
+@media screen {
+  .flag-icon-gw {
+    background-image: url(../flags/4x3/gw.svg);
+  }
+}
+@media print {
+  .flag-icon-gw.flag-icon-squared {
+    content: url(../flags/1x1/gw.svg);
+  }
+}
+@media screen {
+  .flag-icon-gw.flag-icon-squared {
+    background-image: url(../flags/1x1/gw.svg);
+  }
+}
+@media print {
+  .flag-icon-gy {
+    content: url(../flags/4x3/gy.svg);
+  }
+}
+@media screen {
+  .flag-icon-gy {
+    background-image: url(../flags/4x3/gy.svg);
+  }
+}
+@media print {
+  .flag-icon-gy.flag-icon-squared {
+    content: url(../flags/1x1/gy.svg);
+  }
+}
+@media screen {
+  .flag-icon-gy.flag-icon-squared {
+    background-image: url(../flags/1x1/gy.svg);
+  }
+}
+@media print {
+  .flag-icon-hk {
+    content: url(../flags/4x3/hk.svg);
+  }
+}
+@media screen {
+  .flag-icon-hk {
+    background-image: url(../flags/4x3/hk.svg);
+  }
+}
+@media print {
+  .flag-icon-hk.flag-icon-squared {
+    content: url(../flags/1x1/hk.svg);
+  }
+}
+@media screen {
+  .flag-icon-hk.flag-icon-squared {
+    background-image: url(../flags/1x1/hk.svg);
+  }
+}
+@media print {
+  .flag-icon-hm {
+    content: url(../flags/4x3/hm.svg);
+  }
+}
+@media screen {
+  .flag-icon-hm {
+    background-image: url(../flags/4x3/hm.svg);
+  }
+}
+@media print {
+  .flag-icon-hm.flag-icon-squared {
+    content: url(../flags/1x1/hm.svg);
+  }
+}
+@media screen {
+  .flag-icon-hm.flag-icon-squared {
+    background-image: url(../flags/1x1/hm.svg);
+  }
+}
+@media print {
+  .flag-icon-hn {
+    content: url(../flags/4x3/hn.svg);
+  }
+}
+@media screen {
+  .flag-icon-hn {
+    background-image: url(../flags/4x3/hn.svg);
+  }
+}
+@media print {
+  .flag-icon-hn.flag-icon-squared {
+    content: url(../flags/1x1/hn.svg);
+  }
+}
+@media screen {
+  .flag-icon-hn.flag-icon-squared {
+    background-image: url(../flags/1x1/hn.svg);
+  }
+}
+@media print {
+  .flag-icon-hr {
+    content: url(../flags/4x3/hr.svg);
+  }
+}
+@media screen {
+  .flag-icon-hr {
+    background-image: url(../flags/4x3/hr.svg);
+  }
+}
+@media print {
+  .flag-icon-hr.flag-icon-squared {
+    content: url(../flags/1x1/hr.svg);
+  }
+}
+@media screen {
+  .flag-icon-hr.flag-icon-squared {
+    background-image: url(../flags/1x1/hr.svg);
+  }
+}
+@media print {
+  .flag-icon-ht {
+    content: url(../flags/4x3/ht.svg);
+  }
+}
+@media screen {
+  .flag-icon-ht {
+    background-image: url(../flags/4x3/ht.svg);
+  }
+}
+@media print {
+  .flag-icon-ht.flag-icon-squared {
+    content: url(../flags/1x1/ht.svg);
+  }
+}
+@media screen {
+  .flag-icon-ht.flag-icon-squared {
+    background-image: url(../flags/1x1/ht.svg);
+  }
+}
+@media print {
+  .flag-icon-hu {
+    content: url(../flags/4x3/hu.svg);
+  }
+}
+@media screen {
+  .flag-icon-hu {
+    background-image: url(../flags/4x3/hu.svg);
+  }
+}
+@media print {
+  .flag-icon-hu.flag-icon-squared {
+    content: url(../flags/1x1/hu.svg);
+  }
+}
+@media screen {
+  .flag-icon-hu.flag-icon-squared {
+    background-image: url(../flags/1x1/hu.svg);
+  }
+}
+@media print {
+  .flag-icon-id {
+    content: url(../flags/4x3/id.svg);
+  }
+}
+@media screen {
+  .flag-icon-id {
+    background-image: url(../flags/4x3/id.svg);
+  }
+}
+@media print {
+  .flag-icon-id.flag-icon-squared {
+    content: url(../flags/1x1/id.svg);
+  }
+}
+@media screen {
+  .flag-icon-id.flag-icon-squared {
+    background-image: url(../flags/1x1/id.svg);
+  }
+}
+@media print {
+  .flag-icon-ie {
+    content: url(../flags/4x3/ie.svg);
+  }
+}
+@media screen {
+  .flag-icon-ie {
+    background-image: url(../flags/4x3/ie.svg);
+  }
+}
+@media print {
+  .flag-icon-ie.flag-icon-squared {
+    content: url(../flags/1x1/ie.svg);
+  }
+}
+@media screen {
+  .flag-icon-ie.flag-icon-squared {
+    background-image: url(../flags/1x1/ie.svg);
+  }
+}
+@media print {
+  .flag-icon-il {
+    content: url(../flags/4x3/il.svg);
+  }
+}
+@media screen {
+  .flag-icon-il {
+    background-image: url(../flags/4x3/il.svg);
+  }
+}
+@media print {
+  .flag-icon-il.flag-icon-squared {
+    content: url(../flags/1x1/il.svg);
+  }
+}
+@media screen {
+  .flag-icon-il.flag-icon-squared {
+    background-image: url(../flags/1x1/il.svg);
+  }
+}
+@media print {
+  .flag-icon-im {
+    content: url(../flags/4x3/im.svg);
+  }
+}
+@media screen {
+  .flag-icon-im {
+    background-image: url(../flags/4x3/im.svg);
+  }
+}
+@media print {
+  .flag-icon-im.flag-icon-squared {
+    content: url(../flags/1x1/im.svg);
+  }
+}
+@media screen {
+  .flag-icon-im.flag-icon-squared {
+    background-image: url(../flags/1x1/im.svg);
+  }
+}
+@media print {
+  .flag-icon-in {
+    content: url(../flags/4x3/in.svg);
+  }
+}
+@media screen {
+  .flag-icon-in {
+    background-image: url(../flags/4x3/in.svg);
+  }
+}
+@media print {
+  .flag-icon-in.flag-icon-squared {
+    content: url(../flags/1x1/in.svg);
+  }
+}
+@media screen {
+  .flag-icon-in.flag-icon-squared {
+    background-image: url(../flags/1x1/in.svg);
+  }
+}
+@media print {
+  .flag-icon-io {
+    content: url(../flags/4x3/io.svg);
+  }
+}
+@media screen {
+  .flag-icon-io {
+    background-image: url(../flags/4x3/io.svg);
+  }
+}
+@media print {
+  .flag-icon-io.flag-icon-squared {
+    content: url(../flags/1x1/io.svg);
+  }
+}
+@media screen {
+  .flag-icon-io.flag-icon-squared {
+    background-image: url(../flags/1x1/io.svg);
+  }
+}
+@media print {
+  .flag-icon-iq {
+    content: url(../flags/4x3/iq.svg);
+  }
+}
+@media screen {
+  .flag-icon-iq {
+    background-image: url(../flags/4x3/iq.svg);
+  }
+}
+@media print {
+  .flag-icon-iq.flag-icon-squared {
+    content: url(../flags/1x1/iq.svg);
+  }
+}
+@media screen {
+  .flag-icon-iq.flag-icon-squared {
+    background-image: url(../flags/1x1/iq.svg);
+  }
+}
+@media print {
+  .flag-icon-ir {
+    content: url(../flags/4x3/ir.svg);
+  }
+}
+@media screen {
+  .flag-icon-ir {
+    background-image: url(../flags/4x3/ir.svg);
+  }
+}
+@media print {
+  .flag-icon-ir.flag-icon-squared {
+    content: url(../flags/1x1/ir.svg);
+  }
+}
+@media screen {
+  .flag-icon-ir.flag-icon-squared {
+    background-image: url(../flags/1x1/ir.svg);
+  }
+}
+@media print {
+  .flag-icon-is {
+    content: url(../flags/4x3/is.svg);
+  }
+}
+@media screen {
+  .flag-icon-is {
+    background-image: url(../flags/4x3/is.svg);
+  }
+}
+@media print {
+  .flag-icon-is.flag-icon-squared {
+    content: url(../flags/1x1/is.svg);
+  }
+}
+@media screen {
+  .flag-icon-is.flag-icon-squared {
+    background-image: url(../flags/1x1/is.svg);
+  }
+}
+@media print {
+  .flag-icon-it {
+    content: url(../flags/4x3/it.svg);
+  }
+}
+@media screen {
+  .flag-icon-it {
+    background-image: url(../flags/4x3/it.svg);
+  }
+}
+@media print {
+  .flag-icon-it.flag-icon-squared {
+    content: url(../flags/1x1/it.svg);
+  }
+}
+@media screen {
+  .flag-icon-it.flag-icon-squared {
+    background-image: url(../flags/1x1/it.svg);
+  }
+}
+@media print {
+  .flag-icon-je {
+    content: url(../flags/4x3/je.svg);
+  }
+}
+@media screen {
+  .flag-icon-je {
+    background-image: url(../flags/4x3/je.svg);
+  }
+}
+@media print {
+  .flag-icon-je.flag-icon-squared {
+    content: url(../flags/1x1/je.svg);
+  }
+}
+@media screen {
+  .flag-icon-je.flag-icon-squared {
+    background-image: url(../flags/1x1/je.svg);
+  }
+}
+@media print {
+  .flag-icon-jm {
+    content: url(../flags/4x3/jm.svg);
+  }
+}
+@media screen {
+  .flag-icon-jm {
+    background-image: url(../flags/4x3/jm.svg);
+  }
+}
+@media print {
+  .flag-icon-jm.flag-icon-squared {
+    content: url(../flags/1x1/jm.svg);
+  }
+}
+@media screen {
+  .flag-icon-jm.flag-icon-squared {
+    background-image: url(../flags/1x1/jm.svg);
+  }
+}
+@media print {
+  .flag-icon-jo {
+    content: url(../flags/4x3/jo.svg);
+  }
+}
+@media screen {
+  .flag-icon-jo {
+    background-image: url(../flags/4x3/jo.svg);
+  }
+}
+@media print {
+  .flag-icon-jo.flag-icon-squared {
+    content: url(../flags/1x1/jo.svg);
+  }
+}
+@media screen {
+  .flag-icon-jo.flag-icon-squared {
+    background-image: url(../flags/1x1/jo.svg);
+  }
+}
+@media print {
+  .flag-icon-jp {
+    content: url(../flags/4x3/jp.svg);
+  }
+}
+@media screen {
+  .flag-icon-jp {
+    background-image: url(../flags/4x3/jp.svg);
+  }
+}
+@media print {
+  .flag-icon-jp.flag-icon-squared {
+    content: url(../flags/1x1/jp.svg);
+  }
+}
+@media screen {
+  .flag-icon-jp.flag-icon-squared {
+    background-image: url(../flags/1x1/jp.svg);
+  }
+}
+@media print {
+  .flag-icon-ke {
+    content: url(../flags/4x3/ke.svg);
+  }
+}
+@media screen {
+  .flag-icon-ke {
+    background-image: url(../flags/4x3/ke.svg);
+  }
+}
+@media print {
+  .flag-icon-ke.flag-icon-squared {
+    content: url(../flags/1x1/ke.svg);
+  }
+}
+@media screen {
+  .flag-icon-ke.flag-icon-squared {
+    background-image: url(../flags/1x1/ke.svg);
+  }
+}
+@media print {
+  .flag-icon-kg {
+    content: url(../flags/4x3/kg.svg);
+  }
+}
+@media screen {
+  .flag-icon-kg {
+    background-image: url(../flags/4x3/kg.svg);
+  }
+}
+@media print {
+  .flag-icon-kg.flag-icon-squared {
+    content: url(../flags/1x1/kg.svg);
+  }
+}
+@media screen {
+  .flag-icon-kg.flag-icon-squared {
+    background-image: url(../flags/1x1/kg.svg);
+  }
+}
+@media print {
+  .flag-icon-kh {
+    content: url(../flags/4x3/kh.svg);
+  }
+}
+@media screen {
+  .flag-icon-kh {
+    background-image: url(../flags/4x3/kh.svg);
+  }
+}
+@media print {
+  .flag-icon-kh.flag-icon-squared {
+    content: url(../flags/1x1/kh.svg);
+  }
+}
+@media screen {
+  .flag-icon-kh.flag-icon-squared {
+    background-image: url(../flags/1x1/kh.svg);
+  }
+}
+@media print {
+  .flag-icon-ki {
+    content: url(../flags/4x3/ki.svg);
+  }
+}
+@media screen {
+  .flag-icon-ki {
+    background-image: url(../flags/4x3/ki.svg);
+  }
+}
+@media print {
+  .flag-icon-ki.flag-icon-squared {
+    content: url(../flags/1x1/ki.svg);
+  }
+}
+@media screen {
+  .flag-icon-ki.flag-icon-squared {
+    background-image: url(../flags/1x1/ki.svg);
+  }
+}
+@media print {
+  .flag-icon-km {
+    content: url(../flags/4x3/km.svg);
+  }
+}
+@media screen {
+  .flag-icon-km {
+    background-image: url(../flags/4x3/km.svg);
+  }
+}
+@media print {
+  .flag-icon-km.flag-icon-squared {
+    content: url(../flags/1x1/km.svg);
+  }
+}
+@media screen {
+  .flag-icon-km.flag-icon-squared {
+    background-image: url(../flags/1x1/km.svg);
+  }
+}
+@media print {
+  .flag-icon-kn {
+    content: url(../flags/4x3/kn.svg);
+  }
+}
+@media screen {
+  .flag-icon-kn {
+    background-image: url(../flags/4x3/kn.svg);
+  }
+}
+@media print {
+  .flag-icon-kn.flag-icon-squared {
+    content: url(../flags/1x1/kn.svg);
+  }
+}
+@media screen {
+  .flag-icon-kn.flag-icon-squared {
+    background-image: url(../flags/1x1/kn.svg);
+  }
+}
+@media print {
+  .flag-icon-kp {
+    content: url(../flags/4x3/kp.svg);
+  }
+}
+@media screen {
+  .flag-icon-kp {
+    background-image: url(../flags/4x3/kp.svg);
+  }
+}
+@media print {
+  .flag-icon-kp.flag-icon-squared {
+    content: url(../flags/1x1/kp.svg);
+  }
+}
+@media screen {
+  .flag-icon-kp.flag-icon-squared {
+    background-image: url(../flags/1x1/kp.svg);
+  }
+}
+@media print {
+  .flag-icon-kr {
+    content: url(../flags/4x3/kr.svg);
+  }
+}
+@media screen {
+  .flag-icon-kr {
+    background-image: url(../flags/4x3/kr.svg);
+  }
+}
+@media print {
+  .flag-icon-kr.flag-icon-squared {
+    content: url(../flags/1x1/kr.svg);
+  }
+}
+@media screen {
+  .flag-icon-kr.flag-icon-squared {
+    background-image: url(../flags/1x1/kr.svg);
+  }
+}
+@media print {
+  .flag-icon-kw {
+    content: url(../flags/4x3/kw.svg);
+  }
+}
+@media screen {
+  .flag-icon-kw {
+    background-image: url(../flags/4x3/kw.svg);
+  }
+}
+@media print {
+  .flag-icon-kw.flag-icon-squared {
+    content: url(../flags/1x1/kw.svg);
+  }
+}
+@media screen {
+  .flag-icon-kw.flag-icon-squared {
+    background-image: url(../flags/1x1/kw.svg);
+  }
+}
+@media print {
+  .flag-icon-ky {
+    content: url(../flags/4x3/ky.svg);
+  }
+}
+@media screen {
+  .flag-icon-ky {
+    background-image: url(../flags/4x3/ky.svg);
+  }
+}
+@media print {
+  .flag-icon-ky.flag-icon-squared {
+    content: url(../flags/1x1/ky.svg);
+  }
+}
+@media screen {
+  .flag-icon-ky.flag-icon-squared {
+    background-image: url(../flags/1x1/ky.svg);
+  }
+}
+@media print {
+  .flag-icon-kz {
+    content: url(../flags/4x3/kz.svg);
+  }
+}
+@media screen {
+  .flag-icon-kz {
+    background-image: url(../flags/4x3/kz.svg);
+  }
+}
+@media print {
+  .flag-icon-kz.flag-icon-squared {
+    content: url(../flags/1x1/kz.svg);
+  }
+}
+@media screen {
+  .flag-icon-kz.flag-icon-squared {
+    background-image: url(../flags/1x1/kz.svg);
+  }
+}
+@media print {
+  .flag-icon-la {
+    content: url(../flags/4x3/la.svg);
+  }
+}
+@media screen {
+  .flag-icon-la {
+    background-image: url(../flags/4x3/la.svg);
+  }
+}
+@media print {
+  .flag-icon-la.flag-icon-squared {
+    content: url(../flags/1x1/la.svg);
+  }
+}
+@media screen {
+  .flag-icon-la.flag-icon-squared {
+    background-image: url(../flags/1x1/la.svg);
+  }
+}
+@media print {
+  .flag-icon-lb {
+    content: url(../flags/4x3/lb.svg);
+  }
+}
+@media screen {
+  .flag-icon-lb {
+    background-image: url(../flags/4x3/lb.svg);
+  }
+}
+@media print {
+  .flag-icon-lb.flag-icon-squared {
+    content: url(../flags/1x1/lb.svg);
+  }
+}
+@media screen {
+  .flag-icon-lb.flag-icon-squared {
+    background-image: url(../flags/1x1/lb.svg);
+  }
+}
+@media print {
+  .flag-icon-lc {
+    content: url(../flags/4x3/lc.svg);
+  }
+}
+@media screen {
+  .flag-icon-lc {
+    background-image: url(../flags/4x3/lc.svg);
+  }
+}
+@media print {
+  .flag-icon-lc.flag-icon-squared {
+    content: url(../flags/1x1/lc.svg);
+  }
+}
+@media screen {
+  .flag-icon-lc.flag-icon-squared {
+    background-image: url(../flags/1x1/lc.svg);
+  }
+}
+@media print {
+  .flag-icon-li {
+    content: url(../flags/4x3/li.svg);
+  }
+}
+@media screen {
+  .flag-icon-li {
+    background-image: url(../flags/4x3/li.svg);
+  }
+}
+@media print {
+  .flag-icon-li.flag-icon-squared {
+    content: url(../flags/1x1/li.svg);
+  }
+}
+@media screen {
+  .flag-icon-li.flag-icon-squared {
+    background-image: url(../flags/1x1/li.svg);
+  }
+}
+@media print {
+  .flag-icon-lk {
+    content: url(../flags/4x3/lk.svg);
+  }
+}
+@media screen {
+  .flag-icon-lk {
+    background-image: url(../flags/4x3/lk.svg);
+  }
+}
+@media print {
+  .flag-icon-lk.flag-icon-squared {
+    content: url(../flags/1x1/lk.svg);
+  }
+}
+@media screen {
+  .flag-icon-lk.flag-icon-squared {
+    background-image: url(../flags/1x1/lk.svg);
+  }
+}
+@media print {
+  .flag-icon-lr {
+    content: url(../flags/4x3/lr.svg);
+  }
+}
+@media screen {
+  .flag-icon-lr {
+    background-image: url(../flags/4x3/lr.svg);
+  }
+}
+@media print {
+  .flag-icon-lr.flag-icon-squared {
+    content: url(../flags/1x1/lr.svg);
+  }
+}
+@media screen {
+  .flag-icon-lr.flag-icon-squared {
+    background-image: url(../flags/1x1/lr.svg);
+  }
+}
+@media print {
+  .flag-icon-ls {
+    content: url(../flags/4x3/ls.svg);
+  }
+}
+@media screen {
+  .flag-icon-ls {
+    background-image: url(../flags/4x3/ls.svg);
+  }
+}
+@media print {
+  .flag-icon-ls.flag-icon-squared {
+    content: url(../flags/1x1/ls.svg);
+  }
+}
+@media screen {
+  .flag-icon-ls.flag-icon-squared {
+    background-image: url(../flags/1x1/ls.svg);
+  }
+}
+@media print {
+  .flag-icon-lt {
+    content: url(../flags/4x3/lt.svg);
+  }
+}
+@media screen {
+  .flag-icon-lt {
+    background-image: url(../flags/4x3/lt.svg);
+  }
+}
+@media print {
+  .flag-icon-lt.flag-icon-squared {
+    content: url(../flags/1x1/lt.svg);
+  }
+}
+@media screen {
+  .flag-icon-lt.flag-icon-squared {
+    background-image: url(../flags/1x1/lt.svg);
+  }
+}
+@media print {
+  .flag-icon-lu {
+    content: url(../flags/4x3/lu.svg);
+  }
+}
+@media screen {
+  .flag-icon-lu {
+    background-image: url(../flags/4x3/lu.svg);
+  }
+}
+@media print {
+  .flag-icon-lu.flag-icon-squared {
+    content: url(../flags/1x1/lu.svg);
+  }
+}
+@media screen {
+  .flag-icon-lu.flag-icon-squared {
+    background-image: url(../flags/1x1/lu.svg);
+  }
+}
+@media print {
+  .flag-icon-lv {
+    content: url(../flags/4x3/lv.svg);
+  }
+}
+@media screen {
+  .flag-icon-lv {
+    background-image: url(../flags/4x3/lv.svg);
+  }
+}
+@media print {
+  .flag-icon-lv.flag-icon-squared {
+    content: url(../flags/1x1/lv.svg);
+  }
+}
+@media screen {
+  .flag-icon-lv.flag-icon-squared {
+    background-image: url(../flags/1x1/lv.svg);
+  }
+}
+@media print {
+  .flag-icon-ly {
+    content: url(../flags/4x3/ly.svg);
+  }
+}
+@media screen {
+  .flag-icon-ly {
+    background-image: url(../flags/4x3/ly.svg);
+  }
+}
+@media print {
+  .flag-icon-ly.flag-icon-squared {
+    content: url(../flags/1x1/ly.svg);
+  }
+}
+@media screen {
+  .flag-icon-ly.flag-icon-squared {
+    background-image: url(../flags/1x1/ly.svg);
+  }
+}
+@media print {
+  .flag-icon-ma {
+    content: url(../flags/4x3/ma.svg);
+  }
+}
+@media screen {
+  .flag-icon-ma {
+    background-image: url(../flags/4x3/ma.svg);
+  }
+}
+@media print {
+  .flag-icon-ma.flag-icon-squared {
+    content: url(../flags/1x1/ma.svg);
+  }
+}
+@media screen {
+  .flag-icon-ma.flag-icon-squared {
+    background-image: url(../flags/1x1/ma.svg);
+  }
+}
+@media print {
+  .flag-icon-mc {
+    content: url(../flags/4x3/mc.svg);
+  }
+}
+@media screen {
+  .flag-icon-mc {
+    background-image: url(../flags/4x3/mc.svg);
+  }
+}
+@media print {
+  .flag-icon-mc.flag-icon-squared {
+    content: url(../flags/1x1/mc.svg);
+  }
+}
+@media screen {
+  .flag-icon-mc.flag-icon-squared {
+    background-image: url(../flags/1x1/mc.svg);
+  }
+}
+@media print {
+  .flag-icon-md {
+    content: url(../flags/4x3/md.svg);
+  }
+}
+@media screen {
+  .flag-icon-md {
+    background-image: url(../flags/4x3/md.svg);
+  }
+}
+@media print {
+  .flag-icon-md.flag-icon-squared {
+    content: url(../flags/1x1/md.svg);
+  }
+}
+@media screen {
+  .flag-icon-md.flag-icon-squared {
+    background-image: url(../flags/1x1/md.svg);
+  }
+}
+@media print {
+  .flag-icon-me {
+    content: url(../flags/4x3/me.svg);
+  }
+}
+@media screen {
+  .flag-icon-me {
+    background-image: url(../flags/4x3/me.svg);
+  }
+}
+@media print {
+  .flag-icon-me.flag-icon-squared {
+    content: url(../flags/1x1/me.svg);
+  }
+}
+@media screen {
+  .flag-icon-me.flag-icon-squared {
+    background-image: url(../flags/1x1/me.svg);
+  }
+}
+@media print {
+  .flag-icon-mf {
+    content: url(../flags/4x3/mf.svg);
+  }
+}
+@media screen {
+  .flag-icon-mf {
+    background-image: url(../flags/4x3/mf.svg);
+  }
+}
+@media print {
+  .flag-icon-mf.flag-icon-squared {
+    content: url(../flags/1x1/mf.svg);
+  }
+}
+@media screen {
+  .flag-icon-mf.flag-icon-squared {
+    background-image: url(../flags/1x1/mf.svg);
+  }
+}
+@media print {
+  .flag-icon-mg {
+    content: url(../flags/4x3/mg.svg);
+  }
+}
+@media screen {
+  .flag-icon-mg {
+    background-image: url(../flags/4x3/mg.svg);
+  }
+}
+@media print {
+  .flag-icon-mg.flag-icon-squared {
+    content: url(../flags/1x1/mg.svg);
+  }
+}
+@media screen {
+  .flag-icon-mg.flag-icon-squared {
+    background-image: url(../flags/1x1/mg.svg);
+  }
+}
+@media print {
+  .flag-icon-mh {
+    content: url(../flags/4x3/mh.svg);
+  }
+}
+@media screen {
+  .flag-icon-mh {
+    background-image: url(../flags/4x3/mh.svg);
+  }
+}
+@media print {
+  .flag-icon-mh.flag-icon-squared {
+    content: url(../flags/1x1/mh.svg);
+  }
+}
+@media screen {
+  .flag-icon-mh.flag-icon-squared {
+    background-image: url(../flags/1x1/mh.svg);
+  }
+}
+@media print {
+  .flag-icon-mk {
+    content: url(../flags/4x3/mk.svg);
+  }
+}
+@media screen {
+  .flag-icon-mk {
+    background-image: url(../flags/4x3/mk.svg);
+  }
+}
+@media print {
+  .flag-icon-mk.flag-icon-squared {
+    content: url(../flags/1x1/mk.svg);
+  }
+}
+@media screen {
+  .flag-icon-mk.flag-icon-squared {
+    background-image: url(../flags/1x1/mk.svg);
+  }
+}
+@media print {
+  .flag-icon-ml {
+    content: url(../flags/4x3/ml.svg);
+  }
+}
+@media screen {
+  .flag-icon-ml {
+    background-image: url(../flags/4x3/ml.svg);
+  }
+}
+@media print {
+  .flag-icon-ml.flag-icon-squared {
+    content: url(../flags/1x1/ml.svg);
+  }
+}
+@media screen {
+  .flag-icon-ml.flag-icon-squared {
+    background-image: url(../flags/1x1/ml.svg);
+  }
+}
+@media print {
+  .flag-icon-mm {
+    content: url(../flags/4x3/mm.svg);
+  }
+}
+@media screen {
+  .flag-icon-mm {
+    background-image: url(../flags/4x3/mm.svg);
+  }
+}
+@media print {
+  .flag-icon-mm.flag-icon-squared {
+    content: url(../flags/1x1/mm.svg);
+  }
+}
+@media screen {
+  .flag-icon-mm.flag-icon-squared {
+    background-image: url(../flags/1x1/mm.svg);
+  }
+}
+@media print {
+  .flag-icon-mn {
+    content: url(../flags/4x3/mn.svg);
+  }
+}
+@media screen {
+  .flag-icon-mn {
+    background-image: url(../flags/4x3/mn.svg);
+  }
+}
+@media print {
+  .flag-icon-mn.flag-icon-squared {
+    content: url(../flags/1x1/mn.svg);
+  }
+}
+@media screen {
+  .flag-icon-mn.flag-icon-squared {
+    background-image: url(../flags/1x1/mn.svg);
+  }
+}
+@media print {
+  .flag-icon-mo {
+    content: url(../flags/4x3/mo.svg);
+  }
+}
+@media screen {
+  .flag-icon-mo {
+    background-image: url(../flags/4x3/mo.svg);
+  }
+}
+@media print {
+  .flag-icon-mo.flag-icon-squared {
+    content: url(../flags/1x1/mo.svg);
+  }
+}
+@media screen {
+  .flag-icon-mo.flag-icon-squared {
+    background-image: url(../flags/1x1/mo.svg);
+  }
+}
+@media print {
+  .flag-icon-mp {
+    content: url(../flags/4x3/mp.svg);
+  }
+}
+@media screen {
+  .flag-icon-mp {
+    background-image: url(../flags/4x3/mp.svg);
+  }
+}
+@media print {
+  .flag-icon-mp.flag-icon-squared {
+    content: url(../flags/1x1/mp.svg);
+  }
+}
+@media screen {
+  .flag-icon-mp.flag-icon-squared {
+    background-image: url(../flags/1x1/mp.svg);
+  }
+}
+@media print {
+  .flag-icon-mq {
+    content: url(../flags/4x3/mq.svg);
+  }
+}
+@media screen {
+  .flag-icon-mq {
+    background-image: url(../flags/4x3/mq.svg);
+  }
+}
+@media print {
+  .flag-icon-mq.flag-icon-squared {
+    content: url(../flags/1x1/mq.svg);
+  }
+}
+@media screen {
+  .flag-icon-mq.flag-icon-squared {
+    background-image: url(../flags/1x1/mq.svg);
+  }
+}
+@media print {
+  .flag-icon-mr {
+    content: url(../flags/4x3/mr.svg);
+  }
+}
+@media screen {
+  .flag-icon-mr {
+    background-image: url(../flags/4x3/mr.svg);
+  }
+}
+@media print {
+  .flag-icon-mr.flag-icon-squared {
+    content: url(../flags/1x1/mr.svg);
+  }
+}
+@media screen {
+  .flag-icon-mr.flag-icon-squared {
+    background-image: url(../flags/1x1/mr.svg);
+  }
+}
+@media print {
+  .flag-icon-ms {
+    content: url(../flags/4x3/ms.svg);
+  }
+}
+@media screen {
+  .flag-icon-ms {
+    background-image: url(../flags/4x3/ms.svg);
+  }
+}
+@media print {
+  .flag-icon-ms.flag-icon-squared {
+    content: url(../flags/1x1/ms.svg);
+  }
+}
+@media screen {
+  .flag-icon-ms.flag-icon-squared {
+    background-image: url(../flags/1x1/ms.svg);
+  }
+}
+@media print {
+  .flag-icon-mt {
+    content: url(../flags/4x3/mt.svg);
+  }
+}
+@media screen {
+  .flag-icon-mt {
+    background-image: url(../flags/4x3/mt.svg);
+  }
+}
+@media print {
+  .flag-icon-mt.flag-icon-squared {
+    content: url(../flags/1x1/mt.svg);
+  }
+}
+@media screen {
+  .flag-icon-mt.flag-icon-squared {
+    background-image: url(../flags/1x1/mt.svg);
+  }
+}
+@media print {
+  .flag-icon-mu {
+    content: url(../flags/4x3/mu.svg);
+  }
+}
+@media screen {
+  .flag-icon-mu {
+    background-image: url(../flags/4x3/mu.svg);
+  }
+}
+@media print {
+  .flag-icon-mu.flag-icon-squared {
+    content: url(../flags/1x1/mu.svg);
+  }
+}
+@media screen {
+  .flag-icon-mu.flag-icon-squared {
+    background-image: url(../flags/1x1/mu.svg);
+  }
+}
+@media print {
+  .flag-icon-mv {
+    content: url(../flags/4x3/mv.svg);
+  }
+}
+@media screen {
+  .flag-icon-mv {
+    background-image: url(../flags/4x3/mv.svg);
+  }
+}
+@media print {
+  .flag-icon-mv.flag-icon-squared {
+    content: url(../flags/1x1/mv.svg);
+  }
+}
+@media screen {
+  .flag-icon-mv.flag-icon-squared {
+    background-image: url(../flags/1x1/mv.svg);
+  }
+}
+@media print {
+  .flag-icon-mw {
+    content: url(../flags/4x3/mw.svg);
+  }
+}
+@media screen {
+  .flag-icon-mw {
+    background-image: url(../flags/4x3/mw.svg);
+  }
+}
+@media print {
+  .flag-icon-mw.flag-icon-squared {
+    content: url(../flags/1x1/mw.svg);
+  }
+}
+@media screen {
+  .flag-icon-mw.flag-icon-squared {
+    background-image: url(../flags/1x1/mw.svg);
+  }
+}
+@media print {
+  .flag-icon-mx {
+    content: url(../flags/4x3/mx.svg);
+  }
+}
+@media screen {
+  .flag-icon-mx {
+    background-image: url(../flags/4x3/mx.svg);
+  }
+}
+@media print {
+  .flag-icon-mx.flag-icon-squared {
+    content: url(../flags/1x1/mx.svg);
+  }
+}
+@media screen {
+  .flag-icon-mx.flag-icon-squared {
+    background-image: url(../flags/1x1/mx.svg);
+  }
+}
+@media print {
+  .flag-icon-my {
+    content: url(../flags/4x3/my.svg);
+  }
+}
+@media screen {
+  .flag-icon-my {
+    background-image: url(../flags/4x3/my.svg);
+  }
+}
+@media print {
+  .flag-icon-my.flag-icon-squared {
+    content: url(../flags/1x1/my.svg);
+  }
+}
+@media screen {
+  .flag-icon-my.flag-icon-squared {
+    background-image: url(../flags/1x1/my.svg);
+  }
+}
+@media print {
+  .flag-icon-mz {
+    content: url(../flags/4x3/mz.svg);
+  }
+}
+@media screen {
+  .flag-icon-mz {
+    background-image: url(../flags/4x3/mz.svg);
+  }
+}
+@media print {
+  .flag-icon-mz.flag-icon-squared {
+    content: url(../flags/1x1/mz.svg);
+  }
+}
+@media screen {
+  .flag-icon-mz.flag-icon-squared {
+    background-image: url(../flags/1x1/mz.svg);
+  }
+}
+@media print {
+  .flag-icon-na {
+    content: url(../flags/4x3/na.svg);
+  }
+}
+@media screen {
+  .flag-icon-na {
+    background-image: url(../flags/4x3/na.svg);
+  }
+}
+@media print {
+  .flag-icon-na.flag-icon-squared {
+    content: url(../flags/1x1/na.svg);
+  }
+}
+@media screen {
+  .flag-icon-na.flag-icon-squared {
+    background-image: url(../flags/1x1/na.svg);
+  }
+}
+@media print {
+  .flag-icon-nc {
+    content: url(../flags/4x3/nc.svg);
+  }
+}
+@media screen {
+  .flag-icon-nc {
+    background-image: url(../flags/4x3/nc.svg);
+  }
+}
+@media print {
+  .flag-icon-nc.flag-icon-squared {
+    content: url(../flags/1x1/nc.svg);
+  }
+}
+@media screen {
+  .flag-icon-nc.flag-icon-squared {
+    background-image: url(../flags/1x1/nc.svg);
+  }
+}
+@media print {
+  .flag-icon-ne {
+    content: url(../flags/4x3/ne.svg);
+  }
+}
+@media screen {
+  .flag-icon-ne {
+    background-image: url(../flags/4x3/ne.svg);
+  }
+}
+@media print {
+  .flag-icon-ne.flag-icon-squared {
+    content: url(../flags/1x1/ne.svg);
+  }
+}
+@media screen {
+  .flag-icon-ne.flag-icon-squared {
+    background-image: url(../flags/1x1/ne.svg);
+  }
+}
+@media print {
+  .flag-icon-nf {
+    content: url(../flags/4x3/nf.svg);
+  }
+}
+@media screen {
+  .flag-icon-nf {
+    background-image: url(../flags/4x3/nf.svg);
+  }
+}
+@media print {
+  .flag-icon-nf.flag-icon-squared {
+    content: url(../flags/1x1/nf.svg);
+  }
+}
+@media screen {
+  .flag-icon-nf.flag-icon-squared {
+    background-image: url(../flags/1x1/nf.svg);
+  }
+}
+@media print {
+  .flag-icon-ng {
+    content: url(../flags/4x3/ng.svg);
+  }
+}
+@media screen {
+  .flag-icon-ng {
+    background-image: url(../flags/4x3/ng.svg);
+  }
+}
+@media print {
+  .flag-icon-ng.flag-icon-squared {
+    content: url(../flags/1x1/ng.svg);
+  }
+}
+@media screen {
+  .flag-icon-ng.flag-icon-squared {
+    background-image: url(../flags/1x1/ng.svg);
+  }
+}
+@media print {
+  .flag-icon-ni {
+    content: url(../flags/4x3/ni.svg);
+  }
+}
+@media screen {
+  .flag-icon-ni {
+    background-image: url(../flags/4x3/ni.svg);
+  }
+}
+@media print {
+  .flag-icon-ni.flag-icon-squared {
+    content: url(../flags/1x1/ni.svg);
+  }
+}
+@media screen {
+  .flag-icon-ni.flag-icon-squared {
+    background-image: url(../flags/1x1/ni.svg);
+  }
+}
+@media print {
+  .flag-icon-nl {
+    content: url(../flags/4x3/nl.svg);
+  }
+}
+@media screen {
+  .flag-icon-nl {
+    background-image: url(../flags/4x3/nl.svg);
+  }
+}
+@media print {
+  .flag-icon-nl.flag-icon-squared {
+    content: url(../flags/1x1/nl.svg);
+  }
+}
+@media screen {
+  .flag-icon-nl.flag-icon-squared {
+    background-image: url(../flags/1x1/nl.svg);
+  }
+}
+@media print {
+  .flag-icon-no {
+    content: url(../flags/4x3/no.svg);
+  }
+}
+@media screen {
+  .flag-icon-no {
+    background-image: url(../flags/4x3/no.svg);
+  }
+}
+@media print {
+  .flag-icon-no.flag-icon-squared {
+    content: url(../flags/1x1/no.svg);
+  }
+}
+@media screen {
+  .flag-icon-no.flag-icon-squared {
+    background-image: url(../flags/1x1/no.svg);
+  }
+}
+@media print {
+  .flag-icon-np {
+    content: url(../flags/4x3/np.svg);
+  }
+}
+@media screen {
+  .flag-icon-np {
+    background-image: url(../flags/4x3/np.svg);
+  }
+}
+@media print {
+  .flag-icon-np.flag-icon-squared {
+    content: url(../flags/1x1/np.svg);
+  }
+}
+@media screen {
+  .flag-icon-np.flag-icon-squared {
+    background-image: url(../flags/1x1/np.svg);
+  }
+}
+@media print {
+  .flag-icon-nr {
+    content: url(../flags/4x3/nr.svg);
+  }
+}
+@media screen {
+  .flag-icon-nr {
+    background-image: url(../flags/4x3/nr.svg);
+  }
+}
+@media print {
+  .flag-icon-nr.flag-icon-squared {
+    content: url(../flags/1x1/nr.svg);
+  }
+}
+@media screen {
+  .flag-icon-nr.flag-icon-squared {
+    background-image: url(../flags/1x1/nr.svg);
+  }
+}
+@media print {
+  .flag-icon-nu {
+    content: url(../flags/4x3/nu.svg);
+  }
+}
+@media screen {
+  .flag-icon-nu {
+    background-image: url(../flags/4x3/nu.svg);
+  }
+}
+@media print {
+  .flag-icon-nu.flag-icon-squared {
+    content: url(../flags/1x1/nu.svg);
+  }
+}
+@media screen {
+  .flag-icon-nu.flag-icon-squared {
+    background-image: url(../flags/1x1/nu.svg);
+  }
+}
+@media print {
+  .flag-icon-nz {
+    content: url(../flags/4x3/nz.svg);
+  }
+}
+@media screen {
+  .flag-icon-nz {
+    background-image: url(../flags/4x3/nz.svg);
+  }
+}
+@media print {
+  .flag-icon-nz.flag-icon-squared {
+    content: url(../flags/1x1/nz.svg);
+  }
+}
+@media screen {
+  .flag-icon-nz.flag-icon-squared {
+    background-image: url(../flags/1x1/nz.svg);
+  }
+}
+@media print {
+  .flag-icon-om {
+    content: url(../flags/4x3/om.svg);
+  }
+}
+@media screen {
+  .flag-icon-om {
+    background-image: url(../flags/4x3/om.svg);
+  }
+}
+@media print {
+  .flag-icon-om.flag-icon-squared {
+    content: url(../flags/1x1/om.svg);
+  }
+}
+@media screen {
+  .flag-icon-om.flag-icon-squared {
+    background-image: url(../flags/1x1/om.svg);
+  }
+}
+@media print {
+  .flag-icon-pa {
+    content: url(../flags/4x3/pa.svg);
+  }
+}
+@media screen {
+  .flag-icon-pa {
+    background-image: url(../flags/4x3/pa.svg);
+  }
+}
+@media print {
+  .flag-icon-pa.flag-icon-squared {
+    content: url(../flags/1x1/pa.svg);
+  }
+}
+@media screen {
+  .flag-icon-pa.flag-icon-squared {
+    background-image: url(../flags/1x1/pa.svg);
+  }
+}
+@media print {
+  .flag-icon-pe {
+    content: url(../flags/4x3/pe.svg);
+  }
+}
+@media screen {
+  .flag-icon-pe {
+    background-image: url(../flags/4x3/pe.svg);
+  }
+}
+@media print {
+  .flag-icon-pe.flag-icon-squared {
+    content: url(../flags/1x1/pe.svg);
+  }
+}
+@media screen {
+  .flag-icon-pe.flag-icon-squared {
+    background-image: url(../flags/1x1/pe.svg);
+  }
+}
+@media print {
+  .flag-icon-pf {
+    content: url(../flags/4x3/pf.svg);
+  }
+}
+@media screen {
+  .flag-icon-pf {
+    background-image: url(../flags/4x3/pf.svg);
+  }
+}
+@media print {
+  .flag-icon-pf.flag-icon-squared {
+    content: url(../flags/1x1/pf.svg);
+  }
+}
+@media screen {
+  .flag-icon-pf.flag-icon-squared {
+    background-image: url(../flags/1x1/pf.svg);
+  }
+}
+@media print {
+  .flag-icon-pg {
+    content: url(../flags/4x3/pg.svg);
+  }
+}
+@media screen {
+  .flag-icon-pg {
+    background-image: url(../flags/4x3/pg.svg);
+  }
+}
+@media print {
+  .flag-icon-pg.flag-icon-squared {
+    content: url(../flags/1x1/pg.svg);
+  }
+}
+@media screen {
+  .flag-icon-pg.flag-icon-squared {
+    background-image: url(../flags/1x1/pg.svg);
+  }
+}
+@media print {
+  .flag-icon-ph {
+    content: url(../flags/4x3/ph.svg);
+  }
+}
+@media screen {
+  .flag-icon-ph {
+    background-image: url(../flags/4x3/ph.svg);
+  }
+}
+@media print {
+  .flag-icon-ph.flag-icon-squared {
+    content: url(../flags/1x1/ph.svg);
+  }
+}
+@media screen {
+  .flag-icon-ph.flag-icon-squared {
+    background-image: url(../flags/1x1/ph.svg);
+  }
+}
+@media print {
+  .flag-icon-pk {
+    content: url(../flags/4x3/pk.svg);
+  }
+}
+@media screen {
+  .flag-icon-pk {
+    background-image: url(../flags/4x3/pk.svg);
+  }
+}
+@media print {
+  .flag-icon-pk.flag-icon-squared {
+    content: url(../flags/1x1/pk.svg);
+  }
+}
+@media screen {
+  .flag-icon-pk.flag-icon-squared {
+    background-image: url(../flags/1x1/pk.svg);
+  }
+}
+@media print {
+  .flag-icon-pl {
+    content: url(../flags/4x3/pl.svg);
+  }
+}
+@media screen {
+  .flag-icon-pl {
+    background-image: url(../flags/4x3/pl.svg);
+  }
+}
+@media print {
+  .flag-icon-pl.flag-icon-squared {
+    content: url(../flags/1x1/pl.svg);
+  }
+}
+@media screen {
+  .flag-icon-pl.flag-icon-squared {
+    background-image: url(../flags/1x1/pl.svg);
+  }
+}
+@media print {
+  .flag-icon-pm {
+    content: url(../flags/4x3/pm.svg);
+  }
+}
+@media screen {
+  .flag-icon-pm {
+    background-image: url(../flags/4x3/pm.svg);
+  }
+}
+@media print {
+  .flag-icon-pm.flag-icon-squared {
+    content: url(../flags/1x1/pm.svg);
+  }
+}
+@media screen {
+  .flag-icon-pm.flag-icon-squared {
+    background-image: url(../flags/1x1/pm.svg);
+  }
+}
+@media print {
+  .flag-icon-pn {
+    content: url(../flags/4x3/pn.svg);
+  }
+}
+@media screen {
+  .flag-icon-pn {
+    background-image: url(../flags/4x3/pn.svg);
+  }
+}
+@media print {
+  .flag-icon-pn.flag-icon-squared {
+    content: url(../flags/1x1/pn.svg);
+  }
+}
+@media screen {
+  .flag-icon-pn.flag-icon-squared {
+    background-image: url(../flags/1x1/pn.svg);
+  }
+}
+@media print {
+  .flag-icon-pr {
+    content: url(../flags/4x3/pr.svg);
+  }
+}
+@media screen {
+  .flag-icon-pr {
+    background-image: url(../flags/4x3/pr.svg);
+  }
+}
+@media print {
+  .flag-icon-pr.flag-icon-squared {
+    content: url(../flags/1x1/pr.svg);
+  }
+}
+@media screen {
+  .flag-icon-pr.flag-icon-squared {
+    background-image: url(../flags/1x1/pr.svg);
+  }
+}
+@media print {
+  .flag-icon-ps {
+    content: url(../flags/4x3/ps.svg);
+  }
+}
+@media screen {
+  .flag-icon-ps {
+    background-image: url(../flags/4x3/ps.svg);
+  }
+}
+@media print {
+  .flag-icon-ps.flag-icon-squared {
+    content: url(../flags/1x1/ps.svg);
+  }
+}
+@media screen {
+  .flag-icon-ps.flag-icon-squared {
+    background-image: url(../flags/1x1/ps.svg);
+  }
+}
+@media print {
+  .flag-icon-pt {
+    content: url(../flags/4x3/pt.svg);
+  }
+}
+@media screen {
+  .flag-icon-pt {
+    background-image: url(../flags/4x3/pt.svg);
+  }
+}
+@media print {
+  .flag-icon-pt.flag-icon-squared {
+    content: url(../flags/1x1/pt.svg);
+  }
+}
+@media screen {
+  .flag-icon-pt.flag-icon-squared {
+    background-image: url(../flags/1x1/pt.svg);
+  }
+}
+@media print {
+  .flag-icon-pw {
+    content: url(../flags/4x3/pw.svg);
+  }
+}
+@media screen {
+  .flag-icon-pw {
+    background-image: url(../flags/4x3/pw.svg);
+  }
+}
+@media print {
+  .flag-icon-pw.flag-icon-squared {
+    content: url(../flags/1x1/pw.svg);
+  }
+}
+@media screen {
+  .flag-icon-pw.flag-icon-squared {
+    background-image: url(../flags/1x1/pw.svg);
+  }
+}
+@media print {
+  .flag-icon-py {
+    content: url(../flags/4x3/py.svg);
+  }
+}
+@media screen {
+  .flag-icon-py {
+    background-image: url(../flags/4x3/py.svg);
+  }
+}
+@media print {
+  .flag-icon-py.flag-icon-squared {
+    content: url(../flags/1x1/py.svg);
+  }
+}
+@media screen {
+  .flag-icon-py.flag-icon-squared {
+    background-image: url(../flags/1x1/py.svg);
+  }
+}
+@media print {
+  .flag-icon-qa {
+    content: url(../flags/4x3/qa.svg);
+  }
+}
+@media screen {
+  .flag-icon-qa {
+    background-image: url(../flags/4x3/qa.svg);
+  }
+}
+@media print {
+  .flag-icon-qa.flag-icon-squared {
+    content: url(../flags/1x1/qa.svg);
+  }
+}
+@media screen {
+  .flag-icon-qa.flag-icon-squared {
+    background-image: url(../flags/1x1/qa.svg);
+  }
+}
+@media print {
+  .flag-icon-re {
+    content: url(../flags/4x3/re.svg);
+  }
+}
+@media screen {
+  .flag-icon-re {
+    background-image: url(../flags/4x3/re.svg);
+  }
+}
+@media print {
+  .flag-icon-re.flag-icon-squared {
+    content: url(../flags/1x1/re.svg);
+  }
+}
+@media screen {
+  .flag-icon-re.flag-icon-squared {
+    background-image: url(../flags/1x1/re.svg);
+  }
+}
+@media print {
+  .flag-icon-ro {
+    content: url(../flags/4x3/ro.svg);
+  }
+}
+@media screen {
+  .flag-icon-ro {
+    background-image: url(../flags/4x3/ro.svg);
+  }
+}
+@media print {
+  .flag-icon-ro.flag-icon-squared {
+    content: url(../flags/1x1/ro.svg);
+  }
+}
+@media screen {
+  .flag-icon-ro.flag-icon-squared {
+    background-image: url(../flags/1x1/ro.svg);
+  }
+}
+@media print {
+  .flag-icon-rs {
+    content: url(../flags/4x3/rs.svg);
+  }
+}
+@media screen {
+  .flag-icon-rs {
+    background-image: url(../flags/4x3/rs.svg);
+  }
+}
+@media print {
+  .flag-icon-rs.flag-icon-squared {
+    content: url(../flags/1x1/rs.svg);
+  }
+}
+@media screen {
+  .flag-icon-rs.flag-icon-squared {
+    background-image: url(../flags/1x1/rs.svg);
+  }
+}
+@media print {
+  .flag-icon-ru {
+    content: url(../flags/4x3/ru.svg);
+  }
+}
+@media screen {
+  .flag-icon-ru {
+    background-image: url(../flags/4x3/ru.svg);
+  }
+}
+@media print {
+  .flag-icon-ru.flag-icon-squared {
+    content: url(../flags/1x1/ru.svg);
+  }
+}
+@media screen {
+  .flag-icon-ru.flag-icon-squared {
+    background-image: url(../flags/1x1/ru.svg);
+  }
+}
+@media print {
+  .flag-icon-rw {
+    content: url(../flags/4x3/rw.svg);
+  }
+}
+@media screen {
+  .flag-icon-rw {
+    background-image: url(../flags/4x3/rw.svg);
+  }
+}
+@media print {
+  .flag-icon-rw.flag-icon-squared {
+    content: url(../flags/1x1/rw.svg);
+  }
+}
+@media screen {
+  .flag-icon-rw.flag-icon-squared {
+    background-image: url(../flags/1x1/rw.svg);
+  }
+}
+@media print {
+  .flag-icon-sa {
+    content: url(../flags/4x3/sa.svg);
+  }
+}
+@media screen {
+  .flag-icon-sa {
+    background-image: url(../flags/4x3/sa.svg);
+  }
+}
+@media print {
+  .flag-icon-sa.flag-icon-squared {
+    content: url(../flags/1x1/sa.svg);
+  }
+}
+@media screen {
+  .flag-icon-sa.flag-icon-squared {
+    background-image: url(../flags/1x1/sa.svg);
+  }
+}
+@media print {
+  .flag-icon-sb {
+    content: url(../flags/4x3/sb.svg);
+  }
+}
+@media screen {
+  .flag-icon-sb {
+    background-image: url(../flags/4x3/sb.svg);
+  }
+}
+@media print {
+  .flag-icon-sb.flag-icon-squared {
+    content: url(../flags/1x1/sb.svg);
+  }
+}
+@media screen {
+  .flag-icon-sb.flag-icon-squared {
+    background-image: url(../flags/1x1/sb.svg);
+  }
+}
+@media print {
+  .flag-icon-sc {
+    content: url(../flags/4x3/sc.svg);
+  }
+}
+@media screen {
+  .flag-icon-sc {
+    background-image: url(../flags/4x3/sc.svg);
+  }
+}
+@media print {
+  .flag-icon-sc.flag-icon-squared {
+    content: url(../flags/1x1/sc.svg);
+  }
+}
+@media screen {
+  .flag-icon-sc.flag-icon-squared {
+    background-image: url(../flags/1x1/sc.svg);
+  }
+}
+@media print {
+  .flag-icon-sd {
+    content: url(../flags/4x3/sd.svg);
+  }
+}
+@media screen {
+  .flag-icon-sd {
+    background-image: url(../flags/4x3/sd.svg);
+  }
+}
+@media print {
+  .flag-icon-sd.flag-icon-squared {
+    content: url(../flags/1x1/sd.svg);
+  }
+}
+@media screen {
+  .flag-icon-sd.flag-icon-squared {
+    background-image: url(../flags/1x1/sd.svg);
+  }
+}
+@media print {
+  .flag-icon-se {
+    content: url(../flags/4x3/se.svg);
+  }
+}
+@media screen {
+  .flag-icon-se {
+    background-image: url(../flags/4x3/se.svg);
+  }
+}
+@media print {
+  .flag-icon-se.flag-icon-squared {
+    content: url(../flags/1x1/se.svg);
+  }
+}
+@media screen {
+  .flag-icon-se.flag-icon-squared {
+    background-image: url(../flags/1x1/se.svg);
+  }
+}
+@media print {
+  .flag-icon-sg {
+    content: url(../flags/4x3/sg.svg);
+  }
+}
+@media screen {
+  .flag-icon-sg {
+    background-image: url(../flags/4x3/sg.svg);
+  }
+}
+@media print {
+  .flag-icon-sg.flag-icon-squared {
+    content: url(../flags/1x1/sg.svg);
+  }
+}
+@media screen {
+  .flag-icon-sg.flag-icon-squared {
+    background-image: url(../flags/1x1/sg.svg);
+  }
+}
+@media print {
+  .flag-icon-sh {
+    content: url(../flags/4x3/sh.svg);
+  }
+}
+@media screen {
+  .flag-icon-sh {
+    background-image: url(../flags/4x3/sh.svg);
+  }
+}
+@media print {
+  .flag-icon-sh.flag-icon-squared {
+    content: url(../flags/1x1/sh.svg);
+  }
+}
+@media screen {
+  .flag-icon-sh.flag-icon-squared {
+    background-image: url(../flags/1x1/sh.svg);
+  }
+}
+@media print {
+  .flag-icon-si {
+    content: url(../flags/4x3/si.svg);
+  }
+}
+@media screen {
+  .flag-icon-si {
+    background-image: url(../flags/4x3/si.svg);
+  }
+}
+@media print {
+  .flag-icon-si.flag-icon-squared {
+    content: url(../flags/1x1/si.svg);
+  }
+}
+@media screen {
+  .flag-icon-si.flag-icon-squared {
+    background-image: url(../flags/1x1/si.svg);
+  }
+}
+@media print {
+  .flag-icon-sj {
+    content: url(../flags/4x3/sj.svg);
+  }
+}
+@media screen {
+  .flag-icon-sj {
+    background-image: url(../flags/4x3/sj.svg);
+  }
+}
+@media print {
+  .flag-icon-sj.flag-icon-squared {
+    content: url(../flags/1x1/sj.svg);
+  }
+}
+@media screen {
+  .flag-icon-sj.flag-icon-squared {
+    background-image: url(../flags/1x1/sj.svg);
+  }
+}
+@media print {
+  .flag-icon-sk {
+    content: url(../flags/4x3/sk.svg);
+  }
+}
+@media screen {
+  .flag-icon-sk {
+    background-image: url(../flags/4x3/sk.svg);
+  }
+}
+@media print {
+  .flag-icon-sk.flag-icon-squared {
+    content: url(../flags/1x1/sk.svg);
+  }
+}
+@media screen {
+  .flag-icon-sk.flag-icon-squared {
+    background-image: url(../flags/1x1/sk.svg);
+  }
+}
+@media print {
+  .flag-icon-sl {
+    content: url(../flags/4x3/sl.svg);
+  }
+}
+@media screen {
+  .flag-icon-sl {
+    background-image: url(../flags/4x3/sl.svg);
+  }
+}
+@media print {
+  .flag-icon-sl.flag-icon-squared {
+    content: url(../flags/1x1/sl.svg);
+  }
+}
+@media screen {
+  .flag-icon-sl.flag-icon-squared {
+    background-image: url(../flags/1x1/sl.svg);
+  }
+}
+@media print {
+  .flag-icon-sm {
+    content: url(../flags/4x3/sm.svg);
+  }
+}
+@media screen {
+  .flag-icon-sm {
+    background-image: url(../flags/4x3/sm.svg);
+  }
+}
+@media print {
+  .flag-icon-sm.flag-icon-squared {
+    content: url(../flags/1x1/sm.svg);
+  }
+}
+@media screen {
+  .flag-icon-sm.flag-icon-squared {
+    background-image: url(../flags/1x1/sm.svg);
+  }
+}
+@media print {
+  .flag-icon-sn {
+    content: url(../flags/4x3/sn.svg);
+  }
+}
+@media screen {
+  .flag-icon-sn {
+    background-image: url(../flags/4x3/sn.svg);
+  }
+}
+@media print {
+  .flag-icon-sn.flag-icon-squared {
+    content: url(../flags/1x1/sn.svg);
+  }
+}
+@media screen {
+  .flag-icon-sn.flag-icon-squared {
+    background-image: url(../flags/1x1/sn.svg);
+  }
+}
+@media print {
+  .flag-icon-so {
+    content: url(../flags/4x3/so.svg);
+  }
+}
+@media screen {
+  .flag-icon-so {
+    background-image: url(../flags/4x3/so.svg);
+  }
+}
+@media print {
+  .flag-icon-so.flag-icon-squared {
+    content: url(../flags/1x1/so.svg);
+  }
+}
+@media screen {
+  .flag-icon-so.flag-icon-squared {
+    background-image: url(../flags/1x1/so.svg);
+  }
+}
+@media print {
+  .flag-icon-sr {
+    content: url(../flags/4x3/sr.svg);
+  }
+}
+@media screen {
+  .flag-icon-sr {
+    background-image: url(../flags/4x3/sr.svg);
+  }
+}
+@media print {
+  .flag-icon-sr.flag-icon-squared {
+    content: url(../flags/1x1/sr.svg);
+  }
+}
+@media screen {
+  .flag-icon-sr.flag-icon-squared {
+    background-image: url(../flags/1x1/sr.svg);
+  }
+}
+@media print {
+  .flag-icon-ss {
+    content: url(../flags/4x3/ss.svg);
+  }
+}
+@media screen {
+  .flag-icon-ss {
+    background-image: url(../flags/4x3/ss.svg);
+  }
+}
+@media print {
+  .flag-icon-ss.flag-icon-squared {
+    content: url(../flags/1x1/ss.svg);
+  }
+}
+@media screen {
+  .flag-icon-ss.flag-icon-squared {
+    background-image: url(../flags/1x1/ss.svg);
+  }
+}
+@media print {
+  .flag-icon-st {
+    content: url(../flags/4x3/st.svg);
+  }
+}
+@media screen {
+  .flag-icon-st {
+    background-image: url(../flags/4x3/st.svg);
+  }
+}
+@media print {
+  .flag-icon-st.flag-icon-squared {
+    content: url(../flags/1x1/st.svg);
+  }
+}
+@media screen {
+  .flag-icon-st.flag-icon-squared {
+    background-image: url(../flags/1x1/st.svg);
+  }
+}
+@media print {
+  .flag-icon-sv {
+    content: url(../flags/4x3/sv.svg);
+  }
+}
+@media screen {
+  .flag-icon-sv {
+    background-image: url(../flags/4x3/sv.svg);
+  }
+}
+@media print {
+  .flag-icon-sv.flag-icon-squared {
+    content: url(../flags/1x1/sv.svg);
+  }
+}
+@media screen {
+  .flag-icon-sv.flag-icon-squared {
+    background-image: url(../flags/1x1/sv.svg);
+  }
+}
+@media print {
+  .flag-icon-sx {
+    content: url(../flags/4x3/sx.svg);
+  }
+}
+@media screen {
+  .flag-icon-sx {
+    background-image: url(../flags/4x3/sx.svg);
+  }
+}
+@media print {
+  .flag-icon-sx.flag-icon-squared {
+    content: url(../flags/1x1/sx.svg);
+  }
+}
+@media screen {
+  .flag-icon-sx.flag-icon-squared {
+    background-image: url(../flags/1x1/sx.svg);
+  }
+}
+@media print {
+  .flag-icon-sy {
+    content: url(../flags/4x3/sy.svg);
+  }
+}
+@media screen {
+  .flag-icon-sy {
+    background-image: url(../flags/4x3/sy.svg);
+  }
+}
+@media print {
+  .flag-icon-sy.flag-icon-squared {
+    content: url(../flags/1x1/sy.svg);
+  }
+}
+@media screen {
+  .flag-icon-sy.flag-icon-squared {
+    background-image: url(../flags/1x1/sy.svg);
+  }
+}
+@media print {
+  .flag-icon-sz {
+    content: url(../flags/4x3/sz.svg);
+  }
+}
+@media screen {
+  .flag-icon-sz {
+    background-image: url(../flags/4x3/sz.svg);
+  }
+}
+@media print {
+  .flag-icon-sz.flag-icon-squared {
+    content: url(../flags/1x1/sz.svg);
+  }
+}
+@media screen {
+  .flag-icon-sz.flag-icon-squared {
+    background-image: url(../flags/1x1/sz.svg);
+  }
+}
+@media print {
+  .flag-icon-tc {
+    content: url(../flags/4x3/tc.svg);
+  }
+}
+@media screen {
+  .flag-icon-tc {
+    background-image: url(../flags/4x3/tc.svg);
+  }
+}
+@media print {
+  .flag-icon-tc.flag-icon-squared {
+    content: url(../flags/1x1/tc.svg);
+  }
+}
+@media screen {
+  .flag-icon-tc.flag-icon-squared {
+    background-image: url(../flags/1x1/tc.svg);
+  }
+}
+@media print {
+  .flag-icon-td {
+    content: url(../flags/4x3/td.svg);
+  }
+}
+@media screen {
+  .flag-icon-td {
+    background-image: url(../flags/4x3/td.svg);
+  }
+}
+@media print {
+  .flag-icon-td.flag-icon-squared {
+    content: url(../flags/1x1/td.svg);
+  }
+}
+@media screen {
+  .flag-icon-td.flag-icon-squared {
+    background-image: url(../flags/1x1/td.svg);
+  }
+}
+@media print {
+  .flag-icon-tf {
+    content: url(../flags/4x3/tf.svg);
+  }
+}
+@media screen {
+  .flag-icon-tf {
+    background-image: url(../flags/4x3/tf.svg);
+  }
+}
+@media print {
+  .flag-icon-tf.flag-icon-squared {
+    content: url(../flags/1x1/tf.svg);
+  }
+}
+@media screen {
+  .flag-icon-tf.flag-icon-squared {
+    background-image: url(../flags/1x1/tf.svg);
+  }
+}
+@media print {
+  .flag-icon-tg {
+    content: url(../flags/4x3/tg.svg);
+  }
+}
+@media screen {
+  .flag-icon-tg {
+    background-image: url(../flags/4x3/tg.svg);
+  }
+}
+@media print {
+  .flag-icon-tg.flag-icon-squared {
+    content: url(../flags/1x1/tg.svg);
+  }
+}
+@media screen {
+  .flag-icon-tg.flag-icon-squared {
+    background-image: url(../flags/1x1/tg.svg);
+  }
+}
+@media print {
+  .flag-icon-th {
+    content: url(../flags/4x3/th.svg);
+  }
+}
+@media screen {
+  .flag-icon-th {
+    background-image: url(../flags/4x3/th.svg);
+  }
+}
+@media print {
+  .flag-icon-th.flag-icon-squared {
+    content: url(../flags/1x1/th.svg);
+  }
+}
+@media screen {
+  .flag-icon-th.flag-icon-squared {
+    background-image: url(../flags/1x1/th.svg);
+  }
+}
+@media print {
+  .flag-icon-tj {
+    content: url(../flags/4x3/tj.svg);
+  }
+}
+@media screen {
+  .flag-icon-tj {
+    background-image: url(../flags/4x3/tj.svg);
+  }
+}
+@media print {
+  .flag-icon-tj.flag-icon-squared {
+    content: url(../flags/1x1/tj.svg);
+  }
+}
+@media screen {
+  .flag-icon-tj.flag-icon-squared {
+    background-image: url(../flags/1x1/tj.svg);
+  }
+}
+@media print {
+  .flag-icon-tk {
+    content: url(../flags/4x3/tk.svg);
+  }
+}
+@media screen {
+  .flag-icon-tk {
+    background-image: url(../flags/4x3/tk.svg);
+  }
+}
+@media print {
+  .flag-icon-tk.flag-icon-squared {
+    content: url(../flags/1x1/tk.svg);
+  }
+}
+@media screen {
+  .flag-icon-tk.flag-icon-squared {
+    background-image: url(../flags/1x1/tk.svg);
+  }
+}
+@media print {
+  .flag-icon-tl {
+    content: url(../flags/4x3/tl.svg);
+  }
+}
+@media screen {
+  .flag-icon-tl {
+    background-image: url(../flags/4x3/tl.svg);
+  }
+}
+@media print {
+  .flag-icon-tl.flag-icon-squared {
+    content: url(../flags/1x1/tl.svg);
+  }
+}
+@media screen {
+  .flag-icon-tl.flag-icon-squared {
+    background-image: url(../flags/1x1/tl.svg);
+  }
+}
+@media print {
+  .flag-icon-tm {
+    content: url(../flags/4x3/tm.svg);
+  }
+}
+@media screen {
+  .flag-icon-tm {
+    background-image: url(../flags/4x3/tm.svg);
+  }
+}
+@media print {
+  .flag-icon-tm.flag-icon-squared {
+    content: url(../flags/1x1/tm.svg);
+  }
+}
+@media screen {
+  .flag-icon-tm.flag-icon-squared {
+    background-image: url(../flags/1x1/tm.svg);
+  }
+}
+@media print {
+  .flag-icon-tn {
+    content: url(../flags/4x3/tn.svg);
+  }
+}
+@media screen {
+  .flag-icon-tn {
+    background-image: url(../flags/4x3/tn.svg);
+  }
+}
+@media print {
+  .flag-icon-tn.flag-icon-squared {
+    content: url(../flags/1x1/tn.svg);
+  }
+}
+@media screen {
+  .flag-icon-tn.flag-icon-squared {
+    background-image: url(../flags/1x1/tn.svg);
+  }
+}
+@media print {
+  .flag-icon-to {
+    content: url(../flags/4x3/to.svg);
+  }
+}
+@media screen {
+  .flag-icon-to {
+    background-image: url(../flags/4x3/to.svg);
+  }
+}
+@media print {
+  .flag-icon-to.flag-icon-squared {
+    content: url(../flags/1x1/to.svg);
+  }
+}
+@media screen {
+  .flag-icon-to.flag-icon-squared {
+    background-image: url(../flags/1x1/to.svg);
+  }
+}
+@media print {
+  .flag-icon-tr {
+    content: url(../flags/4x3/tr.svg);
+  }
+}
+@media screen {
+  .flag-icon-tr {
+    background-image: url(../flags/4x3/tr.svg);
+  }
+}
+@media print {
+  .flag-icon-tr.flag-icon-squared {
+    content: url(../flags/1x1/tr.svg);
+  }
+}
+@media screen {
+  .flag-icon-tr.flag-icon-squared {
+    background-image: url(../flags/1x1/tr.svg);
+  }
+}
+@media print {
+  .flag-icon-tt {
+    content: url(../flags/4x3/tt.svg);
+  }
+}
+@media screen {
+  .flag-icon-tt {
+    background-image: url(../flags/4x3/tt.svg);
+  }
+}
+@media print {
+  .flag-icon-tt.flag-icon-squared {
+    content: url(../flags/1x1/tt.svg);
+  }
+}
+@media screen {
+  .flag-icon-tt.flag-icon-squared {
+    background-image: url(../flags/1x1/tt.svg);
+  }
+}
+@media print {
+  .flag-icon-tv {
+    content: url(../flags/4x3/tv.svg);
+  }
+}
+@media screen {
+  .flag-icon-tv {
+    background-image: url(../flags/4x3/tv.svg);
+  }
+}
+@media print {
+  .flag-icon-tv.flag-icon-squared {
+    content: url(../flags/1x1/tv.svg);
+  }
+}
+@media screen {
+  .flag-icon-tv.flag-icon-squared {
+    background-image: url(../flags/1x1/tv.svg);
+  }
+}
+@media print {
+  .flag-icon-tw {
+    content: url(../flags/4x3/tw.svg);
+  }
+}
+@media screen {
+  .flag-icon-tw {
+    background-image: url(../flags/4x3/tw.svg);
+  }
+}
+@media print {
+  .flag-icon-tw.flag-icon-squared {
+    content: url(../flags/1x1/tw.svg);
+  }
+}
+@media screen {
+  .flag-icon-tw.flag-icon-squared {
+    background-image: url(../flags/1x1/tw.svg);
+  }
+}
+@media print {
+  .flag-icon-tz {
+    content: url(../flags/4x3/tz.svg);
+  }
+}
+@media screen {
+  .flag-icon-tz {
+    background-image: url(../flags/4x3/tz.svg);
+  }
+}
+@media print {
+  .flag-icon-tz.flag-icon-squared {
+    content: url(../flags/1x1/tz.svg);
+  }
+}
+@media screen {
+  .flag-icon-tz.flag-icon-squared {
+    background-image: url(../flags/1x1/tz.svg);
+  }
+}
+@media print {
+  .flag-icon-ua {
+    content: url(../flags/4x3/ua.svg);
+  }
+}
+@media screen {
+  .flag-icon-ua {
+    background-image: url(../flags/4x3/ua.svg);
+  }
+}
+@media print {
+  .flag-icon-ua.flag-icon-squared {
+    content: url(../flags/1x1/ua.svg);
+  }
+}
+@media screen {
+  .flag-icon-ua.flag-icon-squared {
+    background-image: url(../flags/1x1/ua.svg);
+  }
+}
+@media print {
+  .flag-icon-ug {
+    content: url(../flags/4x3/ug.svg);
+  }
+}
+@media screen {
+  .flag-icon-ug {
+    background-image: url(../flags/4x3/ug.svg);
+  }
+}
+@media print {
+  .flag-icon-ug.flag-icon-squared {
+    content: url(../flags/1x1/ug.svg);
+  }
+}
+@media screen {
+  .flag-icon-ug.flag-icon-squared {
+    background-image: url(../flags/1x1/ug.svg);
+  }
+}
+@media print {
+  .flag-icon-um {
+    content: url(../flags/4x3/um.svg);
+  }
+}
+@media screen {
+  .flag-icon-um {
+    background-image: url(../flags/4x3/um.svg);
+  }
+}
+@media print {
+  .flag-icon-um.flag-icon-squared {
+    content: url(../flags/1x1/um.svg);
+  }
+}
+@media screen {
+  .flag-icon-um.flag-icon-squared {
+    background-image: url(../flags/1x1/um.svg);
+  }
+}
+@media print {
+  .flag-icon-us {
+    content: url(../flags/4x3/us.svg);
+  }
+}
+@media screen {
+  .flag-icon-us {
+    background-image: url(../flags/4x3/us.svg);
+  }
+}
+@media print {
+  .flag-icon-us.flag-icon-squared {
+    content: url(../flags/1x1/us.svg);
+  }
+}
+@media screen {
+  .flag-icon-us.flag-icon-squared {
+    background-image: url(../flags/1x1/us.svg);
+  }
+}
+@media print {
+  .flag-icon-uy {
+    content: url(../flags/4x3/uy.svg);
+  }
+}
+@media screen {
+  .flag-icon-uy {
+    background-image: url(../flags/4x3/uy.svg);
+  }
+}
+@media print {
+  .flag-icon-uy.flag-icon-squared {
+    content: url(../flags/1x1/uy.svg);
+  }
+}
+@media screen {
+  .flag-icon-uy.flag-icon-squared {
+    background-image: url(../flags/1x1/uy.svg);
+  }
+}
+@media print {
+  .flag-icon-uz {
+    content: url(../flags/4x3/uz.svg);
+  }
+}
+@media screen {
+  .flag-icon-uz {
+    background-image: url(../flags/4x3/uz.svg);
+  }
+}
+@media print {
+  .flag-icon-uz.flag-icon-squared {
+    content: url(../flags/1x1/uz.svg);
+  }
+}
+@media screen {
+  .flag-icon-uz.flag-icon-squared {
+    background-image: url(../flags/1x1/uz.svg);
+  }
+}
+@media print {
+  .flag-icon-va {
+    content: url(../flags/4x3/va.svg);
+  }
+}
+@media screen {
+  .flag-icon-va {
+    background-image: url(../flags/4x3/va.svg);
+  }
+}
+@media print {
+  .flag-icon-va.flag-icon-squared {
+    content: url(../flags/1x1/va.svg);
+  }
+}
+@media screen {
+  .flag-icon-va.flag-icon-squared {
+    background-image: url(../flags/1x1/va.svg);
+  }
+}
+@media print {
+  .flag-icon-vc {
+    content: url(../flags/4x3/vc.svg);
+  }
+}
+@media screen {
+  .flag-icon-vc {
+    background-image: url(../flags/4x3/vc.svg);
+  }
+}
+@media print {
+  .flag-icon-vc.flag-icon-squared {
+    content: url(../flags/1x1/vc.svg);
+  }
+}
+@media screen {
+  .flag-icon-vc.flag-icon-squared {
+    background-image: url(../flags/1x1/vc.svg);
+  }
+}
+@media print {
+  .flag-icon-ve {
+    content: url(../flags/4x3/ve.svg);
+  }
+}
+@media screen {
+  .flag-icon-ve {
+    background-image: url(../flags/4x3/ve.svg);
+  }
+}
+@media print {
+  .flag-icon-ve.flag-icon-squared {
+    content: url(../flags/1x1/ve.svg);
+  }
+}
+@media screen {
+  .flag-icon-ve.flag-icon-squared {
+    background-image: url(../flags/1x1/ve.svg);
+  }
+}
+@media print {
+  .flag-icon-vg {
+    content: url(../flags/4x3/vg.svg);
+  }
+}
+@media screen {
+  .flag-icon-vg {
+    background-image: url(../flags/4x3/vg.svg);
+  }
+}
+@media print {
+  .flag-icon-vg.flag-icon-squared {
+    content: url(../flags/1x1/vg.svg);
+  }
+}
+@media screen {
+  .flag-icon-vg.flag-icon-squared {
+    background-image: url(../flags/1x1/vg.svg);
+  }
+}
+@media print {
+  .flag-icon-vi {
+    content: url(../flags/4x3/vi.svg);
+  }
+}
+@media screen {
+  .flag-icon-vi {
+    background-image: url(../flags/4x3/vi.svg);
+  }
+}
+@media print {
+  .flag-icon-vi.flag-icon-squared {
+    content: url(../flags/1x1/vi.svg);
+  }
+}
+@media screen {
+  .flag-icon-vi.flag-icon-squared {
+    background-image: url(../flags/1x1/vi.svg);
+  }
+}
+@media print {
+  .flag-icon-vn {
+    content: url(../flags/4x3/vn.svg);
+  }
+}
+@media screen {
+  .flag-icon-vn {
+    background-image: url(../flags/4x3/vn.svg);
+  }
+}
+@media print {
+  .flag-icon-vn.flag-icon-squared {
+    content: url(../flags/1x1/vn.svg);
+  }
+}
+@media screen {
+  .flag-icon-vn.flag-icon-squared {
+    background-image: url(../flags/1x1/vn.svg);
+  }
+}
+@media print {
+  .flag-icon-vu {
+    content: url(../flags/4x3/vu.svg);
+  }
+}
+@media screen {
+  .flag-icon-vu {
+    background-image: url(../flags/4x3/vu.svg);
+  }
+}
+@media print {
+  .flag-icon-vu.flag-icon-squared {
+    content: url(../flags/1x1/vu.svg);
+  }
+}
+@media screen {
+  .flag-icon-vu.flag-icon-squared {
+    background-image: url(../flags/1x1/vu.svg);
+  }
+}
+@media print {
+  .flag-icon-wf {
+    content: url(../flags/4x3/wf.svg);
+  }
+}
+@media screen {
+  .flag-icon-wf {
+    background-image: url(../flags/4x3/wf.svg);
+  }
+}
+@media print {
+  .flag-icon-wf.flag-icon-squared {
+    content: url(../flags/1x1/wf.svg);
+  }
+}
+@media screen {
+  .flag-icon-wf.flag-icon-squared {
+    background-image: url(../flags/1x1/wf.svg);
+  }
+}
+@media print {
+  .flag-icon-ws {
+    content: url(../flags/4x3/ws.svg);
+  }
+}
+@media screen {
+  .flag-icon-ws {
+    background-image: url(../flags/4x3/ws.svg);
+  }
+}
+@media print {
+  .flag-icon-ws.flag-icon-squared {
+    content: url(../flags/1x1/ws.svg);
+  }
+}
+@media screen {
+  .flag-icon-ws.flag-icon-squared {
+    background-image: url(../flags/1x1/ws.svg);
+  }
+}
+@media print {
+  .flag-icon-ye {
+    content: url(../flags/4x3/ye.svg);
+  }
+}
+@media screen {
+  .flag-icon-ye {
+    background-image: url(../flags/4x3/ye.svg);
+  }
+}
+@media print {
+  .flag-icon-ye.flag-icon-squared {
+    content: url(../flags/1x1/ye.svg);
+  }
+}
+@media screen {
+  .flag-icon-ye.flag-icon-squared {
+    background-image: url(../flags/1x1/ye.svg);
+  }
+}
+@media print {
+  .flag-icon-yt {
+    content: url(../flags/4x3/yt.svg);
+  }
+}
+@media screen {
+  .flag-icon-yt {
+    background-image: url(../flags/4x3/yt.svg);
+  }
+}
+@media print {
+  .flag-icon-yt.flag-icon-squared {
+    content: url(../flags/1x1/yt.svg);
+  }
+}
+@media screen {
+  .flag-icon-yt.flag-icon-squared {
+    background-image: url(../flags/1x1/yt.svg);
+  }
+}
+@media print {
+  .flag-icon-za {
+    content: url(../flags/4x3/za.svg);
+  }
+}
+@media screen {
+  .flag-icon-za {
+    background-image: url(../flags/4x3/za.svg);
+  }
+}
+@media print {
+  .flag-icon-za.flag-icon-squared {
+    content: url(../flags/1x1/za.svg);
+  }
+}
+@media screen {
+  .flag-icon-za.flag-icon-squared {
+    background-image: url(../flags/1x1/za.svg);
+  }
+}
+@media print {
+  .flag-icon-zm {
+    content: url(../flags/4x3/zm.svg);
+  }
+}
+@media screen {
+  .flag-icon-zm {
+    background-image: url(../flags/4x3/zm.svg);
+  }
+}
+@media print {
+  .flag-icon-zm.flag-icon-squared {
+    content: url(../flags/1x1/zm.svg);
+  }
+}
+@media screen {
+  .flag-icon-zm.flag-icon-squared {
+    background-image: url(../flags/1x1/zm.svg);
+  }
+}
+@media print {
+  .flag-icon-zw {
+    content: url(../flags/4x3/zw.svg);
+  }
+}
+@media screen {
+  .flag-icon-zw {
+    background-image: url(../flags/4x3/zw.svg);
+  }
+}
+@media print {
+  .flag-icon-zw.flag-icon-squared {
+    content: url(../flags/1x1/zw.svg);
+  }
+}
+@media screen {
+  .flag-icon-zw.flag-icon-squared {
+    background-image: url(../flags/1x1/zw.svg);
+  }
+}
+@media print {
+  .flag-icon-eu {
+    content: url(../flags/4x3/eu.svg);
+  }
+}
+@media screen {
+  .flag-icon-eu {
+    background-image: url(../flags/4x3/eu.svg);
+  }
+}
+@media print {
+  .flag-icon-eu.flag-icon-squared {
+    content: url(../flags/1x1/eu.svg);
+  }
+}
+@media screen {
+  .flag-icon-eu.flag-icon-squared {
+    background-image: url(../flags/1x1/eu.svg);
+  }
+}
+@media print {
+  .flag-icon-gb-eng {
+    content: url(../flags/4x3/gb-eng.svg);
+  }
+}
+@media screen {
+  .flag-icon-gb-eng {
+    background-image: url(../flags/4x3/gb-eng.svg);
+  }
+}
+@media print {
+  .flag-icon-gb-eng.flag-icon-squared {
+    content: url(../flags/1x1/gb-eng.svg);
+  }
+}
+@media screen {
+  .flag-icon-gb-eng.flag-icon-squared {
+    background-image: url(../flags/1x1/gb-eng.svg);
+  }
+}
+@media print {
+  .flag-icon-gb-sct {
+    content: url(../flags/4x3/gb-sct.svg);
+  }
+}
+@media screen {
+  .flag-icon-gb-sct {
+    background-image: url(../flags/4x3/gb-sct.svg);
+  }
+}
+@media print {
+  .flag-icon-gb-sct.flag-icon-squared {
+    content: url(../flags/1x1/gb-sct.svg);
+  }
+}
+@media screen {
+  .flag-icon-gb-sct.flag-icon-squared {
+    background-image: url(../flags/1x1/gb-sct.svg);
+  }
+}
+@media print {
+  .flag-icon-gb-wls {
+    content: url(../flags/4x3/gb-wls.svg);
+  }
+}
+@media screen {
+  .flag-icon-gb-wls {
+    background-image: url(../flags/4x3/gb-wls.svg);
+  }
+}
+@media print {
+  .flag-icon-gb-wls.flag-icon-squared {
+    content: url(../flags/1x1/gb-wls.svg);
+  }
+}
+@media screen {
+  .flag-icon-gb-wls.flag-icon-squared {
+    background-image: url(../flags/1x1/gb-wls.svg);
+  }
+}
+@media print {
+  .flag-icon-un {
+    content: url(../flags/4x3/un.svg);
+  }
+}
+@media screen {
+  .flag-icon-un {
+    background-image: url(../flags/4x3/un.svg);
+  }
+}
+@media print {
+  .flag-icon-un.flag-icon-squared {
+    content: url(../flags/1x1/un.svg);
+  }
+}
+@media screen {
+  .flag-icon-un.flag-icon-squared {
+    background-image: url(../flags/1x1/un.svg);
+  }
 }
