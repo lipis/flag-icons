@@ -1,20 +1,20 @@
 <li class="dropdown">
   <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-    <i class="flag-icon flag-icon-{{request.locale}}"></i> <b class="caret"></b>
+    <span class="flag-icon flag-icon-{{request.locale}}"></span> <b class="caret"></b>
   </a>
   <ul class="dropdown-menu">
     # for locale in config.LOCALE_SORTED
       # if request.locale == locale[0]
         <li class="disabled">
           <a tabindex="-1">
-            <i class="flag-icon flag-icon-{{locale[0]}}"></i>
+            <span class="flag-icon flag-icon-{{locale[0]}}"></span>
             {{locale[1]}}
           </a>
         </li>
       # else
         <li>
           <a tabindex="-1" href="{{url_for('set_locale', locale=locale[0])}}">
-            <i class="flag-icon flag-icon-{{locale[0]}}"></i>
+            <span class="flag-icon flag-icon-{{locale[0]}}"></span>
             {{locale[1]}}
           </a>
         </li>
