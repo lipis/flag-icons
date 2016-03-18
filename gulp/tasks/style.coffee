@@ -11,6 +11,7 @@ gulp.task 'style', false, ->
   .pipe do $.less
   .pipe $.cssnano
     discardComments: removeAll: true
+    zindex: false
   .pipe $.size {title: 'Minified styles'}
   .pipe gulp.dest "#{paths.static.min}/style"
 
