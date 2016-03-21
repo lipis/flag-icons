@@ -7,9 +7,9 @@ api_version: 1
 threadsafe: true
 
 builtins:
-- remote_api: on
-- deferred: on
 - appstats: on
+- deferred: on
+- remote_api: on
 
 inbound_services:
 - warmup
