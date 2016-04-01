@@ -26,3 +26,12 @@
     }
   }
 }
+
+.flag-icon(@country, @flag) when (iskeyword(@flag)) {
+  .flag-icon-@{country} {
+    background-image: ~"url(@{flag-icon-css-path}@{flag-icon-rect-path}/@{flag}.svg)";
+    &.flag-icon-squared {
+      background-image: ~"url(@{flag-icon-css-path}@{flag-icon-square-path}/@{flag}.svg)";
+    }
+  }
+}

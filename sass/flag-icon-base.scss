@@ -18,11 +18,19 @@
   }
 }
 
-@mixin flag-icon($country) {
+@mixin flag-icon($country,$flag:"") {
   .flag-icon-#{$country} {
-    background-image: url(#{$flag-icon-css-path}#{$flag-icon-rect-path}/#{$country}.svg);
-    &.flag-icon-squared {
-      background-image: url(#{$flag-icon-css-path}#{$flag-icon-square-path}/#{$country}.svg);
+    @if $flag != "" {
+      background-image: url(#{$flag-icon-css-path}#{$flag-icon-rect-path}/#{$flag}.svg);
+      &.flag-icon-squared {
+        background-image: url(#{$flag-icon-css-path}#{$flag-icon-square-path}/#{$flag}.svg);
+      }    
+    }
+    @else {
+      background-image: url(#{$flag-icon-css-path}#{$flag-icon-rect-path}/#{$country}.svg);
+      &.flag-icon-squared {
+        background-image: url(#{$flag-icon-css-path}#{$flag-icon-square-path}/#{$country}.svg);
+      }    
     }
   }
 }
