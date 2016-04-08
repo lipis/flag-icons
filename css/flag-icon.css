@@ -1524,6 +1524,12 @@
 .flag-icon-uk.flag-icon-squared {
   background-image: url(../flags/1x1/gb.svg);
 }
+.flag-icon-en {
+  background-image: url(../flags/4x3/gb.svg);
+}
+.flag-icon-en.flag-icon-squared {
+  background-image: url(../flags/1x1/gb.svg);
+}
 .flag-icon-gb-eng {
   background-image: url(../flags/4x3/gb-eng.svg);
 }
