@@ -1,23 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="svg548" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata3043">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs id="defs550">
-  <clipPath id="clipPath15459" clipPathUnits="userSpaceOnUse">
-   <rect id="rect15461" fill-opacity="0.67" height="512" width="682.67" y=".000011991" x="0"/>
-  </clipPath>
- </defs>
- <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath15459)" transform="matrix(.93750 0 0 .93750 0 -.000011241)" stroke-width="1pt">
-  <rect id="rect551" height="512" width="992.13" y=".000013059" x="0" fill="#f00"/>
-  <path id="path552" d="m0 512 992.12-170.67v170.67h-992.12z" fill="#090"/>
-  <path id="path553" d="m0 512 992.12-341.33v170.67l-992.12 170.66z" fill="#fff"/>
-  <path id="path554" d="m0 512v-512h330.71l-330.71 512z" fill="#009"/>
-  <path id="path555" d="m0 512 330.71-512h330.71l-661.42 512z" fill="#ff0"/>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".67" d="M0 0h682.67v512H0z"/>
+    </clipPath>
+  </defs>
+  <g fill-rule="evenodd" clip-path="url(#a)" transform="scale(.9375)" stroke-width="1pt">
+    <path fill="red" d="M0 0h992.13v512H0z"/>
+    <path d="M0 512l992.12-170.67V512H0z" fill="#090"/>
+    <path d="M0 512l992.12-341.33v170.67L0 512z" fill="#fff"/>
+    <path d="M0 512V0h330.71L0 512z" fill="#009"/>
+    <path d="M0 512L330.71 0h330.71L0 512z" fill="#ff0"/>
+  </g>
 </svg>

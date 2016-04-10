@@ -1,27 +1,16 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="svg589" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata3065">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs id="defs591">
-  <clipPath id="clipPath15333" clipPathUnits="userSpaceOnUse">
-   <rect id="rect15335" fill-opacity="0.67" height="512" width="682.67" y=".0000090621" x="-53.421"/>
-  </clipPath>
- </defs>
- <g id="flag" clip-path="url(#clipPath15333)" transform="matrix(.9375 0 0 .9375 50.082 -.0000084958)">
-  <g id="g558" fill-rule="evenodd" stroke-width="1pt" transform="matrix(2.9257 0 0 2.9257 -745.33 -969.48)">
-   <rect id="rect552" height="70" width="87.5" y="331.47" x="213.36" fill="#006aa7"/>
-   <rect id="rect553" height="70" width="87.5" y="436.36" x="213.36" fill="#006aa7"/>
-   <rect id="rect554" height="35" width="87.5" y="401.43" x="213.36" fill="#fecc00"/>
-   <rect id="rect556" height="175" width="35" y="331.37" x="300.5" fill="#fecc00"/>
-   <rect id="rect557" height="35" width="157.5" y="401.44" x="334.39" fill="#fecc00"/>
-   <rect id="rect558" height="70" width="157.5" y="436.37" x="335.47" fill="#006aa7"/>
-   <rect id="rect559" height="70" width="157.5" y="331.47" x="335.47" fill="#006aa7"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".67" d="M-53.421 0h682.67v512h-682.67z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#a)" transform="translate(50.082) scale(.9375)">
+    <g fill-rule="evenodd" stroke-width="1pt">
+      <path fill="#006aa7" d="M-121.103.302h256V205.1h-256zM-121.103 307.178h256v204.8h-256z"/>
+      <path fill="#fecc00" d="M-121.103 204.984h256v102.4h-256z"/>
+      <path fill="#fecc00" d="M133.843.01h102.4v511.997h-102.4z"/>
+      <path fill="#fecc00" d="M232.995 205.013h460.798v102.4H232.995z"/>
+      <path fill="#006aa7" d="M236.155 307.208h460.797v204.799H236.155zM236.155.302h460.797V205.1H236.155z"/>
+    </g>
   </g>
- </g>
 </svg>

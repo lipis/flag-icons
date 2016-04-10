@@ -1,24 +1,15 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata11">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs id="defs380">
-  <clipPath id="clipPath9232" clipPathUnits="userSpaceOnUse">
-   <rect id="rect9234" fill-opacity="0.67" height="485.5" width="593.6" y="7.8281" x="92.213"/>
-  </clipPath>
- </defs>
- <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath9232)" transform="matrix(.86254 0 0 1.0546 -79.537 -8.2554)">
-  <rect id="rect149" transform="scale(-1)" height="484.5" width="987.63" stroke="#000" y="-492.88" x="-991.81" stroke-width=".79701pt" fill="#fff"/>
-  <rect id="rect148" transform="scale(-1,1)" height="87.672" width="987.63" y="405.21" x="-991.81" stroke-width="1pt" fill="#3e5698"/>
-  <rect id="rect605" transform="scale(-1)" height="268.55" width="987.63" y="-384.9" x="-991.81" stroke-width="1pt" fill="#c60000"/>
-  <rect id="rect606" transform="scale(-1,1)" height="87.672" width="987.63" y="8.3739" x="-991.81" stroke-width="1pt" fill="#3e5698"/>
-  <path id="path607" d="m495.86 1148c0 90.46-73.332 163.79-163.79 163.79-90.46 0-163.79-73.332-163.79-163.79 0-90.46 73.332-163.79 163.79-163.79 90.46 0 163.79 73.332 163.79 163.79z" transform="matrix(.83963 0 0 .66512 56.749 -512.91)" fill="#fff"/>
-  <polygon id="polygon136" transform="matrix(1.163 -.0047865 -.012663 .93245 -279.04 -74.321)" points="591.04 433.16 591.04 433.16 533.77 391.48 476.5 433.15 498.45 365.81 441.12 324.21 511.95 324.28 533.78 256.9 555.61 324.28 626.44 324.23 569.1 365.81" fill="#c40000"/>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".67" d="M92.213 7.828h593.6v485.5h-593.6z"/>
+    </clipPath>
+  </defs>
+  <g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(.86254 0 0 1.0546 -79.537 -8.255)">
+    <path stroke="#000" stroke-width="1.063" fill="#fff" d="M991.81 492.88H4.18V8.38h987.63z"/>
+    <path fill="#3e5698" d="M991.81 405.21H4.18v87.672h987.63z"/>
+    <path fill="#c60000" d="M991.81 384.9H4.18V116.35h987.63z"/>
+    <path fill="#3e5698" d="M991.81 8.374H4.18v87.672h987.63z"/>
+    <path d="M473.088 250.648c0 60.167-61.572 108.94-137.523 108.94-75.953 0-137.523-48.775-137.523-108.94 0-60.167 61.572-108.94 137.523-108.94 75.953 0 137.523 48.774 137.523 108.94z" fill="#fff"/>
+    <path fill="#c40000" d="M402.854 326.75l-66.077-38.59-67.132 39.129 26.38-62.896-66.148-38.516 82.374-.274 26.242-62.933 24.535 62.724 82.376-.385-67.213 39.046z"/>
+  </g>
 </svg>

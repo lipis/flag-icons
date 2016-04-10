@@ -1,23 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="svg378" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.0" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata3702">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs id="defs380">
-  <clipPath id="clipPath6343" clipPathUnits="userSpaceOnUse">
-   <rect id="rect6345" fill-opacity="0.67" height="708.66" width="708.66" y="-.0000033379" x="51.624"/>
-  </clipPath>
- </defs>
- <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath6343)" transform="matrix(.72249 0 0 .72249 -37.298 .0000024116)">
-  <rect id="rect149" height="708.66" width="1063" y="0" x="0" stroke-width="1pt" fill="#ed0000"/>
-  <rect id="rect280" height="141.73" width="1063" y="141.73" x="0" stroke-width="1pt" fill="#fff"/>
-  <rect id="rect281" height="141.73" width="1063" y="425.2" x="0" stroke-width="1pt" fill="#fff"/>
-  <path id="path279" d="m0 0 609.96 353.88-609.96 353.42v-707.3z" stroke-width="1pt" fill="#0050f0"/>
-  <path id="path205" d="m266.19 534.45-10.408-7.432-10.357 7.505 3.852-12.196-10.338-7.531 12.79-0.105 3.967-12.159 4.052 12.131 12.79 0.016-10.285 7.602 3.937 12.169z" transform="matrix(6.3097 0 0 6.5987 -1411.4 -3076.2)" stroke-width=".11287" fill="#fff"/>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".67" d="M51.624 0h708.66v708.66H51.624z"/>
+    </clipPath>
+  </defs>
+  <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(-37.298) scale(.72249)">
+    <path fill="#ed0000" d="M0 0h1063v708.66H0z"/>
+    <path fill="#fff" d="M0 141.73h1063v141.73H0zM0 425.2h1063v141.73H0z"/>
+    <path d="M0 0l609.96 353.88L0 707.3V0z" fill="#0050f0"/>
+    <path d="M268.179 450.475l-65.671-49.041-65.35 49.523 24.305-80.478-65.23-49.695 80.701-.692 25.031-80.234 25.567 80.049 80.701.105-64.895 50.164 24.841 80.3z" fill="#fff"/>
+  </g>
 </svg>

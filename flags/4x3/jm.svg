@@ -1,21 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="svg548" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata4617">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <g id="flag">
-  <g id="g3260" fill-rule="evenodd" transform="scale(1.25 .9375)">
-   <path id="path551" d="m0 0 256 256-256 256z"/>
-   <path id="path552" d="m512 0-256 256 256 256z"/>
-   <path id="path556" d="m0 0 256 256 256-256z" fill="#090"/>
-   <path id="path557" d="m0 512 256-256 256 256z" fill="#090"/>
-   <path id="path558" d="m512 0h-47.7l-464.3 464.3v47.7h47.703l464.3-464.3z" fill="#fc0"/>
-   <path id="path566" d="m0 0v47.703l464.3 464.3h47.703v-47.703l-464.3-464.3z" fill="#fc0"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
+  <g fill-rule="evenodd">
+    <path d="M0 0l320 240L0 480zM640 0L320 240l320 240z"/>
+    <path d="M0 0l320 240L640 0zM0 480l320-240 320 240z" fill="#090"/>
+    <path d="M640 0h-59.625L0 435.281V480h59.629L640.004 44.719z" fill="#fc0"/>
+    <path d="M0 0v44.722l580.375 435.28h59.629v-44.72L59.629 0z" fill="#fc0"/>
   </g>
- </g>
 </svg>

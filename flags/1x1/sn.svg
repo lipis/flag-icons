@@ -1,17 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="svg3337" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata3298">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <g id="flag" fill-rule="evenodd" transform="matrix(.58333 0 0 1 110.4 .38103)" stroke-width="1pt">
-  <rect id="rect1200" height="512" width="292.57" y="-.38103" x="-189.26" fill="#0b7226"/>
-  <rect id="rect880" height="512" width="292.57" y="-.38103" x="103.31" fill="#ff0"/>
-  <rect id="rect1201" height="512" width="292.57" y="-.38103" x="395.88" fill="#bc0000"/>
- </g>
- <polygon id="polygon907" transform="matrix(1.2981 0 0 1.3455 30.195 41.682)" points="128.47 230.43 145.53 177.05 99 142.52 156.39 142.52 175 86 192.06 142.52 251 142.52 204.47 177.05 221.53 232 175 197.46" fill="#0b7226"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512">
+  <g fill-rule="evenodd" stroke-width="1pt">
+    <path fill="#0b7226" d="M-.001 0h170.665v512H-.001z"/>
+    <path fill="#ff0" d="M170.664 0h170.665v512H170.664z"/>
+    <path fill="#bc0000" d="M341.329 0h170.665v512H341.329z"/>
+  </g>
+  <path fill="#0b7226" d="M196.962 351.726l22.145-71.823-60.4-46.46h74.498l24.158-76.048 22.145 76.048h76.51l-60.4 46.46 22.145 73.935-60.4-46.474z"/>
 </svg>

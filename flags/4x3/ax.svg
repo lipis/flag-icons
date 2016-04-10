@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" height="480" viewBox="0 0 512 512" width="640">
   <defs>
     <clipPath id="a">
       <path fill-opacity=".67" d="M106.25 0h1133.3v850H106.25z"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#a)" transform="matrix(.6024 0 0 .6024 -149.33 0)">
+  <g clip-path="url(#a)" transform="translate(-149.33) scale(.6024)">
     <path fill="#0053a5" d="M0 0h1300v850H0z"/>
     <g fill="#ffce00">
       <path d="M400 0h250v850H400z"/>

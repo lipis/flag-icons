@@ -1,27 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="svg548" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata3794">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs id="defs550">
-  <clipPath id="clipPath3532" clipPathUnits="userSpaceOnUse">
-   <rect id="rect3534" fill-opacity="0.67" height="512.01" width="682.68" y="-.012254" x="-71.873"/>
-  </clipPath>
- </defs>
- <g id="flag" clip-path="url(#clipPath3532)" transform="matrix(.93748 0 0 .93748 67.379 .011488)">
-  <g id="g603" fill-rule="evenodd" stroke-width="1pt" transform="matrix(2.0478 0 0 2.0484 -148.57 -1592.2)">
-   <path id="path581" d="m37.451 976.39v-148.12l110.28 74.022-110.28 74.103z"/>
-   <path id="path597" d="m112.7 1027.3 123.81-83.306h175.98v83.306h-299.79z" fill="#00c"/>
-   <path id="path598" d="m104.74 777.32 307.74 0.006v83.32h-175.98s-130.11-84.15-131.76-83.326z" fill="#f00"/>
-   <path id="path599" d="m37.451 808.57v19.688l110.28 74.022-110.28 74.103v19.687l138.9-93.79-138.9-93.71z" fill="#fc0"/>
-   <path id="path600" d="m37.451 808.57v-31.25h46.338l147.14 99.531h181.55v50.899h-181.55l-147.14 99.517h-46.338v-31.197l138.9-93.79-138.9-93.71z" fill="#093"/>
-   <path id="path601" d="m83.789 777.32h28.906l123.81 83.32h175.98v16.211h-181.55l-147.14-99.531z" fill="#fff"/>
-   <path id="path602" d="m83.789 1027.3h28.906l123.81-83.306h175.98v-16.211h-181.55l-147.14 99.517z" fill="#fff"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".67" d="M-71.873-.012h682.68v512.01h-682.68z"/>
+    </clipPath>
+  </defs>
+  <g clip-path="url(#a)" transform="translate(67.379 .011) scale(.93748)">
+    <g fill-rule="evenodd" stroke-width="1pt">
+      <path d="M-71.878 407.837V104.428l225.832 151.627-225.832 151.793z"/>
+      <path d="M82.217 512.121l253.538-170.644h360.372v170.644H82.217z" fill="#00c"/>
+      <path d="M65.917.062l630.19.013v170.672H335.735S69.295-1.626 65.917.062z" fill="red"/>
+      <path d="M-71.878 64.075v40.329L153.954 256.03-71.878 407.823v40.327l284.44-192.12-284.44-191.955z" fill="#fc0"/>
+      <path d="M-71.878 64.075V.062h94.891l301.313 203.88h371.778v104.261H324.326L23.013 512.053h-94.89V448.15l284.439-192.12-284.44-191.955z" fill="#093"/>
+      <path d="M23.013.062h59.194l253.538 170.673h360.372v33.207H324.339L23.025.062zM23.013 512.121h59.194l253.538-170.644h360.372v-33.206H324.339L23.025 512.12z" fill="#fff"/>
+    </g>
   </g>
- </g>
 </svg>

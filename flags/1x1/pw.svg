@@ -1,20 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="svg704" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata4096">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs id="defs706">
-  <clipPath id="clipPath5153" clipPathUnits="userSpaceOnUse">
-   <rect id="rect5155" fill-opacity="0.67" height="170.82" width="170.82" y="4.1809" x="61.722"/>
-  </clipPath>
- </defs>
- <g id="flag" fill-rule="evenodd" clip-path="url(#clipPath5153)" transform="matrix(2.9973 0 0 2.9973 -185 -12.531)" stroke-width="1pt">
-  <rect id="rect721" transform="matrix(.40476 0 0 .34435 0 4.1809)" height="496.06" width="744.09" y="-.000015260" x="0" fill="#4aadd6"/>
-  <path id="path719" d="m372.72 248.93c0 69.362-56.229 125.59-125.59 125.59-69.362 0-125.59-56.229-125.59-125.59 0-69.362 56.229-125.59 125.59-125.59 69.362 0 125.59 56.229 125.59 125.59z" transform="matrix(.42245 0 0 .40453 28.407 -13.917)" fill="#ffde00"/>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512">
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".67" d="M61.722 4.181h170.82v170.82H61.722z"/>
+    </clipPath>
+  </defs>
+  <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(-185 -12.531) scale(2.9973)" stroke-width="1pt">
+    <path fill="#4aadd6" d="M0 4.18h301.178V175H0z"/>
+    <path d="M185.863 86.783c0 28.059-23.754 50.805-53.056 50.805-29.302 0-53.055-22.747-53.055-50.805 0-28.06 23.754-50.805 53.055-50.805 29.302 0 53.056 22.746 53.056 50.805z" fill="#ffde00"/>
+  </g>
 </svg>

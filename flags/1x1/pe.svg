@@ -1,16 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="canada" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata3572">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <g id="flag" fill-rule="evenodd" transform="matrix(.68808 0 0 1.0321 0 .000093178)">
-  <rect id="rect576" height="496.06" width="248.75" y="-0.00009" x="247.5" fill="#fff"/>
-  <rect id="rect575" height="496.06" width="247.5" y="-0.000046" x="0" fill="#f00"/>
-  <rect id="rect577" height="496.06" width="249.77" y="-0.000061" x="494.32" fill="#f00"/>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512">
+  <g fill-rule="evenodd">
+    <path fill="#fff" d="M170.3 0h171.16v511.984H170.3z"/>
+    <path fill="red" d="M0 0h170.3v511.984H0zM340.132 0h171.861v511.984H340.132z"/>
+  </g>
 </svg>
