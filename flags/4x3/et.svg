@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
   <defs>
     <clipPath id="a">
       <path fill-opacity=".67" d="M-61.312 0h682.67v512h-682.67z"/>
     </clipPath>
   </defs>
-  <g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(.94 0 0 .94 57.48 0)" stroke-width="1pt">
+  <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(57.48) scale(.94)" stroke-width="1pt">
     <path fill="#ffc621" d="M-237.99 3.5h1037.9v498h-1037.9z"/>
     <path fill="#ef2118" d="M-240 342.5H799.3V512H-240z"/>
     <path fill="#298c08" d="M-237.99 0h1038v180h-1038z"/>

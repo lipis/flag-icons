@@ -1,29 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="svg548" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1" y="0" x="0" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
- <metadata id="metadata3794">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <defs id="defs550">
-  <clipPath id="clipPath4085" clipPathUnits="userSpaceOnUse">
-   <rect id="rect4087" fill-opacity="0.67" height="499.61" width="499.61" y="-.000012808" x="70.133"/>
-  </clipPath>
- </defs>
- <g id="flag">
-  <g id="g4048" transform="matrix(1.0248 0 0 1.0248 -71.873 .000013125)" clip-path="url(#clipPath4085)">
-   <g id="g603" fill-rule="evenodd" stroke-width="1pt" transform="matrix(1.9983 0 0 1.9988 -74.837 -1553.7)">
-  <path id="path581" d="m37.451 976.39v-148.12l110.28 74.022-110.28 74.103z"/>
-  <path id="path597" d="m112.7 1027.3 123.81-83.306h175.98v83.306h-299.79z" fill="#00c"/>
-  <path id="path598" d="m104.74 777.32 307.74 0.006v83.32h-175.98s-130.11-84.15-131.76-83.326z" fill="#f00"/>
-  <path id="path599" d="m37.451 808.57v19.688l110.28 74.022-110.28 74.103v19.687l138.9-93.79-138.9-93.71z" fill="#fc0"/>
-  <path id="path600" d="m37.451 808.57v-31.25h46.338l147.14 99.531h181.55v50.899h-181.55l-147.14 99.517h-46.338v-31.197l138.9-93.79-138.9-93.71z" fill="#093"/>
-  <path id="path601" d="m83.789 777.32h28.906l123.81 83.32h175.98v16.211h-181.55l-147.14-99.531z" fill="#fff"/>
-  <path id="path602" d="m83.789 1027.3h28.906l123.81-83.306h175.98v-16.211h-181.55l-147.14 99.517z" fill="#fff"/>
-   </g>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
+  <defs>
+    <clipPath id="a">
+      <path fill-opacity=".67" d="M70.133 0h499.61v499.61H70.133z"/>
+    </clipPath>
+  </defs>
+  <g transform="translate(-71.873) scale(1.0248)" clip-path="url(#a)">
+    <g fill-rule="evenodd" stroke-width="1pt">
+      <path d="M.001 397.908V101.846l220.373 147.955L0 397.918z"/>
+      <path d="M150.371 499.667l247.41-166.512h351.66v166.512h-599.07z" fill="#00c"/>
+      <path d="M134.465.007L749.422.02v166.54H397.76S137.762-1.64 134.465.007z" fill="red"/>
+      <path d="M.001 62.47v39.352l220.373 147.955L0 397.894v39.35l277.564-187.467L.001 62.47z" fill="#fc0"/>
+      <path d="M.001 62.47V.007H92.6l294.03 198.943h362.79v101.737H386.63L92.598 499.6H0v-62.356l277.564-187.468L.001 62.47z" fill="#093"/>
+      <path d="M92.599.007h57.762l247.41 166.54h351.66v32.403h-362.79L92.61.007zM92.599 499.667h57.762l247.41-166.512h351.66v-32.402h-362.79L92.61 499.667z" fill="#fff"/>
+    </g>
   </g>
- </g>
 </svg>

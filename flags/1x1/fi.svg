@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
   <defs>
     <clipPath id="a">
@@ -6,12 +5,12 @@
     </clipPath>
   </defs>
   <path fill-rule="evenodd" fill="#0062da" d="M.293-3764.3h49.872v8.546H.293zM0-2800500h7472800v66033H0z"/>
-  <g fill-rule="evenodd" clip-path="url(#a)" transform="matrix(.844 0 0 .844 -105.62 0)" stroke-width="1pt">
+  <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(-105.62) scale(.844)" stroke-width="1pt">
     <path fill="#fff" d="M0 385.64h295.28v220.65H0z"/>
     <path fill="#0062da" d="M295.08 0h177.56v606.29H295.08z"/>
     <path fill="#0062da" d="M0 220.47h1063v165.35H0z"/>
-    <path fill="#fff" d="M0 .004h295.28v220.65H0zM472.44 385.64h590.55v220.65H472.44zM472.44.002h590.55v220.65H472.44zM0 385.64h295.28v220.65H0z"/>
+    <path fill="#fff" d="M0 .004h295.28v220.65H0zM472.44 385.64h590.55v220.65H472.44zm0-385.638h590.55v220.65H472.44zM0 385.64h295.28v220.65H0z"/>
     <path fill="#0062da" d="M295.08 0h177.56v606.29H295.08z"/>
-    <path fill="#fff" d="M0 .004h295.28v220.65H0zM472.44 385.64h590.55v220.65H472.44zM472.44.002h590.55v220.65H472.44z"/>
+    <path fill="#fff" d="M0 .004h295.28v220.65H0zM472.44 385.64h590.55v220.65H472.44zm0-385.638h590.55v220.65H472.44z"/>
   </g>
 </svg>

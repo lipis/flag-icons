@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
-  <g fill-rule="evenodd" transform="matrix(.482 0 0 .72 0 0)" stroke-width="1pt">
+  <g fill-rule="evenodd" transform="scale(.482 .72)" stroke-width="1pt">
     <rect rx="0" ry="0" height="708.66" width="1063"/>
     <rect rx="0" ry="0" height="236.22" width="1063" y="475.56" fill="#fff"/>
     <path fill="#1291ff" d="M0 0h1063v236.22H0z"/>

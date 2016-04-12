@@ -2,7 +2,7 @@
   <path fill="#007a5e" d="M0 0h170.667v512H0z"/>
   <path fill="#ce1126" d="M170.667 0h170.667v512H170.667z"/>
   <path fill="#fcd116" d="M341.333 0H512v512H341.333z"/>
-  <g transform="matrix(5.6889 0 0 5.6889 256 256)" fill="#fcd116">
+  <g transform="translate(256 256) scale(5.6889)" fill="#fcd116">
     <g id="b">
       <path id="a" d="M0-8L-2.472-.392 1.332.845z"/>
       <use height="100%" width="100%" xlink:href="#a" transform="scale(-1 1)"/>

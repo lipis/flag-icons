@@ -2,7 +2,7 @@
   <path fill="#0038a8" d="M0 0h640v240H0z"/>
   <path fill="#ce1126" d="M0 240h640v240H0z"/>
   <path d="M415.692 240L0 480V0" fill="#fff"/>
-  <g transform="matrix(5.33333 0 0 5.33333 149.333 240)" fill="#fcd116">
+  <g transform="translate(149.333 240) scale(5.33333)" fill="#fcd116">
     <circle r="9"/>
     <g id="d">
       <g id="c">

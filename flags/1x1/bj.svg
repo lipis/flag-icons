@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512">
   <defs>
     <clipPath id="a">
       <path fill="gray" d="M67.64-154h666v666h-666z"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#a)" transform="matrix(.7688 0 0 .7688 -52 118.39)">
+  <g clip-path="url(#a)" transform="translate(-52 118.39) scale(.7688)">
     <g fill-rule="evenodd" stroke-width="1pt">
       <path fill="#319400" d="M0-154h333v666H0z"/>
       <path fill="#ffd600" d="M333-154h666v333H333z"/>

@@ -1,16 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg id="canada" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" fill-opacity="14.118" height="480" width="640" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" fill="#28ff09">
- <metadata id="metadata3365">
-  <rdf:RDF>
-   <cc:Work rdf:about="">
-  <dc:format>image/svg+xml</dc:format>
-  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-   </cc:Work>
-  </rdf:RDF>
- </metadata>
- <g id="flag" fill-rule="evenodd" fill-opacity="1" transform="matrix(.86011 0 0 .96762 0 .000014672)">
-  <rect id="rect569" height="166.06" width="744.09" y="-.000015260" x="0" fill="#f00"/>
-  <rect id="rect570" height="166.25" width="744.09" y="166.06" x="0" fill="#fff"/>
-  <rect id="rect571" height="163.75" width="744.09" y="332.31" x="0" fill="#0098ff"/>
- </g>
+<svg xmlns="http://www.w3.org/2000/svg" fill-opacity="14.118" height="480" width="640" fill="#28ff09">
+  <g fill-rule="evenodd" fill-opacity="1">
+    <path fill="red" d="M0 0h640v160.683H0z"/>
+    <path fill="#fff" d="M0 160.683h640V321.55H0z"/>
+    <path fill="#0098ff" d="M0 321.55h640v158.448H0z"/>
+  </g>
 </svg>
