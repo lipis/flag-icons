@@ -88,7 +88,7 @@ def admin_test(test=None):
     pass
 
   return flask.render_template(
-    'test/test_one.html' if test else 'test/test.html',
+    'admin/test/test_one.html' if test else 'admin/test/test.html',
     title='Test: %s' % test.title() if test else 'Test',
     html_class='test',
     form=form,
