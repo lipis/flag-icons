@@ -1,5 +1,3 @@
-application: gae-init
-version: 1
 module: default
 instance_class: F1
 runtime: python27

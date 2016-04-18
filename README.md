@@ -60,10 +60,9 @@ Deploying on Google App Engine
 
 ```bash
 $ gulp deploy
+$ gulp deploy --project=foo
+$ gulp deploy --project=foo --version=bar
 ```
-
-Before deploying make sure that the `main/app.yaml` and `gulp/config.coffee`
-are up to date.
 
 Tech Stack
 ----------
