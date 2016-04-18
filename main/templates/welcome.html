@@ -1,7 +1,7 @@
 # extends 'base.html'
 
 # block header
-  <div class="jumbotron">
+  <div class="jumbotron text-center">
     <div class="container">
       <h1>{{config.CONFIG_DB.brand_name}}</h1>
       <p>Hello, world!</p>
@@ -11,21 +11,17 @@
 
 # block content
   <div class="row">
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <h2>Heading</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <h2>Heading</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="col-sm-6 col-md-4 col-lg-3">
-      <h2>Heading</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
-    <div class="col-sm-6 col-md-12 col-lg-3">
-      <h2>Heading</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
+    # for country_db in country_dbs
+      <div class="col-xs-6 col-sm-4 col-md-3">
+        <div class="country">
+          <div class="name">
+            <span class="alpha-2">{{country_db.alpha_2}}</span>
+            {{country_db.name}}
+          </div>
+          <div class="capital">{{country_db.capital}}</div>
+          <img class="flag" src="/p/ext/flag-icon-css/flags/4x3/{{country_db.alpha_2.lower()}}.svg" alt="{{country_db.name}} Flag">
+        </div>
+      </div>
+    # endfor
   </div>
 # endblock

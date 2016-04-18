@@ -3,6 +3,8 @@
 import flask
 
 import config
+import model
+import util
 
 from main import app
 
@@ -12,7 +14,14 @@ from main import app
 ###############################################################################
 @app.route('/')
 def welcome():
-  return flask.render_template('welcome.html', html_class='welcome')
+  country_dbs, country_cursor = model.Country.get_dbs(limit=-1)
+  return flask.render_template(
+    'welcome.html',
+    html_class='welcome',
+    country_dbs=country_dbs,
+    next_url=util.generate_next_url(country_cursor),
+    api_url=flask.url_for('api.country.list'),
+  )
 
 
 ###############################################################################

@@ -227,5 +227,6 @@ def parse_tags(tags, separator=None):
 # Lambdas
 ###############################################################################
 strip_filter = lambda x: x.strip() if x else ''
+upper_filter = lambda x: x.strip().upper() if x else ''
 email_filter = lambda x: x.lower().strip() if x else ''
 sort_filter = lambda x: sorted(x) if x else []

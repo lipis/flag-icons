@@ -82,13 +82,13 @@ class CountryUpdateAdminForm(wtf.Form):
   )
   alpha_2 = wtforms.StringField(
     model.Country.alpha_2._verbose_name,
-    [wtforms.validators.required()],
-    filters=[util.strip_filter],
+    [wtforms.validators.required(), wtforms.validators.length(min=2, max=2)],
+    filters=[util.upper_filter],
   )
   alpha_3 = wtforms.StringField(
     model.Country.alpha_3._verbose_name,
     [wtforms.validators.required()],
-    filters=[util.strip_filter],
+    filters=[util.upper_filter],
   )
   iso = wtforms.BooleanField(
     model.Country.iso._verbose_name,

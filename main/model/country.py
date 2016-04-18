@@ -17,6 +17,13 @@ class Country(model.Base):
   alpha_3 = ndb.StringProperty(required=True, verbose_name=_(u'Alpha 3 Code'))
   iso = ndb.BooleanProperty(default=True, verbose_name=_(u'ISO'))
 
+  @classmethod
+  def get_dbs(cls, order=None, **kwargs):
+    return super(Country, cls).get_dbs(
+      order=order or util.param('order') or 'name',
+      **kwargs
+    )
+
   FIELDS = {
     'name': fields.String,
     'capital': fields.String,
