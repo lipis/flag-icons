@@ -3,6 +3,7 @@
   "dependencies": {
     "bootstrap": "~3",
     "flag-icon-css": "~1",
+    "bootswatch": "~3",
     "font-awesome": "~4",
     "jquery": "~2",
     "moment": "~2"
@@ -13,6 +14,9 @@
     },
     "flag-icon-css": {
       "main": ["less/*", "flags/**"]
+    },
+    "bootswatch": {
+      "main": ["**/*.less"]
     },
     "font-awesome": {
       "main": ["less/*", "fonts/*"]
