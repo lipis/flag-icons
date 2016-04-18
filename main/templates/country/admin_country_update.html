@@ -1,0 +1,26 @@
+# extends 'admin/admin_base.html'
+# import 'macro/forms.html' as forms
+# import 'macro/utils.html' as utils
+
+
+# block admin_content
+  <div class="row">
+    <div class="col-sm-6">
+      <form method="POST" action="." novalidate>
+        {{form.csrf_token}}
+        {{forms.text_field(form.name, autofocus=True)}}
+        {{forms.text_field(form.capital)}}
+        {{forms.text_field(form.alpha_2)}}
+        {{forms.text_field(form.alpha_3)}}
+        {{forms.checkbox_field(form.iso)}}
+        <button type="submit" class="btn btn-primary btn-block btn-loading" {{forms.data_loading_text()}}>
+          # if country_db.key
+            {{_('Update')}}
+          # else
+            {{_('Create')}}
+          # endif
+        </button>
+      </form>
+    </div>
+  </div>
+# endblock

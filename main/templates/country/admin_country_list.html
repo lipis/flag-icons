@@ -1,0 +1,58 @@
+# extends 'admin/admin_base.html'
+# import 'macro/utils.html' as utils
+
+# block head
+  {{utils.prefetch_link(next_url)}}
+# endblock
+
+# block admin_content
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <a class="btn btn-sm btn-primary" href="{{url_for('admin_country_update')}}">
+        <span class="fa fa-plus"></span> New Country
+      </a>
+    </div>
+  </div>
+
+  <div class="table-responsive {{'hide' if not country_dbs|count}}">
+    <table class="table table-striped table-bordered table-hover">
+      <thead>
+        <tr class="text-nowrap">
+          <th class="col-xs-1">{{utils.order_by_link('name', _('Name'))}}</th>
+          <th class="col-xs-1">{{utils.order_by_link('capital', _('Capital'))}}</th>
+          <th class="col-xs-1">{{utils.order_by_link('alpha_2', _('Alpha-2 Code'))}}</th>
+          <th class="col-xs-1">{{utils.order_by_link('alpha_3', _('Alpha 3 Code'))}}</th>
+          <th class="col-xs-1 text-center">{{utils.order_by_link('iso', _('ISO'))}}</th>
+          <th class="col-xs-1">{{utils.order_by_link('modified', 'Modified')}}<br><small>{{utils.order_by_link('created', 'Created')}}</small></th>
+        </tr>
+      </thead>
+      <tbody>
+        # for country_db in country_dbs
+          <tr class="row-link" id="{{country_db.key.urlsafe()}}" data-href="{{url_for('admin_country_update', country_id=country_db.key.id())}}">
+            <td>{{country_db.name}}</td>
+            <td>{{country_db.capital}}</td>
+            <td>{{country_db.alpha_2}}</td>
+            <td>{{country_db.alpha_3}}</td>
+            <td class="text-center">
+              # if country_db.iso
+                <span class="fa fa-fw fa-check"></span>
+              # else
+                <span class="fa fa-fw fa-minus"></span>
+              # endif
+            </td>
+            <td>
+              <time datetime="{{country_db.modified}}">
+                {{country_db.modified.strftime('%Y-%m-%d')}}
+              </time><br>
+              <time class="text-success small" datetime="{{country_db.created}}">
+                {{country_db.created.strftime('%Y-%m-%d')}}
+              </time>
+            </td>
+          </tr>
+        # endfor
+      </tbody>
+    </table>
+  </div>
+
+  {{utils.next_link(next_url)}}
+# endblock

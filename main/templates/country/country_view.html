@@ -1,0 +1,41 @@
+# extends 'base.html'
+# import 'macro/forms.html' as forms
+# import 'macro/utils.html' as utils
+
+
+# block content
+  <div class="page-header">
+    <h1>
+      {{utils.back_link('Back', 'country_list')}}
+      {{title}}
+    </h1>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table table-bordered table-striped">
+        <tbody>
+          <tr>
+            <th class="text-nowrap col-xs-1">{{_('Name')}}</th>
+            <td class="col-xs-11">{{country_db.name}}</td>
+          </tr>
+          <tr>
+            <th class="text-nowrap col-xs-1">{{_('Capital')}}</th>
+            <td class="col-xs-11">{{country_db.capital}}</td>
+          </tr>
+          <tr>
+            <th class="text-nowrap col-xs-1">{{_('Alpha-2 Code')}}</th>
+            <td class="col-xs-11">{{country_db.alpha_2}}</td>
+          </tr>
+          <tr>
+            <th class="text-nowrap col-xs-1">{{_('Alpha 3 Code')}}</th>
+            <td class="col-xs-11">{{country_db.alpha_3}}</td>
+          </tr>
+          <tr>
+            <th class="text-nowrap col-xs-1">{{_('ISO')}}</th>
+            <td class="col-xs-11">{{country_db.iso}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+# endblock

@@ -9,3 +9,4 @@ from .letsencrypt import *
 from .profile import *
 from .test import *
 from .welcome import *
+from .country import *
