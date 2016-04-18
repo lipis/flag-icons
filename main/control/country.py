@@ -90,6 +90,11 @@ class CountryUpdateAdminForm(wtf.Form):
     [wtforms.validators.required()],
     filters=[util.upper_filter],
   )
+  continent = wtforms.SelectField(
+    model.Country.continent._verbose_name,
+    [wtforms.validators.required()],
+    choices=[(c, c) for c in model.Country.continent._choices],
+  )
   iso = wtforms.BooleanField(
     model.Country.iso._verbose_name,
     [wtforms.validators.optional()],

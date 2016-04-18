@@ -15,6 +15,7 @@ class Country(model.Base):
   capital = ndb.StringProperty(required=True, verbose_name=_(u'Capital'))
   alpha_2 = ndb.StringProperty(required=True, verbose_name=_(u'Alpha-2 Code'))
   alpha_3 = ndb.StringProperty(required=True, verbose_name=_(u'Alpha 3 Code'))
+  continent = ndb.StringProperty(required=True, choices=['Africa', 'Asia', 'Australia', 'Europe', 'North America', 'South America'], verbose_name=_(u'Continent'))
   iso = ndb.BooleanProperty(default=True, verbose_name=_(u'ISO'))
 
   @classmethod
@@ -29,6 +30,7 @@ class Country(model.Base):
     'capital': fields.String,
     'alpha_2': fields.String,
     'alpha_3': fields.String,
+    'continent': fields.String,
     'iso': fields.Boolean,
   }
 

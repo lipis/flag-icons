@@ -22,6 +22,7 @@
           <th class="col-xs-1">{{utils.order_by_link('capital', _('Capital'))}}</th>
           <th class="col-xs-1">{{utils.order_by_link('alpha_2', _('Alpha-2 Code'))}}</th>
           <th class="col-xs-1">{{utils.order_by_link('alpha_3', _('Alpha 3 Code'))}}</th>
+          <th class="col-xs-1">{{utils.order_by_link('continent', _('Continent'))}}</th>
           <th class="col-xs-1 text-center">{{utils.order_by_link('iso', _('ISO'))}}</th>
           <th class="col-xs-1">{{utils.order_by_link('modified', 'Modified')}}<br><small>{{utils.order_by_link('created', 'Created')}}</small></th>
         </tr>
@@ -33,6 +34,7 @@
             <td>{{country_db.capital}}</td>
             <td>{{country_db.alpha_2}}</td>
             <td>{{country_db.alpha_3}}</td>
+            <td>{{country_db.continent}}</td>
             <td class="text-center">
               # if country_db.iso
                 <span class="fa fa-fw fa-check"></span>
