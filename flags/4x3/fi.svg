@@ -1,15 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" version="1">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".67" d="M-19.45 0h682.67v512H-19.45z"/>
-    </clipPath>
-  </defs>
-  <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(18.23) scale(.94)" stroke-width="1pt">
-    <path fill="#fff" d="M-105.62 325.66h249.35V512h-249.35z"/>
-    <path fill="#0062da" d="M143.57 0h149.94v512H143.57z"/>
-    <path fill="#0062da" d="M-105.62 186.18h897.67v139.64h-897.67z"/>
-    <path fill="#fff" d="M-105.62.003h249.35v186.34h-249.35zM293.35 325.66h498.7V512h-498.7zm0-325.658h498.7v186.34h-498.7zM-105.62 325.66h249.35V512h-249.35z"/>
-    <path fill="#0062da" d="M143.57 0h149.94v512H143.57z"/>
-    <path fill="#fff" d="M-105.62.003h249.35v186.34h-249.35zM293.35 325.66h498.7V512h-498.7zm0-325.658h498.7v186.34h-498.7z"/>
-  </g>
+  <path fill="#fff" d="M0 0h640v480H0z"/>
+  <path fill="#003580" d="M0 174.545h640v130.909H0z"/>
+  <path fill="#003580" d="M175.455 0h130.909v480H175.455z"/>
 </svg>
