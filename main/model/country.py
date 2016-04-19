@@ -6,17 +6,36 @@ from flask.ext.babel import lazy_gettext as _
 from google.appengine.ext import ndb
 
 from api import fields
+
+import config
 import model
 import util
 
+CONTINENTS = [
+  'Africa',
+  'Antarctica',
+  'Asia',
+  'Europe',
+  'North America',
+  'Oceania',
+  'South America',
+]
 
 class Country(model.Base):
   name = ndb.StringProperty(required=True, verbose_name=_(u'Name'))
   capital = ndb.StringProperty(required=True, verbose_name=_(u'Capital'))
   alpha_2 = ndb.StringProperty(required=True, verbose_name=_(u'Alpha-2 Code'))
   alpha_3 = ndb.StringProperty(required=True, verbose_name=_(u'Alpha 3 Code'))
-  continent = ndb.StringProperty(required=True, choices=['Africa', 'Asia', 'Australia', 'Europe', 'North America', 'South America'], verbose_name=_(u'Continent'))
+  continent = ndb.StringProperty(required=False, choices=CONTINENTS, verbose_name=_(u'Continent'))
   iso = ndb.BooleanProperty(default=True, verbose_name=_(u'ISO'))
+
+  @ndb.ComputedProperty
+  def flag_4x3(self):
+    return 'https://lipis.github.io/flag-icon-css/flags/4x3/%s.svg' % self.alpha_2.lower()
+
+  @ndb.ComputedProperty
+  def flag_1x1(self):
+    return 'https://lipis.github.io/flag-icon-css/flags/1x1/%s.svg' % self.alpha_2.lower()
 
   @classmethod
   def get_dbs(cls, order=None, **kwargs):

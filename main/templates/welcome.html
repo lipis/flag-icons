@@ -12,16 +12,23 @@
 # endblock
 
 # block content
+  <ul class="nav-continents nav nav-tabs nav-justified">
+    # set current = request.args.get('continent')
+    <li class="{{'active' if not current}}"><a href="{{url_for('welcome')}}">World</a></li>
+    # for continent in config.CONTINENTS
+      <li class="{{'active' if current == continent}}"><a href="{{url_for('welcome', continent=continent)}}">{{continent}}</a></li>
+    # endfor
+  </ul>
   <div class="row">
     # for country_db in country_dbs
       <div class="col-xs-6 col-sm-4 col-md-3">
-        <div class="country">
+        <div class="country" data-name="{{country_db.name}}" data-continent="{{country_db.continent}}">
           <div class="name">
             <span class="alpha-2">{{country_db.alpha_2}}</span>
             {{country_db.name}}
           </div>
           <div class="capital">{{country_db.capital}}</div>
-          <img class="flag" src="/p/ext/flag-icon-css/flags/4x3/{{country_db.alpha_2.lower()}}.svg" alt="{{country_db.name}} Flag">
+          <img class="flag" src="{{country_db.flag_4x3}}" alt="{{country_db.name}} Flag">
         </div>
       </div>
     # endfor

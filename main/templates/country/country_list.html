@@ -13,16 +13,18 @@
     <table class="table table-striped table-bordered table-hover">
       <thead>
         <tr class="text-nowrap">
-          <th class="col-xs-1">{{utils.order_by_link('name', _('Name'))}}</th>
-          <th class="col-xs-1">{{utils.order_by_link('capital', _('Capital'))}}</th>
+          <th>Flag</th>
+          <th class="col-xs-4">{{utils.order_by_link('name', _('Name'))}}</th>
+          <th class="col-xs-3">{{utils.order_by_link('capital', _('Capital'))}}</th>
           <th class="col-xs-1">{{utils.order_by_link('alpha_2', _('Alpha-2 Code'))}}</th>
           <th class="col-xs-1">{{utils.order_by_link('alpha_3', _('Alpha 3 Code'))}}</th>
-          <th class="col-xs-1">{{utils.order_by_link('continent', _('Continent'))}}</th>
+          <th class="col-xs-3">{{utils.order_by_link('continent', _('Continent'))}}</th>
         </tr>
       </thead>
       <tbody>
         # for country_db in country_dbs
           <tr class="row-link" id="{{country_db.key.urlsafe()}}" data-href="{{url_for('country_view', country_id=country_db.key.id())}}">
+            <td><img class="flag" src="{{country_db.flag_4x3}}" alt="{{country_db.name}} Flag"></td>
             <td>{{country_db.name}}</td>
             <td>{{country_db.capital}}</td>
             <td>{{country_db.alpha_2}}</td>

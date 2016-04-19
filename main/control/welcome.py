@@ -14,7 +14,10 @@ from main import app
 ###############################################################################
 @app.route('/')
 def welcome():
-  country_dbs, country_cursor = model.Country.get_dbs(limit=-1)
+  country_dbs, country_cursor = model.Country.get_dbs(
+    limit=-1,
+    continent=util.param('continent'),
+  )
   return flask.render_template(
     'welcome.html',
     html_class='welcome',
