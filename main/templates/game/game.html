@@ -14,12 +14,12 @@
   <ul class="nav-continents nav nav-tabs nav-justified">
     <li class="{{'active' if not continent}}"><a href="{{url_for('game', game=game)}}">World</a></li>
     # for continent_ in config.CONTINENTS
-      <li class="{{'active' if continent == continent_}} ellipsis"><a href="{{url_for('game', game=game, continent=continent_.replace(' ', '+'))}}">{{continent_}}</a></li>
+      <li class="{{'active' if continent == continent_}} ellipsis"><a href="{{url_for('game', game=game, continent=continent_.replace(' ', '+'))}}" rel="nofollow">{{continent_}}</a></li>
     # endfor
   </ul>
   <ul class="nav-continents nav nav-tabs nav-justified">
-    <li class="{{'active' if game== 'capital'}}"><a href="{{url_for('game', game='capital', continent=continent)}}">Capitals</a></li>
-    <li class="{{'active' if game== 'country'}}"><a href="{{url_for('game', game='country', continent=continent)}}">Countries</a></li>
+    <li class="{{'active' if game== 'capital'}}"><a href="{{url_for('game', game='capital', continent=continent)}}" rel="nofollow">Capitals</a></li>
+    <li class="{{'active' if game== 'country'}}"><a href="{{url_for('game', game='country', continent=continent)}}" rel="nofollow">Countries</a></li>
   </ul>
   <div class="text-center">
     <div class="anchor" id="question"></div>
@@ -31,7 +31,9 @@
         <div class="row">
           <div class="col-md-offset-4 col-md-4">
             # for answer_db in answer_dbs
-              <a class="btn btn-reddit btn-block btn-loading" data-loading-text="Please wait..." href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}">{{answer_db.capital}}</a>
+              <a class="btn btn-reddit btn-block btn-loading" data-loading-text="Please wait..." href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}" rel="nofollow">
+                {{answer_db.capital}}
+              </a>
             # endfor
           </div>
         </div>
@@ -40,7 +42,7 @@
         <div class="row">
           <div class="col-md-offset-4 col-md-4">
             # for answer_db in answer_dbs
-              <a class="btn btn-reddit btn-block btn-loading" data-loading-text="Please wait..." href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}">
+              <a class="btn btn-reddit btn-block btn-loading" data-loading-text="Please wait..." href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}" rel="nofollow">
                 <span class="flag-icon pull-left flag-icon-{{answer_db.alpha_2.lower()}}"></span>
                 {{answer_db.name}}
               </a>
