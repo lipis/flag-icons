@@ -26,9 +26,9 @@
     # include 'bit/notifications.html'
     # if question_db
       # if game == 'capital'
-        <h2>What's the capital of {{question_db.name}}?</h2>
+        <h2>What's the capital of <strong>{{question_db.name}}</strong>?</h2>
         <img class="flag-question" src="{{question_db.flag_4x3}}">
-        <div class="col">
+        <div class="row">
           <div class="col-md-offset-4 col-md-4">
             # for answer_db in answer_dbs
               <a class="btn btn-reddit btn-block" href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}">{{answer_db.capital}}</a>
@@ -36,8 +36,8 @@
           </div>
         </div>
       # elif game == 'country'
-        <h2>{{question_db.capital}} is the capital of</h2>
-        <div class="col">
+        <h2><strong>{{question_db.capital}}</strong> is the capital of</h2>
+        <div class="row">
           <div class="col-md-offset-4 col-md-4">
             # for answer_db in answer_dbs
               <a class="btn btn-reddit btn-block" href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}">
@@ -51,5 +51,17 @@
     # else
       <div class="alert alert-warning">No enough answers.. sorry!</div>
     # endif
+    <div class="row">
+      <div class="col-md-offset-4 col-md-4">
+        <div class="row">
+          <div class="col-xs-6">
+            <h3 class="text-success">Streak: <strong>{{streak}}</strong></h3>
+          </div>
+          <div class="col-xs-6">
+            <h3 class="text-primary">Record: <strong>{{top}}</strong></h3>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 # endblock
