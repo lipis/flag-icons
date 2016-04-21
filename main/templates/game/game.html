@@ -31,7 +31,7 @@
         <div class="col">
           <div class="col-md-offset-4 col-md-4">
             # for answer_db in answer_dbs
-              <a class="btn btn-reddit btn-block" href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}">{{answer_db.capital}}</a>
+              <a class="btn btn-reddit btn-block btn-loading" data-loading-text="Please wait..." href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}">{{answer_db.capital}}</a>
             # endfor
           </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="col">
           <div class="col-md-offset-4 col-md-4">
             # for answer_db in answer_dbs
-              <a class="btn btn-reddit btn-block" href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}">
+              <a class="btn btn-reddit btn-block btn-loading" data-loading-text="Please wait..." href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}">
                 <span class="flag-icon pull-left flag-icon-{{answer_db.alpha_2.lower()}}"></span>
                 {{answer_db.name}}
               </a>
