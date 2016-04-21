@@ -28,11 +28,22 @@ def game(game='capital', continent=None):
   random.shuffle(country_dbs)
   question_db = None
   answer_dbs = None
-  if len(country_dbs) > 3:
-    question_db = country_dbs[0]
-    answer_dbs = country_dbs[0:4]
-    random.shuffle(answer_dbs)
+  answers = 4
+  streak = int(flask.request.cookies.get('%s-%s-streak' % (continent, game), 0))
 
+  if streak > 8:
+    answers = 5
+  if streak > 16:
+    answers = 6
+  if streak > 32:
+    answers = 7
+  if streak > 48:
+    answers = 8
+
+  if len(country_dbs) >= answers:
+    question_db = country_dbs[0]
+    answer_dbs = country_dbs[0:answers]
+    random.shuffle(answer_dbs)
   return flask.render_template(
     'game/game.html',
     html_class='game',
@@ -41,7 +52,7 @@ def game(game='capital', continent=None):
     country_dbs=country_dbs,
     question_db=question_db,
     answer_dbs=answer_dbs,
-    streak=int(flask.request.cookies.get('%s-%s-streak' % (continent, game), 0)),
+    streak=streak,
     top=int(flask.request.cookies.get('%s-%s-top' % (continent, game), 0)),
   )
 
