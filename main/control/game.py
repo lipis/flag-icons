@@ -41,8 +41,8 @@ def game(game='capital', continent=None):
     country_dbs=country_dbs,
     question_db=question_db,
     answer_dbs=answer_dbs,
-    streak=int(flask.request.cookies.get('streak', 0)),
-    top=int(flask.request.cookies.get('top', 0)),
+    streak=int(flask.request.cookies.get('%s-%s-streak' % (continent, game), 0)),
+    top=int(flask.request.cookies.get('%s-%s-top' % (continent, game), 0)),
   )
 
 
@@ -55,8 +55,8 @@ def game_answer(game, country_id, answer_key, continent=None):
   if continent and continent.replace('+', ' ') not in config.CONTINENTS:
     flask.abort(404)
 
-  streak = int(flask.request.cookies.get('streak', 0))
-  top = int(flask.request.cookies.get('top', 0))
+  streak = int(flask.request.cookies.get('%s-%s-streak' % (continent, game), 0))
+  top = int(flask.request.cookies.get('%s-%s-top' % (continent, game), 0))
 
   country_db = model.Country.get_by_id(country_id)
   if country_db and country_db.key.urlsafe() == answer_key:
@@ -72,6 +72,6 @@ def game_answer(game, country_id, answer_key, continent=None):
     streak = 0
 
   response = flask.make_response(flask.redirect('%s#question' % flask.url_for('game', game=game, continent=continent)))
-  response.set_cookie('streak', str(streak), max_age=60 * 60 * 24 * 365)
-  response.set_cookie('top', str(top), max_age=60 * 60 * 24 * 365)
+  response.set_cookie('%s-%s-streak' % (continent, game), str(streak), max_age=60 * 60 * 24 * 365)
+  response.set_cookie('%s-%s-top' % (continent, game), str(top), max_age=60 * 60 * 24 * 365)
   return response
