@@ -45,12 +45,14 @@ class Country(model.Base):
     )
 
   FIELDS = {
-    'name': fields.String,
-    'capital': fields.String,
     'alpha_2': fields.String,
     'alpha_3': fields.String,
+    'capital': fields.String,
     'continent': fields.String,
+    'flag_1x1': fields.String,
+    'flag_4x3': fields.String,
     'iso': fields.Boolean,
+    'name': fields.String,
   }
 
   FIELDS.update(model.Base.FIELDS)

@@ -118,7 +118,7 @@ def admin_country_update(country_id=0):
   if form.validate_on_submit():
     form.populate_obj(country_db)
     country_db.put()
-    return flask.redirect(flask.url_for('admin_country_list', order='-modified'))
+    return flask.redirect(flask.url_for('country_list', order='-modified'))
 
   return flask.render_template(
     'country/admin_country_update.html',
