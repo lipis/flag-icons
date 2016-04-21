@@ -5,9 +5,15 @@
     <div class="container">
       <h1>{{config.CONFIG_DB.brand_name}}</h1>
       <p>A collection of all country flags in SVG — plus the CSS for easier integration.</p>
-      <a href="https://github.com/lipis/flag-icon-css" class="btn btn-default btn-lg" onclick="_gaq.push(['_trackEvent', 'exit', 'header', 'GitHub']);"><span class="fa fa-github"></span> View on GitHub</a>
-      <a href="https://github.com/lipis/flag-icon-css/archive/master.zip" class="btn btn-default btn-lg" onclick="_gaq.push(['_trackEvent', 'exit', 'download', 'flag-icon-css.zip']);"><span class="fa fa-download"></span> Download</a>
-      <a href="{{url_for('game', game='capital')}}" class="btn btn-primary btn-lg" onclick="_gaq.push(['_trackEvent', 'exit', 'download', 'flag-icon-css.zip']);"><span class="fa fa-gamepad"></span> Play a Quiz Game</a>
+      <a class="btn btn-outline btn-lg" href="https://github.com/lipis/flag-icon-css" onclick="_gaq.push(['_trackEvent', 'exit', 'header', 'GitHub']);"><span class="fa fa-github"></span> View on GitHub</a>
+      <a class="btn btn-outline btn-primary btn-lg" href="{{url_for('game', game='capital')}}" onclick="_gaq.push(['_trackEvent', 'quiz', 'play', 'welcome']);"><span class="fa fa-gamepad"></span> Play a Quiz Game</a>
+      <a class="btn btn-outline btn-lg" href="https://github.com/lipis/flag-icon-css/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'exit', 'download', 'flag-icon-css.zip']);"><span class="fa fa-download"></span> Download</a>
+      <ul class="jumbotron-links">
+        <li><a href="https://lipis.github.io/bootstrap-social" onclick="_gaq.push(['_trackEvent', 'exit', 'header', 'flag-icon-css']);"><span class="fa fa-facebook"></span> bootstrap-social</a></li>
+      </ul>
+    </div>
+    <div class="bottom">
+      <iframe src="https://ghbtns.com/github-btn.html?user=lipis&amp;repo=flag-icon-css&amp;type=watch&amp;count=true&amp;size=large" class="social-share"></iframe>
     </div>
   </div>
 # endblock

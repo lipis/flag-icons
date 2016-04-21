@@ -1,13 +1,17 @@
 <footer class="footer">
   <div class="container">
-    # if current_user.admin
-      <p>
-        {{_('Version')}}: {{config.CURRENT_VERSION_NAME}}
-        (<time datetime="{{config.CURRENT_VERSION_DATE}}">{{config.CURRENT_VERSION_DATE}}</time>)
-      </p>
-    # endif
+    <ul class="links">
+      <li><a href="https://lip.is" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Lipis']);">Lipis</a></li>
+      <li><a href="https://github.com/lipis" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'GitHub']);"><span class="fa fa-github"></span> GitHub</a></li>
+      <li><a href="https://twitter.com/lipis" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Twitter']);"><span class="fa fa-twitter"></span> Twitter</a></li>
+      <li><a href="https://google.com/+PanayiotisLipiridis" onclick="_gaq.push(['_trackEvent', 'exit', 'footer', 'Google+']);"><span class="fa fa-google-plus"></span> Google+</a></li>
+    </ul>
     <p>
       &copy; 2016 - {{config.CONFIG_DB.brand_name}}
+      # if current_user.admin
+        | {{_('Version')}}: {{config.CURRENT_VERSION_NAME}}
+        (<time datetime="{{config.CURRENT_VERSION_DATE}}">{{config.CURRENT_VERSION_DATE}}</time>)
+      # endif
       # if api_url
         | <a class='api-url' href="{{api_url}}{% if request.query_string %}?{{request.query_string}}{% endif %}" target="_blank" data-api-url="{{api_url}}">{{_('View in JSON')}}</a>
       # endif
