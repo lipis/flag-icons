@@ -9,4 +9,5 @@ from .letsencrypt import *
 from .profile import *
 from .test import *
 from .welcome import *
+from .game import *
 from .country import *
