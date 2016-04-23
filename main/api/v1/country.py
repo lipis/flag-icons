@@ -8,6 +8,7 @@ import flask
 
 from api import helpers
 import auth
+import cache
 import model
 import util
 
@@ -17,8 +18,8 @@ from main import api_v1
 @api_v1.resource('/country/', endpoint='api.country.list')
 class CountryListAPI(restful.Resource):
   def get(self):
-    country_dbs, country_cursor = model.Country.get_dbs()
-    return helpers.make_response(country_dbs, model.Country.FIELDS, country_cursor)
+    country_dbs = cache.get_country_dbs()
+    return helpers.make_response(country_dbs, model.Country.FIELDS)
 
 
 @api_v1.resource('/country/<string:country_key>/', endpoint='api.country')

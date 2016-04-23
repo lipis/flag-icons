@@ -6,6 +6,7 @@ import flask
 import wtforms
 
 import auth
+import cache
 import config
 import model
 import util
@@ -118,6 +119,7 @@ def admin_country_update(country_id=0):
   if form.validate_on_submit():
     form.populate_obj(country_db)
     country_db.put()
+    cache.delete_country_dbs()
     return flask.redirect(flask.url_for('country_list', order='-modified'))
 
   return flask.render_template(

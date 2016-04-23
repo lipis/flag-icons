@@ -2,6 +2,7 @@
 
 import flask
 
+import cache
 import config
 import model
 import util
@@ -14,14 +15,11 @@ from main import app
 ###############################################################################
 @app.route('/')
 def welcome():
-  country_dbs, country_cursor = model.Country.get_dbs(
-    continent=util.param('continent'),
-  )
+  country_dbs = cache.get_country_dbs(util.param('continent'))
   return flask.render_template(
     'welcome.html',
     html_class='welcome',
     country_dbs=country_dbs,
-    next_url=util.generate_next_url(country_cursor),
     api_url=flask.url_for('api.country.list'),
   )
 

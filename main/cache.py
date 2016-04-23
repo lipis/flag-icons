@@ -4,6 +4,7 @@ from google.appengine.api import memcache
 import flask
 
 import config
+import model
 
 
 ###############################################################################
@@ -39,3 +40,26 @@ def get_auth_attempt():
 
 def bump_auth_attempt():
   bump_counter(get_auth_attempt_key(), limit=config.SIGNIN_RETRY_LIMIT)
+
+
+###############################################################################
+# Country Stuff
+###############################################################################
+def get_country_dbs(continent=None):
+  key = 'country_dbs_%s' % continent if continent else 'country_dbs'
+  country_dbs = memcache.get(key)
+  if not country_dbs:
+    country_dbs, country_cursor = model.Country.get_dbs(
+      limit=-1,
+      order='name',
+      continent=continent,
+    )
+    if country_dbs:
+      memcache.set(key, country_dbs)
+  return country_dbs
+
+
+def delete_country_dbs():
+  memcache.delete('country_dbs')
+  for continent in config.CONTINENTS:
+    memcache.delete('country_dbs_%s' % continent)

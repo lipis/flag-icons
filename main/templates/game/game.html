@@ -12,14 +12,17 @@
 
 # block content
   <ul class="nav-continents nav nav-tabs nav-justified">
-    <li class="{{'active' if not continent}}"><a href="{{url_for('game', game=game)}}">World</a></li>
+    <li class="{{'active' if not continent}}"><a href="{{url_for('game', game=game)}}#game">World</a></li>
     # for continent_ in config.CONTINENTS
-      <li class="{{'active' if continent == continent_}} ellipsis"><a href="{{url_for('game', game=game, continent=continent_.replace(' ', '+'))}}" rel="nofollow">{{continent_}}</a></li>
+      <li class="{{'active' if continent == continent_}} ellipsis">
+        <a href="{{url_for('game', game=game, continent=continent_.replace(' ', '+'))}}#game" rel="nofollow">{{continent_}}</a>
+      </li>
     # endfor
   </ul>
+  <div class="anchor" id="game"></div>
   <ul class="nav-continents nav nav-tabs nav-justified">
-    <li class="{{'active' if game== 'capital'}}"><a href="{{url_for('game', game='capital', continent=continent)}}" rel="nofollow">Capitals</a></li>
-    <li class="{{'active' if game== 'country'}}"><a href="{{url_for('game', game='country', continent=continent)}}" rel="nofollow">Countries</a></li>
+    <li class="{{'active' if game== 'capital'}}"><a href="{{url_for('game', game='capital', continent=continent)}}#question" rel="nofollow">Capitals</a></li>
+    <li class="{{'active' if game== 'country'}}"><a href="{{url_for('game', game='country', continent=continent)}}#question" rel="nofollow">Countries</a></li>
   </ul>
   <div class="text-center">
     <div class="anchor" id="question"></div>

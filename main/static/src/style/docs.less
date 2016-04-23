@@ -110,6 +110,9 @@
   border-color: #fff;
   border-color: rgba(255,255,255,.5);
   transition: all .1s ease-in-out;
+  &.btn-main {
+    background-color: fade(#fff, 24%);
+  }
   &:hover,
   &:active {
     color: @color-from;
@@ -117,9 +120,6 @@
     border-color: #fff;
   }
 
-  &.btn-primary {
-    background-color: fade(#fff, 24%);
-  }
 }
 
 footer {

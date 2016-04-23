@@ -3,6 +3,7 @@
 import flask
 import random
 
+import cache
 import config
 import model
 import util
@@ -24,7 +25,7 @@ def game(game='capital', continent=None):
   if continent and continent.replace('+', ' ') not in config.CONTINENTS:
     flask.abort(404)
 
-  country_dbs, country_cursor = model.Country.get_dbs(continent=continent)
+  country_dbs = cache.get_country_dbs(continent)
   random.shuffle(country_dbs)
   question_db = None
   answer_dbs = None
@@ -44,9 +45,19 @@ def game(game='capital', continent=None):
     question_db = country_dbs[0]
     answer_dbs = country_dbs[0:answers]
     random.shuffle(answer_dbs)
+
+  title = ''
+  if game == 'capital':
+    title = 'Capitals of '
+  else:
+    title = 'Countries of '
+
+  title += 'the World' if not continent else continent
+
   return flask.render_template(
     'game/game.html',
     html_class='game',
+    title=title,
     game=game,
     continent=continent,
     country_dbs=country_dbs,

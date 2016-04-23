@@ -6,7 +6,7 @@
       <h1>{{config.CONFIG_DB.brand_name}}</h1>
       <p>A collection of all country flags in SVG — plus the CSS for easier integration.</p>
       <a class="btn btn-outline btn-lg" href="https://github.com/lipis/flag-icon-css" onclick="_gaq.push(['_trackEvent', 'exit', 'header', 'GitHub']);"><span class="fa fa-github"></span> View on GitHub</a>
-      <a class="btn btn-outline btn-primary btn-lg" href="{{url_for('game', game='capital')}}" onclick="_gaq.push(['_trackEvent', 'quiz', 'play', 'welcome']);"><span class="fa fa-gamepad"></span> Play a Quiz Game</a>
+      <a class="btn btn-outline btn-main btn-lg" href="{{url_for('game', game='capital')}}" onclick="_gaq.push(['_trackEvent', 'quiz', 'play', 'welcome']);"><span class="fa fa-gamepad"></span> Play a Quiz Game</a>
       <a class="btn btn-outline btn-lg" href="https://github.com/lipis/flag-icon-css/archive/master.zip" onclick="_gaq.push(['_trackEvent', 'exit', 'download', 'flag-icon-css.zip']);"><span class="fa fa-download"></span> Download</a>
       <ul class="jumbotron-links">
         <li><a href="https://lipis.github.io/bootstrap-social" onclick="_gaq.push(['_trackEvent', 'exit', 'header', 'flag-icon-css']);"><span class="fa fa-facebook"></span> bootstrap-social</a></li>
@@ -26,6 +26,7 @@
       <li class="{{'active' if current == continent}}"><a href="{{url_for('welcome', continent=continent)}}">{{continent}}</a></li>
     # endfor
   </ul>
+  <p class="small text-muted text-right">Bunch of flags/countries are still missing from this list..</p>
   <div class="row">
     # for country_db in country_dbs
       <div class="col-xs-6 col-sm-4 col-md-3 col-lg-2">
