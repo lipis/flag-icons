@@ -54,6 +54,7 @@ def game(game='capital', continent=None):
 
   title += 'the World' if not continent else continent
 
+  util.track_event_to_ga('quiz', 'view', '%s - %s' % (game, continent or 'World'), 1)
   return flask.render_template(
     'game/game.html',
     html_class='game',
@@ -82,16 +83,18 @@ def game_answer(game, country_id, answer_key, continent=None):
 
   country_db = model.Country.get_by_id(country_id)
   if country_db and country_db.key.urlsafe() == answer_key:
-    flask.flash('Bravo! The capital of %s is %s.' % (country_db.name, country_db.capital), category='success')
+    flask.flash('Correct! The capital of %s is %s.' % (country_db.name, country_db.capital), category='success')
     streak += 1
     if top < streak:
       top = streak
+    util.track_event_to_ga('quiz', 'won', '%s - %s' % (game, continent or 'World'), 1)
   else:
     if game == 'capital':
       flask.flash('Wrong! The capital of %s is %s.' % (country_db.name, country_db.capital), category='danger')
     if game == 'country':
       flask.flash('Wrong! The capital %s belongs to %s.' % (country_db.capital, country_db.name), category='danger')
     streak = 0
+    util.track_event_to_ga('quiz', 'lost', '%s - %s' % (game, continent or 'World'), 1)
 
   response = flask.make_response(flask.redirect('%s#question' % flask.url_for('game', game=game, continent=continent)))
   response.set_cookie('%s-%s-streak' % (continent, game), str(streak), max_age=60 * 60 * 24 * 365)

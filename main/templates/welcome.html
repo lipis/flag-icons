@@ -8,22 +8,21 @@
       <a class="btn btn-outline btn-lg" href="https://github.com/lipis/flag-icon-css" onclick="ga('send', 'event', 'exit', 'header', 'GitHub');"><span class="fa fa-github"></span> View on GitHub</a>
       <a class="btn btn-outline btn-main btn-lg" href="{{url_for('game', game='capital')}}" onclick="ga('send', 'event', 'quiz', 'play', 'welcome');"><span class="fa fa-gamepad"></span> Play a Quiz Game</a>
       <a class="btn btn-outline btn-lg" href="https://github.com/lipis/flag-icon-css/archive/master.zip" onclick="ga('send', 'event', 'exit', 'download', 'flag-icon-css.zip');"><span class="fa fa-download"></span> Download</a>
-      <ul class="jumbotron-links">
-        <li><a href="https://lipis.github.io/bootstrap-social" onclick="ga('send', 'event', 'exit', 'header', 'flag-icon-css');"><span class="fa fa-facebook"></span> bootstrap-social</a></li>
-      </ul>
     </div>
     <div class="bottom">
       <iframe src="https://ghbtns.com/github-btn.html?user=lipis&amp;repo=flag-icon-css&amp;type=watch&amp;count=true&amp;size=large" class="social-share"></iframe>
+      <a href="https://twitter.com/share" class="social-share twitter-share-button" data-url="{{url_for('welcome', _external=True)}}"
+          data-text="A collection of all country flags in #SVG — plus the #CSS"
+          data-via="lipis" data-hashtags="flag-icon-css #flags" data-size="large">Tweet</a>
     </div>
   </div>
 # endblock
 
 # block content
   <ul class="nav-continents nav nav-tabs nav-justified">
-    # set current = request.args.get('continent')
-    <li class="{{'active' if not current}}"><a href="{{url_for('welcome')}}">World</a></li>
-    # for continent in config.CONTINENTS
-      <li class="{{'active' if current == continent}}"><a href="{{url_for('welcome', continent=continent)}}">{{continent}}</a></li>
+    <li class="{{'active' if not continent}}"><a href="{{url_for('welcome')}}">World</a></li>
+    # for continent_ in config.CONTINENTS
+      <li class="{{'active' if continent == continent_}}"><a href="{{url_for('welcome', continent=continent_)}}">{{continent_}}</a></li>
     # endfor
   </ul>
   <div class="row">

@@ -15,10 +15,15 @@ from main import app
 ###############################################################################
 @app.route('/')
 def welcome():
-  country_dbs = cache.get_country_dbs(util.param('continent'))
+  continent = util.param('continent')
+  if continent not in model.Country.continent._choices:
+    continent = None
+  country_dbs = cache.get_country_dbs(continent)
   return flask.render_template(
     'welcome.html',
     html_class='welcome',
+    title=continent,
+    continent=continent,
     country_dbs=country_dbs,
     api_url=flask.url_for('api.country.list'),
   )

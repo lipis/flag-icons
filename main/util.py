@@ -6,6 +6,7 @@ import re
 import unicodedata
 import urllib
 
+from google.appengine.api import urlfetch
 from google.appengine.datastore.datastore_query import Cursor
 from google.appengine.ext import ndb
 from webargs import fields as wf
@@ -221,6 +222,30 @@ def parse_tags(tags, separator=None):
   if not is_iterable(tags):
     tags = str(tags.strip()).split(separator or config.TAG_SEPARATOR)
   return filter(None, sorted(list(set(tags))))
+
+
+def track_event_to_ga(category, action, label=None, value=None):
+  if not config.CONFIG_DB.analytics_id:
+    return 0
+  form_fields = {
+      'v': '1',
+      'tid': config.CONFIG_DB.analytics_id,
+      'cid': hashlib.md5('%s%s' % (flask.request.remote_addr, config.USER_AGENT)).hexdigest(),
+      't': 'event',
+      'ec': category,
+      'ea': action,
+      'el': label,
+      'ev': value,
+    }
+  form_data = urllib.urlencode(form_fields)
+  result = urlfetch.fetch(
+      url='http://www.google-analytics.com/collect',
+      payload=form_data,
+      method=urlfetch.POST,
+      headers={'Content-Type': 'application/x-www-form-urlencoded'},
+    )
+
+  return result.status_code
 
 
 ###############################################################################

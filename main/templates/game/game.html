@@ -3,38 +3,55 @@
 # block header
   <div class="jumbotron text-center">
     <div class="container">
-      <h1>
-        Learn the World Quiz
-      </h1>
+      <h1>Learn the World Quiz</h1>
+      <p>Looking for a collection of all <a href="{{url_for('welcome')}}">country flags in SVG</a>?</p>
+    </div>
+    <div class="bottom">
+      <iframe src="https://ghbtns.com/github-btn.html?user=lipis&amp;repo=flag-icon-css&amp;type=watch&amp;count=true&amp;size=large" class="social-share"></iframe>
+      <a href="https://twitter.com/share" class="social-share twitter-share-button" data-url="{{url_for('game', game='capital', _external=True)}}"
+          data-text="Learn the capitals of the World by playing a game!"
+          data-via="lipis" data-hashtags="flag-icon-css #quiz #game" data-size="large">Tweet</a>
     </div>
   </div>
 # endblock
 
 # block content
-  <ul class="nav-continents nav nav-tabs nav-justified">
-    <li class="{{'active' if not continent}}"><a href="{{url_for('game', game=game)}}#game">World</a></li>
-    # for continent_ in config.CONTINENTS
-      <li class="{{'active' if continent == continent_}} ellipsis">
-        <a href="{{url_for('game', game=game, continent=continent_.replace(' ', '+'))}}#game" rel="nofollow">{{continent_}}</a>
-      </li>
-    # endfor
-  </ul>
-  <div class="anchor" id="game"></div>
-  <ul class="nav-continents nav nav-tabs nav-justified">
-    <li class="{{'active' if game== 'capital'}}"><a href="{{url_for('game', game='capital', continent=continent)}}#question" rel="nofollow">Capitals</a></li>
-    <li class="{{'active' if game== 'country'}}"><a href="{{url_for('game', game='country', continent=continent)}}#question" rel="nofollow">Countries</a></li>
-  </ul>
+  <div class="text-center">
+    <div class="btn-group">
+      <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="fa fa-globe"></span> Region: {{'World' if not continent else continent}} <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="{{url_for('game', game=game)}}#question">World</a></li>
+        <li role="separator" class="divider"></li>
+        # for continent_ in config.CONTINENTS
+          <li><a href="{{url_for('game', game=game, continent=continent_.replace(' ', '+'))}}#question" rel="nofollow">{{continent_}}</a></li>
+        # endfor
+      </ul>
+    </div>
+
+    <div class="btn-group">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="fa fa-gamepad"></span>  Find a {{game.title()}} <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a href="{{url_for('game', game='capital', continent=continent)}}#question" rel="nofollow">Find a Capital</a></li>
+        <li><a href="{{url_for('game', game='country', continent=continent)}}#question" rel="nofollow">Find a Country</a></li>
+      </ul>
+    </div>
+  </div>
+  <hr>
   <div class="text-center">
     <div class="anchor" id="question"></div>
     # include 'bit/notifications.html'
     # if question_db
       # if game == 'capital'
-        <h2>What's the capital of <strong>{{question_db.name}}</strong>?</h2>
+        <h2>What's the capital of <strong>{{question_db.name}}</strong>{{' (%s)' % question_db.continent if not continent else ''}}?</h2>
         <img class="flag-question" src="{{question_db.flag_4x3}}">
         <div class="row">
           <div class="col-md-offset-4 col-md-4">
             # for answer_db in answer_dbs
-              <a class="btn btn-reddit btn-block btn-loading" data-loading-text="Please wait..." href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}" rel="nofollow" onclick="ga('send', 'event', 'quiz', 'capital', 'answer', 1);">
+              <a class="btn btn-reddit btn-block btn-loading" data-loading-text="Please wait..." href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}" rel="nofollow">
                 {{answer_db.capital}}
               </a>
             # endfor
@@ -45,9 +62,9 @@
         <div class="row">
           <div class="col-md-offset-4 col-md-4">
             # for answer_db in answer_dbs
-              <a class="btn btn-reddit btn-block btn-loading" data-loading-text="Please wait..." href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}" rel="nofollow" onclick="ga('send', 'event', 'quiz', 'country', 'answer', 1);">
+              <a class="btn btn-reddit btn-block btn-loading" data-loading-text="Please wait..." href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}" rel="nofollow">
                 <span class="flag-icon pull-left flag-icon-{{answer_db.alpha_2.lower()}}"></span>
-                {{answer_db.name}}
+                {{answer_db.name}} <small class="text-muted">{{answer_db.continent if not continent}}</small>
               </a>
             # endfor
           </div>
@@ -67,6 +84,16 @@
           </div>
         </div>
       </div>
+    </div>
+    <hr>
+    <div class="social-buttons">
+      <a href="https://twitter.com/share" class="social-share twitter-share-button" data-url="{{url_for('game', game=game, _external=True)}}"
+          # if top >= 0
+            data-text="I found {{top}} random capitals of {{continent if continent else 'the World'}} in a row!"
+          # else
+            data-text="Learn the capitals of the World by playing a game!"
+          # endif
+          data-via="lipis" data-hashtags="flag-icon-css #quiz #game" data-size="large">Tweet</a>
     </div>
   </div>
 # endblock
