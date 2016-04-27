@@ -46,10 +46,16 @@ To watch for changes and live reload if served
 $ grunt
 ```
 
-To build `*.less` files
+To build `*.less` files (default preprocessor)
 
 ```bash
 $ grunt build
+```
+
+To build `*.scss` files
+
+```bash
+$ grunt build-sass
 ```
 
 To serve it on `localhost:8000`
@@ -61,7 +67,9 @@ $ grunt connect
 To have only specific countries in the css file, remove the ones that you don't
 need from the
 [`flag-icon-list.less`](https://github.com/lipis/flag-icon-css/blob/master/less/flag-icon-list.less)
-file and build it again.
+or
+[`flag-icon-list.scss`](https://github.com/lipis/flag-icon-css/blob/master/sass/flag-icon-list.scss)
+files and build it again.
 
 Credits
 -------
