@@ -46,7 +46,7 @@
     # include 'bit/notifications.html'
     # if question_db
       # if game == 'capital'
-        <h2>What's the capital of <strong>{{question_db.name}}</strong>{{' (%s)' % question_db.continent if not continent else ''}}?</h2>
+        <h2>What's the capital of <strong>{{question_db.name}}</strong>?</h2>
         <img class="flag-question" src="{{question_db.flag_4x3}}">
         <div class="row">
           <div class="col-md-offset-4 col-md-4">
@@ -64,7 +64,7 @@
             # for answer_db in answer_dbs
               <a class="btn btn-reddit btn-block btn-loading" data-loading-text="Please wait..." href="{{url_for('game_answer', game=game, continent=continent, country_id=question_db.key.id(), answer_key=answer_db.key.urlsafe())}}" rel="nofollow">
                 <span class="flag-icon pull-left flag-icon-{{answer_db.alpha_2.lower()}}"></span>
-                {{answer_db.name}} <small class="text-muted">{{answer_db.continent if not continent}}</small>
+                {{answer_db.name}}
               </a>
             # endfor
           </div>
