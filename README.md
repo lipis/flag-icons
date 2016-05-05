@@ -12,6 +12,16 @@ a detailed [tutorial][], the [how to][] section and more..
 The latest version is always accessible from
 [https://gae-init.appspot.com](https://gae-init.appspot.com)
 
+Requirements
+------------
+
+  - [Google App Engine SDK for Python][]
+  - [Node.js][], [pip][], [virtualenv][]
+  - [OS X][] or [Linux][] or [Windows][]
+
+Make sure you have all of the above or refer to the docs on how to
+[install the requirements](http://docs.gae-init.appspot.com/requirement/).
+
 Running the Development Environment
 -----------------------------------
 
@@ -75,16 +85,6 @@ Tech Stack
   - [OpenID][] sign in (Google, Facebook, Twitter and more)
   - [Python 2.7][], [pip][], [virtualenv][]
   - [Gulp][], [Bower][]
-
-Requirements
-------------
-
-  - [Google App Engine SDK for Python][]
-  - [Node.js][], [pip][], [virtualenv][]
-  - [OS X][] or [Linux][] or [Windows][]
-
-Make sure you have all of the above or refer to the docs on how to
-[install the requirements](http://docs.gae-init.appspot.com/requirement/).
 
 [bootstrap]: http://getbootstrap.com/
 [bower]: http://bower.io/
