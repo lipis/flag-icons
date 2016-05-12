@@ -3,13 +3,23 @@ gae-init-babel
 [![Slack Status](https://gae-init-slack.herokuapp.com/badge.svg)](https://gae-init-slack.herokuapp.com)
 
 > **gae-init-babel** is the easiest boilerplate to kick start new applications on Google
-App Engine using Flask, RESTful, Bootstrap, Babel and tons of other cool features.
+App Engine using Python, Flask, RESTful, Bootstrap, Babel and tons of other cool features.
 
 Read the [documentation][], where you can find a complete [feature list][],
 a detailed [tutorial][], the [how to][] section and more..
 
 The latest version is always accessible from
 [http://babel.gae-init.appspot.com](http://babel.gae-init.appspot.com)
+
+Requirements
+------------
+
+  - [Google App Engine SDK for Python][]
+  - [Node.js][], [pip][], [virtualenv][]
+  - [OS X][] or [Linux][] or [Windows][]
+
+Make sure you have all of the above or refer to the docs on how to
+[install the requirements](http://docs.gae-init.appspot.com/requirement/).
 
 Running the Development Environment
 -----------------------------------
@@ -76,10 +86,6 @@ Tech Stack
   - [Gulp][], [Bower][]
   - [Babel][]
 
-Requirements
-------------
-
-  - Being familiar with [gae-init][]
 
 Support
 -------
@@ -87,10 +93,6 @@ Support
 Due to lack of documentation if you run into any troubles, feel free to add an
 issue and we'll be happy to improve or provide more info.
 
-Author
-------
-
-[![Lipis flair on stackoverflow.com][lipisflair]][lipis]
 
 [babel]: http://babel.edgewall.org/wiki/Download
 [bootstrap]: http://getbootstrap.com/
@@ -103,14 +105,14 @@ Author
 [flask]: http://flask.pocoo.org/
 [font awesome]: http://fortawesome.github.com/Font-Awesome/
 [gae-init]: http://gae-init.appspot.com
+[google app engine sdk for python]: https://developers.google.com/appengine/downloads
 [google app engine]: https://developers.google.com/appengine/
 [gulp]: http://gulpjs.com
 [how to]: http://docs.gae-init.appspot.com/howto/
 [jinja2]: http://jinja.pocoo.org/docs/
-[jquery]: http://jquery.com/
+[jquery]: https://jquery.com/
 [less]: http://lesscss.org/
-[lipis]: http://stackoverflow.com/users/8418/lipis
-[lipisflair]: http://stackexchange.com/users/flair/5282.png
+[linux]: http://www.ubuntu.com
 [moment.js]: http://momentjs.com/
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
 [openid]: http://en.wikipedia.org/wiki/OpenID

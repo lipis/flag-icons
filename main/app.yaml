@@ -1,4 +1,4 @@
-module: default
+service: default
 instance_class: F1
 runtime: python27
 api_version: 1
