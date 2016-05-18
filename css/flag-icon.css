@@ -1524,6 +1524,12 @@
 .flag-icon-gb-eng.flag-icon-squared {
   background-image: url(../flags/1x1/gb-eng.svg);
 }
+.flag-icon-gb-nir {
+  background-image: url(../flags/4x3/gb-nir.svg);
+}
+.flag-icon-gb-nir.flag-icon-squared {
+  background-image: url(../flags/1x1/gb-nir.svg);
+}
 .flag-icon-gb-sct {
   background-image: url(../flags/4x3/gb-sct.svg);
 }
