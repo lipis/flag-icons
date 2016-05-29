@@ -2,8 +2,8 @@
 
 import urllib
 
-from flask.ext.restful import fields
-from flask.ext.restful.fields import *
+from flask_restful import fields
+from flask_restful.fields import *
 
 
 class BlobKey(fields.Raw):

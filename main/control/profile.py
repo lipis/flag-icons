@@ -1,7 +1,7 @@
 # coding: utf-8
 
-from flask.ext import wtf
 import flask
+import flask_wtf
 import wtforms
 
 import auth
@@ -32,7 +32,7 @@ def profile():
 ###############################################################################
 # Profile Update
 ###############################################################################
-class ProfileUpdateForm(wtf.Form):
+class ProfileUpdateForm(flask_wtf.Form):
   name = wtforms.StringField(
     model.User.name._verbose_name,
     [wtforms.validators.required()], filters=[util.strip_filter],
@@ -76,7 +76,7 @@ def profile_update():
 ###############################################################################
 # Profile Password
 ###############################################################################
-class ProfilePasswordForm(wtf.Form):
+class ProfilePasswordForm(flask_wtf.Form):
   old_password = wtforms.StringField(
     'Old Password', [wtforms.validators.required()],
   )

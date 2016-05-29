@@ -2,7 +2,7 @@
 
 import base64
 
-from flask.ext.oauthlib import client
+from flask_oauthlib import client
 from werkzeug import urls
 import flask
 
