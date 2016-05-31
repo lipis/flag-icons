@@ -10,6 +10,7 @@ import util
 from main import app
 
 TESTS = [
+  'pageres',
   'responsive',
   'grid',
   'heading',
