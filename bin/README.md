@@ -9,9 +9,7 @@ You can install the requirements easily by executing the following scripts using
 
 ###  [Cloud Shell](https://cloud.google.com/shell/)
 
-```bash
-curl https://raw.githubusercontent.com/gae-init/gae-init/master/bin/requirements_cloud_shell.sh | bash
-```
+All requirements are met, out of the box.
 
 ### Linux
 
