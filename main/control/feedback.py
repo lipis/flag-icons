@@ -1,7 +1,7 @@
 # coding: utf-8
 
-from flask.ext import wtf
 import flask
+import flask_wtf
 import wtforms
 
 import auth
@@ -12,7 +12,7 @@ import util
 from main import app
 
 
-class FeedbackForm(wtf.Form):
+class FeedbackForm(flask_wtf.Form):
   message = wtforms.TextAreaField(
     'Message',
     [wtforms.validators.required()], filters=[util.strip_filter],
@@ -22,7 +22,7 @@ class FeedbackForm(wtf.Form):
     [wtforms.validators.optional(), wtforms.validators.email()],
     filters=[util.email_filter],
   )
-  recaptcha = wtf.RecaptchaField()
+  recaptcha = flask_wtf.RecaptchaField()
 
 
 @app.route('/feedback/', methods=['GET', 'POST'])

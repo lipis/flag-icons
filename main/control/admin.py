@@ -1,7 +1,7 @@
 # coding: utf-8
 
-from flask.ext import wtf
 import flask
+import flask_wtf
 import wtforms
 
 import auth
@@ -38,7 +38,7 @@ def admin():
 ###############################################################################
 # Config Stuff
 ###############################################################################
-class ConfigUpdateForm(wtf.Form):
+class ConfigUpdateForm(flask_wtf.Form):
   analytics_id = wtforms.StringField(model.Config.analytics_id._verbose_name, filters=[util.strip_filter])
   announcement_html = wtforms.TextAreaField(model.Config.announcement_html._verbose_name, filters=[util.strip_filter])
   announcement_type = wtforms.SelectField(model.Config.announcement_type._verbose_name, choices=[(t, t.title()) for t in model.Config.announcement_type._choices])
@@ -85,7 +85,7 @@ def admin_config():
 ###############################################################################
 # Auth Stuff
 ###############################################################################
-class AuthUpdateForm(wtf.Form):
+class AuthUpdateForm(flask_wtf.Form):
   bitbucket_key = wtforms.StringField(model.Config.bitbucket_key._verbose_name, filters=[util.strip_filter])
   bitbucket_secret = wtforms.StringField(model.Config.bitbucket_secret._verbose_name, filters=[util.strip_filter])
   dropbox_app_key = wtforms.StringField(model.Config.dropbox_app_key._verbose_name, filters=[util.strip_filter])
