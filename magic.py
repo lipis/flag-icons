@@ -116,10 +116,6 @@ def create_file(project_url, destination):
       print_out('CREATE', destination)
 
 
-def get_project_url():
-  return '%s/api/v1/project/%s/' % (ARGS.remote_url, ARGS.project_id.split('/')[0])
-
-
 def get_project_db():
   url = '%s/api/v1/project/%s/' % (ARGS.remote_url, ARGS.project_id.split('/')[0])
   response = urllib2.urlopen(url)
