@@ -137,13 +137,15 @@ def sync_from_magic(project_db):
     models_body = response.read()
     model_dbs = json.loads(models_body)['result']
 
+  print_out('UPDATING')
   append_to(project_url, FILE_MODEL_INIT)
   append_to(project_url, FILE_CONTROL_INIT)
   append_to(project_url, FILE_API_INIT)
   insert_to(project_url, FILE_HEADER, '<ul class="nav navbar-nav">', 2)
   insert_to(project_url, FILE_ADMIN, "url_for('user_list'")
 
-  for model_db in model_dbs:
+  for index, model_db in enumerate(model_dbs):
+    print_out('%d of %d' % (index + 1, project_db['model_count']))
     name = model_db['variable_name']
     create_file(project_url, os.path.join(DIR_MODEL, '%s.py' % name))
     create_file(project_url, os.path.join(DIR_CONTROL, '%s.py' % name))
