@@ -78,7 +78,7 @@ def admin_config():
     title='App Config',
     html_class='admin-config',
     form=form,
-    api_url=flask.url_for('api.config'),
+    api_url=flask.url_for('api.admin.config'),
   )
 
 
@@ -129,5 +129,5 @@ def admin_auth():
     title='Auth Config',
     html_class='admin-auth',
     form=form,
-    api_url=flask.url_for('api.config'),
+    api_url=flask.url_for('api.admin.config'),
   )

@@ -12,7 +12,7 @@ import model
 from main import api_v1
 
 
-@api_v1.resource('/config/', endpoint='api.config')
+@api_v1.resource('/admin/config/', endpoint='api.admin.config')
 class ConfigAPI(flask_restful.Resource):
   @auth.admin_required
   def get(self):
