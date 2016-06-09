@@ -72,6 +72,7 @@ Deploying on Google App Engine
 $ gulp deploy
 $ gulp deploy --project=foo
 $ gulp deploy --project=foo --version=bar
+$ gulp deploy --project=foo --version=bar --no-promote
 ```
 
 Tech Stack
