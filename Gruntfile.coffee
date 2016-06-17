@@ -1,8 +1,24 @@
+flagIcon = require './flag-icon'
+
 module.exports = (grunt)->
   less = 'less'
   TARGET_DIR = 'css'
 
   grunt.initConfig
+    template:
+      options:
+        data: flagIcon
+      less:
+        files:
+          'less/flag-icon-list.less': 'less/flag-icon-list.less.tpl'
+          'less/flag-icon-more.less': 'less/flag-icon-more.less.tpl'
+      sass:
+        files:
+          'sass/_flag-icon-list.scss': 'sass/_flag-icon-list.scss.tpl'
+          'sass/_flag-icon-more.scss': 'sass/_flag-icon-more.scss.tpl'
+      html:
+        files:
+          'index.html': 'index.html.tpl'
     less:
       flag:
         src: 'less/flag-icon.less'
@@ -37,8 +53,9 @@ module.exports = (grunt)->
 
     grunt.loadNpmTasks 'grunt-contrib-less'
     grunt.loadNpmTasks 'grunt-contrib-cssmin'
+    grunt.loadNpmTasks 'grunt-template'
     grunt.loadNpmTasks 'grunt-contrib-watch'
     grunt.loadNpmTasks 'grunt-contrib-connect'
 
-    grunt.registerTask 'build',   ['less', 'cssmin']
+    grunt.registerTask 'build',   ['template', 'less', 'cssmin']
     grunt.registerTask 'default', ['build', 'watch']
