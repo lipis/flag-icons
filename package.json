@@ -9,13 +9,9 @@
   "scripts": {
     "install": "gulp init"
   },
-  "dependencies": {
-    "coffee-script": "~1",
-    "less": "~2",
-    "uglify-js": "~2"
-  },
   "devDependencies": {
     "bower": "~1",
+    "coffee-script": "~1",
     "del": "~2",
     "gulp": "~3",
     "gulp-autoprefixer": "~3",
@@ -36,8 +32,10 @@
     "gulp-uglify": "~1",
     "gulp-util": "~3",
     "gulp-zip": "~3",
+    "less": "~2",
     "main-bower-files": "~2",
     "require-dir": "~0",
+    "uglify-js": "~2",
     "yargs-parser": "~2"
   }
 }
