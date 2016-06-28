@@ -6,6 +6,10 @@ import sys
 if os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Engine'):
   sys.path.insert(0, 'lib.zip')
 else:
+  if os.name == 'nt':
+    os.name = None
+    sys.platform = ''
+
   import re
   from google.appengine.tools.devappserver2.python import stubs
 

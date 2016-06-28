@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from flask.ext.babel import gettext as __
+from flask_babel import gettext as __
 import flask
 
 import auth

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from flask.ext.babel import Babel
+from flask_babel import Babel
 import flask
 
 import config

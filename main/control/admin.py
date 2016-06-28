@@ -1,7 +1,8 @@
 # coding: utf-8
 
-from flask.ext.babel import lazy_gettext as _
+from flask_babel import lazy_gettext as _
 import flask
+import flask_wtf
 import wtforms
 
 import auth
@@ -80,7 +81,7 @@ def admin_config():
     title=_('App Config'),
     html_class='admin-config',
     form=form,
-    api_url=flask.url_for('api.config'),
+    api_url=flask.url_for('api.admin.config'),
   )
 
 
@@ -131,5 +132,5 @@ def admin_auth():
     title=_('Auth Config'),
     html_class='admin-auth',
     form=form,
-    api_url=flask.url_for('api.config'),
+    api_url=flask.url_for('api.admin.config'),
   )

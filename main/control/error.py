@@ -2,7 +2,7 @@
 
 import logging
 
-from flask.ext.babel import lazy_gettext as _
+from flask_babel import lazy_gettext as _
 import flask
 
 from api import helpers

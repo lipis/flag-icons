@@ -6,13 +6,13 @@ import functools
 import re
 
 from babel import localedata
-from flask.ext import login
-from flask.ext import wtf
-from flask.ext.babel import gettext as __
-from flask.ext.babel import lazy_gettext as _
-from flask.ext.oauthlib import client as oauth
+from flask_babel import gettext as __
+from flask_babel import lazy_gettext as _
+from flask_oauthlib import client as oauth
 from google.appengine.ext import ndb
 import flask
+import flask_login
+import flask_wtf
 import unidecode
 import wtforms
 
@@ -77,10 +77,10 @@ def set_locale(locale):
 ###############################################################################
 # Flask Login
 ###############################################################################
-login_manager = login.LoginManager()
+login_manager = flask_login.LoginManager()
 
 
-class AnonymousUser(login.AnonymousUserMixin):
+class AnonymousUser(flask_login.AnonymousUserMixin):
   id = 0
   admin = False
   name = 'Anonymous'
@@ -134,19 +134,19 @@ login_manager.init_app(app)
 
 
 def current_user_id():
-  return login.current_user.id
+  return flask_login.current_user.id
 
 
 def current_user_key():
-  return login.current_user.user_db.key if login.current_user.user_db else None
+  return flask_login.current_user.user_db.key if flask_login.current_user.user_db else None
 
 
 def current_user_db():
-  return login.current_user.user_db
+  return flask_login.current_user.user_db
 
 
 def is_logged_in():
-  return login.current_user.id != 0
+  return flask_login.current_user.id != 0
 
 
 ###############################################################################
@@ -245,7 +245,7 @@ class SignInForm(i18n.Form):
     _('Keep me signed in'),
     [wtforms.validators.optional()],
   )
-  recaptcha = wtf.RecaptchaField()
+  recaptcha = flask_wtf.RecaptchaField()
   next_url = wtforms.HiddenField()
 
 
@@ -291,7 +291,7 @@ class SignUpForm(i18n.Form):
     [wtforms.validators.required(), wtforms.validators.email()],
     filters=[util.email_filter],
   )
-  recaptcha = wtf.RecaptchaField()
+  recaptcha = flask_wtf.RecaptchaField()
 
 
 @app.route('/signup/', methods=['GET', 'POST'])
@@ -337,7 +337,7 @@ def signup():
 ###############################################################################
 @app.route('/signout/')
 def signout():
-  login.logout_user()
+  flask_login.logout_user()
   return flask.redirect(util.param('next') or flask.url_for('signin'))
 
 
@@ -460,7 +460,7 @@ def signin_user_db(user_db):
     'remember': False,
   })
   flask.session.pop('auth-params', None)
-  if login.login_user(flask_user_db, remember=auth_params['remember']):
+  if flask_login.login_user(flask_user_db, remember=auth_params['remember']):
     user_db.put_async()
     return flask.redirect(util.get_next_url(auth_params['next']))
   flask.flash(__('Sorry, but you could not sign in.'), category='danger')
