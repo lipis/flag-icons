@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/lipis/flag-icon-css"
+    "url": "http://github.com/unitedworldwrestling/flag-icon-css"
   },
   "devDependencies": {
     "grunt": "1.0.1",
