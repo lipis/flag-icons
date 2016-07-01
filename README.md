@@ -50,28 +50,7 @@ Development
 Run the `npm install` to install the dependencies after cloning the project and
 you'll be able to:
 
-To watch for changes and live reload if served
-
-```bash
-$ grunt
-```
-
-To build `*.less` files
-
-```bash
-$ grunt build
-```
-
-To serve it on `localhost:8000`
-
-```bash
-$ grunt connect
-```
-
-To have only specific countries in the css file, remove the ones that you don't
-need from the
-[`flag-icon-list.less`](https://github.com/lipis/flag-icon-css/blob/master/less/flag-icon-list.less)
-file and build it again.
+N/A
 
 Credits
 -------
