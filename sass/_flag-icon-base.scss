@@ -16,12 +16,16 @@
   &.flag-icon-squared {
     width: 1em;
   }
+  &.flag-icon-rounded {
+    width: 1em;
+    border-radius: 50%;
+  }
 }
 
 @mixin flag-icon($country) {
   .flag-icon-#{$country} {
     background-image: url(#{$flag-icon-css-path}#{$flag-icon-rect-path}/#{$country}.svg);
-    &.flag-icon-squared {
+    &.flag-icon-squared, &.flag-icon-rounded {
       background-image: url(#{$flag-icon-css-path}#{$flag-icon-square-path}/#{$country}.svg);
     }
   }
