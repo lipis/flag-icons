@@ -73,6 +73,9 @@ need from the
 [`flag-icon-list.less`](https://github.com/lipis/flag-icon-css/blob/master/less/flag-icon-list.less)
 file and build it again.
 
+To generate only the 4x3 variant of the flags set the `flag-icon-include-square-flags`
+variable to false and rebuild your less/sass files.
+
 Credits
 -------
 
