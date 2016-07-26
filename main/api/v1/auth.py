@@ -2,7 +2,7 @@
 
 from __future__ import absolute_import
 
-from flask.ext import restful
+import flask_restful
 from webargs.flaskparser import parser
 from webargs import fields as wf
 import flask
@@ -16,7 +16,7 @@ from main import api_v1
 
 
 @api_v1.resource('/auth/signin/', endpoint='api.auth.signin')
-class AuthAPI(restful.Resource):
+class AuthAPI(flask_restful.Resource):
   def post(self):
     args = parser.parse({
       'username': wf.Str(missing=None),

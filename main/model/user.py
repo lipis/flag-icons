@@ -4,7 +4,7 @@ from __future__ import absolute_import
 
 import hashlib
 
-from flask.ext.babel import lazy_gettext as _
+from flask_babel import lazy_gettext as _
 from google.appengine.ext import ndb
 from webargs.flaskparser import parser
 from webargs import fields as wf

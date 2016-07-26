@@ -1,8 +1,9 @@
 # coding: utf-8
 
-from flask.ext.babel import gettext as __
-from flask.ext.babel import lazy_gettext as _
+from flask_babel import gettext as __
+from flask_babel import lazy_gettext as _
 import flask
+import flask_wtf
 import wtforms
 
 import auth
