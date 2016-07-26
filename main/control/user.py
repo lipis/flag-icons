@@ -53,11 +53,7 @@ def user_list():
 ###############################################################################
 # User Update
 ###############################################################################
-<<<<<<< HEAD
 class UserUpdateForm(i18n.Form):
-=======
-class UserUpdateForm(flask_wtf.Form):
->>>>>>> ec75f74b2a7657ba74fcc27b32e29fb54358d768
   username = wtforms.StringField(
     model.User.username._verbose_name,
     [wtforms.validators.required(), wtforms.validators.length(min=2)],
@@ -157,11 +153,7 @@ def user_verify(token):
 ###############################################################################
 # User Forgot
 ###############################################################################
-<<<<<<< HEAD
 class UserForgotForm(i18n.Form):
-=======
-class UserForgotForm(flask_wtf.Form):
->>>>>>> ec75f74b2a7657ba74fcc27b32e29fb54358d768
   email = wtforms.StringField(
     'Email',
     [wtforms.validators.required(), wtforms.validators.email()],
@@ -210,11 +202,7 @@ def user_forgot(token=None):
 ###############################################################################
 # User Reset
 ###############################################################################
-<<<<<<< HEAD
 class UserResetForm(i18n.Form):
-=======
-class UserResetForm(flask_wtf.Form):
->>>>>>> ec75f74b2a7657ba74fcc27b32e29fb54358d768
   new_password = wtforms.StringField(
     _('New Password'),
     [wtforms.validators.required(), wtforms.validators.length(min=6)],
@@ -254,11 +242,7 @@ def user_reset(token=None):
 ###############################################################################
 # User Activate
 ###############################################################################
-<<<<<<< HEAD
 class UserActivateForm(i18n.Form):
-=======
-class UserActivateForm(flask_wtf.Form):
->>>>>>> ec75f74b2a7657ba74fcc27b32e29fb54358d768
   name = wtforms.StringField(
     model.User.name._verbose_name,
     [wtforms.validators.required()], filters=[util.strip_filter],
@@ -301,17 +285,10 @@ def user_activate(token):
 ###############################################################################
 # User Merge
 ###############################################################################
-<<<<<<< HEAD
 class UserMergeForm(i18n.Form):
   user_key = wtforms.HiddenField('User Key', [wtforms.validators.required()])
   user_keys = wtforms.HiddenField('User Keys', [wtforms.validators.required()])
   username = wtforms.StringField(_('Username'), [wtforms.validators.optional()])
-=======
-class UserMergeForm(flask_wtf.Form):
-  user_key = wtforms.StringField('User Key', [wtforms.validators.required()])
-  user_keys = wtforms.StringField('User Keys', [wtforms.validators.required()])
-  username = wtforms.StringField('Username', [wtforms.validators.optional()])
->>>>>>> ec75f74b2a7657ba74fcc27b32e29fb54358d768
   name = wtforms.StringField(
     _('Name (merged)'),
     [wtforms.validators.required()], filters=[util.strip_filter],
