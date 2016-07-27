@@ -1,5 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" viewBox="0 0 3 3">
-  <path d="M0 0h3v3H0z"/>
-  <path fill="#D00" d="M0 1h3v2H0z"/>
-  <path fill="#FFCE00" d="M0 2h3v1H0z"/>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
+  <g fill-rule="evenodd" stroke-width="1pt">
+    <path fill="#FFCE00" d="M0 341.338h512.005v170.67H0z"/>
+    <path d="M0 0h512.005v170.67H0z"/>
+    <path fill="#D00" d="M0 170.67h512.005v170.668H0z"/>
+  </g>
 </svg>
