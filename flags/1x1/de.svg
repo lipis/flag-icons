@@ -1,7 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1">
-  <g fill-rule="evenodd" stroke-width="1pt">
-    <path fill="#fc0" d="M0 341.338h512.005v170.67H0z"/>
-    <path d="M0 0h512.005v170.67H0z"/>
-    <path fill="red" d="M0 170.67h512.005v170.668H0z"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" viewBox="0 0 3 3">
+	<rect id="black_stripe" width="3" height="3" y="0" x="0" fill="#000"/>
+	<rect id="red_stripe" width="3" height="2" y="1" x="0" fill="#D00"/>
+	<rect id="gold_stripe" width="3" height="1" y="2" x="0" fill="#FFCE00"/>
 </svg>
