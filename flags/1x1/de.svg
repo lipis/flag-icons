@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" viewBox="0 0 3 3">
-	<rect id="black_stripe" width="3" height="3" y="0" x="0" fill="#000"/>
-	<rect id="red_stripe" width="3" height="2" y="1" x="0" fill="#D00"/>
-	<rect id="gold_stripe" width="3" height="1" y="2" x="0" fill="#FFCE00"/>
+  <path d="M0 0h3v3H0z"/>
+  <path fill="#D00" d="M0 1h3v2H0z"/>
+  <path fill="#FFCE00" d="M0 2h3v1H0z"/>
 </svg>
