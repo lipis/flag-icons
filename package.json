@@ -36,6 +36,6 @@
     "main-bower-files": "~2",
     "require-dir": "~0",
     "uglify-js": "~2",
-    "yargs-parser": "~2"
+    "yargs-parser": "~3"
   }
 }
