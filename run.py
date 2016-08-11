@@ -175,7 +175,7 @@ def install_py_libs():
   exclude_prefix = ['setuptools-', 'pip-', 'Pillow-']
   exclude = [
     'test', 'tests', 'pip', 'setuptools', '_markerlib', 'PIL',
-    'easy_install.py', 'pkg_resources.py'
+    'easy_install.py', 'pkg_resources', 'pkg_resources.py'
   ]
 
   def _exclude_prefix(pkg):
