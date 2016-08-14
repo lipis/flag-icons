@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="480" width="640">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="480" width="640" viewBox="0 0 640 480">
   <path fill="#0021ad" d="M0 0h640v480H0z"/>
   <path d="M0 0h640v480z" fill="#1c8a42"/>
   <circle cx="320" cy="240" r="57.805" fill="#ffc639"/>

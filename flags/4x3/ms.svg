@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640">
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" viewBox="0 0 640 480">
   <path fill="#006" d="M0 0h640v480H0z"/>
   <g fill-rule="evenodd">
     <path d="M408.303 192.25h214.293l-.255 153.441c1.782 61.682-36.423 99.957-106.72 117.214-49.926-12.476-107.489-38.28-107.573-115.464l.255-155.193z" fill="#fff"/>
