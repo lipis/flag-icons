@@ -10,4 +10,4 @@ https://gae-init.appspot.com
 
 """
 
-__version__ = '5.1.0'
+__version__ = '5.1.1'
