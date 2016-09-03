@@ -24,8 +24,8 @@ def send_mail_notification(subject, body, to=None, **kwargs):
       '\n'
       '######### Deferring to send this email: #############################'
       '\nFrom: %s\nTo: %s\nSubject: %s\n\n%s\n'
-      '#####################################################################'
-      % (sender, to or sender, subject, body)
+      '#####################################################################',
+      sender, to or sender, subject, body
     )
   deferred.defer(mail.send_mail, sender, to or sender, subject, body, **kwargs)
 
