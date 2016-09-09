@@ -4,7 +4,7 @@ paths = require '../paths'
 
 
 gulp.task 'reload', false, ->
-  do $.livereload.listen
+  $.livereload.listen 35729
   gulp.watch([
     "#{paths.static.dev}/**/*.{css,js}"
     "#{paths.main}/**/*.{html,py}"
