@@ -2,7 +2,6 @@
 
 from flask_babel import lazy_gettext as _
 import flask
-import flask_wtf
 import wtforms
 
 import auth
