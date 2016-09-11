@@ -12,7 +12,7 @@
       <path d="M2.992-7.2h12v12h-12z"/>
     </clipPath>
   </defs>
-  <g transform="matrix(.42667 0 0 .42667 -1.277 3.072)" clip-path="url(#b)">
+  <g transform="translate(-1.277 3.072) scale(.42667)" clip-path="url(#b)">
     <path fill="#fecb00" d="M0-7.2h18v6H0z"/>
     <path fill="#ea2839" d="M0-1.2h18v6H0z"/>
     <path fill="#34b233" d="M0-3.2h18v4H0z"/>
