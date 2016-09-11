@@ -9,8 +9,8 @@
     <path fill="#fff" d="M-18-12h36v24h-36z"/>
     <path d="M0-18v36M-18 0h36" stroke="#e8112d" stroke-width="6" fill="none"/>
     <path id="b" fill="#f9dd16" d="M-9 2l1-1h9v-2h-9l-1-1z"/>
-    <use href="#b" transform="rotate(90)" height="24" width="36"/>
-    <use href="#b" transform="rotate(-90)" height="24" width="36"/>
-    <use href="#b" transform="scale(-1)" height="24" width="36"/>
+    <use xlink:href="#b" transform="rotate(90)" height="24" width="36"/>
+    <use xlink:href="#b" transform="rotate(-90)" height="24" width="36"/>
+    <use xlink:href="#b" transform="scale(-1)" height="24" width="36"/>
   </g>
 </svg>

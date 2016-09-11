@@ -4,10 +4,10 @@
   <path fill="#009e49" d="M256 256h256v256H256z"/>
   <g id="b" transform="matrix(85.33334 0 0 85.33334 128 256)">
     <path id="a" d="M0-1v1h.5" transform="rotate(18 0 -1)"/>
-    <use height="100%" width="100%" href="#a" transform="scale(-1 1)"/>
+    <use height="100%" width="100%" xlink:href="#a" transform="scale(-1 1)"/>
   </g>
-  <use height="100%" width="100%" href="#b" transform="rotate(72 128 256)"/>
-  <use height="100%" width="100%" href="#b" transform="rotate(144 128 256)"/>
-  <use height="100%" width="100%" href="#b" transform="rotate(-144 128 256)"/>
-  <use height="100%" width="100%" href="#b" transform="rotate(-72 128 256)"/>
+  <use height="100%" width="100%" xlink:href="#b" transform="rotate(72 128 256)"/>
+  <use height="100%" width="100%" xlink:href="#b" transform="rotate(144 128 256)"/>
+  <use height="100%" width="100%" xlink:href="#b" transform="rotate(-144 128 256)"/>
+  <use height="100%" width="100%" xlink:href="#b" transform="rotate(-72 128 256)"/>
 </svg>

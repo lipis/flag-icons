@@ -5,16 +5,16 @@
         <path d="M-109 104a104 104 0 0 0 0-208h218a104 104 0 0 0 0 208z"/>
       </clipPath>
       <path id="b" clip-path="url(#a)" d="M-55 74a55 55 0 0 1 110 0V-74a55 55 0 0 1-110 0z"/>
-      <use href="#b" transform="rotate(90)" height="200" width="300"/>
+      <use xlink:href="#b" transform="rotate(90)" height="200" width="300"/>
     </g>
   </defs>
   <path fill="#fff" d="M0 0h170.67v170.67H0z"/>
   <g transform="matrix(.535 0 0 .535 5.108 47.576)">
     <path fill="#fff" d="M0-29.333h300v200H0z"/>
     <path fill="red" d="M130-29.333v80H0v40h130v80h40v-80h130v-40H170v-80h-40z"/>
-    <use href="#c" transform="translate(64.45 10.117)" height="200" width="300" fill="red"/>
-    <use href="#c" transform="translate(235.55 131.22)" height="200" width="300" fill="red"/>
-    <use href="#c" transform="translate(235.55 10.117)" height="200" width="300" fill="red"/>
-    <use href="#c" transform="translate(64.45 131.22)" height="200" width="300" fill="red"/>
+    <use xlink:href="#c" transform="translate(64.45 10.117)" height="200" width="300" fill="red"/>
+    <use xlink:href="#c" transform="translate(235.55 131.22)" height="200" width="300" fill="red"/>
+    <use xlink:href="#c" transform="translate(235.55 10.117)" height="200" width="300" fill="red"/>
+    <use xlink:href="#c" transform="translate(64.45 131.22)" height="200" width="300" fill="red"/>
   </g>
 </svg>
