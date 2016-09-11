@@ -71,18 +71,7 @@ need from the
 [`flag-icon-list.less`](https://github.com/lipis/flag-icon-css/blob/master/less/flag-icon-list.less)
 file and build it again.
 
-## SVGs (OCD)
-
-- Every flag is edited with [Inksapce](https://inkscape.org/en/) (produces the cleanest SVG).
-- Every flag is optimized with [SVGO](https://github.com/svg/svgo).
-- Every flag has the same SVG signature (if not, they should!):
-
-  ```svg
-  <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
-  <svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480">
-  ```
-
 ## Credits
 
-This project wouldn't exist without the awesome (and now deleted) collection of
+This project wouldn't exist without the awesome and now deleted collection of
 SVG flags by [koppi](https://github.com/koppi).
