@@ -8,7 +8,7 @@
   <g clip-path="url(#a)" transform="scale(.94)">
     <path fill="#002b7f" d="M0 0h768v512H0z"/>
     <path fill="#f9e814" d="M0 320h768v64H0z"/>
-    <use xlink:href="#b" transform="scale(42.67)" height="9000" width="13500" y="2" x="2" fill="#fff"/>
-    <use xlink:href="#b" transform="scale(56.9)" height="9000" width="13500" y="3" x="3" fill="#fff"/>
+    <use href="#b" transform="scale(42.67)" height="9000" width="13500" y="2" x="2" fill="#fff"/>
+    <use href="#b" transform="scale(56.9)" height="9000" width="13500" y="3" x="3" fill="#fff"/>
   </g>
 </svg>
