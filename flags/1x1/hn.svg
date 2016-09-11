@@ -4,15 +4,15 @@
   <g id="c" transform="translate(204.8 273.067) scale(30.34074)" fill="#0073cf">
     <g id="b">
       <path id="a" d="M0-1l-.31.95.477.156z"/>
-      <use height="100%" width="100%" xlink:href="#a" transform="scale(-1 1)"/>
+      <use height="100%" width="100%" href="#a" transform="scale(-1 1)"/>
     </g>
-    <use height="100%" width="100%" xlink:href="#b" transform="rotate(72)"/>
-    <use height="100%" width="100%" xlink:href="#b" transform="rotate(-72)"/>
-    <use height="100%" width="100%" xlink:href="#b" transform="rotate(144)"/>
-    <use height="100%" width="100%" xlink:href="#b" transform="rotate(-144)"/>
+    <use height="100%" width="100%" href="#b" transform="rotate(72)"/>
+    <use height="100%" width="100%" href="#b" transform="rotate(-72)"/>
+    <use height="100%" width="100%" href="#b" transform="rotate(144)"/>
+    <use height="100%" width="100%" href="#b" transform="rotate(-144)"/>
   </g>
-  <use height="100%" width="100%" xlink:href="#c" transform="translate(151.704 -48.545)"/>
-  <use height="100%" width="100%" xlink:href="#c" transform="translate(151.704 42.477)"/>
-  <use height="100%" width="100%" xlink:href="#c" transform="translate(-151.704 -48.545)"/>
-  <use height="100%" width="100%" xlink:href="#c" transform="translate(-151.704 42.477)"/>
+  <use height="100%" width="100%" href="#c" transform="translate(151.704 -48.545)"/>
+  <use height="100%" width="100%" href="#c" transform="translate(151.704 42.477)"/>
+  <use height="100%" width="100%" href="#c" transform="translate(-151.704 -48.545)"/>
+  <use height="100%" width="100%" href="#c" transform="translate(-151.704 42.477)"/>
 </svg>

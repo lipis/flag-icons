@@ -5,11 +5,11 @@
   <g transform="translate(256 256) scale(5.6889)" fill="#fcd116">
     <g id="b">
       <path id="a" d="M0-8L-2.472-.392 1.332.845z"/>
-      <use height="100%" width="100%" xlink:href="#a" transform="scale(-1 1)"/>
+      <use height="100%" width="100%" href="#a" transform="scale(-1 1)"/>
     </g>
-    <use height="100%" width="100%" xlink:href="#b" transform="rotate(72)"/>
-    <use height="100%" width="100%" xlink:href="#b" transform="rotate(144)"/>
-    <use height="100%" width="100%" xlink:href="#b" transform="rotate(-144)"/>
-    <use height="100%" width="100%" xlink:href="#b" transform="rotate(-72)"/>
+    <use height="100%" width="100%" href="#b" transform="rotate(72)"/>
+    <use height="100%" width="100%" href="#b" transform="rotate(144)"/>
+    <use height="100%" width="100%" href="#b" transform="rotate(-144)"/>
+    <use height="100%" width="100%" href="#b" transform="rotate(-72)"/>
   </g>
 </svg>

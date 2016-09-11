@@ -2,11 +2,11 @@
   <defs>
     <path id="a" transform="scale(8.844)" fill="#fff" d="M.162 0h-.324L0-.5z"/>
     <g id="c">
-      <use xlink:href="#a" transform="rotate(-144)" width="18" height="12"/>
-      <use xlink:href="#a" transform="rotate(-72)" width="18" height="12"/>
-      <use xlink:href="#a" width="18" height="12"/>
-      <use xlink:href="#a" transform="rotate(72)" width="18" height="12"/>
-      <use xlink:href="#a" transform="rotate(144)" width="18" height="12"/>
+      <use href="#a" transform="rotate(-144)" width="18" height="12"/>
+      <use href="#a" transform="rotate(-72)" width="18" height="12"/>
+      <use href="#a" width="18" height="12"/>
+      <use href="#a" transform="rotate(72)" width="18" height="12"/>
+      <use href="#a" transform="rotate(144)" width="18" height="12"/>
     </g>
     <clipPath id="b">
       <path d="M2.992-7.2h12v12h-12z"/>
@@ -16,6 +16,6 @@
     <path fill="#fecb00" d="M0-7.2h18v6H0z"/>
     <path fill="#ea2839" d="M0-1.2h18v6H0z"/>
     <path fill="#34b233" d="M0-3.2h18v4H0z"/>
-    <use transform="translate(0 -7.2)" height="12" width="18" y="6.422" x="9" xlink:href="#c"/>
+    <use transform="translate(0 -7.2)" height="12" width="18" y="6.422" x="9" href="#c"/>
   </g>
 </svg>

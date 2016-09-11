@@ -10,9 +10,9 @@
     <path d="M0-21.586v43.172M-21.586 0h43.172" stroke="#e8112d" stroke-width="7.195" fill="none"/>
     <g transform="scale(1.75)">
       <path id="b" fill="#f9dd16" d="M-6.75 1.5L-6 .75H.75v-1.5H-6l-.75-.75z"/>
-      <use xlink:href="#b" transform="rotate(90)" height="24" width="36"/>
-      <use xlink:href="#b" transform="rotate(-90)" height="24" width="36"/>
-      <use xlink:href="#b" transform="scale(-1)" height="24" width="36"/>
+      <use href="#b" transform="rotate(90)" height="24" width="36"/>
+      <use href="#b" transform="rotate(-90)" height="24" width="36"/>
+      <use href="#b" transform="scale(-1)" height="24" width="36"/>
     </g>
   </g>
 </svg>

@@ -4,18 +4,18 @@
       <stop stop-color="red" offset="0"/>
       <stop stop-color="#ff0" offset="1"/>
     </linearGradient>
-    <linearGradient id="c" y2="107.76" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -3.68 -.673)" y1="111.28" x1="103.08"/>
-    <linearGradient id="d" y2="107.76" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -3.676 -.451)" y1="111.28" x1="103.08"/>
-    <linearGradient id="e" y2="107.76" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -4.457 -.249)" y1="111.28" x1="103.08"/>
-    <linearGradient id="f" y2="107.76" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -3.694 -.033)" y1="111.28" x1="103.08"/>
-    <linearGradient id="g" y2="107.76" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -3.696 .18)" y1="111.28" x1="103.08"/>
-    <linearGradient id="h" y2="107.76" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -3.7 .395)" y1="111.28" x1="103.08"/>
-    <linearGradient id="i" y2="107.76" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -4.463 .391)" y1="111.28" x1="103.08"/>
-    <linearGradient id="j" y2="107.76" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -4.456 .18)" y1="111.28" x1="103.08"/>
-    <linearGradient id="k" y2="107.76" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -4.446 -.036)" y1="111.28" x1="103.08"/>
-    <linearGradient id="m" y2="107.76" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -4.455 -.462)" y1="111.28" x1="103.08"/>
-    <linearGradient id="n" y2="107.76" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -3.833 -.263)" y1="111.28" x1="103.08"/>
-    <linearGradient id="l" y2="107.76" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.85004 0 0 1.9222 723.32 109.68)" y1="111.28" x1="103.08"/>
+    <linearGradient id="c" y2="107.76" href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -3.68 -.673)" y1="111.28" x1="103.08"/>
+    <linearGradient id="d" y2="107.76" href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -3.676 -.451)" y1="111.28" x1="103.08"/>
+    <linearGradient id="e" y2="107.76" href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -4.457 -.249)" y1="111.28" x1="103.08"/>
+    <linearGradient id="f" y2="107.76" href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -3.694 -.033)" y1="111.28" x1="103.08"/>
+    <linearGradient id="g" y2="107.76" href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -3.696 .18)" y1="111.28" x1="103.08"/>
+    <linearGradient id="h" y2="107.76" href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -3.7 .395)" y1="111.28" x1="103.08"/>
+    <linearGradient id="i" y2="107.76" href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -4.463 .391)" y1="111.28" x1="103.08"/>
+    <linearGradient id="j" y2="107.76" href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -4.456 .18)" y1="111.28" x1="103.08"/>
+    <linearGradient id="k" y2="107.76" href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -4.446 -.036)" y1="111.28" x1="103.08"/>
+    <linearGradient id="m" y2="107.76" href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -4.455 -.462)" y1="111.28" x1="103.08"/>
+    <linearGradient id="n" y2="107.76" href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.65977 0 0 1.4919 -3.833 -.263)" y1="111.28" x1="103.08"/>
+    <linearGradient id="l" y2="107.76" href="#a" gradientUnits="userSpaceOnUse" x2="92.551" gradientTransform="matrix(.85004 0 0 1.9222 723.32 109.68)" y1="111.28" x1="103.08"/>
     <clipPath id="b">
       <path fill-opacity=".67" d="M0 0h512v512H0z"/>
     </clipPath>

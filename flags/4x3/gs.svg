@@ -8,15 +8,15 @@
       <stop stop-color="#474747" offset="0"/>
       <stop stop-color="#f50" offset="1"/>
     </linearGradient>
-    <linearGradient id="c" y2="173.45" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="110.94" gradientTransform="matrix(1.5 0 0 .65 40.51 .01)" y1="218.47" x1="109.34"/>
+    <linearGradient id="c" y2="173.45" href="#a" gradientUnits="userSpaceOnUse" x2="110.94" gradientTransform="matrix(1.5 0 0 .65 40.51 .01)" y1="218.47" x1="109.34"/>
     <linearGradient id="d" y2="337.23" gradientUnits="userSpaceOnUse" x2="126.02" gradientTransform="matrix(1.23 0 0 .8 40.51 .01)" y1="316.38" x1="125.91">
       <stop stop-color="#b50000" offset="0"/>
       <stop stop-color="#ffc500" offset="1"/>
     </linearGradient>
-    <linearGradient id="e" y2="147.35" xlink:href="#b" gradientUnits="userSpaceOnUse" x2="456.4" gradientTransform="matrix(.56 0 0 1.76 40.51 .01)" y1="149.38" x1="407.87"/>
-    <linearGradient id="f" y2="102.99" xlink:href="#a" gradientUnits="userSpaceOnUse" x2="228.97" gradientTransform="matrix(.74 0 0 1.33 40.51 .01)" y1="102.99" x1="215.83"/>
-    <linearGradient id="g" y2="1003.7" xlink:href="#b" gradientUnits="userSpaceOnUse" x2="78.221" gradientTransform="matrix(2.56 0 0 .38 40.51 .01)" y1="1040.4" x1="117.6"/>
-    <linearGradient id="h" y2="226.38" xlink:href="#b" gradientUnits="userSpaceOnUse" x2="255.03" gradientTransform="matrix(.9 0 0 1.1 40.51 .01)" y1="245.98" x1="264.72"/>
+    <linearGradient id="e" y2="147.35" href="#b" gradientUnits="userSpaceOnUse" x2="456.4" gradientTransform="matrix(.56 0 0 1.76 40.51 .01)" y1="149.38" x1="407.87"/>
+    <linearGradient id="f" y2="102.99" href="#a" gradientUnits="userSpaceOnUse" x2="228.97" gradientTransform="matrix(.74 0 0 1.33 40.51 .01)" y1="102.99" x1="215.83"/>
+    <linearGradient id="g" y2="1003.7" href="#b" gradientUnits="userSpaceOnUse" x2="78.221" gradientTransform="matrix(2.56 0 0 .38 40.51 .01)" y1="1040.4" x1="117.6"/>
+    <linearGradient id="h" y2="226.38" href="#b" gradientUnits="userSpaceOnUse" x2="255.03" gradientTransform="matrix(.9 0 0 1.1 40.51 .01)" y1="245.98" x1="264.72"/>
   </defs>
   <path fill="#006" d="M0 0h640v480H0z"/>
   <g stroke-width="1pt">
