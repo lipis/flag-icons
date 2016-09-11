@@ -102,7 +102,7 @@
        width="100%"
        y="0"
        x="0"
-       href="#w"
+       xlink:href="#w"
        transform="matrix(-1,0,0,1,1400,0)"
        id="use3893" />
     <path
@@ -114,7 +114,7 @@
        width="100%"
        y="0"
        x="0"
-       href="#r"
+       xlink:href="#r"
        transform="matrix(0.98665754,0.16280937,-0.16280937,0.98665754,140.23845,-103.23923)"
        id="use3896" />
     <use
@@ -122,7 +122,7 @@
        width="100%"
        y="0"
        x="0"
-       href="#r"
+       xlink:href="#r"
        transform="matrix(0.94698622,0.32127419,-0.32127419,0.94698622,295.4141,-182.26885)"
        id="use3898" />
     <path
@@ -148,7 +148,7 @@
            width="100%"
            y="0"
            x="0"
-           href="#s"
+           xlink:href="#s"
            transform="translate(-70,-121.24356)"
            id="use3908" />
         <use
@@ -156,7 +156,7 @@
            width="100%"
            y="0"
            x="0"
-           href="#s"
+           xlink:href="#s"
            transform="translate(-121.24356,-70)"
            id="use3910" />
         <use
@@ -164,7 +164,7 @@
            width="100%"
            y="0"
            x="0"
-           href="#s"
+           xlink:href="#s"
            transform="translate(-140,0)"
            id="use3912" />
       </g>
@@ -173,7 +173,7 @@
          width="100%"
          y="0"
          x="0"
-         href="#h"
+         xlink:href="#h"
          transform="scale(-1,1)"
          id="use3914" />
     </g>
