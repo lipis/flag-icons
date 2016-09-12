@@ -1,9 +1,4 @@
-<<<<<<< HEAD
-
-
 *.mo
-=======
->>>>>>> 01dc695ebce06c89963a208e88b6e70bd4ff2cd1
 *.pyc
 *.pyo
 .DS_Store
