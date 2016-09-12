@@ -1,6 +1,6 @@
 gulp = require('gulp-help') require 'gulp'
 yargs = require 'yargs-parser'
-$ = do require 'gulp-load-plugins'
+$ = require('gulp-load-plugins')()
 paths = require '../paths'
 
 

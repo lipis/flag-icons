@@ -1,10 +1,10 @@
 gulp = require('gulp-help') require 'gulp'
-$ = do require 'gulp-load-plugins'
+$ = require('gulp-load-plugins')()
 paths = require '../paths'
 
 
 gulp.task 'reload', false, ->
-  do $.livereload.listen
+  $.livereload.listen 35729
   gulp.watch([
     "#{paths.static.dev}/**/*.{css,js}"
     "#{paths.main}/**/*.{html,py}"
