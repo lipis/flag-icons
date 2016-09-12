@@ -103,7 +103,6 @@ Tech Stack
 [jinja2]: http://jinja.pocoo.org/docs/
 [jquery]: https://jquery.com/
 [less]: http://lesscss.org/
-[lesscss]: http://lesscss.org/
 [linux]: http://www.ubuntu.com
 [moment.js]: http://momentjs.com/
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
