@@ -1,6 +1,6 @@
 gulp = require('gulp-help') require 'gulp'
 requireDir = require('require-dir') './gulp/tasks'
-$ = do require 'gulp-load-plugins'
+$ = require('gulp-load-plugins')()
 
 gulp.task 'default',
   'Start the local server, watch for changes and reload browser automatically.

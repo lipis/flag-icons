@@ -1,5 +1,5 @@
 gulp = require('gulp-help') require 'gulp'
-$ = do require 'gulp-load-plugins'
+$ = require('gulp-load-plugins')()
 paths = require '../paths'
 
 
