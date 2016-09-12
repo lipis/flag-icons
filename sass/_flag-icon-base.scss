@@ -26,3 +26,7 @@
     }
   }
 }
+
+.flag-icon-background {
+  @include flag-icon-background();
+}
