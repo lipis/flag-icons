@@ -1,11 +1,11 @@
-@mixin flag-icon-background {
+.flag-icon-background {
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
 }
 
 .flag-icon {
-  @include flag-icon-background();
+  @extend .flag-icon-background;
   position: relative;
   display: inline-block;
   width: (4 / 3) * 1em;
