@@ -1,4 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" version="1" viewBox="0 0 512 512">
-  <path fill-rule="evenodd" d="M0 255h512v2H0zm0 255h512v2H0zM0 0h512v2H0z"/>
-  <path fill-rule="evenodd" d="M255 0h2v512h-2zM0 0h2v512H0zm510 0h2v512h-2z"/>
-</svg>
