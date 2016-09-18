@@ -1,182 +1,26 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:xlink="http://www.w3.org/1999/xlink"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   id="svg3446"
-   height="512"
-   width="512"
-   version="1.1"
-   inkscape:version="0.91 r13725"
-   sodipodi:docname="tj.svg">
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1389"
-     inkscape:window-height="855"
-     id="namedview3778"
-     showgrid="false"
-     inkscape:zoom="0.48097993"
-     inkscape:cx="320"
-     inkscape:cy="240"
-     inkscape:window-x="51"
-     inkscape:window-y="181"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg3446" />
-  <metadata
-     id="metadata3750">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs3448">
-    <clipPath
-       id="clipPath7362"
-       clipPathUnits="userSpaceOnUse">
-      <rect
-         id="rect7364"
-         height="512"
-         width="682.66998"
-         y="2.3336999e-05"
-         x="-85.648003"
-         style="fill-opacity:0.67000002" />
-    </clipPath>
-  </defs>
-  <rect
-     style="fill:#006600"
-     y="-7.634505e-06"
-     x="0"
-     width="512"
-     height="512"
-     id="rect3880" />
-  <rect
-     style="fill:#ffffff"
-     y="-7.634505e-06"
-     x="0"
-     width="512"
-     height="365.71429"
-     id="rect3882" />
-  <rect
-     style="fill:#cc0000"
-     y="-7.634505e-06"
-     x="0"
-     width="512"
-     height="146.28572"
-     id="rect3884" />
-  <g
-     style="fill:#f8c300"
-     id="g3886"
-     transform="matrix(0.7314286,0,0,0.7314286,-256.00002,-6.6666667e-6)">
-    <path
-       inkscape:connector-curvature="0"
-       d="m 672,340.7 a 12.5,12.5 0 0 1 23.3,5.9 l 0,50 9.4,0 0,-50 a 12.5,12.5 0 0 1 23.3,-5.9 29.5,29.5 0 1 0 -56,0"
-       id="path3888" />
-    <path
-       style="fill:#ffffff"
-       inkscape:connector-curvature="0"
-       d="m 678.7,327.65 a 20,20 0 0 1 21.3,9.55 20,20 0 0 1 21.3,-9.55 21.5,21.5 0 0 0 -42.6,0"
-       id="path3890" />
-    <path
-       inkscape:connector-curvature="0"
-       id="w"
-       d="m 695.3,376.627 a 38,38 0 0 1 -63.845,24.316 39.5,39.5 0 0 1 -59.734,17.467 c 3.6496,36.426 58.252,28.989 62.32,-6.4288 17.154,30.115 54.873,21.49 65.91,-15.4 z" />
-    <use
-       height="100%"
-       width="100%"
-       y="0"
-       x="0"
-       xlink:href="#w"
-       transform="matrix(-1,0,0,1,1400,0)"
-       id="use3893" />
-    <path
-       inkscape:connector-curvature="0"
-       id="r"
-       d="m 658.84,441.31 c -7.6181,16.446 -22.845,19.271 -36.164,5.9953 0,0 5.3539,-3.7831 11.086,-4.826 -1.0748,-4.5744 1.1291,-10.902 4.2354,-14.324 3.2575,2.2264 7.8036,6.6886 8.9598,11.874 8.0291,-1.0394 11.883,1.2815 11.883,1.2815 z" />
-    <use
-       height="100%"
-       width="100%"
-       y="0"
-       x="0"
-       xlink:href="#r"
-       transform="matrix(0.98665754,0.16280937,-0.16280937,0.98665754,140.23845,-103.23923)"
-       id="use3896" />
-    <use
-       height="100%"
-       width="100%"
-       y="0"
-       x="0"
-       xlink:href="#r"
-       transform="matrix(0.94698622,0.32127419,-0.32127419,0.94698622,295.4141,-182.26885)"
-       id="use3898" />
-    <path
-       style="fill:none;stroke:#f8c300;stroke-width:16"
-       inkscape:connector-curvature="0"
-       d="m 603,478 a 340,340 0 0 1 194,0"
-       id="path3900" />
-    <g
-       transform="translate(700,380)"
-       id="g3902">
-      <g
-         transform="translate(0,-140)"
-         id="g3904">
-        <polygon
-           id="s"
-           points="488533,-158734 -301930,415571 0,-513674 301930,415571 -488533,-158734 "
-           transform="scale(4.8669e-5,4.8669e-5)" />
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512" width="512" viewBox="0 0 512 512">
+  <path fill="#060" d="M0 0h512v512H0z"/>
+  <path fill="#fff" d="M0 0h512v365.714H0z"/>
+  <path fill="#c00" d="M0 0h512v146.286H0z"/>
+  <g transform="translate(-256) scale(.73143)" fill="#f8c300">
+    <path d="M672 340.7a12.5 12.5 0 0 1 23.3 5.9v50h9.4v-50a12.5 12.5 0 0 1 23.3-5.9 29.5 29.5 0 1 0-56 0"/>
+    <path d="M678.7 327.65a20 20 0 0 1 21.3 9.55 20 20 0 0 1 21.3-9.55 21.5 21.5 0 0 0-42.6 0" fill="#fff"/>
+    <path id="a" d="M695.3 376.627a38 38 0 0 1-63.845 24.316 39.5 39.5 0 0 1-59.734 17.467c3.65 36.426 58.252 28.989 62.32-6.429 17.154 30.115 54.873 21.49 65.91-15.4z"/>
+    <use height="100%" width="100%" xlink:href="#a" transform="matrix(-1 0 0 1 1400 0)"/>
+    <path id="b" d="M658.84 441.31c-7.618 16.446-22.845 19.271-36.164 5.995 0 0 5.354-3.783 11.086-4.826-1.075-4.574 1.13-10.902 4.235-14.324 3.258 2.227 7.804 6.689 8.96 11.874 8.03-1.04 11.883 1.282 11.883 1.282z"/>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(9.37 700 804)"/>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(18.74 700 804)"/>
+    <path d="M603 478a340 340 0 0 1 194 0" fill="none" stroke="#f8c300" stroke-width="16"/>
+    <g transform="translate(700 380)">
+      <g transform="translate(0 -140)">
+        <path id="c" transform="scale(.00005)" d="M488533-158734l-790463 574305L0-513674l301930 929245-790463-574305z"/>
       </g>
-      <g
-         id="h">
-        <use
-           height="100%"
-           width="100%"
-           y="0"
-           x="0"
-           xlink:href="#s"
-           transform="translate(-70,-121.24356)"
-           id="use3908" />
-        <use
-           height="100%"
-           width="100%"
-           y="0"
-           x="0"
-           xlink:href="#s"
-           transform="translate(-121.24356,-70)"
-           id="use3910" />
-        <use
-           height="100%"
-           width="100%"
-           y="0"
-           x="0"
-           xlink:href="#s"
-           transform="translate(-140,0)"
-           id="use3912" />
+      <g id="d">
+        <use height="100%" width="100%" xlink:href="#c" transform="translate(-70 -121.244)"/>
+        <use height="100%" width="100%" xlink:href="#c" transform="translate(-121.244 -70)"/>
+        <use height="100%" width="100%" xlink:href="#c" transform="translate(-140)"/>
       </g>
-      <use
-         height="100%"
-         width="100%"
-         y="0"
-         x="0"
-         xlink:href="#h"
-         transform="scale(-1,1)"
-         id="use3914" />
+      <use height="100%" width="100%" xlink:href="#d" transform="scale(-1 1)"/>
     </g>
   </g>
 </svg>
