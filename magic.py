@@ -152,11 +152,13 @@ def sync_from_magic(project_db):
     create_file(project_url, os.path.join(DIR_API, '%s.py' % name))
 
     root = os.path.join(DIR_TEMPLATES, name)
-    create_file(project_url, os.path.join(root, '%s_update.html' % name))
-    create_file(project_url, os.path.join(root, '%s_view.html' % name))
-    create_file(project_url, os.path.join(root, '%s_list.html' % name))
     create_file(project_url, os.path.join(root, 'admin_%s_update.html' % name))
     create_file(project_url, os.path.join(root, 'admin_%s_list.html' % name))
+
+    if not model_db['admin_only']:
+      create_file(project_url, os.path.join(root, '%s_update.html' % name))
+      create_file(project_url, os.path.join(root, '%s_view.html' % name))
+      create_file(project_url, os.path.join(root, '%s_list.html' % name))
 
 
 ###############################################################################
