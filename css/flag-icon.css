@@ -60,6 +60,12 @@
 .flag-icon-am.flag-icon-squared {
   background-image: url(../flags/1x1/am.svg);
 }
+.flag-icon-an {
+  background-image: url(../flags/4x3/an.svg);
+}
+.flag-icon-an.flag-icon-squared {
+  background-image: url(../flags/1x1/an.svg);
+}
 .flag-icon-ao {
   background-image: url(../flags/4x3/ao.svg);
 }
@@ -1481,6 +1487,12 @@
 }
 .flag-icon-ws.flag-icon-squared {
   background-image: url(../flags/1x1/ws.svg);
+}
+.flag-icon-xk {
+  background-image: url(../flags/4x3/xk.svg);
+}
+.flag-icon-xk.flag-icon-squared {
+  background-image: url(../flags/1x1/xk.svg);
 }
 .flag-icon-ye {
   background-image: url(../flags/4x3/ye.svg);
