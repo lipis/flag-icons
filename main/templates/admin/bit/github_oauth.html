@@ -1,10 +1,10 @@
 {{
   forms.panel_fields(
-      'GitHub',
-      (form.github_client_id, form.github_client_secret),
-      '''
-        Callback URL for <a href="https://github.com/settings/applications" target="_blank">GitHub application</a>:
-        <em>%s</em>
-      ''' % url_for('github_authorized', _external=True)
-    )
+    'GitHub',
+    (form.github_client_id, form.github_client_secret),
+    '''
+      Callback URL for <a href="https://github.com/settings/applications" target="_blank">GitHub application</a>:
+      <em>%s</em>
+    ''' % url_for('github_authorized', _external=True)
+  )
 }}

@@ -1,9 +1,9 @@
 {{
   forms.panel_fields(
-      'Bitbucket',
-      (form.bitbucket_key, form.bitbucket_secret),
-      '''
-        Callback URL for Bitbucket: <em>%s</em> (needs Email and Read permissions for Account)
-      ''' % url_for('bitbucket_authorized', _external=True)
-    )
+    'Bitbucket',
+    (form.bitbucket_key, form.bitbucket_secret),
+    '''
+      Callback URL for Bitbucket: <em>%s</em> (needs Email and Read permissions for Account)
+    ''' % url_for('bitbucket_authorized', _external=True)
+  )
 }}

@@ -1,10 +1,10 @@
 {{
   forms.panel_fields(
-      'Dropbox',
-      (form.dropbox_app_key, form.dropbox_app_secret),
-      '''
-        OAuth redirect URI for <a href="https://www.dropbox.com/developers/apps" target="_blank">Dropbox</a>:
-        <em>https://%s%s</em>
-      ''' % (request.host, url_for('dropbox_authorized'))
-    )
+    'Dropbox',
+    (form.dropbox_app_key, form.dropbox_app_secret),
+    '''
+      OAuth redirect URI for <a href="https://www.dropbox.com/developers/apps" target="_blank">Dropbox</a>:
+      <em>https://%s%s</em>
+    ''' % (request.host, url_for('dropbox_authorized'))
+  )
 }}
