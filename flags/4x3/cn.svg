@@ -1,19 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="640" height="480" viewBox="-5 -5 12.8 9.6">
-  <title>
-    Flag of the People&apos;s Republic of China
-  </title>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="480" width="640" viewBox="0 0 640 480">
   <defs>
-    <path id="b" fill="#ffde00" d="M-.588.81L0-1 .588.81-.952-.31H.952z"/>
-    <clipPath id="a">
-      <path d="M-5-15.4h26.667v20H-5z"/>
-    </clipPath>
+    <path id="a" fill="#ffde00" d="M-.588.81L0-1 .588.81-.952-.31H.952z"/>
   </defs>
-  <g transform="matrix(.48 0 0 .48 -2.6 2.39)" clip-path="url(#a)">
-    <path fill="#de2910" d="M-5-15.4h30v20H-5z"/>
-    <use height="20" width="30" transform="matrix(3 0 0 3 0 -10.4)" xlink:href="#b"/>
-    <use height="20" width="30" transform="rotate(-120.93 -1.29 -8.12)" xlink:href="#b"/>
-    <use height="20" width="30" transform="rotate(-98.11 -1.45 -8.74)" xlink:href="#b"/>
-    <use height="20" width="30" transform="rotate(-74.04 -2.07 -8.84)" xlink:href="#b"/>
-    <use height="20" width="30" transform="rotate(-51.32 -4.16 -8.4)" xlink:href="#b"/>
-  </g>
+  <path d="M0 0h640v480H0z" fill="#de2910"/>
+  <use xlink:href="#a" transform="matrix(71.9991 0 0 72 119.999 120)" width="30" height="20"/>
+  <use xlink:href="#a" transform="matrix(-12.33562 -20.5871 20.58684 -12.33577 240.291 47.996)" width="30" height="20"/>
+  <use xlink:href="#a" transform="matrix(-3.38573 -23.75998 23.75968 -3.38578 287.95 95.796)" width="30" height="20"/>
+  <use xlink:href="#a" transform="matrix(6.5991 -23.0749 23.0746 6.59919 287.959 168.012)" width="30" height="20"/>
+  <use xlink:href="#a" transform="matrix(14.9991 -18.73557 18.73533 14.99929 239.933 216.054)" width="30" height="20"/>
 </svg>

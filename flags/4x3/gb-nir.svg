@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="480" width="640" version="1">
-  <rect width="640" height="480" rx="0" ry="0" fill="#fff" fill-rule="evenodd"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="480" width="640" viewBox="0 0 640 480">
+  <rect height="480" width="640"  rx="0" ry="0" fill="#fff" fill-rule="evenodd"/>
   <rect id="a" y="192" ry="0" rx="0" height="96" width="640" fill="#c00" fill-rule="evenodd"/>
   <use xlink:href="#a" height="300" width="600" transform="matrix(0 .75 -1 0 560 0)"/>
   <path d="M355.205 146.61c3.08-4.82 1.239-7.933-3.42-8.895 0 0-14.867 4.766-30.924 5.289-16.056.523-35.132-4.038-35.132-4.038-3.421 2.147-2.586 7.241-.89 10.421 0 0 16.809 5.584 35.944 5.036 12.153-.348 23.67-3.45 30.13-5.505 3.712-1.18 4.294-2.254 4.292-2.308z" fill="#ebeae3" fill-rule="evenodd" stroke="#000" stroke-width=".522"/>
