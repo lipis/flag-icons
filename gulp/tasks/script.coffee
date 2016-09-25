@@ -4,8 +4,10 @@ config = require '../config'
 paths = require '../paths'
 util = require '../util'
 
+
 is_coffee = (file) ->
   return file.path.indexOf('.coffee') > 0
+
 
 gulp.task 'script', false, ->
   gulp.src config.script

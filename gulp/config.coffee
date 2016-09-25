@@ -19,4 +19,5 @@ config =
     "#{paths.src.script}/**/*.js"
   ]
 
+
 module.exports = config
