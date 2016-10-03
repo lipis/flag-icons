@@ -2,8 +2,8 @@
 # coding: utf-8
 
 from datetime import datetime
-from HTMLParser import HTMLParser
 import argparse
+import HTMLParser
 import json
 import os
 import sys
@@ -79,6 +79,10 @@ def append_to(project_url, destination):
       print_out('APPEND', destination)
 
 
+def safe_text(text):
+  return (HTMLParser.HTMLParser().unescape(text.decode('utf8'))).encode('utf8')
+
+
 def insert_to(project_url, destination, find_what, indent=0):
   url = ('%smagic/%s' % (project_url, destination)).replace('\\', '/')
   response = urllib2.urlopen(url)
@@ -86,7 +90,7 @@ def insert_to(project_url, destination, find_what, indent=0):
     with open(destination, 'r') as dest:
       dest_contents = dest.readlines()
       lines = ''.join(dest_contents)
-      content = HTMLParser().unescape(response.read())
+      content = safe_text(response.read())
       if content.replace(' ', '') in lines.replace(' ', ''):
         print_out('IGNORED', destination)
         return
@@ -112,7 +116,8 @@ def create_file(project_url, destination):
   response = urllib2.urlopen(url)
   if response.getcode() == 200:
     with open(destination, 'w') as dest:
-      dest.write('%s\n' % HTMLParser().unescape(response.read()))
+      dest.write(safe_text(response.read()))
+      dest.write('\n')
       print_out('CREATE', destination)
 
 
