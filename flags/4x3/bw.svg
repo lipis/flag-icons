@@ -1,5 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill-opacity="14.118" height="480" width="640" fill="#28ff09" viewBox="0 0 640 480">
-  <g fill-rule="evenodd" fill-opacity="1">
+<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" viewBox="0 0 640 480">
+  <g fill-rule="evenodd">
     <path fill="#00cbff" d="M0 0h640v480H0z"/>
     <path fill="#fff" d="M0 160h640v160H0z"/>
     <path fill="#000" d="M0 185.97h640v108.05H0z"/>
