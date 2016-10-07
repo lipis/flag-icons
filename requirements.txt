@@ -3,7 +3,7 @@ flask-babel==0.11.1
 flask-login==0.3.2
 flask-oauthlib==0.9.3
 flask-restful==0.3.5
-flask-wtf==0.12
+flask-wtf==0.13.1
 flask==0.11.1
 git+https://github.com/joernhees/babel@zip-2.3.4
 unidecode==0.4.19

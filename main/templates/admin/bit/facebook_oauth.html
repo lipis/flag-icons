@@ -1,10 +1,10 @@
 {{
   forms.panel_fields(
-      'Facebook',
-      (form.facebook_app_id, form.facebook_app_secret),
-      '''
-        Site URL for <a href="https://developers.facebook.com/apps" target="_blank">Facebook application</a>:
-        <em>%s</em>
-      ''' % url_for('facebook_authorized', _external=True)
-    )
+    'Facebook',
+    (form.facebook_app_id, form.facebook_app_secret),
+    '''
+      Site URL for <a href="https://developers.facebook.com/apps" target="_blank">Facebook application</a>:
+      <em>%s</em>
+    ''' % url_for('facebook_authorized', _external=True)
+  )
 }}
