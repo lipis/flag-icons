@@ -6,6 +6,7 @@ import re
 import unicodedata
 import urllib
 
+from babel import localedata
 from google.appengine.datastore.datastore_query import Cursor
 from google.appengine.ext import ndb
 from webargs import fields as wf
@@ -56,9 +57,17 @@ def get_next_url(next_url=''):
 ###############################################################################
 # Babel stuff - i18n
 ###############################################################################
+def check_locale(locale):
+  locale = locale.lower()
+  if locale not in config.LOCALE:
+    locale = config.LOCALE_DEFAULT
+  return locale if localedata.exists(locale) else 'en'
+
+
 def set_locale(locale, response):
   if not locale:
     return response
+  locale = check_locale(locale)
   response.set_cookie('locale', value=locale, path='/')
   flask.session['locale'] = locale
   return response

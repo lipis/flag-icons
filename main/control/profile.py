@@ -69,8 +69,8 @@ def profile_update():
         task.verify_email_notification(user_db)
       user_db.put()
       return flask.redirect(flask.url_for(
-          'set_locale', locale=user_db.locale, next=flask.url_for('profile')
-        ))
+        'set_locale', locale=user_db.locale, next=flask.url_for('profile')
+      ))
 
   return flask.render_template(
     'profile/profile_update.html',

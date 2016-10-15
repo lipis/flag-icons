@@ -5,7 +5,6 @@ from __future__ import absolute_import
 import functools
 import re
 
-from babel import localedata
 from flask_babel import gettext as __
 from flask_babel import lazy_gettext as _
 from flask_oauthlib import client as oauth
@@ -32,13 +31,6 @@ _signals = flask.signals.Namespace()
 ###############################################################################
 # Babel stuff - i18n
 ###############################################################################
-def check_locale(locale):
-  locale = locale.lower()
-  if locale not in config.LOCALE:
-    locale = config.LOCALE_DEFAULT
-  return locale if localedata.exists(locale) else 'en'
-
-
 @babel.localeselector
 def get_locale():
   if hasattr(flask.request, 'locale'):
@@ -48,30 +40,27 @@ def get_locale():
     locale = flask.request.cookies.get('locale', None)
     if not locale:
       locale = flask.request.accept_languages.best_match(
-          matches=config.LOCALE.keys(),
-          default=config.LOCALE_DEFAULT,
-        )
-  return check_locale(locale)
+        matches=config.LOCALE.keys(),
+        default=config.LOCALE_DEFAULT,
+      )
+  return util.check_locale(locale)
 
 
 @flask.request_started.connect_via(app)
 def request_started(sender, **extra):
   hl = util.param('hl')
-  flask.request.locale = check_locale(hl) if hl else get_locale()
+  flask.request.locale = util.check_locale(hl) if hl else get_locale()
   flask.request.locale_html = flask.request.locale.replace('_', '-')
 
 
 @flask.request_finished.connect_via(app)
 def request_finished(sender, response, **extra):
-  if util.param('hl'):
-    util.set_locale(check_locale(util.param('hl')), response)
+  util.set_locale(util.param('hl'), response)
 
 
 @app.route('/l/<path:locale>/')
 def set_locale(locale):
-  response = flask.redirect(util.get_next_url())
-  util.set_locale(check_locale(locale), response)
-  return response
+  return util.set_locale(locale, flask.redirect(util.get_next_url()))
 
 
 ###############################################################################
@@ -462,7 +451,10 @@ def signin_user_db(user_db):
   flask.session.pop('auth-params', None)
   if flask_login.login_user(flask_user_db, remember=auth_params['remember']):
     user_db.put_async()
-    return flask.redirect(util.get_next_url(auth_params['next']))
+    return util.set_locale(
+      user_db.locale,
+      flask.redirect(util.get_next_url(auth_params['next'])),
+    )
   flask.flash(__('Sorry, but you could not sign in.'), category='danger')
   return flask.redirect(flask.url_for('signin'))
 
