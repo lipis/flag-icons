@@ -37,9 +37,9 @@ class Base(ndb.Model):
     )
 
   FIELDS = {
-    'key': fields.Key,
-    'id': fields.Id,
-    'version': fields.Integer,
     'created': fields.DateTime,
+    'id': fields.Id,
+    'key': fields.Key,
     'modified': fields.DateTime,
+    'version': fields.Integer,
   }
