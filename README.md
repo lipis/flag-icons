@@ -17,7 +17,7 @@ Requirements
 
   - [Google App Engine SDK for Python][]
   - [Node.js][], [pip][], [virtualenv][]
-  - [OS X][] or [Linux][] or [Windows][]
+  - [macOS][] or [Linux][] or [Windows][]
 
 Make sure you have all of the above or refer to the docs on how to
 [install the requirements](http://docs.gae-init.appspot.com/requirement/).
@@ -108,7 +108,7 @@ Tech Stack
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
 [node.js]: http://nodejs.org/
 [openid]: http://en.wikipedia.org/wiki/OpenID
-[os x]: http://www.apple.com/osx/
+[macos]: http://www.apple.com/macos/
 [pip]: http://www.pip-installer.org/
 [python 2.7]: https://developers.google.com/appengine/docs/python/python27/using27
 [social buttons]: http://lipis.github.io/bootstrap-social/
