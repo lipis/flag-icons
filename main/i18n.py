@@ -34,6 +34,6 @@ class Translations(object):
 translations = Translations()
 
 
-class Form(flask_wtf.Form):
+class Form(flask_wtf.FlaskForm):
   def _get_translations(self):
     return translations

@@ -16,7 +16,7 @@ Requirements
 
   - [Google App Engine SDK for Python][]
   - [Node.js][], [pip][], [virtualenv][]
-  - [OS X][] or [Linux][] or [Windows][]
+  - [macOS][] or [Linux][] or [Windows][]
 
 Make sure you have all of the above or refer to the docs on how to
 [install the requirements](http://docs.gae-init.appspot.com/requirement/).
@@ -114,6 +114,7 @@ issue and we'll be happy to improve or provide more info.
 [jquery]: https://jquery.com/
 [less]: http://lesscss.org/
 [linux]: http://www.ubuntu.com
+[macos]: http://www.apple.com/macos/
 [moment.js]: http://momentjs.com/
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
 [openid]: http://en.wikipedia.org/wiki/OpenID
