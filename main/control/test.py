@@ -28,7 +28,7 @@ TESTS = [
 ]
 
 
-class TestForm(flask_wtf.Form):
+class TestForm(flask_wtf.FlaskForm):
   name = wtforms.StringField(
     'Text',
     [wtforms.validators.required()], filters=[util.strip_filter],

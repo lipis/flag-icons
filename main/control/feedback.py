@@ -12,7 +12,7 @@ import util
 from main import app
 
 
-class FeedbackForm(flask_wtf.Form):
+class FeedbackForm(flask_wtf.FlaskForm):
   message = wtforms.TextAreaField(
     'Message',
     [wtforms.validators.required()], filters=[util.strip_filter],

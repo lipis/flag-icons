@@ -181,7 +181,7 @@ def permission_required(permission=None, methods=None):
 ###############################################################################
 # Sign in stuff
 ###############################################################################
-class SignInForm(flask_wtf.Form):
+class SignInForm(flask_wtf.FlaskForm):
   email = wtforms.StringField(
     'Email',
     [wtforms.validators.required()],
@@ -235,7 +235,7 @@ def signin():
 ###############################################################################
 # Sign up stuff
 ###############################################################################
-class SignUpForm(flask_wtf.Form):
+class SignUpForm(flask_wtf.FlaskForm):
   email = wtforms.StringField(
     'Email',
     [wtforms.validators.required(), wtforms.validators.email()],

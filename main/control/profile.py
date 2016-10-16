@@ -32,7 +32,7 @@ def profile():
 ###############################################################################
 # Profile Update
 ###############################################################################
-class ProfileUpdateForm(flask_wtf.Form):
+class ProfileUpdateForm(flask_wtf.FlaskForm):
   name = wtforms.StringField(
     model.User.name._verbose_name,
     [wtforms.validators.required()], filters=[util.strip_filter],
@@ -76,7 +76,7 @@ def profile_update():
 ###############################################################################
 # Profile Password
 ###############################################################################
-class ProfilePasswordForm(flask_wtf.Form):
+class ProfilePasswordForm(flask_wtf.FlaskForm):
   old_password = wtforms.StringField(
     'Old Password', [wtforms.validators.required()],
   )
