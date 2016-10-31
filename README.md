@@ -104,11 +104,11 @@ Tech Stack
 [jquery]: https://jquery.com/
 [less]: http://lesscss.org/
 [linux]: http://www.ubuntu.com
+[macos]: http://www.apple.com/macos/
 [moment.js]: http://momentjs.com/
 [ndb]: https://developers.google.com/appengine/docs/python/ndb/
 [node.js]: http://nodejs.org/
 [openid]: http://en.wikipedia.org/wiki/OpenID
-[macos]: http://www.apple.com/macos/
 [pip]: http://www.pip-installer.org/
 [python 2.7]: https://developers.google.com/appengine/docs/python/python27/using27
 [social buttons]: http://lipis.github.io/bootstrap-social/

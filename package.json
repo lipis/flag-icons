@@ -31,6 +31,7 @@
     "gulp-start": "~1",
     "gulp-uglify": "~2",
     "gulp-util": "~3",
+    "gulp-watch": "~4",
     "gulp-zip": "~3",
     "less": "~2",
     "main-bower-files": "~2",

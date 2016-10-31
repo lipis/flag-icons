@@ -5,10 +5,11 @@ paths = require '../paths'
 
 gulp.task 'reload', false, ->
   $.livereload.listen 35729
-  gulp.watch([
+  $.watch [
     "#{paths.static.dev}/**/*.{css,js}"
     "#{paths.main}/**/*.{html,py}"
-  ]).on 'change', $.livereload.changed
+  ], events: ['change'], (file) ->
+    $.livereload.changed file
 
 
 gulp.task 'ext_watch_rebuild', false, (callback) ->
@@ -16,10 +17,17 @@ gulp.task 'ext_watch_rebuild', false, (callback) ->
 
 
 gulp.task 'watch', false, ->
-  gulp.watch 'requirements.txt', ['pip']
-  gulp.watch 'package.json', ['npm']
-  gulp.watch 'bower.json', ['ext_watch_rebuild']
-  gulp.watch 'gulp/config.coffee', ['ext:dev', 'style:dev', 'script:dev']
-  gulp.watch paths.static.ext, ['ext:dev']
-  gulp.watch "#{paths.src.script}/**/*.{coffee,js}", ['script:dev']
-  gulp.watch "#{paths.src.style}/**/*.less", ['style:dev']
+  $.watch 'requirements.txt', ->
+    $.sequence('pip')()
+  $.watch 'package.json', ->
+    $.sequence('npm')()
+  $.watch 'bower.json', ->
+    $.sequence('ext_watch_rebuild')()
+  $.watch 'gulp/config.coffee', ->
+    $.sequence('ext:dev', ['style:dev', 'script:dev'])()
+  $.watch paths.static.ext, ->
+    $.sequence('ext:dev')()
+  $.watch "#{paths.src.script}/**/*.{coffee,js}", ->
+    $.sequence('script:dev')()
+  $.watch "#{paths.src.style}/**/*.less", ->
+    $.sequence('style:dev')()
