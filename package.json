@@ -27,7 +27,7 @@
     "gulp-plumber": "~1",
     "gulp-sequence": "~0",
     "gulp-size": "~2",
-    "gulp-sourcemaps": "~1",
+    "gulp-sourcemaps": "~2",
     "gulp-start": "~1",
     "gulp-uglify": "~2",
     "gulp-util": "~3",
