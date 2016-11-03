@@ -10,21 +10,21 @@ import util
 from main import app
 
 TESTS = [
-  'pageres',
-  'responsive',
-  'grid',
-  'heading',
-  'paragraph',
-  'font',
-  'table',
-  'form',
-  'button',
   'alert',
   'badge',
-  'label',
+  'button',
   'filter',
+  'font',
+  'form',
+  'grid',
+  'heading',
+  'label',
+  'pageres',
   'pagination',
+  'paragraph',
+  'responsive',
   'social',
+  'table',
 ]
 
 
