@@ -67,6 +67,8 @@
 # macro auth_icon(auth_id)
   # if auth_id == 'email_auth'
     <span class="fa fa-fw fa-lock" title="Password"></span>
+  # elif auth_id.startswith('azure_ad')
+    <span class="fa fa-fw fa-windows" title="Azure AD"></span>
   # elif auth_id.startswith('bitbucket')
     <span class="fa fa-fw fa-bitbucket" title="Bitbucket"></span>
   # elif auth_id.startswith('dropbox')

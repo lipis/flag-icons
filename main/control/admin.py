@@ -86,6 +86,8 @@ def admin_config():
 # Auth Stuff
 ###############################################################################
 class AuthUpdateForm(flask_wtf.FlaskForm):
+  azure_ad_client_id = wtforms.StringField(model.Config.azure_ad_client_id._verbose_name, filters=[util.strip_filter])
+  azure_ad_client_secret = wtforms.StringField(model.Config.azure_ad_client_secret._verbose_name, filters=[util.strip_filter])
   bitbucket_key = wtforms.StringField(model.Config.bitbucket_key._verbose_name, filters=[util.strip_filter])
   bitbucket_secret = wtforms.StringField(model.Config.bitbucket_secret._verbose_name, filters=[util.strip_filter])
   dropbox_app_key = wtforms.StringField(model.Config.dropbox_app_key._verbose_name, filters=[util.strip_filter])

@@ -1,6 +1,7 @@
 # coding: utf-8
 
 from .auth import *
+from .azure_ad import *
 from .bitbucket import *
 from .dropbox import *
 from .facebook import *

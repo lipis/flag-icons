@@ -4,5 +4,6 @@ flask-oauthlib==0.9.3
 flask-restful==0.3.5
 flask-wtf==0.13.1
 flask==0.11.1
+pyjwt==1.4.2
 unidecode==0.4.19
 webargs==1.4.0
