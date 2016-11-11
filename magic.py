@@ -160,12 +160,12 @@ def sync_from_magic(project_db):
     create_file(project_url, os.path.join(root, 'admin_%s_update.html' % name))
     create_file(project_url, os.path.join(root, 'admin_%s_list.html' % name))
 
-    if not model_db['admin_only']:
-      create_file(project_url, os.path.join(root, '%s_update.html' % name))
-
-    if model_db['public_view'] or not model_db['admin_only']:
+    if model_db['has_view']:
       create_file(project_url, os.path.join(root, '%s_view.html' % name))
       create_file(project_url, os.path.join(root, '%s_list.html' % name))
+
+    if model_db['has_update']:
+      create_file(project_url, os.path.join(root, '%s_update.html' % name))
 
 
 ###############################################################################
