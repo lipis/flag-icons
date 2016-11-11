@@ -2,10 +2,10 @@
 
 from __future__ import absolute_import
 
-import flask_restful
 from webargs.flaskparser import parser
 from webargs import fields as wf
 import flask
+import flask_restful
 
 from api import helpers
 import auth
