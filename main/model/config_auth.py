@@ -9,6 +9,8 @@ import model
 
 
 class ConfigAuth(object):
+  azure_ad_client_id = ndb.StringProperty(default='', verbose_name='Client ID')
+  azure_ad_client_secret = ndb.StringProperty(default='', verbose_name='Client Secret')
   bitbucket_key = ndb.StringProperty(default='', verbose_name='Key')
   bitbucket_secret = ndb.StringProperty(default='', verbose_name='Secret')
   dropbox_app_key = ndb.StringProperty(default='', verbose_name='App Key')
@@ -33,6 +35,10 @@ class ConfigAuth(object):
   vk_app_secret = ndb.StringProperty(default='', verbose_name='App Secret')
   yahoo_consumer_key = ndb.StringProperty(default='', verbose_name='Consumer Key')
   yahoo_consumer_secret = ndb.StringProperty(default='', verbose_name='Consumer Secret')
+
+  @property
+  def has_azure_ad(self):
+    return bool(self.azure_ad_client_id and self.azure_ad_client_secret)
 
   @property
   def has_bitbucket(self):
@@ -83,6 +89,8 @@ class ConfigAuth(object):
     return bool(self.yahoo_consumer_key and self.yahoo_consumer_secret)
 
   FIELDS = {
+    'azure_ad_client_id': fields.String,
+    'azure_ad_client_secret': fields.String,
     'bitbucket_key': fields.String,
     'bitbucket_secret': fields.String,
     'dropbox_app_key': fields.String,

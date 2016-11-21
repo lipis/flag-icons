@@ -1,0 +1,11 @@
+
+{{
+  forms.panel_fields(
+    'Azure AD',
+    (form.azure_ad_client_id, form.azure_ad_client_secret),
+    '''
+      Callback URL for <a href="https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps" target="_blank">Azure AD application</a>:
+      <em>http://%s</em>
+    ''' % request.host
+  )
+}}
