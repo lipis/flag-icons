@@ -1,7 +1,7 @@
 # coding: utf-8
 
-from flask_babel import Babel
 import flask
+import flask_babel
 
 import config
 import util
@@ -17,7 +17,7 @@ app.jinja_env.globals.update(
   update_query_argument=util.update_query_argument,
 )
 app.config['BABEL_DEFAULT_LOCALE'] = config.LOCALE_DEFAULT
-babel = Babel(app)
+babel = flask_babel.Babel(app)
 
 import auth
 import control
