@@ -25,6 +25,8 @@ class ConfigAuth(object):
   instagram_client_secret = ndb.StringProperty(default='', verbose_name='Client Secret')
   linkedin_api_key = ndb.StringProperty(default='', verbose_name='API Key')
   linkedin_secret_key = ndb.StringProperty(default='', verbose_name='Secret Key')
+  mailru_app_id = ndb.StringProperty(default='', verbose_name='App ID')
+  mailru_app_secret = ndb.StringProperty(default='', verbose_name='App Secret')
   microsoft_client_id = ndb.StringProperty(default='', verbose_name='Client ID')
   microsoft_client_secret = ndb.StringProperty(default='', verbose_name='Client Secret')
   reddit_client_id = ndb.StringProperty(default='', verbose_name='Client ID')
@@ -69,6 +71,10 @@ class ConfigAuth(object):
     return bool(self.linkedin_api_key and self.linkedin_secret_key)
 
   @property
+  def has_mailru(self):
+    return bool(self.mailru_app_id and self.mailru_app_secret)
+
+  @property
   def has_microsoft(self):
     return bool(self.microsoft_client_id and self.microsoft_client_secret)
 
@@ -105,6 +111,8 @@ class ConfigAuth(object):
     'instagram_client_secret': fields.String,
     'linkedin_api_key': fields.String,
     'linkedin_secret_key': fields.String,
+    'mailru_client_id': fields.String,
+    'mailru_client_secret': fields.String,
     'microsoft_client_id': fields.String,
     'microsoft_client_secret': fields.String,
     'reddit_client_id': fields.String,
