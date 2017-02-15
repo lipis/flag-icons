@@ -425,7 +425,7 @@ def get_user_db_from_email(email, password):
     return None
   if len(user_dbs) > 1:
     flask.flash('''We are sorry but it looks like there is a conflict with
-        your account. Our support team is already informed and we will get
+        your account. Our support team has been informed and we will get
         back to you as soon as possible.''', category='danger')
     task.email_conflict_notification(email)
     return False
