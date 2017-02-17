@@ -33,7 +33,7 @@
     "gulp-uglify": "~2",
     "gulp-util": "~3",
     "gulp-watch": "~4",
-    "gulp-zip": "~3",
+    "gulp-zip": "~4",
     "less": "~2",
     "main-bower-files": "~2",
     "require-dir": "~0",
