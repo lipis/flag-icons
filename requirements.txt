@@ -3,7 +3,7 @@ flask-login==0.4.0
 flask-oauthlib==0.9.3
 flask-restful==0.3.5
 flask-wtf==0.14.0
-flask==0.11.1
+flask==0.12
 pyjwt==1.4.2
-unidecode==0.4.19
-webargs==1.4.0
+unidecode==0.4.20
+webargs==1.5.3
