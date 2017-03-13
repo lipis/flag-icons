@@ -39,7 +39,7 @@ class User(model.Base):
     facebook_id = self.has_facebook()
     if facebook_id:
       return '//graph.facebook.com/%(id)s/picture%(size)s' % {
-        'id': facebook_id,
+        'id': facebook_id.split('_')[1],
         'size': '?width=%s&height=%s' % (size, size) if size else '',
       }
 
