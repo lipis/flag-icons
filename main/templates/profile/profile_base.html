@@ -37,7 +37,11 @@
       <img class="img-thumbnail" src="{{user_db.avatar_url_size(512)}}" alt="Avatar of {{user_db.name}}">
       # if html_class == 'profile-update'
         <p class="help-block">
-          Change on <a href="//gravatar.com" target="_blank">Gravatar</a>
+          # if user_db.has_facebook()
+            Change on <a href="https://facebook.com" target="_blank">Facebook</a>
+          # else
+            Change on <a href="https://gravatar.com" target="_blank">Gravatar</a>
+          # endif
         </p>
       # endif
     </div>
