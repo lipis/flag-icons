@@ -13,7 +13,7 @@ import sys
 import urllib
 import urllib2
 
-import main
+__version__ = '5.8.0'
 
 
 ###############################################################################
@@ -226,7 +226,7 @@ def check_for_update():
       os.utime(FILE_UPDATE, None)
     request = urllib2.Request(
       CORE_VERSION_URL,
-      urllib.urlencode({'version': main.__version__}),
+      urllib.urlencode({'version': __version__}),
     )
     response = urllib2.urlopen(request)
     with open(FILE_UPDATE, 'w') as update_json:
@@ -246,10 +246,10 @@ def print_out_update(force_show=False):
   try:
     with open(FILE_UPDATE, 'r') as update_json:
       data = json.load(update_json)
-    if SemVer(main.__version__) < SemVer(data['version']) or force_show:
+    if SemVer(__version__) < SemVer(data['version']) or force_show:
       print_out('UPDATE')
       print_out(data['version'], 'Latest version of gae-init')
-      print_out(main.__version__, 'Your version is a bit behind')
+      print_out(__version__, 'Your version is a bit behind')
       print_out('CHANGESET', data['changeset'])
   except (ValueError, KeyError):
     os.remove(FILE_UPDATE)
