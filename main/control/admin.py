@@ -54,6 +54,7 @@ class ConfigUpdateForm(flask_wtf.FlaskForm):
   recaptcha_private_key = wtforms.StringField(model.Config.recaptcha_private_key._verbose_name, filters=[util.strip_filter])
   recaptcha_public_key = wtforms.StringField(model.Config.recaptcha_public_key._verbose_name, filters=[util.strip_filter])
   salt = wtforms.StringField(model.Config.salt._verbose_name, [wtforms.validators.optional()], filters=[util.strip_filter])
+  trusted_hosts = wtforms.StringField(model.Config.trusted_hosts._verbose_name, [wtforms.validators.optional()], description='Comma separated: 127.0.0.1, example.com, etc')
   verify_email = wtforms.BooleanField(model.Config.verify_email._verbose_name)
 
 
@@ -63,6 +64,11 @@ def admin_config():
   config_db = model.Config.get_master_db()
   form = ConfigUpdateForm(obj=config_db)
   if form.validate_on_submit():
+    if form.trusted_hosts.data:
+      form.trusted_hosts.data = set(
+        [e.strip() for e in form.trusted_hosts.data.split(',')])
+    else:
+      form.trusted_hosts.data = []
     form.populate_obj(config_db)
     if not config_db.flask_secret_key:
       config_db.flask_secret_key = util.uuid()
@@ -72,6 +78,7 @@ def admin_config():
     reload(config)
     app.config.update(CONFIG_DB=config_db)
     return flask.redirect(flask.url_for('admin'))
+  form.trusted_hosts.data = ', '.join(config_db.trusted_hosts)
 
   return flask.render_template(
     'admin/admin_config.html',

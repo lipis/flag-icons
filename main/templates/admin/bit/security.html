@@ -1,7 +1,7 @@
 {{
   forms.panel_fields(
     'Security',
-    (form.flask_secret_key, form.salt),
+    (form.trusted_hosts, form.flask_secret_key, form.salt),
     '''
       Read more about
       <a href="http://flask.pocoo.org/docs/quickstart/#sessions" target="_blank">Flask secret key</a>

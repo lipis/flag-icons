@@ -34,6 +34,7 @@ else:
   RECAPTCHA_PUBLIC_KEY = CONFIG_DB.recaptcha_public_key
   RECAPTCHA_PRIVATE_KEY = CONFIG_DB.recaptcha_private_key
   RECAPTCHA_LIMIT = 8
+  TRUSTED_HOSTS = CONFIG_DB.trusted_hosts
 
 DEFAULT_DB_LIMIT = 64
 SIGNIN_RETRY_LIMIT = 4

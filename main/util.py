@@ -1,5 +1,6 @@
 # coding: utf-8
 
+from urlparse import urlparse
 from uuid import uuid4
 import hashlib
 import re
@@ -35,6 +36,15 @@ def param(name, cast=None):
   return ndb.Key(urlsafe=value) if cast is ndb.Key and value else value
 
 
+def is_trusted_url(next_url):
+  next_url_host = urlparse(next_url).hostname
+  if config.TRUSTED_HOSTS and next_url_host not in config.TRUSTED_HOSTS:
+    return flask.url_for('welcome')
+  if not next_url.startswith(flask.request.host_url):
+    return flask.url_for('welcome')
+  return next_url
+
+
 def get_next_url(next_url=''):
   args = parser.parse({
     'next': wf.Str(missing=None), 'next_url': wf.Str(missing=None)
@@ -46,11 +56,8 @@ def get_next_url(next_url=''):
   if next_url:
     if any(url in next_url for url in do_not_redirect_urls):
       return flask.url_for('welcome')
-    return next_url
-  referrer = flask.request.referrer
-  if referrer and referrer.startswith(flask.request.host_url):
-    return referrer
-  return flask.url_for('welcome')
+    return is_trusted_url(next_url)
+  return is_trusted_url(flask.request.referrer)
 
 
 ###############################################################################
