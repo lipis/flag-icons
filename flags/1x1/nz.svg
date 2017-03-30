@@ -1,27 +1,41 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" viewBox="0 0 512 512">
-  <g fill-rule="evenodd" stroke-width="1pt">
-    <path fill="#00006a" d="M.004 0h512v512h-512z"/>
-    <path d="M0 .002l241.878 230.776h49.615L54.837.111-.001 0z" fill="#fff"/>
-    <path d="M273.368 230.766L36.548-.002 18.119.28 255.93 230.77h17.438z" fill="red"/>
-    <path d="M291.497.002L49.62 230.778H.004L236.66.111 291.497 0z" fill="#fff"/>
-    <path d="M273.316.003L36.59 230.77l-18.423.01L255.884.002h17.432z" fill="red"/>
-    <path fill="#fff" d="M122.426.003h46.638v230.772h-46.638z"/>
-    <path fill="#fff" d="M.004 92.311h291.481v46.154H.005z"/>
-    <path fill="red" d="M132.633.003h26.234v230.772h-26.234z"/>
-    <path fill="red" d="M.004 103.854h291.481v23.077H.005z"/>
-    <g>
-      <path fill="#fff" d="M400.008 199.324l-19.577-14.469-20.296 13.424 7.642-23.186-18.972-15.257 24.295.139 8.567-22.854 7.384 23.27 24.26 1.134-19.728 14.243z"/>
-      <path fill="red" d="M392.157 187.61l-11.58-8.375-11.837 8.007 4.35-13.66-11.237-8.844 14.273-.067 4.893-13.472 4.469 13.62 14.254.516-11.494 8.485z"/>
-      <path fill="#fff" d="M324.878 324.042L305.3 309.573l-20.297 13.424 7.643-23.186-18.973-15.257 24.296.139 8.566-22.854 7.385 23.271 24.26 1.133-19.728 14.243z"/>
-      <path fill="red" d="M317.026 312.328l-11.58-8.375-11.836 8.007 4.35-13.66-11.238-8.843 14.274-.068 4.892-13.472 4.47 13.62 14.254.516-11.494 8.485z"/>
-      <g>
-        <path fill="#fff" d="M478.633 311.75l-19.576-14.469-20.297 13.424 7.642-23.186-18.972-15.256 24.295.138 8.567-22.853 7.384 23.27 24.26 1.133-19.727 14.244z"/>
-        <path fill="red" d="M470.782 300.036l-11.58-8.375-11.836 8.007 4.35-13.66-11.238-8.843 14.274-.067 4.892-13.472 4.469 13.619 14.254.516-11.494 8.486z"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="512" width="512" viewBox="0 0 512 512">
+  <defs>
+    <g id="b">
+      <g id="a">
+        <path transform="translate(0 -.325)" d="M0 0v.5L1 0z"/>
+        <path d="M0 0v-.5L1 0z" transform="rotate(-36 .5 -.162)"/>
       </g>
-      <g>
-        <path fill="#fff" d="M398.261 489.168l-19.577-14.47-20.296 13.424 7.642-23.185-18.973-15.257 24.296.138 8.566-22.853 7.385 23.27 24.26 1.134-19.728 14.243z"/>
-        <path fill="red" d="M390.41 477.454l-11.581-8.375-11.836 8.007 4.35-13.66-11.238-8.844 14.274-.067 4.893-13.472 4.468 13.62 14.255.516-11.494 8.485z"/>
-      </g>
+      <use xlink:href="#a" transform="scale(-1 1)"/>
+      <use xlink:href="#a" transform="rotate(72 0 0)"/>
+      <use xlink:href="#a" transform="rotate(-72 0 0)"/>
+      <use xlink:href="#a" transform="scale(-1 1) rotate(72)"/>
     </g>
+    <clipPath id="c">
+      <path d="M0 0h600v300H0z"/>
+    </clipPath>
+    <clipPath id="d">
+      <path d="M0 0l300 150H0zm300 0h300L300 150zm0 150h300v150zm0 0v150H0z"/>
+    </clipPath>
+  </defs>
+  <path fill-rule="evenodd" fill="#00247d" d="M.004 0h512v512h-512z"/>
+  <g transform="translate(-148.654 134.473) scale(.60566)">
+    <use fill="#fff" height="100%" width="100%" xlink:href="#b" transform="matrix(45.4 0 0 45.4 900 120)"/>
+    <use fill="#cc142b" height="100%" width="100%" xlink:href="#b" transform="matrix(30 0 0 30 900 120)"/>
   </g>
+  <g transform="rotate(82 393.421 127.092) scale(.60566)">
+    <use fill="#fff" height="100%" width="100%" xlink:href="#b" transform="rotate(-82 519.022 -457.666) scale(40.4)"/>
+    <use fill="#cc142b" height="100%" width="100%" xlink:href="#b" transform="rotate(-82 519.022 -457.666) scale(25)"/>
+  </g>
+  <g transform="rotate(82 393.421 127.092) scale(.60566)">
+    <use fill="#fff" height="100%" width="100%" xlink:href="#b" transform="rotate(-82 668.57 -327.666) scale(45.4)"/>
+    <use fill="#cc142b" height="100%" width="100%" xlink:href="#b" transform="rotate(-82 668.57 -327.666) scale(30)"/>
+  </g>
+  <g transform="translate(-148.654 134.473) scale(.60566)">
+    <use fill="#fff" height="100%" width="100%" xlink:href="#b" transform="matrix(50.4 0 0 50.4 900 480)"/>
+    <use fill="#cc142b" height="100%" width="100%" xlink:href="#b" transform="matrix(35 0 0 35 900 480)"/>
+  </g>
+  <path transform="matrix(.52004 0 0 .78924 .002 0)" d="M0 0l600 300M0 300L600 0" clip-path="url(#c)" stroke="#fff" stroke-width="60"/>
+  <path transform="matrix(.52004 0 0 .78924 .002 0)" d="M0 0l600 300M0 300L600 0" clip-path="url(#d)" stroke="#cc142b" stroke-width="40"/>
+  <path style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal" clip-path="url(#c)" d="M125.674-.004v88.049H-.06v60.682h125.733v88.046h60.681v-88.046h125.733V88.045H186.355V-.004h-60.681z" color="#000" font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible" fill="#fff"/>
+  <path style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal" d="M137.81.002v100.18H-.058v36.408h137.87v100.18h36.408V136.59h137.869v-36.408h-137.87V.002h-36.407z" color="#000" font-weight="400" font-family="sans-serif" white-space="normal" overflow="visible" fill="#cc142b"/>
 </svg>

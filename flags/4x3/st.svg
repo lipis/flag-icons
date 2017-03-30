@@ -1,15 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" viewBox="0 0 640 480">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".67" d="M0 0h682.67v512H0z"/>
-    </clipPath>
-  </defs>
-  <g clip-path="url(#a)" fill-rule="evenodd" transform="scale(.9375)">
-    <path fill="#ff0" d="M0 0h1024v504.3H0z"/>
-    <path fill="#009d00" d="M0 0h1024v146.29H0zM0 365.71h1024V512H0z"/>
-    <path d="M.708 0c1.417 0 255.29 253.03 255.29 253.03L-.002 512 .707 0z" fill="#f10600"/>
-    <g stroke-width="1pt">
-      <path d="M411.966 268.686l-31.97-23.896 39.499.04 12.174-38.705 12.173 38.705 39.5-.029-31.977 23.885 12.236 38.687-31.938-23.942-31.938 23.937zM215.048 268.686l-31.971-23.896 39.5.04 12.173-38.705 12.174 38.705 39.5-.029-31.977 23.885 12.235 38.687-31.938-23.942-31.937 23.937z"/>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="480" width="640" viewBox="0 0 640 480">
+  <path fill="#12ad2b" d="M0 0h640v480H0z"/>
+  <path fill="#ffce00" d="M0 137.143h640v205.714H0z"/>
+  <path d="M0 0v480l240-240" fill="#d21034"/>
+  <g id="c" transform="matrix(.34286 0 0 .34286 351.595 240)">
+    <g id="b">
+      <path id="a" d="M0-200V0h100" transform="rotate(18 0 -200)"/>
+      <use height="100%" width="100%" xlink:href="#a" transform="scale(-1 1)"/>
     </g>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(72)"/>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(144)"/>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(-144)"/>
+    <use height="100%" width="100%" xlink:href="#b" transform="rotate(-72)"/>
   </g>
+  <use height="100%" width="100%" xlink:href="#c" x="700" transform="translate(-523.19)"/>
 </svg>
