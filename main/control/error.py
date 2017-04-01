@@ -20,12 +20,15 @@ from main import app
 @app.errorhandler(422)  # Unprocessable Entity
 @app.errorhandler(500)  # Internal Server Error
 def error_handler(e):
-  logging.exception(e)
   try:
     e.code
   except AttributeError:
     e.code = 500
     e.name = 'Internal Server Error'
+
+  logging.error('%d - %s: %s', e.code, e.name, flask.request.url)
+  if e.code != 404:
+    logging.exception(e)
 
   if flask.request.path.startswith('/api/'):
     return helpers.handle_error(e)
