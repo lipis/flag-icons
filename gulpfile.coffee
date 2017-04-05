@@ -6,4 +6,4 @@ $ = require('gulp-load-plugins')()
 gulp.task 'default',
   'Start the local server, watch for changes and reload browser automatically.
   For available options refer to "run" task.',
-  $.sequence 'run', ['watch', 'reload']
+  $.sequence 'run', ['watch']

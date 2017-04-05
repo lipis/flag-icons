@@ -30,7 +30,7 @@ $ cd /path/to/project-name
 $ gulp
 ```
 
-To test it visit `http://localhost:8080/` in your browser.
+To test it visit `http://localhost:3000` in your browser.
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
