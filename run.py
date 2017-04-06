@@ -4,6 +4,7 @@
 from datetime import datetime
 from distutils import spawn
 import argparse
+import imp
 import json
 import os
 import platform
@@ -13,7 +14,7 @@ import sys
 import urllib
 import urllib2
 
-from main import config
+config = imp.load_source('config', 'main/config.py')
 
 __version__ = '5.9.0'
 
@@ -359,9 +360,8 @@ def doctor_says_ok():
 # Babel Stuff
 ###############################################################################
 def pybabel_extract():
-  exec_pip_commands(
-    '"pybabel" extract -k _ -k __ -F %s --sort-by-file --omit-header -o %s %s' % (
-      FILE_BABEL_CFG, FILE_MESSAGES_POT, DIR_MAIN,
+  exec_pip_commands('"pybabel" extract -k _ -k __ -F %s --sort-by-file --omit-header -o %s %s' % (
+    FILE_BABEL_CFG, FILE_MESSAGES_POT, DIR_MAIN,
   ))
 
 
