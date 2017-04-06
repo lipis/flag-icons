@@ -1,15 +1,19 @@
 gulp = require('gulp-help') require 'gulp'
+browserSync = require('browser-sync')
 $ = require('gulp-load-plugins')()
+config = require '../config'
 paths = require '../paths'
 
 
-gulp.task 'reload', false, ->
-  $.livereload.listen 35729
+gulp.task 'browser-sync', false, ->
+  browserSync.init
+    proxy: "#{config.host}:#{config.port}"
+    notify: false
   $.watch [
     "#{paths.static.dev}/**/*.{css,js}"
     "#{paths.main}/**/*.{html,py}"
   ], events: ['change'], (file) ->
-    $.livereload.changed file
+    browserSync.reload()
 
 
 gulp.task 'ext_watch_rebuild', false, (callback) ->

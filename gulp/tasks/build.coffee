@@ -1,6 +1,7 @@
 gulp = require('gulp-help') require 'gulp'
 yargs = require 'yargs-parser'
 $ = require('gulp-load-plugins')()
+config = require '../config'
 paths = require '../paths'
 
 
@@ -55,6 +56,12 @@ gulp.task 'run',
           else
             options_str += " -#{k} #{options[k]}"
 
+      if options['p']
+        config.port = options['p']
+      if options['o']
+        config.host = options['o']
+
+      gulp.start('browser-sync')
       gulp.src('run.py').pipe $.start [{
         match: /run.py$/
         cmd: "python run.py #{options_str}"

@@ -8,9 +8,11 @@
   },
   "scripts": {
     "install": "gulp init",
-    "postinstall": "echo 'Run `gulp` to start or `gulp help` for more.'"
+    "postinstall": "echo 'Run `gulp` to start or `gulp help` for more.'",
+    "start": "gulp"
   },
   "devDependencies": {
+    "browser-sync": "2.18.8",
     "bower": "1.8.0",
     "coffee-script": "1.12.4",
     "del": "2.2.2",
@@ -23,21 +25,20 @@
     "gulp-help": "1.6.1",
     "gulp-if": "2.0.2",
     "gulp-less": "3.3.0",
-    "gulp-livereload": "3.8.1",
     "gulp-load-plugins": "1.5.0",
     "gulp-plumber": "1.1.0",
     "gulp-sequence": "0.4.6",
     "gulp-size": "2.1.0",
-    "gulp-sourcemaps": "2.4.1",
+    "gulp-sourcemaps": "2.5.1",
     "gulp-start": "1.0.1",
-    "gulp-uglify": "2.1.0",
+    "gulp-uglify": "2.1.2",
     "gulp-util": "3.0.8",
     "gulp-watch": "4.3.11",
     "gulp-zip": "4.0.0",
     "less": "2.7.2",
     "main-bower-files": "2.13.1",
     "require-dir": "0.3.1",
-    "uglify-js": "2.8.12",
+    "uglify-js": "2.8.21",
     "yargs-parser": "5.0.0"
   }
 }
