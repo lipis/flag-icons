@@ -29,7 +29,7 @@
     "gulp-plumber": "1.1.0",
     "gulp-sequence": "0.4.6",
     "gulp-size": "2.1.0",
-    "gulp-sourcemaps": "2.5.2",
+    "gulp-sourcemaps": "2.6.0",
     "gulp-start": "1.0.1",
     "gulp-uglify": "2.1.2",
     "gulp-util": "3.0.8",
