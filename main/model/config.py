@@ -26,7 +26,7 @@ class Config(model.Base, model.ConfigAuth):
   recaptcha_private_key = ndb.StringProperty(default='', verbose_name='Private Key')
   recaptcha_public_key = ndb.StringProperty(default='', verbose_name='Public Key')
   salt = ndb.StringProperty(default=util.uuid())
-  trusted_hosts = ndb.StringProperty(repeated=True, verbose_name='Trusted hosts')
+  trusted_hosts = ndb.StringProperty(repeated=True, verbose_name='Trusted Hosts')
   verify_email = ndb.BooleanProperty(default=True, verbose_name='Verify user emails')
 
   @property
