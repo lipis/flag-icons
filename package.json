@@ -1,16 +1,5 @@
 {
-  "name": "gae-init",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gae-init"
-  },
-  "scripts": {
-    "install": "gulp init",
-    "postinstall": "echo 'Run `gulp` to start or `gulp help` for more.'",
-    "start": "gulp"
-  },
   "devDependencies": {
     "bower": "1.8.0",
     "browser-sync": "2.18.8",
@@ -40,5 +29,16 @@
     "require-dir": "0.3.1",
     "uglify-js": "2.8.22",
     "yargs-parser": "5.0.0"
+  },
+  "license": "MIT",
+  "name": "gae-init",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gae-init"
+  },
+  "scripts": {
+    "install": "gulp init",
+    "postinstall": "echo 'Run `gulp` to start or `gulp help` for more.'",
+    "start": "gulp"
   }
 }
