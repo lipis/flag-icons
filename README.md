@@ -75,3 +75,6 @@ file and build it again.
 
 This project wouldn't exist without the awesome and now deleted collection of
 SVG flags by [koppi](https://github.com/koppi).
+
+## License
+[MIT] https://github.com/lipis/flag-icon-css/blob/master/LICENSE
