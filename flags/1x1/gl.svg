@@ -1,4 +1,59 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="512" width="512" viewBox="0 0 512 512">
-  <path d="M0 0h512v256H0z" fill="#fff"/>
-  <path d="M0 256h512v256H0zm53.333 0c.015 94.246 76.42 170.64 170.667 170.64 94.246 0 170.652-76.394 170.667-170.64-.015-94.246-76.42-170.64-170.667-170.64-94.246 0-170.652 76.394-170.667 170.64" fill="#d00c33"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   height="512"
+   width="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg18162"
+   sodipodi:docname="gl.svg"
+   inkscape:version="0.92.1 r">
+  <metadata
+     id="metadata18168">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs18166" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1246"
+     inkscape:window-height="638"
+     id="namedview18164"
+     showgrid="false"
+     inkscape:zoom="0.01"
+     inkscape:cx="30286.983"
+     inkscape:cy="-8844"
+     inkscape:window-x="0"
+     inkscape:window-y="23"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg18162" />
+  <path
+     d="M 0,0 H 512 V 512 H 0 Z"
+     id="path18158"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff;stroke-width:1.41421354" />
+  <path
+     d="M0 256h512v256H0zm53.333 0c.015 94.246 76.42 170.64 170.667 170.64 94.246 0 170.652-76.394 170.667-170.64-.015-94.246-76.42-170.64-170.667-170.64-94.246 0-170.652 76.394-170.667 170.64"
+     fill="#d00c33"
+     id="path18160" />
 </svg>
