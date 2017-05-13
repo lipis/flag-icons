@@ -1,7 +1,7 @@
 {
-  "name": "flag-icon-css",
-  "version": "2.8.0",
-  "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
+  "name": "jons-flag-icon-css",
+  "version": "1.0.0",
+  "author": "Jon Rosenberg fork of http://github.com/lipis/flag-icon-css",
   "licenses": [
     {
       "type": "MIT",
@@ -10,7 +10,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/lipis/flag-icon-css"
+    "url": "http://github.com/jon-rosenberg/flag-icon-css"
   },
   "devDependencies": {
     "grunt": "1.0.1",

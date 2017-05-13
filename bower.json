@@ -1,5 +1,6 @@
 {
-  "name": "flag-icon-css",
+  "name": "jons-flag-icon-css",
+  "version": "1.0.0",
   "main": [
     "css/flag-icon.min.css",
     "less/flag-icon.less",
