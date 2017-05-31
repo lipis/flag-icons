@@ -1,0 +1,77 @@
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   width="600"
+   height="300"
+   id="svg1346"
+   sodipodi:version="0.32"
+   inkscape:version="0.45"
+   sodipodi:docname="Flag_of_Serbia_1991-2004.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape"
+   sodipodi:docbase="C:\Documents and Settings\Owner\Desktop\ITALIA"
+   sodipodi:modified="true">
+  <metadata
+     id="metadata2260">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:window-height="598"
+     inkscape:window-width="744"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:zoom="0.56333333"
+     inkscape:cx="253.8555"
+     inkscape:cy="194.51849"
+     inkscape:window-x="-3"
+     inkscape:window-y="30"
+     inkscape:current-layer="svg1346" />
+  <defs
+     id="defs1348" />
+  <g
+     id="layer1">
+    <g
+       id="g1390">
+      <rect
+         width="600"
+         height="100"
+         x="0"
+         y="200"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd"
+         id="rect1363" />
+      <rect
+         width="600"
+         height="100"
+         x="0"
+         y="0"
+         style="fill:#e20212;fill-opacity:1;fill-rule:evenodd"
+         id="rect2094" />
+      <rect
+         width="600"
+         height="100"
+         x="0"
+         y="100"
+         style="fill:#0066cc;fill-opacity:1;fill-rule:evenodd"
+         id="rect2831" />
+    </g>
+  </g>
+</svg>
