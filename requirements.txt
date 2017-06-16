@@ -1,9 +1,9 @@
 blinker==1.4
 flask-login==0.4.0
-flask-oauthlib==0.9.3
+flask-oauthlib==0.9.4
 flask-restful==0.3.6
 flask-wtf==0.14.2
-flask==0.12.1
+flask==0.12.2
 pyjwt==1.5.0
 unidecode==0.4.20
-webargs==1.6.1
+webargs==1.7.0
