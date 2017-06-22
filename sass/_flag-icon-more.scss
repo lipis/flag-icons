@@ -1,6 +1,8 @@
-@include flag-icon(eu);
-@include flag-icon(gb-eng);
-@include flag-icon(gb-nir);
-@include flag-icon(gb-sct);
-@include flag-icon(gb-wls);
-@include flag-icon(un);
+$flag-icon-more: (
+  'eu'
+  'gb-eng'
+  'gb-nir'
+  'gb-sct'
+  'gb-wls'
+  'un'
+);

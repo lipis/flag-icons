@@ -18,7 +18,7 @@
   }
 }
 
-@mixin flag-icon($country) {
+@each $country in $countries {
   .flag-icon-#{$country} {
     background-image: url(#{$flag-icon-css-path}#{$flag-icon-rect-path}/#{$country}.svg);
     &.flag-icon-squared {
