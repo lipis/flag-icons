@@ -3,7 +3,7 @@
   "devDependencies": {
     "bower": "1.8.0",
     "browser-sync": "2.18.12",
-    "coffee-script": "1.12.6",
+    "coffee-script": "1.12.7",
     "del": "3.0.0",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "4.0.0",
