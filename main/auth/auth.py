@@ -57,7 +57,7 @@ class FlaskUser(AnonymousUser):
     return self.user_db.key.urlsafe()
 
   def get_id(self):
-    return self.user_db.key.urlsafe()
+    return unicode(self.user_db.session_token)
 
   def is_authenticated(self):
     return True
@@ -73,8 +73,8 @@ class FlaskUser(AnonymousUser):
 
 
 @login_manager.user_loader
-def load_user(key):
-  user_db = ndb.Key(urlsafe=key).get()
+def load_user(session_token):
+  user_db = model.User.get_by('session_token', session_token)
   if user_db:
     return FlaskUser(user_db)
   return None
@@ -395,6 +395,7 @@ def create_user_db(auth_id, name, username, email='', verified=False, **props):
     auth_ids=[auth_id] if auth_id else [],
     verified=verified,
     token=util.uuid(),
+    session_token=util.uuid(),
     **props
   )
   user_db.put()
