@@ -25,7 +25,6 @@ class User(model.Base):
   verified = ndb.BooleanProperty(default=False)
   token = ndb.StringProperty(default='')
   password_hash = ndb.StringProperty(default='')
-  session_token = ndb.StringProperty(default='')
 
   def has_permission(self, perm):
     return self.admin or perm in self.permissions
