@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   id="svg14243"
+   height="630"
+   width="630">
+  <metadata
+     id="metadata14274">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs14245">
+    <path
+       transform="rotate(34.695) scale(4.625)"
+       fill="#ea2117"
+       d="M0,12A16.143,16.143 0 0,1 -14,-4A7,8 0 0,1 -7,-12A6,8 0 0,1 -1,-5A1,1 0 1,0 1,-5A6,8 0 0,1 7,-12A7,8 0 0,1 14,-4A16.143,16.143 0 0,1 0,12z"
+       id="pomp" />
+  </defs>
+  <rect
+     style="fill:#0155a5;fill-opacity:1"
+     id="rect14248"
+     fill="#084799"
+     height="630"
+     width="910" />
+  <g
+     id="g14250"
+     transform="scale(130,90)"
+     fill="#fff">
+    <path
+       id="path14252"
+       d="M0,3V5L2,7H4z" />
+    <path
+       id="path14254"
+       d="M1,0H0V1L6,7H7V6z" />
+    <path
+       id="path14256"
+       d="M3,0H5L7,2V4z" />
+  </g>
+  <use
+     style="fill:#ee3e34;fill-opacity:1"
+     id="use14258"
+     y="315"
+     x="455"
+     xlink:href="#pomp" />
+  <use
+     style="fill:#ee3e34;fill-opacity:1"
+     id="use14260"
+     y="423"
+     x="91"
+     xlink:href="#pomp" />
+  <use
+     style="fill:#ee3e34;fill-opacity:1"
+     id="use14262"
+     y="207"
+     x="819"
+     xlink:href="#pomp" />
+  <use
+     style="fill:#ee3e34;fill-opacity:1"
+     id="use14264"
+     y="147"
+     x="212.333"
+     xlink:href="#pomp" />
+  <use
+     style="fill:#ee3e34;fill-opacity:1"
+     id="use14266"
+     y="483"
+     x="697.667"
+     xlink:href="#pomp" />
+  <use
+     style="fill:#ee3e34;fill-opacity:1"
+     id="use14268"
+     y="97.834"
+     x="661.315"
+     xlink:href="#pomp" />
+  <use
+     style="fill:#ee3e34;fill-opacity:1"
+     id="use14270"
+     y="532.166"
+     x="248.685"
+     xlink:href="#pomp" />
+</svg>
