@@ -104,8 +104,7 @@ def listdir(directory, split_ext=False):
   try:
     if split_ext:
       return [os.path.splitext(dir_)[0] for dir_ in os.listdir(directory)]
-    else:
-      return os.listdir(directory)
+    return os.listdir(directory)
   except OSError:
     return []
 
@@ -146,7 +145,7 @@ def exec_pip_commands(command):
                 ('set' if IS_WINDOWS else 'export'))
   script.append(command)
   script = '&'.join(script) if IS_WINDOWS else \
-    '/bin/bash -c "%s"' % ';'.join(script)
+      '/bin/bash -c "%s"' % ';'.join(script)
   os.system(script)
 
 

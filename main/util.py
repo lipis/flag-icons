@@ -89,7 +89,7 @@ def get_dbs(
         query_prev = query_prev.filter(model_class._properties[prop] == val)
 
   limit = limit or config.DEFAULT_DB_LIMIT
-  if limit is -1:
+  if limit == -1:
     return list(query.fetch(keys_only=keys_only)), {'next': None, 'prev': None}
 
   cursor = Cursor.from_websafe_string(cursor) if cursor else None
@@ -103,7 +103,7 @@ def get_dbs(
     limit, start_cursor=cursor.reversed() if cursor else None, keys_only=True
   )
   prev_cursor = prev_cursor.reversed().to_websafe_string() \
-    if prev_cursor and cursor else None
+      if prev_cursor and cursor else None
   return list(model_dbs), {'next': next_cursor, 'prev': prev_cursor}
 
 

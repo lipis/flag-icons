@@ -88,7 +88,8 @@ def current_user_id():
 
 
 def current_user_key():
-  return flask_login.current_user.user_db.key if flask_login.current_user.user_db else None
+  return flask_login.current_user.user_db.key \
+      if flask_login.current_user.user_db else None
 
 
 def current_user_db():
