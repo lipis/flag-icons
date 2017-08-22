@@ -54,4 +54,3 @@ def sys_path_insert(dirname):
     path_package_path(dirname, get_shadows_zip(dirname))
   else:
     path_package_path(dirname, get_shadows_dir(dirname))
-

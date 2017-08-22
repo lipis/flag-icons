@@ -41,7 +41,7 @@ def make_response(data, marshal_table, cursors=None):
       'status': 'success',
       'count': len(data),
       'now': datetime.utcnow().isoformat(),
-      'result': map(lambda l: flask_restful.marshal(l, marshal_table), data),
+      'result': [flask_restful.marshal(d, marshal_table) for d in data],
     }
     if cursors:
       if isinstance(cursors, dict):
