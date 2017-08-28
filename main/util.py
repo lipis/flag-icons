@@ -37,6 +37,8 @@ def param(name, cast=None):
 
 
 def is_trusted_url(next_url):
+  if not next_url:
+    return ''
   next_url_host = urlparse(next_url).hostname
   if config.TRUSTED_HOSTS and next_url_host not in config.TRUSTED_HOSTS:
     return flask.url_for('welcome')
@@ -50,10 +52,10 @@ def get_next_url(next_url=''):
     'next': wf.Str(missing=None), 'next_url': wf.Str(missing=None)
   })
   next_url = next_url or args['next'] or args['next_url']
-  do_not_redirect_urls = [flask.url_for(u) for u in [
-    'signin', 'signup', 'user_forgot', 'user_reset',
-  ]]
   if next_url:
+    do_not_redirect_urls = [flask.url_for(u) for u in [
+      'signin', 'signup', 'user_forgot', 'user_reset',
+    ]]
     if any(url in next_url for url in do_not_redirect_urls):
       return flask.url_for('welcome')
     return is_trusted_url(next_url)
