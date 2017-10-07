@@ -14,7 +14,7 @@ else:
     sys.platform = ''
 
   import re
-  from google.appengine.tools.devappserver2.python import stubs
+  from google.appengine.tools.devappserver2.python.runtime import stubs
 
   re_ = stubs.FakeFile._skip_files.pattern.replace('|^lib/.*', '')
   re_ = re.compile(re_)
