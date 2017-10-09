@@ -20,8 +20,6 @@ class Config(model.Base, model.ConfigAuth):
   email_authentication = ndb.BooleanProperty(default=False, verbose_name='Email authentication for sign in/sign up')
   feedback_email = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default=util.uuid())
-  letsencrypt_challenge = ndb.StringProperty(default='', verbose_name=u'Let’s Encrypt Challenge')
-  letsencrypt_response = ndb.StringProperty(default='', verbose_name=u'Let’s Encrypt Response')
   notify_on_new_user = ndb.BooleanProperty(default=True, verbose_name='Send an email notification when a user signs up')
   recaptcha_private_key = ndb.StringProperty(default='', verbose_name='Private Key')
   recaptcha_public_key = ndb.StringProperty(default='', verbose_name='Public Key')
@@ -55,8 +53,6 @@ class Config(model.Base, model.ConfigAuth):
     'email_authentication': fields.Boolean,
     'feedback_email': fields.String,
     'flask_secret_key': fields.String,
-    'letsencrypt_challenge': fields.String,
-    'letsencrypt_response': fields.String,
     'notify_on_new_user': fields.Boolean,
     'recaptcha_private_key': fields.String,
     'recaptcha_public_key': fields.String,

@@ -48,8 +48,6 @@ class ConfigUpdateForm(flask_wtf.FlaskForm):
   email_authentication = wtforms.BooleanField(model.Config.email_authentication._verbose_name)
   feedback_email = wtforms.StringField(model.Config.feedback_email._verbose_name, [wtforms.validators.optional(), wtforms.validators.email()], filters=[util.email_filter])
   flask_secret_key = wtforms.StringField(model.Config.flask_secret_key._verbose_name, [wtforms.validators.optional()], filters=[util.strip_filter])
-  letsencrypt_challenge = wtforms.StringField(model.Config.letsencrypt_challenge._verbose_name, filters=[util.strip_filter])
-  letsencrypt_response = wtforms.StringField(model.Config.letsencrypt_response._verbose_name, filters=[util.strip_filter])
   notify_on_new_user = wtforms.BooleanField(model.Config.notify_on_new_user._verbose_name)
   recaptcha_private_key = wtforms.StringField(model.Config.recaptcha_private_key._verbose_name, filters=[util.strip_filter])
   recaptcha_public_key = wtforms.StringField(model.Config.recaptcha_public_key._verbose_name, filters=[util.strip_filter])
