@@ -14,6 +14,7 @@
 }
 .flag-icon:before {
   content: "\00a0";
+  display: inline-block;
 }
 .flag-icon.flag-icon-squared {
   width: 1em;
