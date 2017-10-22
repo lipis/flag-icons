@@ -27,7 +27,7 @@
     "less": "2.7.2",
     "main-bower-files": "2.13.1",
     "require-dir": "0.3.2",
-    "uglify-js": "3.1.4",
+    "uglify-js": "3.1.5",
     "yargs-parser": "8.0.0"
   },
   "license": "MIT",
