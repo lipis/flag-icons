@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" viewBox="0 0 640 480">
+﻿<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" viewBox="0 0 640 480" id="flag-icon-css-sy">
   <rect y="160" width="640" height="160" ry="0" rx="0" fill="#fff" fill-rule="evenodd"/>
   <rect y="320" width="640" height="160" ry="0" rx="0" fill-rule="evenodd"/>
   <path d="M0 0h640v160H0z" fill="red" fill-rule="evenodd"/>

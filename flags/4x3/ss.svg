@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" viewBox="0 0 640 480">
+﻿<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" viewBox="0 0 640 480" id="flag-icon-css-ss">
   <path d="M0 336h640v144H0z" fill="#078930"/>
   <path d="M0 144h640v192H0z" fill="#fff"/>
   <path d="M0 0h640v144H0z"/>
