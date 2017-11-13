@@ -71,6 +71,10 @@ need from the
 [`flag-icon-list.less`](https://github.com/lipis/flag-icon-css/blob/master/less/flag-icon-list.less)
 file and build it again.
 
+## SVG optimization
+
+All icons are optimized with [SVGO](https://github.com/svg/svgo) (**SVG O**ptimizer&nbsp;&mdash; is a Nodejs-based tool for optimizing SVG vector graphics files).
+
 ## Credits
 
 This project wouldn't exist without the awesome and now deleted collection of
