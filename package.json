@@ -17,6 +17,11 @@
     "grunt-contrib-less": "1.4.1",
     "grunt-contrib-cssmin": "2.2.1",
     "grunt-contrib-watch": "1.0.0",
-    "grunt-contrib-connect": "1.0.2"
+    "grunt-contrib-connect": "1.0.2",
+    "svgo": "1.0.3"
+  },
+  "scripts": {
+    "svgo:min": "svgo -f flags/{4x3,1x1}",
+    "svgo:pretty": "svgo --pretty --indent=2 --disable=cleanupIDs -f flags/{4x3,1x1}"
   }
 }
