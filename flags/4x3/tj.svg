@@ -1,4 +1,4 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="480" width="640" viewBox="0 0 640 480" id="flag-icon-css-tj">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="480" width="640" id="flag-icon-css-tj">
   <path fill="#060" d="M0 0h640v480H0z"/>
   <path fill="#fff" d="M0 0h640v342.857H0z"/>
   <path fill="#c00" d="M0 0h640v137.143H0z"/>
@@ -10,10 +10,10 @@
   <use transform="rotate(9.37 320 551.314)" xlink:href="#b" width="100%" height="100%" fill="#f8c300"/>
   <use transform="rotate(18.74 320 551.314)" xlink:href="#b" width="100%" height="100%" fill="#f8c300"/>
   <path d="M253.486 327.771a233.143 233.143 0 0 1 133.028 0" fill="none" stroke="#f8c300" stroke-width="10.971"/>
-  <g transform="matrix(.68571 0 0 .68571 320 164.571)" fill="#f8c300">
+  <g transform="translate(320 164.571) scale(.68571)" fill="#f8c300">
     <path id="c" transform="scale(.00005)" d="M301930 415571l-790463-574305h977066l-790463 574305L0-513674z"/>
   </g>
-  <g id="d" transform="matrix(.68571 0 0 .68571 320 260.571)" fill="#f8c300">
+  <g id="d" transform="translate(320 260.571) scale(.68571)" fill="#f8c300">
     <use height="100%" width="100%" xlink:href="#c" transform="translate(-70 -121.244)"/>
     <use height="100%" width="100%" xlink:href="#c" transform="translate(-121.244 -70)"/>
     <use height="100%" width="100%" xlink:href="#c" transform="translate(-140)"/>
