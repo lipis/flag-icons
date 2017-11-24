@@ -5,6 +5,9 @@
     "browser-sync": "2.18.13",
     "coffee-script": "1.12.7",
     "del": "3.0.0",
+    "eslint": "4.11.0",
+    "eslint-config-prettier": "2.8.0",
+    "eslint-plugin-prettier": "2.3.1",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "4.0.0",
     "gulp-bower": "0.0.13",
@@ -24,8 +27,11 @@
     "gulp-util": "3.0.8",
     "gulp-watch": "4.3.11",
     "gulp-zip": "4.0.0",
+    "husky": "0.14.3",
     "less": "2.7.2",
+    "lint-staged": "5.0.0",
     "main-bower-files": "2.13.1",
+    "prettier": "1.8.2",
     "require-dir": "0.3.2",
     "uglify-js": "3.1.10",
     "yargs-parser": "8.0.0"
@@ -36,9 +42,23 @@
     "type": "git",
     "url": "https://github.com/gae-init"
   },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"],
+    "*.less": ["prettier --write", "git add"],
+    "*.md": ["prettier --write", "git add"]
+  },
   "scripts": {
+    "fix:config": "prettier --ignore-path .gitignore --write \"**/*.json\"",
+    "fix:docs": "prettier --ignore-path .gitignore --write \"**/*.md\"",
+    "fix:script": "npm run test:script -- --fix",
+    "fix:style": "prettier --ignore-path .gitignore --write \"**/*.less\"",
+    "fix": "npm run fix:script && npm run fix:config && npm run fix:style && npm run fix:docs",
     "install": "gulp init",
     "postinstall": "echo 'Run `gulp` to start or `gulp help` for more.'",
-    "start": "gulp"
+    "precommit": "lint-staged",
+    "start": "gulp",
+    "test:script": "eslint --ignore-path .gitignore \"**/*.js\"",
+    "test": "npm run test:script"
   }
 }

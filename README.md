@@ -1,29 +1,22 @@
-gae-init
-========
+# gae-init
 
-[![Slack Status](https://gae-init-slack.herokuapp.com/badge.svg)](https://gae-init-slack.herokuapp.com)
+[![Slack Status](https://gae-init-slack.herokuapp.com/badge.svg)](https://gae-init-slack.herokuapp.com) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 
-> **gae-init** is the easiest boilerplate to kick start new applications on Google
-App Engine using Python, Flask, RESTful, Bootstrap and tons of other cool features.
+> **gae-init** is the easiest boilerplate to kick start new applications on Google App Engine using Python, Flask, RESTful, Bootstrap and tons of other cool features.
 
-Read the [documentation][], where you can find a complete [feature list][],
-a detailed [tutorial][], the [how to][] section and more..
+Read the [documentation][], where you can find a complete [feature list][], a detailed [tutorial][], the [how to][] section and more..
 
-The latest version is always accessible from
-[https://gae-init.appspot.com](https://gae-init.appspot.com)
+The latest version is always accessible from [https://gae-init.appspot.com](https://gae-init.appspot.com)
 
-Requirements
-------------
+## Requirements
 
-  - [Google App Engine SDK for Python][]
-  - [Node.js][], [pip][], [virtualenv][]
-  - [macOS][] or [Linux][] or [Windows][]
+* [Google App Engine SDK for Python][]
+* [Node.js][], [pip][], [virtualenv][]
+* [macOS][] or [Linux][] or [Windows][]
 
-Make sure you have all of the above or refer to the docs on how to
-[install the requirements](http://docs.gae-init.appspot.com/requirement/).
+Make sure you have all of the above or refer to the docs on how to [install the requirements](http://docs.gae-init.appspot.com/requirement/).
 
-Running the Development Environment
------------------------------------
+## Running the Development Environment
 
 ```bash
 $ cd /path/to/project-name
@@ -32,7 +25,7 @@ $ gulp
 
 To test it visit `http://localhost:3000` in your browser.
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+---
 
 For a complete list of commands:
 
@@ -40,8 +33,7 @@ For a complete list of commands:
 $ gulp help
 ```
 
-Initializing or Resetting the project
-------------------------------------
+## Initializing or Resetting the project
 
 ```bash
 $ cd /path/to/project-name
@@ -57,7 +49,7 @@ $ npm install
 $ gulp
 ```
 
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+---
 
 To install [Gulp][] as a global package:
 
@@ -65,8 +57,7 @@ To install [Gulp][] as a global package:
 $ npm install -g gulp
 ```
 
-Deploying on Google App Engine
-------------------------------
+## Deploying on Google App Engine
 
 ```bash
 $ gulp deploy
@@ -75,17 +66,16 @@ $ gulp deploy --project=foo --version=bar
 $ gulp deploy --project=foo --version=bar --no-promote
 ```
 
-Tech Stack
-----------
+## Tech Stack
 
-  - [Google App Engine][], [NDB][]
-  - [Jinja2][], [Flask][], [Flask-RESTful][], [Flask-WTF][]
-  - [CoffeeScript][], [Less][]
-  - [Bootstrap][], [Font Awesome][], [Social Buttons][]
-  - [jQuery][], [Moment.js][]
-  - [OpenID][] sign in (Google, Facebook, Twitter and more)
-  - [Python 2.7][], [pip][], [virtualenv][]
-  - [Gulp][], [Bower][]
+* [Google App Engine][], [NDB][]
+* [Jinja2][], [Flask][], [Flask-RESTful][], [Flask-WTF][]
+* [CoffeeScript][], [Less][]
+* [Bootstrap][], [Font Awesome][], [Social Buttons][]
+* [jQuery][], [Moment.js][]
+* [OpenID][] sign in (Google, Facebook, Twitter and more)
+* [Python 2.7][], [pip][], [virtualenv][]
+* [Gulp][], [Bower][]
 
 [bootstrap]: http://getbootstrap.com/
 [bower]: http://bower.io/
