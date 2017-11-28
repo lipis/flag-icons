@@ -43,10 +43,22 @@
     "url": "https://github.com/gae-init"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"],
-    "*.less": ["prettier --write", "git add"],
-    "*.md": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.less": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.md": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "scripts": {
     "fix:config": "prettier --ignore-path .gitignore --write \"**/*.json\"",
