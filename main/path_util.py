@@ -44,7 +44,7 @@ def get_shadows_dir(dirname):
   if not os.path.exists(dirname):
     return shadow_pkgs
   for pkg in os.listdir(dirname):
-    if not os.path.isfile(pkg) and is_shadowing(pkg):
+    if not pkg == '__init__.py' and os.path.isfile(pkg) and is_shadowing(pkg):
       shadow_pkgs.add(pkg)
   return shadow_pkgs
 

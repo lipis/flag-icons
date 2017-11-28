@@ -1,13 +1,10 @@
-Command Line Scripts
-====================
+# Command Line Scripts
 
-Requirements
-------------
+## Requirements
 
-You can install the requirements easily by executing the following scripts using
-`curl` & `bash`:
+You can install the requirements easily by executing the following scripts using `curl` & `bash`:
 
-###  [Cloud Shell](https://cloud.google.com/shell/)
+### [Cloud Shell](https://cloud.google.com/shell/)
 
 All requirements are met, out of the box.
 
