@@ -3,7 +3,7 @@
   "devDependencies": {
     "bower": "1.8.2",
     "browser-sync": "2.18.13",
-    "coffee-script": "1.12.7",
+    "coffee-script": "1.12.8",
     "del": "3.0.0",
     "eslint": "4.12.1",
     "eslint-config-prettier": "2.9.0",
