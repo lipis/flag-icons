@@ -2,7 +2,7 @@
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "devDependencies": {
     "bower": "1.8.2",
-    "browser-sync": "2.18.13",
+    "browser-sync": "2.19.0",
     "coffee-script": "1.12.8",
     "del": "3.0.0",
     "eslint": "4.13.1",
