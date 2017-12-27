@@ -3,7 +3,7 @@
   "devDependencies": {
     "bower": "1.8.2",
     "browser-sync": "2.21.0",
-    "coffee-script": "1.12.8",
+    "coffee-script": "1.12.7",
     "del": "3.0.0",
     "eslint": "4.14.0",
     "eslint-config-prettier": "2.9.0",
@@ -43,22 +43,10 @@
     "url": "https://github.com/gae-init"
   },
   "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.json": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.less": [
-      "prettier --write",
-      "git add"
-    ],
-    "*.md": [
-      "prettier --write",
-      "git add"
-    ]
+    "*.js": ["eslint --fix", "git add"],
+    "*.json": ["prettier --write", "git add"],
+    "*.less": ["prettier --write", "git add"],
+    "*.md": ["prettier --write", "git add"]
   },
   "scripts": {
     "fix:config": "prettier --ignore-path .gitignore --write \"**/*.json\"",
