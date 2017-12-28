@@ -1,6 +1,8 @@
 {
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "devDependencies": {
+    "babel-core": "6.26.0",
+    "babel-preset-es2015": "6.24.1",
     "bower": "1.8.2",
     "browser-sync": "2.21.0",
     "coffee-script": "1.12.7",
@@ -10,6 +12,7 @@
     "eslint-plugin-prettier": "2.4.0",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "4.0.0",
+    "gulp-babel": "7.0.0",
     "gulp-bower": "0.0.13",
     "gulp-coffee": "2.3.5",
     "gulp-concat": "2.6.1",
