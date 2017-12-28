@@ -14,7 +14,7 @@
     "gulp-autoprefixer": "4.0.0",
     "gulp-babel": "7.0.0",
     "gulp-bower": "0.0.13",
-    "gulp-coffee": "2.3.5",
+    "gulp-coffee": "3.0.0",
     "gulp-concat": "2.6.1",
     "gulp-cssnano": "2.1.2",
     "gulp-help": "1.6.1",
