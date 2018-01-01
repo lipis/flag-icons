@@ -11,7 +11,7 @@
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-prettier": "2.4.0",
     "gulp": "3.9.1",
-    "gulp-autoprefixer": "4.0.0",
+    "gulp-autoprefixer": "4.1.0",
     "gulp-babel": "7.0.0",
     "gulp-bower": "0.0.13",
     "gulp-coffee": "3.0.2",
