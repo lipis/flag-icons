@@ -29,7 +29,7 @@
     "gulp-uglify": "3.0.0",
     "gulp-util": "3.0.8",
     "gulp-watch": "4.3.11",
-    "gulp-zip": "4.0.0",
+    "gulp-zip": "4.1.0",
     "husky": "0.14.3",
     "less": "2.7.3",
     "lint-staged": "6.0.0",
