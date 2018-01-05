@@ -3,7 +3,7 @@
     "bootstrap": "3.3.7",
     "font-awesome": "4.7.0",
     "jquery": "3.2.1",
-    "moment": "2.19.1"
+    "moment": "2.20.1"
   },
   "name": "gae-init",
   "overrides": {
