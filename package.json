@@ -52,6 +52,7 @@
     "*.md": ["prettier --write", "git add"]
   },
   "scripts": {
+    "build": "gulp build",
     "fix:config": "prettier --ignore-path .gitignore --write \"**/*.json\"",
     "fix:docs": "prettier --ignore-path .gitignore --write \"**/*.md\"",
     "fix:script": "npm run test:script -- --fix",
