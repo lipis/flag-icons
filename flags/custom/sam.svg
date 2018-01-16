@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="2880" height="1440">
+	<rect width="2880" height="1440" fill="#ce1126"/>
+	<rect width="1440" height="720" fill="#002b7f"/>
+	<polygon points="0,-1 .587785,.809017 -.951057,-.309017 .951057,-.309017 -.587785,.809017" transform="translate(720,604.93494) scale(105.14622)" fill="#fff"/>
+	<polygon id="p" points="0,-1 .587785,.809017 -.951057,-.309017 .951057,-.309017 -.587785,.809017" transform="translate(500,292.918) scale(84.116958,82.917961)" fill="#fff"/>
+	<polygon points="0,-1 .587785,.809017 -.951057,-.309017 .951057,-.309017 -.587785,.809017" transform="translate(945,257.3901) scale(78.859659,77.390097)" fill="#fff"/>
+	<use xlink:href="#p" x="220" y="-180"/>
+	<polygon points="0,-1 .587785,.809017 -.951057,-.309017 .951057,-.309017 -.587785,.809017" transform="translate(830,417.46729) scale(52.573095)" fill="#fff"/>
+</svg>
