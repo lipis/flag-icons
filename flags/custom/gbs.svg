@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 15.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="640px" height="480px" viewBox="0 0 640 480" enable-background="new 0 0 640 480" xml:space="preserve">
+<g>
+	<path fill="#CE1126" d="M0,0h320v480H0V0z"/>
+	<path fill="#FCD116" d="M320,0h320v240H320V0z"/>
+	<path fill="#009E49" d="M320,240h320v240H320V240z"/>
+	<path id="a" d="M160,160l-24.722,76.084l38.042,12.36"/>
+	<path id="a_1_" d="M160,160l24.722,76.084l-38.042,12.36"/>
+	<path id="a_2_" d="M236.084,215.279h-80v40"/>
+	<path id="a_3_" d="M236.085,215.279l-64.722,47.022l-23.512-32.36"/>
+	<path id="a_4_" d="M207.023,304.721l-24.721-76.084l-38.042,12.36"/>
+	<path id="a_5_" d="M207.023,304.721l-64.721-47.022l23.511-32.36"/>
+	<path id="a_6_" d="M112.977,304.721l64.721-47.022l-23.511-32.36"/>
+	<path id="a_7_" d="M112.977,304.721l24.721-76.084l38.042,12.36"/>
+	<path id="a_8_" d="M83.915,215.279l64.722,47.022l23.512-32.36"/>
+	<path id="a_9_" d="M83.916,215.279h80v40"/>
+</g>
+</svg>
