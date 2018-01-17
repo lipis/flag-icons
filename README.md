@@ -107,3 +107,4 @@ Due to lack of documentation if you run into any troubles, feel free to add an i
 [social buttons]: http://lipis.github.io/bootstrap-social/
 [tutorial]: http://docs.gae-init.appspot.com/tutorial/
 [virtualenv]: http://www.virtualenv.org/
+[windows]: http://windows.microsoft.com/
