@@ -16,11 +16,11 @@ else:
     sys.platform = ''
 
   import re
-  from google.appengine.tools.devappserver2.python.runtime import stubs
+  from google.appengine.tools.devappserver2.python import runtime
 
-  re_ = stubs.FakeFile._skip_files.pattern.replace('|^lib/.*', '')
+  re_ = runtime.stubs.FakeFile._skip_files.pattern.replace('|^lib/.*', '')
   re_ = re.compile(re_)
-  stubs.FakeFile._skip_files = re_
+  runtime.stubs.FakeFile._skip_files = re_
   sys_path_insert('lib')
 
 sys_path_insert('libx')
