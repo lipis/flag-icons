@@ -35,7 +35,7 @@
     "lint-staged": "6.1.0",
     "main-bower-files": "2.13.1",
     "prettier": "1.10.2",
-    "require-dir": "0.3.2",
+    "require-dir": "1.0.0",
     "uglify-js": "3.3.9",
     "yargs-parser": "9.0.2"
   },
