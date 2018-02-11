@@ -6,4 +6,4 @@ flask-wtf==0.14.2
 flask==0.12.2
 pyjwt==1.5.3
 unidecode==1.0.22
-webargs==1.9.0
+webargs==2.0.0
