@@ -1,8 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="480" width="640" id="flag-icon-css-eu">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-eu" width="640" height="480">
   <defs>
     <g id="d">
       <g id="b">
-        <path d="M0-1l-.31.95.477.156z" id="a"/>
+        <path id="a" d="M0-1l-.31.95.477.156z"/>
         <use transform="scale(-1 1)" xlink:href="#a"/>
       </g>
       <g id="c">
@@ -13,16 +13,16 @@
     </g>
   </defs>
   <path fill="#039" d="M0 0h640v480H0z"/>
-  <g transform="translate(320 242.263) scale(23.7037)" fill="#fc0">
-    <use height="100%" width="100%" xlink:href="#d" y="-6"/>
-    <use height="100%" width="100%" xlink:href="#d" y="6"/>
+  <g fill="#fc0" transform="translate(320 242.263) scale(23.7037)">
+    <use width="100%" height="100%" y="-6" xlink:href="#d"/>
+    <use width="100%" height="100%" y="6" xlink:href="#d"/>
     <g id="e">
-      <use height="100%" width="100%" xlink:href="#d" x="-6"/>
-      <use height="100%" width="100%" xlink:href="#d" transform="rotate(-144 -2.344 -2.11)"/>
-      <use height="100%" width="100%" xlink:href="#d" transform="rotate(144 -2.11 -2.344)"/>
-      <use height="100%" width="100%" xlink:href="#d" transform="rotate(72 -4.663 -2.076)"/>
-      <use height="100%" width="100%" xlink:href="#d" transform="rotate(72 -5.076 .534)"/>
+      <use width="100%" height="100%" x="-6" xlink:href="#d"/>
+      <use width="100%" height="100%" transform="rotate(-144 -2.344 -2.11)" xlink:href="#d"/>
+      <use width="100%" height="100%" transform="rotate(144 -2.11 -2.344)" xlink:href="#d"/>
+      <use width="100%" height="100%" transform="rotate(72 -4.663 -2.076)" xlink:href="#d"/>
+      <use width="100%" height="100%" transform="rotate(72 -5.076 .534)" xlink:href="#d"/>
     </g>
-    <use height="100%" width="100%" xlink:href="#e" transform="scale(-1 1)"/>
+    <use width="100%" height="100%" transform="scale(-1 1)" xlink:href="#e"/>
   </g>
 </svg>

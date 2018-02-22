@@ -1,10 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" height="480" width="640" id="flag-icon-css-aw">
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-aw" width="640" height="480">
   <defs>
     <clipPath id="a">
       <path fill-opacity=".67" d="M0 0h288v216H0z"/>
     </clipPath>
   </defs>
-  <g transform="scale(2.2222)" clip-path="url(#a)">
+  <g clip-path="url(#a)" transform="scale(2.2222)">
     <path fill="#39c" d="M0 0v216h324V0H0z"/>
     <path fill="#ff0" d="M0 144v12h324v-12H0zm0 24v12h324v-12H0z"/>
   </g>
@@ -16,7 +16,7 @@
   <path fill="#ccf" d="M136.743 45.78l2.952 2.95-2.952-2.95zm11.807 0l2.953 2.95-2.952-2.95z"/>
   <path fill="#fcc" d="M139.695 48.73l2.952 2.954-2.952-2.953m5.904 0l2.95 2.954-2.95-2.953z"/>
   <path fill="#6cc" d="M133.79 51.684l2.953 2.952-2.952-2.952z"/>
-  <path d="M142.16 34.065l-20.695 78.45-78.68 21.367 78.453 20.476 20.922 78.45 20.918-78.45 78.452-20.922-78.452-20.922-20.918-78.45z" stroke="#fff" stroke-width="3.69" fill="#c00"/>
+  <path fill="#c00" stroke="#fff" stroke-width="3.69" d="M142.16 34.065l-20.695 78.45-78.68 21.367 78.453 20.476 20.922 78.45 20.918-78.45 78.452-20.922-78.452-20.922-20.918-78.45z"/>
   <path fill="#6cc" d="M151.503 51.684l2.952 2.952-2.952-2.952z"/>
   <path fill="#9cf" d="M133.79 54.636l2.953 2.952-2.952-2.952m17.713 0l2.952 2.952-2.952-2.952z"/>
   <path fill="#fcc" d="M136.743 57.588l2.952 2.952-2.952-2.952m11.808 0l2.953 2.952-2.952-2.952z"/>
