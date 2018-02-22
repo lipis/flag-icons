@@ -1,5 +1,5 @@
 plugins:
-  - cleanUpIDs: false
+  - cleanupIDs: false
   - collapseGroups: true
   - removeDesc: true
   - removeScriptElement: true
