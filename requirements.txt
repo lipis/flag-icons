@@ -8,4 +8,4 @@ flask==0.12.2
 git+https://github.com/joernhees/babel@zip-2.3.4
 pyjwt==1.5.3
 unidecode==1.0.22
-webargs==1.8.1
+webargs==2.0.0
