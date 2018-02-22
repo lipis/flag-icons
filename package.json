@@ -22,6 +22,7 @@
   },
   "scripts": {
     "svgo": "svgo --pretty --indent=2 --config=svgo.yaml",
-    "svgo-all": "find static | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z"
+    "svgo:min": "find flags | grep '\\.svg$' | xargs -Iz -n 1 svgo --config=svgo.yaml z",
+    "svgo:all": "find flags | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z"
   }
 }
