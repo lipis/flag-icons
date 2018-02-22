@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480">
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-fj" width="640" height="480">
   <path fill="#68bfe5" d="M0 0v480h640V.079H402.442V0H0z"/>
   <g stroke-miterlimit="4.8">
     <path fill="#fff" d="M420.887 193.236v136.357c0 44.599 80.581 71.08 80.581 71.08s80.582-26.483 80.582-71.08V193.236z"/>
@@ -118,7 +118,7 @@
   </g>
   <path fill="#002868" d="M0 0v240.339h358.036V0H0z"/>
   <path fill="#fff" d="M0 0v26.872l138.99 93.296L0 213.468v26.87h40.03l138.99-93.296 138.989 93.297h40.027v-26.872l-138.988-93.299 138.988-93.297V0H318.01L179.02 93.3 40.03 0H0z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" white-space="normal" style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal"/>
-  <path fill="#ce1126" style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal" d="M0 0v17.914L152.332 120.17 0 222.424v17.914h26.685l152.332-102.256L331.35 240.338h26.685v-17.916L205.704 120.168 358.035 17.914V0H331.35L179.017 102.253 26.685 0H0z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" white-space="normal"/>
+  <path fill="#ce1126" style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal" d="M0 0v14.867L169.725 99.73 0 184.592v14.867h29.732l169.725-84.863 169.727 84.863h29.732V184.59L229.191 99.729l169.725-84.862V0h-29.732L199.457 84.861 29.732 0H0z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" transform="scale(.89752 1.20495)" white-space="normal"/>
   <path fill="#fff" d="M149.182 0v80.113H0v80.113h149.182v80.113h59.673v-80.113h149.181V80.113H208.855V0h-59.673z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" white-space="normal" style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal"/>
   <path fill="#ce1126" d="M161.116 0v96.135H0v48.069h161.116v96.135h35.804v-96.135h161.116V96.135H196.92V0h-35.804z" color="#000" font-family="sans-serif" font-weight="400" overflow="visible" white-space="normal" style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal"/>
 </svg>

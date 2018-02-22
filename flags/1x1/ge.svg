@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-ge" width="512" height="512">
   <path fill="#fff" d="M0 0h512v512H0z"/>
   <path fill="red" d="M204.999 0h102v512h-102z"/>
   <path fill="red" d="M0 204.999h512v102H0z"/>

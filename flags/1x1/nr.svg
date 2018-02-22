@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-nr" width="512" height="512">
   <defs>
     <clipPath id="a">
       <path fill-opacity=".67" d="M135.64 0H631.7v496.06H135.64z"/>
