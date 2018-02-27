@@ -36,7 +36,7 @@
     "main-bower-files": "2.13.1",
     "prettier": "1.11.0",
     "require-dir": "1.0.0",
-    "uglify-js": "3.3.11",
+    "uglify-js": "3.3.12",
     "yargs-parser": "9.0.2"
   },
   "license": "MIT",
