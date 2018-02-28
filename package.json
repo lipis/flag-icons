@@ -47,22 +47,20 @@
   },
   "lint-staged": {
     "*.js": ["eslint --fix", "git add"],
-    "*.json": ["prettier --write", "git add"],
-    "*.less": ["prettier --write", "git add"],
-    "*.md": ["prettier --write", "git add"]
+    "*.{json,less,md}": ["prettier --write", "git add"]
   },
   "scripts": {
     "build": "gulp build",
-    "fix:config": "prettier --ignore-path .gitignore --write \"**/*.json\"",
-    "fix:docs": "prettier --ignore-path .gitignore --write \"**/*.md\"",
-    "fix:script": "npm run test:script -- --fix",
-    "fix:style": "prettier --ignore-path .gitignore --write \"**/*.less\"",
-    "fix": "npm run fix:script && npm run fix:config && npm run fix:style && npm run fix:docs",
+    "fix:assets": "npm run prettier -- --write",
+    "fix:code": "npm run test:code -- --fix",
+    "fix": "npm run fix:assets && npm run fix:code",
     "install": "gulp init",
+    "prettier": "prettier --ignore-path .gitignore  \"**/*.{json,less,md}\"",
     "postinstall": "echo 'Run `gulp` to start or `gulp help` for more.'",
     "precommit": "lint-staged",
     "start": "gulp",
-    "test:script": "eslint --ignore-path .gitignore \"**/*.js\"",
-    "test": "npm run test:script"
+    "test:assets": "npm run prettier -- --list-different",
+    "test:code": "eslint --ignore-path .gitignore \"**/*.js\"",
+    "test": "npm run test:assets && npm run test:code"
   }
 }
