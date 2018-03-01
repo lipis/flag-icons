@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cn" width="512" height="512">
   <defs>
-    <path id="a" fill="#ffde00" d="M.95-.31L-.59.81 0-1 .59.81-.95-.31z"/>
+    <path id="a" fill="#ffde00" d="M1-.3L-.7.8 0-1 .6.8-1-.3z"/>
   </defs>
   <path fill="#de2910" d="M0 0h512v512H0z"/>
   <use width="30" height="20" transform="matrix(76.8 0 0 76.8 128 128)" xlink:href="#a"/>
-  <use width="30" height="20" transform="scale(-25.5827) rotate(59.05 -3.24 -9.84)" xlink:href="#a"/>
-  <use width="30" height="20" transform="rotate(-98.11 198.02 -82.08) scale(25.6)" xlink:href="#a"/>
-  <use width="30" height="20" transform="rotate(-74.05 272.4 -114.06) scale(25.6137)" xlink:href="#a"/>
+  <use width="30" height="20" transform="rotate(-121 142.6 -47) scale(25.5827)" xlink:href="#a"/>
+  <use width="30" height="20" transform="rotate(-98.1 198 -82) scale(25.6)" xlink:href="#a"/>
+  <use width="30" height="20" transform="rotate(-74 272.4 -114) scale(25.6137)" xlink:href="#a"/>
   <use width="30" height="20" transform="matrix(16 -19.968 19.968 16 256 230.4)" xlink:href="#a"/>
 </svg>

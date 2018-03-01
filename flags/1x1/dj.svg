@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-dj" width="512" height="512">
   <defs>
     <clipPath id="a">
-      <path fill-opacity=".67" d="M55.36 0h708.66v708.66H55.36z"/>
+      <path fill-opacity=".7" d="M55.4 0H764v708.7H55.4z"/>
     </clipPath>
   </defs>
   <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(-40) scale(.722)">
-    <path fill="#0c0" d="M0 0h1063v708.66H0z"/>
-    <path fill="#69f" d="M0 0h1063v354.33H0z"/>
-    <path fill="#fffefe" d="M0 0l529.73 353.88L0 707.3V0z"/>
-    <path fill="red" d="M221.2 404.25l-42.67-30.71-42.45 31 15.8-50.39-42.38-31.11 52.42-.44 16.26-50.24 16.6 50.13 52.43.06-42.16 31.41 16.14 50.29z"/>
+    <path fill="#0c0" d="M0 0h1063v708.7H0z"/>
+    <path fill="#69f" d="M0 0h1063v354.3H0z"/>
+    <path fill="#fffefe" d="M0 0l529.7 353.9L0 707.3V0z"/>
+    <path fill="red" d="M221.2 404.3l-42.7-30.8-42.4 31 15.8-50.3-42.4-31.2 52.4-.4 16.3-50.2 16.6 50 52.4.2-42.1 31.4 16 50.3z"/>
   </g>
 </svg>

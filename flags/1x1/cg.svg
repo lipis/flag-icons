@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-cg" width="512" height="512">
   <defs>
     <clipPath id="a">
-      <path fill-opacity=".67" d="M115.74 0H611.8v496.06H115.74z"/>
+      <path fill-opacity=".7" d="M115.7 0h496.1v496h-496z"/>
     </clipPath>
   </defs>
-  <g fill-rule="evenodd" stroke-width="1pt" clip-path="url(#a)" transform="translate(-119.46) scale(1.032)">
-    <path fill="#ff0" d="M0 0h744.09v496.06H0z"/>
-    <path fill="#00ca00" d="M0 0v496.06L496.06 0H0z"/>
-    <path fill="red" d="M248.03 496.06h496.06V0L248.03 496.06z"/>
+  <g fill-rule="evenodd" stroke-width="1pt" clip-path="url(#a)" transform="translate(-119.5) scale(1.032)">
+    <path fill="#ff0" d="M0 0h744v496H0z"/>
+    <path fill="#00ca00" d="M0 0v496L496 0H0z"/>
+    <path fill="red" d="M248 496h496V0L248 496z"/>
   </g>
 </svg>

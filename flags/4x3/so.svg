@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-so" width="640" height="480">
   <defs>
     <clipPath id="a">
-      <path fill-opacity=".67" d="M-85.33 0h682.67v512H-85.33z"/>
+      <path fill-opacity=".7" d="M-85.3 0h682.6v512H-85.3z"/>
     </clipPath>
   </defs>
   <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(80) scale(.9375)">
     <path fill="#40a6ff" d="M-128 0h768v512h-768z"/>
-    <path fill="#fff" d="M336.48 381.19l-82.5-53.48-82.1 54 30.53-87.75-81.95-54.19 101.39-.75 31.45-87.5 32.12 87.3 101.39.11-81.53 54.7 31.2 87.56z"/>
+    <path fill="#fff" d="M336.5 381.2L254 327.7l-82.1 54 30.5-87.7-82-54.2L222 239l31.4-87.5 32.1 87.3 101.4.1-81.5 54.7 31.2 87.6z"/>
   </g>
 </svg>

@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-uy" width="512" height="512">
   <path fill="#fff" d="M0 0h512v512H0z"/>
-  <path fill="#0038a8" d="M284 56.89h228v56.89H284zm0 113.78h228v56.89H284zM0 284.44h512v56.9H0zm0 113.78h512v56.9H0z"/>
-  <g fill="#fcd116" stroke="#000" stroke-miterlimit="20" stroke-width=".6" transform="translate(142.22 142.22) scale(3.12889)">
+  <path fill="#0038a8" d="M284 56.9h228v56.9H284zm0 113.8h228v56.9H284zM0 284.4h512v57H0zm0 113.8h512v57H0z"/>
+  <g fill="#fcd116" stroke="#000" stroke-miterlimit="20" stroke-width=".6" transform="translate(142.2 142.2) scale(3.12889)">
     <g id="c">
       <g id="b">
         <g id="a">
@@ -16,7 +16,7 @@
     <use width="100%" height="100%" transform="scale(-1)" xlink:href="#c"/>
     <circle r="11"/>
   </g>
-  <g transform="translate(142.22 142.22) scale(.31289)">
+  <g transform="translate(142.2 142.2) scale(.31289)">
     <g id="d">
       <path d="M81-44c-7 8-11-6-36-6S16-35 12-38s21-21 29-22 31 7 40 16m-29 9c7 6 1 19-6 19S26-28 32-36"/>
       <path d="M19-26c1-12 11-14 27-14s23 12 29 15c-7 0-13-10-29-10s-16 0-27 10m3 2c4-6 9 6 20 6s17-3 24-8-10 12-21 12-26-6-23-10"/>

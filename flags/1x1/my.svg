@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-my" width="512" height="512">
-  <path fill="#cc0001" d="M0 .05h512v512H0z"/>
-  <path id="a" fill="#fff" d="M0 475.48h512v36.57H0z"/>
-  <use width="100%" height="100%" transform="translate(0 -73.14)" xlink:href="#a"/>
-  <use width="100%" height="100%" transform="translate(0 -146.29)" xlink:href="#a"/>
-  <use width="100%" height="100%" transform="translate(0 -219.43)" xlink:href="#a"/>
-  <use width="100%" height="100%" transform="translate(0 -292.57)" xlink:href="#a"/>
-  <use width="100%" height="100%" transform="translate(0 -365.71)" xlink:href="#a"/>
-  <use width="100%" height="100%" transform="translate(0 -438.86)" xlink:href="#a"/>
-  <path fill="#010066" d="M0 .05h320.08v292.57H0z"/>
+  <path fill="#cc0001" d="M0 0h512v512H0z"/>
+  <path id="a" fill="#fff" d="M0 475.5h512V512H0z"/>
+  <use width="100%" height="100%" transform="translate(0 -73.1)" xlink:href="#a"/>
+  <use width="100%" height="100%" transform="translate(0 -146.3)" xlink:href="#a"/>
+  <use width="100%" height="100%" transform="translate(0 -219.4)" xlink:href="#a"/>
+  <use width="100%" height="100%" transform="translate(0 -292.6)" xlink:href="#a"/>
+  <use width="100%" height="100%" transform="translate(0 -365.7)" xlink:href="#a"/>
+  <use width="100%" height="100%" transform="translate(0 -438.9)" xlink:href="#a"/>
+  <path fill="#010066" d="M0 0h320v292.6H0z"/>
   <g fill="#fc0">
-    <path d="M123.81 51.9c-51.45 0-93.2 41.62-93.2 92.9 0 51.28 41.75 92.9 93.2 92.9 18.6 0 35.91-5.44 50.46-14.8a82.7 82.7 0 0 1-27.03 4.53c-45.62 0-82.65-36.9-82.65-82.38 0-45.47 37.03-82.37 82.65-82.37a82.6 82.6 0 0 1 28.68 5.1 92.97 92.97 0 0 0-52.1-15.88z"/>
-    <path d="M278.39 193.16l-39.26-20.48 11.6 41.92-26.26-35.07-8.19 42.69-8.06-42.71-26.37 34.99 11.74-41.89-39.33 20.37 29.22-32.78-44.5 1.71 40.9-17.16-40.84-17.3 44.49 1.85-29.11-32.86 39.26 20.48L182.08 75l26.25 35.07 8.2-42.69 8.05 42.71 26.38-34.99L239.2 117l39.33-20.37-29.21 32.77 44.5-1.71-40.91 17.17 40.85 17.28-44.5-1.84z"/>
+    <path d="M123.8 51.9a93 93 0 0 0-93.2 92.9 93 93 0 0 0 143.7 78.1 82.7 82.7 0 0 1-27 4.5 82.5 82.5 0 0 1-82.7-82.3c0-45.5 37-82.4 82.6-82.4a82.6 82.6 0 0 1 28.7 5A93 93 0 0 0 124 52z"/>
+    <path d="M278.4 193.2L239 172.7l11.6 41.9-26.2-35-8.2 42.6-8-42.7-26.5 35 11.8-41.9-39.3 20.4 29.2-32.8-44.5 1.7 40.9-17.1-40.9-17.3 44.5 1.8-29-32.9 39.2 20.5L182 75l26.2 35 8.2-42.6 8 42.7L251 75 239.2 117l39.3-20.4-29.2 32.8 44.5-1.7-40.9 17.2 40.9 17.2-44.5-1.8z"/>
   </g>
 </svg>

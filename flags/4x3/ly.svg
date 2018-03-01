@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-ly" width="640" height="480">
   <defs>
     <clipPath id="a">
-      <path d="M166.67-20h666.67v500H166.67z"/>
+      <path d="M166.7-20h666.6v500H166.7z"/>
     </clipPath>
   </defs>
   <g clip-path="url(#a)" transform="matrix(.96 0 0 .96 -160 19.2)">

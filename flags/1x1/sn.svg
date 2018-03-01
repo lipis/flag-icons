@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-sn" width="512" height="512">
   <g fill-rule="evenodd" stroke-width="1pt">
-    <path fill="#0b7226" d="M0 0h170.66v512H0z"/>
-    <path fill="#ff0" d="M170.66 0h170.67v512H170.66z"/>
-    <path fill="#bc0000" d="M341.33 0h170.66v512H341.33z"/>
+    <path fill="#0b7226" d="M0 0h170.7v512H0z"/>
+    <path fill="#ff0" d="M170.7 0h170.6v512H170.7z"/>
+    <path fill="#bc0000" d="M341.3 0H512v512H341.3z"/>
   </g>
-  <path fill="#0b7226" d="M196.96 351.73l22.15-71.83-60.4-46.46h74.5l24.15-76.04 22.15 76.04H356l-60.4 46.46 22.15 73.94-60.4-46.48z"/>
+  <path fill="#0b7226" d="M197 351.7L219 280l-60.4-46.5h74.5l24.2-76 22.1 76H356L295.6 280l22.1 74-60.3-46.5z"/>
 </svg>

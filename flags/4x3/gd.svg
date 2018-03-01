@@ -11,17 +11,17 @@
       <use transform="rotate(288)" xlink:href="#b"/>
     </g>
   </defs>
-  <path fill="#ce1126" d="M0 .05h640v480H0z"/>
+  <path fill="#ce1126" d="M0 0h640v480H0z"/>
   <path fill="#007a5e" d="M67.2 67.2h505.6v345.6H67.2z"/>
-  <path fill="#fcd116" d="M67.2 67.25h505.6L67.2 412.85h505.6z"/>
-  <circle cx="319.92" cy="240.05" r="57.6" fill="#ce1126"/>
-  <use width="100%" height="100%" transform="matrix(52.8 0 0 52.8 319.92 240.05)" xlink:href="#c"/>
-  <use width="100%" height="100%" x="-100" transform="translate(-30.33)" xlink:href="#d"/>
-  <use id="d" width="100%" height="100%" transform="matrix(31.2 0 0 31.2 320 33.65)" xlink:href="#c"/>
-  <use width="100%" height="100%" x="100" transform="translate(30.33)" xlink:href="#d"/>
-  <path fill="#ce1126" d="M102.31 240.7c7.21 13.43 21.23 28.04 33.47 33.17.2-13.63-4.64-31.1-11.25-45.02l-22.21 11.86z"/>
-  <path fill="#fcd116" d="M90.1 194.66c10.44 21.77-27.1 73.73 35.45 85.9-7.72-10.53-12.7-27.9-10.81-41.85 13.12 4.99 26.93 19.6 32.5 30.76 16.37-59.44-41.98-55.82-57.15-74.81z"/>
-  <use width="100%" height="100%" x="-100" transform="translate(-30.33 414.55)" xlink:href="#d"/>
+  <path fill="#fcd116" d="M67.2 67.3h505.6L67.2 412.9h505.6z"/>
+  <circle cx="319.9" cy="240.1" r="57.6" fill="#ce1126"/>
+  <use width="100%" height="100%" transform="matrix(52.8 0 0 52.8 320 240)" xlink:href="#c"/>
+  <use width="100%" height="100%" x="-100" transform="translate(-30.3)" xlink:href="#d"/>
+  <use id="d" width="100%" height="100%" transform="matrix(31.2 0 0 31.2 320 33.6)" xlink:href="#c"/>
+  <use width="100%" height="100%" x="100" transform="translate(30.3)" xlink:href="#d"/>
+  <path fill="#ce1126" d="M102.3 240.7c7.2 13.4 21.2 28 33.5 33.2a111 111 0 0 0-11.3-45l-22.2 11.8z"/>
+  <path fill="#fcd116" d="M90.1 194.7c10.4 21.7-27.1 73.7 35.5 85.9a63.2 63.2 0 0 1-10.9-41.9c13.2 5 27 19.6 32.5 30.8 16.4-59.5-42-55.8-57.1-74.8z"/>
+  <use width="100%" height="100%" x="-100" transform="translate(-30.3 414.6)" xlink:href="#d"/>
   <use width="100%" height="100%" transform="matrix(31.2 0 0 31.2 320 448.2)" xlink:href="#c"/>
-  <use width="100%" height="100%" x="100" transform="translate(30.33 414.55)" xlink:href="#d"/>
+  <use width="100%" height="100%" x="100" transform="translate(30.3 414.6)" xlink:href="#d"/>
 </svg>

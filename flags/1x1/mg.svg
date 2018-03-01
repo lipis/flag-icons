@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-mg" width="512" height="512">
   <g fill-rule="evenodd" stroke-width="1pt">
-    <path fill="#ff3319" d="M170.66 0H512v256H170.66z"/>
-    <path fill="#00cc28" d="M170.66 256H512v255.98H170.66z"/>
-    <path fill="#fff" d="M0 0h170.66v511.98H0z"/>
+    <path fill="#ff3319" d="M170.7 0H512v256H170.7z"/>
+    <path fill="#00cc28" d="M170.7 256H512v256H170.7z"/>
+    <path fill="#fff" d="M0 0h170.7v512H0z"/>
   </g>
 </svg>

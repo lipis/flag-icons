@@ -1,17 +1,17 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-za" width="512" height="512">
   <defs>
     <clipPath id="a">
-      <path fill-opacity=".67" d="M70.13 0h499.61v499.61H70.14z"/>
+      <path fill-opacity=".7" d="M70.1 0h499.6v499.6H70.1z"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#a)" transform="translate(-71.87) scale(1.0248)">
+  <g clip-path="url(#a)" transform="translate(-71.9) scale(1.0248)">
     <g fill-rule="evenodd" stroke-width="1pt">
-      <path d="M0 397.9V101.86L220.37 249.8 0 397.92z"/>
-      <path fill="#00c" d="M150.37 499.67l247.41-166.52h351.66v166.52H150.37z"/>
-      <path fill="red" d="M134.47 0l614.95.02v166.54H397.76S137.76-1.64 134.46.01z"/>
-      <path fill="#fc0" d="M0 62.47v39.35l220.37 147.96L0 397.89v39.35l277.56-187.46L0 62.47z"/>
-      <path fill="#093" d="M0 62.47V.01h92.6l294.03 198.94h362.79v101.74H386.63L92.6 499.6H0v-62.36l277.56-187.46L0 62.47z"/>
-      <path fill="#fff" d="M92.6 0h57.76l247.41 166.55h351.66v32.4H386.64L92.61.01zm0 499.67h57.76l247.41-166.51h351.66v-32.4H386.64L92.61 499.65z"/>
+      <path d="M0 397.9v-296l220.4 147.9L0 397.9z"/>
+      <path fill="#00c" d="M150.4 499.7l247.4-166.5h351.6v166.5h-599z"/>
+      <path fill="red" d="M134.5 0h615v166.6H397.7S137.8-1.6 134.5 0z"/>
+      <path fill="#fc0" d="M0 62.5v39.3l220.4 148L0 397.8v39.4l277.6-187.4L0 62.5z"/>
+      <path fill="#093" d="M0 62.5V0h92.6l294 199h362.8v101.7H386.6l-294 198.9H0v-62.4l277.6-187.4L0 62.5z"/>
+      <path fill="#fff" d="M92.6 0h57.8l247.4 166.6h351.6V199H386.6L92.6 0zm0 499.7h57.8l247.4-166.5h351.6v-32.4H386.6l-294 198.8z"/>
     </g>
   </g>
 </svg>

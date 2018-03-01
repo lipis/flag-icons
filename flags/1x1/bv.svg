@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-bv" width="512" height="512">
   <defs>
     <clipPath id="a">
-      <path fill-opacity=".67" d="M0 0h512v512H0z"/>
+      <path fill-opacity=".7" d="M0 0h512v512H0z"/>
     </clipPath>
   </defs>
   <g fill-rule="evenodd" stroke-width="1pt" clip-path="url(#a)">
-    <path fill="#fff" d="M-68 0h699.74v512H-68z"/>
-    <path fill="#d72828" d="M-93-77.84h218.73v276.26H-93zM249.43-.57h380.91v199H249.42zM-67.55 320h190.33v190.33H-67.55zM252 322.12h378.34v188.21H252z"/>
-    <path fill="#003897" d="M156.65-25.45h64.42v535.78h-64.42z"/>
-    <path fill="#003897" d="M-67.55 224.84h697.88v63.44H-67.54z"/>
+    <path fill="#fff" d="M-68 0h699.7v512H-68z"/>
+    <path fill="#d72828" d="M-93-77.8h218.7v276.2H-93zM249.4-.6h381v199h-381zM-67.6 320h190.4v190.3H-67.5zm319.6 2.1h378.3v188.2H252z"/>
+    <path fill="#003897" d="M156.7-25.4H221v535.7h-64.5z"/>
+    <path fill="#003897" d="M-67.5 224.8h697.8v63.5H-67.5z"/>
   </g>
 </svg>

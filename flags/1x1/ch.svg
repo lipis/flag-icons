@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-ch" width="512" height="512">
   <g fill-rule="evenodd" stroke-width="1pt">
-    <path fill="#d52b1e" d="M0 0h511.98v511.98H0z"/>
+    <path fill="#d52b1e" d="M0 0h512v512H0z"/>
     <g fill="#fff">
-      <path d="M96 208h319.98v95.99H96z"/>
-      <path d="M207.99 96h96v319.99h-96z"/>
+      <path d="M96 208h320v96H96z"/>
+      <path d="M208 96h96v320h-96z"/>
     </g>
   </g>
 </svg>
