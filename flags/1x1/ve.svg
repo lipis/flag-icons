@@ -3,7 +3,7 @@
     <g id="d" transform="translate(0 -36)">
       <g id="c">
         <g id="b">
-          <path id="a" fill="#fff" d="M0-5L-1.545-.245l2.853.927z"/>
+          <path id="a" fill="#fff" d="M0-5L-1.54-.25 1.3.68z"/>
           <use width="180" height="120" transform="scale(-1 1)" xlink:href="#a"/>
         </g>
         <use width="180" height="120" transform="rotate(72)" xlink:href="#b"/>
@@ -13,14 +13,14 @@
     </g>
   </defs>
   <path fill="#cf142b" d="M0 0h512v512H0z"/>
-  <path fill="#00247d" d="M0 0h512v341.335H0z"/>
-  <path fill="#fc0" d="M0 0h512v170.665H0z"/>
-  <g id="f" transform="translate(256.335 358.4) scale(4.265)">
+  <path fill="#00247d" d="M0 0h512v341.33H0z"/>
+  <path fill="#fc0" d="M0 0h512v170.66H0z"/>
+  <g id="f" transform="translate(256.33 358.4) scale(4.265)">
     <g id="e">
       <use width="180" height="120" transform="rotate(10)" xlink:href="#d"/>
       <use width="180" height="120" transform="rotate(30)" xlink:href="#d"/>
     </g>
     <use width="180" height="120" transform="rotate(40)" xlink:href="#e"/>
   </g>
-  <use width="180" height="120" transform="rotate(-80 256.335 358.4)" xlink:href="#f"/>
+  <use width="180" height="120" transform="rotate(-80 256.33 358.4)" xlink:href="#f"/>
 </svg>

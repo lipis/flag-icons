@@ -1,21 +1,21 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-tj" width="640" height="480">
   <path fill="#060" d="M0 0h640v480H0z"/>
-  <path fill="#fff" d="M0 0h640v342.857H0z"/>
-  <path fill="#c00" d="M0 0h640v137.143H0z"/>
-  <path fill="#f8c300" d="M300.8 233.623a8.571 8.571 0 0 1 15.977 4.046v34.285h6.446V237.67a8.571 8.571 0 0 1 15.977-4.046 20.229 20.229 0 1 0-38.4 0"/>
-  <path fill="#fff" d="M305.394 224.674A13.714 13.714 0 0 1 320 231.223a13.714 13.714 0 0 1 14.606-6.549 14.743 14.743 0 0 0-29.212 0"/>
-  <path id="a" fill="#f8c300" d="M316.777 258.259a26.057 26.057 0 0 1-43.78 16.673 27.086 27.086 0 0 1-40.96 11.978c2.503 24.978 39.944 19.878 42.734-4.409 11.763 20.65 37.627 14.736 45.195-10.56z"/>
+  <path fill="#fff" d="M0 0h640v342.86H0z"/>
+  <path fill="#c00" d="M0 0h640v137.14H0z"/>
+  <path fill="#f8c300" d="M300.8 233.62a8.57 8.57 0 0 1 15.98 4.05v34.28h6.44v-34.28a8.57 8.57 0 0 1 15.98-4.05 20.23 20.23 0 1 0-38.4 0"/>
+  <path fill="#fff" d="M305.4 224.67a13.71 13.71 0 0 1 14.6 6.55 13.71 13.71 0 0 1 14.6-6.55 14.74 14.74 0 0 0-29.2 0"/>
+  <path id="a" fill="#f8c300" d="M316.78 258.26A26.06 26.06 0 0 1 273 274.93a27.09 27.09 0 0 1-40.96 11.98c2.5 24.98 39.94 19.88 42.73-4.4 11.76 20.64 37.63 14.73 45.2-10.57z"/>
   <use width="100%" height="100%" fill="#f8c300" transform="matrix(-1 0 0 1 640 0)" xlink:href="#a"/>
-  <path id="b" fill="#f8c300" d="M291.776 302.613c-5.224 11.277-15.665 13.214-24.798 4.11 0 0 3.671-2.593 7.602-3.309-.737-3.136.774-7.475 2.904-9.822 2.234 1.527 5.351 4.587 6.144 8.142 5.505-.712 8.148.88 8.148.88z"/>
-  <use width="100%" height="100%" fill="#f8c300" transform="rotate(9.37 320 551.314)" xlink:href="#b"/>
-  <use width="100%" height="100%" fill="#f8c300" transform="rotate(18.74 320 551.314)" xlink:href="#b"/>
-  <path fill="none" stroke="#f8c300" stroke-width="10.971" d="M253.486 327.771a233.143 233.143 0 0 1 133.028 0"/>
-  <g fill="#f8c300" transform="translate(320 164.571) scale(.68571)">
+  <path id="b" fill="#f8c300" d="M291.78 302.61c-5.23 11.28-15.67 13.22-24.8 4.11 0 0 3.67-2.59 7.6-3.3-.74-3.14.77-7.48 2.9-9.83 2.24 1.53 5.35 4.59 6.15 8.14 5.5-.7 8.15.88 8.15.88z"/>
+  <use width="100%" height="100%" fill="#f8c300" transform="rotate(9.37 320 551.31)" xlink:href="#b"/>
+  <use width="100%" height="100%" fill="#f8c300" transform="rotate(18.74 320 551.31)" xlink:href="#b"/>
+  <path fill="none" stroke="#f8c300" stroke-width="10.97" d="M253.49 327.77a233.14 233.14 0 0 1 133.02 0"/>
+  <g fill="#f8c300" transform="translate(320 164.57) scale(.68571)">
     <path id="c" d="M301930 415571l-790463-574305h977066l-790463 574305L0-513674z" transform="scale(.00005)"/>
   </g>
-  <g id="d" fill="#f8c300" transform="translate(320 260.571) scale(.68571)">
-    <use width="100%" height="100%" transform="translate(-70 -121.244)" xlink:href="#c"/>
-    <use width="100%" height="100%" transform="translate(-121.244 -70)" xlink:href="#c"/>
+  <g id="d" fill="#f8c300" transform="translate(320 260.57) scale(.68571)">
+    <use width="100%" height="100%" transform="translate(-70 -121.24)" xlink:href="#c"/>
+    <use width="100%" height="100%" transform="translate(-121.24 -70)" xlink:href="#c"/>
     <use width="100%" height="100%" transform="translate(-140)" xlink:href="#c"/>
   </g>
   <use width="100%" height="100%" fill="#f8c300" transform="matrix(-1 0 0 1 640 0)" xlink:href="#d"/>

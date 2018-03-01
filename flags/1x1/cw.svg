@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-cw" width="512" height="512">
   <defs>
-    <path id="b" d="M0-1l.225.69H.95L.364.12l.225.69L0 .383-.588.81l.225-.692L-.95-.31h.725z"/>
+    <path id="b" d="M0-1l.23.69h.72L.36.12.6.81 0 .38l-.59.43.23-.7-.59-.42h.72z"/>
     <clipPath id="a">
       <path fill-opacity=".67" d="M0 0h9000v9000H0z"/>
     </clipPath>

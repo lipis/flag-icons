@@ -5,6 +5,9 @@ plugins:
   - removeScriptElement: true
   - removeStyleElement: true
   - removeTitle: true
+  - removeUnknownsAndDefaults: true
+  - removeUnusedNS: true
   - removeUselessDefs: true
+  - removeUselessStrokeAndFill: true
   - removeViewBox: true
   - sortAttrs: true
