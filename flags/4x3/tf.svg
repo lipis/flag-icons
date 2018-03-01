@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-tf" width="640" height="480">
   <defs>
-    <path id="a" fill="#fff" d="M0-21l12.344 37.99-32.316-23.48h39.944l-32.316 23.48z"/>
+    <path id="a" fill="#fff" d="M0-21l12.34 37.99-32.31-23.48h39.94l-32.31 23.48z"/>
   </defs>
   <path fill="#002395" d="M0 0h640v480H0z"/>
   <path fill="#fff" d="M0 0h292.8v196.8H0z"/>
