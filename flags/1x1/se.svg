@@ -1,16 +1,16 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-se" width="512" height="512">
   <defs>
     <clipPath id="a">
-      <path fill-opacity=".67" d="M118.97 7.306H609.7v490.73H118.97z"/>
+      <path fill-opacity=".7" d="M119 7.3h490.7V498H119z"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#a)" transform="translate(-124.12 -7.622) scale(1.0433)">
+  <g clip-path="url(#a)" transform="translate(-124.1 -7.6) scale(1.0433)">
     <g fill-rule="evenodd" stroke-width="1pt">
-      <path fill="#006aa7" d="M2.904 7.598h245.368v196.294H2.904zm0 294.132h245.368v196.295H2.904z"/>
-      <path fill="#fecc00" d="M2.904 203.78h245.368v98.147H2.904z"/>
-      <path fill="#fecc00" d="M247.262 7.318h98.147v490.735h-98.147z"/>
-      <path fill="#fecc00" d="M342.296 203.808h441.662v98.147H342.296z"/>
-      <path fill="#006aa7" d="M345.325 301.759h441.661v196.294H345.325zm0-294.161h441.661v196.294H345.325z"/>
+      <path fill="#006aa7" d="M2.9 7.6h245.4v196.3H2.9zm0 294.1h245.4V498H2.9z"/>
+      <path fill="#fecc00" d="M2.9 203.8h245.4v98.1H2.9z"/>
+      <path fill="#fecc00" d="M247.3 7.3h98.1v490.8h-98.1z"/>
+      <path fill="#fecc00" d="M342.3 203.8H784V302H342.3z"/>
+      <path fill="#006aa7" d="M345.3 301.8H787V498H345.3zm0-294.2H787v196.3H345.3z"/>
     </g>
   </g>
 </svg>

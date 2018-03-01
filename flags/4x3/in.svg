@@ -10,7 +10,7 @@
       <g id="c">
         <g id="b">
           <g id="a" fill="#008">
-            <circle r=".875" transform="rotate(7.5 -8.75 133.5)"/>
+            <circle r=".9" transform="rotate(7.5 -8.8 133.5)"/>
             <path d="M0 17.5L.6 7 0 2l-.6 5L0 17.5z"/>
           </g>
           <use width="100%" height="100%" transform="rotate(15)" xlink:href="#a"/>

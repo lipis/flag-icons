@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-cl" width="512" height="512">
   <defs>
     <clipPath id="a">
-      <path fill-opacity=".67" d="M0 0h708.66v708.66H0z"/>
+      <path fill-opacity=".7" d="M0 0h708.7v708.7H0z"/>
     </clipPath>
   </defs>
-  <g fill-opacity=".996" fill-rule="evenodd" clip-path="url(#a)" transform="scale(.722)">
-    <path fill="#fff" d="M354.31 0h708.68v354.34H354.31z"/>
-    <path fill="#0039a6" d="M0 0h354.34v354.34H0z"/>
-    <path fill="#fff" d="M232.273 265.338l-54.883-41.16-54.615 41.564 20.312-67.543-54.514-41.708 67.444-.582 20.92-67.338 21.366 67.183 67.444.09-54.234 42.1 20.76 67.393z"/>
-    <path fill="#d52b1e" d="M0 354.34h1063v354.32H0z"/>
+  <g fill-rule="evenodd" clip-path="url(#a)" transform="scale(.722)">
+    <path fill="#fff" d="M354.3 0H1063v354.3H354.3z"/>
+    <path fill="#0039a6" d="M0 0h354.3v354.3H0z"/>
+    <path fill="#fff" d="M232.3 265.3l-55-41.1-54.5 41.5 20.3-67.5-54.5-41.7 67.4-.6 21-67.3 21.3 67.2h67.5L211.4 198l20.8 67.4z"/>
+    <path fill="#d52b1e" d="M0 354.3h1063v354.4H0z"/>
   </g>
 </svg>

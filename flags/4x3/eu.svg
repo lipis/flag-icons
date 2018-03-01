@@ -2,7 +2,7 @@
   <defs>
     <g id="d">
       <g id="b">
-        <path id="a" d="M0-1l-.31.95.477.156z"/>
+        <path id="a" d="M0-1l-.3 1 .5.1z"/>
         <use transform="scale(-1 1)" xlink:href="#a"/>
       </g>
       <g id="c">
@@ -13,15 +13,15 @@
     </g>
   </defs>
   <path fill="#039" d="M0 0h640v480H0z"/>
-  <g fill="#fc0" transform="translate(320 242.263) scale(23.7037)">
+  <g fill="#fc0" transform="translate(320 242.3) scale(23.7037)">
     <use width="100%" height="100%" y="-6" xlink:href="#d"/>
     <use width="100%" height="100%" y="6" xlink:href="#d"/>
     <g id="e">
       <use width="100%" height="100%" x="-6" xlink:href="#d"/>
-      <use width="100%" height="100%" transform="rotate(-144 -2.344 -2.11)" xlink:href="#d"/>
-      <use width="100%" height="100%" transform="rotate(144 -2.11 -2.344)" xlink:href="#d"/>
-      <use width="100%" height="100%" transform="rotate(72 -4.663 -2.076)" xlink:href="#d"/>
-      <use width="100%" height="100%" transform="rotate(72 -5.076 .534)" xlink:href="#d"/>
+      <use width="100%" height="100%" transform="rotate(-144 -2.3 -2.1)" xlink:href="#d"/>
+      <use width="100%" height="100%" transform="rotate(144 -2.1 -2.3)" xlink:href="#d"/>
+      <use width="100%" height="100%" transform="rotate(72 -4.7 -2)" xlink:href="#d"/>
+      <use width="100%" height="100%" transform="rotate(72 -5 .5)" xlink:href="#d"/>
     </g>
     <use width="100%" height="100%" transform="scale(-1 1)" xlink:href="#e"/>
   </g>
