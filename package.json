@@ -26,7 +26,7 @@
     "gulp-size": "3.0.0",
     "gulp-sourcemaps": "2.6.4",
     "gulp-start": "1.0.1",
-    "gulp-uglify": "3.0.0",
+    "gulp-uglify-es": "1.0.1",
     "gulp-util": "3.0.8",
     "gulp-watch": "5.0.0",
     "gulp-zip": "4.1.0",
@@ -36,7 +36,7 @@
     "main-bower-files": "2.13.1",
     "prettier": "1.11.1",
     "require-dir": "1.0.0",
-    "uglify-js": "3.3.12",
+    "uglify-es": "3.3.9",
     "yargs-parser": "9.0.2"
   },
   "license": "MIT",

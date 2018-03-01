@@ -1,5 +1,6 @@
 gulp = require('gulp-help') require 'gulp'
 $ = require('gulp-load-plugins')()
+uglify = require('gulp-uglify-es').default
 config = require '../config'
 paths = require '../paths'
 util = require '../util'
@@ -15,7 +16,7 @@ gulp.task 'script', false, ->
   .pipe $.if is_coffee, $.coffee()
   .pipe $.concat 'script.js'
   .pipe $.babel presets: ['es2015']
-  .pipe $.uglify()
+  .pipe uglify()
   .pipe $.size {title: 'Minified scripts'}
   .pipe gulp.dest "#{paths.static.min}/script"
 
