@@ -37,7 +37,7 @@
     "prettier": "1.12.0",
     "require-dir": "1.0.0",
     "uglify-es": "3.3.9",
-    "yargs-parser": "9.0.2"
+    "yargs-parser": "10.0.0"
   },
   "license": "MIT",
   "name": "gae-init",
