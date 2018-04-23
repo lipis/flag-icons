@@ -19,8 +19,8 @@ Make sure you have all of the above or refer to the docs on how to [install the 
 ## Running the Development Environment
 
 ```bash
-$ cd /path/to/project-name
-$ gulp
+cd /path/to/project-name
+gulp
 ```
 
 To test it visit `http://localhost:3000` in your browser.
@@ -30,23 +30,23 @@ To test it visit `http://localhost:3000` in your browser.
 For a complete list of commands:
 
 ```bash
-$ gulp help
+gulp help
 ```
 
 ## Initializing or Resetting the project
 
 ```bash
-$ cd /path/to/project-name
-$ npm install
-$ gulp
+cd /path/to/project-name
+npm install
+gulp
 ```
 
 If something goes wrong you can always do:
 
 ```bash
-$ gulp reset
-$ npm install
-$ gulp
+gulp reset
+npm install
+gulp
 ```
 
 ---
@@ -54,16 +54,16 @@ $ gulp
 To install [Gulp][] as a global package:
 
 ```bash
-$ npm install -g gulp
+npm install -g gulp
 ```
 
 ## Deploying on Google App Engine
 
 ```bash
-$ gulp deploy
-$ gulp deploy --project=foo
-$ gulp deploy --project=foo --version=bar
-$ gulp deploy --project=foo --version=bar --no-promote
+gulp deploy
+gulp deploy --project=foo
+gulp deploy --project=foo --version=bar
+gulp deploy --project=foo --version=bar --no-promote
 ```
 
 ## Tech Stack
