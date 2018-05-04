@@ -1,10 +1,10 @@
 {
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "devDependencies": {
-    "babel-core": "6.26.0",
+    "babel-core": "6.26.3",
     "babel-preset-es2015": "6.24.1",
     "bower": "1.8.4",
-    "browser-sync": "2.23.6",
+    "browser-sync": "2.24.4",
     "coffee-script": "1.12.7",
     "del": "3.0.0",
     "eslint": "4.19.1",
@@ -32,9 +32,9 @@
     "gulp-zip": "4.1.0",
     "husky": "0.14.3",
     "less": "2.7.3",
-    "lint-staged": "7.0.4",
+    "lint-staged": "7.0.5",
     "main-bower-files": "2.13.1",
-    "prettier": "1.12.0",
+    "prettier": "1.12.1",
     "require-dir": "1.0.0",
     "uglify-es": "3.3.9",
     "yargs-parser": "10.0.0"
