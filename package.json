@@ -4,7 +4,7 @@
     "babel-core": "6.26.3",
     "babel-preset-es2015": "6.24.1",
     "bower": "1.8.4",
-    "browser-sync": "2.24.2",
+    "browser-sync": "2.24.4",
     "coffee-script": "1.12.7",
     "del": "3.0.0",
     "eslint": "4.19.1",
