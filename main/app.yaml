@@ -15,8 +15,6 @@ inbound_services:
 libraries:
 - name: ssl
   version: latest
-- name: jinja2
-  version: latest
 
 error_handlers:
 - file: templates/error_static.html
