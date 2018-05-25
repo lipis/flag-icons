@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-mn" width="640" height="480">
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-mn" viewBox="0 0 640 480">
   <path fill="#c4272f" d="M0 0h640v480H0z"/>
   <path fill="#015197" d="M213.3 0h213.4v480H213.3z"/>
   <circle cx="107" cy="189.1" r="35" fill="#f9cf02"/>
