@@ -5,6 +5,6 @@ flask-restful==0.3.6
 flask-wtf==0.14.2
 flask==1.0.2
 jinja2==2.10
-pyjwt==1.6.3
+pyjwt==1.6.4
 unidecode==1.0.22
 webargs==3.0.0
