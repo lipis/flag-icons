@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-tr" width="512" height="512">
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-tr" viewBox="0 0 512 512">
   <g fill-rule="evenodd">
     <path fill="#e30a17" d="M0 0h512v512H0z"/>
     <path fill="#fff" d="M348.8 264c0 70.6-58.3 127.9-130.1 127.9s-130.1-57.3-130.1-128 58.2-127.8 130-127.8S348.9 193.3 348.9 264z"/>

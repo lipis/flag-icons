@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-ms" width="640" height="480">
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-ms" viewBox="0 0 640 480">
   <path fill="#006" d="M0 0h640v480H0z"/>
   <g fill-rule="evenodd">
     <path fill="#fff" d="M408.3 192.3h214.3l-.3 153.4c1.8 61.7-36.4 100-106.7 117.2-50-12.5-107.5-38.3-107.6-115.5l.3-155.2z"/>
