@@ -46,8 +46,14 @@
     "url": "https://github.com/gae-init"
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"],
-    "*.{json,less,md}": ["prettier --write", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.{json,less,md}": [
+      "prettier --write",
+      "git add"
+    ]
   },
   "scripts": {
     "build": "gulp build",

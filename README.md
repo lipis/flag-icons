@@ -10,9 +10,9 @@ The latest version is always accessible from [https://gae-init.appspot.com](http
 
 ## Requirements
 
-* [Google App Engine SDK for Python][]
-* [Node.js][], [pip][], [virtualenv][]
-* [macOS][] or [Linux][] or [Windows][]
+- [Google App Engine SDK for Python][]
+- [Node.js][], [pip][], [virtualenv][]
+- [macOS][] or [Linux][] or [Windows][]
 
 Make sure you have all of the above or refer to the docs on how to [install the requirements](http://docs.gae-init.appspot.com/requirement/).
 
@@ -68,14 +68,14 @@ gulp deploy --project=foo --version=bar --no-promote
 
 ## Tech Stack
 
-* [Google App Engine][], [NDB][]
-* [Jinja2][], [Flask][], [Flask-RESTful][], [Flask-WTF][]
-* [CoffeeScript][], [Less][]
-* [Bootstrap][], [Font Awesome][], [Social Buttons][]
-* [jQuery][], [Moment.js][]
-* [OpenID][] sign in (Google, Facebook, Twitter and more)
-* [Python 2.7][], [pip][], [virtualenv][]
-* [Gulp][], [Bower][]
+- [Google App Engine][], [NDB][]
+- [Jinja2][], [Flask][], [Flask-RESTful][], [Flask-WTF][]
+- [CoffeeScript][], [Less][]
+- [Bootstrap][], [Font Awesome][], [Social Buttons][]
+- [jQuery][], [Moment.js][]
+- [OpenID][] sign in (Google, Facebook, Twitter and more)
+- [Python 2.7][], [pip][], [virtualenv][]
+- [Gulp][], [Bower][]
 
 [bootstrap]: http://getbootstrap.com/
 [bower]: http://bower.io/
