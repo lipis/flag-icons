@@ -7,10 +7,11 @@ python:
   - '2.7'
 
 cache:
-  - pip
-  - yarn
+  pip: true
+  yarn: true
   directories:
   - "$HOME/google-cloud-sdk/"
+  - node_modules
 
 notifications:
   - email: false
@@ -20,12 +21,16 @@ env:
 - GAE_PYTHONPATH=${HOME}/.cache/google_appengine PATH=$PATH:${HOME}/google-cloud-sdk/bin PYTHONPATH=${PYTHONPATH}:${GAE_PYTHONPATH} CLOUDSDK_CORE_DISABLE_PROMPTS=1
 
 before_install:
+  - gcloud version || true
+  - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
+  # Add gcloud to $PATH
+  - source /home/travis/google-cloud-sdk/path.bash.inc
+  - gcloud version
+  - gcloud components install app-engine-python
+
+#before_install:
 # Install Google App Engine Python SDK
-- if [ ! -d "${GAE_PYTHONPATH}" ]; then
-    curl -O https://raw.githubusercontent.com/GoogleCloudPlatform/continuous-deployment-circle/master/scripts/fetch_gae_sdk.py
-    python ./fetch_gae_sdk.py $(dirname "${GAE_PYTHONPATH}");
-  fi
-# If the SDK is not already cached, download it and unpack it
-- if [ ! -d ${HOME}/google-cloud-sdk ]; then
-    curl https://sdk.cloud.google.com | bash;
-  fi
+#- if [ ! -d "${GAE_PYTHONPATH}" ]; then
+#    curl -O https://raw.githubusercontent.com/GoogleCloudPlatform/continuous-deployment-circle/master/scripts/fetch_gae_sdk.py;
+#    python ./fetch_gae_sdk.py $(dirname "${GAE_PYTHONPATH}");
+#  fi
