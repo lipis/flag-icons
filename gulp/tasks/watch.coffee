@@ -24,7 +24,7 @@ gulp.task 'watch', false, ->
   $.watch 'requirements.txt', ->
     $.sequence('pip')()
   $.watch 'package.json', ->
-    $.sequence('npm')()
+    $.sequence('yarn')()
   $.watch 'bower.json', ->
     $.sequence('ext_watch_rebuild')()
   $.watch 'gulp/config.coffee', ->

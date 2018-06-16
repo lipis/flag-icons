@@ -11,7 +11,7 @@ The latest version is always accessible from [https://gae-init.appspot.com](http
 ## Requirements
 
 - [Google App Engine SDK for Python][]
-- [Node.js][], [pip][], [virtualenv][]
+- [Node.js][], [Yarn][], [pip][], [virtualenv][]
 - [macOS][] or [Linux][] or [Windows][]
 
 Make sure you have all of the above or refer to the docs on how to [install the requirements](http://docs.gae-init.appspot.com/requirement/).
@@ -37,7 +37,7 @@ gulp help
 
 ```bash
 cd /path/to/project-name
-npm install
+yarn
 gulp
 ```
 
@@ -45,7 +45,7 @@ If something goes wrong you can always do:
 
 ```bash
 gulp reset
-npm install
+yarn
 gulp
 ```
 
@@ -105,3 +105,4 @@ gulp deploy --project=foo --version=bar --no-promote
 [tutorial]: http://docs.gae-init.appspot.com/tutorial/
 [virtualenv]: http://www.virtualenv.org/
 [windows]: http://windows.microsoft.com/
+[yarn]: https://yarnpkg.com/

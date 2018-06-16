@@ -29,6 +29,7 @@
     "gulp-uglify-es": "1.0.4",
     "gulp-util": "3.0.8",
     "gulp-watch": "5.0.0",
+    "gulp-yarn": "2.0.0",
     "gulp-zip": "4.1.0",
     "husky": "0.14.3",
     "less": "3.0.4",
@@ -37,7 +38,8 @@
     "prettier": "1.13.5",
     "require-dir": "1.0.0",
     "uglify-es": "3.3.9",
-    "yargs-parser": "10.0.0"
+    "yargs-parser": "10.0.0",
+    "yarn": "1.7.0"
   },
   "license": "MIT",
   "name": "gae-init",
@@ -57,16 +59,16 @@
   },
   "scripts": {
     "build": "gulp build",
-    "fix:assets": "npm run prettier -- --write",
-    "fix:code": "npm run test:code -- --fix",
-    "fix": "npm run fix:assets && npm run fix:code",
+    "fix:assets": "yarn prettier -- --write",
+    "fix:code": "yarn test:code -- --fix",
+    "fix": "yarn fix:assets && yarn fix:code",
     "install": "gulp init",
     "prettier": "prettier --ignore-path .gitignore  \"**/*.{json,less,md}\"",
     "postinstall": "echo 'Run `gulp` to start or `gulp help` for more.'",
     "precommit": "lint-staged",
     "start": "gulp",
-    "test:assets": "npm run prettier -- --list-different",
+    "test:assets": "yarn prettier -- --list-different",
     "test:code": "eslint --ignore-path .gitignore \"**/*.js\"",
-    "test": "npm run test:assets && npm run test:code"
+    "test": "yarn test:assets && yarn test:code"
   }
 }
