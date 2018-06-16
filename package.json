@@ -59,15 +59,15 @@
   },
   "scripts": {
     "build": "gulp build",
-    "fix:assets": "yarn prettier -- --write",
-    "fix:code": "yarn test:code -- --fix",
+    "fix:assets": "yarn prettier --write",
+    "fix:code": "yarn test:code --fix",
     "fix": "yarn fix:assets && yarn fix:code",
     "install": "gulp init",
     "prettier": "prettier --ignore-path .gitignore  \"**/*.{json,less,md}\"",
     "postinstall": "echo 'Run `gulp` to start or `gulp help` for more.'",
     "precommit": "lint-staged",
     "start": "gulp",
-    "test:assets": "yarn prettier -- --list-different",
+    "test:assets": "yarn prettier --list-different",
     "test:code": "eslint --ignore-path .gitignore \"**/*.js\"",
     "test": "yarn test:assets && yarn test:code"
   }
