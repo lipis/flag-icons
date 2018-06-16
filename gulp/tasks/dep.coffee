@@ -1,14 +1,15 @@
 fs = require 'fs'
 gulp = require('gulp-help') require 'gulp'
+yarn = require('gulp-yarn')
 main_bower_files = require 'main-bower-files'
 $ = require('gulp-load-plugins')()
 paths = require '../paths'
 
 
-gulp.task 'npm', false, ->
-  gulp.src 'package.json'
+gulp.task 'yarn', false, ->
+  gulp.src ['./package.json', './yarn.lock']
   .pipe $.plumber()
-  .pipe $.start()
+  .pipe yarn()
 
 
 gulp.task 'bower', false, ->

@@ -6,9 +6,9 @@ The latest version is always accessible from [http://babel.gae-init.appspot.com]
 
 ## Requirements
 
-* [Google App Engine SDK for Python][]
-* [Node.js][], [pip][], [virtualenv][]
-* [macOS][] or [Linux][] or [Windows][]
+- [Google App Engine SDK for Python][]
+- [Node.js][], [Yarn][], [pip][], [virtualenv][]
+- [macOS][] or [Linux][] or [Windows][]
 
 Make sure you have all of the above or refer to the docs on how to [install the requirements](http://docs.gae-init.appspot.com/requirement/).
 
@@ -33,7 +33,7 @@ gulp help
 
 ```bash
 cd /path/to/project-name
-npm install
+yarn
 gulp
 ```
 
@@ -41,7 +41,7 @@ If something goes wrong you can always do:
 
 ```bash
 gulp reset
-npm install
+yarn
 gulp
 ```
 
@@ -64,15 +64,15 @@ gulp deploy --project=foo --version=bar --no-promote
 
 ## Tech Stack
 
-* [Google App Engine][], [NDB][]
-* [Jinja2][], [Flask][], [Flask-RESTful][], [Flask-WTF][]
-* [CoffeeScript][], [Less][]
-* [Bootstrap][], [Font Awesome][], [Social Buttons][]
-* [jQuery][], [Moment.js][]
-* [OpenID][] sign in (Google, Facebook, Twitter and more)
-* [Python 2.7][], [pip][], [virtualenv][]
-* [Gulp][], [Bower][]
-* [Babel][]
+- [Google App Engine][], [NDB][]
+- [Jinja2][], [Flask][], [Flask-RESTful][], [Flask-WTF][]
+- [CoffeeScript][], [Less][]
+- [Bootstrap][], [Font Awesome][], [Social Buttons][]
+- [jQuery][], [Moment.js][]
+- [OpenID][] sign in (Google, Facebook, Twitter and more)
+- [Python 2.7][], [pip][], [virtualenv][]
+- [Gulp][], [Bower][]
+- [Babel][]
 
 ## Support
 
@@ -108,3 +108,4 @@ Due to lack of documentation if you run into any troubles, feel free to add an i
 [tutorial]: http://docs.gae-init.appspot.com/tutorial/
 [virtualenv]: http://www.virtualenv.org/
 [windows]: http://windows.microsoft.com/
+[yarn]: https://yarnpkg.com/
