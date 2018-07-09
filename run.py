@@ -146,7 +146,7 @@ def exec_pip_commands(command):
   script.append(command)
   script = '&'.join(script) if IS_WINDOWS else \
       '/bin/bash -c "%s"' % ';'.join(script)
-  os.system(script)
+  return os.system(script)
 
 
 def make_guard(fname, cmd, spec):
@@ -168,7 +168,10 @@ def install_py_libs():
   if not check_if_pip_should_run() and os.path.exists(DIR_LIB):
     return
 
-  exec_pip_commands('pip install -q -r %s' % FILE_REQUIREMENTS)
+  make_guard_flag = True
+  if exec_pip_commands('pip install -q -r %s' % FILE_REQUIREMENTS):
+    print('ERROR running pip install')
+    make_guard_flag = False
 
   exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info', '.so']
   exclude_prefix = ['setuptools-', 'pip-', 'Pillow-']
@@ -205,7 +208,8 @@ def install_py_libs():
     copy = shutil.copy if os.path.isfile(src_path) else shutil.copytree
     copy(src_path, _get_dest(dir_))
 
-  make_guard(FILE_PIP_GUARD, 'pip', FILE_REQUIREMENTS)
+  if make_guard_flag:
+    make_guard(FILE_PIP_GUARD, 'pip', FILE_REQUIREMENTS)
 
 
 def install_dependencies():
