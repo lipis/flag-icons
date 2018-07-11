@@ -3463,9 +3463,9 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
-"less@2.6.x || ^3.0.0", less@3.0.4:
-  version "3.0.4"
-  resolved "https://registry.yarnpkg.com/less/-/less-3.0.4.tgz#d27dcedbac96031c9e7b76f1da1e4b7d83760814"
+"less@2.6.x || ^3.0.0", less@3.7.0:
+  version "3.7.0"
+  resolved "https://registry.yarnpkg.com/less/-/less-3.7.0.tgz#dc0429b4595a14a4cf7e7efd33f7378fe3edb614"
   optionalDependencies:
     errno "^0.1.1"
     graceful-fs "^4.1.2"
