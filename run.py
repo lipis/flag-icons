@@ -165,11 +165,13 @@ def check_if_pip_should_run():
 
 
 def install_py_libs():
+  return_code = 0
   if not check_if_pip_should_run() and os.path.exists(DIR_LIB):
-    return
+    return return_code
 
   make_guard_flag = True
-  if exec_pip_commands('pip install -q -r %s' % FILE_REQUIREMENTS):
+  return_code = exec_pip_commands('pip install -q -r %s' % FILE_REQUIREMENTS)
+  if return_code:
     print('ERROR running pip install')
     make_guard_flag = False
 
@@ -210,11 +212,12 @@ def install_py_libs():
 
   if make_guard_flag:
     make_guard(FILE_PIP_GUARD, 'pip', FILE_REQUIREMENTS)
+  return return_code
 
 
 def install_dependencies():
   make_dirs(DIR_TEMP)
-  install_py_libs()
+  return install_py_libs()
 
 
 def check_for_update():
@@ -356,6 +359,7 @@ def run_start():
 
 
 def run():
+  return_code = 0
   if len(sys.argv) == 1 or (ARGS.args and not ARGS.start):
     PARSER.print_help()
     sys.exit(1)
@@ -363,7 +367,7 @@ def run():
   os.chdir(os.path.dirname(os.path.realpath(__file__)))
 
   if doctor_says_ok():
-    install_dependencies()
+    return_code |= install_dependencies()
     check_for_update()
 
   if ARGS.show_version:
@@ -375,7 +379,9 @@ def run():
     run_start()
 
   if ARGS.install_dependencies:
-    install_dependencies()
+    return_code |= install_dependencies()
+
+  sys.exit(return_code)
 
 
 if __name__ == '__main__':
