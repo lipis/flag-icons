@@ -30,7 +30,7 @@
     "gulp-util": "3.0.8",
     "gulp-watch": "5.0.0",
     "gulp-yarn": "2.0.0",
-    "gulp-zip": "4.1.0",
+    "gulp-zip": "4.2.0",
     "husky": "0.14.3",
     "less": "3.7.1",
     "lint-staged": "7.2.0",
