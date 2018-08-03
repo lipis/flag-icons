@@ -50,7 +50,7 @@ gulp
 To install [Gulp][] as a global package:
 
 ```bash
-npm install -g gulp
+npm install --global gulp-cli
 ```
 
 ## Deploying on Google App Engine

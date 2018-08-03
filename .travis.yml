@@ -27,3 +27,10 @@ before_install:
   - source /home/travis/google-cloud-sdk/path.bash.inc
   - gcloud version
   - gcloud components install app-engine-python
+
+before_script:
+  - npm install --global gulp-cli
+  
+script: 
+  - yarn test
+  - gulp deploy --dryrun
