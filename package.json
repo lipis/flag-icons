@@ -7,7 +7,7 @@
     "browser-sync": "2.24.6",
     "coffee-script": "1.12.7",
     "del": "3.0.0",
-    "eslint": "5.2.0",
+    "eslint": "5.3.0",
     "eslint-config-prettier": "2.9.0",
     "eslint-plugin-prettier": "2.6.2",
     "gulp": "3.9.1",
