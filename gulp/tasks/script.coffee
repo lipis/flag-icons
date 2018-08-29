@@ -15,7 +15,7 @@ gulp.task 'script', false, ->
   .pipe $.plumber errorHandler: util.onError
   .pipe $.if is_coffee, $.coffee()
   .pipe $.concat 'script.js'
-  .pipe $.babel presets: ['es2015']
+  .pipe $.babel presets: ['@babel/env']
   .pipe uglify()
   .pipe $.size {title: 'Minified scripts'}
   .pipe gulp.dest "#{paths.static.min}/script"
