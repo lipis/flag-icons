@@ -5,67 +5,67 @@ api_version: 1
 threadsafe: true
 
 builtins:
-- appstats: on
-- deferred: on
-- remote_api: on
+  - appstats: on
+  - deferred: on
+  - remote_api: on
 
 inbound_services:
-- warmup
+  - warmup
 
 libraries:
-- name: ssl
-  version: latest
+  - name: ssl
+    version: latest
 
 error_handlers:
-- file: templates/error_static.html
+  - file: templates/error_static.html
 
 handlers:
-- url: /favicon.ico
-  static_files: static/img/favicon.ico
-  upload: static/img/favicon.ico
+  - url: /favicon.ico
+    static_files: static/img/favicon.ico
+    upload: static/img/favicon.ico
 
-- url: /robots.txt
-  static_files: static/robots.txt
-  upload: static/robots.txt
+  - url: /robots.txt
+    static_files: static/robots.txt
+    upload: static/robots.txt
 
-- url: /p/(.*\.ttf)
-  static_files: static/\1
-  upload: static/(.*\.ttf)
-  mime_type: font/ttf
-  expiration: "365d"
+  - url: /p/(.*\.ttf)
+    static_files: static/\1
+    upload: static/(.*\.ttf)
+    mime_type: font/ttf
+    expiration: '365d'
 
-- url: /p/(.*\.woff2)
-  static_files: static/\1
-  upload: static/(.*\.woff2)
-  mime_type: font/woff2
-  expiration: "365d"
+  - url: /p/(.*\.woff2)
+    static_files: static/\1
+    upload: static/(.*\.woff2)
+    mime_type: font/woff2
+    expiration: '365d'
 
-- url: /p/
-  static_dir: static/
-  expiration: "365d"
+  - url: /p/
+    static_dir: static/
+    expiration: '365d'
 
-- url: /.*
-  script: main.app
-  secure: always
-  redirect_http_response_code: 301
+  - url: /.*
+    script: main.app
+    secure: always
+    redirect_http_response_code: 301
 
 skip_files:
-- ^(.*/)?#.*#
-- ^(.*/)?.*/RCS/.*
-- ^(.*/)?.*\.bak$
-- ^(.*/)?.*\.py[co]
-- ^(.*/)?.*~
-- ^(.*/)?Icon\r
-- ^(.*/)?\..*
-- ^(.*/)?app\.yaml
-- ^(.*/)?app\.yml
-- ^(.*/)?index\.yaml
-- ^(.*/)?index\.yml
-- ^lib/.*
-- ^static/dev/.*
-- ^static/ext/.*\.coffee
-- ^static/ext/.*\.css
-- ^static/ext/.*\.js
-- ^static/ext/.*\.less
-- ^static/ext/.*\.json
-- ^static/src/.*
+  - ^(.*/)?#.*#
+  - ^(.*/)?.*/RCS/.*
+  - ^(.*/)?.*\.bak$
+  - ^(.*/)?.*\.py[co]
+  - ^(.*/)?.*~
+  - ^(.*/)?Icon\r
+  - ^(.*/)?\..*
+  - ^(.*/)?app\.yaml
+  - ^(.*/)?app\.yml
+  - ^(.*/)?index\.yaml
+  - ^(.*/)?index\.yml
+  - ^lib/.*
+  - ^static/dev/.*
+  - ^static/ext/.*\.coffee
+  - ^static/ext/.*\.css
+  - ^static/ext/.*\.js
+  - ^static/ext/.*\.less
+  - ^static/ext/.*\.json
+  - ^static/src/.*

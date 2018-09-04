@@ -10,15 +10,15 @@ cache:
   pip: true
   yarn: true
   directories:
-  - "$HOME/google-cloud-sdk/"
-  - node_modules
+    - '$HOME/google-cloud-sdk/'
+    - node_modules
 
 notifications:
   - email: false
 
 env:
-# Make sure gcloud command is on our PATH and the App Engine SDK is in the Python path
-- GAE_PYTHONPATH=${HOME}/.cache/google_appengine PATH=$PATH:${HOME}/google-cloud-sdk/bin PYTHONPATH=${PYTHONPATH}:${GAE_PYTHONPATH} CLOUDSDK_CORE_DISABLE_PROMPTS=1
+  # Make sure gcloud command is on our PATH and the App Engine SDK is in the Python path
+  - GAE_PYTHONPATH=${HOME}/.cache/google_appengine PATH=$PATH:${HOME}/google-cloud-sdk/bin PYTHONPATH=${PYTHONPATH}:${GAE_PYTHONPATH} CLOUDSDK_CORE_DISABLE_PROMPTS=1
 
 before_install:
   - gcloud version || true
@@ -30,7 +30,7 @@ before_install:
 
 before_script:
   - npm install --global gulp-cli
-  
-script: 
+
+script:
   - yarn test
   - gulp deploy --dryrun
