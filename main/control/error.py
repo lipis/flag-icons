@@ -3,6 +3,7 @@
 import logging
 
 import flask
+import werkzeug
 
 from api import helpers
 import config
@@ -44,4 +45,6 @@ def error_handler(e):
 if config.PRODUCTION:
   @app.errorhandler(Exception)
   def production_error_handler(e):
+    if isinstance(e, werkzeug.exceptions.HTTPException) and e.code in (301, 302):
+      return e
     return error_handler(e)
