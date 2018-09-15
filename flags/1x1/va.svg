@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-va" width="512" height="512">
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-va" viewBox=" 0 0 512 512">
   <g fill-rule="evenodd">
     <path fill="#fff" d="M256 0h256v512H256z"/>
     <path fill="#fff" stroke="#000" stroke-width="1pt" d="M282.4-735.1c0 .6 56 222.8 118.2 300.5 69.4 87.3 113.2 87.4 113.2 87.4l70.9-17.8s-41.6 2.1-123.9-104.2c-83.4-107.7-109.4-286-108.1-282.8l-70.3 16.9z" transform="matrix(-.21542 0 0 .17871 450.5 340.7)"/>
