@@ -70,7 +70,7 @@ gulp deploy --project=foo --version=bar --no-promote
 
 - [Google App Engine][], [NDB][]
 - [Jinja2][], [Flask][], [Flask-RESTful][], [Flask-WTF][]
-- [CoffeeScript][], [Less][]
+- [Less][]
 - [Bootstrap][], [Font Awesome][], [Social Buttons][]
 - [jQuery][], [Moment.js][]
 - [OpenID][] sign in (Google, Facebook, Twitter and more)
@@ -79,7 +79,6 @@ gulp deploy --project=foo --version=bar --no-promote
 
 [bootstrap]: http://getbootstrap.com/
 [bower]: http://bower.io/
-[coffeescript]: http://coffeescript.org/
 [documentation]: http://docs.gae-init.appspot.com
 [feature list]: http://docs.gae-init.appspot.com/features/
 [flask-restful]: https://flask-restful.readthedocs.org
