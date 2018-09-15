@@ -66,7 +66,7 @@ gulp deploy --project=foo --version=bar --no-promote
 
 - [Google App Engine][], [NDB][]
 - [Jinja2][], [Flask][], [Flask-RESTful][], [Flask-WTF][]
-- [CoffeeScript][], [Less][]
+- [Less][]
 - [Bootstrap][], [Font Awesome][], [Social Buttons][]
 - [jQuery][], [Moment.js][]
 - [OpenID][] sign in (Google, Facebook, Twitter and more)
@@ -81,7 +81,6 @@ Due to lack of documentation if you run into any troubles, feel free to add an i
 [babel]: http://babel.edgewall.org/wiki/Download
 [bootstrap]: http://getbootstrap.com/
 [bower]: http://bower.io/
-[coffeescript]: http://coffeescript.org/
 [documentation]: http://docs.gae-init.appspot.com
 [feature list]: http://docs.gae-init.appspot.com/features/
 [flask-restful]: https://flask-restful.readthedocs.org

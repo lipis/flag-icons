@@ -16,7 +16,7 @@ import urllib2
 
 config = imp.load_source('config', 'main/config.py')
 
-__version__ = '5.10.3'
+__version__ = '6.0.0'
 
 
 ###############################################################################
