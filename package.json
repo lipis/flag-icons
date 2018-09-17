@@ -18,7 +18,7 @@
     "grunt-contrib-cssmin": "2.2.1",
     "grunt-contrib-watch": "1.1.0",
     "grunt-contrib-connect": "1.0.2",
-    "svgo": "1.0.5"
+    "svgo": "1.1.0"
   },
   "scripts": {
     "svgo": "svgo --pretty --indent=2 --precision=1 --config=svgo.yaml",

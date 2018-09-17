@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-tv" viewBox=" 0 0 640 480">
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-tv" viewBox="0 0 640 480">
   <defs>
     <clipPath id="a">
       <path fill-opacity=".7" d="M0 0h640v480H0z"/>
@@ -6,10 +6,10 @@
   </defs>
   <g clip-path="url(#a)">
     <g fill="#009fca" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.64508 0 0 .92059 0 23.3)">
-      <path d="M506-19.8H992V496H506z"/>
+      <path d="M506-19.8h486V496H506z"/>
       <rect width="523.5" height="521.4" y="-25.3" ry="0"/>
     </g>
-    <path fill="#fff" fill-rule="evenodd" d="M0 0H396v196.6H0z"/>
+    <path fill="#fff" fill-rule="evenodd" d="M0 0h396v196.6H0z"/>
     <path fill="#c00" d="M0 0v14.8l94.5 48.5 35.5 1L0 0z"/>
     <path fill="#006" d="M40.5 0L155 59.8V0H40.5z"/>
     <path fill="#c00" d="M170.3 0v76.4H0V120h170.3v76.4h52.3V120H393V76.4H222.7V0h-52.4z"/>
