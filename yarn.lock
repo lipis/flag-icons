@@ -1534,9 +1534,9 @@ supports-color@^5.3.0:
   dependencies:
     has-flag "^3.0.0"
 
-svgo@1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/svgo/-/svgo-1.1.0.tgz#d564c460e9035150702339e11851d47bda1da090"
+svgo@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/svgo/-/svgo-1.1.1.tgz#12384b03335bcecd85cfa5f4e3375fed671cb985"
   dependencies:
     coa "~2.0.1"
     colors "~1.1.2"
