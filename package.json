@@ -14,7 +14,7 @@
   },
   "devDependencies": {
     "grunt": "1.0.3",
-    "grunt-contrib-less": "1.4.1",
+    "grunt-contrib-less": "2.0.0",
     "grunt-contrib-cssmin": "3.0.0",
     "grunt-contrib-watch": "1.1.0",
     "grunt-contrib-connect": "2.0.0",
