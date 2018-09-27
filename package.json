@@ -9,7 +9,7 @@
     "del": "3.0.0",
     "eslint": "5.6.0",
     "eslint-config-prettier": "3.1.0",
-    "eslint-plugin-prettier": "2.6.2",
+    "eslint-plugin-prettier": "2.7.0",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "6.0.0",
     "gulp-babel": "8.0.0",
