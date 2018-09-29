@@ -31,7 +31,7 @@
     "gulp-watch": "5.0.1",
     "gulp-yarn": "2.0.0",
     "gulp-zip": "4.2.0",
-    "husky": "1.0.0",
+    "husky": "1.0.1",
     "less": "3.8.1",
     "lint-staged": "7.3.0",
     "main-bower-files": "2.13.1",
@@ -57,6 +57,11 @@
       "git add"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "scripts": {
     "build": "gulp build",
     "fix:assets": "yarn prettier --write",
@@ -65,7 +70,6 @@
     "install": "gulp init",
     "prettier": "prettier --ignore-path .gitignore  \"**/*.{json,less,md,yml,yaml}\"",
     "postinstall": "echo 'Run `gulp` to start or `gulp help` for more.'",
-    "precommit": "lint-staged",
     "start": "gulp",
     "test:assets": "yarn prettier --list-different",
     "test:code": "eslint --ignore-path .gitignore \"**/*.js\"",
