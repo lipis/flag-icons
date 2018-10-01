@@ -6,6 +6,8 @@ node_js:
 python:
   - '2.7'
 
+sudo: required
+
 cache:
   pip: true
   yarn: true
@@ -21,8 +23,10 @@ env:
   - GAE_PYTHONPATH=${HOME}/.cache/google_appengine PATH=$PATH:${HOME}/google-cloud-sdk/bin PYTHONPATH=${PYTHONPATH}:${GAE_PYTHONPATH} CLOUDSDK_CORE_DISABLE_PROMPTS=1
 
 before_install:
-  - gcloud version || true
-  - if [ ! -d "$HOME/google-cloud-sdk/bin" ]; then rm -rf $HOME/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
+  # Check if gcloud doesn't exist or if there is gcloud update, in which case delete the current installation
+  - if ! command -v gcloud || gcloud version 2>&1 | grep -F update; then rm -rf ${GAE_PYTHONPATH}; rm -rf $HOME/google-cloud-sdk; sudo rm -rf /usr/lib/google-cloud-sdk; else echo "Keeping cached Google Cloud SDK"; fi
+  # Check if Google Cloud SDK is installed and if not install it
+  - if [ ! -d "${GAE_PYTHONPATH}" ]; then rm -rf $HOME/google-cloud-sdk; sudo rm -rf /usr/lib/google-cloud-sdk; export CLOUDSDK_CORE_DISABLE_PROMPTS=1; curl https://sdk.cloud.google.com | bash; fi
   # Add gcloud to $PATH
   - source /home/travis/google-cloud-sdk/path.bash.inc
   - gcloud version
