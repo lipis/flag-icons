@@ -1,15 +1,15 @@
 {
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "devDependencies": {
-    "@babel/core": "7.1.0",
-    "@babel/preset-env": "7.0.0",
+    "@babel/core": "7.1.2",
+    "@babel/preset-env": "7.1.0",
     "bower": "1.8.4",
     "browser-sync": "2.24.7",
     "coffee-script": "1.12.7",
     "del": "3.0.0",
-    "eslint": "5.6.0",
-    "eslint-config-prettier": "3.0.1",
-    "eslint-plugin-prettier": "2.6.2",
+    "eslint": "5.6.1",
+    "eslint-config-prettier": "3.1.0",
+    "eslint-plugin-prettier": "3.0.0",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "6.0.0",
     "gulp-babel": "8.0.0",
@@ -31,15 +31,15 @@
     "gulp-watch": "5.0.1",
     "gulp-yarn": "2.0.0",
     "gulp-zip": "4.2.0",
-    "husky": "0.14.3",
+    "husky": "1.1.0",
     "less": "3.8.1",
     "lint-staged": "7.3.0",
     "main-bower-files": "2.13.1",
     "prettier": "1.14.3",
-    "require-dir": "1.0.0",
+    "require-dir": "1.1.0",
     "uglify-es": "3.3.9",
     "yargs-parser": "10.1.0",
-    "yarn": "1.9.4"
+    "yarn": "1.10.1"
   },
   "license": "MIT",
   "name": "gae-init",
@@ -57,6 +57,11 @@
       "git add"
     ]
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "scripts": {
     "build": "gulp build",
     "fix:assets": "yarn prettier --write",
@@ -65,7 +70,6 @@
     "install": "gulp init",
     "prettier": "prettier --ignore-path .gitignore  \"**/*.{json,less,md,yml,yaml}\"",
     "postinstall": "echo 'Run `gulp` to start or `gulp help` for more.'",
-    "precommit": "lint-staged",
     "start": "gulp",
     "test:assets": "yarn prettier --list-different",
     "test:code": "eslint --ignore-path .gitignore \"**/*.js\"",
