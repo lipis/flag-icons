@@ -33,7 +33,8 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc || ls -al $HOME/google-cloud-sdk
   - gcloud version
   - gcloud components install app-engine-python
-
+  - python -V
+  
 before_script:
   - npm install --global gulp-cli
 
