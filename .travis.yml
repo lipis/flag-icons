@@ -23,6 +23,12 @@ env:
   - PATH=$PATH:${HOME}/google-cloud-sdk/bin CLOUDSDK_CORE_DISABLE_PROMPTS=1
 
 before_install:
+  - python -V
+  # Travis defaults to python 2.7.6 we need at least 2.7.9
+  # askubuntu suggests using a PPA repository
+  - sudo add-apt-repository -y ppa:jonathonf/python-2.7
+  - sudo apt-get update
+  - sudo apt-get install -y python2.7
   # Check if gcloud doesn't exist or if there is gcloud update, in which case delete the current installation
   - if ! command -v gcloud || gcloud version 2>&1 | grep -F update; then rm -rf $HOME/google-cloud-sdk; sudo rm -rf /usr/lib/google-cloud-sdk; else echo "Keeping cached Google Cloud SDK"; fi
   # Check if Google Cloud SDK is installed and if not remove remnants and install it
@@ -34,7 +40,7 @@ before_install:
   - gcloud version
   - gcloud components install app-engine-python
   - python -V
-  
+
 before_script:
   - npm install --global gulp-cli
 

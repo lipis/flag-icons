@@ -82,7 +82,7 @@ FILE_UPDATE = os.path.join(DIR_TEMP, 'update.json')
 CORE_VERSION_URL = 'https://gae-init.appspot.com/_s/version/'
 INTERNET_TEST_URL = 'https://www.google.com'
 REQUIREMENTS_URL = 'http://docs.gae-init.appspot.com/requirement/'
-
+TRAVIS = "TRAVIS" in os.environ
 
 ###############################################################################
 # Helpers
@@ -170,7 +170,10 @@ def install_py_libs():
     return return_code
 
   make_guard_flag = True
-  return_code = exec_pip_commands('pip install -q -r %s' % FILE_REQUIREMENTS)
+  if TRAVIS:
+    return_code = exec_pip_commands('pip install -v -r %s' % FILE_REQUIREMENTS)
+  else:
+    return_code = exec_pip_commands('pip install -q -r %s' % FILE_REQUIREMENTS)
   if return_code:
     print('ERROR running pip install')
     make_guard_flag = False
