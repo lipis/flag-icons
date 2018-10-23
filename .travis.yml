@@ -42,7 +42,7 @@ before_install:
   - python -V
 
 before_script:
-  - npm install --global gulp-cli
+  - yarn global add gulp-cli
 
 script:
   - yarn test
