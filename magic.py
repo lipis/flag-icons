@@ -13,7 +13,7 @@ import urllib2
 ###############################################################################
 # Options
 ###############################################################################
-MAGIC_URL = 'http://magic.gae-init.appspot.com'
+MAGIC_URL = 'https://magic-dot-gae-init.appspot.com'
 
 PARSER = argparse.ArgumentParser(description='Visit %s for more.' % MAGIC_URL)
 PARSER.add_argument(
@@ -22,7 +22,7 @@ PARSER.add_argument(
 )
 PARSER.add_argument(
   '-r', '--remote', dest='remote_url', action='store', default=MAGIC_URL,
-  help="set the remote URL if it's not http://magic.gae-init.appspot.com",
+  help="set the remote URL if it's not https://magic-dot-gae-init.appspot.com",
 )
 ARGS = PARSER.parse_args()
 
