@@ -1,5 +1,5 @@
 blinker==1.4
-flask-babel==0.11.2
+flask-babel==0.12.2
 flask-login==0.4.1
 flask-oauthlib==0.9.5
 flask-restful==0.3.6
