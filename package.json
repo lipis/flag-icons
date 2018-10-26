@@ -21,6 +21,7 @@
     "svgo": "1.1.1"
   },
   "scripts": {
+    "build": "grunt build",
     "svgo": "svgo --pretty --indent=2 --precision=1 --config=svgo.yaml",
     "svgo:min": "find flags | grep '\\.svg$' | xargs -Iz -n 1 svgo --config=svgo.yaml z",
     "svgo:all": "find flags | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z"

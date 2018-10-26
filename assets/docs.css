@@ -132,7 +132,7 @@ h6 {
 }
 footer {
   text-align: center;
-  opacity: .8;
+  opacity: 0.8;
   padding: 50px;
   background: linear-gradient(to right, #f4c01a, #0d6632);
 }
