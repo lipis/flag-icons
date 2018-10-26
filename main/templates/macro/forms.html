@@ -177,13 +177,9 @@
     </div>
     <div id="{{slugify(name)}}" class="panel-collapse collapse">
       <div class="panel-body">
-        # if is_iterable(fields)
-          # for field in fields:
-            {{text_field(field)}}
-          # endfor
-        #else
-          {{text_field(fields)}}
-        #endif
+        # for field in (fields if is_iterable(fields) else [fields]):
+          {{text_field(field)}}
+        # endfor
         # if help
           <p class="help-block">{{help|safe}}</p>
         # endif

@@ -1,6 +1,6 @@
 # coding: utf-8
 
-from flask.ext.babel import lazy_gettext as _
+from flask_babel import lazy_gettext as _
 import flask
 import wtforms
 
@@ -49,13 +49,12 @@ class ConfigUpdateForm(i18n.Form):
   email_authentication = wtforms.BooleanField(model.Config.email_authentication._verbose_name)
   feedback_email = wtforms.StringField(model.Config.feedback_email._verbose_name, [wtforms.validators.optional(), wtforms.validators.email()], filters=[util.email_filter])
   flask_secret_key = wtforms.StringField(model.Config.flask_secret_key._verbose_name, [wtforms.validators.optional()], filters=[util.strip_filter])
-  letsencrypt_challenge = wtforms.StringField(model.Config.letsencrypt_challenge._verbose_name, filters=[util.strip_filter])
-  letsencrypt_response = wtforms.StringField(model.Config.letsencrypt_response._verbose_name, filters=[util.strip_filter])
   locale = wtforms.SelectField(model.Config.locale._verbose_name, choices=config.LOCALE_SORTED)
   notify_on_new_user = wtforms.BooleanField(model.Config.notify_on_new_user._verbose_name)
   recaptcha_private_key = wtforms.StringField(model.Config.recaptcha_private_key._verbose_name, filters=[util.strip_filter])
   recaptcha_public_key = wtforms.StringField(model.Config.recaptcha_public_key._verbose_name, filters=[util.strip_filter])
   salt = wtforms.StringField(model.Config.salt._verbose_name, [wtforms.validators.optional()], filters=[util.strip_filter])
+  trusted_hosts = wtforms.StringField(model.Config.trusted_hosts._verbose_name, [wtforms.validators.optional()], description='Comma separated: 127.0.0.1, example.com, etc')
   verify_email = wtforms.BooleanField(model.Config.verify_email._verbose_name)
 
 
@@ -65,6 +64,11 @@ def admin_config():
   config_db = model.Config.get_master_db()
   form = ConfigUpdateForm(obj=config_db)
   if form.validate_on_submit():
+    if form.trusted_hosts.data:
+      form.trusted_hosts.data = set(
+        [e.strip() for e in form.trusted_hosts.data.split(',')])
+    else:
+      form.trusted_hosts.data = []
     form.populate_obj(config_db)
     if not config_db.flask_secret_key:
       config_db.flask_secret_key = util.uuid()
@@ -74,13 +78,14 @@ def admin_config():
     reload(config)
     app.config.update(CONFIG_DB=config_db)
     return flask.redirect(flask.url_for('admin'))
+  form.trusted_hosts.data = ', '.join(config_db.trusted_hosts)
 
   return flask.render_template(
     'admin/admin_config.html',
     title=_('App Config'),
     html_class='admin-config',
     form=form,
-    api_url=flask.url_for('api.config'),
+    api_url=flask.url_for('api.admin.config'),
   )
 
 
@@ -88,6 +93,8 @@ def admin_config():
 # Auth Stuff
 ###############################################################################
 class AuthUpdateForm(i18n.Form):
+  azure_ad_client_id = wtforms.StringField(model.Config.azure_ad_client_id._verbose_name, filters=[util.strip_filter])
+  azure_ad_client_secret = wtforms.StringField(model.Config.azure_ad_client_secret._verbose_name, filters=[util.strip_filter])
   bitbucket_key = wtforms.StringField(model.Config.bitbucket_key._verbose_name, filters=[util.strip_filter])
   bitbucket_secret = wtforms.StringField(model.Config.bitbucket_secret._verbose_name, filters=[util.strip_filter])
   dropbox_app_key = wtforms.StringField(model.Config.dropbox_app_key._verbose_name, filters=[util.strip_filter])
@@ -102,6 +109,8 @@ class AuthUpdateForm(i18n.Form):
   instagram_client_secret = wtforms.StringField(model.Config.instagram_client_secret._verbose_name, filters=[util.strip_filter])
   linkedin_api_key = wtforms.StringField(model.Config.linkedin_api_key._verbose_name, filters=[util.strip_filter])
   linkedin_secret_key = wtforms.StringField(model.Config.linkedin_secret_key._verbose_name, filters=[util.strip_filter])
+  mailru_app_id = wtforms.StringField(model.Config.mailru_app_id._verbose_name, filters=[util.strip_filter])
+  mailru_app_secret = wtforms.StringField(model.Config.mailru_app_secret._verbose_name, filters=[util.strip_filter])
   microsoft_client_id = wtforms.StringField(model.Config.microsoft_client_id._verbose_name, filters=[util.strip_filter])
   microsoft_client_secret = wtforms.StringField(model.Config.microsoft_client_secret._verbose_name, filters=[util.strip_filter])
   reddit_client_id = wtforms.StringField(model.Config.reddit_client_id._verbose_name, filters=[util.strip_filter])
@@ -131,5 +140,5 @@ def admin_auth():
     title=_('Auth Config'),
     html_class='admin-auth',
     form=form,
-    api_url=flask.url_for('api.config'),
+    api_url=flask.url_for('api.admin.config'),
   )

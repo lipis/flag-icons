@@ -3,14 +3,14 @@
 from datetime import datetime
 import logging
 
-from flask.ext import restful
 from werkzeug import exceptions
 import flask
+import flask_restful
 
 import util
 
 
-class Api(restful.Api):
+class Api(flask_restful.Api):
   def unauthorized(self, response):
     flask.abort(401)
 
@@ -41,7 +41,7 @@ def make_response(data, marshal_table, cursors=None):
       'status': 'success',
       'count': len(data),
       'now': datetime.utcnow().isoformat(),
-      'result': map(lambda l: restful.marshal(l, marshal_table), data),
+      'result': [flask_restful.marshal(d, marshal_table) for d in data],
     }
     if cursors:
       if isinstance(cursors, dict):
@@ -58,7 +58,7 @@ def make_response(data, marshal_table, cursors=None):
   return util.jsonpify({
     'status': 'success',
     'now': datetime.utcnow().isoformat(),
-    'result': restful.marshal(data, marshal_table),
+    'result': flask_restful.marshal(data, marshal_table),
   })
 
 

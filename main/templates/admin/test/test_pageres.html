@@ -1,0 +1,30 @@
+<h3>Requirements</h3>
+
+<pre class="code">
+  npm install -g pageres-cli
+</pre>
+
+
+<h3>Run the followings in your terminal</h3>
+
+# set resolutions = [
+  '360x640',
+  '375x667',
+  '414x736',
+  '435x773',
+  '800x600',
+  '1024x768',
+  '1280x1024',
+]
+
+# set routes = [
+  'welcome',
+  'feedback',
+  'signin',
+]
+
+<pre class="code small">
+# for route in routes
+pageres {{url_for(route, _external=True)}} {{' '.join(resolutions)}} --filename='{{route}} <%= size %> - <%= url %>'
+# endfor
+</pre>

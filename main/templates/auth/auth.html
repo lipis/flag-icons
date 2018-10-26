@@ -1,10 +1,6 @@
 # extends 'base.html'
 # import 'macro/utils.html' as utils
 
-# block head
-  {{utils.prefetch_link(next_url)}}
-# endblock
-
 # block content
   <div class="page-header">
     <h1>{{title}} <small>{{_('It only takes 8 seconds')}}</small></h1>
@@ -27,12 +23,14 @@
           {{utils.signin_button(_('GAE') if config.CONFIG_DB.has_google else _('Google'), 'btn-google', 'fa-google', gae_signin_url, is_icon)}}
           {{utils.signin_button(_('Facebook'), 'btn-facebook', 'fa-facebook', facebook_signin_url, is_icon) if config.CONFIG_DB.has_facebook}}
           {{utils.signin_button(_('Twitter'), 'btn-twitter', 'fa-twitter', twitter_signin_url, is_icon) if config.CONFIG_DB.has_twitter}}
+          {{utils.signin_button(_('Azure AD'), 'btn-azure_ad', 'fa-windows', azure_ad_signin_url, is_icon) if config.CONFIG_DB.has_azure_ad}}
           {{utils.signin_button(_('Bitbucket'), 'btn-bitbucket', 'fa-bitbucket', bitbucket_signin_url, is_icon) if config.CONFIG_DB.has_bitbucket}}
           {{utils.signin_button(_('Dropbox'), 'btn-dropbox', 'fa-dropbox', dropbox_signin_url, is_icon) if config.CONFIG_DB.has_dropbox}}
           {{utils.signin_button(_('GitHub'), 'btn-github', 'fa-github', github_signin_url, is_icon) if config.CONFIG_DB.has_github}}
           {{utils.signin_button(_('Google'), 'btn-google', 'fa-google-plus', google_signin_url, is_icon) if config.CONFIG_DB.has_google}}
           {{utils.signin_button(_('Instagram'), 'btn-instagram', 'fa-instagram', instagram_signin_url, is_icon) if config.CONFIG_DB.has_instagram}}
           {{utils.signin_button(_('LinkedIn'), 'btn-linkedin', 'fa-linkedin', linkedin_signin_url, is_icon) if config.CONFIG_DB.has_linkedin}}
+          {{utils.signin_button(_('Mail.Ru'), 'btn-mailru', 'fa-at', mailru_signin_url, is_icon) if config.CONFIG_DB.has_mailru}}
           {{utils.signin_button(_('Microsoft'), 'btn-microsoft', 'fa-windows', microsoft_signin_url, is_icon) if config.CONFIG_DB.has_microsoft}}
           {{utils.signin_button(_('Reddit'), 'btn-reddit', 'fa-reddit', reddit_signin_url, is_icon) if config.CONFIG_DB.has_reddit}}
           {{utils.signin_button(_('VK'), 'btn-vk', 'fa-vk', vk_signin_url, is_icon) if config.CONFIG_DB.has_vk}}

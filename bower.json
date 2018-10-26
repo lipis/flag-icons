@@ -1,13 +1,13 @@
 {
-  "name": "gae-init",
   "dependencies": {
-    "bootstrap": "~3",
-    "flag-icon-css": "~1",
-    "bootswatch": "~3",
-    "font-awesome": "~4",
-    "jquery": "~2",
-    "moment": "~2"
+    "bootstrap": "3.3.7",
+    "bootswatch": "https://github.com/lipis/bootswatch.git#3.3.7-a",
+    "flag-icon-css": "2.8.0",
+    "font-awesome": "4.7.0",
+    "jquery": "3.3.1",
+    "moment": "2.22.2"
   },
+  "name": "gae-init",
   "overrides": {
     "bootstrap": {
       "main": ["less/**", "fonts/*", "js/*"]

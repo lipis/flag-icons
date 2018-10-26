@@ -5,14 +5,13 @@ from __future__ import absolute_import
 import functools
 import re
 
-from babel import localedata
-from flask.ext import login
-from flask.ext import wtf
-from flask.ext.babel import gettext as __
-from flask.ext.babel import lazy_gettext as _
-from flask.ext.oauthlib import client as oauth
+from flask_babel import gettext as __
+from flask_babel import lazy_gettext as _
+from flask_oauthlib import client as oauth
 from google.appengine.ext import ndb
 import flask
+import flask_login
+import flask_wtf
 import unidecode
 import wtforms
 
@@ -32,13 +31,6 @@ _signals = flask.signals.Namespace()
 ###############################################################################
 # Babel stuff - i18n
 ###############################################################################
-def check_locale(locale):
-  locale = locale.lower()
-  if locale not in config.LOCALE:
-    locale = config.LOCALE_DEFAULT
-  return locale if localedata.exists(locale) else 'en'
-
-
 @babel.localeselector
 def get_locale():
   if hasattr(flask.request, 'locale'):
@@ -48,39 +40,36 @@ def get_locale():
     locale = flask.request.cookies.get('locale', None)
     if not locale:
       locale = flask.request.accept_languages.best_match(
-          matches=config.LOCALE.keys(),
-          default=config.LOCALE_DEFAULT,
-        )
-  return check_locale(locale)
+        matches=config.LOCALE.keys(),
+        default=config.LOCALE_DEFAULT,
+      )
+  return util.check_locale(locale)
 
 
 @flask.request_started.connect_via(app)
 def request_started(sender, **extra):
   hl = util.param('hl')
-  flask.request.locale = check_locale(hl) if hl else get_locale()
+  flask.request.locale = util.check_locale(hl) if hl else get_locale()
   flask.request.locale_html = flask.request.locale.replace('_', '-')
 
 
 @flask.request_finished.connect_via(app)
 def request_finished(sender, response, **extra):
-  if util.param('hl'):
-    util.set_locale(check_locale(util.param('hl')), response)
+  util.set_locale(util.param('hl'), response)
 
 
 @app.route('/l/<path:locale>/')
 def set_locale(locale):
-  response = flask.redirect(util.get_next_url())
-  util.set_locale(check_locale(locale), response)
-  return response
+  return util.set_locale(locale, flask.redirect(util.get_next_url()))
 
 
 ###############################################################################
 # Flask Login
 ###############################################################################
-login_manager = login.LoginManager()
+login_manager = flask_login.LoginManager()
 
 
-class AnonymousUser(login.AnonymousUserMixin):
+class AnonymousUser(flask_login.AnonymousUserMixin):
   id = 0
   admin = False
   name = 'Anonymous'
@@ -134,19 +123,20 @@ login_manager.init_app(app)
 
 
 def current_user_id():
-  return login.current_user.id
+  return flask_login.current_user.id
 
 
 def current_user_key():
-  return login.current_user.user_db.key if login.current_user.user_db else None
+  return flask_login.current_user.user_db.key \
+      if flask_login.current_user.user_db else None
 
 
 def current_user_db():
-  return login.current_user.user_db
+  return flask_login.current_user.user_db
 
 
 def is_logged_in():
-  return login.current_user.id != 0
+  return flask_login.current_user.id != 0
 
 
 ###############################################################################
@@ -245,7 +235,7 @@ class SignInForm(i18n.Form):
     _('Keep me signed in'),
     [wtforms.validators.optional()],
   )
-  recaptcha = wtf.RecaptchaField()
+  recaptcha = flask_wtf.RecaptchaField()
   next_url = wtforms.HiddenField()
 
 
@@ -291,7 +281,7 @@ class SignUpForm(i18n.Form):
     [wtforms.validators.required(), wtforms.validators.email()],
     filters=[util.email_filter],
   )
-  recaptcha = wtf.RecaptchaField()
+  recaptcha = flask_wtf.RecaptchaField()
 
 
 @app.route('/signup/', methods=['GET', 'POST'])
@@ -337,7 +327,7 @@ def signup():
 ###############################################################################
 @app.route('/signout/')
 def signout():
-  login.logout_user()
+  flask_login.logout_user()
   return flask.redirect(util.param('next') or flask.url_for('signin'))
 
 
@@ -350,6 +340,7 @@ def url_for_signin(service_name, next_url):
 
 def urls_for_oauth(next_url):
   return {
+    'azure_ad_signin_url': url_for_signin('azure_ad', next_url),
     'bitbucket_signin_url': url_for_signin('bitbucket', next_url),
     'dropbox_signin_url': url_for_signin('dropbox', next_url),
     'facebook_signin_url': url_for_signin('facebook', next_url),
@@ -358,6 +349,7 @@ def urls_for_oauth(next_url):
     'gae_signin_url': url_for_signin('gae', next_url),
     'instagram_signin_url': url_for_signin('instagram', next_url),
     'linkedin_signin_url': url_for_signin('linkedin', next_url),
+    'mailru_signin_url': url_for_signin('mailru', next_url),
     'microsoft_signin_url': url_for_signin('microsoft', next_url),
     'reddit_signin_url': url_for_signin('reddit', next_url),
     'twitter_signin_url': url_for_signin('twitter', next_url),
@@ -460,9 +452,12 @@ def signin_user_db(user_db):
     'remember': False,
   })
   flask.session.pop('auth-params', None)
-  if login.login_user(flask_user_db, remember=auth_params['remember']):
+  if flask_login.login_user(flask_user_db, remember=auth_params['remember']):
     user_db.put_async()
-    return flask.redirect(util.get_next_url(auth_params['next']))
+    return util.set_locale(
+      user_db.locale,
+      flask.redirect(util.get_next_url(auth_params['next'])),
+    )
   flask.flash(__('Sorry, but you could not sign in.'), category='danger')
   return flask.redirect(flask.url_for('signin'))
 
@@ -472,9 +467,9 @@ def get_user_db_from_email(email, password):
   if not user_dbs:
     return None
   if len(user_dbs) > 1:
-    flask.flash(__('''We are sorry but it looks like there is a conflict with
-        your account. Our support team is already informed and we will get
-        back to you as soon as possible.'''), category='danger')
+    flask.flash('''We are sorry but it looks like there is a conflict with
+        your account. Our support team has been informed and we will get
+        back to you as soon as possible.''', category='danger')
     task.email_conflict_notification(email)
     return False
 

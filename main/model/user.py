@@ -4,7 +4,7 @@ from __future__ import absolute_import
 
 import hashlib
 
-from flask.ext.babel import lazy_gettext as _
+from flask_babel import lazy_gettext as _
 from google.appengine.ext import ndb
 from webargs.flaskparser import parser
 from webargs import fields as wf
@@ -31,7 +31,20 @@ class User(model.Base):
   def has_permission(self, perm):
     return self.admin or perm in self.permissions
 
+  def has_facebook(self):
+    for auth_id in self.auth_ids:
+      if auth_id.startswith('facebook'):
+        return auth_id
+    return None
+
   def avatar_url_size(self, size=None):
+    facebook_id = self.has_facebook()
+    if facebook_id:
+      return '//graph.facebook.com/%(id)s/picture%(size)s' % {
+        'id': facebook_id.split('_')[1],
+        'size': '?width=%s&height=%s' % (size, size) if size else '',
+      }
+
     return '//gravatar.com/avatar/%(hash)s?d=identicon&r=x%(size)s' % {
       'hash': hashlib.md5(
         (self.email or self.username).encode('utf-8')).hexdigest(),

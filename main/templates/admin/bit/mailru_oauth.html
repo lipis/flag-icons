@@ -1,0 +1,10 @@
+{{
+  forms.panel_fields(
+    'Mail.Ru',
+    (form.mailru_app_id, form.mailru_app_secret),
+    '''
+      Base domain for <a href="https://api.mail.ru/sites/my/" target="_blank">Mail.Ru application</a>:
+      <em>%s</em>
+    ''' % request.host
+  )
+}}

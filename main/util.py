@@ -1,11 +1,13 @@
 # coding: utf-8
 
+from urlparse import urlparse
 from uuid import uuid4
 import hashlib
 import re
 import unicodedata
 import urllib
 
+from babel import localedata
 from google.appengine.api import urlfetch
 from google.appengine.datastore.datastore_query import Cursor
 from google.appengine.ext import ndb
@@ -32,7 +34,19 @@ def param(name, cast=None):
   else:
     cast_ = switch(cast) or cast
   args = parser.parse({name: cast_})
-  return ndb.Key(urlsafe=args[name]) if cast is ndb.Key else args[name]
+  value = args[name]
+  return ndb.Key(urlsafe=value) if cast is ndb.Key and value else value
+
+
+def is_trusted_url(next_url):
+  if not next_url:
+    return ''
+  next_url_host = urlparse(next_url).hostname
+  if config.TRUSTED_HOSTS and next_url_host not in config.TRUSTED_HOSTS:
+    return flask.url_for('welcome')
+  if not next_url.startswith(flask.request.host_url):
+    return flask.url_for('welcome')
+  return next_url
 
 
 def get_next_url(next_url=''):
@@ -40,25 +54,30 @@ def get_next_url(next_url=''):
     'next': wf.Str(missing=None), 'next_url': wf.Str(missing=None)
   })
   next_url = next_url or args['next'] or args['next_url']
-  do_not_redirect_urls = [flask.url_for(u) for u in [
-    'signin', 'signup', 'user_forgot', 'user_reset',
-  ]]
   if next_url:
+    do_not_redirect_urls = [flask.url_for(u) for u in [
+      'signin', 'signup', 'user_forgot', 'user_reset',
+    ]]
     if any(url in next_url for url in do_not_redirect_urls):
       return flask.url_for('welcome')
-    return next_url
-  referrer = flask.request.referrer
-  if referrer and referrer.startswith(flask.request.host_url):
-    return referrer
-  return flask.url_for('welcome')
+    return is_trusted_url(next_url)
+  return is_trusted_url(flask.request.referrer)
 
 
 ###############################################################################
 # Babel stuff - i18n
 ###############################################################################
+def check_locale(locale):
+  locale = locale.lower()
+  if locale not in config.LOCALE:
+    locale = config.LOCALE_DEFAULT
+  return locale if localedata.exists(locale) else 'en'
+
+
 def set_locale(locale, response):
   if not locale:
     return response
+  locale = check_locale(locale)
   response.set_cookie('locale', value=locale, path='/')
   flask.session['locale'] = locale
   return response
@@ -93,7 +112,7 @@ def get_dbs(
         query_prev = query_prev.filter(model_class._properties[prop] == val)
 
   limit = limit or config.DEFAULT_DB_LIMIT
-  if limit is -1:
+  if limit == -1:
     return list(query.fetch(keys_only=keys_only)), {'next': None, 'prev': None}
 
   cursor = Cursor.from_websafe_string(cursor) if cursor else None
@@ -107,7 +126,7 @@ def get_dbs(
     limit, start_cursor=cursor.reversed() if cursor else None, keys_only=True
   )
   prev_cursor = prev_cursor.reversed().to_websafe_string() \
-    if prev_cursor and cursor else None
+      if prev_cursor and cursor else None
   return list(model_dbs), {'next': next_cursor, 'prev': prev_cursor}
 
 
@@ -220,7 +239,7 @@ def update_query_argument(name, value=None, ignore='cursor', is_list=False):
 
 def parse_tags(tags, separator=None):
   if not is_iterable(tags):
-    tags = str(tags.strip()).split(separator or config.TAG_SEPARATOR)
+    tags = unicode(tags.strip()).split(separator or config.TAG_SEPARATOR)
   return filter(None, sorted(list(set(tags))))
 
 

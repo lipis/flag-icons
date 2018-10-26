@@ -1,6 +1,8 @@
 paths = require './paths'
 
 config =
+  host: "127.0.0.1"
+  port: "8080"
   ext: [
     "#{paths.static.ext}/jquery/dist/jquery.js"
     "#{paths.static.ext}/moment/moment.js"
@@ -16,6 +18,8 @@ config =
   ]
   script: [
     "#{paths.src.script}/**/*.coffee"
+    "#{paths.src.script}/**/*.js"
   ]
+
 
 module.exports = config

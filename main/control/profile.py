@@ -1,7 +1,7 @@
 # coding: utf-8
 
-from flask.ext.babel import gettext as __
-from flask.ext.babel import lazy_gettext as _
+from flask_babel import gettext as __
+from flask_babel import lazy_gettext as _
 import flask
 import wtforms
 
@@ -69,8 +69,8 @@ def profile_update():
         task.verify_email_notification(user_db)
       user_db.put()
       return flask.redirect(flask.url_for(
-          'set_locale', locale=user_db.locale, next=flask.url_for('profile')
-        ))
+        'set_locale', locale=user_db.locale, next=flask.url_for('profile')
+      ))
 
   return flask.render_template(
     'profile/profile_update.html',

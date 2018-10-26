@@ -29,7 +29,7 @@ gulp.task 'clean:venv', false, ->
 
 
 gulp.task 'reset',
-  'Complete reset of project. Run "npm install" after this procedure.',
+  'Complete reset of project. Run "yarn install" after this procedure.',
   ['clean', 'clean:dev', 'clean:min', 'clean:venv'], ->
     del paths.dep.bower_components
     del paths.dep.node_modules

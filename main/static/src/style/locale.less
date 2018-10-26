@@ -1,14 +1,15 @@
 // Overrides of flag-icon-css
 
 .flag-icon {
-  .box-shadow(0 0 3px rgba(0, 0, 0, .64));
+  .box-shadow(0 0 3px rgba(0, 0, 0, 0.64));
+  background-size: cover;
 }
 
 .flag-icon(@country, @locale) {
   .flag-icon-@{locale} {
-    background-image: ~"url(@{flag-icon-css-path}/4x3/@{country}.svg)";
+    background-image: ~'url(@{flag-icon-css-path}/4x3/@{country}.svg)';
     &.flag-icon-squared {
-      background-image: ~"url(@{flag-icon-css-path}/1x1/@{country}.svg)";
+      background-image: ~'url(@{flag-icon-css-path}/1x1/@{country}.svg)';
     }
   }
 }

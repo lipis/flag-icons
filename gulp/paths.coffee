@@ -7,7 +7,6 @@ paths =
   src: {}
   temp: {}
 
-
 paths.temp.root = 'temp'
 paths.temp.storage = "#{paths.temp.root}/storage"
 paths.temp.venv = "#{paths.temp.root}/venv"

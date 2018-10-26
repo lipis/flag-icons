@@ -4,8 +4,8 @@ import os
 
 from babel import support
 from flask import _request_ctx_stack
-from flask.ext import babel
-from flask.ext import wtf
+import flask_babel
+import flask_wtf
 
 
 def _get_translations():
@@ -13,7 +13,7 @@ def _get_translations():
   root = os.path.dirname(os.path.abspath(__file__))
   translations_path = os.path.join(root, 'translations')
   translations = support.Translations.load(
-      translations_path, [babel.get_locale()], domain='messages'
+      translations_path, [flask_babel.get_locale()], domain='messages'
     )
   ctx.wtforms_translations = translations
   return translations
@@ -34,6 +34,6 @@ class Translations(object):
 translations = Translations()
 
 
-class Form(wtf.Form):
+class Form(flask_wtf.FlaskForm):
   def _get_translations(self):
     return translations

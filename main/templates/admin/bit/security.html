@@ -1,12 +1,12 @@
 {{
   forms.panel_fields(
-      'Security',
-      (form.flask_secret_key, form.salt),
-      '''
-        Read more about
-        <a href="http://flask.pocoo.org/docs/quickstart/#sessions" target="_blank">Flask secret key</a>
-        and
-        <a href="http://en.wikipedia.org/wiki/Salt_(cryptography)" target="_blank">salt in cryptography</a>.
-      '''
-    )
+    'Security',
+    (form.trusted_hosts, form.flask_secret_key, form.salt),
+    '''
+      Read more about
+      <a href="http://flask.pocoo.org/docs/quickstart/#sessions" target="_blank">Flask secret key</a>
+      and
+      <a href="http://en.wikipedia.org/wiki/Salt_(cryptography)" target="_blank">salt in cryptography</a>.
+    '''
+  )
 }}

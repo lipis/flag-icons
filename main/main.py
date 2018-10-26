@@ -1,13 +1,20 @@
 # coding: utf-8
 
-from flask.ext.babel import Babel
 import flask
+import flask_babel
 
 import config
 import util
 
+
+class GaeRequest(flask.Request):
+  trusted_hosts = config.TRUSTED_HOSTS
+
+
 app = flask.Flask(__name__)
 app.config.from_object(config)
+app.request_class = GaeRequest if config.TRUSTED_HOSTS else flask.Request
+
 app.jinja_env.line_statement_prefix = '#'
 app.jinja_env.line_comment_prefix = '##'
 app.jinja_env.globals.update(
@@ -17,7 +24,7 @@ app.jinja_env.globals.update(
   update_query_argument=util.update_query_argument,
 )
 app.config['BABEL_DEFAULT_LOCALE'] = config.LOCALE_DEFAULT
-babel = Babel(app)
+babel = flask_babel.Babel(app)
 
 import auth
 import control

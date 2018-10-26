@@ -1,16 +1,22 @@
 gulp = require('gulp-help') require 'gulp'
-$ = do require 'gulp-load-plugins'
+$ = require('gulp-load-plugins')()
+uglify = require('gulp-uglify-es').default
 config = require '../config'
 paths = require '../paths'
 util = require '../util'
 
 
+is_coffee = (file) ->
+  return file.path.indexOf('.coffee') > 0
+
+
 gulp.task 'script', false, ->
   gulp.src config.script
   .pipe $.plumber errorHandler: util.onError
-  .pipe $.coffee()
+  .pipe $.if is_coffee, $.coffee()
   .pipe $.concat 'script.js'
-  .pipe do $.uglify
+  .pipe $.babel presets: ['@babel/env']
+  .pipe uglify()
   .pipe $.size {title: 'Minified scripts'}
   .pipe gulp.dest "#{paths.static.min}/script"
 
@@ -18,8 +24,8 @@ gulp.task 'script', false, ->
 gulp.task 'script:dev', false, ->
   gulp.src config.script
   .pipe $.plumber errorHandler: util.onError
-  .pipe do $.sourcemaps.init
-  .pipe $.coffee()
+  .pipe $.sourcemaps.init()
+  .pipe $.if is_coffee, $.coffee()
   .pipe $.concat 'script.js'
-  .pipe do $.sourcemaps.write
+  .pipe $.sourcemaps.write()
   .pipe gulp.dest "#{paths.static.dev}/script"

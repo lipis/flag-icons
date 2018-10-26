@@ -2,8 +2,8 @@
 # coding: utf-8
 
 from datetime import datetime
-from HTMLParser import HTMLParser
 import argparse
+import HTMLParser
 import json
 import os
 import sys
@@ -13,7 +13,7 @@ import urllib2
 ###############################################################################
 # Options
 ###############################################################################
-MAGIC_URL = 'http://magic.gae-init.appspot.com'
+MAGIC_URL = 'https://magic-dot-gae-init.appspot.com'
 
 PARSER = argparse.ArgumentParser(description='Visit %s for more.' % MAGIC_URL)
 PARSER.add_argument(
@@ -22,7 +22,7 @@ PARSER.add_argument(
 )
 PARSER.add_argument(
   '-r', '--remote', dest='remote_url', action='store', default=MAGIC_URL,
-  help="set the remote URL if it's not http://magic.gae-init.appspot.com",
+  help="set the remote URL if it's not https://magic-dot-gae-init.appspot.com",
 )
 ARGS = PARSER.parse_args()
 
@@ -58,6 +58,7 @@ def print_out(script, filename=''):
 
 
 def make_dirs(directory):
+  directory = os.path.dirname(directory)
   if not os.path.exists(directory):
     os.makedirs(directory)
 
@@ -78,6 +79,10 @@ def append_to(project_url, destination):
       print_out('APPEND', destination)
 
 
+def safe_text(text):
+  return (HTMLParser.HTMLParser().unescape(text.decode('utf8'))).encode('utf8')
+
+
 def insert_to(project_url, destination, find_what, indent=0):
   url = ('%smagic/%s' % (project_url, destination)).replace('\\', '/')
   response = urllib2.urlopen(url)
@@ -85,7 +90,7 @@ def insert_to(project_url, destination, find_what, indent=0):
     with open(destination, 'r') as dest:
       dest_contents = dest.readlines()
       lines = ''.join(dest_contents)
-      content = HTMLParser().unescape(response.read())
+      content = safe_text(response.read())
       if content.replace(' ', '') in lines.replace(' ', ''):
         print_out('IGNORED', destination)
         return
@@ -106,30 +111,30 @@ def insert_to(project_url, destination, find_what, indent=0):
 
 
 def create_file(project_url, destination):
+  make_dirs(destination)
   url = ('%smagic/%s' % (project_url, destination)).replace('\\', '/')
   response = urllib2.urlopen(url)
   if response.getcode() == 200:
     with open(destination, 'w') as dest:
-      dest.write('%s\n' % HTMLParser().unescape(response.read()))
+      dest.write(safe_text(response.read()))
+      dest.write('\n')
       print_out('CREATE', destination)
 
 
-def get_project_url():
-  return '%s/api/v1/project/%s/' % (ARGS.remote_url, ARGS.project_id.split('/')[0])
-
-
 def get_project_db():
-  response = urllib2.urlopen(get_project_url())
+  url = '%s/api/v1/project/%s/' % (ARGS.remote_url, ARGS.project_id.split('/')[0])
+  response = urllib2.urlopen(url)
   if response.getcode() == 200:
     project_body = response.read()
-    return json.loads(project_body)['result']
+    project_db = json.loads(project_body)['result']
+    project_db['project_url'] = url
+    return project_db
   return None
 
 
-def sync_from_magic():
-  model_dbs = ''
-
-  project_url = get_project_url()
+def sync_from_magic(project_db):
+  model_dbs = {}
+  project_url = project_db['project_url']
   model_url = '%smodel/' % project_url
 
   response = urllib2.urlopen(model_url)
@@ -137,25 +142,30 @@ def sync_from_magic():
     models_body = response.read()
     model_dbs = json.loads(models_body)['result']
 
+  print_out('UPDATING')
   append_to(project_url, FILE_MODEL_INIT)
   append_to(project_url, FILE_CONTROL_INIT)
   append_to(project_url, FILE_API_INIT)
   insert_to(project_url, FILE_HEADER, '<ul class="nav navbar-nav">', 2)
   insert_to(project_url, FILE_ADMIN, "url_for('user_list'")
 
-  for model_db in model_dbs:
+  for index, model_db in enumerate(model_dbs):
+    print_out('%d of %d' % (index + 1, project_db['model_count']))
     name = model_db['variable_name']
     create_file(project_url, os.path.join(DIR_MODEL, '%s.py' % name))
     create_file(project_url, os.path.join(DIR_CONTROL, '%s.py' % name))
     create_file(project_url, os.path.join(DIR_API, '%s.py' % name))
 
     root = os.path.join(DIR_TEMPLATES, name)
-    make_dirs(root)
-    create_file(project_url, os.path.join(root, '%s_update.html' % name))
-    create_file(project_url, os.path.join(root, '%s_view.html' % name))
-    create_file(project_url, os.path.join(root, '%s_list.html' % name))
     create_file(project_url, os.path.join(root, 'admin_%s_update.html' % name))
     create_file(project_url, os.path.join(root, 'admin_%s_list.html' % name))
+
+    if model_db['has_view']:
+      create_file(project_url, os.path.join(root, '%s_view.html' % name))
+      create_file(project_url, os.path.join(root, '%s_list.html' % name))
+
+    if model_db['has_update']:
+      create_file(project_url, os.path.join(root, '%s_update.html' % name))
 
 
 ###############################################################################
@@ -180,7 +190,7 @@ def magic():
       }
     )
     if not answer or answer.lower() == 'y':
-      sync_from_magic()
+      sync_from_magic(project_db)
   else:
     print 'Project ID is not provided.'
     PARSER.print_help()

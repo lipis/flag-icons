@@ -1,8 +1,10 @@
 # coding: utf-8
 
+from __future__ import absolute_import
+
 import base64
 
-from flask.ext.oauthlib import client
+from flask_oauthlib import client
 from werkzeug import urls
 import flask
 

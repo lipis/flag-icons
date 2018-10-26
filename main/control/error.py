@@ -2,8 +2,9 @@
 
 import logging
 
-from flask.ext.babel import lazy_gettext as _
+from flask_babel import lazy_gettext as _
 import flask
+import werkzeug
 
 from api import helpers
 import config
@@ -21,12 +22,15 @@ from main import app
 @app.errorhandler(422)  # Unprocessable Entity
 @app.errorhandler(500)  # Internal Server Error
 def error_handler(e):
-  logging.exception(e)
   try:
     e.code
   except AttributeError:
     e.code = 500
     e.name = 'Internal Server Error'
+
+  logging.error('%d - %s: %s', e.code, e.name, flask.request.url)
+  if e.code != 404:
+    logging.exception(e)
 
   if flask.request.path.startswith('/api/'):
     return helpers.handle_error(e)
@@ -42,4 +46,6 @@ def error_handler(e):
 if config.PRODUCTION:
   @app.errorhandler(Exception)
   def production_error_handler(e):
+    if isinstance(e, werkzeug.exceptions.HTTPException) and e.code in (301, 302):
+      return e
     return error_handler(e)

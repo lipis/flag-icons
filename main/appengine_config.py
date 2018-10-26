@@ -2,18 +2,28 @@
 
 import os
 import sys
+import tempfile
+
+from path_util import sys_path_insert
+
+tempfile.SpooledTemporaryFile = tempfile.TemporaryFile
 
 if os.environ.get('SERVER_SOFTWARE', '').startswith('Google App Engine'):
-  sys.path.insert(0, 'lib.zip')
+  sys_path_insert('lib.zip')
 else:
-  import re
-  from google.appengine.tools.devappserver2.python import stubs
+  if os.name == 'nt':
+    os.name = None
+    sys.platform = ''
 
-  re_ = stubs.FakeFile._skip_files.pattern.replace('|^lib/.*', '')
+  import re
+  from google.appengine.tools.devappserver2.python import runtime
+
+  re_ = runtime.stubs.FakeFile._skip_files.pattern.replace('|^lib/.*', '')
   re_ = re.compile(re_)
-  stubs.FakeFile._skip_files = re_
-  sys.path.insert(0, 'lib')
-sys.path.insert(0, 'libx')
+  runtime.stubs.FakeFile._skip_files = re_
+  sys_path_insert('lib')
+
+sys_path_insert('libx')
 
 
 def webapp_add_wsgi_middleware(app):

@@ -20,13 +20,12 @@ class Config(model.Base, model.ConfigAuth):
   email_authentication = ndb.BooleanProperty(default=False, verbose_name='Email authentication for sign in/sign up')
   feedback_email = ndb.StringProperty(default='')
   flask_secret_key = ndb.StringProperty(default=util.uuid())
-  letsencrypt_challenge = ndb.StringProperty(default='', verbose_name=u'Let’s Encrypt Challenge')
-  letsencrypt_response = ndb.StringProperty(default='', verbose_name=u'Let’s Encrypt Response')
   locale = ndb.StringProperty(default='en', verbose_name='Default Locale')
   notify_on_new_user = ndb.BooleanProperty(default=True, verbose_name='Send an email notification when a user signs up')
   recaptcha_private_key = ndb.StringProperty(default='', verbose_name='Private Key')
   recaptcha_public_key = ndb.StringProperty(default='', verbose_name='Public Key')
   salt = ndb.StringProperty(default=util.uuid())
+  trusted_hosts = ndb.StringProperty(repeated=True, verbose_name='Trusted Hosts')
   verify_email = ndb.BooleanProperty(default=True, verbose_name='Verify user emails')
 
   @property
@@ -55,13 +54,12 @@ class Config(model.Base, model.ConfigAuth):
     'email_authentication': fields.Boolean,
     'feedback_email': fields.String,
     'flask_secret_key': fields.String,
-    'letsencrypt_challenge': fields.String,
-    'letsencrypt_response': fields.String,
     'locale': fields.String,
     'notify_on_new_user': fields.Boolean,
     'recaptcha_private_key': fields.String,
     'recaptcha_public_key': fields.String,
     'salt': fields.String,
+    'trusted_hosts': fields.List(fields.String),
     'verify_email': fields.Boolean,
   }
 
