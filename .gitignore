@@ -2,6 +2,7 @@
 .git*
 .hg*
 .idea
+.vscode
 *.pyc
 *.pyo
 bower_components
