@@ -6,7 +6,11 @@ You can install the requirements easily by executing the following scripts using
 
 ### [Cloud Shell](https://cloud.google.com/shell/)
 
-All requirements are met, out of the box.
+All requirements except `yarn` are met, out of the box.
+
+```bash
+curl -o- -L https://yarnpkg.com/install.sh | bash
+```
 
 ### macOS — [Homebrew](http://brew.sh/)
 

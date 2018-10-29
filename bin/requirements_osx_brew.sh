@@ -7,8 +7,11 @@ gcloud components install app-engine-python
 # Node.js
 brew install node
 
+# Yarn
+brew install yarn
+
 # Gulp.js
-npm install --global gulp-cli
+yarn global add gulp-cli
 
 # Python related
 curl https://bootstrap.pypa.io/get-pip.py | python
