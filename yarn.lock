@@ -7363,10 +7363,10 @@ yargs@~3.10.0:
     decamelize "^1.0.0"
     window-size "0.1.0"
 
-yarn@1.10.1:
-  version "1.10.1"
-  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.10.1.tgz#b792ba28f050ae94cd7e719dbca80639d70da76f"
-  integrity sha512-EH0H1fyfFxkE4UpG4b+VCaVY4I488I2EyQNmGjGGKmvsSIb0G3b+1IcfGYPI2gqa1du43g4ZA3jH8fXlq6oVxg==
+yarn@1.12.1:
+  version "1.12.1"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.12.1.tgz#afa478c9234ee55e8f4cdcfb994acfa54b69c95b"
+  integrity sha512-vdVLrYWx73k4QR8ZpQQ3HJg/X8aAunjUHuPlADR/ogmZOhnqgAdETPz0e/Df+MW8Dno7F1dOxS5e3G6niobumw==
 
 yazl@^2.1.0:
   version "2.4.3"
