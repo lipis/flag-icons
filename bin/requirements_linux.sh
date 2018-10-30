@@ -7,7 +7,7 @@ gcloud components install app-engine-python
 # Node.js
 sudo apt-get install nodejs
 
-# Node.js
+# Yarn package manager
 sudo apt-get install yarn
 
 # Gulp.js
