@@ -104,7 +104,7 @@ FILE_MESSAGES_POT = os.path.join(DIR_TRANSLATIONS, 'messages.pot')
 CORE_VERSION_URL = 'https://gae-init.appspot.com/_s/version/'
 INTERNET_TEST_URL = 'https://www.google.com'
 REQUIREMENTS_URL = 'http://docs.gae-init.appspot.com/requirement/'
-TRAVIS = "TRAVIS" in os.environ
+TRAVIS = 'TRAVIS' in os.environ
 
 ###############################################################################
 # Helpers
