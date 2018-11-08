@@ -61,14 +61,13 @@ window.initTime = () => {
 };
 
 window.initAnnouncement = () => {
-  $('.alert-announcement button.close').click(
-    () =>
-      typeof sessionStorage !== 'undefined' && sessionStorage !== null
-        ? sessionStorage.setItem(
-            'closedAnnouncement',
-            $('.alert-announcement').html(),
-          )
-        : void 0,
+  $('.alert-announcement button.close').click(() =>
+    typeof sessionStorage !== 'undefined' && sessionStorage !== null
+      ? sessionStorage.setItem(
+          'closedAnnouncement',
+          $('.alert-announcement').html(),
+        )
+      : void 0,
   );
   if (
     (typeof sessionStorage !== 'undefined' && sessionStorage !== null
