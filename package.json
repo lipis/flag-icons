@@ -8,7 +8,7 @@
     "coffee-script": "1.12.7",
     "del": "3.0.0",
     "eslint": "5.9.0",
-    "eslint-config-prettier": "3.1.0",
+    "eslint-config-prettier": "3.2.0",
     "eslint-plugin-prettier": "3.0.0",
     "gulp": "3.9.1",
     "gulp-autoprefixer": "6.0.0",
