@@ -14,31 +14,35 @@ try:
 
   APPLICATION_ID = app_identity.get_application_id()
 except (ImportError, AttributeError):
-  pass
+  APPLICATION_ID = 'Testing'
+
+from datetime import datetime
+
+CURRENT_VERSION_ID = os.environ.get('CURRENT_VERSION_ID') or APPLICATION_ID
+CURRENT_VERSION_NAME = CURRENT_VERSION_ID.split('.')[0]
+if DEVELOPMENT:
+  import calendar
+
+  CURRENT_VERSION_TIMESTAMP = calendar.timegm(datetime.utcnow().timetuple())
 else:
-  from datetime import datetime
-
-  CURRENT_VERSION_ID = os.environ.get('CURRENT_VERSION_ID')
-  CURRENT_VERSION_NAME = CURRENT_VERSION_ID.split('.')[0]
   CURRENT_VERSION_TIMESTAMP = long(CURRENT_VERSION_ID.split('.')[1]) >> 28
-  if DEVELOPMENT:
-    import calendar
+CURRENT_VERSION_DATE = datetime.utcfromtimestamp(CURRENT_VERSION_TIMESTAMP)
+USER_AGENT = '%s/%s' % (APPLICATION_ID, CURRENT_VERSION_ID)
 
-    CURRENT_VERSION_TIMESTAMP = calendar.timegm(datetime.utcnow().timetuple())
-  CURRENT_VERSION_DATE = datetime.utcfromtimestamp(CURRENT_VERSION_TIMESTAMP)
-  USER_AGENT = '%s/%s' % (APPLICATION_ID, CURRENT_VERSION_ID)
+import model
 
-  import model
-
+try:
   CONFIG_DB = model.Config.get_master_db()
   SECRET_KEY = CONFIG_DB.flask_secret_key.encode('ascii')
   RECAPTCHA_PUBLIC_KEY = CONFIG_DB.recaptcha_public_key
   RECAPTCHA_PRIVATE_KEY = CONFIG_DB.recaptcha_private_key
-  RECAPTCHA_LIMIT = 8
   TRUSTED_HOSTS = CONFIG_DB.trusted_hosts
   LOCALE_DEFAULT = CONFIG_DB.locale
+except AssertionError:
+  CONFIG_DB = model.Config()
 
 DEFAULT_DB_LIMIT = 64
+RECAPTCHA_LIMIT = 8
 SIGNIN_RETRY_LIMIT = 4
 TAG_SEPARATOR = ' '
 
