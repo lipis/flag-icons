@@ -22,7 +22,7 @@ def send_mail_notification(subject, body, to=None, **kwargs):
   if config.DEVELOPMENT:
     logging.info(
       '\n'
-      '######### Deferring to send this email: #############################'
+      '######### Deferring sending this email: #############################'
       '\nFrom: %s\nTo: %s\nSubject: %s\n\n%s\n'
       '#####################################################################',
       sender, to or sender, subject, body
@@ -58,9 +58,9 @@ def verify_email_notification(user_db):
   to = '%s <%s>' % (user_db.name, user_db.email)
   body = '''Hello %(name)s,
 
-it seems someone (hopefully you) tried to verify your email with %(brand)s.
+It seems someone (hopefully you) tried to verify your email with %(brand)s.
 
-In case it was you, please verify it by following this link:
+If it was you, please verify it by following this link:
 
 %(link)s
 
@@ -91,9 +91,9 @@ def reset_password_notification(user_db):
   to = '%s <%s>' % (user_db.name, user_db.email)
   body = '''Hello %(name)s,
 
-it seems someone (hopefully you) tried to reset your password with %(brand)s.
+It seems someone (hopefully you) tried to reset your password with %(brand)s.
 
-In case it was you, please reset it by following this link:
+If it was you, please reset it by following this link:
 
 %(link)s
 
