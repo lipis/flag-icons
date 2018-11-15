@@ -92,7 +92,7 @@ def print_out(script, filename=''):
   if not filename:
     filename = '-' * 46
     script = script.rjust(12, '-')
-  print '[%s] %12s %s' % (timestamp, script, filename)
+  print('[%s] %12s %s' % (timestamp, script, filename))
 
 
 def make_dirs(directory):
@@ -282,7 +282,7 @@ def check_requirement(check_func):
   if not result:
     print_out('NOT FOUND', name)
     if help_url_id:
-      print 'Please see %s%s' % (REQUIREMENTS_URL, help_url_id)
+      print('Please see %s%s' % (REQUIREMENTS_URL, help_url_id))
     return False
   return True
 
