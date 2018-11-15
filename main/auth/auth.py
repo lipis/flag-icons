@@ -157,7 +157,7 @@ def permission_required(permission=None, methods=None):
     decorator_order_guard(f, 'auth.permission_required')
 
     # default to decorated function name as permission
-    perm = permission or f.func_name
+    perm = permission or f.__name__
     meths = [m.upper() for m in methods] if methods else None
 
     permission_registered.send(f, permission=perm)
