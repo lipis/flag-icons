@@ -23,7 +23,7 @@ else:
     re_ = re.compile(re_)
     runtime.stubs.FakeFile._skip_files = re_
   except AttributeError:
-    # runtime.stubs doesn't exist in the test environment.
+    # runtime.stubs doesn't exist in the test environment
     pass
   sys_path_insert('lib')
 
