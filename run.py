@@ -114,7 +114,7 @@ def print_out(script, filename=''):
   if not filename:
     filename = '-' * 46
     script = script.rjust(12, '-')
-  print '[%s] %12s %s' % (timestamp, script, filename)
+  print('[%s] %12s %s' % (timestamp, script, filename))
 
 
 def make_dirs(directory):
@@ -148,10 +148,6 @@ def create_virtualenv():
     echo_to = 'echo %s >> {pth}'.format(pth=pth_file)
     os.system(echo_to % find_gae_path())
     os.system(echo_to % os.path.abspath(DIR_LIBX))
-    fix_path_cmd = 'import dev_appserver; dev_appserver.fix_sys_path()'
-    os.system(echo_to % (
-      fix_path_cmd if IS_WINDOWS else '"%s"' % fix_path_cmd
-    ))
   return True
 
 
@@ -304,7 +300,7 @@ def check_requirement(check_func):
   if not result:
     print_out('NOT FOUND', name)
     if help_url_id:
-      print 'Please see %s%s' % (REQUIREMENTS_URL, help_url_id)
+      print('Please see %s%s' % (REQUIREMENTS_URL, help_url_id))
     return False
   return True
 

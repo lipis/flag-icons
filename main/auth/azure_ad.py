@@ -1,7 +1,5 @@
 # coding: utf-8
 
-from __future__ import absolute_import
-
 import flask
 import jwt
 
@@ -30,7 +28,6 @@ azure_ad = auth.create_oauth_app(azure_ad_config, 'azure_ad')
 @app.route('/api/auth/callback/azure_ad/')
 def azure_ad_authorized():
   response = azure_ad.authorized_response()
-  print response
   if response is None:
     flask.flash('You denied the request to sign in.')
     return flask.redirect(util.get_next_url)

@@ -54,7 +54,7 @@ def print_out(script, filename=''):
   if not filename:
     filename = '-' * 46
     script = script.rjust(12, '-')
-  print '[%s] %12s %s' % (timestamp, script, filename)
+  print('[%s] %12s %s' % (timestamp, script, filename))
 
 
 def make_dirs(directory):
@@ -192,7 +192,7 @@ def magic():
     if not answer or answer.lower() == 'y':
       sync_from_magic(project_db)
   else:
-    print 'Project ID is not provided.'
+    print('Project ID is not provided.')
     PARSER.print_help()
 
 
