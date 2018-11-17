@@ -106,6 +106,7 @@ INTERNET_TEST_URL = 'https://www.google.com'
 REQUIREMENTS_URL = 'http://docs.gae-init.appspot.com/requirement/'
 TRAVIS = 'TRAVIS' in os.environ
 
+
 ###############################################################################
 # Helpers
 ###############################################################################
