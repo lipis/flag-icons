@@ -3,16 +3,16 @@
   "type": "component",
   "description": "CSS for vector based country flags",
   "license": "MIT",
-  "authors":[
+  "authors": [
     {
       "name": "Panayiotis Lipiridis (Lipis)",
       "email": "lipiridis@gmail.com"
     }
   ],
-  "extra":{
-    "component":{
+  "extra": {
+    "component": {
       "name": "flag-icon-css",
-      "files":[
+      "files": [
         "less/**",
         "css/**",
         "flags/**"
