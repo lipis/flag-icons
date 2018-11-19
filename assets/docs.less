@@ -1,4 +1,4 @@
-@color-from:   #0d6632;
+@color-from: #0d6632;
 @color-to: #f4c01a;
 
 body {
@@ -6,7 +6,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 300;
 }
 
@@ -26,7 +31,10 @@ h1, h2, h3, h4, h5, h6 {
 
   .flag {
     position: absolute;
-    top: 0; bottom: 0; right: 0; left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -47,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   font-size: 16px;
   color: #fff;
-  color: rgba(255,255,255,.75);
+  color: rgba(255, 255, 255, 0.75);
   text-align: center;
   border-radius: 0;
   padding-bottom: 80px;
@@ -59,15 +67,14 @@ h1, h2, h3, h4, h5, h6 {
     color: #fff;
   }
   iframe {
-    width: 100px!important;
-    height: 20px!important;
+    width: 100px !important;
+    height: 20px !important;
     border: none;
     overflow: hidden;
     margin: 2px;
   }
 
-  p
-  a,
+  p a,
   .jumbotron-links a {
     font-weight: 500;
     color: #fff;
@@ -106,8 +113,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #fff; /* redeclare to override the `.jumbotron a` */
   background-color: transparent;
   border-color: #fff;
-  border-color: rgba(255,255,255,.5);
-  transition: all .1s ease-in-out;
+  border-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.1s ease-in-out;
   &:hover,
   &:active {
     color: @color-from;
@@ -139,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
 
 footer {
   text-align: center;
-  opacity: .8;
+  opacity: 0.8;
   padding: 50px;
   background: linear-gradient(to right, @color-to, @color-from);
 
