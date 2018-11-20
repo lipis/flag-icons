@@ -5,7 +5,7 @@
     "@babel/preset-env": "7.1.6",
     "bower": "1.8.4",
     "browser-sync": "2.26.3",
-    "coffee-script": "1.12.7",
+    "coffeescript": "1.12.7",
     "del": "3.0.0",
     "eslint": "5.9.0",
     "eslint-config-prettier": "3.3.0",
