@@ -504,7 +504,16 @@ core-util-is@1.0.2, core-util-is@~1.0.0:
   resolved "https://registry.yarnpkg.com/core-util-is/-/core-util-is-1.0.2.tgz#b5fd54220aa2bc5ab57aab7140c940754503c1a7"
   integrity sha1-tf1UIgqivFq1eqtxQMlAdUUDwac=
 
-cosmiconfig@^5.0.2, cosmiconfig@^5.0.6:
+cosmiconfig@5.0.6:
+  version "5.0.6"
+  resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-5.0.6.tgz#dca6cf680a0bd03589aff684700858c81abeeb39"
+  integrity sha512-6DWfizHriCrFWURP1/qyhsiFvYdlJzbCzmtFWh744+KyWsJo5+kPzUZZaMRSSItoYc0pxFX7gEO7ZC1/gN/7AQ==
+  dependencies:
+    is-directory "^0.3.1"
+    js-yaml "^3.9.0"
+    parse-json "^4.0.0"
+
+cosmiconfig@^5.0.6:
   version "5.0.7"
   resolved "https://registry.yarnpkg.com/cosmiconfig/-/cosmiconfig-5.0.7.tgz#39826b292ee0d78eda137dfa3173bd1c21a43b04"
   integrity sha512-PcLqxTKiDmNT6pSpy4N6KtuPwb53W+2tzNvwOZw0WH9N6O0vLIBq0x8aj8Oj75ere4YcGi48bDFCL+3fRJdlNA==
@@ -1828,15 +1837,15 @@ leven@^2.1.0:
   resolved "https://registry.yarnpkg.com/leven/-/leven-2.1.0.tgz#c2e7a9f772094dee9d34202ae8acce4687875580"
   integrity sha1-wuep93IJTe6dNCAq6KzORoeHVYA=
 
-lint-staged@8.0.5:
-  version "8.0.5"
-  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-8.0.5.tgz#8eeca1a213eaded09c4e217da455b6f432046034"
-  integrity sha512-QI2D6lw2teArlr2fmrrCIqHxef7mK2lKjz9e+aZSzFlk5rsy10rg97p3wA9H/vIFR3Fvn34fAgUktD/k896S2A==
+lint-staged@8.1.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-8.1.0.tgz#dbc3ae2565366d8f20efb9f9799d076da64863f2"
+  integrity sha512-yfSkyJy7EuVsaoxtUSEhrD81spdJOe/gMTGea3XaV7HyoRhTb9Gdlp6/JppRZERvKSEYXP9bjcmq6CA5oL2lYQ==
   dependencies:
     "@iamstarkov/listr-update-renderer" "0.4.1"
     chalk "^2.3.1"
     commander "^2.14.1"
-    cosmiconfig "^5.0.2"
+    cosmiconfig "5.0.6"
     debug "^3.1.0"
     dedent "^0.7.0"
     del "^3.0.0"
