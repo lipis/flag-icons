@@ -36,7 +36,7 @@
     "lint-staged": "8.1.0",
     "main-bower-files": "2.13.1",
     "prettier": "1.15.2",
-    "require-dir": "1.1.0",
+    "require-dir": "1.2.0",
     "uglify-es": "3.3.9",
     "yargs-parser": "11.1.1",
     "yarn": "1.12.3"
