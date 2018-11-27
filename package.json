@@ -21,7 +21,7 @@
     "gulp-if": "2.0.2",
     "gulp-less": "4.0.1",
     "gulp-load-plugins": "1.5.0",
-    "gulp-plumber": "1.2.0",
+    "gulp-plumber": "1.2.1",
     "gulp-sequence": "1.0.0",
     "gulp-size": "3.0.0",
     "gulp-sourcemaps": "2.6.4",
