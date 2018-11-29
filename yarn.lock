@@ -4200,10 +4200,10 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
-"less@2.6.x || ^3.7.1", less@3.8.1:
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/less/-/less-3.8.1.tgz#f31758598ef5a1930dd4caefa9e4340641e71e1d"
-  integrity sha512-8HFGuWmL3FhQR0aH89escFNBQH/nEiYPP2ltDFdQw2chE28Yx2E3lhAIq9Y2saYwLSwa699s4dBVEfCY8Drf7Q==
+"less@2.6.x || ^3.7.1", less@3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/less/-/less-3.9.0.tgz#b7511c43f37cf57dc87dffd9883ec121289b1474"
+  integrity sha512-31CmtPEZraNUtuUREYjSqRkeETFdyEHSEPAGq4erDlUXtda7pzNmctdljdIagSb589d/qXGWiiP31R5JVf+v0w==
   dependencies:
     clone "^2.1.2"
   optionalDependencies:
