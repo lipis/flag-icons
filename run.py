@@ -348,7 +348,6 @@ def run_start():
   run_command = ' '.join(map(str, [
     'dev_appserver.py',
     DIR_MAIN,
-    '--support_datastore_emulator=true',
     '--host %s' % ARGS.host,
     '--port %s' % port,
     '--admin_port %s' % (port + 1),
