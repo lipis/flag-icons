@@ -13,6 +13,9 @@ inbound_services:
   - warmup
 
 libraries:
+  - name: setuptools
+    version: latest
+
   - name: ssl
     version: latest
 

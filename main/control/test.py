@@ -6,8 +6,10 @@ import wtforms
 
 import auth
 import util
+import versions
 
 from main import app
+
 
 TESTS = [
   'alert',
@@ -25,6 +27,7 @@ TESTS = [
   'responsive',
   'social',
   'table',
+  'versions',
 ]
 
 
@@ -95,5 +98,6 @@ def admin_test(test=None):
     form=form,
     test=test,
     tests=TESTS,
+    versions=versions.get_versions(),
     back_url_for='admin_test' if test else None,
   )
