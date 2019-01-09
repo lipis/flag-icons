@@ -39,7 +39,7 @@
     "require-dir": "1.2.0",
     "uglify-es": "3.3.9",
     "yargs-parser": "11.1.1",
-    "yarn": "1.12.3"
+    "yarn": "1.13.0"
   },
   "license": "MIT",
   "name": "gae-init",
