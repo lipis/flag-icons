@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-ne" viewBox="0 0 512 512">
-  <path fill="#0db02b" d="M0 0h512v512H0z"/>
-  <path fill="#fff" d="M0 0h512v341.3H0z"/>
-  <path fill="#e05206" d="M0 0h512v170.7H0z"/>
-  <circle cx="256" cy="256" r="72.5" fill="#e05206"/>
-</svg>
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m0 0h512v512h-512z" fill="#0db02b"/><path d="m0 0h512v341.3h-512z" fill="#fff"/><g fill="#e05206"><path d="m0 0h512v170.7h-512z"/><circle cx="256" cy="256" r="72.5"/></g></svg>

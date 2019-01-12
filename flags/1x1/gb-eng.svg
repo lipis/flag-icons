@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-gb-eng" viewBox="0 0 512 512">
-  <path fill="#fff" d="M0 0h512v512H0z"/>
-  <path fill="#ce1124" d="M215 0h82v512h-82z"/>
-  <path fill="#ce1124" d="M0 215h512v82H0z"/>
-</svg>
+<svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg"><path d="m0 0h512v512h-512z" fill="#fff"/><g fill="#ce1124"><path d="m215 0h82v512h-82z"/><path d="m0 215h512v82h-512z"/></g></svg>
