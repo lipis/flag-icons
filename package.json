@@ -2,7 +2,7 @@
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "devDependencies": {
     "@babel/core": "7.2.2",
-    "@babel/preset-env": "7.2.3",
+    "@babel/preset-env": "7.3.0",
     "bower": "1.8.7",
     "browser-sync": "2.26.3",
     "coffeescript": "2.3.2",
