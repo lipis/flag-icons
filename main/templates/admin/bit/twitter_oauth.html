@@ -4,7 +4,8 @@
     (form.twitter_consumer_key, form.twitter_consumer_secret),
     '''
       Callback URL for <a href="https://dev.twitter.com/apps" target="_blank">Twitter application</a>:
-      <em>%s</em>
+      <em>%s</em><br>
+      Enable the "Sign in with Twitter" option for the Twitter application.
     ''' % url_for('twitter_authorized', _external=True)
   )
 }}
