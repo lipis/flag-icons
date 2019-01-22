@@ -35,7 +35,7 @@
     "less": "3.9.0",
     "lint-staged": "8.1.0",
     "main-bower-files": "2.13.1",
-    "prettier": "1.16.0",
+    "prettier": "1.16.1",
     "require-dir": "1.2.0",
     "uglify-es": "3.3.9",
     "yargs-parser": "11.1.1",
