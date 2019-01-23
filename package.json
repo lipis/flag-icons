@@ -3,7 +3,7 @@
   "devDependencies": {
     "@babel/core": "7.2.2",
     "@babel/preset-env": "7.3.1",
-    "bower": "1.8.7",
+    "bower": "1.8.8",
     "browser-sync": "2.26.3",
     "coffeescript": "2.3.2",
     "del": "3.0.0",
