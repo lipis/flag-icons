@@ -8,4 +8,4 @@ jinja2==2.10
 pyjwt==1.7.1
 simplejson==3.16.0
 unidecode==1.0.23
-webargs==5.1.1
+webargs==5.1.2
