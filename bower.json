@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "bootstrap": "3.3.7",
+    "bootstrap": "3.4.0",
     "flag-icon-css": "2.8.0",
     "font-awesome": "4.7.0",
     "jquery": "3.3.1",
