@@ -5,7 +5,9 @@ flask-restful==0.3.7
 flask-wtf==0.14.2
 flask==1.0.2
 jinja2==2.10
+oauthlib==2.1.0
 pyjwt==1.7.1
+requests-oauthlib==1.1.0
 simplejson==3.16.0
 unidecode==1.0.23
 webargs==5.1.2
