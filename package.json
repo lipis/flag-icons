@@ -24,7 +24,7 @@
     "gulp-plumber": "1.2.1",
     "gulp-sequence": "1.0.0",
     "gulp-size": "3.0.0",
-    "gulp-sourcemaps": "2.6.4",
+    "gulp-sourcemaps": "2.6.5",
     "gulp-start": "1.0.1",
     "gulp-uglify-es": "1.0.4",
     "gulp-util": "3.0.8",
