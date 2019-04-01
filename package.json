@@ -6,7 +6,7 @@
     "bower": "1.8.8",
     "browser-sync": "2.26.3",
     "coffeescript": "2.4.0",
-    "del": "4.0.0",
+    "del": "4.1.0",
     "eslint": "5.16.0",
     "eslint-config-prettier": "4.1.0",
     "eslint-plugin-prettier": "3.0.1",
