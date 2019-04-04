@@ -1,13 +1,13 @@
 {
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "devDependencies": {
-    "@babel/core": "7.3.4",
-    "@babel/preset-env": "7.3.4",
+    "@babel/core": "7.4.3",
+    "@babel/preset-env": "7.4.3",
     "bower": "1.8.8",
     "browser-sync": "2.26.3",
-    "coffeescript": "2.3.2",
-    "del": "4.0.0",
-    "eslint": "5.15.3",
+    "coffeescript": "2.4.0",
+    "del": "4.1.0",
+    "eslint": "5.16.0",
     "eslint-config-prettier": "4.1.0",
     "eslint-plugin-prettier": "3.0.1",
     "gulp": "3.9.1",
@@ -39,7 +39,7 @@
     "require-dir": "1.2.0",
     "uglify-es": "3.3.9",
     "yargs-parser": "13.0.0",
-    "yarn": "1.13.0"
+    "yarn": "1.15.2"
   },
   "license": "MIT",
   "name": "gae-init",
