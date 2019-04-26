@@ -16,7 +16,7 @@ import urllib2
 
 config = imp.load_source('config', 'main/config.py')
 
-__version__ = '6.0.1'
+__version__ = '6.0.2'
 
 
 ###############################################################################
@@ -104,7 +104,8 @@ FILE_MESSAGES_POT = os.path.join(DIR_TRANSLATIONS, 'messages.pot')
 CORE_VERSION_URL = 'https://gae-init.appspot.com/_s/version/'
 INTERNET_TEST_URL = 'https://www.google.com'
 REQUIREMENTS_URL = 'http://docs.gae-init.appspot.com/requirement/'
-TRAVIS = "TRAVIS" in os.environ
+TRAVIS = 'TRAVIS' in os.environ
+
 
 ###############################################################################
 # Helpers
@@ -114,7 +115,7 @@ def print_out(script, filename=''):
   if not filename:
     filename = '-' * 46
     script = script.rjust(12, '-')
-  print '[%s] %12s %s' % (timestamp, script, filename)
+  print('[%s] %12s %s' % (timestamp, script, filename))
 
 
 def make_dirs(directory):
@@ -140,7 +141,7 @@ def site_packages_path():
 
 def create_virtualenv():
   if not os.path.exists(FILE_VENV):
-    os.system('virtualenv --no-site-packages %s' % DIR_VENV)
+    os.system('virtualenv --no-site-packages -p python2 %s' % DIR_VENV)
     os.system('echo %s >> %s' % (
       'set PYTHONPATH=' if IS_WINDOWS else 'unset PYTHONPATH', FILE_VENV
     ))
@@ -148,10 +149,6 @@ def create_virtualenv():
     echo_to = 'echo %s >> {pth}'.format(pth=pth_file)
     os.system(echo_to % find_gae_path())
     os.system(echo_to % os.path.abspath(DIR_LIBX))
-    fix_path_cmd = 'import dev_appserver; dev_appserver.fix_sys_path()'
-    os.system(echo_to % (
-      fix_path_cmd if IS_WINDOWS else '"%s"' % fix_path_cmd
-    ))
   return True
 
 
@@ -202,10 +199,7 @@ def install_py_libs():
 
   exclude_ext = ['.pth', '.pyc', '.egg-info', '.dist-info', '.so']
   exclude_prefix = ['setuptools-', 'pip-', 'Pillow-']
-  exclude = [
-    'test', 'tests', 'pip', 'setuptools', '_markerlib', 'PIL',
-    'easy_install.py', 'pkg_resources', 'pkg_resources.py'
-  ]
+  exclude = ['test', 'tests', 'pip', 'setuptools', '_markerlib', 'PIL', 'easy_install.py']
 
   def _exclude_prefix(pkg):
     for prefix in exclude_prefix:
@@ -304,7 +298,7 @@ def check_requirement(check_func):
   if not result:
     print_out('NOT FOUND', name)
     if help_url_id:
-      print 'Please see %s%s' % (REQUIREMENTS_URL, help_url_id)
+      print('Please see %s%s' % (REQUIREMENTS_URL, help_url_id))
     return False
   return True
 

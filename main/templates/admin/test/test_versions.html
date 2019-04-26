@@ -1,0 +1,22 @@
+<p>
+  Modules and their versions, '*' indicates those in the active working set.
+</p>
+<div class="alert alert-warning {{'hide' if versions}}">
+  No data on versions
+</div>
+<table class="table table-striped table-bordered table-hover {{'hide' if not versions}}">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    # for version in versions
+      <tr>
+        <td>{{version[0]}}</td>
+        <td>{{version[1]}}</td>
+      </tr>
+    # endfor
+  </tbody>
+</table>
