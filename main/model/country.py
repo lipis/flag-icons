@@ -2,7 +2,7 @@
 
 from __future__ import absolute_import
 
-from flask.ext.babel import lazy_gettext as _
+from flask_babel import lazy_gettext as _
 from google.appengine.ext import ndb
 
 from api import fields

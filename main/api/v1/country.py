@@ -3,7 +3,7 @@
 from __future__ import absolute_import
 
 from google.appengine.ext import ndb
-from flask.ext import restful
+import flask_restful
 import flask
 
 from api import helpers
@@ -16,14 +16,14 @@ from main import api_v1
 
 
 @api_v1.resource('/country/', endpoint='api.country.list')
-class CountryListAPI(restful.Resource):
+class CountryListAPI(flask_restful.Resource):
   def get(self):
     country_dbs = cache.get_country_dbs()
     return helpers.make_response(country_dbs, model.Country.FIELDS)
 
 
 @api_v1.resource('/country/<string:country_key>/', endpoint='api.country')
-class CountryAPI(restful.Resource):
+class CountryAPI(flask_restful.Resource):
   def get(self, country_key):
     country_db = ndb.Key(urlsafe=country_key).get()
     if not country_db:
@@ -35,7 +35,7 @@ class CountryAPI(restful.Resource):
 # Admin
 ###############################################################################
 @api_v1.resource('/admin/country/', endpoint='api.admin.country.list')
-class AdminCountryListAPI(restful.Resource):
+class AdminCountryListAPI(flask_restful.Resource):
   @auth.admin_required
   def get(self):
     country_keys = util.param('country_keys', list)
@@ -49,7 +49,7 @@ class AdminCountryListAPI(restful.Resource):
 
 
 @api_v1.resource('/admin/country/<string:country_key>/', endpoint='api.admin.country')
-class AdminCountryAPI(restful.Resource):
+class AdminCountryAPI(flask_restful.Resource):
   @auth.admin_required
   def get(self, country_key):
     country_db = ndb.Key(urlsafe=country_key).get()

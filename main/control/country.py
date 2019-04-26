@@ -1,10 +1,10 @@
 # coding: utf-8
 
-from flask.ext import wtf
 from google.appengine.ext import ndb
 import flask
 import wtforms
 
+import i18n
 import auth
 import cache
 import config
@@ -70,7 +70,7 @@ def admin_country_list():
 ###############################################################################
 # Admin Update
 ###############################################################################
-class CountryUpdateAdminForm(wtf.Form):
+class CountryUpdateAdminForm(i18n.Form):
   name = wtforms.StringField(
     model.Country.name._verbose_name,
     [wtforms.validators.required()],

@@ -1,10 +1,10 @@
-@color-from:   #0d6632;
-@color-to:     #f4c01a;
+@color-from: #0d6632;
+@color-to: #f4c01a;
 
 .country {
   .img-thumbnail;
   margin-bottom: @grid-gutter-width;
-
+  width: 100%;
   .name {
     .ellipsis;
     font-size: 1.2em;
@@ -36,7 +36,6 @@
   margin-bottom: @grid-gutter-width;
 }
 
-
 .country-list {
   .flag {
     .img-responsive;
@@ -49,7 +48,7 @@
   position: relative;
   font-size: 16px;
   color: #fff;
-  color: rgba(255,255,255,.75);
+  color: rgba(255, 255, 255, 0.75);
   text-align: center;
   border-radius: 0;
   padding-bottom: 80px;
@@ -61,8 +60,8 @@
     color: #fff;
   }
   iframe {
-    width: 144px!important;
-    height: 30px!important;
+    width: 144px !important;
+    height: 30px !important;
     border: none;
     overflow: hidden;
     margin: 2px;
@@ -70,9 +69,7 @@
   .container {
     padding-bottom: @line-height-computed;
   }
-  p
-  a,
-
+  p a,
   .jumbotron-links a {
     font-weight: 500;
     color: #fff;
@@ -111,8 +108,8 @@
   color: #fff; /* redeclare to override the `.jumbotron a` */
   background-color: transparent;
   border-color: #fff;
-  border-color: rgba(255,255,255,.5);
-  transition: all .1s ease-in-out;
+  border-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.1s ease-in-out;
   &.btn-main {
     background-color: fade(#fff, 24%);
   }
@@ -122,12 +119,11 @@
     background-color: #fff;
     border-color: #fff;
   }
-
 }
 
 footer {
   text-align: center;
-  opacity: .8;
+  opacity: 0.8;
   padding: 50px;
   background: linear-gradient(to right, @color-to, @color-from);
   p {
@@ -150,7 +146,6 @@ footer {
     padding: 0 10px;
   }
 }
-
 
 .social-buttons {
   height: 28px;
