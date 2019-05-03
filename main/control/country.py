@@ -83,7 +83,7 @@ class CountryUpdateAdminForm(i18n.Form):
   )
   alpha_2 = wtforms.StringField(
     model.Country.alpha_2._verbose_name,
-    [wtforms.validators.required(), wtforms.validators.length(min=2, max=2)],
+    [wtforms.validators.required()],
     filters=[util.upper_filter],
   )
   alpha_3 = wtforms.StringField(

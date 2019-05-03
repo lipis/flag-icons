@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "bootstrap": "3.4.0",
-    "bootswatch": "https://github.com/lipis/bootswatch.git#3.3.7-a",
+    "bootswatch": "https://github.com/lipis/bootswatch.git#3.4.1-a",
     "flag-icon-css": "2.8.0",
     "font-awesome": "4.7.0",
     "jquery": "3.3.1",
