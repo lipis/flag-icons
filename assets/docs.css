@@ -59,8 +59,8 @@ h6 {
   color: #fff;
 }
 .jumbotron iframe {
-  width: 100px!important;
-  height: 20px!important;
+  width: 100px !important;
+  height: 20px !important;
   border: none;
   overflow: hidden;
   margin: 2px;
