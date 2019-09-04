@@ -163,14 +163,7 @@ async-limiter@~1.0.0:
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.0.tgz#78faed8c3d074ab81f22b4e985d79e8738f720f8"
   integrity sha512-jp/uFnooOiO+L211eZOoSyzpOITMXx1rBITauYykG3BRYPu8h0UcxsPNB04RR5vo4Tyz3+ay17tR6JVf9qzYWg==
 
-async@^2.0.0:
-  version "2.6.0"
-  resolved "https://registry.yarnpkg.com/async/-/async-2.6.0.tgz#61a29abb6fcc026fea77e56d1c6ec53a795951f4"
-  integrity sha512-xAfGg1/NTLBBKlHFmnd7PlmUW9KhVQIUuSrYem9xzFUZy13ScvtyGGejaae9iAVRiRq9+Cx7DPFaAAhCpyxyPw==
-  dependencies:
-    lodash "^4.14.0"
-
-async@^2.6.0, async@^2.6.1:
+async@^2.0.0, async@^2.6.0, async@^2.6.1:
   version "2.6.1"
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.1.tgz#b245a23ca71930044ec53fa46aa00a3e87c6a610"
   integrity sha512-fNEiL2+AZt6AlAw/29Cr0UDe4sRAHCpEHh54WMz+Bb7QfNcFw4h3loofyJpLeQs4Yx7yuqu/2dLgM5hKOs6HlQ==
@@ -1096,15 +1089,15 @@ grunt-cli@~1.2.0:
     nopt "~3.0.6"
     resolve "~1.1.0"
 
-grunt-contrib-connect@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/grunt-contrib-connect/-/grunt-contrib-connect-2.0.0.tgz#7ee86838f351f72c12186143ebc60823d8d524dd"
-  integrity sha512-JVjM9UDP84WbT2S7swkyuwPuxFtT+zry/RUBuP3IT8LZPEQjtzzMwiM+qimswNKQ9plh5WhcFWaaqz2ruB9/DA==
+grunt-contrib-connect@2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/grunt-contrib-connect/-/grunt-contrib-connect-2.1.0.tgz#c689c3d9d2c2bacb6fccc81e5cd65702bf8e2b50"
+  integrity sha512-yeCHdz5zqoibhQDyw/X+E/wTzYPpim+C2p+xYyXUsXVEkfxnKVIWYOWrAKkFHlz9//nIC0S3JbUDd3mVvJcxVA==
   dependencies:
     async "^2.6.1"
     connect "^3.6.6"
     connect-livereload "^0.6.0"
-    morgan "^1.9.0"
+    morgan "^1.9.1"
     node-http2 "^4.0.1"
     opn "^5.3.0"
     portscanner "^2.2.0"
@@ -1692,7 +1685,7 @@ lodash.isfinite@^3.3.2:
   resolved "https://registry.yarnpkg.com/lodash.isfinite/-/lodash.isfinite-3.3.2.tgz#fb89b65a9a80281833f0b7478b3a5104f898ebb3"
   integrity sha1-+4m2WpqAKBgz8LdHizpRBPiY67M=
 
-lodash@^4.14.0, lodash@^4.17.10, lodash@~4.17.10, lodash@~4.17.4, lodash@~4.17.5:
+lodash@^4.17.10, lodash@~4.17.10, lodash@~4.17.4, lodash@~4.17.5:
   version "4.17.14"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.14.tgz#9ce487ae66c96254fe20b599f21b6816028078ba"
   integrity sha512-mmKYbW3GLuJeX+iGP+Y7Gp1AiGHGbXHCOh/jZmrawMmsE7MS4znI3RL2FsjbqOyMayHInjOeykW7PEajUk1/xw==
@@ -1855,7 +1848,7 @@ mkdirp@^0.5.0, mkdirp@~0.5.1:
   dependencies:
     minimist "0.0.8"
 
-morgan@^1.9.0:
+morgan@^1.9.1:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/morgan/-/morgan-1.9.1.tgz#0a8d16734a1d9afbc824b99df87e738e58e2da59"
   integrity sha512-HQStPIV4y3afTiCYVxirakhlCfGkI161c76kKFca7Fk1JusM//Qeo1ej2XaMniiNeaZklMVrh3vTtIzpzwbpmA==
