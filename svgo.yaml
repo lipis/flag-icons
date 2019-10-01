@@ -1,7 +1,9 @@
 plugins:
   - cleanupIDs: false
   - collapseGroups: true
+  - mergePaths: true
   - removeDesc: true
+  - removeDimensions: true
   - removeScriptElement: true
   - removeStyleElement: true
   - removeTitle: true
@@ -11,3 +13,4 @@ plugins:
   - removeUselessStrokeAndFill: true
   - removeViewBox: true
   - sortAttrs: true
+  - sortDefsChildren: true
