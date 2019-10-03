@@ -4,7 +4,7 @@
       <path id="path1834" fill-opacity=".7" d="M0 0h640v480H0z"/>
     </clipPath>
   </defs>
-  <path id="rect4120" fill="#006" fill-opacity="1" stroke-width="4.1" d="M0 0h512v512H0z"/>
+  <path id="rect4120" fill="#012169" fill-opacity="1" stroke-width="4.1" d="M0 0h512v512H0z"/>
   <path id="path1855" fill="#49497d" d="M384 212.7l2 2z"/>
   <path id="path1857" fill="#0e0e6e" d="M386 212.7l2 2z"/>
   <path id="path1859" fill="#262678" d="M379.9 214.7l2 2z"/>
@@ -37,7 +37,7 @@
   <path id="path1913" fill="#6e6c70" d="M369.8 220.9l2 2z"/>
   <path id="path1915" fill="#a4a43d" d="M371.8 220.9l2 2z"/>
   <path id="path1917" fill="#e5e59d" d="M382 220.9l2 2z"/>
-  <path id="path1919" fill="#fff" d="M320.6 226c-1 27.7-.2 58.7 4 88.2 4.9 15.4 4.2 23.9 11.3 33l99-.7c6-9.7 10.5-24.4 11-30.3 5.6-29.7 5.7-62.6 5.9-92a62 62 0 01-35.7 7.4 69 69 0 01-30.5-9.2c-9.5 5.6-12.8 8.2-28.4 8.9-12.2.6-22 1.6-36.6-5.2z"/>
+  <path id="path1919" fill="#fff" d="M320.6 226a509 509 0 004 88.2c4.9 15.4 4.2 23.9 11.3 33l99-.7c6-9.7 10.5-24.4 11-30.3 5.6-29.7 5.7-62.6 5.9-92a62 62 0 01-35.7 7.4 69 69 0 01-30.5-9.2c-9.5 5.6-12.8 8.2-28.4 8.9-12.2.6-22 1.6-36.6-5.2z"/>
   <path id="path1921" fill="#f2f1d7" d="M386 220.9l2 2z"/>
   <path id="path1923" fill="#d9d868" d="M388 220.9l2 2z"/>
   <path id="path1925" fill="#a4a43d" d="M396.2 220.9l2 2z"/>
