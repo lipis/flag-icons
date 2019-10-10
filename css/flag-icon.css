@@ -13,10 +13,16 @@
   line-height: 1em;
 }
 .flag-icon:before {
-  content: "\00a0";
+  content: '\00a0';
 }
 .flag-icon.flag-icon-squared {
   width: 1em;
+}
+.flag-icon-ac {
+  background-image: url(../flags/4x3/ac.svg);
+}
+.flag-icon-ac.flag-icon-squared {
+  background-image: url(../flags/1x1/ac.svg);
 }
 .flag-icon-ad {
   background-image: url(../flags/4x3/ad.svg);
@@ -1295,6 +1301,12 @@
 }
 .flag-icon-sz.flag-icon-squared {
   background-image: url(../flags/1x1/sz.svg);
+}
+.flag-icon-ta {
+  background-image: url(../flags/4x3/ta.svg);
+}
+.flag-icon-ta.flag-icon-squared {
+  background-image: url(../flags/1x1/ta.svg);
 }
 .flag-icon-tc {
   background-image: url(../flags/4x3/tc.svg);
