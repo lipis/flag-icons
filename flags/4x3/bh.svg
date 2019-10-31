@@ -1,11 +1,69 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-bh" viewBox="0 0 640 480">
-  <defs>
-    <clipPath id="a">
-      <path fill-opacity=".7" d="M0 0h640v480H0z"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0beta1 (32d4812, 2019-09-19)"
+   sodipodi:docname="bh.svg"
+   version="1.1"
+   viewBox="0 0 640 480"
+   id="flag-icon-css-bh">
+  <metadata
+     id="metadata459">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     inkscape:current-layer="flag-icon-css-bh"
+     inkscape:window-maximized="0"
+     inkscape:window-y="23"
+     inkscape:window-x="46"
+     inkscape:cy="560"
+     inkscape:cx="400"
+     inkscape:zoom="0.35"
+     showgrid="false"
+     id="namedview457"
+     inkscape:window-height="907"
+     inkscape:window-width="1600"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     inkscape:document-rotation="0"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <defs
+     id="defs448">
+    <clipPath
+       id="a">
+      <path
+         id="path445"
+         d="M0 0h640v480H0z"
+         fill-opacity=".7" />
     </clipPath>
   </defs>
-  <g fill-rule="evenodd" stroke-width="1pt" clip-path="url(#a)">
-    <path fill="#e10011" d="M-32.5 0h720v480h-720z"/>
-    <path fill="#fff" d="M114.3 479.8l-146.8.2V0h146l94.3 30.4-93.5 29.5 93.5 30.5-93.5 29.5 93.5 30.5-93.5 29.5 93.5 30.5-93.5 29.5 93.5 30.5-93.5 29.5 93.5 30.5-93.5 29.5 93.5 30.5-93.5 29.5 93.5 30.5-93.5 29.5"/>
-  </g>
+  <path
+     id="path1077"
+     fill="#fff"
+     d="M 1.5e-6,0 H 640 V 479.99999 H 1.5e-6"
+     inkscape:connector-curvature="0"
+     style="opacity:1;stroke-width:4.77028;stop-opacity:1" />
+  <path
+     id="path1079"
+     d="M 640,0 H 96 L 206.72566,48 96,95.999999 206.72566,144 96,192 206.72566,240 96,288 l 110.72566,47.99999 -110.72566,48 110.72566,48 -110.72566,48 h 544"
+     fill="#ce1126"
+     inkscape:connector-curvature="0"
+     style="opacity:1;stroke-width:5.0671;stop-opacity:1" />
 </svg>
