@@ -25,8 +25,7 @@
   },
   "lint-staged": {
     "*.{json,md,scss,less,yaml,yml}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   },
   "husky": {
@@ -41,14 +40,6 @@
     "svgo:all": "find flags | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z",
     "fix": "yarn prettier --write",
     "prettier": "prettier \"**/*.{json,md,scss,less,yaml,yml}\"",
-    "test": "yarn prettier --list-different",
-    "postinstall": "opencollective-postinstall || true"
-  },
-  "dependencies": {
-    "opencollective-postinstall": "2.0.2"
-  },
-  "collective": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/lipis"
+    "test": "yarn prettier --list-different"
   }
 }
