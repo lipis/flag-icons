@@ -1,6 +1,6 @@
 # flag-icon-css
 
-> A collection of all country flags in SVG — plus the CSS for easier integration.
+> A collection of all country/region flags in SVG — plus the CSS for easier integration.
 > See the [demo](https://flagicons.lipis.dev).
 
 ## Install
@@ -18,7 +18,7 @@ $ npm install flag-icon-css
 For using the flags inline with text add the classes `.flag-icon` and
 `.flag-icon-xx` (where `xx` is the
 [ISO 3166-1-alpha-2 code](https://www.iso.org/obp/ui/#search/code/)
-of a country) to an empty `<span>`. If you want to have a squared version flag
+of a country/region) to an empty `<span>`. If you want to have a squared version flag
 then add the class `flag-icon-squared` as well. Example:
 
 ```html
@@ -63,7 +63,7 @@ To serve it on `localhost:8000`
 $ grunt connect
 ```
 
-To have only specific countries in the css file, remove the ones that you don't
+To have only specific countries/regions in the css file, remove the ones that you don't
 need from the
 [`flag-icon-list.less`](https://github.com/lipis/flag-icon-css/blob/master/less/flag-icon-list.less)
 file and build it again.
