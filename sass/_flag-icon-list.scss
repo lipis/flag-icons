@@ -1,5 +1,5 @@
-@if variable-exists(include) {
-  @each $country in $include {
+@if variable-exists(flag-icon-custom) {
+  @each $country in $flag-icon-custom {
     @include flag-icon($country);
   }
 } @else {

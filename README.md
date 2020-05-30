@@ -63,10 +63,17 @@ To serve it on `localhost:8000`
 $ grunt connect
 ```
 
+#### LESS
+
 To have only specific countries in the css file, remove the ones that you don't
 need from the
 [`flag-icon-list.less`](https://github.com/lipis/flag-icon-css/blob/master/less/flag-icon-list.less)
 file and build it again.
+
+#### SCSS/SASS
+
+To import only specific countries in the css file, set the variable `$flag-icon-custom: en, de, fr;`
+
 
 ## Credits
 
