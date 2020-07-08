@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-aw" viewBox="0 0 512 512">
   <defs>
-    <clipPath id="a">
+    <clipPath id="aw-a">
       <path fill="gray" d="M0 0h512v512H0z"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#a)">
+  <g clip-path="url(#aw-a)">
     <path fill="#39c" d="M0 0v512h768V0H0z"/>
     <path fill="#ff0" d="M0 341.3v28.5h768v-28.5H0zm0 57v28.4h768v-28.5H0z"/>
     <path fill="#9cc" d="M122 28l2.4 2.5-2.3-2.4zm-2.3 4.8l2.4 2.4-2.4-2.4m4.7 0l2.4 2.4-2.3-2.4z"/>
