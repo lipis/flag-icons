@@ -13,14 +13,19 @@
     "url": "http://github.com/lipis/flag-icon-css"
   },
   "devDependencies": {
+    "country-list": "^2.2.0",
     "grunt": "1.2.1",
     "grunt-contrib-connect": "3.0.0",
     "grunt-contrib-cssmin": "3.0.0",
     "grunt-contrib-less": "2.0.0",
     "grunt-contrib-watch": "1.1.0",
     "husky": "4.2.5",
+    "imagemin": "^7.0.1",
+    "imagemin-pngquant": "^9.0.0",
     "lint-staged": "10.2.11",
+    "lodash.chunk": "^4.2.0",
     "prettier": "2.0.5",
+    "sharp": "^0.25.4",
     "svgo": "1.3.2"
   },
   "lint-staged": {
@@ -35,6 +40,7 @@
   },
   "scripts": {
     "build": "grunt build",
+    "buildSprite": "node buildSprite.js",
     "svgo": "svgo --pretty --indent=2 --precision=1 --config=svgo.yaml",
     "svgo:min": "find flags | grep '\\.svg$' | xargs -Iz -n 1 svgo --config=svgo.yaml z",
     "svgo:all": "find flags | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z",
