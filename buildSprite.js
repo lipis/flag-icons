@@ -9,27 +9,23 @@ const { getCodes } = require('./index.js');
 // Loops through all ISO country codes, opens corresponding SVG file, converts to buffer, resizes it.
 // Returns an array of objects with the resized buffer and iso name
 const buildBuffers = async (aspectRatio, width) => {
-  try {
-    const countryCodes = getCodes();
-    const buffers = await Promise.all(
-      countryCodes.map(async (countryCode) => {
-        const flagSvg = path.join(`/flags/${aspectRatio}`, `${countryCode.toLowerCase()}.svg`);
-        const flagBuffer = fs.readFileSync(path.join(__dirname, flagSvg));
-        const resizedBuffer = await sharp(flagBuffer)
-          .resize({ width })
-          .png()
-          .toBuffer();
+  const countryCodes = getCodes();
+  const buffers = await Promise.all(
+    countryCodes.map(async (countryCode) => {
+      const flagSvg = path.join(`/flags/${aspectRatio}`, `${countryCode.toLowerCase()}.svg`);
+      const flagBuffer = fs.readFileSync(path.join(__dirname, flagSvg));
+      const resizedBuffer = await sharp(flagBuffer)
+        .resize({ width })
+        .png()
+        .toBuffer();
 
-        return {
-          code: countryCode.toLowerCase(),
-          buffer: resizedBuffer,
-        };
-      }),
-    );
-    return buffers;
-  } catch (err) {
-    throw new Error(err);
-  }
+      return {
+        code: countryCode.toLowerCase(),
+        buffer: resizedBuffer,
+      };
+    }),
+  );
+  return buffers;
 };
 
 const buildPngs = async (userOptions) => {
@@ -86,24 +82,20 @@ const buildSprite = async (userOptions) => {
       };
     });
 
-    try {
-      fs.mkdirSync(path.join(__dirname, `${options.outputDir}/temp/${options.outputFilename}/`), { recursive: true });
+    fs.mkdirSync(path.join(__dirname, `${options.outputDir}/temp/${options.outputFilename}/`), { recursive: true });
 
-      await sharp({
-        create: {
-          width: options.width,
-          height: spriteBuffers.length * flagHeight,
-          channels: 3,
-          background: { r: 255, g: 0, b: 0 },
-        },
-      })
-        .composite(spriteBuffers) // the flags get placed here
-        .png()
-        .toFile(path.join(__dirname, `${options.outputDir}/temp/${options.outputFilename}/sprite-piece-${portionIndex}.png`));
-      // console.log(`build sprite piece ${portionIndex}`);
-    } catch (err) {
-      throw new Error(err);
-    }
+    await sharp({
+      create: {
+        width: options.width,
+        height: spriteBuffers.length * flagHeight,
+        channels: 3,
+        background: { r: 255, g: 0, b: 0 },
+      },
+    })
+      .composite(spriteBuffers) // the flags get placed here
+      .png()
+      .toFile(path.join(__dirname, `${options.outputDir}/temp/${options.outputFilename}/sprite-piece-${portionIndex}.png`));
+    // console.log(`build sprite piece ${portionIndex}`);
   }
 
   async function combineFinalSprite(flagsPerChunk, numberOfChunks, spriteTotalHeight) {
@@ -115,31 +107,26 @@ const buildSprite = async (userOptions) => {
         left: 0,
       });
     }
-    try {
-      await sharp({
-        create: {
-          width: options.width,
-          height: spriteTotalHeight,
-          channels: 3,
-          background: { r: 255, g: 0, b: 0 },
-        },
-      })
-        .composite(spritePieces) // combine the sprite pieces
-        .png()
-        .toFile(path.join(__dirname, `${options.outputDir}/${options.outputFilename}`));
+    await sharp({
+      create: {
+        width: options.width,
+        height: spriteTotalHeight,
+        channels: 3,
+        background: { r: 255, g: 0, b: 0 },
+      },
+    })
+      .composite(spritePieces) // combine the sprite pieces
+      .png()
+      .toFile(path.join(__dirname, `${options.outputDir}/${options.outputFilename}`));
 
-      // optimize images
-      await imagemin([path.join(__dirname, `${options.outputDir}/${options.outputFilename}`)], {
-        destination: path.join(__dirname, `${options.outputDir}`),
-        plugins: [
-          imageminPngquant()
-        ]
-      });
-
-      console.log('built final sprite');
-    } catch (err) {
-      throw new Error(err);
-    }
+    // optimize images
+    await imagemin([path.join(__dirname, `${options.outputDir}/${options.outputFilename}`)], {
+      destination: path.join(__dirname, `${options.outputDir}`),
+      plugins: [
+        imageminPngquant()
+      ]
+    });
+    console.log('built final sprite');
   }
 
   try {
@@ -152,11 +139,7 @@ const buildSprite = async (userOptions) => {
 
     Promise.all(
       bufferChunks.map(async (bufferChunk, index) => {
-        try {
-          await buildSpritePiece(bufferChunk, index);
-        } catch (err) {
-          throw new Error(err);
-        }
+        await buildSpritePiece(bufferChunk, index);
       }),
     );
     const numberOfChunks = bufferChunks.length;
@@ -166,19 +149,15 @@ const buildSprite = async (userOptions) => {
     // clean up temp directory
     fs.rmdirSync(path.join(__dirname, `${options.outputDir}/temp`), { recursive: true });
   } catch (err) {
-    throw new Error(err);
+    console.error(err);
   }
 };
 
 (async function () {
-  try {
-    // await buildPngs({ width: 32, aspectRatio: '4x3'});
-    // await buildPngs({ width: 32, aspectRatio: '1x1'});
-    await buildSprite({ width: 32, aspectRatio: '4x3', outputFilename: 'flag-sprite-32.png' });
-    await buildSprite({ width: 64, aspectRatio: '4x3', outputFilename: 'flag-sprite-32_2x.png' });
-    await buildSprite({ width: 32, aspectRatio: '1x1', outputFilename: 'flag-sprite-32.png' });
-    await buildSprite({ width: 64, aspectRatio: '1x1', outputFilename: 'flag-sprite-32_2x.png' });
-  } catch (err) {
-    console.error(err);
-  }
+  // await buildPngs({ width: 32, aspectRatio: '4x3'});
+  // await buildPngs({ width: 32, aspectRatio: '1x1'});
+  await buildSprite({ width: 32, aspectRatio: '4x3', outputFilename: 'flag-sprite-32.png' });
+  await buildSprite({ width: 64, aspectRatio: '4x3', outputFilename: 'flag-sprite-32_2x.png' });
+  await buildSprite({ width: 32, aspectRatio: '1x1', outputFilename: 'flag-sprite-32.png' });
+  await buildSprite({ width: 64, aspectRatio: '1x1', outputFilename: 'flag-sprite-32_2x.png' });
 })();
