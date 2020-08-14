@@ -4,7 +4,7 @@ const chunk = require('lodash.chunk');
 const sharp = require('sharp');
 const imagemin = require('imagemin');
 const imageminPngquant = require('imagemin-pngquant');
-const { getCodes } = require('country-list');
+const { getCodes } = require('./index.js');
 
 // Loops through all ISO country codes, opens corresponding SVG file, converts to buffer, resizes it.
 // Returns an array of objects with the resized buffer and iso name
