@@ -9,6 +9,6 @@ module.exports = {
   },
   getNameByCode(code) {
     const uppercaseCode = code.toUpperCase();
-    return countryList.filter(country => country.code === uppercaseCode).name;
+    return countryList.find(country => country.code === uppercaseCode).name;
   }
 };
