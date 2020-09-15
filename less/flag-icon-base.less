@@ -18,14 +18,23 @@
   }
 }
 
-.flag-icon(@country) {
+.flag-icon(@flag_size, @country) when (@flag_size = '4x3') {
   .flag-icon-@{country} {
     background-image: ~'url(@{flag-icon-css-path}@{flag-icon-rect-path}/@{country}.svg)';
   }
 }
 
-.flag-icon-squared(@country) {
+.flag-icon(@flag_size, @country) when (@flag_size = '1x1') {
   .flag-icon-@{country}.flag-icon-squared {
     background-image: ~'url(@{flag-icon-css-path}@{flag-icon-square-path}/@{country}.svg)';
   }
+}
+
+.make-flags(@array, @flag_size) {
+  .flag-classes-iterator(@i: length(@array)) when (@i > 0) {
+    .flag-classes-iterator(@i - 1);
+    @country: extract(@array, @i);
+    .flag-icon(@flag_size, @country);
+  }
+  .flag-classes-iterator();
 }
