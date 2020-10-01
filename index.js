@@ -1,14 +1,20 @@
-const countryList = require('./country-list.json');
+var countryList = require('./country-list.json');
 
 module.exports = {
-  getCountryList() {
+  getCountryList: function () {
     return countryList;
   },
-  getCodes() {
-    return countryList.map(country => country.code);
+  getCodes: function () {
+    return countryList.map(function (country) {
+      return country.code;
+    });
   },
-  getNameByCode(code) {
-    const uppercaseCode = code.toUpperCase();
-    return countryList.find(country => country.code === uppercaseCode).name;
+  getNameByCode: function (code) {
+    var uppercaseCode = code.toUpperCase();
+    for (var i = 0; i < countryList.length; i++) {
+      if (countryList[i].code === uppercaseCode) {
+        return countryList[i].name;
+      }
+    }
   }
 };
