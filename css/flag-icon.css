@@ -1,7 +1,7 @@
 .flag-icon-background {
   background-size: contain;
   background-position: 50%;
-  background-repeat: no-repeat;
+  background:no-repeat center/cover ;
 }
 .flag-icon {
   background-size: contain;
@@ -10,7 +10,7 @@
   position: relative;
   display: inline-block;
   width: 1.33333333em;
-  line-height: 1em;
+  line-height: 2em;
 }
 .flag-icon:before {
   content: "\00a0";
