@@ -19,7 +19,7 @@ For using the flags inline with text add the classes `.flag-icon` and
 `.flag-icon-xx` (where `xx` is the
 [ISO 3166-1-alpha-2 code](https://www.iso.org/obp/ui/#search/code/)
 of a country) to an empty `<span>`. If you want to have a squared version flag
-then add the class `flag-icon-squared` as well. Example:
+then add the class `flag-icon-squared` as well. Example:-
 
 ```html
 <span class="flag-icon flag-icon-gr"></span>
@@ -28,7 +28,7 @@ then add the class `flag-icon-squared` as well. Example:
 
 You could also apply this to any element, but in that case you'll have to use the
 `flag-icon-background` instead of `flag-icon` and you're set. This will add the
-correct background with the following CSS properties:
+correct background with the following CSS properties:-
 
 ```css
 background-size: contain;
@@ -45,7 +45,7 @@ add also the `flag-icon-squared` class.
 Run the `npm install` to install the dependencies after cloning the project and
 you'll be able to:
 
-To watch for changes and live reload if served
+To watch for changes and live reload if served.
 
 ```bash
 $ grunt
