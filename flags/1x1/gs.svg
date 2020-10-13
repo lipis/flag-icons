@@ -17,11 +17,11 @@
     <linearGradient id="g" x1="215.8" x2="229" y1="103" y2="103" gradientTransform="matrix(.74 0 0 1.33 40.5 0)" gradientUnits="userSpaceOnUse" xlink:href="#a"/>
     <linearGradient id="h" x1="117.6" x2="78.2" y1="1040.4" y2="1003.7" gradientTransform="matrix(2.563 0 0 .384 40.5 0)" gradientUnits="userSpaceOnUse" xlink:href="#b"/>
     <linearGradient id="i" x1="264.7" x2="255" y1="246" y2="226.4" gradientTransform="matrix(.886 0 0 1.11 40.5 0)" gradientUnits="userSpaceOnUse" xlink:href="#b"/>
-    <clipPath id="c">
+    <clipPath id="gs-c">
       <path fill-opacity=".7" d="M0 0h512v512H0z"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#c)">
+  <g clip-path="url(#gs-c)">
     <g stroke-width="1pt">
       <path fill="#006" d="M0 0h1024v512H0z"/>
       <path fill="#fff" d="M0 0v28.6L454.8 256H512v-28.6L57.2 0H0zm512 0v28.6L57.2 256H0v-28.6L454.8 0H512z"/>

@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-pg" viewBox="0 0 512 512">
   <defs>
-    <clipPath id="a">
+    <clipPath id="pg-a">
       <path fill-opacity=".7" d="M81.4 0h496v496h-496z"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#a)" transform="translate(-84) scale(1.0321)">
+  <g clip-path="url(#pg-a)" transform="translate(-84) scale(1.0321)">
     <g fill-rule="evenodd">
       <path d="M.5 0L0 496h659L.5 0z"/>
       <path fill="red" d="M658.5 496L659 0H0l658.5 496z"/>

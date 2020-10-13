@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-hk" viewBox="0 0 512 512">
   <defs>
-    <clipPath id="a">
+    <clipPath id="hk-a">
       <path fill-opacity=".7" d="M164.8 0H909v744H165z"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#a)" transform="matrix(.7 0 0 .7 -113.4 0)">
+  <g clip-path="url(#hk-a)" transform="matrix(.7 0 0 .7 -113.4 0)">
     <path fill="#ba0000" fill-rule="evenodd" d="M1063 744.1H0V0h1063z"/>
     <path fill="#fff" fill-rule="evenodd" d="M516.4 360.1s-75-32.3-64.3-116c10.4-40.3 28.8-67.7 62.2-82.6a223 223 0 0148-8.4c-4.4 4-8 8.1-9.8 13.2-3.6 9.2-1 18 3.8 26.8a78 78 0 0110.8 34.4 53.2 53.2 0 01-21.2 49c-9.6 7.3-21 9.9-30.2 18.3a41.1 41.1 0 00-13.2 26.4c-.3 23.4 6.1 26.7 13.9 39z"/>
     <path fill="#ba0000" fill-rule="evenodd" stroke="#000" stroke-width="3.1" d="M502.1 239v-.3"/>

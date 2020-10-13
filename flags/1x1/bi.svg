@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-bi" viewBox="0 0 512 512">
   <defs>
-    <clipPath id="a">
+    <clipPath id="bi-a">
       <path fill="gray" d="M60.8 337h175v175h-175z"/>
     </clipPath>
   </defs>
-  <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(-178 -986) scale(2.9257)">
+  <g fill-rule="evenodd" clip-path="url(#bi-a)" transform="translate(-178 -986) scale(2.9257)">
     <path fill="#00cf00" d="M0 337l146.6 87.5L0 512zm293.1 0l-146.5 87.5L293 512z"/>
     <path fill="red" d="M0 337l146.6 87.5L293 337zm0 175l146.6-87.5L293 512z"/>
     <path fill="#fff" d="M293.1 337h-27.3L0 495.7V512h27.3l265.8-158.7z"/>
