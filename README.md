@@ -63,7 +63,7 @@ To serve it on `localhost:8000`
 $ grunt connect
 ```
 
-#### LESS
+#### Less
 
 To have only specific countries in the css file, remove the ones that you don't
 need from the
