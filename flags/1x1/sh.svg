@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-sh" viewBox="0 0 512 512">
   <defs>
-    <clipPath id="a">
+    <clipPath id="sh-a">
       <path fill-opacity=".7" d="M0 0h512v512H0z"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#a)">
+  <g clip-path="url(#sh-a)">
     <path fill="#006" d="M1024 512V0H0v512h1024z"/>
     <path fill="#fff" d="M0 85.3h108L0 31V0h61.8l151 75.3V0h85v75.3L449 0h62.4v31L402.7 85.4h108.6v85.3H402.7l108.6 54.2V256h-62.4l-151-75.3V256h-85v-75.3L61.7 256H0v-31l108-54.3H0V85.3z"/>
     <path fill="#ce1126" d="M471 0L300.5 85.3h40.9L511.3 0H471zm40.3 256L341 170.5h41l129.2 65v20.3zM171 85.2L0-.1v20.4l129.8 65H171zm-.4 85.3L0 255.9h40.8l170.7-85.3h-40.9z"/>

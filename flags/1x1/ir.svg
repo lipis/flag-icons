@@ -1,10 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-ir" viewBox="0 0 512 512">
   <defs>
-    <clipPath id="a">
+    <clipPath id="ir-a">
       <path fill-opacity=".7" d="M186 0h496v496H186z"/>
     </clipPath>
   </defs>
-  <g fill-rule="evenodd" clip-path="url(#a)" transform="translate(-192) scale(1.0321)">
+  <g fill-rule="evenodd" clip-path="url(#ir-a)" transform="translate(-192) scale(1.0321)">
     <path fill="#fff" d="M0 0h868.1v496H0z"/>
     <path fill="#da0000" d="M0 333.1h868.1v163H0z"/>
     <g fill="#fff" stroke-width="1pt">

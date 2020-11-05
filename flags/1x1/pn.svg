@@ -1,15 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-pn" viewBox="0 0 512 512">
   <defs>
-    <clipPath id="b">
+    <clipPath id="pn-b">
       <path d="M-15-7.5h30v15h-30z"/>
     </clipPath>
-    <clipPath id="a">
+    <clipPath id="pn-a">
       <path fill-opacity=".7" d="M-15-15h30v30h-30z"/>
     </clipPath>
   </defs>
-  <g clip-path="url(#a)" transform="translate(256 256) scale(17.06667)">
+  <g clip-path="url(#pn-a)" transform="translate(256 256) scale(17.06667)">
     <path fill="#00247d" d="M-15-15h60v30h-60z"/>
-    <g clip-path="url(#b)" transform="translate(0 -7.5)">
+    <g clip-path="url(#pn-b)" transform="translate(0 -7.5)">
       <circle r="20" fill="#00247d"/>
       <path stroke="#fff" stroke-width="3" d="M-20-10l40 20m-40 0l40-20"/>
       <path stroke="#cf142b" stroke-width="2" d="M-20-10l40 20m-40 0l40-20"/>
