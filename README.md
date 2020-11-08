@@ -72,33 +72,3 @@ file and build it again.
 
 This project wouldn't exist without the awesome and now deleted collection of
 SVG flags by [koppi](https://github.com/koppi).
-
-## Contributors
-
-### Code Contributors
-
-This project exists thanks to all the people who contribute. [[Contribute](CONTRIBUTING.md)].
-<a href="https://github.com/lipis/flag-icon-css/graphs/contributors"><img src="https://opencollective.com/lipis/contributors.svg?width=890&button=false" /></a>
-
-### Financial Contributors
-
-Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/lipis/contribute)]
-
-#### Individuals
-
-<a href="https://opencollective.com/lipis"><img src="https://opencollective.com/lipis/individuals.svg?width=890"></a>
-
-#### Organizations
-
-Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/lipis/contribute)]
-
-<a href="https://opencollective.com/lipis/organization/0/website"><img src="https://opencollective.com/lipis/organization/0/avatar.svg"></a>
-<a href="https://opencollective.com/lipis/organization/1/website"><img src="https://opencollective.com/lipis/organization/1/avatar.svg"></a>
-<a href="https://opencollective.com/lipis/organization/2/website"><img src="https://opencollective.com/lipis/organization/2/avatar.svg"></a>
-<a href="https://opencollective.com/lipis/organization/3/website"><img src="https://opencollective.com/lipis/organization/3/avatar.svg"></a>
-<a href="https://opencollective.com/lipis/organization/4/website"><img src="https://opencollective.com/lipis/organization/4/avatar.svg"></a>
-<a href="https://opencollective.com/lipis/organization/5/website"><img src="https://opencollective.com/lipis/organization/5/avatar.svg"></a>
-<a href="https://opencollective.com/lipis/organization/6/website"><img src="https://opencollective.com/lipis/organization/6/avatar.svg"></a>
-<a href="https://opencollective.com/lipis/organization/7/website"><img src="https://opencollective.com/lipis/organization/7/avatar.svg"></a>
-<a href="https://opencollective.com/lipis/organization/8/website"><img src="https://opencollective.com/lipis/organization/8/avatar.svg"></a>
-<a href="https://opencollective.com/lipis/organization/9/website"><img src="https://opencollective.com/lipis/organization/9/avatar.svg"></a>
