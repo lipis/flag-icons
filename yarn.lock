@@ -2750,10 +2750,10 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-svgo@2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/svgo/-/svgo-2.0.0.tgz#ba627609d15ab6514f505b5f4e9311a1e0c9ad73"
-  integrity sha512-oCHAONOycXoUTZRNeASVxz43nZN7lrY+4wuE4RYjTYxMq5nIu3bJPOvCfeA227CXOFebyaxsv7nsFxnguD3Sfw==
+svgo@2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/svgo/-/svgo-2.0.1.tgz#6db16e349d9bef9264a1325c402c9629f0eecd12"
+  integrity sha512-v5Tzv3WPayd0XVnpmnRHqWqSHAabQFFjiTuA/KrBAOwMIyn6odBk1bCmygJJbw/6IJLwGznSvaNDKqNQeWJOtA==
   dependencies:
     chalk "^4.1.0"
     commander "^7.1.0"
