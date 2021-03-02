@@ -18,7 +18,7 @@
     "grunt-contrib-cssmin": "4.0.0",
     "grunt-contrib-less": "3.0.0",
     "grunt-contrib-watch": "1.1.0",
-    "husky": "5.1.1",
+    "husky": "5.1.2",
     "lint-staged": "10.5.4",
     "prettier": "2.2.1",
     "svgo": "2.2.0"
