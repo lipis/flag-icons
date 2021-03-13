@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-an" viewBox="0 0 640 480">
+<path fill="#FFFFFF" d="M0,0h640v480H0V0z"/>
+<path fill="#DC171D" d="M240,0h160v480H240V0z"/>
+<path fill="#012A87" d="M0,160h640v160H0V160z"/>
+<path id="a" fill="#FFFFFF" d="M292.3,313.3l-12.4-10l-12.4,9.6l4.9-14.8l-12.4-10h14.9
+	l5.2-14.8l4.8,14.8H300l-12,10L292.3,313.3z"/>
+<g transform="translate(83.33)">
+	<path id="a_1_" fill="#FFFFFF" d="M372.3,313.3l-12.4-10l-12.4,9.6l4.9-14.8l-12.4-10
+		h14.9l5.2-14.8l4.8,14.8H380l-12,10L372.3,313.3z"/>
+</g>
+<g transform="translate(0 -111.1188)">
+	<path id="a_2_" fill="#FFFFFF" d="M292.3,206.7l-12.4-10l-12.4,9.6l4.9-14.8l-12.4-10
+		h14.9l5.2-14.8l4.8,14.8H300l-12,10L292.3,206.7z"/>
+</g>
+<g transform="translate(80 -111.1188)">
+	<path id="a_3_" fill="#FFFFFF" d="M369.1,206.7l-12.4-10l-12.4,9.6l4.9-14.8l-12.4-10
+		h14.9l5.2-14.8l4.8,14.8h15.1l-12,10L369.1,206.7z"/>
+</g>
+<g transform="translate(-69.5 -55.55583)">
+	<path id="a_4_" fill="#FFFFFF" d="M225.6,260l-12.4-10l-12.4,9.6l4.9-14.8l-12.4-10h14.9
+		l5.2-14.8l4.8,14.8h15.1l-12,10L225.6,260z"/>
+</g>
+<g transform="translate(152.78 -55.55383)">
+	<path id="a_5_" fill="#FFFFFF" d="M439,260l-12.4-10l-12.4,9.6l4.9-14.8l-12.4-10h14.9
+		l5.2-14.8l4.8,14.8h15.1l-12,10L439,260z"/>
+</g>
+</svg>
