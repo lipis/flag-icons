@@ -13,7 +13,7 @@
     "url": "http://github.com/lipis/flag-icon-css"
   },
   "devDependencies": {
-    "grunt": "1.4.0",
+    "grunt": "1.4.1",
     "grunt-contrib-connect": "3.0.0",
     "grunt-contrib-cssmin": "4.0.0",
     "grunt-contrib-less": "3.0.0",
