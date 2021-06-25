@@ -1566,3 +1566,9 @@
 .flag-icon-xk.flag-icon-squared {
   background-image: url(../flags/1x1/xk.svg);
 }
+.flag-icon-es-pv {
+  background-image: url(../flags/4x3/es-pv.svg);
+}
+.flag-icon-es-pv.flag-icon-squared {
+  background-image: url(../flags/1x1/es-pv.svg);
+}
