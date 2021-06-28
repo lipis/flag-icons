@@ -20,7 +20,7 @@
     "grunt-contrib-watch": "1.1.0",
     "husky": "6.0.0",
     "lint-staged": "11.0.0",
-    "prettier": "2.3.1",
+    "prettier": "2.3.2",
     "svgo": "2.3.0"
   },
   "lint-staged": {
