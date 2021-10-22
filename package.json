@@ -1,11 +1,11 @@
 {
-  "name": "flag-icon-css",
+  "name": "flag-icons",
   "version": "3.5.0",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/lipis/flag-icon-css"
+    "url": "http://github.com/lipis/flag-icons"
   },
   "devDependencies": {
     "grunt": "1.4.1",
@@ -13,20 +13,8 @@
     "grunt-contrib-cssmin": "4.0.0",
     "grunt-contrib-less": "3.0.0",
     "grunt-contrib-watch": "1.1.0",
-    "husky": "6.0.0",
-    "lint-staged": "11.1.1",
     "prettier": "2.3.2",
     "svgo": "2.3.1"
-  },
-  "lint-staged": {
-    "*.{json,md,scss,less,yaml,yml}": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "scripts": {
     "build": "grunt build",

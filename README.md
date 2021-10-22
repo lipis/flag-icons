@@ -1,16 +1,15 @@
-# flag-icon-css
+# flag-icons
 
 > A collection of all country flags in SVG — plus the CSS for easier integration.
 > See the [demo](https://flagicons.lipis.dev).
 
 ## Install
 
-You can either [download](https://github.com/lipis/flag-icon-css/archive/master.zip)
+You can either [download](https://github.com/lipis/flag-icons/archive/master.zip)
 the whole project as is or install it via Bower or NPM:
 
 ```bash
-$ bower install flag-icon-css
-$ npm install flag-icon-css
+$ npm install flag-icons
 ```
 
 ## Usage
@@ -65,7 +64,7 @@ $ grunt connect
 
 To have only specific countries in the css file, remove the ones that you don't
 need from the
-[`flag-icon-list.less`](https://github.com/lipis/flag-icon-css/blob/master/less/flag-icon-list.less)
+[`flag-icon-list.less`](https://github.com/lipis/flag-icons/blob/master/less/flag-icon-list.less)
 file and build it again.
 
 ## Credits
