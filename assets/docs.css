@@ -8,12 +8,18 @@
 
 .flag-img {
   width: 100%;
-  padding: 4px;
-  border-radius: 2px;
-  border: 1px solid #868e96;
 }
 
 .flag-country {
   font-size: 1.2em;
   width: 100%;
+  border-bottom: 1px solid #ced4da;
+
+}
+
+.flag {
+  border-radius: 2px;
+  border: 1px solid #ced4da;
+  margin-bottom: 32px;
+  padding: 8px;
 }
