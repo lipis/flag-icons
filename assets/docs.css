@@ -1,3 +1,11 @@
+.header {
+  margin: 0 0 48px;
+  padding: 32px 0;
+  text-align: center;
+  background: linear-gradient(90deg, #2b8a3e, #e8590c);
+  color: #fff;
+}
+
 .no-wrap {
   white-space: nowrap;
   margin-bottom: 8px;
@@ -5,21 +13,24 @@
   text-overflow: ellipsis;
 }
 
-
-.flag-img {
-  width: 100%;
+.flag {
+  border-radius: 2px;
+  border: 1px solid #dee2e6;
+  margin-bottom: 32px;
+  padding: 8px;
 }
 
 .flag-country {
   font-size: 1.2em;
   width: 100%;
-  border-bottom: 1px solid #ced4da;
-
+  border-bottom: 1px solid #e9ecef;
 }
 
-.flag {
-  border-radius: 2px;
-  border: 1px solid #ced4da;
-  margin-bottom: 32px;
-  padding: 8px;
+.flag-img {
+  width: 100%;
+}
+
+.flag-code {
+  color: #adb5bd;
+  margin-top: 4px;
 }
