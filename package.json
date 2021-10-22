@@ -22,7 +22,5 @@
     "fix": "yarn prettier --write",
     "prettier": "prettier \"**/*.{json,md,scss,less,yaml,yml}\"",
     "test": "yarn prettier --list-different"
-  },
-  "dependencies": {
   }
 }
