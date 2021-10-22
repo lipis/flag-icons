@@ -2,7 +2,7 @@
   "arrowParens": "avoid",
   "bracketSpacing": false,
   "printWidth": 80,
-  "proseWrap": "preserve",
+  "proseWrap": "never",
   "requirePragma": false,
   "semi": true,
   "singleQuote": true,

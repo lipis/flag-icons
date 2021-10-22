@@ -1,12 +1,10 @@
 # flag-icons
 
-> A collection of all country flags in SVG — plus the CSS for easier integration.
-> See the [demo](https://flagicons.lipis.dev).
+> A collection of all country flags in SVG — plus the CSS for easier integration. See the [demo](https://flagicons.lipis.dev).
 
 ## Install
 
-You can either [download](https://github.com/lipis/flag-icons/archive/master.zip)
-the whole project as is or install it via Bower or NPM:
+You can either [download](https://github.com/lipis/flag-icons/archive/master.zip) the whole project as is or install it via Bower or NPM:
 
 ```bash
 $ npm install flag-icons
@@ -14,20 +12,14 @@ $ npm install flag-icons
 
 ## Usage
 
-For using the flags inline with text add the classes `.flag-icon` and
-`.flag-icon-xx` (where `xx` is the
-[ISO 3166-1-alpha-2 code](https://www.iso.org/obp/ui/#search/code/)
-of a country) to an empty `<span>`. If you want to have a squared version flag
-then add the class `flag-icon-squared` as well. Example:
+For using the flags inline with text add the classes `.flag-icon` and `.flag-icon-xx` (where `xx` is the [ISO 3166-1-alpha-2 code](https://www.iso.org/obp/ui/#search/code/) of a country) to an empty `<span>`. If you want to have a squared version flag then add the class `flag-icon-squared` as well. Example:
 
 ```html
 <span class="flag-icon flag-icon-gr"></span>
 <span class="flag-icon flag-icon-gr flag-icon-squared"></span>
 ```
 
-You could also apply this to any element, but in that case you'll have to use the
-`flag-icon-background` instead of `flag-icon` and you're set. This will add the
-correct background with the following CSS properties:
+You could also apply this to any element, but in that case you'll have to use the `flag-icon-background` instead of `flag-icon` and you're set. This will add the correct background with the following CSS properties:
 
 ```css
 background-size: contain;
@@ -35,39 +27,26 @@ background-position: 50%;
 background-repeat: no-repeat;
 ```
 
-Which means that the flag is just going to appear in the middle of an element, so
-you will have to set manually the correct size of 4 by 3 ratio or if it's squared
-add also the `flag-icon-squared` class.
+Which means that the flag is just going to appear in the middle of an element, so you will have to set manually the correct size of 4 by 3 ratio or if it's squared add also the `flag-icon-squared` class.
 
 ## Development
 
-Run the `npm install` to install the dependencies after cloning the project and
-you'll be able to:
-
-To watch for changes and live reload if served
-
-```bash
-$ grunt
-```
+Run the `yarn` to install the dependencies after cloning the project and you'll be able to:
 
 To build `*.less` files
 
 ```bash
-$ grunt build
+$ yarn build
 ```
 
 To serve it on `localhost:8000`
 
 ```bash
-$ grunt connect
+$ yarn start
 ```
 
-To have only specific countries in the css file, remove the ones that you don't
-need from the
-[`flag-icon-list.less`](https://github.com/lipis/flag-icons/blob/master/less/flag-icon-list.less)
-file and build it again.
+To have only specific countries in the css file, remove the ones that you don't need from the [`flag-icon-list.less`](https://github.com/lipis/flag-icons/blob/master/less/flag-icon-list.less) file and build it again.
 
 ## Credits
 
-This project wouldn't exist without the awesome and now deleted collection of
-SVG flags by [koppi](https://github.com/koppi).
+This project wouldn't exist without the awesome and now deleted collection of SVG flags by [koppi](https://github.com/koppi).
