@@ -7,7 +7,7 @@
 You can either [download](https://github.com/lipis/flag-icons/archive/main.zip) the whole project as is or install it via NPM:
 
 ```bash
-$ npm install flag-icons
+$ npm install flag-icon-css
 ```
 
 ## Usage
