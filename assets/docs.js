@@ -12,11 +12,8 @@ loadJSON = (path, callback) => {
 
 window.onload = function () {
   const flagsRow = document.getElementById('flags');
-  console.log('divvvv', flagsRow);
   loadJSON('country.json', response => {
     const countries = JSON.parse(response);
-    console.log(countries[3].name);
-
     for (country of countries) {
       console.log(country);
       const colDiv = document.createElement('div');
