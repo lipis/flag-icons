@@ -5,16 +5,16 @@ module.exports = (grunt)->
   grunt.initConfig
     less:
       flag:
-        src: 'less/flag-icon.less'
-        dest: 'css/flag-icon.css'
+        src: 'less/flag-icons.less'
+        dest: 'css/flag-icons.css'
       docs:
         src: 'assets/docs.less'
         dest: 'assets/docs.css'
 
     cssmin:
       flag:
-        src: 'css/flag-icon.css'
-        dest: 'css/flag-icon.min.css'
+        src: 'css/flag-icons.css'
+        dest: 'css/flag-icons.min.css'
 
     watch:
       css:

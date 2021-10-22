@@ -13,7 +13,7 @@
   line-height: 1em;
 }
 .flag-icon:before {
-  content: "\00a0";
+  content: '\00a0';
 }
 .flag-icon.flag-icon-squared {
   width: 1em;
