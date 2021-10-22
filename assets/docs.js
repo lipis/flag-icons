@@ -26,26 +26,30 @@ window.onload = function () {
       colDiv.classList.add('col-6');
       const flagDiv = document.createElement('div');
       flagDiv.classList.add('flag');
+
+      // Code
+      const codeSpan = document.createElement('span');
+      codeSpan.classList.add('flag-code');
+      const code = document.createTextNode(
+        country.flag_4x3.substr(10).replace('.svg', ''),
+      );
+      codeSpan.appendChild(code);
+
+      //Country
       const countryDiv = document.createElement('div');
       countryDiv.classList.add('flag-country');
       countryDiv.classList.add('no-wrap');
+      countryDiv.title = country.name;
       const countryName = document.createTextNode(country.name);
+      countryDiv.appendChild(codeSpan);
       countryDiv.appendChild(countryName);
       const flagImg = document.createElement('img');
       flagImg.classList.add('flag-img');
       flagImg.src = country.flag_4x3;
-      // Code
-      const codeDiv = document.createElement('div');
-      codeDiv.classList.add('flag-code');
-      const code = document.createTextNode(
-        country.flag_4x3.substr(10).replace('.svg', ''),
-      );
-      codeDiv.appendChild(code);
 
       colDiv.appendChild(flagDiv);
       flagDiv.appendChild(countryDiv);
       flagDiv.appendChild(flagImg);
-      flagDiv.appendChild(codeDiv);
       flagsRow.appendChild(colDiv);
     }
   });

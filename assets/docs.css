@@ -21,7 +21,6 @@
 }
 
 .flag-country {
-  font-size: 1.2em;
   width: 100%;
   border-bottom: 1px solid #e9ecef;
 }
@@ -32,5 +31,6 @@
 
 .flag-code {
   color: #adb5bd;
-  margin-top: 4px;
+  margin-right: 4px;
+  font-size: 0.9em;
 }
