@@ -1,6 +1,6 @@
 {
   "name": "flag-icons",
-  "version": "3.5.0",
+  "version": "4.0.0",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "license": "MIT",
   "repository": {
@@ -8,7 +8,7 @@
     "url": "http://github.com/lipis/flag-icons"
   },
   "devDependencies": {
-    "coffeescript": "^2.6.1",
+    "coffeescript": "2.6.1",
     "grunt": "1.4.1",
     "grunt-contrib-connect": "3.0.0",
     "grunt-contrib-cssmin": "4.0.0",
