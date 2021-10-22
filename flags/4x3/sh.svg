@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icon-css-sh" viewBox="0 0 640 480">
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-sh" viewBox="0 0 640 480">
   <path fill="#006" d="M640 480V0H0v480h640z"/>
   <path fill="#fff" d="M0 73.3h76L0 26.8V0h43.5l106.4 64.8V0h59.9v64.8L316 0h44v26.8l-76.4 46.5H360v73.4h-76.4l76.4 46.6V220h-44l-106.4-64.7V220H150v-64.7L43.4 220H0v-26.7l76-46.6H0V73.3z"/>
   <path fill="#ce1126" d="M331.7 0L211.5 73.4h28.8L360 0h-28.3zM360 220l-119.8-73.3H269l90.9 55.9V220zM120.4 73.4L0 0v17.5l91.4 55.9h29zm-.3 73.3L0 220h28.7L149 146.7h-29z"/>

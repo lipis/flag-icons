@@ -1,35 +1,21 @@
 {
-  "name": "flag-icon-css",
-  "version": "3.5.0",
+  "name": "flag-icons",
+  "version": "4.0.0",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "http://github.com/lipis/flag-icon-css"
+    "url": "http://github.com/lipis/flag-icons"
   },
   "devDependencies": {
-    "grunt": "1.4.1",
-    "grunt-contrib-connect": "3.0.0",
-    "grunt-contrib-cssmin": "4.0.0",
-    "grunt-contrib-less": "3.0.0",
-    "grunt-contrib-watch": "1.1.0",
-    "husky": "6.0.0",
-    "lint-staged": "11.1.1",
-    "prettier": "2.3.2",
-    "svgo": "2.3.1"
-  },
-  "lint-staged": {
-    "*.{json,md,scss,less,yaml,yml}": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "prettier": "2.4.1",
+    "less": "4.1.2",
+    "svgo": "1.3.2"
   },
   "scripts": {
-    "build": "grunt build",
+    "build": "yarn build:dev && yarn build:min",
+    "build:dev": "lessc less/flag-icons.less > css/flag-icons.css",
+    "build:min": "lessc -x less/flag-icons.less > css/flag-icons.min.css",
     "svgo": "svgo --pretty --indent=2 --precision=1 --config=svgo.yaml",
     "svgo:min": "find flags | grep '\\.svg$' | xargs -Iz -n 1 svgo --config=svgo.yaml z",
     "svgo:all": "find flags | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z",
