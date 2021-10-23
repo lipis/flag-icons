@@ -45,6 +45,7 @@ h2 {
 .flag-img {
   width: 100%;
   aspect-ratio: 4 / 3;
+  border: 1px solid #e9ecef;
 }
 
 .flag-code {
