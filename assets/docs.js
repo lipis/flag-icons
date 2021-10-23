@@ -27,9 +27,7 @@ window.onload = function () {
       // Code
       const codeSpan = document.createElement('span');
       codeSpan.classList.add('flag-code');
-      const code = document.createTextNode(
-        country.flag_4x3.substr(10).replace('.svg', ''),
-      );
+      const code = document.createTextNode(country.code);
       codeSpan.appendChild(code);
 
       //Country
