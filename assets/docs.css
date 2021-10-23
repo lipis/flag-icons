@@ -11,6 +11,12 @@
   margin: 0 4px;
 }
 
+.header pre{
+  background-color: rgba(32, 32, 32, .3);
+  padding: 8px;
+  max-width: 320px;
+  margin: 12px auto;
+}
 
 .no-wrap {
   white-space: nowrap;
