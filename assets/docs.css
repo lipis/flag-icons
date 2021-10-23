@@ -18,6 +18,11 @@
   margin: 12px auto;
 }
 
+h2 {
+  text-align: center;
+  margin: 32px 0;
+}
+
 .no-wrap {
   white-space: nowrap;
   margin-bottom: 8px;
