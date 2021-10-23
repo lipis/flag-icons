@@ -36,6 +36,7 @@ const addFlag = (country, rowDiv) => {
   const flagImg = document.createElement('img');
   flagImg.classList.add('flag-img');
   flagImg.src = country.flag_4x3;
+  flagImg.alt = `Flag of ${country.name}`;
 
   colDiv.appendChild(flagDiv);
   flagDiv.appendChild(countryDiv);
