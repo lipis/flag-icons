@@ -3,13 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+    <title>SVG Country Flags | flag-icons</title>
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -17,18 +19,21 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <!-- Docs -->
     <link href="./assets/docs.css" rel="stylesheet" />
-    <link href="./css/flag-icons.css" rel="stylesheet" />
 
-    <title>SVG Country Flags | flag-icons</title>
-    <!-- prettier-ignore -->
+    <!-- Analytics Code -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-42119746-2"
+    ></script>
     <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-      ga('create', 'UA-42119746-2', 'auto');
-      ga('send', 'pageview');
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'UA-42119746-2');
     </script>
   </head>
   <body>
@@ -42,9 +47,7 @@
         <p class="lead">All flags are in 1x1 and 4x3 formats only.</p>
         <pre class="install">yarn add flag-icon-css --dev</pre>
         <p>For more instructions check out GitHub.</p>
-        <a
-          class="btn btn-light"
-          href="https://github.com/lipis/flag-icons"
+        <a class="btn btn-light" href="https://github.com/lipis/flag-icons"
           ><i class="fab fa-github"></i> View on GitHub</a
         >
         <a
@@ -52,7 +55,6 @@
           href="https://github.com/lipis/flag-icons/archive/main.zip"
           ><i class="fas fa-download"></i> Download</a
         >
-
       </div>
     </div>
     <div class="container-md">
