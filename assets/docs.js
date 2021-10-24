@@ -16,6 +16,7 @@ const addFlag = (country, rowDiv) => {
   colDiv.classList.add('col-lg-3');
   colDiv.classList.add('col-md-4');
   colDiv.classList.add('col-6');
+  colDiv.id = country.code;
   const flagDiv = document.createElement('div');
   flagDiv.classList.add('flag');
 
@@ -30,9 +31,11 @@ const addFlag = (country, rowDiv) => {
   countryDiv.classList.add('flag-country');
   countryDiv.classList.add('no-wrap');
   countryDiv.title = country.name;
+  const countrySpan = document.createElement('span');
   const countryName = document.createTextNode(country.name);
+  countrySpan.appendChild(countryName)
   countryDiv.appendChild(codeSpan);
-  countryDiv.appendChild(countryName);
+  countryDiv.appendChild(countrySpan);
   const flagImg = document.createElement('img');
   flagImg.classList.add('flag-img');
   flagImg.src = country.flag_4x3;
