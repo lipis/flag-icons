@@ -45,7 +45,7 @@ To serve it on `localhost:8000`
 $ yarn start
 ```
 
-To have only specific countries in the css file, remove the ones that you don't need from the [`flag-icon-list.less`](https://github.com/lipis/flag-icons/blob/master/less/flag-icon-list.less) file and build it again.
+To have only specific countries in the css file, remove the ones that you don't need from the [`flag-icons-list.less`](less/flag-icons-list.less) file and build it again.
 
 ## Credits
 
