@@ -9,7 +9,7 @@
       <path d="M0 0h987v164.5H0z"/>
       <path fill="#fff" d="M0 164.5h987V329H0z"/>
       <path fill="#090" d="M0 329h987v164.5H0z"/>
-      <path fill="red" d="M0 493.5l493.5-246.8L0 0v493.5z"/>
+      <path fill="red" d="m0 493.5 493.5-246.8L0 0v493.5z"/>
     </g>
   </g>
 </svg>
