@@ -16,6 +16,7 @@
   padding: 8px;
   max-width: 320px;
   margin: 12px auto;
+  border-radius: 4px;
 }
 
 h2 {
@@ -31,7 +32,7 @@ h2 {
 }
 
 .flag {
-  border-radius: 2px;
+  border-radius: 4px;
   border: 1px solid #dee2e6;
   margin-bottom: 32px;
   padding: 8px;
@@ -46,6 +47,8 @@ h2 {
   width: 100%;
   aspect-ratio: 4 / 3;
   border: 1px solid #e9ecef;
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .flag-code {
