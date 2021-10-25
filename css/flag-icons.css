@@ -1512,6 +1512,30 @@
 .flag-icon-zw.flag-icon-squared {
   background-image: url(../flags/1x1/zw.svg);
 }
+.flag-icon-ac {
+  background-image: url(../flags/4x3/ac.svg);
+}
+.flag-icon-ac.flag-icon-squared {
+  background-image: url(../flags/1x1/ac.svg);
+}
+.flag-icon-cp {
+  background-image: url(../flags/4x3/cp.svg);
+}
+.flag-icon-cp.flag-icon-squared {
+  background-image: url(../flags/1x1/cp.svg);
+}
+.flag-icon-dg {
+  background-image: url(../flags/4x3/dg.svg);
+}
+.flag-icon-dg.flag-icon-squared {
+  background-image: url(../flags/1x1/dg.svg);
+}
+.flag-icon-ea {
+  background-image: url(../flags/4x3/ea.svg);
+}
+.flag-icon-ea.flag-icon-squared {
+  background-image: url(../flags/1x1/ea.svg);
+}
 .flag-icon-es-ct {
   background-image: url(../flags/4x3/es-ct.svg);
 }
@@ -1553,6 +1577,18 @@
 }
 .flag-icon-gb-wls.flag-icon-squared {
   background-image: url(../flags/1x1/gb-wls.svg);
+}
+.flag-icon-ic {
+  background-image: url(../flags/4x3/ic.svg);
+}
+.flag-icon-ic.flag-icon-squared {
+  background-image: url(../flags/1x1/ic.svg);
+}
+.flag-icon-ta {
+  background-image: url(../flags/4x3/ta.svg);
+}
+.flag-icon-ta.flag-icon-squared {
+  background-image: url(../flags/1x1/ta.svg);
 }
 .flag-icon-un {
   background-image: url(../flags/4x3/un.svg);
