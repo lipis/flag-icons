@@ -1813,6 +1813,13 @@
     "name": "Kosovo"
   },
   {
+    "code": "xx",
+    "flag_1x1": "flags/1x1/xx.svg",
+    "flag_4x3": "flags/4x3/xx.svg",
+    "iso": false,
+    "name": "Unknown"
+  },
+  {
     "code": "ye",
     "flag_1x1": "flags/1x1/ye.svg",
     "flag_4x3": "flags/4x3/ye.svg",
@@ -1846,12 +1853,5 @@
     "flag_4x3": "flags/4x3/zw.svg",
     "iso": true,
     "name": "Zimbabwe"
-  },
-  {
-    "code": "zz",
-    "flag_1x1": "flags/1x1/zz.svg",
-    "flag_4x3": "flags/4x3/zz.svg",
-    "iso": false,
-    "name": "Unknown"
   }
 ]
