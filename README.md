@@ -4,10 +4,12 @@
 
 ## Install
 
-You can either [download](https://github.com/lipis/flag-icons/archive/main.zip) the whole project as is or install it via NPM:
+You can either [download](https://github.com/lipis/flag-icons/archive/main.zip) the whole project as is or install it via npm or Yarn:
 
 ```bash
-$ npm install flag-icon-css
+npm install --dev flag-icon-css
+# or
+yarn add --dev flag-icon-css
 ```
 
 ## Usage
