@@ -1164,6 +1164,12 @@
 .flag-icon-ru.flag-icon-squared {
   background-image: url(../flags/1x1/ru.svg);
 }
+.flag-icon-ru-da {
+  background-image: url(../flags/4x3/ru-da.svg);
+}
+.flag-icon-ru-da.flag-icon-squared {
+  background-image: url(../flags/1x1/ru-da.svg);
+}
 .flag-icon-rw {
   background-image: url(../flags/4x3/rw.svg);
 }

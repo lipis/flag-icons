@@ -1421,6 +1421,13 @@
     "name": "Russia"
   },
   {
+    "code": "ru-da",
+    "flag_1x1": "flags/1x1/ru-da.svg",
+    "flag_4x3": "flags/4x3/ru-da.svg",
+    "iso": true,
+    "name": "Republic of Dagestan"
+  },
+  {
     "code": "rw",
     "flag_1x1": "flags/1x1/rw.svg",
     "flag_4x3": "flags/4x3/rw.svg",
