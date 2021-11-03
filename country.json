@@ -1428,6 +1428,13 @@
     "name": "Republic of Dagestan"
   },
   {
+    "code": "ru-kb",
+    "flag_1x1": "flags/1x1/ru-kb.svg",
+    "flag_4x3": "flags/4x3/ru-kb.svg",
+    "iso": true,
+    "name": "Kabardino-Balkarian Republic"
+  },
+  {
     "code": "rw",
     "flag_1x1": "flags/1x1/rw.svg",
     "flag_4x3": "flags/4x3/rw.svg",

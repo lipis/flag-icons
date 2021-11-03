@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xml:space="preserve"
+   width="512"
+   height="512"
+   viewBox="0 0 192 192"
+   version="1.1"
+   id="svg48"
+   sodipodi:docname="Flag_of_Kabardino-Balkaria-1x1.svg"
+   inkscape:version="1.0.2-2 (e86c870879, 2021-01-15)"><rect
+   fill="#3399ff"
+   width="192"
+   height="64"
+   id="rect36"
+   x="0"
+   y="0"
+   style="display:inline;stroke-width:0.522553" /><rect
+   fill="#ffffff"
+   width="192"
+   height="64"
+   y="64"
+   id="rect38"
+   x="0"
+   style="display:inline;stroke-width:0.522553" /><rect
+   fill="#00923f"
+   width="192"
+   height="64"
+   y="128"
+   id="rect40"
+   x="0"
+   style="display:inline;stroke-width:0.522553" /><circle
+   cx="96.500031"
+   cy="96.000069"
+   fill="#3399ff"
+   id="circle42"
+   r="32.000027"
+   style="display:inline;stroke-width:0.640001" /><path
+   clip-path="url(#mid-3)"
+   fill="#ffffff"
+   stroke="#3399ff"
+   stroke-width="1"
+   stroke-linejoin="round"
+   d="m 276,151 c 0,0 -25,-29 -36,-29 -9,0 -14,10 -14,10 l 3,3 c -5,-4 -10,-11 -18,-11 -12,0 -37,27 -37,27 z"
+   id="path44"
+   transform="matrix(0.64000052,0,0,0.64000052,-47.500091,-7.1197975e-7)"
+   style="display:inline" /><rect
+   clip-path="url(#mid-3)"
+   fill="#00923f"
+   x="175"
+   y="150"
+   width="100"
+   height="50"
+   id="rect46"
+   transform="matrix(0.64000052,0,0,0.64000052,-47.500091,-7.1197975e-7)"
+   style="display:inline" /><metadata
+   id="metadata54"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs52"><clipPath
+     id="mid-3"><circle
+       cx="225"
+       cy="150"
+       r="50"
+       id="circle33-8" /></clipPath><clipPath
+     id="clipPath68"><circle
+       cx="225"
+       cy="150"
+       r="50"
+       id="circle66" /></clipPath></defs><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1920"
+   inkscape:window-height="1017"
+   id="namedview50"
+   showgrid="false"
+   inkscape:zoom="0.73097164"
+   inkscape:cx="211.59285"
+   inkscape:cy="266.40939"
+   inkscape:window-x="1358"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg48" />
+<clipPath
+   id="mid"><circle
+     cx="225"
+     cy="150"
+     r="50"
+     id="circle33" /></clipPath>
+
+
+
+
+
+
+</svg>
