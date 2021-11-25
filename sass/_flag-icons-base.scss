@@ -1,5 +1,3 @@
-@use 'sass:math';
-
 .flag-icon-background {
   background-size: contain;
   background-position: 50%;
@@ -10,7 +8,7 @@
   @extend .flag-icon-background;
   position: relative;
   display: inline-block;
-  width: math.div(4, 3) * 1em;
+  width: 1.333333 * 1em;
   line-height: 1em;
   &:before {
     content: '\00a0';
