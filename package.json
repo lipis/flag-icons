@@ -7,6 +7,13 @@
     "type": "git",
     "url": "http://github.com/lipis/flag-icons"
   },
+  "files": [
+    "css",
+    "flags",
+    "less",
+    "sass",
+    "country.json"
+  ],
   "devDependencies": {
     "http-server": "14.0.0",
     "less": "4.1.2",
