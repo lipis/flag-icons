@@ -9,7 +9,7 @@ You can either [download](https://github.com/lipis/flag-icons/archive/main.zip) 
 ```bash
 npm install --dev flag-icons
 # or
-yarn add --dev flag-icos
+yarn add --dev flag-icons
 ```
 
 ## Usage
