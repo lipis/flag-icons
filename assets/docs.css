@@ -11,8 +11,8 @@
   margin: 0 4px;
 }
 
-.header pre{
-  background-color: rgba(32, 32, 32, .3);
+.header pre {
+  background-color: rgba(32, 32, 32, 0.3);
   padding: 8px;
   max-width: 320px;
   margin: 12px auto;
@@ -52,7 +52,7 @@ h2 {
 }
 
 .flag-code {
-  color: #adb5bd;
-  margin-right: 4px;
-  font-size: 0.9em;
+  color: #343a40;
+  margin-right: 6px;
+  font-weight: 600;
 }

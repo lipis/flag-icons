@@ -33,7 +33,7 @@ const addFlag = (country, rowDiv) => {
   countryDiv.title = country.name;
   const countrySpan = document.createElement('span');
   const countryName = document.createTextNode(country.name);
-  countrySpan.appendChild(countryName)
+  countrySpan.appendChild(countryName);
   countryDiv.appendChild(codeSpan);
   countryDiv.appendChild(countrySpan);
   const flagImg = document.createElement('img');
