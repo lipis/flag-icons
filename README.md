@@ -7,9 +7,9 @@
 You can either [download](https://github.com/lipis/flag-icons/archive/main.zip) the whole project as is or install it via npm or Yarn:
 
 ```bash
-npm install --dev flag-icon-css
+npm install --dev flag-icons
 # or
-yarn add --dev flag-icon-css
+yarn add --dev flag-icos
 ```
 
 ## Usage
@@ -51,4 +51,5 @@ To have only specific countries in the css file, remove the ones that you don't 
 
 ## Credits
 
-This project wouldn't exist without the awesome and now deleted collection of SVG flags by [koppi](https://github.com/koppi).
+- This project wouldn't exist without the awesome and now deleted collection of SVG flags by [koppi](https://github.com/koppi).
+- Thank you [Andrejs Abrickis](https://twitter.com/andrejsabrickis) for providing the `flag-icons` name on [npm](https://www.npmjs.com/package/flag-icons).
