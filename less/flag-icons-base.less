@@ -1,11 +1,11 @@
-.flag-icon-background {
+.fib {
   background-size: contain;
   background-position: 50%;
   background-repeat: no-repeat;
 }
 
-.flag-icon {
-  .flag-icon-background;
+.fi {
+  .fib;
   position: relative;
   display: inline-block;
   width: unit((4 / 3), em);
@@ -13,15 +13,15 @@
   &:before {
     content: '\00a0';
   }
-  &.flag-icon-squared {
+  &.fis {
     width: 1em;
   }
 }
 
 .flag-icon(@country) {
-  .flag-icon-@{country} {
+  .fi-@{country} {
     background-image: ~'url(@{flag-icons-path}@{flag-icons-rect-path}/@{country}.svg)';
-    &.flag-icon-squared {
+    &.fis {
       background-image: ~'url(@{flag-icons-path}@{flag-icons-square-path}/@{country}.svg)';
     }
   }
