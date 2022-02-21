@@ -10,9 +10,11 @@
   display: inline-block;
   width: 1.333333 * 1em;
   line-height: 1em;
+
   &:before {
     content: '\00a0';
   }
+
   &.fis {
     width: 1em;
   }
@@ -21,8 +23,11 @@
 @mixin flag-icon($country) {
   .fi-#{$country} {
     background-image: url(#{$flag-icons-path}#{$flag-icons-rect-path}/#{$country}.svg);
-    &.fis {
-      background-image: url(#{$flag-icons-path}#{$flag-icons-square-path}/#{$country}.svg);
+
+    @if $flag-icons-use-square {
+      &.fis {
+        background-image: url(#{$flag-icons-path}#{$flag-icons-square-path}/#{$country}.svg);
+      }
     }
   }
 }
