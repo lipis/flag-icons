@@ -3,6 +3,7 @@
     @include flag-icon($country);
   }
 } @else {
+  @include flag-icon(xx);
   @include flag-icon(ad);
   @include flag-icon(ae);
   @include flag-icon(af);
@@ -269,5 +270,4 @@
   @include flag-icon(ta);
   @include flag-icon(un);
   @include flag-icon(xk);
-  @include flag-icon(xx);
 }
