@@ -18,6 +18,12 @@
 .fi.fis {
   width: 1em;
 }
+.fi-xx {
+  background-image: url(../flags/4x3/xx.svg);
+}
+.fi-xx.fis {
+  background-image: url(../flags/1x1/xx.svg);
+}
 .fi-ad {
   background-image: url(../flags/4x3/ad.svg);
 }
@@ -1601,10 +1607,4 @@
 }
 .fi-xk.fis {
   background-image: url(../flags/1x1/xk.svg);
-}
-.fi-xx {
-  background-image: url(../flags/4x3/xx.svg);
-}
-.fi-xx.fis {
-  background-image: url(../flags/1x1/xx.svg);
 }
