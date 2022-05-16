@@ -1,4 +1,5 @@
 # 6.4.2
+
 - Convert text to path in flags: **sm**, **gu**.
 
 # 6.4.1
