@@ -1,3 +1,7 @@
+# 6.4.3
+
+- Fix flag of Argentina
+
 # 6.4.2
 
 - Convert text to path in flags: **sm**, **gu**.
