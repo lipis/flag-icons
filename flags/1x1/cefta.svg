@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-cefta" version="1.1" viewBox="0 0 512 512">
+  <path id="rect598" d="M0 0h512v512H0z" style="fill:#039;stroke-width:1.89893"/>
+  <circle id="circle600" cx="256" cy="266.5" r="32.5" style="fill:none;stroke:#fc0;stroke-width:29.317"/>
+  <circle id="bigger_circle" cx="256" cy="266.5" r="94.2" style="fill:none;stroke:#fc0;stroke-width:29.317"/>
+  <path id="rect603" d="M369.4-120.3h127.7V7.4H369.4z" style="fill:#039;stroke-width:2.09407" transform="rotate(45)"/>
+  <path id="rect605" d="M102.1 251.8h63.2v29.3h-63.2z" style="fill:#fc0;stroke-width:2.09407"/>
+  <path id="rect607" d="M378.5 251.8h94.2v29.3h-94.2z" style="fill:#fc0;stroke-width:2.09407"/>
+  <path id="rect609" d="M72.1 354.8h58.4v29.3H72.1z" style="fill:#fc0;stroke-width:2.09407" transform="rotate(-45)"/>
+  <path id="rect611" d="M241.3 51.8h29.3V166h-29.3z" style="fill:#fc0;stroke-width:2.09407"/>
+  <circle id="circle613" cx="154.8" cy="170.3" r="14.7" style="fill:#fc0;stroke-width:2.09407"/>
+  <circle id="circle615" cx="68.6" cy="266.5" r="14.7" style="fill:#fc0;stroke-width:2.09407"/>
+  <circle id="circle617" cx="256" cy="406.8" r="14.7" style="fill:#fc0;stroke-width:2.09407"/>
+  <circle id="circle619" cx="256" cy="453.9" r="14.7" style="fill:#fc0;stroke-width:2.09407"/>
+  <circle id="circle621" cx="350.2" cy="266.5" r="14.7" style="fill:#fc0;stroke-width:2.09407"/>
+  <path id="rect623" d="M-160.8 354.4h29.3v29.3h-29.3z" style="fill:#fc0;stroke-width:2.09407" transform="rotate(-45)"/>
+  <path id="rect625" d="M-22.1 524.7H7.2V554h-29.3z" style="fill:#fc0;stroke-width:2.09407" transform="rotate(-45)"/>
+</svg>
