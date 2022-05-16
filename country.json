@@ -287,6 +287,13 @@
     "name": "Democratic Republic of the Congo"
   },
   {
+    "code": "cefta",
+    "flag_1x1": "flags/1x1/cefta.svg",
+    "flag_4x3": "flags/4x3/cefta.svg",
+    "iso": false,
+    "name": "Central European Free Trade Agreement"
+  },
+  {
     "code": "cf",
     "flag_1x1": "flags/1x1/cf.svg",
     "flag_4x3": "flags/4x3/cf.svg",
