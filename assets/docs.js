@@ -25,7 +25,10 @@ const addFlag = (country, rowDiv) => {
   codeSpan.classList.add('flag-code');
   const code = document.createTextNode(country.code);
   codeSpan.appendChild(code);
-
+  // Divider
+  const dividerSpan = document.createElement('span');
+  const divider = document.createTextNode(' ');
+  dividerSpan.appendChild(divider);
   //Country
   const countryDiv = document.createElement('div');
   countryDiv.classList.add('flag-country');
@@ -35,6 +38,7 @@ const addFlag = (country, rowDiv) => {
   const countryName = document.createTextNode(country.name);
   countrySpan.appendChild(countryName);
   countryDiv.appendChild(codeSpan);
+  countryDiv.appendChild(dividerSpan);
   countryDiv.appendChild(countrySpan);
   const flagImg = document.createElement('img');
   flagImg.classList.add('flag-img');
