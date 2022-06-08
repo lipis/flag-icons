@@ -1,3 +1,7 @@
+# 6.4.5
+
+- Fix colors of Estonia
+
 # 6.4.4
 
 - Fix colors of Armenia
