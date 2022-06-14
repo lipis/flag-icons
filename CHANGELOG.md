@@ -1,3 +1,11 @@
+# 6.4.6
+
+- Fix Mongolia
+- Fix Switzerland
+- Fix Israel
+- Fix China
+- Fix Vietnam
+
 # 6.4.5
 
 - Fix colors of Estonia
