@@ -1,22 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-mm" viewBox="0 0 512 512">
-  <defs id="defs192">
-    <path id="a" fill="#fff" d="m0-.5.2.5h-.4z" transform="scale(8.844)"/>
-    <g id="b">
-      <use xlink:href="#a" id="use181" width="18" height="12" x="0" y="0" transform="rotate(-144)"/>
-      <use xlink:href="#a" id="use183" width="18" height="12" x="0" y="0" transform="rotate(-72)"/>
-      <use xlink:href="#a" id="use185" width="18" height="12" x="0" y="0"/>
-      <use xlink:href="#a" id="use187" width="18" height="12" x="0" y="0" transform="rotate(72)"/>
-      <use xlink:href="#a" id="use189" width="18" height="12" x="0" y="0" transform="rotate(144)"/>
+  <defs>
+    <path fill="#fff" d="m0-.5.2.5h-.4z" transform="scale(8.844)"/>
+    <g>
+      <use xlink:href="#a" width="18" height="12" x="0" y="0" transform="rotate(-144)"/>
+      <use xlink:href="#a" width="18" height="12" x="0" y="0" transform="rotate(-72)"/>
+      <use xlink:href="#a" width="18" height="12" x="0" y="0"/>
+      <use xlink:href="#a" width="18" height="12" x="0" y="0" transform="rotate(72)"/>
+      <use xlink:href="#a" width="18" height="12" x="0" y="0" transform="rotate(144)"/>
     </g>
   </defs>
-  <path id="rect2" fill="#fecb00" d="M0 0h512v512H0z" style="stroke-width:34.8373"/>
-  <path id="rect4" fill="#34b233" d="M0 170.7h512V512H0z" style="stroke-width:34.8373"/>
-  <path id="rect6" fill="#ea2839" d="M0 341.3h512V512H0z" style="stroke-width:34.8373"/>
-  <g id="g17" transform="translate(256 274) scale(188.672)">
-    <path id="pt" fill="#fff" d="M.3 0h-.6L0-1z"/>
-    <use xlink:href="#pt" id="use9" width="100%" height="100%" x="0" y="0" transform="rotate(-144)"/>
-    <use xlink:href="#pt" id="use11" width="100%" height="100%" x="0" y="0" transform="rotate(-72)"/>
-    <use xlink:href="#pt" id="use13" width="100%" height="100%" x="0" y="0" transform="rotate(72)"/>
-    <use xlink:href="#pt" id="use15" width="100%" height="100%" x="0" y="0" transform="rotate(144)"/>
-  </g>
+  <path fill="#fecb00" d="M0 0h512v512H0z" style="stroke-width:34.8373"/>
+  <path fill="#34b233" d="M0 170.7h512V512H0z" style="stroke-width:34.8373"/>
+  <path fill="#ea2839" d="M0 341.3h512V512H0z" style="stroke-width:34.8373"/>
+  <path id="pt" fill="#fff" d="M312.6 274H199.4L256 85.3Z" style="stroke-width:188.672"/>
+  <use xlink:href="#pt" width="100%" height="100%" x="0" y="0" transform="rotate(-144 256 274)"/>
+  <use xlink:href="#pt" width="100%" height="100%" x="0" y="0" transform="rotate(-72 256 274)"/>
+  <use xlink:href="#pt" width="100%" height="100%" x="0" y="0" transform="rotate(72 256 274)"/>
+  <use xlink:href="#pt" width="100%" height="100%" x="0" y="0" transform="rotate(144 256 274)"/>
 </svg>
