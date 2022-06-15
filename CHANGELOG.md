@@ -1,3 +1,10 @@
+# 6.5.0
+
+- Fix Guatemala
+- Fix Seychelles
+- Fix Myanmar
+- Run SVGO for all flags
+
 # 6.4.6
 
 - Fix Mongolia
