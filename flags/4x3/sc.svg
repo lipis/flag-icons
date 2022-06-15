@@ -1,14 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-sc" viewBox="0 0 640 480">
-  <defs>
+  <defs id="defs460">
     <clipPath id="sc-a">
-      <path fill-opacity=".7" d="M0 0h682.7v512H0z"/>
+      <path id="path457" fill-opacity=".7" d="M0 0h682.7v512H0z"/>
     </clipPath>
   </defs>
-  <g fill-rule="evenodd" stroke-width="1pt" clip-path="url(#sc-a)" transform="scale(.9375)">
-    <path fill="red" d="M0 0h992.1v512H0z"/>
-    <path fill="#090" d="m0 512 992.1-170.7V512H0z"/>
-    <path fill="#fff" d="m0 512 992.1-341.3v170.6L0 512z"/>
-    <path fill="#009" d="M0 512V0h330.7L0 512z"/>
-    <path fill="#ff0" d="M0 512 330.7 0h330.7L0 512z"/>
-  </g>
+  <path id="path186" fill="#fff" d="M0 0h640v480H0Z" style="stroke-width:130.639"/>
+  <path id="path188" fill="#d92223" d="M0 480V0h640v160z" style="stroke-width:130.639"/>
+  <path id="path190" fill="#fcd955" d="M0 480V0h426.7z" style="stroke-width:130.639"/>
+  <path id="path192" fill="#003d88" d="M0 480V0h213.3z" style="stroke-width:130.639"/>
+  <path id="path194" fill="#007a39" d="m0 480 640-160v160z" style="stroke-width:130.639"/>
 </svg>
