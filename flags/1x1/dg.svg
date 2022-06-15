@@ -22,7 +22,7 @@
   <path id="path1265" fill="none" stroke="#000" stroke-width=".3" d="m288.5 148.6 28.5 5.2-12.2-21.9"/>
   <path id="path1267" fill="#006d00" fill-rule="evenodd" stroke="#fff" stroke-width="1.8" d="M482.5 159 469 169l15 1.7-21 5 11.2 3.2-22.6 1.7 11.1 3.3-22.6 1.6 11.1 3.3-26.4 3.3 11.1 3.3-26.4 3.3 11.1 3.4-26.4 3.3L381 207l-5.6-1.6 2-5 9.8-8.3 19.5-16.5-4.2 9.9L422 169l-4.2 9.9 19.5-16.5-4.2 9.9 15.7-14.9-4.2 10 15.6-15-4.1 10 17.4-11.6-8 11.6 17-3.3z"/>
   <path id="path1269" fill="none" stroke="#000" stroke-width=".3" d="m482.5 159-107 46.3m31.2-29.7-16 23.1 30 3.4"/>
-  <path id="path1271" fill="none" stroke="#000" stroke-width=".3" d="M422 169 406 192l30 3.3"/>
+  <path id="path1271" fill="none" stroke="#000" stroke-width=".3" d="m422 169-16 23 30 3.3"/>
   <path id="path1273" fill="none" stroke="#000" stroke-width=".3" d="m437.3 162.4-16 23.1 30 3.3"/>
   <path id="path1275" fill="none" stroke="#000" stroke-width=".3" d="m448.8 157.4-12.2 21.5 26.1 5"/>
   <path id="path1277" fill="none" stroke="#000" stroke-width=".3" d="M460.3 152.4 448 174l26 5"/>
@@ -37,7 +37,7 @@
   <path id="path1295" fill="#006d00" fill-rule="evenodd" stroke="#fff" stroke-width="1.7" d="m304.4 265 8.5-11.8-13 1.9 16-9-10.2-.5 18.4-6.6-10.2-.4 18.3-6.5-10.2-.5 21-8.8-10.1-.5 21-8.8-10.2-.4 21.1-8.9 10.5-4.4 5.1.2-.3 5-5.7 9.4-11.6 19 .7-9.7-11.5 19 .6-9.7-11.5 19 .7-9.7L333 259l.6-9.7-8.8 16.7.7-9.8-11.2 14.2 3.4-12.1-13.3 6.7z"/>
   <path id="path1297" fill="none" stroke="#000" stroke-width=".3" d="m304.4 265 76-65M363 233.5l6.7-24-25.9 3.7"/>
   <path id="path1299" fill="none" stroke="#000" stroke-width=".3" d="m352 242.8 6.7-24.2-25.8 3.7"/>
-  <path id="path1301" fill="none" stroke="#000" stroke-width=".3" d="M341.1 252 348 228l-25.9 3.7"/>
+  <path id="path1301" fill="none" stroke="#000" stroke-width=".3" d="m341.1 252 6.9-24-25.9 3.7"/>
   <path id="path1303" fill="none" stroke="#000" stroke-width=".3" d="m333 259 4-21.8-23.1 1.4"/>
   <path id="path1305" fill="none" stroke="#000" stroke-width=".3" d="m324.8 266 4-21.9-23 1.5"/>
   <path id="path1307" fill="none" stroke="#000" stroke-width=".3" d="m314.3 270.4 9.1-21.6-23.4 6.3"/>
@@ -58,7 +58,7 @@
   <path id="path1337" fill="none" stroke="#000" stroke-width=".3" d="m361.8 105.3 17.2 19.1 10-12.4"/>
   <path id="path1339" fill="none" stroke="#000" stroke-width=".3" d="m364 96.4 13.2 21.6 7.4-18.3"/>
   <path id="path1341" fill="#006d00" fill-rule="evenodd" stroke="#fff" stroke-width="1.7" d="m271.2 211.3 21.4-14.8-10.7-5.5 18.7 3.2-6.4-8.5 18.2 6.8-6.5-8.5 18.3 6.8-6.5-8.4 22 7.4-6.4-8.5 21.4 11-6.5-8.4 22 7.4 10.7 5.5 3.2 4.3-4.3 3-11.7 1.6-19 7.8 3.5-6.7L329 210l8.6-5.9-24.1 7 8.5-6-20.3 7.7 9.1-9.6-20.9 11.2 9.1-9.5-17 11.9 9.5-13.2z"/>
-  <path id="path1343" fill="none" stroke="#000" stroke-width=".3" d="m278 207.3 22-9.5L312 196l9.8-.1 17 1 15.2.7L384 201"/>
+  <path id="path1343" fill="none" stroke="#000" stroke-width=".3" d="m278 207.3 22-9.5 12-1.8 9.8-.1 17 1 15.2.7 30 3.4"/>
   <path id="path1345" fill="none" stroke="#000" stroke-width=".3" d="m352 210.4 17-10.4-17.3-13.5"/>
   <path id="path1347" fill="none" stroke="#000" stroke-width=".3" d="m333 208.8 20.9-11.1-17.2-13.5"/>
   <path id="path1349" fill="none" stroke="#000" stroke-width=".3" d="m319.5 208.5 19.1-11.5-17.3-12.5m-27 27 17.6-15.4-14.3-7.8"/>
