@@ -1,3 +1,8 @@
+# 6.5.1
+
+- Fix Eswatini
+- Fix Vanuatu
+
 # 6.5.0
 
 - Fix Guatemala
@@ -24,7 +29,7 @@
 
 # 6.4.3
 
-- Fix flag of Argentina
+- Fix Argentina
 
 # 6.4.2
 
@@ -32,4 +37,4 @@
 
 # 6.4.1
 
-- Added flag for Central European Free Trade Agreement ([CEFTA](https://en.wikipedia.org/wiki/Central_European_Free_Trade_Agreement))
+- Added Central European Free Trade Agreement ([CEFTA](https://en.wikipedia.org/wiki/Central_European_Free_Trade_Agreement)) flag
