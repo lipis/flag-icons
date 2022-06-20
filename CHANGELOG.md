@@ -1,3 +1,8 @@
+# 6.6.0
+
+- Fix Syria
+- Update SVGO settings
+
 # 6.5.1
 
 - Fix Eswatini
