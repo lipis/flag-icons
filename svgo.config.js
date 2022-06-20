@@ -1,16 +1,17 @@
 module.exports = {
-    plugins: [
-      {
-        name: 'preset-default',
-        params: {
-          overrides: {
-            cleanupIDs: false,
-          },
+  plugins: [
+    {
+      name: 'preset-default',
+      params: {
+        overrides: {
+          cleanupIDs: false,
         },
       },
-      'sortAttrs',
-      'removeDimensions',
-      'removeStyleElement',
-      'removeScriptElement',
-    ],
-  };
+    },
+    'convertStyleToAttrs',
+    'removeDimensions',
+    'removeScriptElement',
+    'removeStyleElement',
+    'sortAttrs',
+  ],
+};
