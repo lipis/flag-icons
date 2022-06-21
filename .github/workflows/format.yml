@@ -1,0 +1,17 @@
+name: Test Format
+
+on: pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js LTS
+        uses: actions/setup-node@v3
+        with:
+          node-version: "lts/*"
+      - name: Install and test
+        run: |
+          yarn --frozen-lockfile
+          yarn test
