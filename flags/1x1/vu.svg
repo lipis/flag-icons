@@ -4,8 +4,8 @@
       <path d="M0 0v475l420-195h480v-85H420Z"/>
     </clipPath>
   </defs>
-  <path fill="#009543" stroke-width=".783076" d="M0 0h512v512H0z"/>
-  <path fill="#d21034" stroke-width=".783076" d="M0 0h512v256H0z"/>
+  <path fill="#009543" stroke-width=".8" d="M0 0h512v512H0z"/>
+  <path fill="#d21034" stroke-width=".8" d="M0 0h512v256H0z"/>
   <g clip-path="url(#c)" transform="scale(.56889 1.0779)">
     <path stroke="#fdce12" stroke-width="110" d="m0 0 420 195h480v85H420L0 475"/>
     <path fill="none" stroke="#000" stroke-width="60" d="m0 0 420 195h480m0 85H420L0 475"/>
