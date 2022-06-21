@@ -11,7 +11,7 @@
   width: unit((4 / 3), em);
   line-height: 1em;
   &:before {
-    content: '\00a0';
+    content: "\00a0";
   }
   &.fis {
     width: 1em;
@@ -20,9 +20,9 @@
 
 .flag-icon(@country) {
   .fi-@{country} {
-    background-image: ~'url(@{flag-icons-path}@{flag-icons-rect-path}/@{country}.svg)';
+    background-image: ~"url(@{flag-icons-path}@{flag-icons-rect-path}/@{country}.svg)";
     &.fis {
-      background-image: ~'url(@{flag-icons-path}@{flag-icons-square-path}/@{country}.svg)';
+      background-image: ~"url(@{flag-icons-path}@{flag-icons-square-path}/@{country}.svg)";
     }
   }
 }
