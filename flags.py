@@ -18,7 +18,6 @@ country_codes = [flag["code"] for flag in flags]
 with open("country.json", "w") as output:
     json.dump(flags, output, indent=2, sort_keys=True)
 
-
 all_good = True
 
 # Check if all files have names
@@ -37,5 +36,4 @@ for code in country_codes:
 if all_good:
     print("All flag icons and country.json are in sync.")
     exit(0)
-
 exit(1)
