@@ -35,3 +35,5 @@ for code in country_codes:
 
 if all_good:
     print("All flag icons and country.json are in sync.")
+    exit(0)
+exit(1)
