@@ -30,7 +30,7 @@
     "svgo:min": "find flags | grep '\\.svg$' | xargs -Iz -n 1 svgo z",
     "svgo:all": "find flags | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z",
     "fix": "yarn prettier --write",
-    "prettier": "prettier \"**/*.{html,json,md,scss,less,yaml,yml}\"",
+    "prettier": "prettier \"**/*.{html,json,md,scss,less,yaml,yml,js}\"",
     "test": "yarn prettier --list-different"
   }
 }
