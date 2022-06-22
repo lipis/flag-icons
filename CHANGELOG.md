@@ -1,3 +1,7 @@
+# 6.6.1
+
+- Remove IDs and add manually the id of the flag to the root
+
 # 6.6.0
 
 - Fix Syria
