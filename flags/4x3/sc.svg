@@ -1,12 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-sc" viewBox="0 0 640 480">
-  <defs id="defs460">
-    <clipPath id="sc-a">
-      <path id="path457" fill-opacity=".7" d="M0 0h682.7v512H0z"/>
-    </clipPath>
-  </defs>
-  <path id="path186" fill="#fff" stroke-width="130.6" d="M0 0h640v480H0Z"/>
-  <path id="path188" fill="#d92223" stroke-width="130.6" d="M0 480V0h640v160z"/>
-  <path id="path190" fill="#fcd955" stroke-width="130.6" d="M0 480V0h426.7z"/>
-  <path id="path192" fill="#003d88" stroke-width="130.6" d="M0 480V0h213.3z"/>
-  <path id="path194" fill="#007a39" stroke-width="130.6" d="m0 480 640-160v160z"/>
+  <path fill="#fff" d="M0 0h640v480H0Z"/>
+  <path fill="#d92223" d="M0 480V0h640v160z"/>
+  <path fill="#fcd955" d="M0 480V0h426.7z"/>
+  <path fill="#003d88" d="M0 480V0h213.3z"/>
+  <path fill="#007a39" d="m0 480 640-160v160z"/>
 </svg>
