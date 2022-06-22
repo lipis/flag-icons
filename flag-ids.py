@@ -11,20 +11,20 @@ for (dirpath, dirnames, filenames) in os.walk(dir_1x1):
 
 
 def add_ids(directory):
-  for f in files:
-    filename = os.path.join(directory, f)
-    update = False
-    flag_id = 'flag-icons-%s' % (f.replace(".svg", ""))
-    with open(filename, "r") as flag:
-      lines = flag.readlines()
-      if lines[0].find('id') == -1 and lines[0].find('viewBox') > 0:
-        lines[0] = lines[0].replace('viewBox', 'id="%s" viewBox' % flag_id)
-        update = True
+    for f in files:
+        filename = os.path.join(directory, f)
+        update = False
+        flag_id = "flag-icons-%s" % (f.replace(".svg", ""))
+        with open(filename, "r") as flag:
+            lines = flag.readlines()
+            if lines[0].find("id") == -1 and lines[0].find("viewBox") > 0:
+                lines[0] = lines[0].replace("viewBox", 'id="%s" viewBox' % flag_id)
+                update = True
 
-    if update:
-      print('Adding ID to', filename)
-      with open(filename, "w") as flag:
-        flag.writelines(lines)
+        if update:
+            print("Adding ID to", filename)
+            with open(filename, "w") as flag:
+                flag.writelines(lines)
 
 
 add_ids(dir_1x1)
