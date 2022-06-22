@@ -1,4 +1,4 @@
-# 6.6.1
+# 6.6.2
 
 - Remove IDs and add manually the id of the flag to the root
 
