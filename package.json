@@ -28,7 +28,8 @@
     "start": "http-server -a localhost -p 8000",
     "svgo": "svgo --pretty --indent=2 --precision=1",
     "svgo:min": "find flags | grep '\\.svg$' | xargs -Iz -n 1 svgo z",
-    "svgo:all": "find flags | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z",
+    "svgo:all": "find flags | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z && yarn ids",
+    "ids": "python3 flag-ids.py",
     "fix": "yarn prettier --write",
     "prettier": "prettier \"**/*.{html,json,md,scss,less,yaml,yml,js}\"",
     "test": "yarn prettier --list-different"
