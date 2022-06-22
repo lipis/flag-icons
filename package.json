@@ -22,15 +22,16 @@
     "svgo": "2.8.0"
   },
   "scripts": {
-    "build": "yarn build:dev && yarn build:min",
     "build:dev": "lessc less/flag-icons.less > css/flag-icons.css",
     "build:min": "lessc -x less/flag-icons.less > css/flag-icons.min.css",
-    "start": "http-server -a localhost -p 8000",
-    "svgo": "svgo --pretty --indent=2 --precision=1",
-    "svgo:min": "find flags | grep '\\.svg$' | xargs -Iz -n 1 svgo z",
-    "svgo:all": "find flags | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z",
+    "build": "yarn build:dev && yarn build:min",
     "fix": "yarn prettier --write",
+    "ids": "python3 flag-ids.py",
     "prettier": "prettier \"**/*.{html,json,md,scss,less,yaml,yml,js}\"",
+    "start": "http-server -a localhost -p 8000",
+    "svgo:all": "find flags | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z && yarn ids",
+    "svgo:min": "find flags | grep '\\.svg$' | xargs -Iz -n 1 svgo z && yarn ids",
+    "svgo": "svgo --pretty --indent=2 --precision=1",
     "test": "yarn prettier --list-different"
   }
 }
