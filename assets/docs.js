@@ -74,6 +74,10 @@ const show4x3 = () => {
     console.log(flag);
     flag.classList.add("hide");
   }
+  gtag("event", "switch", {
+    event_category: "flags",
+    event_label: "4x3",
+  });
 };
 
 const show1x1 = () => {
@@ -91,6 +95,11 @@ const show1x1 = () => {
     console.log(flag);
     flag.classList.add("hide");
   }
+
+  gtag("event", "switch", {
+    event_category: "flags",
+    event_label: "1x1",
+  });
 };
 
 window.onload = function () {
