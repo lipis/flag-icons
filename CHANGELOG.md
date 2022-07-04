@@ -1,3 +1,7 @@
+# 6.6.3
+
+- Updated some of capitals in `country.json`
+
 # 6.6.2
 
 - Remove IDs and add manually the id of the flag to the root
@@ -42,8 +46,13 @@
 
 # 6.4.2
 
-- Convert text to path in flags: **sm**, **gu**.
+- Convert text to path in flags: **sm**, **gu**
 
 # 6.4.1
 
 - Added Central European Free Trade Agreement ([CEFTA](https://en.wikipedia.org/wiki/Central_European_Free_Trade_Agreement)) flag
+
+# 5.0.0
+
+- The package name changed from `flag-icon-css` to `flag-icons`
+- The class names changed from `flag-icon` `flag-icon-[xx]` to `fi` `fi-[xx]`
