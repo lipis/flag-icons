@@ -1,6 +1,8 @@
 [
   {
+    "capital": "Georgetown",
     "code": "ac",
+    "continent": "Africa",
     "flag_1x1": "flags/1x1/ac.svg",
     "flag_4x3": "flags/4x3/ac.svg",
     "iso": false,
