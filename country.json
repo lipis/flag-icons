@@ -265,7 +265,7 @@
     "flag_1x1": "flags/1x1/bo.svg",
     "flag_4x3": "flags/4x3/bo.svg",
     "iso": true,
-    "name": "Bolivia (Plurinational State of)"
+    "name": "Bolivia"
   },
   {
     "capital": "Kralendijk",
@@ -1064,7 +1064,7 @@
     "flag_1x1": "flags/1x1/ir.svg",
     "flag_4x3": "flags/4x3/ir.svg",
     "iso": true,
-    "name": "Iran (Islamic Republic of)"
+    "name": "Iran"
   },
   {
     "capital": "Reykjavik",
@@ -2248,7 +2248,7 @@
     "flag_1x1": "flags/1x1/ve.svg",
     "flag_4x3": "flags/4x3/ve.svg",
     "iso": true,
-    "name": "Venezuela (Bolivarian Republic of)"
+    "name": "Venezuela"
   },
   {
     "capital": "Road Town",
