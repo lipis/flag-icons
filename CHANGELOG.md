@@ -1,3 +1,10 @@
+# 6.6.4
+
+- Updated country names in `country.json`
+- Fix Greece
+- Fix Indonesia
+- Fix Japana
+
 # 6.6.3
 
 - Updated some of capitals in `country.json`
