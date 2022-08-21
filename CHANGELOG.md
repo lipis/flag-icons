@@ -1,3 +1,7 @@
+# Unreleased
+
+- Fix Albania flag colors (Issue #1028)
+
 # 6.6.4
 
 - Updated country names in `country.json`
