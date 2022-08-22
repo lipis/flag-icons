@@ -1,6 +1,7 @@
 # Unreleased
 
 - Fix Albania flag colors (Issue #1028)
+- Fix South Africa flag colors (Issue #1020)
 
 # 6.6.4
 
