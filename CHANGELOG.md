@@ -1,3 +1,7 @@
+# 6.6.6
+
+- Fix encoding and sort by name the `country.json` file
+
 # 6.6.5
 
 - Fix Albania flag colors (Issue #1028)
