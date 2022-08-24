@@ -12,11 +12,11 @@ file_codes = [name.replace(".svg", "") for name in files]
 
 country_json = open("country.json")
 flags = json.load(country_json)
-flags.sort(key=lambda x: x["code"])
+flags.sort(key=lambda x: x["name"])
 country_codes = [flag["code"] for flag in flags]
 
-with open("country.json", "w") as output:
-    json.dump(flags, output, indent=2, sort_keys=True)
+with open("country.json", "w", encoding='utf8') as output:
+    json.dump(flags, output, indent=2, sort_keys=True, ensure_ascii=False)
 
 all_good = True
 
