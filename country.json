@@ -238,7 +238,7 @@
     "flag_1x1": "flags/1x1/bl.svg",
     "flag_4x3": "flags/4x3/bl.svg",
     "iso": true,
-    "name": "Saint Barth\u00e9lemy"
+    "name": "Saint Barthélemy"
   },
   {
     "capital": "Hamilton",
@@ -405,7 +405,7 @@
     "flag_1x1": "flags/1x1/ci.svg",
     "flag_4x3": "flags/4x3/ci.svg",
     "iso": true,
-    "name": "C\u00f4te d'Ivoire"
+    "name": "Côte d'Ivoire"
   },
   {
     "capital": "Avarua",
@@ -426,7 +426,7 @@
     "name": "Chile"
   },
   {
-    "capital": "Yaound\u00e9",
+    "capital": "Yaoundé",
     "code": "cm",
     "continent": "Africa",
     "flag_1x1": "flags/1x1/cm.svg",
@@ -460,7 +460,7 @@
     "name": "Clipperton Island"
   },
   {
-    "capital": "San Jos\u00e9",
+    "capital": "San José",
     "code": "cr",
     "continent": "North America",
     "flag_1x1": "flags/1x1/cr.svg",
@@ -493,7 +493,7 @@
     "flag_1x1": "flags/1x1/cw.svg",
     "flag_4x3": "flags/4x3/cw.svg",
     "iso": true,
-    "name": "Cura\u00e7ao"
+    "name": "Curaçao"
   },
   {
     "capital": "Flying Fish Cove",
@@ -711,7 +711,7 @@
     "name": "Federated States of Micronesia"
   },
   {
-    "capital": "T\u00f3rshavn",
+    "capital": "Tórshavn",
     "code": "fo",
     "continent": "Europe",
     "flag_1x1": "flags/1x1/fo.svg",
@@ -1337,7 +1337,7 @@
     "name": "Monaco"
   },
   {
-    "capital": "Chi\u0219in\u0103u",
+    "capital": "Chișinău",
     "code": "md",
     "continent": "Europe",
     "flag_1x1": "flags/1x1/md.svg",
@@ -1481,7 +1481,7 @@
     "name": "Mauritius"
   },
   {
-    "capital": "Mal\u00e9",
+    "capital": "Malé",
     "code": "mv",
     "continent": "Asia",
     "flag_1x1": "flags/1x1/mv.svg",
@@ -1535,7 +1535,7 @@
     "name": "Namibia"
   },
   {
-    "capital": "Noum\u00e9a",
+    "capital": "Nouméa",
     "code": "nc",
     "continent": "Oceania",
     "flag_1x1": "flags/1x1/nc.svg",
@@ -1760,7 +1760,7 @@
     "name": "Palau"
   },
   {
-    "capital": "Asunci\u00f3n",
+    "capital": "Asunción",
     "code": "py",
     "continent": "South America",
     "flag_1x1": "flags/1x1/py.svg",
@@ -1784,7 +1784,7 @@
     "flag_1x1": "flags/1x1/re.svg",
     "flag_4x3": "flags/4x3/re.svg",
     "iso": true,
-    "name": "R\u00e9union"
+    "name": "Réunion"
   },
   {
     "capital": "Bucharest",
@@ -1967,7 +1967,7 @@
     "name": "South Sudan"
   },
   {
-    "capital": "S\u00e3o Tom\u00e9",
+    "capital": "São Tomé",
     "code": "st",
     "continent": "Africa",
     "flag_1x1": "flags/1x1/st.svg",
@@ -2037,7 +2037,7 @@
     "name": "Chad"
   },
   {
-    "capital": "Saint-Pierre, R\u00e9union",
+    "capital": "Saint-Pierre, Réunion",
     "code": "tf",
     "continent": "Africa",
     "flag_1x1": "flags/1x1/tf.svg",
@@ -2046,7 +2046,7 @@
     "name": "French Southern Territories"
   },
   {
-    "capital": "Lom\u00e9",
+    "capital": "Lomé",
     "code": "tg",
     "continent": "Africa",
     "flag_1x1": "flags/1x1/tg.svg",
@@ -2109,7 +2109,7 @@
     "name": "Tunisia"
   },
   {
-    "capital": "Nuku\u02bbalofa",
+    "capital": "Nukuʻalofa",
     "code": "to",
     "continent": "Oceania",
     "flag_1x1": "flags/1x1/to.svg",
