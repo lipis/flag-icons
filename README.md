@@ -20,8 +20,9 @@ First, you need to import css:
 import "/node_modules/flag-icons/css/flag-icons.min.css";
 ```
 
-or Use CDN
-```
+or use CDN:
+
+```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css">
 ```
 
