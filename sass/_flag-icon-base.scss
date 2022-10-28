@@ -26,12 +26,16 @@
   .flag-icon-#{$country} {
     background-image: url(#{$flag-icon-css-path}#{$flag-icon-rect-path}/#{$country}.svg);
     
-    &.flag-icon-squared, &.flag-icon-rounded {
+    &.flag-icon-squared {
       background-image: url(#{$flag-icon-css-path}#{$flag-icon-square-path}/#{$country}.svg);
     }
     
     &.flag-icon-custom {
       background-image: url(#{$flag-icon-css-path}#{$flag-icon-custom-path}/#{$country}.svg);
+    }
+    
+    &.flag-icon-rounded {
+      background-image: url(#{$flag-icon-css-path}#{$flag-icon-rounded-path}/#{$country}.svg);
     }
   }
 }
