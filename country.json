@@ -388,6 +388,13 @@
     "name": "Catalonia"
   },
   {
+    "code": "es-pv",
+    "flag_1x1": "flags/1x1/es-pv.svg",
+    "flag_4x3": "flags/4x3/es-pv.svg",
+    "iso": false,
+    "name": "Basque Country"
+  },
+  {
     "capital": "George Town",
     "code": "ky",
     "continent": "North America",
