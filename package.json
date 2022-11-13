@@ -33,5 +33,8 @@
     "svgo:min": "find flags | grep '\\.svg$' | xargs -Iz -n 1 svgo z && yarn ids",
     "svgo": "svgo --pretty --indent=2 --precision=1",
     "test": "yarn prettier --list-different"
+  },
+  "dependencies": {
+    "flag-icons": "^6.6.6"
   }
 }
