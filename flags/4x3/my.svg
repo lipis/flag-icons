@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 640 480">
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-my" viewBox="0 0 640 480">
   <g clip-path="url(#a)">
     <path fill="#C00" d="M0 0h640v480H0V0Z"/>
     <path fill="#C00" d="M0 0h640v34.3H0z"/>
