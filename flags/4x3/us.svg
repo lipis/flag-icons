@@ -1,14 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-us" viewBox="0 0 640 480" fill="#fff">
-  <path id="a" fill="#fff" d="m30.4 11 3.4 10.3h10.6l-8.6 6.3 3.3 10.3-8.7-6.4-8.6 6.3L25 27.6l-8.7-6.3h10.9z"/>
-  <pattern id="p" patternUnits="userSpaceOnUse" width="60.8" height="51.55">
-    <use xlink:href="#a"/>
-  </pattern>
-  <pattern id="l" patternUnits="userSpaceOnUse" width="640" height="73.86">
-    <line stroke="#bd3d44" x2="640" stroke-width="38" y1="18" y2="18"/>
-  </pattern>
-  <path d="M0 0h640v480H0"/>
-  <path fill="url(#l)" d="M0 0h640v480H0"/>
-  <path fill="#192f5d" d="M0 0h365v259H0"/>
-  <path fill="url(#p)" d="M0 0h350v250H0"/>
-  <path fill="url(#p)" d="M0 0h310v200H0" transform="translate(30 26)"/>
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-us" viewBox="0 0 640 480">
+  <path fill="#bd3d44" d="M0 0h640v480H0"/>
+  <path stroke="#fff" stroke-width="37" d="M0 55.3h640M0 129h640M0 203h640M0 277h640M0 351h640M0 425h640"/>
+  <path fill="#192f5d" d="M0 0h364.8v258.5H0"/>
+  <marker id="a" markerHeight="30" markerWidth="30">
+    <path fill="#fff" d="m14 0 9 27L0 10h28L5 27z"/>
+  </marker>
+  <path fill="none" marker-mid="url(#a)" d="m0 0 16 11h61 61 61 61 60L47 37h61 61 60 61L16 63h61 61 61 61 60L47 89h61 61 60 61L16 115h61 61 61 61 60L47 141h61 61 60 61L16 166h61 61 61 61 60L47 192h61 61 60 61L16 218h61 61 61 61 60L0 0"/>
 </svg>
