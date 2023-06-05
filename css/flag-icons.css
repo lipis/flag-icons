@@ -13,7 +13,7 @@
   line-height: 1em;
 }
 .fi:before {
-  content: '\00a0';
+  content: "\00a0";
 }
 .fi.fis {
   width: 1em;
@@ -1523,6 +1523,12 @@
 }
 .fi-ac.fis {
   background-image: url(../flags/1x1/ac.svg);
+}
+.fi-arab {
+  background-image: url(../flags/4x3/arab.svg);
+}
+.fi-arab.fis {
+  background-image: url(../flags/1x1/arab.svg);
 }
 .fi-cefta {
   background-image: url(../flags/4x3/cefta.svg);
