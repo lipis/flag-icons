@@ -1,4 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-es-ct" viewBox="0 0 640 480">
-  <path fill="#fcdd09" d="M0 0h640v480H0z"/>
-  <path stroke="#da121a" stroke-width="60" d="M0 90h810m0 120H0m0 120h810m0 120H0" transform="scale(.79012 .88889)"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fbdd03;
+      }
+
+      .cls-2 {
+        fill: #010101;
+        stroke: #da1f27;
+        stroke-width: 60px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" y=".46" width="600" height="450"/>
+  <path class="cls-2" d="M0,75.46H600m0,100H0m0,100H600m0,100H0"/>
 </svg>

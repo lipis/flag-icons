@@ -1,5 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-es-pv" viewBox="0 0 512 512">
-  <path fill="#d52b1e" d="m0 0h512v512h-512z" />
-  <path fill="#009b48" d="m0 0h42.5l106.7 106.7c58.7 58.7 106.8 106.7 106.8 106.7 0 0 48.1-48 213.5-213.4h42.5v42.5l-106.7 106.7c-58.7 58.7-106.7 106.8-106.7 106.8 0 0 48 48.1 213.4 213.5v42.5h-42.5l-106.7-106.7c-58.7-58.7-106.8-106.7-106.8-106.7 0 0-48.1 48-213.5 213.4h-42.5v-42.5l106.7-106.7c58.7-58.7 106.7-106.8 106.7-106.8 0 0-48-48.1-213.4-213.5v-21.2z" />
-  <path fill="#fff" d="m221.9 0h68.2v221.9h221.9v68.2h-221.9v221.9h-68.2v-221.9h-221.9v-68.2h221.9v-111z" />
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 450 450" style="enable-background:new 0 0 450 450;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#D42E27;}
+	.st1{fill:#059B49;}
+	.st2{fill:#FFFFFF;}
+</style>
+<path class="st0" d="M0,0v450h450V0H0z"/>
+<polygon class="st1" points="450,0 389.4,0 226.4,162.9 63.3,0 0.1,0 0,0.1 0,58.3 165.5,223.7 0,389.1 0,447.2 2.8,450 60.7,450 
+	226.4,284.5 392,450 450,450 450,450 450,386.3 287.2,223.7 450,61 "/>
+<polygon class="st2" points="450,180.8 269.4,180.8 269.4,0 183.4,0 183.4,180.8 1.3,180.8 1.3,266.8 183.4,266.8 183.4,448.7 
+	269.4,448.7 269.4,266.8 450,266.8 "/>
 </svg>
