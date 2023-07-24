@@ -187,6 +187,13 @@
     "name": "Barbados"
   },
   {
+    "code": "es-pv",
+    "flag_1x1": "flags/1x1/es-pv.svg",
+    "flag_4x3": "flags/4x3/es-pv.svg",
+    "iso": false,
+    "name": "Basque Country"
+  },
+  {
     "capital": "Minsk",
     "code": "by",
     "continent": "Europe",
@@ -386,13 +393,6 @@
     "flag_4x3": "flags/4x3/es-ct.svg",
     "iso": false,
     "name": "Catalonia"
-  },
-  {
-    "code": "es-pv",
-    "flag_1x1": "flags/1x1/es-pv.svg",
-    "flag_4x3": "flags/4x3/es-pv.svg",
-    "iso": false,
-    "name": "Basque Country"
   },
   {
     "capital": "George Town",
@@ -1180,6 +1180,13 @@
     "flag_4x3": "flags/4x3/lv.svg",
     "iso": true,
     "name": "Latvia"
+  },
+  {
+    "code": "arab",
+    "flag_1x1": "flags/1x1/arab.svg",
+    "flag_4x3": "flags/4x3/arab.svg",
+    "iso": false,
+    "name": "League of Arab States"
   },
   {
     "capital": "Beirut",
