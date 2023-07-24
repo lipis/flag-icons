@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-gb-nir" viewBox="0 0 512 512">
   <path fill="#fff" d="M0 0h512v512H0z"/>
   <rect fill="#fff" fill-rule="evenodd" rx="0" ry="0"/>
-  <rect id="a" width="512" height="102.4" y="204.8" fill="#c00" fill-rule="evenodd" rx="0" ry="0"/>
-  <use xlink:href="#a" width="600" height="300" transform="matrix(0 1 -.9375 0 496 0)"/>
+  <rect id="gb-nir-a" width="512" height="102.4" y="204.8" fill="#c00" fill-rule="evenodd" rx="0" ry="0"/>
+  <use xlink:href="#gb-nir-a" width="600" height="300" transform="matrix(0 1 -.9375 0 496 0)"/>
   <path fill="#ebeae3" fill-rule="evenodd" stroke="#000" stroke-width=".5" d="M291.2 156.4c3-5.2 1.2-8.5-3.4-9.5 0 0-14.9 5-31 5.6-16 .6-35-4.3-35-4.3-3.5 2.3-2.7 7.8-1 11.2 0 0 16.8 5.9 36 5.3a108 108 0 0 0 30.1-5.8c3.7-1.3 4.3-2.5 4.3-2.5z"/>
   <path fill="#fff" stroke="#161111" stroke-width="1.6" d="m320 389.6-30.9-64.2-70.9 5.4 40-58.8-40-58.8 71 5.4 30.8-64.1 30.9 64 70.9-5.3-40 58.8 40 58.8-71-5.4z" transform="matrix(1 0 0 1.06667 -64 -34.1)"/>
   <path fill="#b02320" fill-rule="evenodd" stroke="#000" stroke-width="1.4" d="M255.5 130.4c38.8 6.8 37.4 8.7 37.4 8.7L303 107s1.1-6.4-1.7-10.3-10.5-1.7-10.5-1.7-1-5.2-4.5-6.4c-3.4-1.3-16 4.9-20 6.2-4 1.4-6 2.7-11.5 2.6a52.1 52.1 0 0 1-17.3-6.3 15 15 0 0 0-6.9-2c-2.4.1-5 .8-6.3 2.6-1.2 1.9-1.2 4.1-1.2 4.1s-2-1.3-5.3-1.3c-3.2 0-5 .4-6.5 2.2-1.4 1.9-3.4 7-3.4 7l3.7 8.7.2 12 7.5 12.8 36.2-6.7z"/>
