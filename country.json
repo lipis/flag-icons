@@ -420,13 +420,6 @@
     "name": "Central European Free Trade Agreement"
   },
   {
-    "code": "ea",
-    "flag_1x1": "flags/1x1/ea.svg",
-    "flag_4x3": "flags/4x3/ea.svg",
-    "iso": false,
-    "name": "Ceuta & Melilla"
-  },
-  {
     "capital": "N'Djamena",
     "code": "td",
     "continent": "Africa",
