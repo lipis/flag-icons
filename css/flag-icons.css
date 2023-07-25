@@ -1554,6 +1554,12 @@
 .fi-ea.fis {
   background-image: url(../flags/1x1/ea.svg);
 }
+.fi-eac {
+  background-image: url(../flags/4x3/eac.svg);
+}
+.fi-eac.fis {
+  background-image: url(../flags/1x1/eac.svg);
+}
 .fi-es-ct {
   background-image: url(../flags/4x3/es-ct.svg);
 }

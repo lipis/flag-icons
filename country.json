@@ -621,6 +621,13 @@
     "name": "Dominican Republic"
   },
   {
+    "code": "eac",
+    "flag_1x1": "flags/1x1/eac.svg",
+    "flag_4x3": "flags/4x3/eac.svg",
+    "iso": false,
+    "name": "East African Community"
+  },
+  {
     "capital": "Quito",
     "code": "ec",
     "continent": "South America",
