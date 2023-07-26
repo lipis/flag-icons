@@ -3,7 +3,6 @@
     @include flag-icon($country);
   }
 } @else {
-  @include flag-icon(xx);
   @include flag-icon(ad);
   @include flag-icon(ae);
   @include flag-icon(af);
@@ -248,6 +247,7 @@
   @include flag-icon(vu);
   @include flag-icon(wf);
   @include flag-icon(ws);
+  @include flag-icon(xx);
   @include flag-icon(ye);
   @include flag-icon(yt);
   @include flag-icon(za);
@@ -256,9 +256,11 @@
 
   // Other flags
   @include flag-icon(ac);
+  @include flag-icon(arab);
   @include flag-icon(cefta);
   @include flag-icon(cp);
   @include flag-icon(dg);
+  @include flag-icon(eac);
   @include flag-icon(es-ct);
   @include flag-icon(es-ga);
   @include flag-icon(es-pv);
