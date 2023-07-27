@@ -25,7 +25,7 @@ or use CDN:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.6.6/css/flag-icons.min.css"
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.9.2/css/flag-icons.min.css"
 />
 ```
 
