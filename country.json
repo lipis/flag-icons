@@ -2159,15 +2159,6 @@
     "name": "Tunisia"
   },
   {
-    "capital": "Ankara",
-    "code": "tr",
-    "continent": "Asia",
-    "flag_1x1": "flags/1x1/tr.svg",
-    "flag_4x3": "flags/4x3/tr.svg",
-    "iso": true,
-    "name": "Turkey"
-  },
-  {
     "capital": "Ashgabat",
     "code": "tm",
     "continent": "Asia",
@@ -2193,6 +2184,15 @@
     "flag_4x3": "flags/4x3/tv.svg",
     "iso": true,
     "name": "Tuvalu"
+  },
+  {
+    "capital": "Ankara",
+    "code": "tr",
+    "continent": "Asia",
+    "flag_1x1": "flags/1x1/tr.svg",
+    "flag_4x3": "flags/4x3/tr.svg",
+    "iso": true,
+    "name": "Türkiye"
   },
   {
     "capital": "Kampala",
