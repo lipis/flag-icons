@@ -1,11 +1,25 @@
 # 6.9.2
 
+- Update SASS (#1122)
+- Fix remove references to "ea" (#1121)
+
+# 6.9.1
+
 - Remove Ceuta and Melilla (#1119)
+
+# 6.9.0
+
 - Add East African Community (#1118)
 - Fix Holy See (#1117)
+
+# 6.8.0
+
 - Added composer configuration. (#1091)
 - Add Arab League flag (#1116)
 - SVGO ids (#1115)
+
+# 6.7.0
+
 - Fix blurry US flag in Safari (#1096)
 - Correcting Tunisia flag to match post 1999 shape updates (#1090)
 - Correct green color in Saudi Arabia flag (#1080)
