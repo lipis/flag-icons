@@ -1,3 +1,25 @@
+# 6.9.2
+
+- Remove Ceuta and Melilla (#1119)
+- Add East African Community (#1118)
+- Fix Holy See (#1117)
+- Added composer configuration. (#1091)
+- Add Arab League flag (#1116)
+- SVGO ids (#1115)
+- Fix blurry US flag in Safari (#1096)
+- Correcting Tunisia flag to match post 1999 shape updates (#1090)
+- Correct green color in Saudi Arabia flag (#1080)
+- Remove mix-blend-mode from Georgia flag (#1079)
+- Fix flag of Malaysia (#1058)
+- Fix Antigua and Barbuda flags (#1066)
+- Add cefta flag to stylesheets (#1065)
+- Fix flag of Kazakhstan (#1056)
+- Fix flag of Dominican Republic (#1052)
+- Add flag for Basque Country (#1050)
+- Fix colors of Cuban flag (#1044)
+- Fix Nepali flag should be transparent (#1034)
+- Added CDN (#1032)
+
 # 6.6.6
 
 - Fix encoding and sort by name the `country.json` file
