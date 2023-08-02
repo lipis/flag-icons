@@ -3,6 +3,9 @@
     @include flag-icon($country);
   }
 } @else {
+  // Keep xx first as it is often used as fallback
+  @include flag-icon(xx);
+
   @include flag-icon(ad);
   @include flag-icon(ae);
   @include flag-icon(af);
@@ -247,7 +250,6 @@
   @include flag-icon(vu);
   @include flag-icon(wf);
   @include flag-icon(ws);
-  @include flag-icon(xx);
   @include flag-icon(ye);
   @include flag-icon(yt);
   @include flag-icon(za);
