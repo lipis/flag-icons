@@ -1,3 +1,8 @@
+# 6.9.3
+
+- Change Turkey to Türkiye (#1125)
+- Move `xx` back to the top of the CSS (#1129)
+
 # 6.9.2
 
 - Update SASS (#1122)
