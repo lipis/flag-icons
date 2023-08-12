@@ -1,3 +1,7 @@
+# 6.9.4
+
+- Fix Flag of Chad (#1135)
+
 # 6.9.3
 
 - Change Turkey to Türkiye (#1125)
