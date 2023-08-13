@@ -6,7 +6,7 @@
   "main": "css/flag-icons.css",
   "repository": {
     "type": "git",
-    "url": "http://github.com/lipis/flag-icons"
+    "url": "https://github.com/lipis/flag-icons"
   },
   "files": [
     "css",
