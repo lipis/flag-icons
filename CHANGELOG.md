@@ -1,3 +1,9 @@
+# 6.9.5
+
+- Improve Anguilla color and file size (#1138)
+- Update Peru flag (#1137)
+- Update um to match us flag (#1136)
+
 # 6.9.4
 
 - Fix Flag of Chad (#1135)
