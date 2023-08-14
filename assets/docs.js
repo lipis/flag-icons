@@ -66,12 +66,10 @@ const show4x3 = () => {
   click4x3.classList.add("hide");
   const flags = document.getElementsByClassName("flag-img");
   for (flag of flags) {
-    console.log(flag);
     flag.classList.remove("hide");
   }
   const flagsSquared = document.getElementsByClassName("flag-img-square");
   for (flag of flagsSquared) {
-    console.log(flag);
     flag.classList.add("hide");
   }
   gtag("event", "switch", {
@@ -87,12 +85,10 @@ const show1x1 = () => {
   click1x1.classList.add("hide");
   const flagsSquared = document.getElementsByClassName("flag-img-square");
   for (flag of flagsSquared) {
-    console.log(flag);
     flag.classList.remove("hide");
   }
   const flags = document.getElementsByClassName("flag-img");
   for (flag of flags) {
-    console.log(flag);
     flag.classList.add("hide");
   }
 
