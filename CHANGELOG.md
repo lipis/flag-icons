@@ -1,3 +1,10 @@
+# 6.10.0
+
+- Update Martinique (#1145)
+- Update Saint Helena, Ascension and Tristan da Cunha (#1146)
+- Fix flag of Ascension Island (#1147)
+- Unrelated to flags: Improved homepage
+
 # 6.9.5
 
 - Improve Anguilla color and file size (#1138)
