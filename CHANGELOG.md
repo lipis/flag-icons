@@ -1,3 +1,7 @@
+# 6.11.0
+
+- Run SVGO on all files (#1149)
+
 # 6.10.1
 
 - Flag of Turkmenistan (#1148)
