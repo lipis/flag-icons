@@ -1,4 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-gb-nir" viewBox="0 0 640 480">
+  <defs>
+    <path id="reuse-0" fill="#eee" stroke="#1e1e1e" stroke-linejoin="round" d="M430.6 247.4a6.5 6.5 0 0 1-6.4 6.5 6.5 6.5 0 0 1-6.5-6.5 6.5 6.5 0 0 1 6.4-6.5 6.5 6.5 0 0 1 6.5 6.5"/>
+  </defs>
   <path fill="#fff" d="M0 0h640v480H0z"/>
   <rect fill="#fff" fill-rule="evenodd" rx="0" ry="0"/>
   <rect id="gb-nir-a" width="640" height="96" y="192" fill="#c00" fill-rule="evenodd" rx="0" ry="0"/>
@@ -71,11 +74,11 @@
     <path fill="#eee" stroke="#1e1e1e" stroke-linejoin="round" stroke-width="1.2" d="M273 105.5c0 1.8-1.5 3.4-3.4 3.4a3.4 3.4 0 0 1-3.3-3.4 3.4 3.4 0 0 1 3.3-3.5 3.4 3.4 0 0 1 3.4 3.4"/>
     <path fill="#a3afb8" fill-rule="evenodd" d="M268 107.2s2.8 0 3-1.1c.3-1.1-.1-2.6-.1-2.6s1.3 1.4 1 2.5c-.5 1.1-.8 1.4-1.7 1.7a3 3 0 0 1-2.1-.5z"/>
     <g stroke-width="2.8">
-      <path fill="#eee" stroke="#1e1e1e" stroke-linejoin="round" d="M430.6 247.4a6.5 6.5 0 0 1-6.4 6.5 6.5 6.5 0 0 1-6.5-6.5 6.5 6.5 0 0 1 6.4-6.5 6.5 6.5 0 0 1 6.5 6.5" transform="matrix(.31597 -.08466 .13499 .50378 109.4 30)"/>
+      <use xlink:href="#reuse-0" stroke-linejoin="round" transform="matrix(.31597 -.08466 .13499 .50378 109.4 30)"/>
       <path fill="#a3afb8" fill-rule="evenodd" d="M276.3 120.7s1.6-.5 1.5-1.6c0-1.1-.7-2.4-.7-2.4s1.1 1.1 1.2 2.3c0 1-.1 1.4-.6 1.8-.3.2-1 .2-1.4-.1z"/>
     </g>
     <g stroke-width="2.8">
-      <path fill="#eee" stroke="#1e1e1e" stroke-linejoin="round" d="M430.6 247.4a6.5 6.5 0 0 1-6.4 6.5 6.5 6.5 0 0 1-6.5-6.5 6.5 6.5 0 0 1 6.4-6.5 6.5 6.5 0 0 1 6.5 6.5" transform="matrix(.31758 .0784 -.125 .50636 260 -40.2)"/>
+      <use xlink:href="#reuse-0" stroke-linejoin="round" transform="matrix(.31758 .0784 -.125 .50636 260 -40.2)"/>
       <path fill="#a3afb8" fill-rule="evenodd" d="M362.3 119.8s1.7.4 2.1-.7c.5-1 .5-2.5.5-2.5s.5 1.6 0 2.6-.8 1.3-1.4 1.3c-.4.1-1-.3-1.2-.7z"/>
     </g>
   </g>

@@ -1,4 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-dm" viewBox="0 0 640 480">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-dm" viewBox="0 0 640 480">
+  <defs>
+    <path id="reuse-0" fill="#ff0" stroke-width="3.9" d="M529.6 405.5c0 40 45.6 27.8 46.8 61.2-.7 35.4-76.7 3.5-78.6-61.2 1.9-64.8 75-98 76.7-61 1.2 30.6-45 21-45 61z"/>
+    <path id="reuse-1" stroke-width="1.5" d="M139.9 644c0 57.7-18.8 86.2-34.6 110.3 7.5-32.5 13-52.6 13-110.3 0-57.7 29.5-85.3 40.3-102-4.2 16.7-18.7 44.3-18.7 102z"/>
+    <path id="reuse-2" stroke-width="2.1" d="M145.7 569.5c0 34-6.7 61.6-15 61.6s-15-27.6-15-61.6"/>
+    <path id="reuse-3" d="M276.3 345.4c-12.3 9.2.4 25.2 12 30.7 13 7.7 86.6 58.2 136.3 12-40.8.8-118.7-63.2-148.3-42.7z"/>
+  </defs>
   <defs>
     <clipPath id="dm-a">
       <path fill-opacity=".7" d="M-85 0h682.7v512H-85z"/>
@@ -71,10 +77,10 @@
       </g>
       <g stroke="#000" transform="translate(72.9 -9.8)">
         <path fill="#a95600" stroke-width=".5" d="M388.5-53c6-.3 3.4-3.3 6.4-5 3-1.6 7.3-.6 8.6 1.4 1.3 2 .3 4 2 4s47-2.5 48.6-.9c1.6 1.7 2 5 .3 6.3-1.6 1.4-58.9 3-60.9 1.6s-5-7-5-7.4z"/>
-        <path fill="#ff0" stroke-width="3.9" d="M529.6 405.5c0 40 45.6 27.8 46.8 61.2-.7 35.4-76.7 3.5-78.6-61.2 1.9-64.8 75-98 76.7-61 1.2 30.6-45 21-45 61z" transform="matrix(.15 0 0 .1 340.4 -81.7)"/>
-        <path fill="#ff0" stroke-width="3.9" d="M529.6 405.5c0 40 45.6 27.8 46.8 61.2-.7 35.4-76.7 3.5-78.6-61.2 1.9-64.8 75-98 76.7-61 1.2 30.6-45 21-45 61z" transform="matrix(.15 0 0 .1 344.4 -81.6)"/>
-        <path fill="#ff0" stroke-width="3.9" d="M529.6 405.5c0 40 45.6 27.8 46.8 61.2-.7 35.4-76.7 3.5-78.6-61.2 1.9-64.8 75-98 76.7-61 1.2 30.6-45 21-45 61z" transform="matrix(.15 0 0 .1 348.7 -81.8)"/>
-        <path fill="#ff0" stroke-width="3.9" d="M529.6 405.5c0 40 45.6 27.8 46.8 61.2-.7 35.4-76.7 3.5-78.6-61.2 1.9-64.8 75-98 76.7-61 1.2 30.6-45 21-45 61z" transform="matrix(.15 0 0 .1 352.7 -81.8)"/>
+        <use xlink:href="#reuse-0" stroke-width="3.9" transform="matrix(.15 0 0 .1 340.4 -81.7)"/>
+        <use xlink:href="#reuse-0" stroke-width="3.9" transform="matrix(.15 0 0 .1 344.4 -81.6)"/>
+        <use xlink:href="#reuse-0" stroke-width="3.9" transform="matrix(.15 0 0 .1 348.7 -81.8)"/>
+        <use xlink:href="#reuse-0" stroke-width="3.9" transform="matrix(.15 0 0 .1 352.7 -81.8)"/>
         <ellipse cx="478.4" cy="-41.1" fill="#a95600" stroke-width=".4" rx="3.5" ry="3.4" transform="matrix(1.1 .02 -.02 1.15 -75.6 4.7)"/>
       </g>
       <g fill="#009200" stroke="#000" stroke-width="2.5" transform="rotate(-5.8 688.4 -625.2)">
@@ -117,27 +123,27 @@
       <g fill="#009200" stroke="#000" transform="matrix(.18 0 0 .2 421 -216.8)">
         <ellipse cx="528.7" cy="564.5" stroke-width="2.5" rx="67.4" ry="205.6" transform="matrix(.98 -.3 .36 .87 -245.8 324.4)"/>
         <ellipse cx="528.7" cy="646.1" stroke-width="2.5" rx="13.3" ry="40.8" transform="rotate(-23.4 630.5 660.9)"/>
-        <path stroke-width="1.5" d="M139.9 644c0 57.7-18.8 86.2-34.6 110.3 7.5-32.5 13-52.6 13-110.3 0-57.7 29.5-85.3 40.3-102-4.2 16.7-18.7 44.3-18.7 102z" transform="matrix(1.88 -.46 .95 1.18 -352.3 -10)"/>
-        <path stroke-width="1.5" d="M139.9 644c0 57.7-18.8 86.2-34.6 110.3 7.5-32.5 13-52.6 13-110.3 0-57.7 29.5-85.3 40.3-102-4.2 16.7-18.7 44.3-18.7 102z" transform="matrix(1.88 -.46 .95 1.18 -348.4 44)"/>
-        <path stroke-width="1.5" d="M139.9 644c0 57.7-18.8 86.2-34.6 110.3 7.5-32.5 13-52.6 13-110.3 0-57.7 29.5-85.3 40.3-102-4.2 16.7-18.7 44.3-18.7 102z" transform="matrix(1.87 -.5 .98 1.16 -362 105.8)"/>
+        <use xlink:href="#reuse-1" stroke-width="1.5" transform="matrix(1.88 -.46 .95 1.18 -352.3 -10)"/>
+        <use xlink:href="#reuse-1" stroke-width="1.5" transform="matrix(1.88 -.46 .95 1.18 -348.4 44)"/>
+        <use xlink:href="#reuse-1" stroke-width="1.5" transform="matrix(1.87 -.5 .98 1.16 -362 105.8)"/>
         <ellipse cx="528.7" cy="646.1" stroke-width="1.4" rx="13.3" ry="40.8" transform="matrix(1.8 -.4 .7 1.64 -915.6 -221)"/>
         <ellipse cx="528.7" cy="646.1" stroke-width="1.6" rx="13.3" ry="40.8" transform="matrix(1.63 -.23 .54 1.35 -739.5 -91.8)"/>
         <ellipse cx="528.7" cy="646.1" stroke-width="1.6" rx="13.3" ry="40.8" transform="matrix(1.63 -.2 .5 1.36 -750.6 -91.8)"/>
         <ellipse cx="528.7" cy="646.1" stroke-width="2.1" rx="13.3" ry="40.8" transform="matrix(1.3 -.2 .47 1 -531 47.6)"/>
         <ellipse cx="528.7" cy="646.1" stroke-width="2.1" rx="13.3" ry="40.8" transform="matrix(1.33 -.13 .4 1.03 -517.9 12.2)"/>
-        <path stroke-width="2.1" d="M145.7 569.5c0 34-6.7 61.6-15 61.6s-15-27.6-15-61.6" transform="matrix(1.03 -.5 .46 1.18 12.8 -14.5)"/>
+        <use xlink:href="#reuse-2" stroke-width="2.1" transform="matrix(1.03 -.5 .46 1.18 12.8 -14.5)"/>
         <ellipse cx="528.7" cy="646.1" stroke-width="2.1" rx="13.3" ry="40.8" transform="matrix(1.33 -.13 .4 1.03 -519.5 -34.4)"/>
         <ellipse cx="528.7" cy="646.1" stroke-width="2.1" rx="13.3" ry="40.8" transform="matrix(1.33 -.1 .38 1.04 -534 -40.1)"/>
-        <path stroke-width="2.9" d="M145.7 569.5c0 34-6.7 61.6-15 61.6s-15-27.6-15-61.6" transform="matrix(.67 -.47 .46 .8 39.5 143.3)"/>
-        <path stroke-width="2.9" d="M145.7 569.5c0 34-6.7 61.6-15 61.6s-15-27.6-15-61.6" transform="matrix(.67 -.47 .46 .8 51.1 125.8)"/>
-        <path stroke-width="2.1" d="M145.7 569.5c0 34-6.7 61.6-15 61.6s-15-27.6-15-61.6" transform="matrix(.94 -.64 .64 1.1 -40.2 -10.7)"/>
-        <path stroke-width="2.7" d="M145.7 569.5c0 34-6.7 61.6-15 61.6s-15-27.6-15-61.6" transform="matrix(.67 -.52 .46 .88 68.6 71.2)"/>
+        <use xlink:href="#reuse-2" stroke-width="2.9" transform="matrix(.67 -.47 .46 .8 39.5 143.3)"/>
+        <use xlink:href="#reuse-2" stroke-width="2.9" transform="matrix(.67 -.47 .46 .8 51.1 125.8)"/>
+        <use xlink:href="#reuse-2" stroke-width="2.1" transform="matrix(.94 -.64 .64 1.1 -40.2 -10.7)"/>
+        <use xlink:href="#reuse-2" stroke-width="2.7" transform="matrix(.67 -.52 .46 .88 68.6 71.2)"/>
       </g>
       <g fill="#804bff" stroke="#000" stroke-width="2.5">
-        <path d="M276.3 345.4c-12.3 9.2.4 25.2 12 30.7 13 7.7 86.6 58.2 136.3 12-40.8.8-118.7-63.2-148.3-42.7z" transform="matrix(.16 0 0 .22 458 -214.3)"/>
-        <path d="M276.3 345.4c-12.3 9.2.4 25.2 12 30.7 13 7.7 86.6 58.2 136.3 12-40.8.8-118.7-63.2-148.3-42.7z" transform="matrix(.16 0 0 .22 456.6 -220.2)"/>
-        <path d="M276.3 345.4c-12.3 9.2.4 25.2 12 30.7 13 7.7 86.6 58.2 136.3 12-40.8.8-118.7-63.2-148.3-42.7z" transform="matrix(.16 0 0 .22 454.8 -225.8)"/>
-        <path d="M276.3 345.4c-12.3 9.2.4 25.2 12 30.7 13 7.7 86.6 58.2 136.3 12-40.8.8-118.7-63.2-148.3-42.7z" transform="matrix(.16 0 0 .22 450.9 -232.2)"/>
+        <use xlink:href="#reuse-3" transform="matrix(.16 0 0 .22 458 -214.3)"/>
+        <use xlink:href="#reuse-3" transform="matrix(.16 0 0 .22 456.6 -220.2)"/>
+        <use xlink:href="#reuse-3" transform="matrix(.16 0 0 .22 454.8 -225.8)"/>
+        <use xlink:href="#reuse-3" transform="matrix(.16 0 0 .22 450.9 -232.2)"/>
       </g>
       <g transform="rotate(1 -589.6 681.6)">
         <path fill="#804bff" stroke="#000" stroke-width="2.5" d="M211.2 247.3c21.7-12 56.6-9.8 79.7 11.2 19.4 17 45.3 75.2 70.3 92.8a57.7 57.7 0 0 1-42.2-15.2c-28.8 15.5-38.1 16.7-64 15.7-35.8-1.4-62.4-17.7-68-40.6-6.3-21.8 4.8-52.5 24.2-63.9z" transform="matrix(.2 -.04 .05 .18 407.8 -213.6)"/>

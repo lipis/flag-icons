@@ -19,6 +19,7 @@ module.exports = {
     "removeDimensions",
     "removeScriptElement",
     "removeStyleElement",
+    "reusePaths",
     "sortAttrs",
   ],
 };

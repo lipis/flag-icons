@@ -1,4 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-ec" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-ec" viewBox="0 0 512 512">
+  <defs>
+    <path id="reuse-0" fill="gray" stroke="#000" stroke-width="4.1" d="M478.4 60.2v88.6l17.7 88.6 17.7-88.6V60.2h-35.4z"/>
+    <path id="reuse-1" fill="#ffdf00" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M301.2 272.8s-17.7 336.6 53.1 336.6S460.6 574 460.6 574l-.8-185-158.6-116.2z"/>
+    <path id="reuse-2" fill="#0000c4" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M344.5 304.2c0 17.7-7.9 269.8 27.5 269.8s88.6-17.7 88.6-17.7l-.8-167.3-115.3-84.8z"/>
+    <path id="reuse-3" fill="#e10000" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M367.5 321.2c0 17.7 4.5 217.4 40 217.4h53.1l-.8-149.6-92.3-67.8z"/>
+    <path id="reuse-4" fill="#ffdf00" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M301.2 272.8S265.8 609.4 372 609.4c88.5 0 88.5-53.1 106.2-53.1l-17.7-124-159.4-159.5z"/>
+    <path id="reuse-5" fill="none" stroke-width="2.3" d="M269.6 155.2c1.1 0 28.3-94 119-147.2"/>
+    <path id="reuse-6" fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z"/>
+    <path id="reuse-7" fill="red" fill-rule="evenodd" stroke-width="1pt" d="M454.2-169.3c0 4-3.8 7.4-8.5 7.4s-8.5-3.3-8.5-7.4 3.8-7.3 8.5-7.3 8.5 3.3 8.5 7.3z"/>
+    <path id="reuse-8" fill="#0000c4" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M336.6 308.3c0 17.7-35.4 212.6 53.2 265.7 35.4 17.7 88.5-17.7 88.5 0l-17.7-141.7-124-124z"/>
+    <path id="reuse-9" fill="#e10000" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M372 343.7c0 17.7-17.7 159.4 35.5 194.9 35.4 35.4 124 25.8 124 25.8l-70.9-132.1-88.6-88.6z"/>
+    <path id="reuse-10" fill="#cececc" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="m460.6 184.3 17.7 35.4v17.7c-.8-1.3 0 17.7-17.7 17.7S443 219.7 443 219.7s-17.7 35.4-17.7 70.9 17.7 53.1 17.7 53.1-2.6-36.7 17.7-35.4c20.4 1.2 17.7 17.7 17.7 17.7v35.4h17.8V219.7l17.7-35.4-27.2-53.2-26 53.1z"/>
+    <path id="reuse-11" fill="#cececc" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="m557.8 95.7-26.3 70.8 17.7 53.2-35.4-17.7 35.4 53.1v35.5H567V255l35.5-53.1-35.5 17.7 17.8-53.2-26.9-70.8z"/>
+    <path id="reuse-12" fill="#e10000" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M422.5 137c0 2-2 3.7-4.3 3.7s-4.4-1.7-4.4-3.7 2-3.8 4.4-3.8 4.3 1.7 4.3 3.8zm-6.2 7.9c0 35.8 20.9 187.8 22.6 191.5.1 4.5-4.8 6.4-7.1.9-6.6-17.4-20.8-160-21.3-193.3-.3-13.7 3.7-14.8 8.3-14.5 3.7.2 8.3 3.7 8.3 7.9 0 5-5.8 8.7-10.8 7.5z"/>
+    <path id="reuse-13" fill="#0000c4" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M422.5 137c0 2-2 3.7-4.3 3.7s-4.4-1.7-4.4-3.7 2-3.8 4.4-3.8 4.3 1.7 4.3 3.8zm-6.2 7.9c31.5 61.4 48.7 166.7 50.4 170.5.1 4.4-4.8 6.4-7.1.8-2.5-3.3-12.7-100.2-49.1-172.2-.3-13.7 3.7-14.8 8.3-14.5 3.7.2 8.3 3.7 8.3 7.9 0 5-5.8 8.7-10.8 7.5z"/>
+    <path id="reuse-14" d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z"/>
+    <path id="reuse-15" fill="#e10000" d="M478.4 698a53.3 53.3 0 0 0 53.1 0V556.3h-35.4c17.7 53.1 17.7 106.3-17.8 141.7z"/>
+    <path id="reuse-16" fill="#0000c4" d="M513.8 609.5c0 88.5-42.5 108.2-42.5 126 17.7 0 29.5-8.3 42.5-19.7 17.7-17.8 19.4-107.7 17.7-106.3h-17.7z"/>
+    <path id="reuse-17" fill="#0000c4" d="M478.4 609.5c-.9 51.7-44.8 99.6-36.5 110.2 9.4 9.5 36.5-21.7 71.9-4 17.7-17.7 19.4-107.6 17.7-106.3h-53.1z"/>
+    <path id="reuse-18" fill="#ffdf00" d="M513.8 609.5c0 88.5-40.7 94.4-40.7 118 17.7 0 40.6-12.9 40.7-11.7 17.7-17.8 19.4-107.7 17.7-106.3h-17.7z"/>
+    <path id="reuse-19" fill="#ffdf00" d="M478.4 609.5c-.9 51.7-43.8 95.7-35.5 106.3 9.5 9.4 35.5-17.8 70.9 0 17.7-17.8 19.4-107.7 17.7-106.3h-53.1z"/>
+    <path id="reuse-20" fill="#908f8a" stroke-width="3.3" d="m423.2 60.2 137.8 124h19.7L443 60.3h-19.7z"/>
+    <path id="reuse-21" fill="#908f8a" stroke-width="3.1" d="M425.2 60.2v124h17.7v-124h-17.7z"/>
+    <path id="reuse-22" d="M579.8 250c-14.9-8.1-31.2-12.6-48.3-12.6s-33.4 4.5-48.3 12.5l7 16.4a82.8 82.8 0 0 1 82.7 0l6.9-16.4z"/>
+  </defs>
   <g fill-rule="evenodd" stroke-width="1pt">
     <path fill="#ffe800" d="M0 0h512v512H0z"/>
     <path fill="#00148e" d="M0 256h512v256H0z"/>
@@ -6,112 +31,112 @@
   </g>
   <g fill-rule="evenodd">
     <path d="m213.5 244.2-54.7 57.7-1-1.2 54.7-57.8 1 1.3zm38 9.4L180 329l-1.2-1.2 71.5-75.4 1.3 1.2z"/>
-    <path fill="gray" stroke="#000" stroke-width="4.1" d="M478.4 60.2v88.6l17.7 88.6 17.7-88.6V60.2h-35.4z" transform="matrix(-.052 -.05 -.067 .068 210 348.9)"/>
-    <path fill="gray" stroke="#000" stroke-width="4.1" d="M478.4 60.2v88.6l17.7 88.6 17.7-88.6V60.2h-35.4z" transform="matrix(-.052 -.05 -.067 .068 191.6 319.4)"/>
+    <use xlink:href="#reuse-0" stroke-width="4.1" transform="matrix(-.052 -.05 -.067 .068 210 348.9)"/>
+    <use xlink:href="#reuse-0" stroke-width="4.1" transform="matrix(-.052 -.05 -.067 .068 191.6 319.4)"/>
   </g>
-  <path fill="#ffdf00" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M301.2 272.8s-17.7 336.6 53.1 336.6S460.6 574 460.6 574l-.8-185-158.6-116.2z" transform="matrix(.34 0 0 .486 64.7 -20.5)"/>
-  <path fill="#0000c4" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M344.5 304.2c0 17.7-7.9 269.8 27.5 269.8s88.6-17.7 88.6-17.7l-.8-167.3-115.3-84.8z" transform="matrix(.34 0 0 .486 64.7 -20.5)"/>
-  <path fill="#e10000" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M367.5 321.2c0 17.7 4.5 217.4 40 217.4h53.1l-.8-149.6-92.3-67.8z" transform="matrix(.34 0 0 .486 64.7 -20.5)"/>
+  <use xlink:href="#reuse-1" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.34 0 0 .486 64.7 -20.5)"/>
+  <use xlink:href="#reuse-2" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.34 0 0 .486 64.7 -20.5)"/>
+  <use xlink:href="#reuse-3" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.34 0 0 .486 64.7 -20.5)"/>
   <path fill-rule="evenodd" d="m165.7 112.2 54.6 57.7 1-1.2-54.7-57.7-1 1.2z"/>
-  <path fill="#ffdf00" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M301.2 272.8S265.8 609.4 372 609.4c88.5 0 88.5-53.1 106.2-53.1l-17.7-124-159.4-159.5z" transform="matrix(.44 0 0 .465 17.3 17)"/>
+  <use xlink:href="#reuse-4" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.44 0 0 .465 17.3 17)"/>
   <g stroke="#000">
-    <path fill="none" stroke-width="2.3" d="M269.6 155.2c1.1 0 28.3-94 119-147.2" transform="matrix(.29 -.02 -.038 .265 112 135.9)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(.105 -.166 .22 .105 142.8 218.9)"/>
-    <path fill="red" fill-rule="evenodd" stroke-width="1pt" d="M454.2-169.3c0 4-3.8 7.4-8.5 7.4s-8.5-3.3-8.5-7.4 3.8-7.3 8.5-7.3 8.5 3.3 8.5 7.3z" transform="matrix(.137 -.076 .067 .132 144 218.4)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(.133 .09 -.096 .25 146.6 97.4)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(.132 -.023 -.023 .245 145.4 144.9)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(.048 .19 -.13 .146 182.1 59)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(.156 -.14 .14 .178 123.4 206.6)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(.164 -.17 .19 .153 112.3 237.6)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(.194 .072 -.145 .24 108.7 136.1)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(.114 .158 -.242 .167 144.8 102.7)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(.06 .066 -.102 .123 199.2 102.1)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(.08 .004 -.06 .13 189.7 127.6)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(-.007 .11 -.103 .062 227 85.9)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(.05 .087 -.19 .115 176.6 111.9)"/>
-    <path fill="#005b00" fill-rule="evenodd" stroke-width="1pt" d="M421.4-20.3c0 18.1-4.6 31.7-11.4 45.3-5.6-18.1-9-27.2-9-45.3s6.8-35.1 12.4-48.7c2.3 12.4 8 30.5 8 48.7z" transform="matrix(.098 .168 -.252 .15 166.3 77.6)"/>
-    <path fill="none" stroke-width="2.4" d="M269.6 155.2c1.1 0 28.3-94 119-147.2" transform="matrix(.266 -.148 .107 .21 94.4 196.6)"/>
-    <path fill="red" fill-rule="evenodd" stroke-width="1pt" d="M454.2-169.3c0 4-3.8 7.4-8.5 7.4s-8.5-3.3-8.5-7.4 3.8-7.3 8.5-7.3 8.5 3.3 8.5 7.3z" transform="matrix(.137 -.076 .067 .132 161.2 194.2)"/>
-    <path fill="red" fill-rule="evenodd" stroke-width="1pt" d="M454.2-169.3c0 4-3.8 7.4-8.5 7.4s-8.5-3.3-8.5-7.4 3.8-7.3 8.5-7.3 8.5 3.3 8.5 7.3z" transform="matrix(.137 -.076 .067 .132 169.4 189.4)"/>
-    <path fill="red" fill-rule="evenodd" stroke-width="1pt" d="M454.2-169.3c0 4-3.8 7.4-8.5 7.4s-8.5-3.3-8.5-7.4 3.8-7.3 8.5-7.3 8.5 3.3 8.5 7.3z" transform="matrix(.14 -.08 .05 .1 136 200.3)"/>
-    <path fill="red" fill-rule="evenodd" stroke-width="1pt" d="M454.2-169.3c0 4-3.8 7.4-8.5 7.4s-8.5-3.3-8.5-7.4 3.8-7.3 8.5-7.3 8.5 3.3 8.5 7.3z" transform="matrix(.14 -.08 .05 .1 138.3 199.3)"/>
-    <path fill="red" fill-rule="evenodd" stroke-width="1pt" d="M454.2-169.3c0 4-3.8 7.4-8.5 7.4s-8.5-3.3-8.5-7.4 3.8-7.3 8.5-7.3 8.5 3.3 8.5 7.3z" transform="matrix(.14 -.08 .05 .1 137 201.4)"/>
-    <path fill="red" fill-rule="evenodd" stroke-width="1pt" d="M454.2-169.3c0 4-3.8 7.4-8.5 7.4s-8.5-3.3-8.5-7.4 3.8-7.3 8.5-7.3 8.5 3.3 8.5 7.3z" transform="matrix(.152 -.084 .074 .147 145 210.7)"/>
-    <path fill="red" fill-rule="evenodd" stroke-width="1pt" d="M454.2-169.3c0 4-3.8 7.4-8.5 7.4s-8.5-3.3-8.5-7.4 3.8-7.3 8.5-7.3 8.5 3.3 8.5 7.3z" transform="matrix(.152 -.084 .074 .147 146.7 209)"/>
-    <path fill="red" fill-rule="evenodd" stroke-width="1pt" d="M454.2-169.3c0 4-3.8 7.4-8.5 7.4s-8.5-3.3-8.5-7.4 3.8-7.3 8.5-7.3 8.5 3.3 8.5 7.3z" transform="matrix(.152 -.084 .074 .147 147.1 209.8)"/>
+    <use xlink:href="#reuse-5" stroke-width="2.3" transform="matrix(.29 -.02 -.038 .265 112 135.9)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.105 -.166 .22 .105 142.8 218.9)"/>
+    <use xlink:href="#reuse-7" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.137 -.076 .067 .132 144 218.4)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.133 .09 -.096 .25 146.6 97.4)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.132 -.023 -.023 .245 145.4 144.9)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.048 .19 -.13 .146 182.1 59)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.156 -.14 .14 .178 123.4 206.6)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.164 -.17 .19 .153 112.3 237.6)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.194 .072 -.145 .24 108.7 136.1)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.114 .158 -.242 .167 144.8 102.7)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.06 .066 -.102 .123 199.2 102.1)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.08 .004 -.06 .13 189.7 127.6)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(-.007 .11 -.103 .062 227 85.9)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.05 .087 -.19 .115 176.6 111.9)"/>
+    <use xlink:href="#reuse-6" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.098 .168 -.252 .15 166.3 77.6)"/>
+    <use xlink:href="#reuse-5" stroke-width="2.4" transform="matrix(.266 -.148 .107 .21 94.4 196.6)"/>
+    <use xlink:href="#reuse-7" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.137 -.076 .067 .132 161.2 194.2)"/>
+    <use xlink:href="#reuse-7" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.137 -.076 .067 .132 169.4 189.4)"/>
+    <use xlink:href="#reuse-7" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.14 -.08 .05 .1 136 200.3)"/>
+    <use xlink:href="#reuse-7" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.14 -.08 .05 .1 138.3 199.3)"/>
+    <use xlink:href="#reuse-7" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.14 -.08 .05 .1 137 201.4)"/>
+    <use xlink:href="#reuse-7" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.152 -.084 .074 .147 145 210.7)"/>
+    <use xlink:href="#reuse-7" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.152 -.084 .074 .147 146.7 209)"/>
+    <use xlink:href="#reuse-7" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.152 -.084 .074 .147 147.1 209.8)"/>
   </g>
-  <path fill="#0000c4" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M336.6 308.3c0 17.7-35.4 212.6 53.2 265.7 35.4 17.7 88.5-17.7 88.5 0l-17.7-141.7-124-124z" transform="matrix(.44 0 0 .465 17.3 17)"/>
-  <path fill="#e10000" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M372 343.7c0 17.7-17.7 159.4 35.5 194.9 35.4 35.4 124 25.8 124 25.8l-70.9-132.1-88.6-88.6z" transform="matrix(.44 0 0 .465 17.3 17)"/>
+  <use xlink:href="#reuse-8" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.44 0 0 .465 17.3 17)"/>
+  <use xlink:href="#reuse-9" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.44 0 0 .465 17.3 17)"/>
   <path fill-rule="evenodd" d="m148.8 144 71.5 75.4 1.3-1.2-71.6-75.4-1.2 1.2z"/>
-  <path fill="#cececc" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="m460.6 184.3 17.7 35.4v17.7c-.8-1.3 0 17.7-17.7 17.7S443 219.7 443 219.7s-17.7 35.4-17.7 70.9 17.7 53.1 17.7 53.1-2.6-36.7 17.7-35.4c20.4 1.2 17.7 17.7 17.7 17.7v35.4h17.8V219.7l17.7-35.4-27.2-53.2-26 53.1z" transform="matrix(.102 -.107 .08 .082 75.2 169.7)"/>
-  <path fill="#cececc" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="m557.8 95.7-26.3 70.8 17.7 53.2-35.4-17.7 35.4 53.1v35.5H567V255l35.5-53.1-35.5 17.7 17.8-53.2-26.9-70.8z" transform="matrix(.08 -.12 .105 .07 96 163.4)"/>
-  <path fill="#e10000" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M422.5 137c0 2-2 3.7-4.3 3.7s-4.4-1.7-4.4-3.7 2-3.8 4.4-3.8 4.3 1.7 4.3 3.8zm-6.2 7.9c0 35.8 20.9 187.8 22.6 191.5.1 4.5-4.8 6.4-7.1.9-6.6-17.4-20.8-160-21.3-193.3-.3-13.7 3.7-14.8 8.3-14.5 3.7.2 8.3 3.7 8.3 7.9 0 5-5.8 8.7-10.8 7.5z" transform="matrix(.303 0 0 .234 43 77.3)"/>
-  <path fill="#0000c4" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M422.5 137c0 2-2 3.7-4.3 3.7s-4.4-1.7-4.4-3.7 2-3.8 4.4-3.8 4.3 1.7 4.3 3.8zm-6.2 7.9c31.5 61.4 48.7 166.7 50.4 170.5.1 4.4-4.8 6.4-7.1.8-2.5-3.3-12.7-100.2-49.1-172.2-.3-13.7 3.7-14.8 8.3-14.5 3.7.2 8.3 3.7 8.3 7.9 0 5-5.8 8.7-10.8 7.5z" transform="matrix(.285 .07 -.114 .22 67.4 53.5)"/>
-  <path fill="#e10000" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M422.5 137c0 2-2 3.7-4.3 3.7s-4.4-1.7-4.4-3.7 2-3.8 4.4-3.8 4.3 1.7 4.3 3.8zm-6.2 7.9c0 35.8 20.9 187.8 22.6 191.5.1 4.5-4.8 6.4-7.1.9-6.6-17.4-20.8-160-21.3-193.3-.3-13.7 3.7-14.8 8.3-14.5 3.7.2 8.3 3.7 8.3 7.9 0 5-5.8 8.7-10.8 7.5z" transform="matrix(.387 0 0 .38 -8.6 87.3)"/>
-  <path fill="#0000c4" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M422.5 137c0 2-2 3.7-4.3 3.7s-4.4-1.7-4.4-3.7 2-3.8 4.4-3.8 4.3 1.7 4.3 3.8zm-6.2 7.9c31.5 61.4 48.7 166.7 50.4 170.5.1 4.4-4.8 6.4-7.1.8-2.5-3.3-12.7-100.2-49.1-172.2-.3-13.7 3.7-14.8 8.3-14.5 3.7.2 8.3 3.7 8.3 7.9 0 5-5.8 8.7-10.8 7.5z" transform="matrix(.365 .112 -.145 .36 22.6 48.5)"/>
+  <use xlink:href="#reuse-10" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.102 -.107 .08 .082 75.2 169.7)"/>
+  <use xlink:href="#reuse-11" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.08 -.12 .105 .07 96 163.4)"/>
+  <use xlink:href="#reuse-12" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.303 0 0 .234 43 77.3)"/>
+  <use xlink:href="#reuse-13" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.285 .07 -.114 .22 67.4 53.5)"/>
+  <use xlink:href="#reuse-12" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.387 0 0 .38 -8.6 87.3)"/>
+  <use xlink:href="#reuse-13" fill-rule="evenodd" stroke-width="1pt" transform="matrix(.365 .112 -.145 .36 22.6 48.5)"/>
   <g fill-rule="evenodd">
     <path d="m289.6 244.2 54.7 57.7 1-1.2-54.7-57.8-1 1.3zm-38 9.4L323 329l1.2-1.2-71.5-75.4-1.3 1.2z"/>
-    <path fill="gray" stroke="#000" stroke-width="4.1" d="M478.4 60.2v88.6l17.7 88.6 17.7-88.6V60.2h-35.4z" transform="matrix(.052 -.05 .067 .068 293 348.9)"/>
-    <path fill="gray" stroke="#000" stroke-width="4.1" d="M478.4 60.2v88.6l17.7 88.6 17.7-88.6V60.2h-35.4z" transform="matrix(.052 -.05 .067 .068 311.5 319.4)"/>
+    <use xlink:href="#reuse-0" stroke-width="4.1" transform="matrix(.052 -.05 .067 .068 293 348.9)"/>
+    <use xlink:href="#reuse-0" stroke-width="4.1" transform="matrix(.052 -.05 .067 .068 311.5 319.4)"/>
   </g>
   <g fill-rule="evenodd" stroke-width="1pt">
-    <path fill="#ffdf00" stroke="#000" d="M301.2 272.8s-17.7 336.6 53.1 336.6S460.6 574 460.6 574l-.8-185-158.6-116.2z" transform="matrix(-.34 0 0 .486 438.5 -20.5)"/>
-    <path fill="#0000c4" stroke="#000" d="M344.5 304.2c0 17.7-7.9 269.8 27.5 269.8s88.6-17.7 88.6-17.7l-.8-167.3-115.3-84.8z" transform="matrix(-.34 0 0 .486 438.5 -20.5)"/>
-    <path fill="#e10000" stroke="#000" d="M367.5 321.2c0 17.7 4.5 217.4 40 217.4h53.1l-.8-149.6-92.3-67.8z" transform="matrix(-.34 0 0 .486 438.5 -20.5)"/>
+    <use xlink:href="#reuse-1" transform="matrix(-.34 0 0 .486 438.5 -20.5)"/>
+    <use xlink:href="#reuse-2" transform="matrix(-.34 0 0 .486 438.5 -20.5)"/>
+    <use xlink:href="#reuse-3" transform="matrix(-.34 0 0 .486 438.5 -20.5)"/>
     <path d="M337.4 112.2 282.8 170l-1-1.2 54.7-57.7 1 1.2z"/>
     <g fill="#005b00" stroke="#000">
-      <path d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z" transform="matrix(.124 -.056 .06 .266 243.6 183.9)"/>
-      <path d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z" transform="matrix(.148 -.04 .052 .294 230 162.4)"/>
-      <path d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z" transform="matrix(.175 .107 -.022 .3 233.8 77)"/>
-      <path d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z" transform="matrix(.186 .023 .012 .333 217.1 111.4)"/>
-      <path d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z" transform="matrix(.136 .126 -.028 .268 259 75.2)"/>
-      <path d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z" transform="matrix(.17 0 .026 .304 221.8 131.7)"/>
-      <path d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z" transform="matrix(.15 -.054 .05 .29 229 173.2)"/>
-      <path d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z" transform="matrix(.15 -.025 .038 .298 231 150.5)"/>
-      <path d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z" transform="matrix(.168 .115 -.038 .285 240.3 74.1)"/>
-      <path d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z" transform="matrix(.184 .04 -.004 .333 220.5 98.4)"/>
-      <path d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z" transform="matrix(.128 .128 -.043 .25 265.9 77.5)"/>
-      <path d="M428.2-17s81.5 90.7 111 154.1c29.4 63.5 54.4 156.3 54.4 156.3s2.2-86-36.3-163C505.2 32.8 425.9-12.5 428.2-17z" transform="matrix(.18 .01 .006 .31 218.7 121.3)"/>
+      <use xlink:href="#reuse-14" transform="matrix(.124 -.056 .06 .266 243.6 183.9)"/>
+      <use xlink:href="#reuse-14" transform="matrix(.148 -.04 .052 .294 230 162.4)"/>
+      <use xlink:href="#reuse-14" transform="matrix(.175 .107 -.022 .3 233.8 77)"/>
+      <use xlink:href="#reuse-14" transform="matrix(.186 .023 .012 .333 217.1 111.4)"/>
+      <use xlink:href="#reuse-14" transform="matrix(.136 .126 -.028 .268 259 75.2)"/>
+      <use xlink:href="#reuse-14" transform="matrix(.17 0 .026 .304 221.8 131.7)"/>
+      <use xlink:href="#reuse-14" transform="matrix(.15 -.054 .05 .29 229 173.2)"/>
+      <use xlink:href="#reuse-14" transform="matrix(.15 -.025 .038 .298 231 150.5)"/>
+      <use xlink:href="#reuse-14" transform="matrix(.168 .115 -.038 .285 240.3 74.1)"/>
+      <use xlink:href="#reuse-14" transform="matrix(.184 .04 -.004 .333 220.5 98.4)"/>
+      <use xlink:href="#reuse-14" transform="matrix(.128 .128 -.043 .25 265.9 77.5)"/>
+      <use xlink:href="#reuse-14" transform="matrix(.18 .01 .006 .31 218.7 121.3)"/>
     </g>
-    <path fill="#ffdf00" stroke="#000" d="M301.2 272.8S265.8 609.4 372 609.4c88.5 0 88.5-53.1 106.2-53.1l-17.7-124-159.4-159.5z" transform="matrix(-.44 0 0 .465 485.8 17)"/>
-    <path fill="#0000c4" stroke="#000" d="M336.6 308.3c0 17.7-35.4 212.6 53.2 265.7 35.4 17.7 88.5-17.7 88.5 0l-17.7-141.7-124-124z" transform="matrix(-.44 0 0 .465 485.8 17)"/>
-    <path fill="#e10000" stroke="#000" d="M372 343.7c0 17.7-17.7 159.4 35.5 194.9 35.4 35.4 124 25.8 124 25.8l-70.9-132.1-88.6-88.6z" transform="matrix(-.44 0 0 .465 485.8 17)"/>
+    <use xlink:href="#reuse-4" transform="matrix(-.44 0 0 .465 485.8 17)"/>
+    <use xlink:href="#reuse-8" transform="matrix(-.44 0 0 .465 485.8 17)"/>
+    <use xlink:href="#reuse-9" transform="matrix(-.44 0 0 .465 485.8 17)"/>
     <path d="m354.3 144-71.5 75.4-1.3-1.2 71.6-75.4 1.2 1.2z"/>
-    <path fill="#cececc" stroke="#000" d="m460.6 184.3 17.7 35.4v17.7c-.8-1.3 0 17.7-17.7 17.7S443 219.7 443 219.7s-17.7 35.4-17.7 70.9 17.7 53.1 17.7 53.1-2.6-36.7 17.7-35.4c20.4 1.2 17.7 17.7 17.7 17.7v35.4h17.8V219.7l17.7-35.4-27.2-53.2-26 53.1z" transform="matrix(-.102 -.107 -.08 .082 428 169.7)"/>
-    <path fill="#cececc" stroke="#000" d="m557.8 95.7-26.3 70.8 17.7 53.2-35.4-17.7 35.4 53.1v35.5H567V255l35.5-53.1-35.5 17.7 17.8-53.2-26.9-70.8z" transform="matrix(-.08 -.12 -.105 .07 407 163.4)"/>
-    <path fill="#e10000" stroke="#000" d="M422.5 137c0 2-2 3.7-4.3 3.7s-4.4-1.7-4.4-3.7 2-3.8 4.4-3.8 4.3 1.7 4.3 3.8zm-6.2 7.9c0 35.8 20.9 187.8 22.6 191.5.1 4.5-4.8 6.4-7.1.9-6.6-17.4-20.8-160-21.3-193.3-.3-13.7 3.7-14.8 8.3-14.5 3.7.2 8.3 3.7 8.3 7.9 0 5-5.8 8.7-10.8 7.5z" transform="matrix(-.303 0 0 .234 460 77.3)"/>
-    <path fill="#0000c4" stroke="#000" d="M422.5 137c0 2-2 3.7-4.3 3.7s-4.4-1.7-4.4-3.7 2-3.8 4.4-3.8 4.3 1.7 4.3 3.8zm-6.2 7.9c31.5 61.4 48.7 166.7 50.4 170.5.1 4.4-4.8 6.4-7.1.8-2.5-3.3-12.7-100.2-49.1-172.2-.3-13.7 3.7-14.8 8.3-14.5 3.7.2 8.3 3.7 8.3 7.9 0 5-5.8 8.7-10.8 7.5z" transform="matrix(-.285 .07 .114 .22 435.7 53.5)"/>
-    <path fill="#e10000" stroke="#000" d="M422.5 137c0 2-2 3.7-4.3 3.7s-4.4-1.7-4.4-3.7 2-3.8 4.4-3.8 4.3 1.7 4.3 3.8zm-6.2 7.9c0 35.8 20.9 187.8 22.6 191.5.1 4.5-4.8 6.4-7.1.9-6.6-17.4-20.8-160-21.3-193.3-.3-13.7 3.7-14.8 8.3-14.5 3.7.2 8.3 3.7 8.3 7.9 0 5-5.8 8.7-10.8 7.5z" transform="matrix(-.387 0 0 .38 511.6 87.3)"/>
-    <path fill="#0000c4" stroke="#000" d="M422.5 137c0 2-2 3.7-4.3 3.7s-4.4-1.7-4.4-3.7 2-3.8 4.4-3.8 4.3 1.7 4.3 3.8zm-6.2 7.9c31.5 61.4 48.7 166.7 50.4 170.5.1 4.4-4.8 6.4-7.1.8-2.5-3.3-12.7-100.2-49.1-172.2-.3-13.7 3.7-14.8 8.3-14.5 3.7.2 8.3 3.7 8.3 7.9 0 5-5.8 8.7-10.8 7.5z" transform="matrix(-.365 .112 .145 .36 480.5 48.5)"/>
+    <use xlink:href="#reuse-10" transform="matrix(-.102 -.107 -.08 .082 428 169.7)"/>
+    <use xlink:href="#reuse-11" transform="matrix(-.08 -.12 -.105 .07 407 163.4)"/>
+    <use xlink:href="#reuse-12" transform="matrix(-.303 0 0 .234 460 77.3)"/>
+    <use xlink:href="#reuse-13" transform="matrix(-.285 .07 .114 .22 435.7 53.5)"/>
+    <use xlink:href="#reuse-12" transform="matrix(-.387 0 0 .38 511.6 87.3)"/>
+    <use xlink:href="#reuse-13" transform="matrix(-.365 .112 .145 .36 480.5 48.5)"/>
   </g>
   <g fill-rule="evenodd" stroke="#000" stroke-width="1pt">
-    <path fill="#e10000" d="M478.4 698a53.3 53.3 0 0 0 53.1 0V556.3h-35.4c17.7 53.1 17.7 106.3-17.8 141.7z" transform="matrix(.44 0 0 .465 17.3 17)"/>
-    <path fill="#0000c4" d="M513.8 609.5c0 88.5-42.5 108.2-42.5 126 17.7 0 29.5-8.3 42.5-19.7 17.7-17.8 19.4-107.7 17.7-106.3h-17.7z" transform="matrix(.265 0 0 .524 103.2 -43.2)"/>
-    <path fill="#0000c4" d="M478.4 609.5c-.9 51.7-44.8 99.6-36.5 110.2 9.4 9.5 36.5-21.7 71.9-4 17.7-17.7 19.4-107.6 17.7-106.3h-53.1z" transform="matrix(.265 0 0 .524 103.2 -43.2)"/>
-    <path fill="#ffdf00" d="M513.8 609.5c0 88.5-40.7 94.4-40.7 118 17.7 0 40.6-12.9 40.7-11.7 17.7-17.8 19.4-107.7 17.7-106.3h-17.7z" transform="matrix(.265 0 0 .35 95 63.1)"/>
-    <path fill="#ffdf00" d="M478.4 609.5c-.9 51.7-43.8 95.7-35.5 106.3 9.5 9.4 35.5-17.8 70.9 0 17.7-17.8 19.4-107.7 17.7-106.3h-53.1z" transform="matrix(.265 0 0 .35 95 63.1)"/>
-    <path fill="#e10000" d="M478.4 698a53.3 53.3 0 0 0 53.1 0V556.3h-35.4c17.7 53.1 17.7 106.3-17.8 141.7z" transform="matrix(-.44 0 0 .465 485.8 17)"/>
-    <path fill="#0000c4" d="M513.8 609.5c0 88.5-42.5 108.2-42.5 126 17.7 0 29.5-8.3 42.5-19.7 17.7-17.8 19.4-107.7 17.7-106.3h-17.7z" transform="matrix(-.265 0 0 .524 399.9 -43.2)"/>
-    <path fill="#0000c4" d="M478.4 609.5c-.9 51.7-44.8 99.6-36.5 110.2 9.4 9.5 36.5-21.7 71.9-4 17.7-17.7 19.4-107.6 17.7-106.3h-53.1z" transform="matrix(-.265 0 0 .524 399.9 -43.2)"/>
-    <path fill="#ffdf00" d="M513.8 609.5c0 88.5-40.7 94.4-40.7 118 17.7 0 40.6-12.9 40.7-11.7 17.7-17.8 19.4-107.7 17.7-106.3h-17.7z" transform="matrix(-.265 0 0 .35 408.2 63.1)"/>
-    <path fill="#ffdf00" d="M478.4 609.5c-.9 51.7-43.8 95.7-35.5 106.3 9.5 9.4 35.5-17.8 70.9 0 17.7-17.8 19.4-107.7 17.7-106.3h-53.1z" transform="matrix(-.265 0 0 .35 408.2 63.1)"/>
+    <use xlink:href="#reuse-15" transform="matrix(.44 0 0 .465 17.3 17)"/>
+    <use xlink:href="#reuse-16" transform="matrix(.265 0 0 .524 103.2 -43.2)"/>
+    <use xlink:href="#reuse-17" transform="matrix(.265 0 0 .524 103.2 -43.2)"/>
+    <use xlink:href="#reuse-18" transform="matrix(.265 0 0 .35 95 63.1)"/>
+    <use xlink:href="#reuse-19" transform="matrix(.265 0 0 .35 95 63.1)"/>
+    <use xlink:href="#reuse-15" transform="matrix(-.44 0 0 .465 485.8 17)"/>
+    <use xlink:href="#reuse-16" transform="matrix(-.265 0 0 .524 399.9 -43.2)"/>
+    <use xlink:href="#reuse-17" transform="matrix(-.265 0 0 .524 399.9 -43.2)"/>
+    <use xlink:href="#reuse-18" transform="matrix(-.265 0 0 .35 408.2 63.1)"/>
+    <use xlink:href="#reuse-19" transform="matrix(-.265 0 0 .35 408.2 63.1)"/>
   </g>
   <g fill-rule="evenodd" stroke="#000">
     <path fill="#908f8a" stroke-width="4.5" d="m198.6 78-89.7 35.4 89.7 35.4 44.8-17.7 22.4 17.7 22.4 35.4 22.5-35.4 22.4-17.7H1535V95.7H333l-22.4-17.8c0-17.7 4.7-35.4 22.5-35.4h89.6c0-17.7-44.8-53.1-134.5-53.1-89.6 0-134.5 35.4-134.5 53.1h89.7c17.7 0 22.4 17.7 22.4 35.5l-22.4 17.7-44.9-17.8z" transform="matrix(.09 0 0 .17 174.4 269.5)"/>
     <path fill="#b74d00" stroke-width="1.8" d="M204.3 95.7H541v17.7H204.4zm0-17.8H541v17.8H204.4zm0-17.7H541V78H204.4zm0-17.7H541v17.7H204.4zm0-17.7H541v17.7H204.4zm0-17.8H541v17.8H204.4zm0-17.6H541V7H204.4z" transform="matrix(.21 0 0 .207 173.1 277.2)"/>
-    <path fill="#908f8a" stroke-width="3.3" d="m423.2 60.2 137.8 124h19.7L443 60.3h-19.7z" transform="matrix(.19 0 0 .207 139.8 262.5)"/>
-    <path fill="#908f8a" stroke-width="3.3" d="m423.2 60.2 137.8 124h19.7L443 60.3h-19.7z" transform="matrix(.19 0 0 -.207 139.8 313.1)"/>
-    <path fill="#908f8a" stroke-width="3.1" d="M425.2 60.2v124h17.7v-124h-17.7z" transform="matrix(.21 0 0 .207 130.5 262.5)"/>
-    <path fill="#908f8a" stroke-width="3.3" d="m423.2 60.2 137.8 124h19.7L443 60.3h-19.7z" transform="matrix(.19 0 0 .207 173.2 262.5)"/>
-    <path fill="#908f8a" stroke-width="3.3" d="m423.2 60.2 137.8 124h19.7L443 60.3h-19.7z" transform="matrix(.19 0 0 -.207 173.2 313.1)"/>
-    <path fill="#908f8a" stroke-width="3.1" d="M425.2 60.2v124h17.7v-124h-17.7z" transform="matrix(.21 0 0 .207 190 262.5)"/>
-    <path fill="#908f8a" stroke-width="3.1" d="M425.2 60.2v124h17.7v-124h-17.7z" transform="matrix(.21 0 0 .207 164 262.5)"/>
-    <path fill="#908f8a" stroke-width="3.1" d="M425.2 60.2v124h17.7v-124h-17.7z" transform="matrix(.21 0 0 .207 156.5 262.5)"/>
+    <use xlink:href="#reuse-20" stroke-width="3.3" transform="matrix(.19 0 0 .207 139.8 262.5)"/>
+    <use xlink:href="#reuse-20" stroke-width="3.3" transform="matrix(.19 0 0 -.207 139.8 313.1)"/>
+    <use xlink:href="#reuse-21" stroke-width="3.1" transform="matrix(.21 0 0 .207 130.5 262.5)"/>
+    <use xlink:href="#reuse-20" stroke-width="3.3" transform="matrix(.19 0 0 .207 173.2 262.5)"/>
+    <use xlink:href="#reuse-20" stroke-width="3.3" transform="matrix(.19 0 0 -.207 173.2 313.1)"/>
+    <use xlink:href="#reuse-21" stroke-width="3.1" transform="matrix(.21 0 0 .207 190 262.5)"/>
+    <use xlink:href="#reuse-21" stroke-width="3.1" transform="matrix(.21 0 0 .207 164 262.5)"/>
+    <use xlink:href="#reuse-21" stroke-width="3.1" transform="matrix(.21 0 0 .207 156.5 262.5)"/>
   </g>
   <g fill="#ffdf00" fill-rule="evenodd" stroke="#000" stroke-width="1pt">
     <path d="M655.5 396.9c0 88-55.6 159.4-124 159.4s-124-71.4-124-159.4 55.5-159.5 124-159.5 124 71.4 124 159.4zm-17.7 0c0 78.2-47.6 141.7-106.3 141.7-58.7 0-106.3-63.5-106.3-141.7 0-78.3 47.6-141.8 106.3-141.8 58.7 0 106.3 63.5 106.3 141.8z" transform="matrix(.44 0 0 .465 17.3 17)"/>
-    <path d="M579.8 250c-14.9-8.1-31.2-12.6-48.3-12.6s-33.4 4.5-48.3 12.5l7 16.4a82.8 82.8 0 0 1 82.7 0l6.9-16.4z" transform="matrix(.44 0 0 .465 17.3 17)"/>
-    <path d="M579.8 250c-14.9-8.1-31.2-12.6-48.3-12.6s-33.4 4.5-48.3 12.5l7 16.4a82.8 82.8 0 0 1 82.7 0l6.9-16.4z" transform="matrix(.44 0 0 -.465 17.4 386.4)"/>
+    <use xlink:href="#reuse-22" transform="matrix(.44 0 0 .465 17.3 17)"/>
+    <use xlink:href="#reuse-22" transform="matrix(.44 0 0 -.465 17.4 386.4)"/>
   </g>
   <path fill="#a7cfff" fill-rule="evenodd" d="M298 201.5c0 36.4-21 65.9-46.8 65.9-25.9 0-46.8-29.5-46.8-65.9 0-36.4 21-65.9 46.8-65.9 25.8 0 46.7 29.5 46.7 65.9z"/>
   <path fill="#afff7b" fill-rule="evenodd" stroke="#000" stroke-width="1pt" d="M637.8 396.9c1.1 26.6-4.6 39.6-11.9 67.3-1.9 3-11-6.5-16.4-11.2s-7.8 4.2-14.6-3c-6.7-7.4-11 2-16-4.2s-51.3-7-51.3-7.6c4.6-2.2 28.2.2 24.4-11.1-4.3-11.8-31-.4-34.6-15.4-2.5-15-53.6-15.6-57.3-19.2 1.5 5.6 39.8 8 38.9 22.5-.9 6-37.7 7.7-41.3 12.7-3 6.3 29-1.7 30.1 6 0 3.2-4.7 0-21.3 5-8.4 2.5 15.4 10.3 6.4 14.6-9 4.3-28.3 6.2-27.5 8 3 9 44.7 19.6 40.6 21.1-14.8 6.6-22.6 10.9-29.7 14.7a167.9 167.9 0 0 1-31.1-100.2c31.7-11.4 25-13.8 83.6-13.8s78 2.3 129 13.8z" transform="matrix(.44 0 0 .465 17.3 17)"/>

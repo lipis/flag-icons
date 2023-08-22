@@ -1,4 +1,7 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-mt" viewBox="0 0 512 512">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-mt" viewBox="0 0 512 512">
+  <defs>
+    <path id="reuse-0" fill="none" stroke="#707070" stroke-width="1pt" d="M269.3 414.6c0 41-34.1 74.4-76.2 74.4S117 455.7 117 414.6s34.1-74.4 76.2-74.4 76.2 33.3 76.2 74.4z"/>
+  </defs>
   <g fill-rule="evenodd" stroke-width="1pt">
     <path fill="#ce0000" d="M256 0h256v512H256z"/>
     <path fill="#fff" d="M0 0h256v512H0z"/>
@@ -29,8 +32,8 @@
       <path fill="gray" d="M115.7 463.7c6.2-6.2 18-4.5 26.3 3.8s10 20 3.7 26.3c-6.2 6.2-18 4.5-26.3-3.8s-10-20-3.7-26.3z"/>
       <path fill="#d0d0d0" d="m134.4 495-2.5-2.5 5-10-10 5-2.5-2.5 20-10-10 20zm-15-15-2.5-2.5 15-15 2.5 2.5z"/>
     </g>
-    <path fill="none" stroke="#707070" stroke-width="1pt" d="M269.3 414.6c0 41-34.1 74.4-76.2 74.4S117 455.7 117 414.6s34.1-74.4 76.2-74.4 76.2 33.3 76.2 74.4z" transform="matrix(.97674 0 0 1 6.3 0)"/>
-    <path fill="none" stroke="#707070" stroke-width="1pt" d="M269.3 414.6c0 41-34.1 74.4-76.2 74.4S117 455.7 117 414.6s34.1-74.4 76.2-74.4 76.2 33.3 76.2 74.4z" transform="matrix(.74419 0 0 .7619 51.2 98.7)"/>
+    <use xlink:href="#reuse-0" stroke-width="1pt" transform="matrix(.97674 0 0 1 6.3 0)"/>
+    <use xlink:href="#reuse-0" stroke-width="1pt" transform="matrix(.74419 0 0 .7619 51.2 98.7)"/>
     <path fill="#d0d0d0" fill-rule="evenodd" d="M170 474.8a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0zm56.8 0a3.5 3.5 0 1 1-7.1 0 3.5 3.5 0 0 1 7 0zm-34.3 0v3.7h-4.7c-4.7 0-4.7 3.7 0 3.7h4.7v3.7c0 3.8 4.2 4.3 4.5.3l.3-4h4.7c4.7 0 4.7-3.7 0-3.7h-4.7v-3.7c0-3.7-4.8-3.7-4.8 0z"/>
     <path fill="#d0d0d0" fill-rule="evenodd" stroke="#707070" stroke-width="1pt" d="M180.7 163v7s-3.3 5.5-24.8 7.2-24.8 0-24.8 0c.6 6.1 4.7 17.9 3.5 31.9.9 16.2-4 31-4 31 .5.8-2 1.3-6.6.8 3.6-3.5 3.1-13.8 3.6-28.3.4-14.6-13.6-36.5-10.7-42.5s63.8-7.1 63.8-7.1z" transform="matrix(.33032 0 0 .29556 117.6 374.3)"/>
     <path fill="#d0d0d0" fill-rule="evenodd" stroke="#707070" stroke-width="1pt" d="M272.8 162.3c20.9-1.1 55.9-.9 55.9-.9s8.3 18.5 7.9 28.7-3.2 19-7 14.6 1.7-3.5 2.4-14.6c.7-11-6.6-22.4-6.6-22.4s-15 7.3-37.5 5.8-12.5-10.8-15-11.2z" transform="matrix(.33032 0 0 .29556 115.2 366.9)"/>
