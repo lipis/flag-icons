@@ -1,3 +1,7 @@
+# 6.10.1
+
+- Flag of Turkmenistan (#1148)
+
 # 6.10.0
 
 - Update Martinique (#1145)
