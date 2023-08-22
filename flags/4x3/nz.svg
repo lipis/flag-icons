@@ -3,7 +3,7 @@
     <g id="nz-b">
       <g id="nz-a">
         <path d="M0-.3v.5l1-.5z"/>
-        <path d="M.2.3 0-.1 1-.3z"/>
+        <path d="M.2.3 0-.1l1-.2z"/>
       </g>
       <use xlink:href="#nz-a" transform="scale(-1 1)"/>
       <use xlink:href="#nz-a" transform="rotate(72 0 0)"/>
