@@ -1,3 +1,7 @@
+# 6.11.1
+
+- Fix Portuguese flag (#1154)
+
 # 6.11.0
 
 - Run SVGO on all files (#1149)
