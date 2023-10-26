@@ -1,3 +1,7 @@
+# 6.11.2
+
+- Fix French flags color to use the official ones (#1163)
+
 # 6.11.1
 
 - Fix Portuguese flag (#1154)
