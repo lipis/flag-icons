@@ -1594,6 +1594,13 @@
     "name": "Oman"
   },
   {
+    "code": "pc",
+    "flag_1x1": "flags/1x1/pc.svg",
+    "flag_4x3": "flags/4x3/pc.svg",
+    "iso": false,
+    "name": "Pacific Community"
+  },
+  {
     "capital": "Islamabad",
     "code": "pk",
     "continent": "Asia",
