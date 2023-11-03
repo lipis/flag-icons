@@ -1608,6 +1608,12 @@
 .fi-ic.fis {
   background-image: url(../flags/1x1/ic.svg);
 }
+.fi-pc {
+  background-image: url(../flags/4x3/pc.svg);
+}
+.fi-pc.fis {
+  background-image: url(../flags/1x1/pc.svg);
+}
 .fi-ta {
   background-image: url(../flags/4x3/ta.svg);
 }
