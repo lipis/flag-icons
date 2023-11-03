@@ -1,3 +1,7 @@
+# 6.12.0
+
+- Add flag for Pacific Community (#1165)
+
 # 6.11.2
 
 - Fix French flags color to use the official ones (#1163)
