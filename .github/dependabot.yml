@@ -1,8 +1,20 @@
 version: 2
 updates:
-  - package-ecosystem: npm
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+      interval: "daily"
+      # Check for github-actions updates at 2am UTC
+      time: "02:00"
+    open-pull-requests-limit: 10
+      
+  - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: daily
+      interval: "daily"
+      # Check for npm updates at 2am UTC
       time: "02:00"
     open-pull-requests-limit: 10
