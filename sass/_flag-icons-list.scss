@@ -257,7 +257,6 @@
   @include flag-icon(zw);
 
   // Other flags
-  @include flag-icon(ac);
   @include flag-icon(arab);
   @include flag-icon(cefta);
   @include flag-icon(cp);
@@ -273,7 +272,9 @@
   @include flag-icon(gb-wls);
   @include flag-icon(ic);
   @include flag-icon(pc);
-  @include flag-icon(ta);
+  @include flag-icon(sh-ac);
+  @include flag-icon(sh-hl);
+  @include flag-icon(sh-ta);
   @include flag-icon(un);
   @include flag-icon(xk);
 }
