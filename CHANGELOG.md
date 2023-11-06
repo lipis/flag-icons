@@ -1,3 +1,7 @@
+# 6.13.0
+
+- Saint Helena, Ascension and Tristan da Cunha updates (#1169)
+
 # 6.12.0
 
 - Add flag for Pacific Community (#1165)
