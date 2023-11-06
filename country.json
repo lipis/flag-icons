@@ -2162,8 +2162,8 @@
     "capital": "Edinburgh of the Seven Seas",
     "code": "sh-ta",
     "continent": "Africa",
-    "flag_1x1": "flags/1x1/ta.svg",
-    "flag_4x3": "flags/4x3/ta.svg",
+    "flag_1x1": "flags/1x1/sh-ta.svg",
+    "flag_4x3": "flags/4x3/sh-ta.svg",
     "iso": false,
     "name": "Tristan da Cunha"
   },
