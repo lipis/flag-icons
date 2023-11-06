@@ -116,10 +116,10 @@
   },
   {
     "capital": "Georgetown",
-    "code": "ac",
+    "code": "sh-ac",
     "continent": "Africa",
-    "flag_1x1": "flags/1x1/ac.svg",
-    "flag_4x3": "flags/4x3/ac.svg",
+    "flag_1x1": "flags/1x1/sh-ac.svg",
+    "flag_4x3": "flags/4x3/sh-ac.svg",
     "iso": false,
     "name": "Ascension Island"
   },
@@ -1764,6 +1764,15 @@
   },
   {
     "capital": "Jamestown",
+    "code": "sh-hl",
+    "continent": "Africa",
+    "flag_1x1": "flags/1x1/sh-hl.svg",
+    "flag_4x3": "flags/4x3/sh-hl.svg",
+    "iso": false,
+    "name": "Saint Helena"
+  },
+  {
+    "capital": "Jamestown",
     "code": "sh",
     "continent": "Africa",
     "flag_1x1": "flags/1x1/sh.svg",
@@ -2150,7 +2159,8 @@
     "name": "Trinidad and Tobago"
   },
   {
-    "code": "ta",
+    "capital": "Edinburgh of the Seven Seas",
+    "code": "sh-ta",
     "flag_1x1": "flags/1x1/ta.svg",
     "flag_4x3": "flags/4x3/ta.svg",
     "iso": false,

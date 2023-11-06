@@ -1518,12 +1518,6 @@
 .fi-zw.fis {
   background-image: url(../flags/1x1/zw.svg);
 }
-.fi-ac {
-  background-image: url(../flags/4x3/ac.svg);
-}
-.fi-ac.fis {
-  background-image: url(../flags/1x1/ac.svg);
-}
 .fi-arab {
   background-image: url(../flags/4x3/arab.svg);
 }
@@ -1614,11 +1608,17 @@
 .fi-pc.fis {
   background-image: url(../flags/1x1/pc.svg);
 }
-.fi-ta {
-  background-image: url(../flags/4x3/ta.svg);
+.fi-sh-ac {
+  background-image: url(../flags/4x3/sh-ac.svg);
 }
-.fi-ta.fis {
-  background-image: url(../flags/1x1/ta.svg);
+.fi-sh-ac.fis {
+  background-image: url(../flags/1x1/sh-ac.svg);
+}
+.fi-sh-ta {
+  background-image: url(../flags/4x3/sh-ta.svg);
+}
+.fi-sh-ta.fis {
+  background-image: url(../flags/1x1/sh-ta.svg);
 }
 .fi-un {
   background-image: url(../flags/4x3/un.svg);
