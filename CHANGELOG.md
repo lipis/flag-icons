@@ -1,3 +1,8 @@
+# 6.13.2
+
+- Fix paths for sh-ta
+- Action for pubishing to npm
+
 # 6.13.0
 
 - Saint Helena, Ascension and Tristan da Cunha updates (#1169)
