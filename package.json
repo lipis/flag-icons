@@ -17,13 +17,13 @@
   ],
   "devDependencies": {
     "http-server": "14.1.1",
-    "less": "4.2.0",
     "prettier": "3.0.3",
+    "sass": "1.69.5",
     "svgo": "3.0.2"
   },
   "scripts": {
-    "build:dev": "lessc less/flag-icons.less > css/flag-icons.css",
-    "build:min": "lessc -x less/flag-icons.less > css/flag-icons.min.css",
+    "build:dev": "sass --no-source-map --no-charset sass/flag-icons.scss css/flag-icons.css",
+    "build:min": "sass --no-source-map --no-charset --style=compressed sass/flag-icons.scss css/flag-icons.min.css",
     "build": "yarn build:dev && yarn build:min",
     "fix": "yarn prettier --write",
     "ids": "python3 flag-ids.py",
