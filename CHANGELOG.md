@@ -1,6 +1,6 @@
 # 7.0.0
 
-- Remove Less support (#1173)
+- Remove Less support (#1174)
 
 # 6.14.0
 
