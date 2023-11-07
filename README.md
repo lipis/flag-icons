@@ -25,7 +25,7 @@ or use CDN:
 ```html
 <link
   rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.11.0/css/flag-icons.min.css"
+  href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@6.14.0/css/flag-icons.min.css"
 />
 ```
 
@@ -49,7 +49,7 @@ Which means that the flag is just going to appear in the middle of an element, s
 
 Run the `yarn` to install the dependencies after cloning the project and you'll be able to:
 
-To build `*.less` files
+To build `*.scss` files
 
 ```bash
 $ yarn build
@@ -61,7 +61,7 @@ To serve it on `localhost:8000`
 $ yarn start
 ```
 
-To have only specific countries in the css file, remove the ones that you don't need from the [`flag-icons-list.less`](less/flag-icons-list.less) file and build it again.
+To have only specific countries in the css file, remove the ones that you don't need from the [`_flag-icons-list.scss`](sass/_flag-icons-list.scss) file and build it again.
 
 ## Credits
 
