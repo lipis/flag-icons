@@ -1,3 +1,7 @@
+# 6.14.0
+
+- Build with SASS instead of Less the generated CSS (#1172)
+
 # 6.13.2
 
 - Fix paths for sh-ta
