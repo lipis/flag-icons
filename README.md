@@ -49,7 +49,7 @@ Which means that the flag is just going to appear in the middle of an element, s
 
 Run the `yarn` to install the dependencies after cloning the project and you'll be able to:
 
-To build `*.sass` files
+To build `*.scss` files
 
 ```bash
 $ yarn build
