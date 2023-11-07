@@ -1,3 +1,7 @@
+# 7.0.0
+
+- Remove Less support (#1173)
+
 # 6.14.0
 
 - Build with SASS instead of Less the generated CSS (#1172)
