@@ -15,7 +15,7 @@
   <path fill="#cf142b" d="M0 0h512v512H0z"/>
   <path fill="#00247d" d="M0 0h512v341.3H0z"/>
   <path fill="#fc0" d="M0 0h512v170.7H0z"/>
-  <g id="ve-f" transform="translate(256.3 358.4) scale(4.265)">
+  <g id="ve-f" transform="translate(256.3 358.4)scale(4.265)">
     <g id="ve-e">
       <use xlink:href="#ve-d" width="180" height="120" transform="rotate(10)"/>
       <use xlink:href="#ve-d" width="180" height="120" transform="rotate(30)"/>

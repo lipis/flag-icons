@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-li" viewBox="0 0 512 512">
   <path fill="#002b7f" d="M0 0h512.1v256H0z"/>
   <path fill="#ce1126" d="M0 256h512.1v256H0z"/>
-  <g fill="#ffd83d" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(-54) scale(.85333)">
+  <g fill="#ffd83d" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" transform="translate(-54)scale(.85333)">
     <g id="li-a">
       <path stroke="none" d="m216.4 122.3-1.9 62.5h-63.4c-7.8-15.2-14.2-28-14.2-45.5 0-14.6 11.5-26.2 28-26.2 17.5 0 36.8 5.9 51.5 9.2z"/>
       <g stroke-width="1.5">

@@ -13,7 +13,7 @@
     </g>
   </defs>
   <path fill="#039" d="M0 0h512v512H0z"/>
-  <g fill="#fc0" transform="translate(256 258.4) scale(25.28395)">
+  <g fill="#fc0" transform="translate(256 258.4)scale(25.28395)">
     <use xlink:href="#eu-d" width="100%" height="100%" y="-6"/>
     <use xlink:href="#eu-d" width="100%" height="100%" y="6"/>
     <g id="eu-e">

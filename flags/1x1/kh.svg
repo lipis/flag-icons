@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-kh" viewBox="0 0 512 512">
   <path fill="#032ea1" d="M0 0h512v512H0z"/>
   <path fill="#e00025" d="M0 128h512v256H0z"/>
-  <g fill="#fff" stroke="#000" transform="matrix(1.28 0 0 1.28 6 -556.7)">
+  <g fill="#fff" stroke="#000" transform="translate(6 -556.7)scale(1.28)">
     <g stroke-linejoin="bevel">
       <path d="M139 623.5h113.8v43.8H139z"/>
       <path d="M247 647.6h3.5v16.5H247zm-108-8.1h113.8v5H139zm0-7h113.8v4.6H139z"/>
