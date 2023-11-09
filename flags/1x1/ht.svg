@@ -4,7 +4,7 @@
   <g fill="#f1b517" stroke="#000" stroke-width=".2">
     <path fill="#fff" stroke="none" d="M175.2 191.6h161.6v128.6H175.2z"/>
     <path fill="#016a16" stroke="#016a16" stroke-width=".3" d="m288.5 284.6-33 1-32.8.3s-16.8 6.3-23.7 7.7c-6.9 1.4-6 3.6-11.3 4.8-4.3 1-4.8 1.3-7.3 1.4-1.5.1-3.3 1.3-5.2 2.6v17.8h161.6v-17a31.8 31.8 0 0 0-5.2-2.1c-2.3-.8-4-1.7-8.2-2.7-5.3-1.2-4.4-3.4-11.3-4.8s-23.6-9-23.6-9z"/>
-    <g transform="translate(-170.7) scale(1.70667)">
+    <g transform="translate(-170.7)scale(1.70667)">
       <g id="ht-a">
         <path d="M244.5 143.5h1.4l2.6 10.7-.6 3.4-3.4-14z"/>
         <path fill="#fff" d="m243 136.3 1 8.3h1l-2-8.2z"/>
@@ -33,7 +33,7 @@
       </g>
       <use xlink:href="#ht-a" width="100%" height="100%" transform="matrix(-1 0 0 1 499.9 0)"/>
     </g>
-    <g transform="translate(-170.7) scale(1.70667)">
+    <g transform="translate(-170.7)scale(1.70667)">
       <path fill="#016a16" stroke="#016a16" d="m248.8 125.6-.5 9h2.9l-.4-9 3-.3-.3-3.6-7.5.3v3.2l2.8.4z"/>
       <g id="ht-b" fill="#016a16">
         <path d="M249.8 121.9c-7.8-7.8-13.9-4-15.3-2.9 1 .2 1.8-.4 2.3-.5l-1 1.2s2.5-1 2.8-1c-.4.3-.8 1-.8 1 .2 0 1.6-1.1 1.8-1.1-.4.4-.5 1.5-.5 1.5l1.2-.5c.3.2-.1.6.1.6 2-.2 4.7 1.7 5 2.3"/>
@@ -53,7 +53,7 @@
       <path d="m250.4 125-1-.9.3-7.1 1 .3-.3 7.6z"/>
       <path fill="#d20014" stroke="#d20014" d="M251.7 119.3c.6-.4 1-1.5.6-2.1-1-1.3-1.7-.8-3.4-1.4-.3.4-1 1-.9 1.6 2.3 1 1.4.2 2.2.3.4 0 .6.5 1.5 1.5z"/>
     </g>
-    <g transform="translate(-170.7) scale(1.70667)">
+    <g transform="translate(-170.7)scale(1.70667)">
       <use xlink:href="#ht-c" width="100%" height="100%" transform="matrix(1 0 0 -1 0 320.4)"/>
       <path fill="#016a16" stroke="#fff" stroke-linecap="round" d="M238.4 161.8c0 1.2-.9 2.3-1.9 2.3s-1.8-1-1.8-2.4v-1.2h3.7v1.2z"/>
       <ellipse cx="236.5" cy="160.1" fill="#fff" stroke="none" rx="1.8" ry=".9"/>
