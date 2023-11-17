@@ -1,3 +1,7 @@
+# 7.0.0
+
+- Remove Less support (#1174)
+
 # 6.15.0
 
 - Run the latest SVGO to all files (#1176)
