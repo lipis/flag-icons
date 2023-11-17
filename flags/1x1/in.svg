@@ -2,7 +2,7 @@
   <path fill="#f93" d="M0 0h512v170.7H0z"/>
   <path fill="#fff" d="M0 170.7h512v170.6H0z"/>
   <path fill="#128807" d="M0 341.3h512V512H0z"/>
-  <g transform="translate(256 256) scale(3.41333)">
+  <g transform="translate(256 256)scale(3.41333)">
     <circle r="20" fill="#008"/>
     <circle r="17.5" fill="#fff"/>
     <circle r="3.5" fill="#008"/>

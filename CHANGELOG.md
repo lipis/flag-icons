@@ -2,6 +2,10 @@
 
 - Remove Less support (#1174)
 
+# 6.15.0
+
+- Run the latest SVGO to all files (#1176)
+
 # 6.14.0
 
 - Build with SASS instead of Less the generated CSS (#1172)
