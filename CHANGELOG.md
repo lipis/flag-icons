@@ -1,3 +1,7 @@
+# 7.0.1
+
+- Remove `<use>`` tags without href (#1179)
+
 # 7.0.0
 
 - Remove Less support (#1174)
