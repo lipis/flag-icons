@@ -1,3 +1,7 @@
+# 7.0.2
+
+- Fix Jersey flag (#1180)
+
 # 7.0.1
 
 - Remove `<use>`` tags without href (#1179)
