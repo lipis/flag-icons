@@ -457,15 +457,16 @@ supports-color@^7.1.0:
   dependencies:
     has-flag "^4.0.0"
 
-svgo@3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/svgo/-/svgo-3.0.3.tgz#8cdfece6d4a0dc1dc116766d806daf817c1798b8"
-  integrity sha512-X4UZvLhOglD5Xrp834HzGHf8RKUW0Ahigg/08yRO1no9t2NxffOkMiQ0WmaMIbaGlVTlSst2zWANsdhz5ybXgA==
+svgo@3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/svgo/-/svgo-3.0.4.tgz#67b40a710743e358e8d19ec288de8f1e388afbb4"
+  integrity sha512-T+Xul3JwuJ6VGXKo/p2ndqx1ibxNKnLTvRc1ZTWKCfyKS/GgNjRZcYsK84fxTsy/izr91g/Rwx6fGnVgaFSI5g==
   dependencies:
     "@trysound/sax" "0.2.0"
     commander "^7.2.0"
     css-select "^5.1.0"
     css-tree "^2.2.1"
+    css-what "^6.1.0"
     csso "5.0.5"
     picocolors "^1.0.0"
 
