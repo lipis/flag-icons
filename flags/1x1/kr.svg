@@ -2,7 +2,7 @@
   <path fill="#fff" fill-rule="evenodd" d="M0 0h512v512H0Z"/>
   <g fill-rule="evenodd" transform="rotate(-56.3 367.2 -111.2)scale(9.375)">
     <g id="kr-b">
-      <path id="kr-a" d="M-6-26H6v2H-6Zm0 3H6v2H-6Zm0 3H6v2H-6Z"/>
+      <path id="kr-a" fill="#000" d="M-6-26H6v2H-6Zm0 3H6v2H-6Zm0 3H6v2H-6Z"/>
       <use xlink:href="#kr-a" width="100%" height="100%" y="44"/>
     </g>
     <path stroke="#fff" d="M0 17v10"/>
