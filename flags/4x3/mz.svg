@@ -7,7 +7,7 @@
   <g clip-path="url(#mz-a)" transform="scale(.9375)">
     <path fill="#009a00" fill-rule="evenodd" d="M0 0h768v160H0z"/>
     <path fill="#fff" fill-rule="evenodd" d="M0 160h768v16H0z"/>
-    <path fill-rule="evenodd" d="M0 176h768v160H0z"/>
+    <path fill="#000" fill-rule="evenodd" d="M0 176h768v160H0z"/>
     <path fill="#fff" fill-rule="evenodd" d="M0 336h768v16H0z"/>
     <path fill="#ffca00" fill-rule="evenodd" d="M0 352h768v160H0z"/>
     <path fill="red" fill-rule="evenodd" d="M0 0v512l336-256L0 0z"/>
