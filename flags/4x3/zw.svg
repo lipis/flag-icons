@@ -8,7 +8,7 @@
     <path fill="#006400" d="M0 0h840v420H0z"/>
     <path fill="#ffd200" d="M0 60h840v300H0z"/>
     <path fill="#d40000" d="M0 120h840v180H0z"/>
-    <path d="M0 180h840v60H0z"/>
+    <path fill="#000" d="M0 180h840v60H0z"/>
     <path stroke="#000" stroke-width="20" d="M0 0v420l280-210z"/>
     <path fill="#fff" d="M0 0v420l280-210z"/>
     <path fill="#d40000" d="M106.5 104.4 162 275.1 16.8 169.6h179.5L51 275.1z"/>
