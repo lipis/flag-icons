@@ -1,3 +1,7 @@
+# 7.0.3
+
+- Fix black SVG elements (#1187)
+
 # 7.0.2
 
 - Fix Jersey flag (#1180)
