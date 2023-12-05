@@ -8,8 +8,8 @@
     <path fill="#108c00" d="M-258.3 0H769.2v512H-258.3z"/>
     <path fill="#ffd600" d="M-260 178.2H772.6v50.1H-260z"/>
     <path fill="#ffd600" d="M181 0h48.5v512h-48.4z"/>
-    <path d="M227.8 0h48.4v512h-48.4z"/>
-    <path d="M-260 226.6H772.6v50.2H-260z"/>
+    <path fill="#000" d="M227.8 0h48.4v512h-48.4z"/>
+    <path fill="#000" d="M-260 226.6H772.6v50.2H-260z"/>
     <path fill="#fff" d="M-260 276.8H772.6v50.1H-260z"/>
     <path fill="#fff" d="M276.2 0h48.5v512h-48.5z"/>
     <rect width="273.8" height="275" x="-394.6" y="-393.9" fill="#e72910" ry="137.5" transform="scale(-1)"/>

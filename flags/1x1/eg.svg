@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-eg" viewBox="0 0 512 512">
-  <path d="M0 341.3h512V512H0z"/>
+  <path fill="#000" d="M0 341.3h512V512H0z"/>
   <path fill="#fff" d="M0 170.7h512v170.6H0z"/>
   <path fill="#ce1126" d="M0 0h512v170.7H0z"/>
   <g fill="#fff" stroke="#c09300" transform="translate(-128)scale(.85333)">

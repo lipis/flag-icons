@@ -6,10 +6,10 @@
   </defs>
   <g clip-path="url(#ug-a)" transform="translate(80)scale(.9375)">
     <path fill="#ffe700" fill-rule="evenodd" d="M-128 341.4h768v85.3h-768z"/>
-    <path fill-rule="evenodd" d="M-128 256h768v85.3h-768z"/>
+    <path fill="#000" fill-rule="evenodd" d="M-128 256h768v85.3h-768z"/>
     <path fill="#de3908" fill-rule="evenodd" d="M-128 170.7h768V256h-768z"/>
     <path fill="#ffe700" fill-rule="evenodd" d="M-128 85.4h768v85.3h-768z"/>
-    <path fill-rule="evenodd" d="M-128 0h768v85.3h-768z"/>
+    <path fill="#000" fill-rule="evenodd" d="M-128 0h768v85.3h-768z"/>
     <path fill="#fffdff" fill-rule="evenodd" stroke="#000" d="M335.7 256a79.7 79.7 0 1 1-159.4 0 79.7 79.7 0 0 1 159.4 0z"/>
     <path fill="#de3108" fill-rule="evenodd" stroke="#000" d="m242 194.9-5.2-9.5c2-2 5.3-3.6 10.7-3.6l-.6 10.5-5 2.6z"/>
     <path fill="#ffe700" fill-rule="evenodd" stroke="#000" d="m247 192.3.7-10.5s10.7-.6 16.5 6.4l-5.7 8.2-11.6-4z"/>

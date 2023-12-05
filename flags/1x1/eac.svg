@@ -4,7 +4,7 @@
   <path id="eac-b" fill="#0087ff" fill-opacity="1" fill-rule="nonzero" stroke="none" stroke-dasharray="none" stroke-miterlimit="4" stroke-opacity="1" stroke-width="2.9" d="M0 371.2h512V512H0z"/>
   <use xlink:href="#eac-b" width="600" height="330" transform="translate(0 -371.2)"/>
   <path fill="red" d="M0 309.8h512v38.4H0z"/>
-  <path d="M0 163.8h512v38.4H0z"/>
+  <path fill="#000" d="M0 163.8h512v38.4H0z"/>
   <path fill="#ff0" d="M0 220.2h512v71.7H0z"/>
   <path id="eac-c" fill="#008300" fill-opacity="1" fill-rule="nonzero" stroke="none" stroke-dasharray="none" stroke-miterlimit="4" stroke-opacity="1" stroke-width="2.9" d="M0 291.8h512v17.9H0z"/>
   <use xlink:href="#eac-c" width="600" height="330" transform="translate(0 -89.6)"/>
