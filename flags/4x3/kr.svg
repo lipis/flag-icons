@@ -8,7 +8,7 @@
     <path fill="#fff" d="M-95.8-.4H587v512H-95.8Z"/>
     <g transform="rotate(-56.3 361.6 -101.3)scale(10.66667)">
       <g id="kr-c">
-        <path id="kr-b" fill="#000" d="M-6-26H6v2H-6Zm0 3H6v2H-6Zm0 3H6v2H-6Z"/>
+        <path id="kr-b" fill="#000001" d="M-6-26H6v2H-6Zm0 3H6v2H-6Zm0 3H6v2H-6Z"/>
         <use xlink:href="#kr-b" width="100%" height="100%" y="44"/>
       </g>
       <path stroke="#fff" d="M0 17v10"/>
