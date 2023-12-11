@@ -18,7 +18,7 @@
     "http-server": "14.1.1",
     "prettier": "3.1.0",
     "sass": "1.69.5",
-    "svgo": "3.0.5"
+    "svgo": "3.1.0"
   },
   "scripts": {
     "build:dev": "sass --no-source-map --no-charset sass/flag-icons.scss css/flag-icons.css",
