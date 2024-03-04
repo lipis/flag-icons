@@ -1,6 +1,6 @@
 # 7.2.0
 
-- Update all flags with SVGO 3.2.0
+- Update all flags with SVGO 3.2.0 (#1224)
 - Update German colors (#1208, #1209)
 
 # 7.1.0
