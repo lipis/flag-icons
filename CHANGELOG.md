@@ -1,3 +1,7 @@
+# 7.2.0
+
+- Update German colors (#1208, #1209)
+
 # 7.1.0
 
 - SVGO all files and update `fill="#000"` to `fill="#000001"` (#1193)
