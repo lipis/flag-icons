@@ -16,8 +16,12 @@
   ],
   "devDependencies": {
     "http-server": "14.1.1",
+    "imagemin": "^7.0.1",
+    "imagemin-pngquant": "^9.0.2",
+    "lodash.chunk": "^4.2.0",
     "prettier": "3.2.5",
     "sass": "1.75.0",
+    "sharp": "^0.33.3",
     "svgo": "3.2.0"
   },
   "scripts": {
