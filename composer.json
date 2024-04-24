@@ -1,22 +1,24 @@
 {
-  "name": "components/flag-icon-css",
-  "type": "component",
-  "description": "CSS for vector based country flags",
+  "name": "lipis/flag-icons",
+  "description": "A curated collection of all country flags in SVG — plus the CSS for easier integration.",
+  "type": "library",
   "license": "MIT",
+  "homepage": "https://flagicons.lipis.dev",
+  "keywords": [
+    "css",
+    "svg",
+    "country-flags",
+    "country",
+    "icon-css"
+  ],
   "authors": [
     {
-      "name": "Panayiotis Lipiridis (Lipis)",
-      "email": "lipiridis@gmail.com"
+      "name": "Panayiotis Lipiridis",
+      "email": "lipiridis@gmail.com",
+      "role": "Lead"
     }
   ],
-  "extra": {
-    "component": {
-      "name": "flag-icon-css",
-      "files": [
-        "less/**",
-        "css/**",
-        "flags/**"
-      ]
-    }
+  "support": {
+    "issues": "https://github.com/lipis/flag-icons/issues"
   }
 }

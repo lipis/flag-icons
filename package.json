@@ -1,50 +1,38 @@
 {
-  "name": "flag-icon-css",
-  "version": "3.5.0",
+  "name": "flag-icons",
+  "version": "7.2.1",
   "author": "Panayiotis Lipiridis <lipiridis@gmail.com>",
-  "licenses": [
-    {
-      "type": "MIT",
-      "url": "http://opensource.org/licenses/MIT"
-    }
-  ],
+  "license": "MIT",
+  "main": "css/flag-icons.css",
   "repository": {
     "type": "git",
-    "url": "http://github.com/lipis/flag-icon-css"
+    "url": "https://github.com/lipis/flag-icons"
   },
+  "files": [
+    "css",
+    "flags",
+    "sass",
+    "country.json"
+  ],
   "devDependencies": {
-    "grunt": "1.2.1",
-    "grunt-contrib-connect": "3.0.0",
-    "grunt-contrib-cssmin": "3.0.0",
-    "grunt-contrib-less": "2.0.0",
-    "grunt-contrib-watch": "1.1.0",
-    "husky": "4.2.5",
-    "imagemin": "^7.0.1",
-    "imagemin-pngquant": "^9.0.0",
-    "lint-staged": "10.2.11",
-    "lodash.chunk": "^4.2.0",
-    "prettier": "2.0.5",
-    "sharp": "^0.25.4",
-    "svgo": "1.3.2"
-  },
-  "lint-staged": {
-    "*.{json,md,scss,less,yaml,yml}": [
-      "prettier --write"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "http-server": "14.1.1",
+    "prettier": "3.2.5",
+    "sass": "1.75.0",
+    "svgo": "3.2.0"
   },
   "scripts": {
-    "build": "grunt build",
     "buildSprite": "node buildSprite.js",
-    "svgo": "svgo --pretty --indent=2 --precision=1 --config=svgo.yaml",
-    "svgo:min": "find flags | grep '\\.svg$' | xargs -Iz -n 1 svgo --config=svgo.yaml z",
-    "svgo:all": "find flags | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z",
+    "build:dev": "sass --no-source-map --no-charset sass/flag-icons.scss css/flag-icons.css",
+    "build:min": "sass --no-source-map --no-charset --style=compressed sass/flag-icons.scss css/flag-icons.min.css",
+    "build": "yarn build:dev && yarn build:min",
     "fix": "yarn prettier --write",
-    "prettier": "prettier \"**/*.{json,md,scss,less,yaml,yml}\"",
-    "test": "yarn prettier --list-different"
+    "ids": "python3 flag-ids.py",
+    "prettier": "prettier \"**/*.{html,json,md,scss,yaml,yml,js}\"",
+    "start": "http-server -a localhost -p 8000",
+    "svgo:all": "find flags | grep '\\.svg$' | xargs -Iz -n 1 yarn svgo z && yarn ids",
+    "svgo:min": "find flags | grep '\\.svg$' | xargs -Iz -n 1 svgo z && yarn ids",
+    "svgo": "svgo --pretty --indent=2 --precision=1",
+    "test": "yarn prettier --list-different",
+    "maven": "./maven.sh"
   }
 }

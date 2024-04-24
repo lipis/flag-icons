@@ -1,8 +1,11 @@
-@if variable-exists(include) {
-  @each $country in $include {
+@if variable-exists(flag-icons-included-countries) {
+  @each $country in $flag-icons-included-countries {
     @include flag-icon($country);
   }
 } @else {
+  // Keep xx first as it is often used as fallback
+  @include flag-icon(xx);
+
   @include flag-icon(ad);
   @include flag-icon(ae);
   @include flag-icon(af);
@@ -254,13 +257,24 @@
   @include flag-icon(zw);
 
   // Other flags
-  @include flag-icon(es-ca);
+  @include flag-icon(arab);
+  @include flag-icon(cefta);
+  @include flag-icon(cp);
+  @include flag-icon(dg);
+  @include flag-icon(eac);
+  @include flag-icon(es-ct);
   @include flag-icon(es-ga);
+  @include flag-icon(es-pv);
   @include flag-icon(eu);
   @include flag-icon(gb-eng);
   @include flag-icon(gb-nir);
   @include flag-icon(gb-sct);
   @include flag-icon(gb-wls);
+  @include flag-icon(ic);
+  @include flag-icon(pc);
+  @include flag-icon(sh-ac);
+  @include flag-icon(sh-hl);
+  @include flag-icon(sh-ta);
   @include flag-icon(un);
   @include flag-icon(xk);
 }

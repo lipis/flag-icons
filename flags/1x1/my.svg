@@ -1,15 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icon-css-my" viewBox="0 0 512 512">
-  <path fill="#cc0001" d="M0 0h512v512H0z"/>
-  <path id="a" fill="#fff" d="M0 475.5h512V512H0z"/>
-  <use width="100%" height="100%" transform="translate(0 -73.1)" xlink:href="#a"/>
-  <use width="100%" height="100%" transform="translate(0 -146.3)" xlink:href="#a"/>
-  <use width="100%" height="100%" transform="translate(0 -219.4)" xlink:href="#a"/>
-  <use width="100%" height="100%" transform="translate(0 -292.6)" xlink:href="#a"/>
-  <use width="100%" height="100%" transform="translate(0 -365.7)" xlink:href="#a"/>
-  <use width="100%" height="100%" transform="translate(0 -438.9)" xlink:href="#a"/>
-  <path fill="#010066" d="M0 0h320v292.6H0z"/>
-  <g fill="#fc0">
-    <path d="M123.8 51.9a93 93 0 00-93.2 92.9 93 93 0 00143.7 78.1 82.7 82.7 0 01-27 4.5 82.5 82.5 0 01-82.7-82.3c0-45.5 37-82.4 82.6-82.4a82.6 82.6 0 0128.7 5A93 93 0 00124 52z"/>
-    <path d="M278.4 193.2L239 172.7l11.6 41.9-26.2-35-8.2 42.6-8-42.7-26.5 35 11.8-41.9-39.3 20.4 29.2-32.8-44.5 1.7 40.9-17.1-40.9-17.3 44.5 1.8-29-32.9 39.2 20.5L182 75l26.2 35 8.2-42.6 8 42.7L251 75l-11.8 42 39.3-20.4-29.2 32.8 44.5-1.7-40.9 17.2 40.9 17.2-44.5-1.8z"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-my" viewBox="0 0 512 512">
+  <path fill="#C00" d="M0 0h512v36.6H0z"/>
+  <path fill="#fff" d="M0 36.6h512V73H0z"/>
+  <path fill="#C00" d="M0 73.1h512v36.6H0z"/>
+  <path fill="#fff" d="M0 109.7h512v36.6H0z"/>
+  <path fill="#C00" d="M0 146.3h512v36.6H0z"/>
+  <path fill="#fff" d="M0 182.9h512v36.5H0z"/>
+  <path fill="#C00" d="M0 219.4h512V256H0z"/>
+  <path fill="#fff" d="M0 256h512v36.6H0z"/>
+  <path fill="#C00" d="M0 292.6h512V329H0z"/>
+  <path fill="#fff" d="M0 329.1h512v36.6H0z"/>
+  <path fill="#C00" d="M0 365.7h512v36.6H0z"/>
+  <path fill="#fff" d="M0 402.3h512v36.6H0z"/>
+  <path fill="#C00" d="M0 438.9h512v36.5H0z"/>
+  <path fill="#fff" d="M0 475.4h512V512H0z"/>
+  <path fill="#006" d="M0 0h256v292.6H0z"/>
+  <path fill="#FC0" d="m166 93 4.8 32.5 18.4-27.2-10 31.3 28.5-16.6-22.5 24 32.8-2.6-30.7 11.9L218 158l-32.8-2.5 22.5 24-28.4-16.7 9.8 31.5-18.4-27.3-4.8 32.5-4.7-32.5-18.4 27.2 9.9-31.4-28.4 16.7 22.4-24-32.8 2.5 30.7-11.8-30.6-11.9 32.8 2.6-22.5-24 28.4 16.6-10-31.4 18.5 27.3 4.8-32.6Zm-26.7 1.3a56.9 56.9 0 0 0-73 24.9 56.9 56.9 0 0 0 45.5 83.8 56.9 56.9 0 0 0 27.5-4.7 64 64 0 1 1 0-104"/>
 </svg>
