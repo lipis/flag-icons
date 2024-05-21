@@ -1,6 +1,6 @@
 # 7.2.2
 
-- Fix Malta Flag (#1239)
+- Fix Malta Flag (#1248)
 
 # 7.2.1
 
