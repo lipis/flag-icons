@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00c;
+      }
+
+      .cls-2 {
+        stroke-linecap: square;
+      }
+
+      .cls-2, .cls-3 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 1.51;
+        stroke-width: 20px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" width="512" height="512"/>
+  <g id="g828">
+    <circle id="path10" class="cls-3" cx="256" cy="256" r="190"/>
+    <path id="path823-1" class="cls-2" d="m131.49,384.36c77.05-44.48,171.98-44.48,249.03,0"/>
+    <path id="path823" class="cls-2" d="m380.51,127.64c-77.05,44.48-171.98,44.48-249.03,0"/>
+    <path id="path4522-9-4" class="cls-3" d="m255.57,445.68c-59.55-44.87-94.57-115.11-94.57-189.68s35.02-144.8,94.57-189.68"/>
+    <path id="path833-7" class="cls-3" d="m256,66v380"/>
+    <path id="path833" class="cls-3" d="m66,256h380"/>
+    <path id="path4522-9-4-1" class="cls-3" d="m256.43,66.32c59.55,44.87,94.57,115.11,94.57,189.68s-35.02,144.8-94.57,189.68"/>
+  </g>
+</svg>

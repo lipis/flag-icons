@@ -1906,3 +1906,10 @@
 .fi-xk.fis {
   background-image: url(../flags/1x1/xk.svg);
 }
+
+.fi-wld {
+  background-image: url(../flags/4x3/wld.svg);
+}
+.fi-wld.fis {
+  background-image: url(../flags/1x1/wld.svg);
+}
