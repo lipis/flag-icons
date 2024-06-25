@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="svg8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #00c;
+      }
+
+      .cls-2 {
+        stroke-linecap: square;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 20px;
+      }
+
+      .cls-2, .cls-3, .cls-4 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 1.51;
+      }
+
+      .cls-4 {
+        stroke-width: 20px;
+      }
+    </style>
+  </defs>
+  <rect class="cls-1" width="640" height="480"/>
+  <g id="layer1">
+    <g id="g839">
+      <g id="g828">
+        <circle id="path10" class="cls-3" cx="320" cy="240" r="190"/>
+        <path id="path823-1" class="cls-2" d="m195.49,368.36c77.05-44.48,171.98-44.48,249.03,0"/>
+        <path id="path823" class="cls-2" d="m444.51,111.64c-77.05,44.48-171.98,44.48-249.03,0"/>
+        <path id="path4522-9-4" class="cls-3" d="m319.57,429.68c-59.55-44.87-94.57-115.11-94.57-189.68s35.02-144.8,94.57-189.68"/>
+        <path id="path833-7" class="cls-4" d="m320,50v380"/>
+        <path id="path833" class="cls-4" d="m130,240h380"/>
+        <path id="path4522-9-4-1" class="cls-3" d="m320.43,50.32c59.55,44.87,94.57,115.11,94.57,189.68s-35.02,144.8-94.57,189.68"/>
+      </g>
+    </g>
+  </g>
+</svg>
