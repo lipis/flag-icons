@@ -17,7 +17,7 @@
   "devDependencies": {
     "http-server": "14.1.1",
     "prettier": "3.3.1",
-    "sass": "1.77.4",
+    "sass": "1.77.8",
     "svgo": "3.2.0"
   },
   "scripts": {
