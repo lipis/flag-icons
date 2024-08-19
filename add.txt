@@ -1,0 +1,25 @@
++---------------------------------------+
+|    Autonomous communities of Spain    |
++----------------------+---------+------+
+| Autonomous community | ISO3166 | done |
++----------------------+---------+------+
+| Andalusia            |  ES-AN  |      |
+| Aragon               |  ES-AR  |      |
+| Asturias             |  ES-AS  |      |
+| Balearic Islands     |  ES-IB  |      |
+| Basque Country       |  ES-PV  | x    |
+| Canary Islands       |  ES-CN  |      |
+| Cantabria            |  ES-CB  |      |
+| Castile and León     |  ES-CL  |      |
+| Castilla–La Mancha   |  ES-CM  |      |
+| Catalonia            |  ES-CT  | x    |
+| Extremadura          |  ES-EX  |      |
+| Galicia              |  ES-GA  | x    |
+| La Rioja             |  ES-RI  |      |
+| Madrid               |  ES-MD  |      |
+| Murcia               |  ES-MC  |      |
+| Navarre              |  ES-NA  |      |
+| Valencia             |  ES-VC  |      |
++----------------------+---------+------+
+
+https://en.wikipedia.org/w/index.php?title=Autonomous_communities_of_Spain&useskin=vector#List_of_autonomous_communities
