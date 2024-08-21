@@ -3,7 +3,7 @@
 +----------------------+---------+------+
 | Autonomous community | ISO3166 | done |
 +----------------------+---------+------+
-| Andalusia            |  ES-AN  |      |
+| Andalusia            |  ES-AN  | x    |
 | Aragon               |  ES-AR  |      |
 | Asturias             |  ES-AS  |      |
 | Balearic Islands     |  ES-IB  |      |

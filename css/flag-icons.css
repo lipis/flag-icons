@@ -1802,6 +1802,13 @@
   background-image: url(../flags/1x1/eac.svg);
 }
 
+.fi-es-an {
+  background-image: url(../flags/4x3/es-an.svg);
+}
+.fi-es-an.fis {
+  background-image: url(../flags/1x1/es-an.svg);
+}
+
 .fi-es-ct {
   background-image: url(../flags/4x3/es-ct.svg);
 }

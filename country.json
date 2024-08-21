@@ -45,6 +45,13 @@
     "name": "American Samoa"
   },
   {
+    "code": "es-an",
+    "flag_1x1": "flags/1x1/es-an.svg",
+    "flag_4x3": "flags/4x3/es-an.svg",
+    "iso": false,
+    "name": "Andalusia"
+  },
+  {
     "capital": "Andorra la Vella",
     "code": "ad",
     "continent": "Europe",
