@@ -1277,6 +1277,13 @@
     "name": "Madagascar"
   },
   {
+    "code": "es-md",
+    "flag_1x1": "flags/1x1/es-md.svg",
+    "flag_4x3": "flags/4x3/es-md.svg",
+    "iso": false,
+    "name": "Madrid"
+  },
+  {
     "capital": "Lilongwe",
     "code": "mw",
     "continent": "Africa",
