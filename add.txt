@@ -5,7 +5,7 @@
 +----------------------+---------+------+
 | Andalusia            |  ES-AN  | x    |
 | Aragon               |  ES-AR  | x    |
-| Asturias             |  ES-AS  |      |
+| Asturias             |  ES-AS  | x    |
 | Balearic Islands     |  ES-IB  |      |
 | Basque Country       |  ES-PV  | x    |
 | Canary Islands       |  ES-CN  |      |
