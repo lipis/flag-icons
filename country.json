@@ -95,6 +95,13 @@
     "name": "Antigua and Barbuda"
   },
   {
+    "code": "es-ar",
+    "flag_1x1": "flags/1x1/es-ar.svg",
+    "flag_4x3": "flags/4x3/es-ar.svg",
+    "iso": false,
+    "name": "Aragon"
+  },
+  {
     "capital": "Buenos Aires",
     "code": "ar",
     "continent": "South America",
