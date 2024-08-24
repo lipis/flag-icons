@@ -190,6 +190,13 @@
     "name": "Bahrain"
   },
   {
+    "code": "es-ib",
+    "flag_1x1": "flags/1x1/es-ib.svg",
+    "flag_4x3": "flags/4x3/es-ib.svg",
+    "iso": false,
+    "name": "Balearic Islands"
+  },
+  {
     "capital": "Dhaka",
     "code": "bd",
     "continent": "Asia",
