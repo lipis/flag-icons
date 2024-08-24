@@ -416,6 +416,13 @@
     "name": "Canary Islands"
   },
   {
+    "code": "es-cn",
+    "flag_1x1": "flags/1x1/es-cn.svg",
+    "flag_4x3": "flags/4x3/es-cn.svg",
+    "iso": false,
+    "name": "Canary Islands"
+  },
+  {
     "code": "es-ct",
     "flag_1x1": "flags/1x1/es-ct.svg",
     "flag_4x3": "flags/4x3/es-ct.svg",

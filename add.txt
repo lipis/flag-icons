@@ -8,7 +8,7 @@
 | Asturias             |  ES-AS  | x    |
 | Balearic Islands     |  ES-IB  | x    |
 | Basque Country       |  ES-PV  | x    |
-| Canary Islands       |  ES-CN  |      |
+| Canary Islands       |  ES-CN  | x    |
 | Cantabria            |  ES-CB  |      |
 | Castile and León     |  ES-CL  |      |
 | Castilla–La Mancha   |  ES-CM  |      |
