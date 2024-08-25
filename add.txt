@@ -9,7 +9,7 @@
 | Balearic Islands     |  ES-IB  | x    |
 | Basque Country       |  ES-PV  | x    |
 | Canary Islands       |  ES-CN  | x    |
-| Cantabria            |  ES-CB  |      |
+| Cantabria            |  ES-CB  | x    |
 | Castile and León     |  ES-CL  |      |
 | Castilla–La Mancha   |  ES-CM  |      |
 | Catalonia            |  ES-CT  | x    |

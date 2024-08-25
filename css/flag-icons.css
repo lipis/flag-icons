@@ -1823,6 +1823,13 @@
   background-image: url(../flags/1x1/es-as.svg);
 }
 
+.fi-es-cb {
+  background-image: url(../flags/4x3/es-cb.svg);
+}
+.fi-es-cb.fis {
+  background-image: url(../flags/1x1/es-cb.svg);
+}
+
 .fi-es-cn {
   background-image: url(../flags/4x3/es-cn.svg);
 }

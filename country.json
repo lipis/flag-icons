@@ -423,6 +423,13 @@
     "name": "Canary Islands"
   },
   {
+    "code": "es-cb",
+    "flag_1x1": "flags/1x1/es-cb.svg",
+    "flag_4x3": "flags/4x3/es-cb.svg",
+    "iso": false,
+    "name": "Cantabria"
+  },
+  {
     "code": "es-ct",
     "flag_1x1": "flags/1x1/es-ct.svg",
     "flag_4x3": "flags/4x3/es-ct.svg",
