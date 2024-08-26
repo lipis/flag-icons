@@ -430,6 +430,13 @@
     "name": "Cantabria"
   },
   {
+    "code": "es-cl",
+    "flag_1x1": "flags/1x1/es-cl.svg",
+    "flag_4x3": "flags/4x3/es-cl.svg",
+    "iso": false,
+    "name": "Castile and León"
+  },
+  {
     "code": "es-ct",
     "flag_1x1": "flags/1x1/es-ct.svg",
     "flag_4x3": "flags/4x3/es-ct.svg",
