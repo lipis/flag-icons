@@ -1837,6 +1837,13 @@
   background-image: url(../flags/1x1/es-cl.svg);
 }
 
+.fi-es-cm {
+  background-image: url(../flags/4x3/es-cm.svg);
+}
+.fi-es-cm.fis {
+  background-image: url(../flags/1x1/es-cm.svg);
+}
+
 .fi-es-cn {
   background-image: url(../flags/4x3/es-cn.svg);
 }

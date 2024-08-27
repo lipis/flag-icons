@@ -11,7 +11,7 @@
 | Canary Islands       |  ES-CN  | x    |
 | Cantabria            |  ES-CB  | x    |
 | Castile and León     |  ES-CL  | x    |
-| Castilla–La Mancha   |  ES-CM  |      |
+| Castilla–La Mancha   |  ES-CM  | x    |
 | Catalonia            |  ES-CT  | x    |
 | Extremadura          |  ES-EX  |      |
 | Galicia              |  ES-GA  | x    |

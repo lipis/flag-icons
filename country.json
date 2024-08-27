@@ -437,6 +437,13 @@
     "name": "Castile and León"
   },
   {
+    "code": "es-cm",
+    "flag_1x1": "flags/1x1/es-cm.svg",
+    "flag_4x3": "flags/4x3/es-cm.svg",
+    "iso": false,
+    "name": "Castilla–La Mancha"
+  },
+  {
     "code": "es-ct",
     "flag_1x1": "flags/1x1/es-ct.svg",
     "flag_4x3": "flags/4x3/es-ct.svg",

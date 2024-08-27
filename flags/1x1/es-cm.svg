@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-es-cm" viewBox="0 0 600 600">
+	<rect fill="#fff" width="400" height="600" x="200" y="0" />
+	<rect fill="#b81626" width="300" height="600" x="0" y="0" />
+	<g>
+		<path fill="#cab313" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m60.9 385.3v-18.8l3.3-7v-60.6l-2.5-5.1v-14.1l4.7-1v-40.7l-2.6-4.2v-9.4l2.5-1v5.1l2.3-1.2v-4.9l2.5-1h6.3v6.1h5.5v-6.2h6.1v6h5.2v-6.1h5.4l2.6 1.6v5.1l1.6 0.8v-5l2.4 1.1v9.3l-2.4 4.1v58h5.3v-2.2h16.9v-74.2l-3.5-5.2v-11.8l3.2-1.3v6.3l3.2-1.6v-6.1l3.4-1.3h8.2v7.6h7.1v-7.7h8.1v7.6h6.8v-7.6h7.1l3.3 1.8v6.6l2.2 0.9v-6.3l3.3 1.4v11.7l-3.1 5.4v74h18.5v2.1h3.1v-59.1l-2.5-3.8v-9.7l2.3-0.9v5.2l2.6-1.4v-4.9l2.3-1h6.4v6.3h5.3v-6.4h6.2v6.1h5.2v-6.2h5.4l2.5 1.5v5.4l1.8 0.8v-5.1l2.4 1v9.3l-2.4 4.4v42.3l4.1 0.2v13.4l-2.9 6.1v59.7l3.4 7.4v18.6l-40 15.8h-98.9z" />
+		<path fill="#cab313" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m103.7 274.8h5.3v5.9l6.8-1.4v-6.9h6v5.6h4.1v14.1c-9.3-5.8-13.6-4.8-22 0.3z" />
+		<path fill="#cab313" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m196.8 274.5h-5v5.9l-6.6-1.3v-7h-5.8v5.7h-4v14c9-5.7 13.1-4.7 21.3 0.4z" />
+		<path fill="#0f47af" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m81.2 257.1h6.7v-6.9c2.6-3.4 2-7.8-3.3-10.3-5.9 2.9-5.7 7.1-3.5 10.1z" />
+		<path fill="#0f47af" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m146.4 243.6h8.2v-8.5c3.3-4.1 2.6-9.5-4.1-12.6-7.2 3.6-6.9 8.8-4.2 12.5z" />
+		<path fill="#0f47af" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m212.9 257h6.6v-6.9c2.7-3.3 2.1-7.7-3.3-10.3-5.8 3-5.6 7.2-3.4 10.2z" />
+		<path fill="#0f47af" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m146.7 289.4h8.3v-10.9c3.3-5.3 2.6-12.2-4.1-16.2-7.4 4.6-7.1 11.2-4.3 16z" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m61.9 294l40.2 15.9h97.2l39-15.8" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m64.5 299.4l40.1 16.5h91.8l39.2-16.6" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m64.6 313.3l40 16.4" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m105 329.3h90.8" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m196.2 329.9l39.4-16.5" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m64.5 329.9l40.1 16.4" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m64.1 344.8c0.1 0 40.6 16.9 40.6 16.9" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m105 346.5h91l39.6-16.6" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m104.7 362h91l40-17" />
+		<path fill="#0f47af" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m140.6 376.1h19.9v-15.7c6.7-12.1 1.5-23-10.2-31.1-14 7.7-16.3 20.3-9.9 31.7z" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m64.3 359.3l40.6 17.1h91.2l39.6-17.1" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m61.1 366.9l39.1 16.5h98.8l40.1-16.5" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m101.9 296.3v13.7l2.9 6v60.1l-4.7 7.1v18.1" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m199 296.2v14.6l-3 5.2v60.2l3.1 7.8v17.2" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m63.8 233.8l7.3-2.3h28.6l6.4 2.4" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m66.1 238l7.1-2.2h23.5l7.2 2.5" />
+		<path fill="#cab313" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m104.1 263.8l-7.6-2.6h-23.3l-7 2.3c-1.2 0.7-1.4 2.4 0 3.1l7.1-1.9h23.4l7.5 2.3c0.8-0.9 0.7-2.2-0.1-3.2z" />
+		<path fill="#cab313" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m66.1 266.7c-1.5 0.8-1.1 2.8 0 3.3l7.2-2.5h23.4l7.1 2.5c0.9-0.7 1.3-1.5 0.1-3.1l-7.2-2.3h-23.5z" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m71.3 221.5v10.2l2 3.6v57.2" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m99.4 221.4v10.3l-2.6 4.2v66.8" />
+		<path fill="#cab313" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m196.9 263.3l7.5-2.6h23.4l6.9 2.3c1.3 0.7 1.4 2.4 0 3.1l-7-1.9h-23.5l-7.5 2.3c-0.8-1-0.7-2.2 0.2-3.2z" />
+		<path fill="#cab313" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m234.8 266.1c1.6 0.9 1.2 2.9 0 3.3l-7.1-2.4h-23.5l-7.1 2.4c-0.8-0.6-1.3-1.4 0-3l7.2-2.3h23.4z" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m229.6 221v10.2l-2 3.5v57.3" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m201.5 220.9v10.3l2.7 4.2v66.8" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m61.7 280.3l7.4 2.9v7.9l6.7 1.9v-7l6.7 2.5v7.9l5.8 2v-7.6l7.4 3v8.7l3.8 1.3v-8.6l2.4 1.1h8.8v8.4h6.8v-8.5h7.9v8.1h6.4v-8.1h8v7.9h6.5v-7.9h9.6v8.2h6.6v-8.2h7.5v7.6h7v-7.6h7.7v7.6h7v-7.6h7.2l2.5-1.2v8.6l2.9-1.1v-8.5l7.7-3v7.8l5.9-2.3v-8l6.5-2.5v7.3l6.5-2.3v-7.9l7.5-2.7" />
+		<path fill="#cab313" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m125.5 252.1l9.9-3.4h30.5l9 3c1.6 1 1.9 3.1 0 4.1l-9.2-2.6h-30.6l-9.7 3.1c-1.1-1.2-1-2.9 0.1-4.2z" />
+		<path fill="#cab313" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m175.1 255.8c2 1.1 1.4 3.8 0 4.4l-9.4-3.2h-30.6l-9.2 3.2c-1.2-0.8-1.7-1.9-0.1-4.1l9.4-2.9h30.6z" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m194.4 233.2l7.7-2.2h27.8l6.8 2.3" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m196.7 237.4l7.2-2.2h22.9l7.5 2.4" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m132.4 198.9v12.6l2.7 4.8v79.9" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m169.4 199v12.7l-3.3 5.1v79.3" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m122.7 214.5l9.4-2.6h37.1l9 2.7" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m125.6 219.9l9.7-2.9h30.2l9.8 3.1" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m66.4 278.7v3.6" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m234.4 280v1.7" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m77 304.5v13.8" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m86.5 322.2v16.5" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m76.2 334.7v15.1" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m86.2 353.9v14.4" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m116.1 315.9v13.4" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m150.6 328.8v-12.8" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m184.7 316v13.1" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m132.1 329.1v17.5" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m168.1 329.1v17.5" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m184.6 346.6v15.4" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m116 346.6v15.4" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m132.3 362v14.3" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m167.9 362.1v14.3" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m223.2 304.7c0 0.1 0 13.7 0 13.7" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m213.8 338.7v-16.3" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m224 334.8v15.1" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m214.1 354v14.5" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m126.1 293.8v10.5" />
+		<path fill="none" stroke="#000" stroke-width="1.3" fill-rule="evenodd" d="m175.4 294v9.8" />
+	</g>
+</svg>
