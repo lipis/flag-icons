@@ -765,6 +765,13 @@
     "name": "Europe"
   },
   {
+    "code": "es-ex",
+    "flag_1x1": "flags/1x1/es-ex.svg",
+    "flag_4x3": "flags/4x3/es-ex.svg",
+    "iso": false,
+    "name": "Extremadura"
+  },
+  {
     "capital": "Stanley",
     "code": "fk",
     "continent": "South America",

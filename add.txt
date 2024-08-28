@@ -13,7 +13,7 @@
 | Castile and León     |  ES-CL  | x    |
 | Castilla–La Mancha   |  ES-CM  | x    |
 | Catalonia            |  ES-CT  | x    |
-| Extremadura          |  ES-EX  |      |
+| Extremadura          |  ES-EX  | x    |
 | Galicia              |  ES-GA  | x    |
 | La Rioja             |  ES-RI  |      |
 | Madrid               |  ES-MD  | x    |
