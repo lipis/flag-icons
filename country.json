@@ -1788,6 +1788,13 @@
     "name": "Republic of the Congo"
   },
   {
+    "code": "es-ri",
+    "flag_1x1": "flags/1x1/es-ri.svg",
+    "flag_4x3": "flags/4x3/es-ri.svg",
+    "iso": false,
+    "name": "Rioja"
+  },
+  {
     "capital": "Bucharest",
     "code": "ro",
     "continent": "Europe",

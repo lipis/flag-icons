@@ -15,7 +15,7 @@
 | Catalonia            |  ES-CT  | x    |
 | Extremadura          |  ES-EX  | x    |
 | Galicia              |  ES-GA  | x    |
-| La Rioja             |  ES-RI  |      |
+| La Rioja             |  ES-RI  | x    |
 | Madrid               |  ES-MD  | x    |
 | Murcia               |  ES-MC  |      |
 | Navarre              |  ES-NA  |      |
