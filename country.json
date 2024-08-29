@@ -1502,6 +1502,13 @@
     "name": "Mozambique"
   },
   {
+    "code": "es-mc",
+    "flag_1x1": "flags/1x1/es-mc.svg",
+    "flag_4x3": "flags/4x3/es-mc.svg",
+    "iso": false,
+    "name": "Murcia"
+  },
+  {
     "capital": "Naypyidaw",
     "code": "mm",
     "continent": "Asia",
