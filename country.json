@@ -1536,6 +1536,13 @@
     "name": "Nauru"
   },
   {
+    "code": "es-na",
+    "flag_1x1": "flags/1x1/es-na.svg",
+    "flag_4x3": "flags/4x3/es-na.svg",
+    "iso": false,
+    "name": "Navarre"
+  },
+  {
     "capital": "Kathmandu",
     "code": "np",
     "continent": "Asia",

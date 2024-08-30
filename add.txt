@@ -18,7 +18,7 @@
 | La Rioja             |  ES-RI  | x    |
 | Madrid               |  ES-MD  | x    |
 | Murcia               |  ES-MC  | x    |
-| Navarre              |  ES-NA  |      |
+| Navarre              |  ES-NA  | x    |
 | Valencia             |  ES-VC  |      |
 +----------------------+---------+------+
 
