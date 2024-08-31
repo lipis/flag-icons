@@ -1914,6 +1914,13 @@
   background-image: url(../flags/1x1/es-ri.svg);
 }
 
+.fi-es-vc {
+  background-image: url(../flags/4x3/es-vc.svg);
+}
+.fi-es-vc.fis {
+  background-image: url(../flags/1x1/es-vc.svg);
+}
+
 .fi-eu {
   background-image: url(../flags/4x3/eu.svg);
 }

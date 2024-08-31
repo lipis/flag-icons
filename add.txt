@@ -19,7 +19,7 @@
 | Madrid               |  ES-MD  | x    |
 | Murcia               |  ES-MC  | x    |
 | Navarre              |  ES-NA  | x    |
-| Valencia             |  ES-VC  |      |
+| Valencia             |  ES-VC  | x    |
 +----------------------+---------+------+
 
 https://en.wikipedia.org/w/index.php?title=Autonomous_communities_of_Spain&useskin=vector#List_of_autonomous_communities
