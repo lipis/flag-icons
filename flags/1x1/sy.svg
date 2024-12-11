@@ -1,6 +1,33 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-sy" viewBox="0 0 512 512">
-  <path fill="#000001" d="M0 0h512v512H0Z"/>
-  <path fill="#fff" d="M0 0h512v341.3H0Z"/>
-  <path fill="#ce1126" d="M0 0h512v170.7H0Z"/>
-  <path fill="#007a3d" d="M86.4 320 128 192l41.6 128-108.9-79.1h134.6M342.4 320 384 192l41.6 128-108.9-79.1h134.6"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="flag-icons-sy" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 512 512">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ce1126;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+
+      .cls-2 {
+        fill: #000001;
+      }
+
+      .cls-3 {
+        fill: #007a3d;
+      }
+
+      .cls-4 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path class="cls-2" d="M0,0h512v512H0V0Z"/>
+  <path class="cls-4" d="M0,0h512v341.3H0V0Z"/>
+  <path class="cls-3" d="M0,0h512v170.7H0V0Z"/>
+  <g>
+    <path class="cls-1" d="M38.5,320l41.6-128,41.6,128L12.8,240.9h134.6M214.5,320l41.6-128,41.6,128-108.9-79.1h134.6"/>
+    <path class="cls-1" d="M390.3,320l41.6-128,41.6,128-108.9-79.1h134.6"/>
+  </g>
 </svg>
