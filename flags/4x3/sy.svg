@@ -1,11 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" id="flag-icons-sy" viewBox="0 0 640 480">
-    <g transform="scale(0.711111,0.8)">
-    <path d="M0 0h900v600H0z" fill="#000001"/>
-    <path d="M0 0h900v400H0z" fill="#fff"/>
-    <path d="M0 0h900v200H0z" fill="#007a3d"/>
-    <path d="m176.26 375 48.738-150 48.738 150 -127.6-92.705h157.72
-             m322.4 92.705 48.738-150 48.738 150 -127.6-92.705h157.72
-             m-352.6 92.705 48.738-150 48.738 150 -127.6-92.705h157.72" 
-          fill="#ce1126"/>
-  </g>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="flag-icons-sy" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 640 480">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ce1126;
+      }
+      .cls-1, .cls-2, .cls-3, .cls-4 {
+        stroke-width: 0px;
+      }
+      .cls-2 {
+        fill: #000001;
+      }
+      .cls-3 {
+        fill: #007a3d;
+      }
+      .cls-4 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <path class="cls-2" d="M0,0h640v480H0V0Z"/>
+  <path class="cls-4" d="M0,0h640v320H0V0Z"/>
+  <path class="cls-3" d="M0,0h640v160H0V0Z"/>
+  <path class="cls-1" d="M41,300l39-120,39,120L17,225.8h126M281,300l39-120,39,120-102-74.2h126"/>
+  <path class="cls-1" d="M521.3,300l39-120,39,120-102-74.2h126"/>
 </svg>
