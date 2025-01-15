@@ -1,46 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   id="flag-icons-sy"
-   viewBox="0 0 640 480"
-   version="1.1"
-   sodipodi:docname="sy.svg"
-   xml:space="preserve"
-   inkscape:version="1.3.1 (91b66b0, 2023-11-16)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><defs
-     id="defs4" /><sodipodi:namedview
-     id="namedview4"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     showgrid="false"
-     inkscape:zoom="0.46919481"
-     inkscape:cx="319.69663"
-     inkscape:cy="239.77247"
-     inkscape:window-width="1544"
-     inkscape:window-height="850"
-     inkscape:window-x="46"
-     inkscape:window-y="95"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="flag-icons-sy" /><path
-     d="M 0,0 H 640 V 480 H 0 Z"
-     id="path1-3"
-     style="stroke-width:0.754248" /><path
-     d="M 0,0 H 640 V 320 H 0 Z"
-     fill="#ffffff"
-     id="path2-9"
-     style="stroke-width:0.754248" /><path
-     d="M 0,0 H 640 V 160 H 0 Z"
-     fill="#007a3d"
-     id="path3-0"
-     style="stroke-width:0.754248" /><path
-     d="m 101.008,300 38.9904,-120 38.9904,120 -102.08,-74.164 h 126.176 m 257.92,74.164 38.9904,-120 38.9904,120 -102.08,-74.164 h 126.176 M 281.0016,300 319.992,180 l 38.9904,120 -102.08,-74.164 h 126.176"
-     fill="#ce1126"
-     id="path4-5"
-     style="stroke-width:0.8" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="flag-icons-sy" viewBox="0 0 640 480">
+  <path stroke-width=".754248" d="M0 0h640v480H0Z"/>
+  <path fill="#fff" stroke-width=".754248" d="M0 0h640v320H0Z"/>
+  <path fill="#007a3d" stroke-width=".754248" d="M0 0h640v160H0Z"/>
+  <path fill="#ce1126" stroke-width=".8" d="m101 300 39-120 39 120-102-74.2h126M461 300l39-120 39 120-102-74.2h126M281 300l39-120 39 120-102.1-74.2h126.2"/>
+</svg>

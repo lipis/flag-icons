@@ -1,48 +1,6 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg
-   id="flag-icons-sy"
-   viewBox="0 0 512 512"
-   version="1.1"
-   sodipodi:docname="sy.svg"
-   xml:space="preserve"
-   inkscape:version="1.3.1 (91b66b0, 2023-11-16)"
-   width="512"
-   height="512"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"><defs
-     id="defs4" /><sodipodi:namedview
-     id="namedview4"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:showpageshadow="2"
-     inkscape:pageopacity="0.0"
-     inkscape:pagecheckerboard="0"
-     inkscape:deskcolor="#d1d1d1"
-     showgrid="false"
-     inkscape:zoom="0.46919481"
-     inkscape:cx="319.69663"
-     inkscape:cy="239.77247"
-     inkscape:window-width="1544"
-     inkscape:window-height="850"
-     inkscape:window-x="46"
-     inkscape:window-y="95"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="flag-icons-sy" /><path
-     d="M 0,0 H 512 V 512 H 0 Z"
-     id="path1-3"
-     style="stroke-width:0.696744" /><path
-     d="M 0,0 H 512 V 341.33333 H 0 Z"
-     fill="#ffffff"
-     id="path2-9"
-     style="stroke-width:0.696744" /><path
-     d="M 0,0 H 512 V 170.66667 H 0 Z"
-     fill="#007a3d"
-     id="path3-0"
-     style="stroke-width:0.696744" /><path
-     d="M 26.280298,317.88117 67.181608,192 108.08291,317.88117 0.999999,240.08241 H 133.35985 M 403.92045,317.88117 444.82175,192 485.72306,317.88117 378.64015,240.08241 H 511 M 215.09534,317.88117 255.99664,192 296.89796,317.88117 189.81504,240.08241 h 132.35985"
-     fill="#ce1126"
-     id="path4-5"
-     style="stroke-width:0.839207" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="flag-icons-sy" viewBox="0 0 512 512">
+  <path stroke-width=".696744" d="M0 0h512v512H0Z"/>
+  <path fill="#fff" stroke-width=".696744" d="M0 0h512v341.3H0Z"/>
+  <path fill="#007a3d" stroke-width=".696744" d="M0 0h512v170.7H0Z"/>
+  <path fill="#ce1126" stroke-width=".839207" d="M26.3 317.9 67.2 192 108 317.9 1 240h132.4m270.5 77.8L445 192l40.8 125.9-107-77.8H511m-295.9 77.8L256 192l40.9 125.9-107-77.8h132.3"/>
+</svg>
