@@ -1,3 +1,7 @@
+# 7.2.4
+
+- Fix Syrian Flag (#1310)
+
 # 7.2.3
 
 - Fix overlapping paths in at, bg, ee, lu, nl, ru flags (#1251)
