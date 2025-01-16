@@ -1,3 +1,7 @@
+# 7.3.1
+
+- Fix Kyrgyzstan Flag (#1323)
+
 # 7.3.0
 
 - Run the latest svgo on all files (#1322)
