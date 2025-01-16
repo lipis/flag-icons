@@ -1,3 +1,7 @@
+# 7.3.0
+
+- Run the latest svgo on all files (#1322)
+
 # 7.2.4
 
 - Fix Syrian Flag (#1310)
