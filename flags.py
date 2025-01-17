@@ -8,7 +8,7 @@ for (dirpath, dirnames, filenames) in os.walk(flags_dir):
     files.extend(filenames)
     break
 
-file_codes = [name.replace(".svg", "") for name in files if name != ".DS_Store"]
+file_codes = [name.replace(".svg", "") for name in files if name.find(".svg") > 0]
 
 country_json = open("country.json")
 flags = json.load(country_json)

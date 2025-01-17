@@ -12,7 +12,7 @@ for (dirpath, dirnames, filenames) in os.walk(dir_1x1):
 
 def add_ids(directory):
     for f in files:
-        if f == ".DS_Store":
+        if f.find(".svg") == -1:
             continue
         filename = os.path.join(directory, f)
         update = False
