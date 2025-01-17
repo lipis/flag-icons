@@ -1774,6 +1774,13 @@
   background-image: url(../flags/1x1/arab.svg);
 }
 
+.fi-asean {
+  background-image: url(../flags/4x3/asean.svg);
+}
+.fi-asean.fis {
+  background-image: url(../flags/1x1/asean.svg);
+}
+
 .fi-cefta {
   background-image: url(../flags/4x3/cefta.svg);
 }
