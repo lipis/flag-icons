@@ -124,6 +124,13 @@
     "name": "Ascension Island"
   },
   {
+    "code": "asean",
+    "flag_1x1": "flags/1x1/asean.svg",
+    "flag_4x3": "flags/4x3/asean.svg",
+    "iso": false,
+    "name": "Association of Southeast Asian Nations"
+  },
+  {
     "capital": "Canberra",
     "code": "au",
     "continent": "Oceania",

@@ -1,3 +1,7 @@
+# 7.3.2
+
+- Add new flag for Association of Southeast Asian Nations (#1325)
+
 # 7.3.1
 
 - Fix Kyrgyzstan Flag (#1323)

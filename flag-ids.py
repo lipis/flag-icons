@@ -12,6 +12,8 @@ for (dirpath, dirnames, filenames) in os.walk(dir_1x1):
 
 def add_ids(directory):
     for f in files:
+        if f == ".DS_Store":
+            continue
         filename = os.path.join(directory, f)
         update = False
         flag_id = "flag-icons-%s" % (f.replace(".svg", ""))
