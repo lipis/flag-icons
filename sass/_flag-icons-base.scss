@@ -29,7 +29,7 @@
     }
   }
 
-  @if $alpha3 {
+  @if $flag-icons-add-alpha3 and $alpha3 {
     .fi-#{$alpha3} {
       @extend .fi-#{$country};
     }
