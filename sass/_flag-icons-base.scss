@@ -18,7 +18,7 @@
   }
 }
 
-@mixin flag-icon($country) {
+@mixin flag-icon($country, $alpha3: null) {
   .fi-#{$country} {
     background-image: url(#{$flag-icons-path}#{$flag-icons-rect-path}/#{$country}.svg);
 
@@ -26,6 +26,12 @@
       &.fis {
         background-image: url(#{$flag-icons-path}#{$flag-icons-square-path}/#{$country}.svg);
       }
+    }
+  }
+
+  @if $alpha3 {
+    .fi-#{$alpha3} {
+      @extend .fi-#{$country};
     }
   }
 }
