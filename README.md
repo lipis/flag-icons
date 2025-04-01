@@ -1,5 +1,14 @@
 # flag-icons
 
+A fork of [flag-icons](https://github.com/lipis/flag-icons
+) which appears to be deprecated.
+
+This fork will continue as an independent project. The first step will be to implement flag icons using Emoji to elimate the download weight of many SVG files. After that SVGs will only be used where no Emoji is available.
+
+--
+
+# Legacy Documentation 👇
+
 > A curated collection of all country flags in SVG — plus the CSS for easier integration. See the [demo](https://flagicons.lipis.dev).
 
 ## Install
