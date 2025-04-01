@@ -1,6 +1,13 @@
+### Yii2 Package ###
+
+# Mac DS_Store Files
 .DS_Store
+
 bower_components
 main
 node_modules
 temp
 update
+
+# Existing ignored directory
+/z_gitignore
