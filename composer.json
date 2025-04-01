@@ -1,9 +1,9 @@
 {
-  "name": "lipis/flag-icons",
+  "name": "p2made/flag-icon-css",
   "description": "A curated collection of all country flags in SVG — plus the CSS for easier integration.",
   "type": "library",
   "license": "MIT",
-  "homepage": "https://flagicons.lipis.dev",
+  "homepage": "https://github.com/p2made/flag-icon-css",
   "keywords": [
     "css",
     "svg",
@@ -13,12 +13,12 @@
   ],
   "authors": [
     {
-      "name": "Panayiotis Lipiridis",
-      "email": "lipiridis@gmail.com",
+      "name": "Pedro Plowman",
+      "email": "pedrofp@me.com",
       "role": "Lead"
     }
   ],
   "support": {
-    "issues": "https://github.com/lipis/flag-icons/issues"
+    "issues": "https://github.com/p2made/flag-icon-css/issues"
   }
 }
