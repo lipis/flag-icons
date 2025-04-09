@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   version="1.1"
+   width="512"
+   height="512"
+   id="svg597"
+   sodipodi:docname="ru-tat.svg"
+   inkscape:version="1.2.2 (b0a84865, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs601" />
+  <sodipodi:namedview
+     id="namedview599"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.2207031"
+     inkscape:cx="256"
+     inkscape:cy="256"
+     inkscape:window-width="1440"
+     inkscape:window-height="819"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg597" />
+  <g
+     id="g723"
+     transform="scale(0.85333333,1.7066667)"
+     style="stroke-width:0.82864">
+    <rect
+       fill="#008000"
+       width="600"
+       height="140"
+       id="rect591"
+       x="0"
+       y="0"
+       style="stroke-width:0.828503" />
+    <rect
+       fill="#ffffff"
+       width="600"
+       height="20"
+       y="140"
+       id="rect593"
+       x="0"
+       style="stroke-width:0.828503" />
+    <rect
+       fill="#ff0000"
+       width="600"
+       height="140"
+       y="160"
+       id="rect595"
+       x="0"
+       style="stroke-width:0.828503" />
+  </g>
+</svg>
