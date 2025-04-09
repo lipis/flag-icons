@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="640"
+   height="480"
+   viewBox="0 0 80 60"
+   version="1.1"
+   id="svg5541"
+   sodipodi:docname="ru-alt.svg"
+   inkscape:version="1.2.2 (b0a84865, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs5545" />
+  <sodipodi:namedview
+     id="namedview5543"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.2625"
+     inkscape:cx="360"
+     inkscape:cy="239.60396"
+     inkscape:window-width="1440"
+     inkscape:window-height="819"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg5541" />
+  <g
+     id="g5666"
+     transform="scale(0.53333333,0.6)"
+     style="stroke-width:1.76777">
+    <path
+       fill="#ffffff"
+       d="M 0,0 H 150 V 100 H 0 Z"
+       id="path5537"
+       style="stroke-width:2.94628" />
+    <path
+       fill="#3399ff"
+       d="m 0,67 h 150 v 4 H 0 Z m 0,8 h 150 v 25 H 0 Z"
+       id="path5539"
+       style="stroke-width:2.94628" />
+  </g>
+</svg>
