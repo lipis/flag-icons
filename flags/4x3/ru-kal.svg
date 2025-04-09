@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 640 480"
+   height="480"
+   width="640"
+   version="1.1"
+   id="svg705"
+   sodipodi:docname="ru-kal.svg"
+   inkscape:version="1.2.2 (b0a84865, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs709" />
+  <sodipodi:namedview
+     id="namedview707"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.3020833"
+     inkscape:cx="319.872"
+     inkscape:cy="240"
+     inkscape:window-width="1440"
+     inkscape:window-height="819"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg705" />
+  <g
+     id="g876">
+    <path
+       fill="#ffc72c"
+       d="M 0,0 H 640 V 480 H 0 Z"
+       id="path693"
+       style="stroke-width:0.666666" />
+    <g
+       id="g841"
+       style="stroke-width:0.666667"
+       transform="matrix(1.5,0,0,1.5,-160,0)">
+      <circle
+         fill="#009cdd"
+         r="92.800003"
+         cy="160"
+         cx="320"
+         id="circle695"
+         style="stroke-width:0.444444" />
+      <g
+         fill="#ffffff"
+         stroke="#009cdd"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="1.28"
+         id="g703">
+        <path
+           d="m 291.3,154.7 c -5,-17.3 -11.9,-25.6 -27.3,-33 -11.8,29.9 10,48.2 29.7,49.1 -23.6,-1.1 -25.7,-19.2 -58.4,-3.2 28.3,29.8 41,15.9 66,7.9 -17.6,5.6 -29,13.8 -32.5,29.4 20.7,2.2 39.9,1.6 51.2,-26 11.3,27.7 30.5,28.2 51.2,26 -3.4,-15.5 -14.9,-23.8 -32.5,-29.4 25,8 37.8,21.9 66,-7.9 -32.7,-16 -34.8,2 -58.4,3.2 19.6,-0.9 41.5,-19.2 29.7,-49.1 -15.4,7.4 -22.3,15.7 -27.3,33"
+           id="path697"
+           style="stroke-width:1.28" />
+        <path
+           d="m 300.8,169 c -17.5,-14.7 -23.8,-37 -10,-55.8 11.2,8 16.6,18.1 21.2,37.3 m 27.4,18.5 c 17.5,-14.7 23.8,-37 10,-55.8 -11.2,8 -16.6,18.1 -21.2,37.3"
+           id="path699"
+           style="stroke-width:1.28" />
+        <path
+           d="m 328.4,169.4 c 9.1,-19.2 8.6,-45.3 -8.3,-58.8 -16.9,13.6 -17.5,39.6 -8.3,58.8"
+           id="path701"
+           style="stroke-width:1.28" />
+      </g>
+    </g>
+  </g>
+</svg>
