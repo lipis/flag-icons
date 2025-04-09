@@ -4,3 +4,8 @@ main
 node_modules
 temp
 update
+
+# Mac DS_Store Files
+.DS_Store
+
+/z_gitignore
