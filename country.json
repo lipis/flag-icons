@@ -2422,6 +2422,15 @@
     "name": "Australian Aboriginal People"
   },
   {
+    "capital": "Palma",
+    "code": "es-bi",
+    "continent": "Europe",
+    "flag_1x1": "flags/1x1/es-bi.svg",
+    "flag_4x3": "flags/4x3/es-bi.svg",
+    "iso": false,
+    "name": "Balearic Islands"
+  },
+  {
     "capital": "Ufa",
     "code": "ru-bas",
     "continent": "Europe",
@@ -2447,6 +2456,15 @@
     "flag_4x3": "flags/4x3/ru-chn.svg",
     "iso": false,
     "name": "Chechnya"
+  },
+  {
+    "capital": "Chelyabinsk",
+    "code": "ru-che",
+    "continent": "Europe",
+    "flag_1x1": "flags/1x1/ru-che.svg",
+    "flag_4x3": "flags/4x3/ru-che.svg",
+    "iso": false,
+    "name": "Chelyabinsk Oblast"
   },
   {
     "capital": "Sevastopol",
@@ -2510,6 +2528,24 @@
     "name": "Karakalpakstan"
   },
   {
+    "capital": "Kurgan",
+    "code": "ru-kur",
+    "continent": "Europe",
+    "flag_1x1": "flags/1x1/ru-kur.svg",
+    "flag_4x3": "flags/4x3/ru-kur.svg",
+    "iso": false,
+    "name": "Kurgan Oblast"
+  },
+  {
+    "capital": "Pamplona",
+    "code": "es-nv",
+    "continent": "Europe",
+    "flag_1x1": "flags/1x1/es-nv.svg",
+    "flag_4x3": "flags/4x3/es-nv.svg",
+    "iso": false,
+    "name": "Navarra"
+  },
+  {
     "code": "turkic",
     "flag_1x1": "flags/1x1/turkic.svg",
     "flag_4x3": "flags/4x3/turkic.svg",
@@ -2524,6 +2560,15 @@
     "flag_4x3": "flags/4x3/ru-sak.svg",
     "iso": false,
     "name": "Sakha Republic (Yakutia)"
+  },
+  {
+    "capital": "Yekaterinburg",
+    "code": "ru-sve",
+    "continent": "Europe",
+    "flag_1x1": "flags/1x1/ru-sve.svg",
+    "flag_4x3": "flags/4x3/ru-sve.svg",
+    "iso": false,
+    "name": "Sverdlovsk Oblast"
   },
   {
     "capital": "Kazan",
