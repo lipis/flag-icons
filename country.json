@@ -2405,56 +2405,75 @@
     "name": "Zimbabwe"
   },
   {
-    "capital": "Gorno-Altaysk",
-    "code": "ru-alt",
-    "continent": "Europe",
-    "flag_1x1": "flags/1x1/ru-alt.svg",
-    "flag_4x3": "flags/4x3/ru-alt.svg",
+    "capital": "",
+    "code": "au-aa",
+    "continent": "Australia",
+    "flag_1x1": "flags/1x1/au-aa.svg",
+    "flag_4x3": "flags/4x3/au-aa.svg",
     "iso": false,
+    "name": "Aboriginal Australians"
+  },
+  {
+    "capital": "Gorno-Altaysk",
+    "code": "ru-al",
+    "continent": "Europe",
+    "flag_1x1": "flags/1x1/ru-al.svg",
+    "flag_4x3": "flags/4x3/ru-al.svg",
+    "iso": true,
     "name": "Altai Republic"
   },
   {
-    "code": "au-ab",
-    "continent": "Australia",
-    "flag_1x1": "flags/1x1/au-ab.svg",
-    "flag_4x3": "flags/4x3/au-ab.svg",
-    "iso": false,
-    "name": "Australian Aboriginal People"
+    "capital": "Astrakhan",
+    "code": "ru-ast",
+    "continent": "Europe",
+    "flag_1x1": "flags/1x1/ru-ast.svg",
+    "flag_4x3": "flags/4x3/ru-ast.svg",
+    "iso": true,
+    "name": "Astrakhan Oblast"
+  },
+  {
+    "capital": "Ponta Delgada",
+    "code": "pt-20",
+    "continent": "Europe",
+    "flag_1x1": "flags/1x1/pt-20.svg",
+    "flag_4x3": "flags/4x3/pt-20.svg",
+    "iso": true,
+    "name": "Azores"
   },
   {
     "capital": "Palma",
-    "code": "es-bi",
+    "code": "es-ib",
     "continent": "Europe",
-    "flag_1x1": "flags/1x1/es-bi.svg",
-    "flag_4x3": "flags/4x3/es-bi.svg",
-    "iso": false,
+    "flag_1x1": "flags/1x1/es-ib.svg",
+    "flag_4x3": "flags/4x3/es-ib.svg",
+    "iso": true,
     "name": "Balearic Islands"
   },
   {
     "capital": "Ufa",
-    "code": "ru-bas",
+    "code": "ru-ba",
     "continent": "Europe",
-    "flag_1x1": "flags/1x1/ru-bas.svg",
-    "flag_4x3": "flags/4x3/ru-bas.svg",
-    "iso": false,
+    "flag_1x1": "flags/1x1/ru-ba.svg",
+    "flag_4x3": "flags/4x3/ru-ba.svg",
+    "iso": true,
     "name": "Bashkortostan"
   },
   {
     "capital": "Ulan-Ude",
-    "code": "ru-bur",
+    "code": "ru-bu",
     "continent": "Europe",
-    "flag_1x1": "flags/1x1/ru-bur.svg",
-    "flag_4x3": "flags/4x3/ru-bur.svg",
-    "iso": false,
+    "flag_1x1": "flags/1x1/ru-bu.svg",
+    "flag_4x3": "flags/4x3/ru-bu.svg",
+    "iso": true,
     "name": "Buryatia"
   },
   {
     "capital": "Grozny",
-    "code": "ru-chn",
+    "code": "ru-ce",
     "continent": "Europe",
-    "flag_1x1": "flags/1x1/ru-chn.svg",
-    "flag_4x3": "flags/4x3/ru-chn.svg",
-    "iso": false,
+    "flag_1x1": "flags/1x1/ru-ce.svg",
+    "flag_4x3": "flags/4x3/ru-ce.svg",
+    "iso": true,
     "name": "Chechnya"
   },
   {
@@ -2463,33 +2482,43 @@
     "continent": "Europe",
     "flag_1x1": "flags/1x1/ru-che.svg",
     "flag_4x3": "flags/4x3/ru-che.svg",
-    "iso": false,
+    "iso": true,
     "name": "Chelyabinsk Oblast"
   },
   {
-    "capital": "Sevastopol",
-    "code": "ua-cr",
+    "capital": "Cheboksary",
+    "code": "ru-cu",
     "continent": "Europe",
-    "flag_1x1": "flags/1x1/ua-cr.svg",
-    "flag_4x3": "flags/4x3/ua-cr.svg",
-    "iso": false,
+    "flag_1x1": "flags/1x1/ru-cu.svg",
+    "flag_4x3": "flags/4x3/ru-cu.svg",
+    "iso": true,
+    "name": "Chuvashia"
+  },
+  {
+    "capital": "Sevastopol",
+    "code": "ua-43",
+    "continent": "Europe",
+    "flag_1x1": "flags/1x1/ua-43.svg",
+    "flag_4x3": "flags/4x3/ua-43.svg",
+    "iso": true,
     "name": "Crimea"
   },
   {
+    "capital": "",
     "code": "ua-ct",
     "continent": "Europe",
     "flag_1x1": "flags/1x1/ua-ct.svg",
     "flag_4x3": "flags/4x3/ua-ct.svg",
     "iso": false,
-    "name": "Crimean Tatar People"
+    "name": "Crimean Tatars"
   },
   {
     "capital": "Makhachkala",
-    "code": "ru-dag",
+    "code": "ru-da",
     "continent": "Europe",
-    "flag_1x1": "flags/1x1/ru-dag.svg",
-    "flag_4x3": "flags/4x3/ru-dag.svg",
-    "iso": false,
+    "flag_1x1": "flags/1x1/ru-da.svg",
+    "flag_4x3": "flags/4x3/ru-da.svg",
+    "iso": true,
     "name": "Dagestan"
   },
   {
@@ -2502,51 +2531,63 @@
     "name": "East Turkestan"
   },
   {
+    "capital": "",
     "code": "au-eu",
     "continent": "Australia",
     "flag_1x1": "flags/1x1/au-eu.svg",
     "flag_4x3": "flags/4x3/au-eu.svg",
     "iso": false,
-    "name": "Eureka Stockade"
+    "name": "Eureka Flag"
   },
   {
     "capital": "Elista",
-    "code": "ru-kal",
+    "code": "ru-kl",
     "continent": "Europe",
-    "flag_1x1": "flags/1x1/ru-kal.svg",
-    "flag_4x3": "flags/4x3/ru-kal.svg",
-    "iso": false,
+    "flag_1x1": "flags/1x1/ru-kl.svg",
+    "flag_4x3": "flags/4x3/ru-kl.svg",
+    "iso": true,
     "name": "Kalmykia"
   },
   {
     "capital": "Nukus",
-    "code": "uz-ka",
+    "code": "uz-qr",
     "continent": "Europe",
-    "flag_1x1": "flags/1x1/uz-ka.svg",
-    "flag_4x3": "flags/4x3/uz-ka.svg",
-    "iso": false,
+    "flag_1x1": "flags/1x1/uz-qr.svg",
+    "flag_4x3": "flags/4x3/uz-qr.svg",
+    "iso": true,
     "name": "Karakalpakstan"
   },
   {
     "capital": "Kurgan",
-    "code": "ru-kur",
+    "code": "ru-kgn",
     "continent": "Europe",
-    "flag_1x1": "flags/1x1/ru-kur.svg",
-    "flag_4x3": "flags/4x3/ru-kur.svg",
-    "iso": false,
+    "flag_1x1": "flags/1x1/ru-kgn.svg",
+    "flag_4x3": "flags/4x3/ru-kgn.svg",
+    "iso": true,
     "name": "Kurgan Oblast"
   },
   {
-    "capital": "Pamplona",
-    "code": "es-nv",
+    "capital": "Funchal",
+    "code": "pt-30",
     "continent": "Europe",
-    "flag_1x1": "flags/1x1/es-nv.svg",
-    "flag_4x3": "flags/4x3/es-nv.svg",
-    "iso": false,
+    "flag_1x1": "flags/1x1/pt-30.svg",
+    "flag_4x3": "flags/4x3/pt-30.svg",
+    "iso": true,
+    "name": "Madeira"
+  },
+  {
+    "capital": "Pamplona",
+    "code": "es-na",
+    "continent": "Europe",
+    "flag_1x1": "flags/1x1/es-na.svg",
+    "flag_4x3": "flags/4x3/es-na.svg",
+    "iso": true,
     "name": "Navarra"
   },
   {
+    "capital": "",
     "code": "turkic",
+    "continent": "",
     "flag_1x1": "flags/1x1/turkic.svg",
     "flag_4x3": "flags/4x3/turkic.svg",
     "iso": false,
@@ -2554,11 +2595,11 @@
   },
   {
     "capital": "Yakutsk",
-    "code": "ru-sak",
+    "code": "ru-sa",
     "continent": "Europe",
-    "flag_1x1": "flags/1x1/ru-sak.svg",
-    "flag_4x3": "flags/4x3/ru-sak.svg",
-    "iso": false,
+    "flag_1x1": "flags/1x1/ru-sa.svg",
+    "flag_4x3": "flags/4x3/ru-sa.svg",
+    "iso": true,
     "name": "Sakha Republic (Yakutia)"
   },
   {
@@ -2567,24 +2608,34 @@
     "continent": "Europe",
     "flag_1x1": "flags/1x1/ru-sve.svg",
     "flag_4x3": "flags/4x3/ru-sve.svg",
-    "iso": false,
+    "iso": true,
     "name": "Sverdlovsk Oblast"
   },
   {
     "capital": "Kazan",
-    "code": "ru-tat",
+    "code": "ru-ta",
     "continent": "Europe",
-    "flag_1x1": "flags/1x1/ru-tat.svg",
-    "flag_4x3": "flags/4x3/ru-tat.svg",
-    "iso": false,
+    "flag_1x1": "flags/1x1/ru-ta.svg",
+    "flag_4x3": "flags/4x3/ru-ta.svg",
+    "iso": true,
     "name": "Tatarstan"
   },
   {
+    "capital": "Thursday Island",
     "code": "au-tsi",
     "continent": "Australia",
     "flag_1x1": "flags/1x1/au-tsi.svg",
     "flag_4x3": "flags/4x3/au-tsi.svg",
     "iso": false,
     "name": "Torres Strait Islands"
+  },
+  {
+    "capital": "Kyzyl",
+    "code": "ru-ty",
+    "continent": "Europe",
+    "flag_1x1": "flags/1x1/ru-ty.svg",
+    "flag_4x3": "flags/4x3/ru-ty.svg",
+    "iso": true,
+    "name": "Tuva"
   }
 ]
