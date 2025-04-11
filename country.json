@@ -2405,7 +2405,6 @@
     "name": "Zimbabwe"
   },
   {
-    "capital": "",
     "code": "au-aa",
     "continent": "Australia",
     "flag_1x1": "flags/1x1/au-aa.svg",
@@ -2504,7 +2503,6 @@
     "name": "Crimea"
   },
   {
-    "capital": "",
     "code": "ua-ct",
     "continent": "Europe",
     "flag_1x1": "flags/1x1/ua-ct.svg",
@@ -2531,7 +2529,6 @@
     "name": "East Turkestan"
   },
   {
-    "capital": "",
     "code": "au-eu",
     "continent": "Australia",
     "flag_1x1": "flags/1x1/au-eu.svg",
@@ -2585,9 +2582,7 @@
     "name": "Navarra"
   },
   {
-    "capital": "",
     "code": "turkic",
-    "continent": "",
     "flag_1x1": "flags/1x1/turkic.svg",
     "flag_4x3": "flags/4x3/turkic.svg",
     "iso": false,
