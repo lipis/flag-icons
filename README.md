@@ -29,6 +29,17 @@ or use CDN:
 />
 ```
 
+or use SASS:
+
+```scss
+@use "node_modules/flag-icons/sass/flag-icons";
+
+// or with a specific set of flags
+@use "node_modules/flag-icons/sass/flag-icons" with (
+    $flag-icons-included-countries: ("gr", "de", "gb"),
+);
+```
+
 For using the flags inline with text add the classes `.fi` and `.fi-xx` (where `xx` is the [ISO 3166-1-alpha-2 code](https://www.iso.org/obp/ui/#search/code/) of a country) to an empty `<span>`. If you want to have a squared version flag then add the class `fis` as well. Example:
 
 ```html
