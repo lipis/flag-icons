@@ -6,7 +6,8 @@
     "flag_1x1": "flags/1x1/af.svg",
     "flag_4x3": "flags/4x3/af.svg",
     "iso": true,
-    "name": "Afghanistan"
+    "name": "Afghanistan",
+    "tel": "93"
   },
   {
     "capital": "Mariehamn",
@@ -15,7 +16,8 @@
     "flag_1x1": "flags/1x1/ax.svg",
     "flag_4x3": "flags/4x3/ax.svg",
     "iso": true,
-    "name": "Aland Islands"
+    "name": "Aland Islands",
+    "tel": "358"
   },
   {
     "capital": "Tirana",
@@ -24,7 +26,8 @@
     "flag_1x1": "flags/1x1/al.svg",
     "flag_4x3": "flags/4x3/al.svg",
     "iso": true,
-    "name": "Albania"
+    "name": "Albania",
+    "tel": "355"
   },
   {
     "capital": "Algiers",
@@ -33,7 +36,8 @@
     "flag_1x1": "flags/1x1/dz.svg",
     "flag_4x3": "flags/4x3/dz.svg",
     "iso": true,
-    "name": "Algeria"
+    "name": "Algeria",
+    "tel": "213"
   },
   {
     "capital": "Pago Pago",
@@ -42,7 +46,8 @@
     "flag_1x1": "flags/1x1/as.svg",
     "flag_4x3": "flags/4x3/as.svg",
     "iso": true,
-    "name": "American Samoa"
+    "name": "American Samoa",
+    "tel": "1-684"
   },
   {
     "capital": "Andorra la Vella",
@@ -51,7 +56,8 @@
     "flag_1x1": "flags/1x1/ad.svg",
     "flag_4x3": "flags/4x3/ad.svg",
     "iso": true,
-    "name": "Andorra"
+    "name": "Andorra",
+    "tel": "376"
   },
   {
     "capital": "Luanda",
@@ -60,7 +66,8 @@
     "flag_1x1": "flags/1x1/ao.svg",
     "flag_4x3": "flags/4x3/ao.svg",
     "iso": true,
-    "name": "Angola"
+    "name": "Angola",
+    "tel": "244"
   },
   {
     "capital": "The Valley",
@@ -69,14 +76,16 @@
     "flag_1x1": "flags/1x1/ai.svg",
     "flag_4x3": "flags/4x3/ai.svg",
     "iso": true,
-    "name": "Anguilla"
+    "name": "Anguilla",
+    "tel": "1-264"
   },
   {
     "code": "aq",
     "flag_1x1": "flags/1x1/aq.svg",
     "flag_4x3": "flags/4x3/aq.svg",
     "iso": true,
-    "name": "Antarctica"
+    "name": "Antarctica",
+    "tel": "672"
   },
   {
     "capital": "St. John's",
@@ -85,7 +94,8 @@
     "flag_1x1": "flags/1x1/ag.svg",
     "flag_4x3": "flags/4x3/ag.svg",
     "iso": true,
-    "name": "Antigua and Barbuda"
+    "name": "Antigua and Barbuda",
+    "tel": "1-268"
   },
   {
     "capital": "Buenos Aires",
@@ -94,7 +104,8 @@
     "flag_1x1": "flags/1x1/ar.svg",
     "flag_4x3": "flags/4x3/ar.svg",
     "iso": true,
-    "name": "Argentina"
+    "name": "Argentina",
+    "tel": "54"
   },
   {
     "capital": "Yerevan",
@@ -103,7 +114,8 @@
     "flag_1x1": "flags/1x1/am.svg",
     "flag_4x3": "flags/4x3/am.svg",
     "iso": true,
-    "name": "Armenia"
+    "name": "Armenia",
+    "tel": "374"
   },
   {
     "capital": "Oranjestad",
@@ -112,7 +124,8 @@
     "flag_1x1": "flags/1x1/aw.svg",
     "flag_4x3": "flags/4x3/aw.svg",
     "iso": true,
-    "name": "Aruba"
+    "name": "Aruba",
+    "tel": "297"
   },
   {
     "capital": "Georgetown",
@@ -121,14 +134,16 @@
     "flag_1x1": "flags/1x1/sh-ac.svg",
     "flag_4x3": "flags/4x3/sh-ac.svg",
     "iso": false,
-    "name": "Ascension Island"
+    "name": "Ascension Island",
+    "tel": "247"
   },
   {
     "code": "asean",
     "flag_1x1": "flags/1x1/asean.svg",
     "flag_4x3": "flags/4x3/asean.svg",
     "iso": false,
-    "name": "Association of Southeast Asian Nations"
+    "name": "Association of Southeast Asian Nations",
+    "tel": ""
   },
   {
     "capital": "Canberra",
@@ -137,7 +152,8 @@
     "flag_1x1": "flags/1x1/au.svg",
     "flag_4x3": "flags/4x3/au.svg",
     "iso": true,
-    "name": "Australia"
+    "name": "Australia",
+    "tel": "61"
   },
   {
     "capital": "Vienna",
@@ -146,7 +162,8 @@
     "flag_1x1": "flags/1x1/at.svg",
     "flag_4x3": "flags/4x3/at.svg",
     "iso": true,
-    "name": "Austria"
+    "name": "Austria",
+    "tel": "43"
   },
   {
     "capital": "Baku",
@@ -155,7 +172,8 @@
     "flag_1x1": "flags/1x1/az.svg",
     "flag_4x3": "flags/4x3/az.svg",
     "iso": true,
-    "name": "Azerbaijan"
+    "name": "Azerbaijan",
+    "tel": "994"
   },
   {
     "capital": "Nassau",
@@ -164,7 +182,8 @@
     "flag_1x1": "flags/1x1/bs.svg",
     "flag_4x3": "flags/4x3/bs.svg",
     "iso": true,
-    "name": "Bahamas"
+    "name": "Bahamas",
+    "tel": "1-242"
   },
   {
     "capital": "Manama",
@@ -173,7 +192,8 @@
     "flag_1x1": "flags/1x1/bh.svg",
     "flag_4x3": "flags/4x3/bh.svg",
     "iso": true,
-    "name": "Bahrain"
+    "name": "Bahrain",
+    "tel": "973"
   },
   {
     "capital": "Dhaka",
@@ -182,7 +202,8 @@
     "flag_1x1": "flags/1x1/bd.svg",
     "flag_4x3": "flags/4x3/bd.svg",
     "iso": true,
-    "name": "Bangladesh"
+    "name": "Bangladesh",
+    "tel": "880"
   },
   {
     "capital": "Bridgetown",
@@ -191,14 +212,16 @@
     "flag_1x1": "flags/1x1/bb.svg",
     "flag_4x3": "flags/4x3/bb.svg",
     "iso": true,
-    "name": "Barbados"
+    "name": "Barbados",
+    "tel": "1-246"
   },
   {
     "code": "es-pv",
     "flag_1x1": "flags/1x1/es-pv.svg",
     "flag_4x3": "flags/4x3/es-pv.svg",
     "iso": false,
-    "name": "Basque Country"
+    "name": "Basque Country",
+    "tel": "34"
   },
   {
     "capital": "Minsk",
@@ -207,7 +230,8 @@
     "flag_1x1": "flags/1x1/by.svg",
     "flag_4x3": "flags/4x3/by.svg",
     "iso": true,
-    "name": "Belarus"
+    "name": "Belarus",
+    "tel": "375"
   },
   {
     "capital": "Brussels",
@@ -216,7 +240,8 @@
     "flag_1x1": "flags/1x1/be.svg",
     "flag_4x3": "flags/4x3/be.svg",
     "iso": true,
-    "name": "Belgium"
+    "name": "Belgium",
+    "tel": "32"
   },
   {
     "capital": "Belmopan",
@@ -225,7 +250,8 @@
     "flag_1x1": "flags/1x1/bz.svg",
     "flag_4x3": "flags/4x3/bz.svg",
     "iso": true,
-    "name": "Belize"
+    "name": "Belize",
+    "tel": "501"
   },
   {
     "capital": "Porto-Novo",
@@ -234,7 +260,8 @@
     "flag_1x1": "flags/1x1/bj.svg",
     "flag_4x3": "flags/4x3/bj.svg",
     "iso": true,
-    "name": "Benin"
+    "name": "Benin",
+    "tel": "229"
   },
   {
     "capital": "Hamilton",
@@ -243,7 +270,8 @@
     "flag_1x1": "flags/1x1/bm.svg",
     "flag_4x3": "flags/4x3/bm.svg",
     "iso": true,
-    "name": "Bermuda"
+    "name": "Bermuda",
+    "tel": "1-441"
   },
   {
     "capital": "Thimphu",
@@ -252,7 +280,8 @@
     "flag_1x1": "flags/1x1/bt.svg",
     "flag_4x3": "flags/4x3/bt.svg",
     "iso": true,
-    "name": "Bhutan"
+    "name": "Bhutan",
+    "tel": "975"
   },
   {
     "capital": "Sucre",
@@ -261,7 +290,8 @@
     "flag_1x1": "flags/1x1/bo.svg",
     "flag_4x3": "flags/4x3/bo.svg",
     "iso": true,
-    "name": "Bolivia"
+    "name": "Bolivia",
+    "tel": "591"
   },
   {
     "capital": "Kralendijk",
@@ -270,7 +300,8 @@
     "flag_1x1": "flags/1x1/bq.svg",
     "flag_4x3": "flags/4x3/bq.svg",
     "iso": true,
-    "name": "Bonaire, Sint Eustatius and Saba"
+    "name": "Bonaire, Sint Eustatius and Saba",
+    "tel": "599"
   },
   {
     "capital": "Sarajevo",
@@ -279,7 +310,8 @@
     "flag_1x1": "flags/1x1/ba.svg",
     "flag_4x3": "flags/4x3/ba.svg",
     "iso": true,
-    "name": "Bosnia and Herzegovina"
+    "name": "Bosnia and Herzegovina",
+    "tel": "387"
   },
   {
     "capital": "Gaborone",
@@ -288,14 +320,16 @@
     "flag_1x1": "flags/1x1/bw.svg",
     "flag_4x3": "flags/4x3/bw.svg",
     "iso": true,
-    "name": "Botswana"
+    "name": "Botswana",
+    "tel": "267"
   },
   {
     "code": "bv",
     "flag_1x1": "flags/1x1/bv.svg",
     "flag_4x3": "flags/4x3/bv.svg",
     "iso": true,
-    "name": "Bouvet Island"
+    "name": "Bouvet Island",
+    "tel": "47"
   },
   {
     "capital": "Brasília",
@@ -304,7 +338,8 @@
     "flag_1x1": "flags/1x1/br.svg",
     "flag_4x3": "flags/4x3/br.svg",
     "iso": true,
-    "name": "Brazil"
+    "name": "Brazil",
+    "tel": "55"
   },
   {
     "capital": "Diego Garcia",
@@ -313,7 +348,8 @@
     "flag_1x1": "flags/1x1/io.svg",
     "flag_4x3": "flags/4x3/io.svg",
     "iso": true,
-    "name": "British Indian Ocean Territory"
+    "name": "British Indian Ocean Territory",
+    "tel": "246"
   },
   {
     "capital": "Bandar Seri Begawan",
@@ -322,7 +358,8 @@
     "flag_1x1": "flags/1x1/bn.svg",
     "flag_4x3": "flags/4x3/bn.svg",
     "iso": true,
-    "name": "Brunei Darussalam"
+    "name": "Brunei Darussalam",
+    "tel": "673"
   },
   {
     "capital": "Sofia",
@@ -331,7 +368,8 @@
     "flag_1x1": "flags/1x1/bg.svg",
     "flag_4x3": "flags/4x3/bg.svg",
     "iso": true,
-    "name": "Bulgaria"
+    "name": "Bulgaria",
+    "tel": "359"
   },
   {
     "capital": "Ouagadougou",
@@ -340,7 +378,8 @@
     "flag_1x1": "flags/1x1/bf.svg",
     "flag_4x3": "flags/4x3/bf.svg",
     "iso": true,
-    "name": "Burkina Faso"
+    "name": "Burkina Faso",
+    "tel": "226"
   },
   {
     "capital": "Bujumbura",
@@ -349,7 +388,8 @@
     "flag_1x1": "flags/1x1/bi.svg",
     "flag_4x3": "flags/4x3/bi.svg",
     "iso": true,
-    "name": "Burundi"
+    "name": "Burundi",
+    "tel": "257"
   },
   {
     "capital": "Praia",
@@ -358,7 +398,8 @@
     "flag_1x1": "flags/1x1/cv.svg",
     "flag_4x3": "flags/4x3/cv.svg",
     "iso": true,
-    "name": "Cabo Verde"
+    "name": "Cabo Verde",
+    "tel": "238"
   },
   {
     "capital": "Phnom Penh",
@@ -367,7 +408,8 @@
     "flag_1x1": "flags/1x1/kh.svg",
     "flag_4x3": "flags/4x3/kh.svg",
     "iso": true,
-    "name": "Cambodia"
+    "name": "Cambodia",
+    "tel": "855"
   },
   {
     "capital": "Yaoundé",
@@ -376,7 +418,8 @@
     "flag_1x1": "flags/1x1/cm.svg",
     "flag_4x3": "flags/4x3/cm.svg",
     "iso": true,
-    "name": "Cameroon"
+    "name": "Cameroon",
+    "tel": "237"
   },
   {
     "capital": "Ottawa",
@@ -385,21 +428,24 @@
     "flag_1x1": "flags/1x1/ca.svg",
     "flag_4x3": "flags/4x3/ca.svg",
     "iso": true,
-    "name": "Canada"
+    "name": "Canada",
+    "tel": "1"
   },
   {
     "code": "ic",
     "flag_1x1": "flags/1x1/ic.svg",
     "flag_4x3": "flags/4x3/ic.svg",
     "iso": false,
-    "name": "Canary Islands"
+    "name": "Canary Islands",
+    "tel": "34"
   },
   {
     "code": "es-ct",
     "flag_1x1": "flags/1x1/es-ct.svg",
     "flag_4x3": "flags/4x3/es-ct.svg",
     "iso": false,
-    "name": "Catalonia"
+    "name": "Catalonia",
+    "tel": "34"
   },
   {
     "capital": "George Town",
@@ -408,7 +454,8 @@
     "flag_1x1": "flags/1x1/ky.svg",
     "flag_4x3": "flags/4x3/ky.svg",
     "iso": true,
-    "name": "Cayman Islands"
+    "name": "Cayman Islands",
+    "tel": "1-345"
   },
   {
     "capital": "Bangui",
@@ -417,14 +464,16 @@
     "flag_1x1": "flags/1x1/cf.svg",
     "flag_4x3": "flags/4x3/cf.svg",
     "iso": true,
-    "name": "Central African Republic"
+    "name": "Central African Republic",
+    "tel": "236"
   },
   {
     "code": "cefta",
     "flag_1x1": "flags/1x1/cefta.svg",
     "flag_4x3": "flags/4x3/cefta.svg",
     "iso": false,
-    "name": "Central European Free Trade Agreement"
+    "name": "Central European Free Trade Agreement",
+    "tel": ""
   },
   {
     "capital": "N'Djamena",
@@ -433,7 +482,8 @@
     "flag_1x1": "flags/1x1/td.svg",
     "flag_4x3": "flags/4x3/td.svg",
     "iso": true,
-    "name": "Chad"
+    "name": "Chad",
+    "tel": "235"
   },
   {
     "capital": "Santiago",
@@ -442,7 +492,8 @@
     "flag_1x1": "flags/1x1/cl.svg",
     "flag_4x3": "flags/4x3/cl.svg",
     "iso": true,
-    "name": "Chile"
+    "name": "Chile",
+    "tel": "56"
   },
   {
     "capital": "Beijing",
@@ -451,7 +502,8 @@
     "flag_1x1": "flags/1x1/cn.svg",
     "flag_4x3": "flags/4x3/cn.svg",
     "iso": true,
-    "name": "China"
+    "name": "China",
+    "tel": "86"
   },
   {
     "capital": "Flying Fish Cove",
@@ -460,14 +512,16 @@
     "flag_1x1": "flags/1x1/cx.svg",
     "flag_4x3": "flags/4x3/cx.svg",
     "iso": true,
-    "name": "Christmas Island"
+    "name": "Christmas Island",
+    "tel": "61"
   },
   {
     "code": "cp",
     "flag_1x1": "flags/1x1/cp.svg",
     "flag_4x3": "flags/4x3/cp.svg",
     "iso": false,
-    "name": "Clipperton Island"
+    "name": "Clipperton Island",
+    "tel": ""
   },
   {
     "capital": "West Island",
@@ -476,7 +530,8 @@
     "flag_1x1": "flags/1x1/cc.svg",
     "flag_4x3": "flags/4x3/cc.svg",
     "iso": true,
-    "name": "Cocos (Keeling) Islands"
+    "name": "Cocos (Keeling) Islands",
+    "tel": "61"
   },
   {
     "capital": "Bogotá",
@@ -485,7 +540,8 @@
     "flag_1x1": "flags/1x1/co.svg",
     "flag_4x3": "flags/4x3/co.svg",
     "iso": true,
-    "name": "Colombia"
+    "name": "Colombia",
+    "tel": "57"
   },
   {
     "capital": "Moroni",
@@ -494,7 +550,8 @@
     "flag_1x1": "flags/1x1/km.svg",
     "flag_4x3": "flags/4x3/km.svg",
     "iso": true,
-    "name": "Comoros"
+    "name": "Comoros",
+    "tel": "269"
   },
   {
     "capital": "Avarua",
@@ -503,7 +560,8 @@
     "flag_1x1": "flags/1x1/ck.svg",
     "flag_4x3": "flags/4x3/ck.svg",
     "iso": true,
-    "name": "Cook Islands"
+    "name": "Cook Islands",
+    "tel": "682"
   },
   {
     "capital": "San José",
@@ -512,7 +570,8 @@
     "flag_1x1": "flags/1x1/cr.svg",
     "flag_4x3": "flags/4x3/cr.svg",
     "iso": true,
-    "name": "Costa Rica"
+    "name": "Costa Rica",
+    "tel": "506"
   },
   {
     "capital": "Zagreb",
@@ -521,7 +580,8 @@
     "flag_1x1": "flags/1x1/hr.svg",
     "flag_4x3": "flags/4x3/hr.svg",
     "iso": true,
-    "name": "Croatia"
+    "name": "Croatia",
+    "tel": "385"
   },
   {
     "capital": "Havana",
@@ -530,7 +590,8 @@
     "flag_1x1": "flags/1x1/cu.svg",
     "flag_4x3": "flags/4x3/cu.svg",
     "iso": true,
-    "name": "Cuba"
+    "name": "Cuba",
+    "tel": "53"
   },
   {
     "capital": "Willemstad",
@@ -539,7 +600,8 @@
     "flag_1x1": "flags/1x1/cw.svg",
     "flag_4x3": "flags/4x3/cw.svg",
     "iso": true,
-    "name": "Curaçao"
+    "name": "Curaçao",
+    "tel": "599"
   },
   {
     "capital": "Nicosia",
@@ -548,7 +610,8 @@
     "flag_1x1": "flags/1x1/cy.svg",
     "flag_4x3": "flags/4x3/cy.svg",
     "iso": true,
-    "name": "Cyprus"
+    "name": "Cyprus",
+    "tel": "357"
   },
   {
     "capital": "Prague",
@@ -557,7 +620,8 @@
     "flag_1x1": "flags/1x1/cz.svg",
     "flag_4x3": "flags/4x3/cz.svg",
     "iso": true,
-    "name": "Czech Republic"
+    "name": "Czech Republic",
+    "tel": "420"
   },
   {
     "capital": "Yamoussoukro",
@@ -566,7 +630,8 @@
     "flag_1x1": "flags/1x1/ci.svg",
     "flag_4x3": "flags/4x3/ci.svg",
     "iso": true,
-    "name": "Côte d'Ivoire"
+    "name": "Côte d'Ivoire",
+    "tel": "225"
   },
   {
     "capital": "Kinshasa",
@@ -575,7 +640,8 @@
     "flag_1x1": "flags/1x1/cd.svg",
     "flag_4x3": "flags/4x3/cd.svg",
     "iso": true,
-    "name": "Democratic Republic of the Congo"
+    "name": "Democratic Republic of the Congo",
+    "tel": "243"
   },
   {
     "capital": "Copenhagen",
@@ -584,14 +650,16 @@
     "flag_1x1": "flags/1x1/dk.svg",
     "flag_4x3": "flags/4x3/dk.svg",
     "iso": true,
-    "name": "Denmark"
+    "name": "Denmark",
+    "tel": "45"
   },
   {
     "code": "dg",
     "flag_1x1": "flags/1x1/dg.svg",
     "flag_4x3": "flags/4x3/dg.svg",
     "iso": false,
-    "name": "Diego Garcia"
+    "name": "Diego Garcia",
+    "tel": "246"
   },
   {
     "capital": "Djibouti",
@@ -600,7 +668,8 @@
     "flag_1x1": "flags/1x1/dj.svg",
     "flag_4x3": "flags/4x3/dj.svg",
     "iso": true,
-    "name": "Djibouti"
+    "name": "Djibouti",
+    "tel": "253"
   },
   {
     "capital": "Roseau",
@@ -609,7 +678,8 @@
     "flag_1x1": "flags/1x1/dm.svg",
     "flag_4x3": "flags/4x3/dm.svg",
     "iso": true,
-    "name": "Dominica"
+    "name": "Dominica",
+    "tel": "1-767"
   },
   {
     "capital": "Santo Domingo",
@@ -618,14 +688,16 @@
     "flag_1x1": "flags/1x1/do.svg",
     "flag_4x3": "flags/4x3/do.svg",
     "iso": true,
-    "name": "Dominican Republic"
+    "name": "Dominican Republic",
+    "tel": "1-809"
   },
   {
     "code": "eac",
     "flag_1x1": "flags/1x1/eac.svg",
     "flag_4x3": "flags/4x3/eac.svg",
     "iso": false,
-    "name": "East African Community"
+    "name": "East African Community",
+    "tel": ""
   },
   {
     "capital": "Quito",
@@ -634,7 +706,8 @@
     "flag_1x1": "flags/1x1/ec.svg",
     "flag_4x3": "flags/4x3/ec.svg",
     "iso": true,
-    "name": "Ecuador"
+    "name": "Ecuador",
+    "tel": "593"
   },
   {
     "capital": "Cairo",
@@ -643,7 +716,8 @@
     "flag_1x1": "flags/1x1/eg.svg",
     "flag_4x3": "flags/4x3/eg.svg",
     "iso": true,
-    "name": "Egypt"
+    "name": "Egypt",
+    "tel": "20"
   },
   {
     "capital": "San Salvador",
@@ -652,7 +726,8 @@
     "flag_1x1": "flags/1x1/sv.svg",
     "flag_4x3": "flags/4x3/sv.svg",
     "iso": true,
-    "name": "El Salvador"
+    "name": "El Salvador",
+    "tel": "503"
   },
   {
     "capital": "London",
@@ -661,7 +736,8 @@
     "flag_1x1": "flags/1x1/gb-eng.svg",
     "flag_4x3": "flags/4x3/gb-eng.svg",
     "iso": false,
-    "name": "England"
+    "name": "England",
+    "tel": "44"
   },
   {
     "capital": "Malabo",
@@ -670,7 +746,8 @@
     "flag_1x1": "flags/1x1/gq.svg",
     "flag_4x3": "flags/4x3/gq.svg",
     "iso": true,
-    "name": "Equatorial Guinea"
+    "name": "Equatorial Guinea",
+    "tel": "240"
   },
   {
     "capital": "Asmara",
@@ -679,7 +756,8 @@
     "flag_1x1": "flags/1x1/er.svg",
     "flag_4x3": "flags/4x3/er.svg",
     "iso": true,
-    "name": "Eritrea"
+    "name": "Eritrea",
+    "tel": "291"
   },
   {
     "capital": "Tallinn",
@@ -688,7 +766,8 @@
     "flag_1x1": "flags/1x1/ee.svg",
     "flag_4x3": "flags/4x3/ee.svg",
     "iso": true,
-    "name": "Estonia"
+    "name": "Estonia",
+    "tel": "372"
   },
   {
     "capital": "Lobamba, Mbabane",
@@ -697,7 +776,8 @@
     "flag_1x1": "flags/1x1/sz.svg",
     "flag_4x3": "flags/4x3/sz.svg",
     "iso": true,
-    "name": "Eswatini"
+    "name": "Eswatini",
+    "tel": "268"
   },
   {
     "capital": "Addis Ababa",
@@ -706,14 +786,16 @@
     "flag_1x1": "flags/1x1/et.svg",
     "flag_4x3": "flags/4x3/et.svg",
     "iso": true,
-    "name": "Ethiopia"
+    "name": "Ethiopia",
+    "tel": "251"
   },
   {
     "code": "eu",
     "flag_1x1": "flags/1x1/eu.svg",
     "flag_4x3": "flags/4x3/eu.svg",
     "iso": false,
-    "name": "Europe"
+    "name": "Europe",
+    "tel": ""
   },
   {
     "capital": "Stanley",
@@ -722,7 +804,8 @@
     "flag_1x1": "flags/1x1/fk.svg",
     "flag_4x3": "flags/4x3/fk.svg",
     "iso": true,
-    "name": "Falkland Islands"
+    "name": "Falkland Islands",
+    "tel": "500"
   },
   {
     "capital": "Tórshavn",
@@ -731,7 +814,8 @@
     "flag_1x1": "flags/1x1/fo.svg",
     "flag_4x3": "flags/4x3/fo.svg",
     "iso": true,
-    "name": "Faroe Islands"
+    "name": "Faroe Islands",
+    "tel": "298"
   },
   {
     "capital": "Palikir",
@@ -740,7 +824,8 @@
     "flag_1x1": "flags/1x1/fm.svg",
     "flag_4x3": "flags/4x3/fm.svg",
     "iso": true,
-    "name": "Federated States of Micronesia"
+    "name": "Federated States of Micronesia",
+    "tel": "691"
   },
   {
     "capital": "Suva",
@@ -749,7 +834,8 @@
     "flag_1x1": "flags/1x1/fj.svg",
     "flag_4x3": "flags/4x3/fj.svg",
     "iso": true,
-    "name": "Fiji"
+    "name": "Fiji",
+    "tel": "679"
   },
   {
     "capital": "Helsinki",
@@ -758,7 +844,8 @@
     "flag_1x1": "flags/1x1/fi.svg",
     "flag_4x3": "flags/4x3/fi.svg",
     "iso": true,
-    "name": "Finland"
+    "name": "Finland",
+    "tel": "358"
   },
   {
     "capital": "Paris",
@@ -767,7 +854,8 @@
     "flag_1x1": "flags/1x1/fr.svg",
     "flag_4x3": "flags/4x3/fr.svg",
     "iso": true,
-    "name": "France"
+    "name": "France",
+    "tel": "33"
   },
   {
     "capital": "Cayenne",
@@ -776,7 +864,8 @@
     "flag_1x1": "flags/1x1/gf.svg",
     "flag_4x3": "flags/4x3/gf.svg",
     "iso": true,
-    "name": "French Guiana"
+    "name": "French Guiana",
+    "tel": "594"
   },
   {
     "capital": "Papeete",
@@ -785,7 +874,8 @@
     "flag_1x1": "flags/1x1/pf.svg",
     "flag_4x3": "flags/4x3/pf.svg",
     "iso": true,
-    "name": "French Polynesia"
+    "name": "French Polynesia",
+    "tel": "689"
   },
   {
     "capital": "Saint-Pierre, Réunion",
@@ -794,7 +884,8 @@
     "flag_1x1": "flags/1x1/tf.svg",
     "flag_4x3": "flags/4x3/tf.svg",
     "iso": true,
-    "name": "French Southern Territories"
+    "name": "French Southern Territories",
+    "tel": "262"
   },
   {
     "capital": "Libreville",
@@ -803,14 +894,16 @@
     "flag_1x1": "flags/1x1/ga.svg",
     "flag_4x3": "flags/4x3/ga.svg",
     "iso": true,
-    "name": "Gabon"
+    "name": "Gabon",
+    "tel": "241"
   },
   {
     "code": "es-ga",
     "flag_1x1": "flags/1x1/es-ga.svg",
     "flag_4x3": "flags/4x3/es-ga.svg",
     "iso": false,
-    "name": "Galicia"
+    "name": "Galicia",
+    "tel": "34"
   },
   {
     "capital": "Banjul",
@@ -819,7 +912,8 @@
     "flag_1x1": "flags/1x1/gm.svg",
     "flag_4x3": "flags/4x3/gm.svg",
     "iso": true,
-    "name": "Gambia"
+    "name": "Gambia",
+    "tel": "220"
   },
   {
     "capital": "Tbilisi",
@@ -828,7 +922,8 @@
     "flag_1x1": "flags/1x1/ge.svg",
     "flag_4x3": "flags/4x3/ge.svg",
     "iso": true,
-    "name": "Georgia"
+    "name": "Georgia",
+    "tel": "995"
   },
   {
     "capital": "Berlin",
@@ -837,7 +932,8 @@
     "flag_1x1": "flags/1x1/de.svg",
     "flag_4x3": "flags/4x3/de.svg",
     "iso": true,
-    "name": "Germany"
+    "name": "Germany",
+    "tel": "49"
   },
   {
     "capital": "Accra",
@@ -846,7 +942,8 @@
     "flag_1x1": "flags/1x1/gh.svg",
     "flag_4x3": "flags/4x3/gh.svg",
     "iso": true,
-    "name": "Ghana"
+    "name": "Ghana",
+    "tel": "233"
   },
   {
     "capital": "Gibraltar",
@@ -855,7 +952,8 @@
     "flag_1x1": "flags/1x1/gi.svg",
     "flag_4x3": "flags/4x3/gi.svg",
     "iso": true,
-    "name": "Gibraltar"
+    "name": "Gibraltar",
+    "tel": "350"
   },
   {
     "capital": "Athens",
@@ -864,7 +962,8 @@
     "flag_1x1": "flags/1x1/gr.svg",
     "flag_4x3": "flags/4x3/gr.svg",
     "iso": true,
-    "name": "Greece"
+    "name": "Greece",
+    "tel": "30"
   },
   {
     "capital": "Nuuk",
@@ -873,7 +972,8 @@
     "flag_1x1": "flags/1x1/gl.svg",
     "flag_4x3": "flags/4x3/gl.svg",
     "iso": true,
-    "name": "Greenland"
+    "name": "Greenland",
+    "tel": "299"
   },
   {
     "capital": "St. George's",
@@ -882,7 +982,8 @@
     "flag_1x1": "flags/1x1/gd.svg",
     "flag_4x3": "flags/4x3/gd.svg",
     "iso": true,
-    "name": "Grenada"
+    "name": "Grenada",
+    "tel": "1-473"
   },
   {
     "capital": "Basse-Terre",
@@ -891,7 +992,8 @@
     "flag_1x1": "flags/1x1/gp.svg",
     "flag_4x3": "flags/4x3/gp.svg",
     "iso": true,
-    "name": "Guadeloupe"
+    "name": "Guadeloupe",
+    "tel": "590"
   },
   {
     "capital": "Hagåtña",
@@ -900,7 +1002,8 @@
     "flag_1x1": "flags/1x1/gu.svg",
     "flag_4x3": "flags/4x3/gu.svg",
     "iso": true,
-    "name": "Guam"
+    "name": "Guam",
+    "tel": "1-671"
   },
   {
     "capital": "Guatemala City",
@@ -909,7 +1012,8 @@
     "flag_1x1": "flags/1x1/gt.svg",
     "flag_4x3": "flags/4x3/gt.svg",
     "iso": true,
-    "name": "Guatemala"
+    "name": "Guatemala",
+    "tel": "502"
   },
   {
     "capital": "Saint Peter Port",
@@ -918,7 +1022,8 @@
     "flag_1x1": "flags/1x1/gg.svg",
     "flag_4x3": "flags/4x3/gg.svg",
     "iso": true,
-    "name": "Guernsey"
+    "name": "Guernsey",
+    "tel": "44"
   },
   {
     "capital": "Conakry",
@@ -927,7 +1032,8 @@
     "flag_1x1": "flags/1x1/gn.svg",
     "flag_4x3": "flags/4x3/gn.svg",
     "iso": true,
-    "name": "Guinea"
+    "name": "Guinea",
+    "tel": "224"
   },
   {
     "capital": "Bissau",
@@ -936,7 +1042,8 @@
     "flag_1x1": "flags/1x1/gw.svg",
     "flag_4x3": "flags/4x3/gw.svg",
     "iso": true,
-    "name": "Guinea-Bissau"
+    "name": "Guinea-Bissau",
+    "tel": "245"
   },
   {
     "capital": "Georgetown",
@@ -945,7 +1052,8 @@
     "flag_1x1": "flags/1x1/gy.svg",
     "flag_4x3": "flags/4x3/gy.svg",
     "iso": true,
-    "name": "Guyana"
+    "name": "Guyana",
+    "tel": "592"
   },
   {
     "capital": "Port-au-Prince",
@@ -954,14 +1062,16 @@
     "flag_1x1": "flags/1x1/ht.svg",
     "flag_4x3": "flags/4x3/ht.svg",
     "iso": true,
-    "name": "Haiti"
+    "name": "Haiti",
+    "tel": "509"
   },
   {
     "code": "hm",
     "flag_1x1": "flags/1x1/hm.svg",
     "flag_4x3": "flags/4x3/hm.svg",
     "iso": true,
-    "name": "Heard Island and McDonald Islands"
+    "name": "Heard Island and McDonald Islands",
+    "tel": "672"
   },
   {
     "capital": "Vatican City",
@@ -970,7 +1080,8 @@
     "flag_1x1": "flags/1x1/va.svg",
     "flag_4x3": "flags/4x3/va.svg",
     "iso": true,
-    "name": "Holy See"
+    "name": "Holy See",
+    "tel": "379"
   },
   {
     "capital": "Tegucigalpa",
@@ -979,7 +1090,8 @@
     "flag_1x1": "flags/1x1/hn.svg",
     "flag_4x3": "flags/4x3/hn.svg",
     "iso": true,
-    "name": "Honduras"
+    "name": "Honduras",
+    "tel": "504"
   },
   {
     "capital": "Hong Kong",
@@ -988,7 +1100,8 @@
     "flag_1x1": "flags/1x1/hk.svg",
     "flag_4x3": "flags/4x3/hk.svg",
     "iso": true,
-    "name": "Hong Kong"
+    "name": "Hong Kong",
+    "tel": "852"
   },
   {
     "capital": "Budapest",
@@ -997,7 +1110,8 @@
     "flag_1x1": "flags/1x1/hu.svg",
     "flag_4x3": "flags/4x3/hu.svg",
     "iso": true,
-    "name": "Hungary"
+    "name": "Hungary",
+    "tel": "36"
   },
   {
     "capital": "Reykjavik",
@@ -1006,7 +1120,8 @@
     "flag_1x1": "flags/1x1/is.svg",
     "flag_4x3": "flags/4x3/is.svg",
     "iso": true,
-    "name": "Iceland"
+    "name": "Iceland",
+    "tel": "354"
   },
   {
     "capital": "New Delhi",
@@ -1015,7 +1130,8 @@
     "flag_1x1": "flags/1x1/in.svg",
     "flag_4x3": "flags/4x3/in.svg",
     "iso": true,
-    "name": "India"
+    "name": "India",
+    "tel": "91"
   },
   {
     "capital": "Jakarta",
@@ -1024,7 +1140,8 @@
     "flag_1x1": "flags/1x1/id.svg",
     "flag_4x3": "flags/4x3/id.svg",
     "iso": true,
-    "name": "Indonesia"
+    "name": "Indonesia",
+    "tel": "62"
   },
   {
     "capital": "Tehran",
@@ -1033,7 +1150,8 @@
     "flag_1x1": "flags/1x1/ir.svg",
     "flag_4x3": "flags/4x3/ir.svg",
     "iso": true,
-    "name": "Iran"
+    "name": "Iran",
+    "tel": "98"
   },
   {
     "capital": "Baghdad",
@@ -1042,7 +1160,8 @@
     "flag_1x1": "flags/1x1/iq.svg",
     "flag_4x3": "flags/4x3/iq.svg",
     "iso": true,
-    "name": "Iraq"
+    "name": "Iraq",
+    "tel": "964"
   },
   {
     "capital": "Dublin",
@@ -1051,7 +1170,8 @@
     "flag_1x1": "flags/1x1/ie.svg",
     "flag_4x3": "flags/4x3/ie.svg",
     "iso": true,
-    "name": "Ireland"
+    "name": "Ireland",
+    "tel": "353"
   },
   {
     "capital": "Douglas",
@@ -1060,7 +1180,8 @@
     "flag_1x1": "flags/1x1/im.svg",
     "flag_4x3": "flags/4x3/im.svg",
     "iso": true,
-    "name": "Isle of Man"
+    "name": "Isle of Man",
+    "tel": "44"
   },
   {
     "capital": "Jerusalem",
@@ -1069,7 +1190,8 @@
     "flag_1x1": "flags/1x1/il.svg",
     "flag_4x3": "flags/4x3/il.svg",
     "iso": true,
-    "name": "Israel"
+    "name": "Israel",
+    "tel": "972"
   },
   {
     "capital": "Rome",
@@ -1078,7 +1200,8 @@
     "flag_1x1": "flags/1x1/it.svg",
     "flag_4x3": "flags/4x3/it.svg",
     "iso": true,
-    "name": "Italy"
+    "name": "Italy",
+    "tel": "39"
   },
   {
     "capital": "Kingston",
@@ -1087,7 +1210,8 @@
     "flag_1x1": "flags/1x1/jm.svg",
     "flag_4x3": "flags/4x3/jm.svg",
     "iso": true,
-    "name": "Jamaica"
+    "name": "Jamaica",
+    "tel": "1-876"
   },
   {
     "capital": "Tokyo",
@@ -1096,7 +1220,8 @@
     "flag_1x1": "flags/1x1/jp.svg",
     "flag_4x3": "flags/4x3/jp.svg",
     "iso": true,
-    "name": "Japan"
+    "name": "Japan",
+    "tel": "81"
   },
   {
     "capital": "Saint Helier",
@@ -1105,7 +1230,8 @@
     "flag_1x1": "flags/1x1/je.svg",
     "flag_4x3": "flags/4x3/je.svg",
     "iso": true,
-    "name": "Jersey"
+    "name": "Jersey",
+    "tel": "44"
   },
   {
     "capital": "Amman",
@@ -1114,7 +1240,8 @@
     "flag_1x1": "flags/1x1/jo.svg",
     "flag_4x3": "flags/4x3/jo.svg",
     "iso": true,
-    "name": "Jordan"
+    "name": "Jordan",
+    "tel": "962"
   },
   {
     "capital": "Astana",
@@ -1123,7 +1250,8 @@
     "flag_1x1": "flags/1x1/kz.svg",
     "flag_4x3": "flags/4x3/kz.svg",
     "iso": true,
-    "name": "Kazakhstan"
+    "name": "Kazakhstan",
+    "tel": "7"
   },
   {
     "capital": "Nairobi",
@@ -1132,7 +1260,8 @@
     "flag_1x1": "flags/1x1/ke.svg",
     "flag_4x3": "flags/4x3/ke.svg",
     "iso": true,
-    "name": "Kenya"
+    "name": "Kenya",
+    "tel": "254"
   },
   {
     "capital": "South Tarawa",
@@ -1141,7 +1270,8 @@
     "flag_1x1": "flags/1x1/ki.svg",
     "flag_4x3": "flags/4x3/ki.svg",
     "iso": true,
-    "name": "Kiribati"
+    "name": "Kiribati",
+    "tel": "686"
   },
   {
     "capital": "Pristina",
@@ -1150,7 +1280,8 @@
     "flag_1x1": "flags/1x1/xk.svg",
     "flag_4x3": "flags/4x3/xk.svg",
     "iso": false,
-    "name": "Kosovo"
+    "name": "Kosovo",
+    "tel": "383"
   },
   {
     "capital": "Kuwait City",
@@ -1159,7 +1290,8 @@
     "flag_1x1": "flags/1x1/kw.svg",
     "flag_4x3": "flags/4x3/kw.svg",
     "iso": true,
-    "name": "Kuwait"
+    "name": "Kuwait",
+    "tel": "965"
   },
   {
     "capital": "Bishkek",
@@ -1168,7 +1300,8 @@
     "flag_1x1": "flags/1x1/kg.svg",
     "flag_4x3": "flags/4x3/kg.svg",
     "iso": true,
-    "name": "Kyrgyzstan"
+    "name": "Kyrgyzstan",
+    "tel": "996"
   },
   {
     "capital": "Vientiane",
@@ -1177,7 +1310,8 @@
     "flag_1x1": "flags/1x1/la.svg",
     "flag_4x3": "flags/4x3/la.svg",
     "iso": true,
-    "name": "Laos"
+    "name": "Laos",
+    "tel": "856"
   },
   {
     "capital": "Riga",
@@ -1186,14 +1320,16 @@
     "flag_1x1": "flags/1x1/lv.svg",
     "flag_4x3": "flags/4x3/lv.svg",
     "iso": true,
-    "name": "Latvia"
+    "name": "Latvia",
+    "tel": "371"
   },
   {
     "code": "arab",
     "flag_1x1": "flags/1x1/arab.svg",
     "flag_4x3": "flags/4x3/arab.svg",
     "iso": false,
-    "name": "League of Arab States"
+    "name": "League of Arab States",
+    "tel": ""
   },
   {
     "capital": "Beirut",
@@ -1202,7 +1338,8 @@
     "flag_1x1": "flags/1x1/lb.svg",
     "flag_4x3": "flags/4x3/lb.svg",
     "iso": true,
-    "name": "Lebanon"
+    "name": "Lebanon",
+    "tel": "961"
   },
   {
     "capital": "Maseru",
@@ -1211,7 +1348,8 @@
     "flag_1x1": "flags/1x1/ls.svg",
     "flag_4x3": "flags/4x3/ls.svg",
     "iso": true,
-    "name": "Lesotho"
+    "name": "Lesotho",
+    "tel": "266"
   },
   {
     "capital": "Monrovia",
@@ -1220,7 +1358,8 @@
     "flag_1x1": "flags/1x1/lr.svg",
     "flag_4x3": "flags/4x3/lr.svg",
     "iso": true,
-    "name": "Liberia"
+    "name": "Liberia",
+    "tel": "231"
   },
   {
     "capital": "Tripoli",
@@ -1229,7 +1368,8 @@
     "flag_1x1": "flags/1x1/ly.svg",
     "flag_4x3": "flags/4x3/ly.svg",
     "iso": true,
-    "name": "Libya"
+    "name": "Libya",
+    "tel": "218"
   },
   {
     "capital": "Vaduz",
@@ -1238,7 +1378,8 @@
     "flag_1x1": "flags/1x1/li.svg",
     "flag_4x3": "flags/4x3/li.svg",
     "iso": true,
-    "name": "Liechtenstein"
+    "name": "Liechtenstein",
+    "tel": "423"
   },
   {
     "capital": "Vilnius",
@@ -1247,7 +1388,8 @@
     "flag_1x1": "flags/1x1/lt.svg",
     "flag_4x3": "flags/4x3/lt.svg",
     "iso": true,
-    "name": "Lithuania"
+    "name": "Lithuania",
+    "tel": "370"
   },
   {
     "capital": "Luxembourg City",
@@ -1256,7 +1398,8 @@
     "flag_1x1": "flags/1x1/lu.svg",
     "flag_4x3": "flags/4x3/lu.svg",
     "iso": true,
-    "name": "Luxembourg"
+    "name": "Luxembourg",
+    "tel": "352"
   },
   {
     "capital": "Macau",
@@ -1265,7 +1408,8 @@
     "flag_1x1": "flags/1x1/mo.svg",
     "flag_4x3": "flags/4x3/mo.svg",
     "iso": true,
-    "name": "Macau"
+    "name": "Macau",
+    "tel": "853"
   },
   {
     "capital": "Antananarivo",
@@ -1274,7 +1418,8 @@
     "flag_1x1": "flags/1x1/mg.svg",
     "flag_4x3": "flags/4x3/mg.svg",
     "iso": true,
-    "name": "Madagascar"
+    "name": "Madagascar",
+    "tel": "261"
   },
   {
     "capital": "Lilongwe",
@@ -1283,7 +1428,8 @@
     "flag_1x1": "flags/1x1/mw.svg",
     "flag_4x3": "flags/4x3/mw.svg",
     "iso": true,
-    "name": "Malawi"
+    "name": "Malawi",
+    "tel": "265"
   },
   {
     "capital": "Kuala Lumpur",
@@ -1292,7 +1438,8 @@
     "flag_1x1": "flags/1x1/my.svg",
     "flag_4x3": "flags/4x3/my.svg",
     "iso": true,
-    "name": "Malaysia"
+    "name": "Malaysia",
+    "tel": "60"
   },
   {
     "capital": "Malé",
@@ -1301,7 +1448,8 @@
     "flag_1x1": "flags/1x1/mv.svg",
     "flag_4x3": "flags/4x3/mv.svg",
     "iso": true,
-    "name": "Maldives"
+    "name": "Maldives",
+    "tel": "960"
   },
   {
     "capital": "Bamako",
@@ -1310,7 +1458,8 @@
     "flag_1x1": "flags/1x1/ml.svg",
     "flag_4x3": "flags/4x3/ml.svg",
     "iso": true,
-    "name": "Mali"
+    "name": "Mali",
+    "tel": "223"
   },
   {
     "capital": "Valletta",
@@ -1319,7 +1468,8 @@
     "flag_1x1": "flags/1x1/mt.svg",
     "flag_4x3": "flags/4x3/mt.svg",
     "iso": true,
-    "name": "Malta"
+    "name": "Malta",
+    "tel": "356"
   },
   {
     "capital": "Majuro",
@@ -1328,7 +1478,8 @@
     "flag_1x1": "flags/1x1/mh.svg",
     "flag_4x3": "flags/4x3/mh.svg",
     "iso": true,
-    "name": "Marshall Islands"
+    "name": "Marshall Islands",
+    "tel": "692"
   },
   {
     "capital": "Fort-de-France",
@@ -1337,7 +1488,8 @@
     "flag_1x1": "flags/1x1/mq.svg",
     "flag_4x3": "flags/4x3/mq.svg",
     "iso": true,
-    "name": "Martinique"
+    "name": "Martinique",
+    "tel": "596"
   },
   {
     "capital": "Nouakchott",
@@ -1346,7 +1498,8 @@
     "flag_1x1": "flags/1x1/mr.svg",
     "flag_4x3": "flags/4x3/mr.svg",
     "iso": true,
-    "name": "Mauritania"
+    "name": "Mauritania",
+    "tel": "222"
   },
   {
     "capital": "Port Louis",
@@ -1355,7 +1508,8 @@
     "flag_1x1": "flags/1x1/mu.svg",
     "flag_4x3": "flags/4x3/mu.svg",
     "iso": true,
-    "name": "Mauritius"
+    "name": "Mauritius",
+    "tel": "230"
   },
   {
     "capital": "Mamoudzou",
@@ -1364,7 +1518,8 @@
     "flag_1x1": "flags/1x1/yt.svg",
     "flag_4x3": "flags/4x3/yt.svg",
     "iso": true,
-    "name": "Mayotte"
+    "name": "Mayotte",
+    "tel": "262"
   },
   {
     "capital": "Mexico City",
@@ -1373,7 +1528,8 @@
     "flag_1x1": "flags/1x1/mx.svg",
     "flag_4x3": "flags/4x3/mx.svg",
     "iso": true,
-    "name": "Mexico"
+    "name": "Mexico",
+    "tel": "52"
   },
   {
     "capital": "Chișinău",
@@ -1382,7 +1538,8 @@
     "flag_1x1": "flags/1x1/md.svg",
     "flag_4x3": "flags/4x3/md.svg",
     "iso": true,
-    "name": "Moldova"
+    "name": "Moldova",
+    "tel": "373"
   },
   {
     "capital": "Monaco",
@@ -1391,7 +1548,8 @@
     "flag_1x1": "flags/1x1/mc.svg",
     "flag_4x3": "flags/4x3/mc.svg",
     "iso": true,
-    "name": "Monaco"
+    "name": "Monaco",
+    "tel": "377"
   },
   {
     "capital": "Ulaanbaatar",
@@ -1400,7 +1558,8 @@
     "flag_1x1": "flags/1x1/mn.svg",
     "flag_4x3": "flags/4x3/mn.svg",
     "iso": true,
-    "name": "Mongolia"
+    "name": "Mongolia",
+    "tel": "976"
   },
   {
     "capital": "Podgorica",
@@ -1409,7 +1568,8 @@
     "flag_1x1": "flags/1x1/me.svg",
     "flag_4x3": "flags/4x3/me.svg",
     "iso": true,
-    "name": "Montenegro"
+    "name": "Montenegro",
+    "tel": "382"
   },
   {
     "capital": "Little Bay, Brades, Plymouth",
@@ -1418,7 +1578,8 @@
     "flag_1x1": "flags/1x1/ms.svg",
     "flag_4x3": "flags/4x3/ms.svg",
     "iso": true,
-    "name": "Montserrat"
+    "name": "Montserrat",
+    "tel": "1-664"
   },
   {
     "capital": "Rabat",
@@ -1427,7 +1588,8 @@
     "flag_1x1": "flags/1x1/ma.svg",
     "flag_4x3": "flags/4x3/ma.svg",
     "iso": true,
-    "name": "Morocco"
+    "name": "Morocco",
+    "tel": "212"
   },
   {
     "capital": "Maputo",
@@ -1436,7 +1598,8 @@
     "flag_1x1": "flags/1x1/mz.svg",
     "flag_4x3": "flags/4x3/mz.svg",
     "iso": true,
-    "name": "Mozambique"
+    "name": "Mozambique",
+    "tel": "258"
   },
   {
     "capital": "Naypyidaw",
@@ -1445,7 +1608,8 @@
     "flag_1x1": "flags/1x1/mm.svg",
     "flag_4x3": "flags/4x3/mm.svg",
     "iso": true,
-    "name": "Myanmar"
+    "name": "Myanmar",
+    "tel": "95"
   },
   {
     "capital": "Windhoek",
@@ -1454,7 +1618,8 @@
     "flag_1x1": "flags/1x1/na.svg",
     "flag_4x3": "flags/4x3/na.svg",
     "iso": true,
-    "name": "Namibia"
+    "name": "Namibia",
+    "tel": "264"
   },
   {
     "capital": "Yaren District",
@@ -1463,7 +1628,8 @@
     "flag_1x1": "flags/1x1/nr.svg",
     "flag_4x3": "flags/4x3/nr.svg",
     "iso": true,
-    "name": "Nauru"
+    "name": "Nauru",
+    "tel": "674"
   },
   {
     "capital": "Kathmandu",
@@ -1472,7 +1638,8 @@
     "flag_1x1": "flags/1x1/np.svg",
     "flag_4x3": "flags/4x3/np.svg",
     "iso": true,
-    "name": "Nepal"
+    "name": "Nepal",
+    "tel": "977"
   },
   {
     "capital": "Amsterdam",
@@ -1481,7 +1648,8 @@
     "flag_1x1": "flags/1x1/nl.svg",
     "flag_4x3": "flags/4x3/nl.svg",
     "iso": true,
-    "name": "Netherlands"
+    "name": "Netherlands",
+    "tel": "31"
   },
   {
     "capital": "Nouméa",
@@ -1490,7 +1658,8 @@
     "flag_1x1": "flags/1x1/nc.svg",
     "flag_4x3": "flags/4x3/nc.svg",
     "iso": true,
-    "name": "New Caledonia"
+    "name": "New Caledonia",
+    "tel": "687"
   },
   {
     "capital": "Wellington",
@@ -1499,7 +1668,8 @@
     "flag_1x1": "flags/1x1/nz.svg",
     "flag_4x3": "flags/4x3/nz.svg",
     "iso": true,
-    "name": "New Zealand"
+    "name": "New Zealand",
+    "tel": "64"
   },
   {
     "capital": "Managua",
@@ -1508,7 +1678,8 @@
     "flag_1x1": "flags/1x1/ni.svg",
     "flag_4x3": "flags/4x3/ni.svg",
     "iso": true,
-    "name": "Nicaragua"
+    "name": "Nicaragua",
+    "tel": "505"
   },
   {
     "capital": "Niamey",
@@ -1517,7 +1688,8 @@
     "flag_1x1": "flags/1x1/ne.svg",
     "flag_4x3": "flags/4x3/ne.svg",
     "iso": true,
-    "name": "Niger"
+    "name": "Niger",
+    "tel": "227"
   },
   {
     "capital": "Abuja",
@@ -1526,7 +1698,8 @@
     "flag_1x1": "flags/1x1/ng.svg",
     "flag_4x3": "flags/4x3/ng.svg",
     "iso": true,
-    "name": "Nigeria"
+    "name": "Nigeria",
+    "tel": "234"
   },
   {
     "capital": "Alofi",
@@ -1535,7 +1708,8 @@
     "flag_1x1": "flags/1x1/nu.svg",
     "flag_4x3": "flags/4x3/nu.svg",
     "iso": true,
-    "name": "Niue"
+    "name": "Niue",
+    "tel": "683"
   },
   {
     "capital": "Kingston",
@@ -1544,7 +1718,8 @@
     "flag_1x1": "flags/1x1/nf.svg",
     "flag_4x3": "flags/4x3/nf.svg",
     "iso": true,
-    "name": "Norfolk Island"
+    "name": "Norfolk Island",
+    "tel": "672"
   },
   {
     "capital": "Pyongyang",
@@ -1553,7 +1728,8 @@
     "flag_1x1": "flags/1x1/kp.svg",
     "flag_4x3": "flags/4x3/kp.svg",
     "iso": true,
-    "name": "North Korea"
+    "name": "North Korea",
+    "tel": "850"
   },
   {
     "capital": "Skopje",
@@ -1562,7 +1738,8 @@
     "flag_1x1": "flags/1x1/mk.svg",
     "flag_4x3": "flags/4x3/mk.svg",
     "iso": true,
-    "name": "North Macedonia"
+    "name": "North Macedonia",
+    "tel": "389"
   },
   {
     "capital": "Belfast",
@@ -1571,7 +1748,8 @@
     "flag_1x1": "flags/1x1/gb-nir.svg",
     "flag_4x3": "flags/4x3/gb-nir.svg",
     "iso": false,
-    "name": "Northern Ireland"
+    "name": "Northern Ireland",
+    "tel": "44"
   },
   {
     "capital": "Saipan",
@@ -1580,7 +1758,8 @@
     "flag_1x1": "flags/1x1/mp.svg",
     "flag_4x3": "flags/4x3/mp.svg",
     "iso": true,
-    "name": "Northern Mariana Islands"
+    "name": "Northern Mariana Islands",
+    "tel": "1-670"
   },
   {
     "capital": "Oslo",
@@ -1589,7 +1768,8 @@
     "flag_1x1": "flags/1x1/no.svg",
     "flag_4x3": "flags/4x3/no.svg",
     "iso": true,
-    "name": "Norway"
+    "name": "Norway",
+    "tel": "47"
   },
   {
     "capital": "Muscat",
@@ -1598,14 +1778,16 @@
     "flag_1x1": "flags/1x1/om.svg",
     "flag_4x3": "flags/4x3/om.svg",
     "iso": true,
-    "name": "Oman"
+    "name": "Oman",
+    "tel": "968"
   },
   {
     "code": "pc",
     "flag_1x1": "flags/1x1/pc.svg",
     "flag_4x3": "flags/4x3/pc.svg",
     "iso": false,
-    "name": "Pacific Community"
+    "name": "Pacific Community",
+    "tel": ""
   },
   {
     "capital": "Islamabad",
@@ -1614,7 +1796,8 @@
     "flag_1x1": "flags/1x1/pk.svg",
     "flag_4x3": "flags/4x3/pk.svg",
     "iso": true,
-    "name": "Pakistan"
+    "name": "Pakistan",
+    "tel": "92"
   },
   {
     "capital": "Ngerulmud",
@@ -1623,7 +1806,8 @@
     "flag_1x1": "flags/1x1/pw.svg",
     "flag_4x3": "flags/4x3/pw.svg",
     "iso": true,
-    "name": "Palau"
+    "name": "Palau",
+    "tel": "680"
   },
   {
     "capital": "Panama City",
@@ -1632,7 +1816,8 @@
     "flag_1x1": "flags/1x1/pa.svg",
     "flag_4x3": "flags/4x3/pa.svg",
     "iso": true,
-    "name": "Panama"
+    "name": "Panama",
+    "tel": "507"
   },
   {
     "capital": "Port Moresby",
@@ -1641,7 +1826,8 @@
     "flag_1x1": "flags/1x1/pg.svg",
     "flag_4x3": "flags/4x3/pg.svg",
     "iso": true,
-    "name": "Papua New Guinea"
+    "name": "Papua New Guinea",
+    "tel": "675"
   },
   {
     "capital": "Asunción",
@@ -1650,7 +1836,8 @@
     "flag_1x1": "flags/1x1/py.svg",
     "flag_4x3": "flags/4x3/py.svg",
     "iso": true,
-    "name": "Paraguay"
+    "name": "Paraguay",
+    "tel": "595"
   },
   {
     "capital": "Lima",
@@ -1659,7 +1846,8 @@
     "flag_1x1": "flags/1x1/pe.svg",
     "flag_4x3": "flags/4x3/pe.svg",
     "iso": true,
-    "name": "Peru"
+    "name": "Peru",
+    "tel": "51"
   },
   {
     "capital": "Manila",
@@ -1668,7 +1856,8 @@
     "flag_1x1": "flags/1x1/ph.svg",
     "flag_4x3": "flags/4x3/ph.svg",
     "iso": true,
-    "name": "Philippines"
+    "name": "Philippines",
+    "tel": "63"
   },
   {
     "capital": "Adamstown",
@@ -1677,7 +1866,8 @@
     "flag_1x1": "flags/1x1/pn.svg",
     "flag_4x3": "flags/4x3/pn.svg",
     "iso": true,
-    "name": "Pitcairn"
+    "name": "Pitcairn",
+    "tel": "64"
   },
   {
     "capital": "Warsaw",
@@ -1686,7 +1876,8 @@
     "flag_1x1": "flags/1x1/pl.svg",
     "flag_4x3": "flags/4x3/pl.svg",
     "iso": true,
-    "name": "Poland"
+    "name": "Poland",
+    "tel": "48"
   },
   {
     "capital": "Lisbon",
@@ -1695,7 +1886,8 @@
     "flag_1x1": "flags/1x1/pt.svg",
     "flag_4x3": "flags/4x3/pt.svg",
     "iso": true,
-    "name": "Portugal"
+    "name": "Portugal",
+    "tel": "351"
   },
   {
     "capital": "San Juan",
@@ -1704,7 +1896,8 @@
     "flag_1x1": "flags/1x1/pr.svg",
     "flag_4x3": "flags/4x3/pr.svg",
     "iso": true,
-    "name": "Puerto Rico"
+    "name": "Puerto Rico",
+    "tel": "1"
   },
   {
     "capital": "Doha",
@@ -1713,7 +1906,8 @@
     "flag_1x1": "flags/1x1/qa.svg",
     "flag_4x3": "flags/4x3/qa.svg",
     "iso": true,
-    "name": "Qatar"
+    "name": "Qatar",
+    "tel": "974"
   },
   {
     "capital": "Brazzaville",
@@ -1722,7 +1916,8 @@
     "flag_1x1": "flags/1x1/cg.svg",
     "flag_4x3": "flags/4x3/cg.svg",
     "iso": true,
-    "name": "Republic of the Congo"
+    "name": "Republic of the Congo",
+    "tel": "242"
   },
   {
     "capital": "Bucharest",
@@ -1731,7 +1926,8 @@
     "flag_1x1": "flags/1x1/ro.svg",
     "flag_4x3": "flags/4x3/ro.svg",
     "iso": true,
-    "name": "Romania"
+    "name": "Romania",
+    "tel": "40"
   },
   {
     "capital": "Moscow",
@@ -1740,7 +1936,8 @@
     "flag_1x1": "flags/1x1/ru.svg",
     "flag_4x3": "flags/4x3/ru.svg",
     "iso": true,
-    "name": "Russia"
+    "name": "Russia",
+    "tel": "7"
   },
   {
     "capital": "Kigali",
@@ -1749,7 +1946,8 @@
     "flag_1x1": "flags/1x1/rw.svg",
     "flag_4x3": "flags/4x3/rw.svg",
     "iso": true,
-    "name": "Rwanda"
+    "name": "Rwanda",
+    "tel": "250"
   },
   {
     "capital": "Saint-Denis",
@@ -1758,7 +1956,8 @@
     "flag_1x1": "flags/1x1/re.svg",
     "flag_4x3": "flags/4x3/re.svg",
     "iso": true,
-    "name": "Réunion"
+    "name": "Réunion",
+    "tel": "262"
   },
   {
     "capital": "Gustavia",
@@ -1767,7 +1966,8 @@
     "flag_1x1": "flags/1x1/bl.svg",
     "flag_4x3": "flags/4x3/bl.svg",
     "iso": true,
-    "name": "Saint Barthélemy"
+    "name": "Saint Barthélemy",
+    "tel": "590"
   },
   {
     "capital": "Jamestown",
@@ -1776,7 +1976,8 @@
     "flag_1x1": "flags/1x1/sh-hl.svg",
     "flag_4x3": "flags/4x3/sh-hl.svg",
     "iso": false,
-    "name": "Saint Helena"
+    "name": "Saint Helena",
+    "tel": "290"
   },
   {
     "capital": "Jamestown",
@@ -1785,7 +1986,8 @@
     "flag_1x1": "flags/1x1/sh.svg",
     "flag_4x3": "flags/4x3/sh.svg",
     "iso": true,
-    "name": "Saint Helena, Ascension and Tristan da Cunha"
+    "name": "Saint Helena, Ascension and Tristan da Cunha",
+    "tel": "290"
   },
   {
     "capital": "Basseterre",
@@ -1794,7 +1996,8 @@
     "flag_1x1": "flags/1x1/kn.svg",
     "flag_4x3": "flags/4x3/kn.svg",
     "iso": true,
-    "name": "Saint Kitts and Nevis"
+    "name": "Saint Kitts and Nevis",
+    "tel": "1-869"
   },
   {
     "capital": "Castries",
@@ -1803,7 +2006,8 @@
     "flag_1x1": "flags/1x1/lc.svg",
     "flag_4x3": "flags/4x3/lc.svg",
     "iso": true,
-    "name": "Saint Lucia"
+    "name": "Saint Lucia",
+    "tel": "1-758"
   },
   {
     "capital": "Marigot",
@@ -1812,7 +2016,8 @@
     "flag_1x1": "flags/1x1/mf.svg",
     "flag_4x3": "flags/4x3/mf.svg",
     "iso": true,
-    "name": "Saint Martin"
+    "name": "Saint Martin",
+    "tel": "590"
   },
   {
     "capital": "Saint-Pierre",
@@ -1821,7 +2026,8 @@
     "flag_1x1": "flags/1x1/pm.svg",
     "flag_4x3": "flags/4x3/pm.svg",
     "iso": true,
-    "name": "Saint Pierre and Miquelon"
+    "name": "Saint Pierre and Miquelon",
+    "tel": "508"
   },
   {
     "capital": "Kingstown",
@@ -1830,7 +2036,8 @@
     "flag_1x1": "flags/1x1/vc.svg",
     "flag_4x3": "flags/4x3/vc.svg",
     "iso": true,
-    "name": "Saint Vincent and the Grenadines"
+    "name": "Saint Vincent and the Grenadines",
+    "tel": "1-784"
   },
   {
     "capital": "Apia",
@@ -1839,7 +2046,8 @@
     "flag_1x1": "flags/1x1/ws.svg",
     "flag_4x3": "flags/4x3/ws.svg",
     "iso": true,
-    "name": "Samoa"
+    "name": "Samoa",
+    "tel": "685"
   },
   {
     "capital": "San Marino",
@@ -1848,7 +2056,8 @@
     "flag_1x1": "flags/1x1/sm.svg",
     "flag_4x3": "flags/4x3/sm.svg",
     "iso": true,
-    "name": "San Marino"
+    "name": "San Marino",
+    "tel": "378"
   },
   {
     "capital": "São Tomé",
@@ -1857,7 +2066,8 @@
     "flag_1x1": "flags/1x1/st.svg",
     "flag_4x3": "flags/4x3/st.svg",
     "iso": true,
-    "name": "Sao Tome and Principe"
+    "name": "Sao Tome and Principe",
+    "tel": "239"
   },
   {
     "capital": "Riyadh",
@@ -1866,7 +2076,8 @@
     "flag_1x1": "flags/1x1/sa.svg",
     "flag_4x3": "flags/4x3/sa.svg",
     "iso": true,
-    "name": "Saudi Arabia"
+    "name": "Saudi Arabia",
+    "tel": "966"
   },
   {
     "capital": "Edinburgh",
@@ -1875,7 +2086,8 @@
     "flag_1x1": "flags/1x1/gb-sct.svg",
     "flag_4x3": "flags/4x3/gb-sct.svg",
     "iso": false,
-    "name": "Scotland"
+    "name": "Scotland",
+    "tel": "44"
   },
   {
     "capital": "Dakar",
@@ -1884,7 +2096,8 @@
     "flag_1x1": "flags/1x1/sn.svg",
     "flag_4x3": "flags/4x3/sn.svg",
     "iso": true,
-    "name": "Senegal"
+    "name": "Senegal",
+    "tel": "221"
   },
   {
     "capital": "Belgrade",
@@ -1893,7 +2106,8 @@
     "flag_1x1": "flags/1x1/rs.svg",
     "flag_4x3": "flags/4x3/rs.svg",
     "iso": true,
-    "name": "Serbia"
+    "name": "Serbia",
+    "tel": "381"
   },
   {
     "capital": "Victoria",
@@ -1902,7 +2116,8 @@
     "flag_1x1": "flags/1x1/sc.svg",
     "flag_4x3": "flags/4x3/sc.svg",
     "iso": true,
-    "name": "Seychelles"
+    "name": "Seychelles",
+    "tel": "248"
   },
   {
     "capital": "Freetown",
@@ -1911,7 +2126,8 @@
     "flag_1x1": "flags/1x1/sl.svg",
     "flag_4x3": "flags/4x3/sl.svg",
     "iso": true,
-    "name": "Sierra Leone"
+    "name": "Sierra Leone",
+    "tel": "232"
   },
   {
     "capital": "Singapore",
@@ -1920,7 +2136,8 @@
     "flag_1x1": "flags/1x1/sg.svg",
     "flag_4x3": "flags/4x3/sg.svg",
     "iso": true,
-    "name": "Singapore"
+    "name": "Singapore",
+    "tel": "65"
   },
   {
     "capital": "Philipsburg",
@@ -1929,7 +2146,8 @@
     "flag_1x1": "flags/1x1/sx.svg",
     "flag_4x3": "flags/4x3/sx.svg",
     "iso": true,
-    "name": "Sint Maarten"
+    "name": "Sint Maarten",
+    "tel": "1-721"
   },
   {
     "capital": "Bratislava",
@@ -1938,7 +2156,8 @@
     "flag_1x1": "flags/1x1/sk.svg",
     "flag_4x3": "flags/4x3/sk.svg",
     "iso": true,
-    "name": "Slovakia"
+    "name": "Slovakia",
+    "tel": "421"
   },
   {
     "capital": "Ljubljana",
@@ -1947,7 +2166,8 @@
     "flag_1x1": "flags/1x1/si.svg",
     "flag_4x3": "flags/4x3/si.svg",
     "iso": true,
-    "name": "Slovenia"
+    "name": "Slovenia",
+    "tel": "386"
   },
   {
     "capital": "Honiara",
@@ -1956,7 +2176,8 @@
     "flag_1x1": "flags/1x1/sb.svg",
     "flag_4x3": "flags/4x3/sb.svg",
     "iso": true,
-    "name": "Solomon Islands"
+    "name": "Solomon Islands",
+    "tel": "677"
   },
   {
     "capital": "Mogadishu",
@@ -1965,7 +2186,8 @@
     "flag_1x1": "flags/1x1/so.svg",
     "flag_4x3": "flags/4x3/so.svg",
     "iso": true,
-    "name": "Somalia"
+    "name": "Somalia",
+    "tel": "252"
   },
   {
     "capital": "Pretoria",
@@ -1974,7 +2196,8 @@
     "flag_1x1": "flags/1x1/za.svg",
     "flag_4x3": "flags/4x3/za.svg",
     "iso": true,
-    "name": "South Africa"
+    "name": "South Africa",
+    "tel": "27"
   },
   {
     "capital": "King Edward Point",
@@ -1983,7 +2206,8 @@
     "flag_1x1": "flags/1x1/gs.svg",
     "flag_4x3": "flags/4x3/gs.svg",
     "iso": true,
-    "name": "South Georgia and the South Sandwich Islands"
+    "name": "South Georgia and the South Sandwich Islands",
+    "tel": "500"
   },
   {
     "capital": "Seoul",
@@ -1992,7 +2216,8 @@
     "flag_1x1": "flags/1x1/kr.svg",
     "flag_4x3": "flags/4x3/kr.svg",
     "iso": true,
-    "name": "South Korea"
+    "name": "South Korea",
+    "tel": "82"
   },
   {
     "capital": "Juba",
@@ -2001,7 +2226,8 @@
     "flag_1x1": "flags/1x1/ss.svg",
     "flag_4x3": "flags/4x3/ss.svg",
     "iso": true,
-    "name": "South Sudan"
+    "name": "South Sudan",
+    "tel": "211"
   },
   {
     "capital": "Madrid",
@@ -2010,7 +2236,8 @@
     "flag_1x1": "flags/1x1/es.svg",
     "flag_4x3": "flags/4x3/es.svg",
     "iso": true,
-    "name": "Spain"
+    "name": "Spain",
+    "tel": "34"
   },
   {
     "capital": "Sri Jayawardenepura Kotte, Colombo",
@@ -2019,7 +2246,8 @@
     "flag_1x1": "flags/1x1/lk.svg",
     "flag_4x3": "flags/4x3/lk.svg",
     "iso": true,
-    "name": "Sri Lanka"
+    "name": "Sri Lanka",
+    "tel": "94"
   },
   {
     "capital": "Ramallah",
@@ -2028,7 +2256,8 @@
     "flag_1x1": "flags/1x1/ps.svg",
     "flag_4x3": "flags/4x3/ps.svg",
     "iso": true,
-    "name": "State of Palestine"
+    "name": "State of Palestine",
+    "tel": "970"
   },
   {
     "capital": "Khartoum",
@@ -2037,7 +2266,8 @@
     "flag_1x1": "flags/1x1/sd.svg",
     "flag_4x3": "flags/4x3/sd.svg",
     "iso": true,
-    "name": "Sudan"
+    "name": "Sudan",
+    "tel": "249"
   },
   {
     "capital": "Paramaribo",
@@ -2046,7 +2276,8 @@
     "flag_1x1": "flags/1x1/sr.svg",
     "flag_4x3": "flags/4x3/sr.svg",
     "iso": true,
-    "name": "Suriname"
+    "name": "Suriname",
+    "tel": "597"
   },
   {
     "capital": "Longyearbyen",
@@ -2055,7 +2286,8 @@
     "flag_1x1": "flags/1x1/sj.svg",
     "flag_4x3": "flags/4x3/sj.svg",
     "iso": true,
-    "name": "Svalbard and Jan Mayen"
+    "name": "Svalbard and Jan Mayen",
+    "tel": "47"
   },
   {
     "capital": "Stockholm",
@@ -2064,7 +2296,8 @@
     "flag_1x1": "flags/1x1/se.svg",
     "flag_4x3": "flags/4x3/se.svg",
     "iso": true,
-    "name": "Sweden"
+    "name": "Sweden",
+    "tel": "46"
   },
   {
     "capital": "Bern",
@@ -2073,7 +2306,8 @@
     "flag_1x1": "flags/1x1/ch.svg",
     "flag_4x3": "flags/4x3/ch.svg",
     "iso": true,
-    "name": "Switzerland"
+    "name": "Switzerland",
+    "tel": "41"
   },
   {
     "capital": "Damascus",
@@ -2082,7 +2316,8 @@
     "flag_1x1": "flags/1x1/sy.svg",
     "flag_4x3": "flags/4x3/sy.svg",
     "iso": true,
-    "name": "Syria"
+    "name": "Syria",
+    "tel": "963"
   },
   {
     "capital": "Taipei",
@@ -2091,7 +2326,8 @@
     "flag_1x1": "flags/1x1/tw.svg",
     "flag_4x3": "flags/4x3/tw.svg",
     "iso": true,
-    "name": "Taiwan"
+    "name": "Taiwan",
+    "tel": "886"
   },
   {
     "capital": "Dushanbe",
@@ -2100,7 +2336,8 @@
     "flag_1x1": "flags/1x1/tj.svg",
     "flag_4x3": "flags/4x3/tj.svg",
     "iso": true,
-    "name": "Tajikistan"
+    "name": "Tajikistan",
+    "tel": "992"
   },
   {
     "capital": "Dodoma",
@@ -2109,7 +2346,8 @@
     "flag_1x1": "flags/1x1/tz.svg",
     "flag_4x3": "flags/4x3/tz.svg",
     "iso": true,
-    "name": "Tanzania"
+    "name": "Tanzania",
+    "tel": "255"
   },
   {
     "capital": "Bangkok",
@@ -2118,7 +2356,8 @@
     "flag_1x1": "flags/1x1/th.svg",
     "flag_4x3": "flags/4x3/th.svg",
     "iso": true,
-    "name": "Thailand"
+    "name": "Thailand",
+    "tel": "66"
   },
   {
     "capital": "Dili",
@@ -2127,7 +2366,8 @@
     "flag_1x1": "flags/1x1/tl.svg",
     "flag_4x3": "flags/4x3/tl.svg",
     "iso": true,
-    "name": "Timor-Leste"
+    "name": "Timor-Leste",
+    "tel": "670"
   },
   {
     "capital": "Lomé",
@@ -2136,7 +2376,8 @@
     "flag_1x1": "flags/1x1/tg.svg",
     "flag_4x3": "flags/4x3/tg.svg",
     "iso": true,
-    "name": "Togo"
+    "name": "Togo",
+    "tel": "228"
   },
   {
     "capital": "Nukunonu, Atafu,Tokelau",
@@ -2145,7 +2386,8 @@
     "flag_1x1": "flags/1x1/tk.svg",
     "flag_4x3": "flags/4x3/tk.svg",
     "iso": true,
-    "name": "Tokelau"
+    "name": "Tokelau",
+    "tel": "690"
   },
   {
     "capital": "Nukuʻalofa",
@@ -2154,7 +2396,8 @@
     "flag_1x1": "flags/1x1/to.svg",
     "flag_4x3": "flags/4x3/to.svg",
     "iso": true,
-    "name": "Tonga"
+    "name": "Tonga",
+    "tel": "676"
   },
   {
     "capital": "Port of Spain",
@@ -2163,7 +2406,8 @@
     "flag_1x1": "flags/1x1/tt.svg",
     "flag_4x3": "flags/4x3/tt.svg",
     "iso": true,
-    "name": "Trinidad and Tobago"
+    "name": "Trinidad and Tobago",
+    "tel": "1-868"
   },
   {
     "capital": "Edinburgh of the Seven Seas",
@@ -2172,7 +2416,8 @@
     "flag_1x1": "flags/1x1/sh-ta.svg",
     "flag_4x3": "flags/4x3/sh-ta.svg",
     "iso": false,
-    "name": "Tristan da Cunha"
+    "name": "Tristan da Cunha",
+    "tel": "290"
   },
   {
     "capital": "Tunis",
@@ -2181,7 +2426,8 @@
     "flag_1x1": "flags/1x1/tn.svg",
     "flag_4x3": "flags/4x3/tn.svg",
     "iso": true,
-    "name": "Tunisia"
+    "name": "Tunisia",
+    "tel": "216"
   },
   {
     "capital": "Ashgabat",
@@ -2190,7 +2436,8 @@
     "flag_1x1": "flags/1x1/tm.svg",
     "flag_4x3": "flags/4x3/tm.svg",
     "iso": true,
-    "name": "Turkmenistan"
+    "name": "Turkmenistan",
+    "tel": "993"
   },
   {
     "capital": "Cockburn Town",
@@ -2199,7 +2446,8 @@
     "flag_1x1": "flags/1x1/tc.svg",
     "flag_4x3": "flags/4x3/tc.svg",
     "iso": true,
-    "name": "Turks and Caicos Islands"
+    "name": "Turks and Caicos Islands",
+    "tel": "1-649"
   },
   {
     "capital": "Funafuti",
@@ -2208,7 +2456,8 @@
     "flag_1x1": "flags/1x1/tv.svg",
     "flag_4x3": "flags/4x3/tv.svg",
     "iso": true,
-    "name": "Tuvalu"
+    "name": "Tuvalu",
+    "tel": "688"
   },
   {
     "capital": "Ankara",
@@ -2217,7 +2466,8 @@
     "flag_1x1": "flags/1x1/tr.svg",
     "flag_4x3": "flags/4x3/tr.svg",
     "iso": true,
-    "name": "Türkiye"
+    "name": "Türkiye",
+    "tel": "90"
   },
   {
     "capital": "Kampala",
@@ -2226,7 +2476,8 @@
     "flag_1x1": "flags/1x1/ug.svg",
     "flag_4x3": "flags/4x3/ug.svg",
     "iso": true,
-    "name": "Uganda"
+    "name": "Uganda",
+    "tel": "256"
   },
   {
     "capital": "Kiev",
@@ -2235,7 +2486,8 @@
     "flag_1x1": "flags/1x1/ua.svg",
     "flag_4x3": "flags/4x3/ua.svg",
     "iso": true,
-    "name": "Ukraine"
+    "name": "Ukraine",
+    "tel": "380"
   },
   {
     "capital": "Abu Dhabi",
@@ -2244,7 +2496,8 @@
     "flag_1x1": "flags/1x1/ae.svg",
     "flag_4x3": "flags/4x3/ae.svg",
     "iso": true,
-    "name": "United Arab Emirates"
+    "name": "United Arab Emirates",
+    "tel": "971"
   },
   {
     "capital": "London",
@@ -2253,14 +2506,16 @@
     "flag_1x1": "flags/1x1/gb.svg",
     "flag_4x3": "flags/4x3/gb.svg",
     "iso": true,
-    "name": "United Kingdom"
+    "name": "United Kingdom",
+    "tel": "44"
   },
   {
     "code": "un",
     "flag_1x1": "flags/1x1/un.svg",
     "flag_4x3": "flags/4x3/un.svg",
     "iso": false,
-    "name": "United Nations"
+    "name": "United Nations",
+    "tel": ""
   },
   {
     "capital": "Washington, D.C.",
@@ -2269,7 +2524,8 @@
     "flag_1x1": "flags/1x1/um.svg",
     "flag_4x3": "flags/4x3/um.svg",
     "iso": true,
-    "name": "United States Minor Outlying Islands"
+    "name": "United States Minor Outlying Islands",
+    "tel": "1"
   },
   {
     "capital": "Washington, D.C.",
@@ -2278,14 +2534,16 @@
     "flag_1x1": "flags/1x1/us.svg",
     "flag_4x3": "flags/4x3/us.svg",
     "iso": true,
-    "name": "United States of America"
+    "name": "United States of America",
+    "tel": "1"
   },
   {
     "code": "xx",
     "flag_1x1": "flags/1x1/xx.svg",
     "flag_4x3": "flags/4x3/xx.svg",
     "iso": false,
-    "name": "Unknown"
+    "name": "Unknown",
+    "tel": ""
   },
   {
     "capital": "Montevideo",
@@ -2294,7 +2552,8 @@
     "flag_1x1": "flags/1x1/uy.svg",
     "flag_4x3": "flags/4x3/uy.svg",
     "iso": true,
-    "name": "Uruguay"
+    "name": "Uruguay",
+    "tel": "598"
   },
   {
     "capital": "Tashkent",
@@ -2303,7 +2562,8 @@
     "flag_1x1": "flags/1x1/uz.svg",
     "flag_4x3": "flags/4x3/uz.svg",
     "iso": true,
-    "name": "Uzbekistan"
+    "name": "Uzbekistan",
+    "tel": "998"
   },
   {
     "capital": "Port Vila",
@@ -2312,7 +2572,8 @@
     "flag_1x1": "flags/1x1/vu.svg",
     "flag_4x3": "flags/4x3/vu.svg",
     "iso": true,
-    "name": "Vanuatu"
+    "name": "Vanuatu",
+    "tel": "678"
   },
   {
     "capital": "Caracas",
@@ -2321,7 +2582,8 @@
     "flag_1x1": "flags/1x1/ve.svg",
     "flag_4x3": "flags/4x3/ve.svg",
     "iso": true,
-    "name": "Venezuela"
+    "name": "Venezuela",
+    "tel": "58"
   },
   {
     "capital": "Hanoi",
@@ -2330,7 +2592,8 @@
     "flag_1x1": "flags/1x1/vn.svg",
     "flag_4x3": "flags/4x3/vn.svg",
     "iso": true,
-    "name": "Vietnam"
+    "name": "Vietnam",
+    "tel": "84"
   },
   {
     "capital": "Road Town",
@@ -2339,7 +2602,8 @@
     "flag_1x1": "flags/1x1/vg.svg",
     "flag_4x3": "flags/4x3/vg.svg",
     "iso": true,
-    "name": "Virgin Islands (British)"
+    "name": "Virgin Islands (British)",
+    "tel": "1-284"
   },
   {
     "capital": "Charlotte Amalie",
@@ -2348,7 +2612,8 @@
     "flag_1x1": "flags/1x1/vi.svg",
     "flag_4x3": "flags/4x3/vi.svg",
     "iso": true,
-    "name": "Virgin Islands (U.S.)"
+    "name": "Virgin Islands (U.S.)",
+    "tel": "1-340"
   },
   {
     "capital": "Cardiff",
@@ -2357,7 +2622,8 @@
     "flag_1x1": "flags/1x1/gb-wls.svg",
     "flag_4x3": "flags/4x3/gb-wls.svg",
     "iso": false,
-    "name": "Wales"
+    "name": "Wales",
+    "tel": "44"
   },
   {
     "capital": "Mata-Utu",
@@ -2366,7 +2632,8 @@
     "flag_1x1": "flags/1x1/wf.svg",
     "flag_4x3": "flags/4x3/wf.svg",
     "iso": true,
-    "name": "Wallis and Futuna"
+    "name": "Wallis and Futuna",
+    "tel": "681"
   },
   {
     "capital": "Laayoune",
@@ -2375,7 +2642,8 @@
     "flag_1x1": "flags/1x1/eh.svg",
     "flag_4x3": "flags/4x3/eh.svg",
     "iso": true,
-    "name": "Western Sahara"
+    "name": "Western Sahara",
+    "tel": "212"
   },
   {
     "capital": "Sana'a",
@@ -2384,7 +2652,8 @@
     "flag_1x1": "flags/1x1/ye.svg",
     "flag_4x3": "flags/4x3/ye.svg",
     "iso": true,
-    "name": "Yemen"
+    "name": "Yemen",
+    "tel": "967"
   },
   {
     "capital": "Lusaka",
@@ -2393,7 +2662,8 @@
     "flag_1x1": "flags/1x1/zm.svg",
     "flag_4x3": "flags/4x3/zm.svg",
     "iso": true,
-    "name": "Zambia"
+    "name": "Zambia",
+    "tel": "260"
   },
   {
     "capital": "Harare",
@@ -2402,6 +2672,7 @@
     "flag_1x1": "flags/1x1/zw.svg",
     "flag_4x3": "flags/4x3/zw.svg",
     "iso": true,
-    "name": "Zimbabwe"
+    "name": "Zimbabwe",
+    "tel": "263"
   }
 ]

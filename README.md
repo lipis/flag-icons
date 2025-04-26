@@ -35,6 +35,14 @@ For using the flags inline with text add the classes `.fi` and `.fi-xx` (where `
 <span class="fi fi-gr"></span> <span class="fi fi-gr fis"></span>
 ```
 
+You can also reference flags by their international telephone code using `.fi-tel-xx` (where `xx` is the telephone country code). This is useful for applications that deal with international phone numbers:
+
+```html
+<span class="fi fi-tel-30"></span>
+<span class="fi fi-tel-1"></span>
+<span class="fi fi-tel-44 fis"></span>
+```
+
 You could also apply this to any element, but in that case you'll have to use the `fib` instead of `fi` and you're set. This will add the correct background with the following CSS properties:
 
 ```css
