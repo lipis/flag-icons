@@ -5,6 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>flag-icons: Free Country Flags in SVG</title>
 
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-9LZGY0J38Z"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+    gtag("config", "G-9LZGY0J38Z");
+  </script>
+
   <!-- Meta tags -->
   <meta property="og:title" content="flag-icons: Free Country Flags in SVG">
   <meta property="og:type" content="website">
@@ -1179,6 +1193,14 @@
         document.querySelectorAll('.flag-img-square').forEach(el => {
           el.style.display = 'none';
         });
+        
+        // Google Analytics tracking
+        if (typeof gtag !== 'undefined') {
+          gtag("event", "switch", {
+            event_category: "flags",
+            event_label: "4x3",
+          });
+        }
       } else {
         format1x1Btn.classList.add('active');
         format4x3Btn.classList.remove('active');
@@ -1190,6 +1212,14 @@
         document.querySelectorAll('.flag-img-square').forEach(el => {
           el.style.display = 'block';
         });
+        
+        // Google Analytics tracking
+        if (typeof gtag !== 'undefined') {
+          gtag("event", "switch", {
+            event_category: "flags",
+            event_label: "1x1",
+          });
+        }
       }
     };
 
