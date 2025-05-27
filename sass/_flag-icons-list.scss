@@ -1,8 +1,8 @@
-@use 'sass:meta';
-@use 'variables';
-@use 'flag-icons-base';
+@use "sass:meta";
+@use "variables";
+@use "flag-icons-base";
 
-@if meta.type-of(variables.$flag-icons-included-countries) == 'list' {
+@if meta.type-of(variables.$flag-icons-included-countries) == "list" {
   @each $country in variables.$flag-icons-included-countries {
     @include flag-icons-base.flag-icon($country);
   }
