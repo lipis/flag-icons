@@ -1,6 +1,6 @@
 # 7.5.0
 
-- Update all flags with the latest SVGO 3.3.2 (#1372)
+- Update all flags with the latest SVGO 3.3.2 (#1367)
 
 # 7.4.0
 
