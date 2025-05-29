@@ -1,5 +1,7 @@
-# 7.3.3
+# 7.4.0
 
+- Migrate SASS imports to @use-based code (#1356)
+- Modern and minimalist UI redesign with new features (#1358)
 - Fix flag of Palestine (#1366)
 
 # 7.3.2
