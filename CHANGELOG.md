@@ -1,3 +1,9 @@
+# 7.4.0
+
+- Migrate SASS imports to @use-based code (#1356)
+- Modern and minimalist UI redesign with new features (#1358)
+- Fix flag of Palestine (#1366)
+
 # 7.3.2
 
 - Add new flag for Association of Southeast Asian Nations (#1325)
