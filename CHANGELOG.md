@@ -1,3 +1,7 @@
+# 7.5.0
+
+- Update all flags with the latest SVGO 3.3.2 (#1372)
+
 # 7.4.0
 
 - Migrate SASS imports to @use-based code (#1356)
