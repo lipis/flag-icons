@@ -1,3 +1,5 @@
+@use "variables";
+
 .fib {
   background-size: contain;
   background-position: 50%;
@@ -20,11 +22,11 @@
 
 @mixin flag-icon($country) {
   .fi-#{$country} {
-    background-image: url(#{$flag-icons-path}#{$flag-icons-rect-path}/#{$country}.svg);
+    background-image: url(#{variables.$flag-icons-path}#{variables.$flag-icons-rect-path}/#{$country}.svg);
 
-    @if $flag-icons-use-square {
+    @if variables.$flag-icons-use-square {
       &.fis {
-        background-image: url(#{$flag-icons-path}#{$flag-icons-square-path}/#{$country}.svg);
+        background-image: url(#{variables.$flag-icons-path}#{variables.$flag-icons-square-path}/#{$country}.svg);
       }
     }
   }
