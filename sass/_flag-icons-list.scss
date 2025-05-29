@@ -2,5 +2,5 @@
 @use "flag-icons-base";
 
 @each $country in variables.$flag-icons-included-countries {
-    @include flag-icons-base.flag-icon($country);
+  @include flag-icons-base.flag-icon($country);
 }
