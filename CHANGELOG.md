@@ -1,3 +1,7 @@
+# 7.3.3
+
+- Fix flag of Palestine (#1366)
+
 # 7.3.2
 
 - Add new flag for Association of Southeast Asian Nations (#1325)
