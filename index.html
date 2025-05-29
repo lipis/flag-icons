@@ -1,6 +1,10 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>flag-icons: Free Country Flags in SVG</title>
+
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -14,11 +18,8 @@
       gtag("js", new Date());
       gtag("config", "G-9LZGY0J38Z");
     </script>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>flag-icons: Free Country Flags in SVG</title>
 
-    <!-- Open Graph -->
+    <!-- Meta tags -->
     <meta property="og:title" content="flag-icons: Free Country Flags in SVG" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://flagicons.lipis.dev" />
@@ -33,54 +34,1202 @@
     <link rel="canonical" href="https://flagicons.lipis.dev" />
     <link rel="icon" href="/favicon.ico" />
 
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      crossorigin="anonymous"
-    />
+    <!-- Main styles -->
+    <style>
+      :root {
+        --primary: #2b8a3e;
+        --primary-dark: #2f9e44;
+        --primary-light: #51cf66;
+        --primary-ultra-light: #e6fcf5;
+        --secondary: #d9480f;
+        --secondary-light: #fd7e14;
+        --dark: #212529;
+        --light: #f8f9fa;
+        --gray: #495057;
+        --light-gray: #e9ecef;
+        --border-radius: 8px;
+        --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        --transition: all 0.2s ease;
+
+        /* Code syntax colors */
+        --code-bg: #212529;
+        --code-text: #e9ecef;
+        --code-keyword: #339af0;
+        --code-string: #e8590c;
+        --code-tag: #339af0;
+        --code-attribute: #22b8cf;
+        --code-value: #e8590c;
+        --code-comment: #51cf66;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+          Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+        line-height: 1.5;
+        color: var(--dark);
+        background-color: var(--light);
+      }
+
+      /* Header */
+      .header {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        padding: 2.5rem 1rem;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1rem;
+      }
+
+      .header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+      }
+
+      .header p {
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+      }
+
+      /* Installation box */
+      .install-box {
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: var(--border-radius);
+        padding: 0.75rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 500px;
+        margin: 1.5rem auto;
+        font-family: "SF Mono", "Fira Mono", "Courier New", Courier, monospace;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .install-box code {
+        overflow-x: auto;
+        white-space: nowrap;
+        font-size: 0.9rem;
+        color: white;
+      }
+
+      .install-tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 0.5rem;
+      }
+
+      .install-tab {
+        background: rgba(255, 255, 255, 0.1);
+        border: none;
+        color: white;
+        padding: 0.4rem 1rem;
+        font-size: 0.8rem;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .install-tab:first-child {
+        border-top-left-radius: var(--border-radius);
+        border-bottom-left-radius: var(--border-radius);
+      }
+
+      .install-tab:last-child {
+        border-top-right-radius: var(--border-radius);
+        border-bottom-right-radius: var(--border-radius);
+      }
+
+      .install-tab.active {
+        background: rgba(255, 255, 255, 0.3);
+        font-weight: 600;
+      }
+
+      .copy-btn {
+        background: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        font-size: 0.9rem;
+        transition: var(--transition);
+        border-radius: 4px;
+      }
+
+      .copy-btn:hover {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+
+      /* Usage guide */
+      .usage-btn {
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 0.85rem;
+        margin-top: 0.5rem;
+        cursor: pointer;
+        text-decoration: underline;
+        transition: var(--transition);
+      }
+
+      .usage-btn:hover {
+        color: white;
+      }
+
+      /* Enhanced Modal */
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .modal.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .modal-content {
+        background-color: white;
+        border-radius: var(--border-radius);
+        max-width: 700px;
+        width: 90%;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        padding: 2.5rem;
+        position: relative;
+      }
+
+      .modal-close {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.25rem;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: var(--gray);
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+      }
+
+      .modal-close:hover {
+        background-color: var(--light-gray);
+        color: var(--dark);
+      }
+
+      .modal-title {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: var(--primary);
+        font-weight: 700;
+        border-bottom: 2px solid var(--primary-light);
+        padding-bottom: 0.75rem;
+      }
+
+      .modal-section {
+        margin-bottom: 2rem;
+      }
+
+      .modal-section-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--dark);
+      }
+
+      .modal p {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      .modal ul {
+        margin-bottom: 1rem;
+        padding-left: 1.5rem;
+      }
+
+      .modal li {
+        margin-bottom: 0.5rem;
+      }
+
+      .inline-code {
+        font-family: "SF Mono", "Fira Mono", "Courier New", Courier, monospace;
+        background-color: var(--light-gray);
+        padding: 0.1rem 0.3rem;
+        border-radius: 3px;
+        font-size: 0.9rem;
+      }
+
+      /* Enhanced code blocks */
+      .code-block {
+        position: relative;
+        background-color: var(--code-bg);
+        border-radius: var(--border-radius);
+        margin: 1rem 0 1.5rem;
+        overflow: hidden;
+      }
+
+      .code-header {
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 0.5rem 1rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .code-label {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 500;
+      }
+
+      .code-copy-btn {
+        background: transparent;
+        border: none;
+        color: rgba(255, 255, 255, 0.7);
+        cursor: pointer;
+        font-size: 0.85rem;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        padding: 0.2rem 0.5rem;
+        border-radius: 4px;
+        transition: var(--transition);
+      }
+
+      .code-copy-btn:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: white;
+      }
+
+      .code-content {
+        padding: 1rem;
+        overflow-x: auto;
+        font-family: "SF Mono", "Fira Mono", "Courier New", Courier, monospace;
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: var(--code-text);
+      }
+
+      /* Syntax highlighting */
+      .token.keyword {
+        color: var(--code-keyword);
+      }
+
+      .token.string {
+        color: var(--code-string);
+      }
+
+      .token.tag {
+        color: var(--code-tag);
+      }
+
+      .token.attribute {
+        color: var(--code-attribute);
+      }
+
+      .token.value {
+        color: var(--code-value);
+      }
+
+      .token.comment {
+        color: var(--code-comment);
+        font-style: italic;
+      }
+
+      /* Action buttons */
+      .action-buttons {
+        margin-top: 1.5rem;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.9);
+        color: var(--dark);
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        text-decoration: none;
+        font-weight: 500;
+        transition: var(--transition);
+        border: 1px solid transparent;
+      }
+
+      .btn:hover {
+        background-color: white;
+        box-shadow: var(--shadow);
+        transform: translateY(-1px);
+      }
+
+      .btn i {
+        margin-right: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      /* Search and controls */
+      .controls {
+        margin: 1rem auto 2rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .search-box {
+        position: relative;
+        flex: 1;
+        min-width: 200px;
+        max-width: 350px;
+      }
+
+      .search-box input {
+        width: 100%;
+        padding: 0.6rem 1rem 0.6rem 2.5rem;
+        border: 1px solid var(--light-gray);
+        border-radius: var(--border-radius);
+        font-size: 0.95rem;
+        transition: var(--transition);
+      }
+
+      .search-box input:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(43, 138, 62, 0.1);
+      }
+
+      .search-box i {
+        position: absolute;
+        left: 0.8rem;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--gray);
+      }
+
+      /* Continent filter */
+      .filter-dropdown {
+        position: relative;
+      }
+
+      .filter-btn {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border: 1px solid var(--light-gray);
+        border-radius: var(--border-radius);
+        padding: 0.6rem 1rem;
+        font-size: 0.95rem;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .filter-btn:hover {
+        border-color: var(--gray);
+      }
+
+      .filter-btn i {
+        margin-left: 0.5rem;
+      }
+
+      .filter-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 10;
+        background-color: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--shadow);
+        min-width: 200px;
+        margin-top: 0.5rem;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.2s ease;
+      }
+
+      .filter-dropdown.active .filter-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .filter-option {
+        padding: 0.6rem 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .filter-option:hover {
+        background-color: var(--light);
+      }
+
+      .filter-option.active {
+        background-color: var(--light);
+        color: var(--primary);
+        font-weight: 500;
+      }
+
+      /* Format switch (fixed) */
+      .format-switch {
+        position: fixed;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        border: 1px solid var(--light-gray);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        background-color: white;
+        box-shadow: var(--shadow);
+        z-index: 100;
+      }
+
+      .format-switch button {
+        padding: 0.75rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: var(--transition);
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .format-switch button:last-child {
+        border-bottom: none;
+      }
+
+      .format-switch button.active {
+        background-color: var(--primary);
+        color: white;
+      }
+
+      /* Flags grid */
+      .section-title {
+        text-align: center;
+        margin: 2rem 0 1.5rem;
+        color: var(--dark);
+        font-weight: 600;
+        font-size: 1.5rem;
+      }
+
+      .flags-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1.5rem;
+        padding-bottom: 2rem;
+      }
+
+      .flag-card {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        background: white;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: var(--transition);
+        cursor: pointer;
+      }
+
+      .flag-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow);
+      }
+
+      .flag-img-container {
+        position: relative;
+        width: 100%;
+        padding-top: 75%; /* 4:3 aspect ratio */
+        overflow: hidden;
+        border-bottom: 1px solid var(--light-gray);
+      }
+
+      .flag-img-square {
+        padding-top: 100%; /* 1:1 aspect ratio */
+      }
+
+      .flag-img-container img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .flag-info {
+        padding: 0.75rem;
+      }
+
+      .flag-code {
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: var(--primary);
+      }
+
+      .flag-name {
+        font-size: 0.85rem;
+        color: var(--gray);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* Copy tooltip */
+      .tooltip {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: var(--border-radius);
+        font-size: 0.9rem;
+        z-index: 1000;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header h1 {
+          font-size: 2rem;
+        }
+
+        .flags-grid {
+          grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+          gap: 1rem;
+        }
+
+        .controls {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .search-box {
+          max-width: none;
+        }
+
+        .format-switch {
+          position: fixed;
+          top: auto;
+          bottom: 1rem;
+          right: 1rem;
+          transform: none;
+          flex-direction: row;
+        }
+
+        .format-switch button {
+          border-bottom: none;
+          border-right: 1px solid var(--light-gray);
+          padding: 0.5rem 0.75rem;
+        }
+
+        .format-switch button:last-child {
+          border-right: none;
+        }
+
+        .modal-content {
+          padding: 1.5rem;
+          width: 95%;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .flags-grid {
+          grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        }
+
+        .action-buttons {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .btn {
+          justify-content: center;
+        }
+      }
+
+      /* Footer */
+      .footer {
+        text-align: center;
+        padding: 2rem 1rem;
+        margin-top: 2rem;
+        background-color: var(--light-gray);
+        color: var(--gray);
+        font-size: 0.9rem;
+      }
+
+      .footer a {
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+
     <!-- Bootstrap Icons -->
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
     />
-    <!-- Docs -->
-    <link href="./assets/docs.css" rel="stylesheet" />
+    <!-- Custom Flag Icons CSS -->
+    <link href="./css/flag-icons.min.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="header">
-      <div class="container-md">
-        <h1>Free Country Flags in SVG</h1>
-        <p class="lead">
+    <header class="header">
+      <div class="container">
+        <h1>Flag Icons</h1>
+        <p>
           A curated collection of all country flags in SVG — plus the CSS for
-          easier integration.
+          easier integration
         </p>
-        <p class="lead">
-          All flags are in <strong>4x3</strong> and <strong>1x1</strong> formats
-          only.
-        </p>
-        <pre class="install">yarn add flag-icons</pre>
-        <p>For more instructions check out on GitHub.</p>
-        <a class="btn btn-light me-2" href="https://github.com/lipis/flag-icons"
-          ><i class="bi bi-github"></i> View on GitHub</a
-        >
-        <a
-          class="btn btn-light"
-          href="https://github.com/lipis/flag-icons/archive/main.zip"
-          ><i class="bi bi-cloud-arrow-down-fill"></i> Download Flags</a
-        >
+
+        <div class="install-tabs">
+          <button class="install-tab active" data-tab="npm">npm</button>
+          <button class="install-tab" data-tab="yarn">yarn</button>
+        </div>
+
+        <div class="install-box">
+          <code id="install-command">npm install flag-icons</code>
+          <button class="copy-btn" data-copy="npm install flag-icons">
+            <i class="bi bi-clipboard"></i>
+          </button>
+        </div>
+
+        <button class="usage-btn">How to use?</button>
+
+        <div class="action-buttons">
+          <a href="https://github.com/lipis/flag-icons" class="btn">
+            <i class="bi bi-github"></i> View on GitHub
+          </a>
+          <a
+            href="https://github.com/lipis/flag-icons/archive/main.zip"
+            class="btn"
+          >
+            <i class="bi bi-cloud-arrow-down"></i> Download Flags
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="controls">
+        <div class="search-box">
+          <i class="bi bi-search"></i>
+          <input type="text" id="search-flag" placeholder="Search flags..." />
+        </div>
+
+        <div class="filter-dropdown">
+          <button class="filter-btn">
+            All Continents <i class="bi bi-chevron-down"></i>
+          </button>
+          <div class="filter-menu">
+            <div class="filter-option active" data-filter="all">
+              All Continents
+            </div>
+            <div class="filter-option" data-filter="Africa">Africa</div>
+            <div class="filter-option" data-filter="Asia">Asia</div>
+            <div class="filter-option" data-filter="Europe">Europe</div>
+            <div class="filter-option" data-filter="North America">
+              North America
+            </div>
+            <div class="filter-option" data-filter="Oceania">Oceania</div>
+            <div class="filter-option" data-filter="South America">
+              South America
+            </div>
+            <div class="filter-option" data-filter="Antarctica">Antarctica</div>
+            <div class="filter-option" data-filter="non-iso">Non-ISO Flags</div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="section-title">ISO 3166-1-alpha-2 Flags</h2>
+      <div id="iso-flags" class="flags-grid"></div>
+
+      <h2 class="section-title">Other Flags</h2>
+      <div id="non-iso-flags" class="flags-grid"></div>
+    </main>
+
+    <div class="format-switch">
+      <button id="format-4x3" class="active" title="4:3 format">4:3</button>
+      <button id="format-1x1" title="1:1 format">1:1</button>
+    </div>
+
+    <div id="copy-tooltip" class="tooltip">Copied to clipboard!</div>
+
+    <!-- Enhanced Usage Modal -->
+    <div id="usage-modal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close"><i class="bi bi-x-lg"></i></button>
+        <h3 class="modal-title">How to use flag-icons</h3>
+
+        <div class="modal-section">
+          <h4 class="modal-section-title">1. Import the CSS</h4>
+          <p>
+            First, include the CSS in your project using one of these methods:
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-label">JavaScript / Module</span>
+              <button
+                class="code-copy-btn"
+                data-code='import "flag-icons/css/flag-icons.min.css";'
+              >
+                <i class="bi bi-clipboard"></i> Copy
+              </button>
+            </div>
+            <div class="code-content">
+              <pre><span class="token keyword">import</span> <span class="token string">"flag-icons/css/flag-icons.min.css"</span>;</pre>
+            </div>
+          </div>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-label">HTML / CDN</span>
+              <button
+                class="code-copy-btn"
+                data-code='<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />'
+              >
+                <i class="bi bi-clipboard"></i> Copy
+              </button>
+            </div>
+            <div class="code-content">
+              <pre><span class="token tag">&lt;<span class="token attribute">link</span> <span class="token attribute">rel</span>=<span class="token value">"stylesheet"</span>
+<span class="token attribute">href</span>=<span class="token value">"https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"</span> /&gt;</span></pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-section-title">2. Use in your HTML</h4>
+          <p>
+            Add the classes <code class="inline-code">.fi</code> and
+            <code class="inline-code">.fi-xx</code> to an empty span to display
+            a flag inline. Replace <code class="inline-code">xx</code> with the
+            ISO 3166-1-alpha-2 code of the country.
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-label">Standard 4:3 format</span>
+              <button class="code-copy-btn" id="copy-standard-code">
+                <i class="bi bi-clipboard"></i> Copy
+              </button>
+            </div>
+            <div class="code-content">
+              <pre><span class="token tag">&lt;<span class="token attribute">span</span> <span class="token attribute">class</span>=<span class="token value">"fi fi-us"</span>&gt;</span><span class="token tag">&lt;/<span class="token attribute">span</span>&gt;</span> United States</pre>
+            </div>
+          </div>
+
+          <p>
+            For square format flags, add the
+            <code class="inline-code">fis</code> class:
+          </p>
+
+          <div class="code-block">
+            <div class="code-header">
+              <span class="code-label">Square 1:1 format</span>
+              <button class="code-copy-btn" id="copy-square-code">
+                <i class="bi bi-clipboard"></i> Copy
+              </button>
+            </div>
+            <div class="code-content">
+              <pre><span class="token tag">&lt;<span class="token attribute">span</span> <span class="token attribute">class</span>=<span class="token value">"fi fi-us fis"</span>&gt;</span><span class="token tag">&lt;/<span class="token attribute">span</span>&gt;</span> United States</pre>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-section">
+          <h4 class="modal-section-title">3. Tips</h4>
+          <ul>
+            <li>Click on any flag on this page to copy its HTML code</li>
+            <li>
+              For applying flags as backgrounds, use the
+              <code class="inline-code">fib</code> class
+            </li>
+            <li>
+              All flags are available in both 4:3 and 1:1 (square) formats
+            </li>
+            <li>
+              Use the built-in search and filter functionality to find specific
+              flags
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="container-md">
-      <div class="switch">
-        <a id="click-4x3" class="hide" href="">4x3</a>
-        <a id="click-1x1" href="">1x1</a>
+
+    <footer class="footer">
+      <div class="container">
+        <p>
+          Released under the
+          <a href="https://github.com/lipis/flag-icons/blob/main/LICENSE"
+            >MIT License</a
+          >
+          by <a href="https://github.com/lipis">Panayiotis Lipiridis</a>
+        </p>
       </div>
-      <h2>ISO 3166-1-alpha-2 Flags</h2>
-      <div id="iso-flags" class="row"></div>
-      <h2>Other Flags</h2>
-      <div id="non-iso-flags" class="row"></div>
-    </div>
-    <script src="./assets/docs.js"></script>
+    </footer>
+
+    <script>
+      // Utility functions
+      const loadJSON = (path) => {
+        return fetch(path)
+          .then((response) => response.json())
+          .catch((error) => console.error("Error loading JSON:", error));
+      };
+
+      // DOM elements
+      const isoFlagsGrid = document.getElementById("iso-flags");
+      const nonIsoFlagsGrid = document.getElementById("non-iso-flags");
+      const searchInput = document.getElementById("search-flag");
+      const format4x3Btn = document.getElementById("format-4x3");
+      const format1x1Btn = document.getElementById("format-1x1");
+      const copyTooltip = document.getElementById("copy-tooltip");
+      const installTabs = document.querySelectorAll(".install-tab");
+      const installCommand = document.getElementById("install-command");
+      const copyBtn = document.querySelector(".copy-btn");
+      const usageBtn = document.querySelector(".usage-btn");
+      const usageModal = document.getElementById("usage-modal");
+      const modalClose = document.querySelector(".modal-close");
+      const filterBtn = document.querySelector(".filter-btn");
+      const filterDropdown = document.querySelector(".filter-dropdown");
+      const filterOptions = document.querySelectorAll(".filter-option");
+      const codeBlockCopyBtns = document.querySelectorAll(".code-copy-btn");
+
+      // State
+      let currentFormat = "4x3";
+      let allFlags = [];
+      let tooltipTimeout;
+      let currentFilter = "all";
+      let installCommands = {
+        npm: "npm install flag-icons",
+        yarn: "yarn add flag-icons",
+      };
+      // Create flag card element
+      const createFlagCard = (country) => {
+        const card = document.createElement("div");
+        card.classList.add("flag-card");
+        card.dataset.code = country.code;
+        card.dataset.continent = country.continent || "non-iso";
+
+        const imgContainer = document.createElement("div");
+        imgContainer.classList.add("flag-img-container");
+
+        const imgSquareContainer = document.createElement("div");
+        imgSquareContainer.classList.add(
+          "flag-img-container",
+          "flag-img-square",
+        );
+        imgSquareContainer.style.display = "none";
+
+        const img4x3 = document.createElement("img");
+        img4x3.src = country.flag_4x3;
+        img4x3.alt = `Flag of ${country.name}`;
+        img4x3.loading = "lazy"; // Lazy loading for performance
+
+        const img1x1 = document.createElement("img");
+        img1x1.src = country.flag_1x1;
+        img1x1.alt = `Flag of ${country.name}`;
+        img1x1.loading = "lazy";
+
+        const info = document.createElement("div");
+        info.classList.add("flag-info");
+
+        const code = document.createElement("div");
+        code.classList.add("flag-code");
+        code.textContent = country.code;
+
+        const name = document.createElement("div");
+        name.classList.add("flag-name");
+        name.textContent = country.name;
+        name.title = country.name;
+
+        imgContainer.appendChild(img4x3);
+        imgSquareContainer.appendChild(img1x1);
+        info.appendChild(code);
+        info.appendChild(name);
+
+        card.appendChild(imgContainer);
+        card.appendChild(imgSquareContainer);
+        card.appendChild(info);
+
+        // Add click event to copy the flag code
+        card.addEventListener("click", () => {
+          const format = currentFormat === "4x3" ? "" : " fis";
+          const htmlCode = `<span class="fi fi-${country.code}${format}"></span>`;
+
+          navigator.clipboard
+            .writeText(htmlCode)
+            .then(() => showCopyTooltip())
+            .catch((err) => console.error("Could not copy text: ", err));
+        });
+
+        return card;
+      };
+
+      // Show tooltip when copying
+      const showCopyTooltip = () => {
+        clearTimeout(tooltipTimeout);
+        copyTooltip.style.opacity = "1";
+
+        tooltipTimeout = setTimeout(() => {
+          copyTooltip.style.opacity = "0";
+        }, 2000);
+      };
+
+      const setupCopyButtons = () => {
+        document.getElementById("copy-standard-code").dataset.code =
+          `<span class="fi fi-us"></span> United States`;
+        document.getElementById("copy-square-code").dataset.code =
+          `<span class="fi fi-us fis"></span> United States`;
+      };
+
+      // Filter flags based on search input and continent
+      const filterFlags = () => {
+        const searchTerm = searchInput.value.toLowerCase();
+
+        allFlags.forEach((flag) => {
+          const isSearchMatch =
+            flag.country.name.toLowerCase().includes(searchTerm) ||
+            flag.country.code.toLowerCase().includes(searchTerm);
+
+          const isFilterMatch =
+            currentFilter === "all" ||
+            (currentFilter === "non-iso" && !flag.country.iso) ||
+            flag.country.continent === currentFilter;
+
+          flag.element.style.display =
+            isSearchMatch && isFilterMatch ? "" : "none";
+        });
+      };
+
+      // Switch between 4:3 and 1:1 formats
+      const switchFormat = (format) => {
+        currentFormat = format;
+
+        if (format === "4x3") {
+          format4x3Btn.classList.add("active");
+          format1x1Btn.classList.remove("active");
+
+          document
+            .querySelectorAll(".flag-img-container:not(.flag-img-square)")
+            .forEach((el) => {
+              el.style.display = "block";
+            });
+
+          document.querySelectorAll(".flag-img-square").forEach((el) => {
+            el.style.display = "none";
+          });
+
+          // Google Analytics tracking
+          if (typeof gtag !== "undefined") {
+            gtag("event", "switch", {
+              event_category: "flags",
+              event_label: "4x3",
+            });
+          }
+        } else {
+          format1x1Btn.classList.add("active");
+          format4x3Btn.classList.remove("active");
+
+          document
+            .querySelectorAll(".flag-img-container:not(.flag-img-square)")
+            .forEach((el) => {
+              el.style.display = "none";
+            });
+
+          document.querySelectorAll(".flag-img-square").forEach((el) => {
+            el.style.display = "block";
+          });
+
+          // Google Analytics tracking
+          if (typeof gtag !== "undefined") {
+            gtag("event", "switch", {
+              event_category: "flags",
+              event_label: "1x1",
+            });
+          }
+        }
+      };
+
+      // Switch installation command
+      const switchInstallCommand = (type) => {
+        installCommand.textContent = installCommands[type];
+        copyBtn.dataset.copy = installCommands[type];
+
+        installTabs.forEach((tab) => {
+          if (tab.dataset.tab === type) {
+            tab.classList.add("active");
+          } else {
+            tab.classList.remove("active");
+          }
+        });
+      };
+
+      // Toggle filter dropdown
+      const toggleFilterDropdown = () => {
+        filterDropdown.classList.toggle("active");
+      };
+
+      // Close filter dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!filterDropdown.contains(e.target)) {
+          filterDropdown.classList.remove("active");
+        }
+      });
+
+      // Copy code from code blocks
+      const copyCode = (btn) => {
+        const code = btn.dataset.code;
+        navigator.clipboard
+          .writeText(code)
+          .then(() => {
+            // Visual feedback
+            const originalText = btn.innerHTML;
+            btn.innerHTML = '<i class="bi bi-check-lg"></i> Copied!';
+
+            setTimeout(() => {
+              btn.innerHTML = originalText;
+            }, 2000);
+          })
+          .catch((err) => console.error("Could not copy text: ", err));
+      };
+
+      // Initialize the application
+      const init = async () => {
+        try {
+          const countries = await loadJSON("country.json");
+
+          // Sort countries by name
+          countries.sort((a, b) => a.name.localeCompare(b.name));
+
+          // Create flag cards
+          countries.forEach((country) => {
+            const card = createFlagCard(country);
+
+            if (country.iso) {
+              isoFlagsGrid.appendChild(card);
+            } else {
+              nonIsoFlagsGrid.appendChild(card);
+            }
+
+            allFlags.push({
+              country,
+              element: card,
+            });
+          });
+
+          setupCopyButtons();
+
+          // Set up event listeners
+          searchInput.addEventListener("input", filterFlags);
+
+          format4x3Btn.addEventListener("click", () => switchFormat("4x3"));
+          format1x1Btn.addEventListener("click", () => switchFormat("1x1"));
+
+          // Installation tab switching
+          installTabs.forEach((tab) => {
+            tab.addEventListener("click", () => {
+              switchInstallCommand(tab.dataset.tab);
+            });
+          });
+
+          // Copy npm/yarn command
+          copyBtn.addEventListener("click", (e) => {
+            const textToCopy = e.currentTarget.dataset.copy;
+            navigator.clipboard
+              .writeText(textToCopy)
+              .then(() => showCopyTooltip())
+              .catch((err) => console.error("Could not copy text: ", err));
+          });
+
+          // Usage modal
+          usageBtn.addEventListener("click", () => {
+            usageModal.classList.add("active");
+          });
+
+          modalClose.addEventListener("click", () => {
+            usageModal.classList.remove("active");
+          });
+
+          usageModal.addEventListener("click", (e) => {
+            if (e.target === usageModal) {
+              usageModal.classList.remove("active");
+            }
+          });
+
+          // Filter dropdown
+          filterBtn.addEventListener("click", toggleFilterDropdown);
+
+          filterOptions.forEach((option) => {
+            option.addEventListener("click", () => {
+              currentFilter = option.dataset.filter;
+              filterBtn.textContent = option.textContent + " ";
+
+              const icon = document.createElement("i");
+              icon.className = "bi bi-chevron-down";
+              filterBtn.appendChild(icon);
+
+              filterOptions.forEach((opt) => {
+                opt.classList.toggle("active", opt === option);
+              });
+
+              filterFlags();
+              toggleFilterDropdown();
+            });
+          });
+
+          // Code block copy buttons
+          codeBlockCopyBtns.forEach((btn) => {
+            btn.addEventListener("click", () => copyCode(btn));
+          });
+        } catch (error) {
+          console.error("Error initializing the application:", error);
+        }
+      };
+
+      // Start the application when the DOM is ready
+      document.addEventListener("DOMContentLoaded", init);
+    </script>
   </body>
 </html>
