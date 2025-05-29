@@ -367,26 +367,6 @@
         font-style: italic;
       }
 
-      /* Live example */
-      .live-example {
-        padding: 1.5rem;
-        background-color: var(--primary-ultra-light);
-        border-radius: var(--border-radius);
-        margin: 1.5rem 0;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        border: 1px solid var(--primary-light);
-      }
-
-      .live-example-flag {
-        font-size: 2.5rem;
-      }
-
-      .live-example-text {
-        font-weight: 500;
-      }
-
       /* Action buttons */
       .action-buttons {
         margin-top: 1.5rem;
@@ -876,15 +856,8 @@
               </button>
             </div>
             <div class="code-content">
-              <pre><span class="token tag">&lt;<span class="token attribute">span</span> <span class="token attribute">class</span>=<span class="token value">"fi fi-<span id="country-code-4x3">us</span>"</span>&gt;</span><span class="token tag">&lt;/<span class="token attribute">span</span>&gt;</span> <span id="country-name-4x3">United States</span></pre>
+              <pre><span class="token tag">&lt;<span class="token attribute">span</span> <span class="token attribute">class</span>=<span class="token value">"fi fi-us"</span>&gt;</span><span class="token tag">&lt;/<span class="token attribute">span</span>&gt;</span> United States</pre>
             </div>
-          </div>
-
-          <div class="live-example">
-            <span class="fi fi-us live-example-flag" id="live-flag-4x3"></span>
-            <span class="live-example-text" id="live-country-4x3"
-              >United States</span
-            >
           </div>
 
           <p>
@@ -900,18 +873,8 @@
               </button>
             </div>
             <div class="code-content">
-              <pre><span class="token tag">&lt;<span class="token attribute">span</span> <span class="token attribute">class</span>=<span class="token value">"fi fi-<span id="country-code-1x1">us</span> fis"</span>&gt;</span><span class="token tag">&lt;/<span class="token attribute">span</span>&gt;</span> <span id="country-name-1x1">United States</span></pre>
+              <pre><span class="token tag">&lt;<span class="token attribute">span</span> <span class="token attribute">class</span>=<span class="token value">"fi fi-us fis"</span>&gt;</span><span class="token tag">&lt;/<span class="token attribute">span</span>&gt;</span> United States</pre>
             </div>
-          </div>
-
-          <div class="live-example">
-            <span
-              class="fi fi-us fis live-example-flag"
-              id="live-flag-1x1"
-            ></span>
-            <span class="live-example-text" id="live-country-1x1"
-              >United States</span
-            >
           </div>
         </div>
 
@@ -973,16 +936,6 @@
       const filterOptions = document.querySelectorAll(".filter-option");
       const codeBlockCopyBtns = document.querySelectorAll(".code-copy-btn");
 
-      // User country detection elements
-      const countryCode4x3 = document.getElementById("country-code-4x3");
-      const countryCode1x1 = document.getElementById("country-code-1x1");
-      const countryName4x3 = document.getElementById("country-name-4x3");
-      const countryName1x1 = document.getElementById("country-name-1x1");
-      const liveFlag4x3 = document.getElementById("live-flag-4x3");
-      const liveFlag1x1 = document.getElementById("live-flag-1x1");
-      const liveCountry4x3 = document.getElementById("live-country-4x3");
-      const liveCountry1x1 = document.getElementById("live-country-1x1");
-
       // State
       let currentFormat = "4x3";
       let allFlags = [];
@@ -992,152 +945,6 @@
         npm: "npm install flag-icons",
         yarn: "yarn add flag-icons",
       };
-      // Default fallback if geolocation fails
-      let userCountry = {
-        code: "us",
-        name: "United States",
-      };
-
-      // Local storage key for caching geolocation
-      const COUNTRY_CACHE_KEY = "flag-icons-user-country";
-      const COUNTRY_CACHE_DURATION = 86400000; // 24 hours in milliseconds
-
-      // Production-ready country detection
-      const detectUserCountry = async () => {
-        // Try to get cached country first
-        const cachedCountry = getUserCountryFromCache();
-        if (cachedCountry) {
-          return cachedCountry;
-        }
-
-        try {
-          // First attempt: Use IP geolocation API (most reliable)
-          const country = await detectCountryFromIP();
-          if (country) {
-            cacheUserCountry(country);
-            return country;
-          }
-
-          // Second attempt: Try browser's geolocation API
-          const geoCountry = await detectCountryFromGeolocation();
-          if (geoCountry) {
-            cacheUserCountry(geoCountry);
-            return geoCountry;
-          }
-        } catch (error) {
-          console.warn("Could not detect user country:", error);
-        }
-
-        // Fallback to default
-        return userCountry;
-      };
-
-      // Check for cached country data
-      const getUserCountryFromCache = () => {
-        try {
-          const cacheData = localStorage.getItem(COUNTRY_CACHE_KEY);
-          if (cacheData) {
-            const { country, timestamp } = JSON.parse(cacheData);
-            // Check if cache is still valid (24 hours)
-            if (Date.now() - timestamp < COUNTRY_CACHE_DURATION) {
-              return country;
-            }
-          }
-        } catch (error) {
-          console.warn("Error accessing local storage:", error);
-        }
-        return null;
-      };
-
-      // Save country to cache
-      const cacheUserCountry = (country) => {
-        try {
-          localStorage.setItem(
-            COUNTRY_CACHE_KEY,
-            JSON.stringify({
-              country,
-              timestamp: Date.now(),
-            }),
-          );
-        } catch (error) {
-          console.warn("Error writing to local storage:", error);
-        }
-      };
-
-      // Detect country from IP address
-      const detectCountryFromIP = async () => {
-        try {
-          // Using ipapi.co which is free for moderate usage
-          const response = await fetch("https://ipapi.co/json/");
-          if (!response.ok) {
-            throw new Error("Failed to fetch location data");
-          }
-
-          const data = await response.json();
-          if (data.country_code) {
-            return {
-              code: data.country_code.toLowerCase(),
-              name: data.country_name,
-            };
-          }
-        } catch (error) {
-          console.warn("IP geolocation failed:", error);
-        }
-        return null;
-      };
-
-      // Detect country using browser's Geolocation API
-      const detectCountryFromGeolocation = () => {
-        return new Promise((resolve) => {
-          // Check if geolocation is supported
-          if (!navigator.geolocation) {
-            resolve(null);
-            return;
-          }
-
-          // Set a timeout in case geolocation takes too long
-          const timeoutId = setTimeout(() => {
-            console.warn("Geolocation timed out");
-            resolve(null);
-          }, 5000); // 5 second timeout
-
-          navigator.geolocation.getCurrentPosition(
-            async (position) => {
-              clearTimeout(timeoutId);
-              try {
-                const { latitude, longitude } = position.coords;
-                // Use Nominatim for reverse geocoding (free, no API key required)
-                const response = await fetch(
-                  `https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}&zoom=3`,
-                );
-
-                if (!response.ok) {
-                  throw new Error("Failed to reverse geocode");
-                }
-
-                const data = await response.json();
-                if (data && data.address && data.address.country_code) {
-                  return resolve({
-                    code: data.address.country_code.toLowerCase(),
-                    name: data.address.country,
-                  });
-                }
-                resolve(null);
-              } catch (error) {
-                console.warn("Reverse geocoding failed:", error);
-                resolve(null);
-              }
-            },
-            (error) => {
-              clearTimeout(timeoutId);
-              console.warn("Geolocation error:", error);
-              resolve(null);
-            },
-            { timeout: 5000, maximumAge: 600000 }, // 10 minute cache, 5s timeout
-          );
-        });
-      };
-
       // Create flag card element
       const createFlagCard = (country) => {
         const card = document.createElement("div");
@@ -1210,23 +1017,11 @@
         }, 2000);
       };
 
-      // Update the examples with the user's country
-      const updateCountryExamples = (country) => {
-        countryCode4x3.textContent = country.code;
-        countryCode1x1.textContent = country.code;
-        countryName4x3.textContent = country.name;
-        countryName1x1.textContent = country.name;
-
-        liveFlag4x3.className = `fi fi-${country.code} live-example-flag`;
-        liveFlag1x1.className = `fi fi-${country.code} fis live-example-flag`;
-        liveCountry4x3.textContent = country.name;
-        liveCountry1x1.textContent = country.name;
-
-        // Update the copy buttons
+      const setupCopyButtons = () => {
         document.getElementById("copy-standard-code").dataset.code =
-          `<span class="fi fi-${country.code}"></span> ${country.name}`;
+          `<span class="fi fi-us"></span> United States`;
         document.getElementById("copy-square-code").dataset.code =
-          `<span class="fi fi-${country.code} fis"></span> ${country.name}`;
+          `<span class="fi fi-us fis"></span> United States`;
       };
 
       // Filter flags based on search input and continent
@@ -1364,11 +1159,7 @@
             });
           });
 
-          // Detect user's country (production-ready implementation)
-          userCountry = await detectUserCountry();
-
-          // Update examples with user's country
-          updateCountryExamples(userCountry);
+          setupCopyButtons();
 
           // Set up event listeners
           searchInput.addEventListener("input", filterFlags);
