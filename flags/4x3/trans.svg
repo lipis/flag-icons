@@ -1,0 +1,11 @@
+<svg id="flag-icons-trans" class="fi fi-trans" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" width="640" height="480">
+  <metadata id="flag-icons-p2m" class="fi fi-trans">
+    <name>Transgender Pride</name>
+    <code>trans</code>
+    <iso>false</iso>
+    <type>Advocacy</type>
+  </metadata>
+  <path d="M0 0h640v480H0z" style="fill:#5bcefa;fill-opacity:1;fill-rule:evenodd;stroke-width:1"/>
+  <path d="M0 96h640v288H0z" style="fill:#f5a9b8;fill-opacity:1;fill-rule:evenodd;stroke-width:1"/>
+  <path d="M0 192h640v96H0z" style="fill:#fff;fill-opacity:1;fill-rule:evenodd;stroke-width:1"/>
+</svg>
