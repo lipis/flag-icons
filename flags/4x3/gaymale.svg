@@ -1,0 +1,13 @@
+<svg id="flag-icons-gaymale" class="fi fi-gaymale" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" width="640" height="480">
+  <metadata id="flag-icons-p2m" class="fi fi-gaymale">
+    <name>Gay Male Pride</name>
+    <code>gaymale</code>
+    <iso>false</iso>
+    <type>Advocacy</type>
+  </metadata>
+  <path d="M0 0h640v480H0z" style="fill:#fff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"/>
+  <path d="M0 0h640v192H0z" style="fill:#98e8c1;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"/>
+  <path d="M0 0h640v96H0z" style="fill:#078d70;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"/>
+  <path d="M0 288h640v192H0z" style="fill:#7bade2;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"/>
+  <path d="M0 384h640v96H0z" style="fill:#3d1a78;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"/>
+</svg>
