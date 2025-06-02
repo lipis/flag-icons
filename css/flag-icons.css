@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .fib, .fi {
   background-size: contain;
   background-position: 50%;
@@ -500,6 +501,27 @@
   background-image: url(../flags/1x1/es.svg);
 }
 
+.fi-es-ct {
+  background-image: url(../flags/4x3/es-ct.svg);
+}
+.fi-es-ct.fis {
+  background-image: url(../flags/1x1/es-ct.svg);
+}
+
+.fi-es-ga {
+  background-image: url(../flags/4x3/es-ga.svg);
+}
+.fi-es-ga.fis {
+  background-image: url(../flags/1x1/es-ga.svg);
+}
+
+.fi-es-pv {
+  background-image: url(../flags/4x3/es-pv.svg);
+}
+.fi-es-pv.fis {
+  background-image: url(../flags/1x1/es-pv.svg);
+}
+
 .fi-et {
   background-image: url(../flags/4x3/et.svg);
 }
@@ -561,6 +583,27 @@
 }
 .fi-gb.fis {
   background-image: url(../flags/1x1/gb.svg);
+}
+
+.fi-gb-eng {
+  background-image: url(../flags/4x3/gb-eng.svg);
+}
+.fi-gb-eng.fis {
+  background-image: url(../flags/1x1/gb-eng.svg);
+}
+
+.fi-gb-sct {
+  background-image: url(../flags/4x3/gb-sct.svg);
+}
+.fi-gb-sct.fis {
+  background-image: url(../flags/1x1/gb-sct.svg);
+}
+
+.fi-gb-wls {
+  background-image: url(../flags/4x3/gb-wls.svg);
+}
+.fi-gb-wls.fis {
+  background-image: url(../flags/1x1/gb-wls.svg);
 }
 
 .fi-gd {
@@ -1417,6 +1460,27 @@
   background-image: url(../flags/1x1/sh.svg);
 }
 
+.fi-sh-ac {
+  background-image: url(../flags/4x3/sh-ac.svg);
+}
+.fi-sh-ac.fis {
+  background-image: url(../flags/1x1/sh-ac.svg);
+}
+
+.fi-sh-hl {
+  background-image: url(../flags/4x3/sh-hl.svg);
+}
+.fi-sh-hl.fis {
+  background-image: url(../flags/1x1/sh-hl.svg);
+}
+
+.fi-sh-ta {
+  background-image: url(../flags/4x3/sh-ta.svg);
+}
+.fi-sh-ta.fis {
+  background-image: url(../flags/1x1/sh-ta.svg);
+}
+
 .fi-si {
   background-image: url(../flags/4x3/si.svg);
 }
@@ -1732,6 +1796,13 @@
   background-image: url(../flags/1x1/ws.svg);
 }
 
+.fi-xk {
+  background-image: url(../flags/4x3/xk.svg);
+}
+.fi-xk.fis {
+  background-image: url(../flags/1x1/xk.svg);
+}
+
 .fi-ye {
   background-image: url(../flags/4x3/ye.svg);
 }
@@ -1767,6 +1838,34 @@
   background-image: url(../flags/1x1/zw.svg);
 }
 
+.fi-cp {
+  background-image: url(../flags/4x3/cp.svg);
+}
+.fi-cp.fis {
+  background-image: url(../flags/1x1/cp.svg);
+}
+
+.fi-dg {
+  background-image: url(../flags/4x3/dg.svg);
+}
+.fi-dg.fis {
+  background-image: url(../flags/1x1/dg.svg);
+}
+
+.fi-gb-nir {
+  background-image: url(../flags/4x3/gb-nir.svg);
+}
+.fi-gb-nir.fis {
+  background-image: url(../flags/1x1/gb-nir.svg);
+}
+
+.fi-ic {
+  background-image: url(../flags/4x3/ic.svg);
+}
+.fi-ic.fis {
+  background-image: url(../flags/1x1/ic.svg);
+}
+
 .fi-arab {
   background-image: url(../flags/4x3/arab.svg);
 }
@@ -1788,46 +1887,11 @@
   background-image: url(../flags/1x1/cefta.svg);
 }
 
-.fi-cp {
-  background-image: url(../flags/4x3/cp.svg);
-}
-.fi-cp.fis {
-  background-image: url(../flags/1x1/cp.svg);
-}
-
-.fi-dg {
-  background-image: url(../flags/4x3/dg.svg);
-}
-.fi-dg.fis {
-  background-image: url(../flags/1x1/dg.svg);
-}
-
 .fi-eac {
   background-image: url(../flags/4x3/eac.svg);
 }
 .fi-eac.fis {
   background-image: url(../flags/1x1/eac.svg);
-}
-
-.fi-es-ct {
-  background-image: url(../flags/4x3/es-ct.svg);
-}
-.fi-es-ct.fis {
-  background-image: url(../flags/1x1/es-ct.svg);
-}
-
-.fi-es-ga {
-  background-image: url(../flags/4x3/es-ga.svg);
-}
-.fi-es-ga.fis {
-  background-image: url(../flags/1x1/es-ga.svg);
-}
-
-.fi-es-pv {
-  background-image: url(../flags/4x3/es-pv.svg);
-}
-.fi-es-pv.fis {
-  background-image: url(../flags/1x1/es-pv.svg);
 }
 
 .fi-eu {
@@ -1837,41 +1901,6 @@
   background-image: url(../flags/1x1/eu.svg);
 }
 
-.fi-gb-eng {
-  background-image: url(../flags/4x3/gb-eng.svg);
-}
-.fi-gb-eng.fis {
-  background-image: url(../flags/1x1/gb-eng.svg);
-}
-
-.fi-gb-nir {
-  background-image: url(../flags/4x3/gb-nir.svg);
-}
-.fi-gb-nir.fis {
-  background-image: url(../flags/1x1/gb-nir.svg);
-}
-
-.fi-gb-sct {
-  background-image: url(../flags/4x3/gb-sct.svg);
-}
-.fi-gb-sct.fis {
-  background-image: url(../flags/1x1/gb-sct.svg);
-}
-
-.fi-gb-wls {
-  background-image: url(../flags/4x3/gb-wls.svg);
-}
-.fi-gb-wls.fis {
-  background-image: url(../flags/1x1/gb-wls.svg);
-}
-
-.fi-ic {
-  background-image: url(../flags/4x3/ic.svg);
-}
-.fi-ic.fis {
-  background-image: url(../flags/1x1/ic.svg);
-}
-
 .fi-pc {
   background-image: url(../flags/4x3/pc.svg);
 }
@@ -1879,25 +1908,11 @@
   background-image: url(../flags/1x1/pc.svg);
 }
 
-.fi-sh-ac {
-  background-image: url(../flags/4x3/sh-ac.svg);
+.fi-turkic {
+  background-image: url(../flags/4x3/turkic.svg);
 }
-.fi-sh-ac.fis {
-  background-image: url(../flags/1x1/sh-ac.svg);
-}
-
-.fi-sh-hl {
-  background-image: url(../flags/4x3/sh-hl.svg);
-}
-.fi-sh-hl.fis {
-  background-image: url(../flags/1x1/sh-hl.svg);
-}
-
-.fi-sh-ta {
-  background-image: url(../flags/4x3/sh-ta.svg);
-}
-.fi-sh-ta.fis {
-  background-image: url(../flags/1x1/sh-ta.svg);
+.fi-turkic.fis {
+  background-image: url(../flags/1x1/turkic.svg);
 }
 
 .fi-un {
@@ -1905,11 +1920,4 @@
 }
 .fi-un.fis {
   background-image: url(../flags/1x1/un.svg);
-}
-
-.fi-xk {
-  background-image: url(../flags/4x3/xk.svg);
-}
-.fi-xk.fis {
-  background-image: url(../flags/1x1/xk.svg);
 }
