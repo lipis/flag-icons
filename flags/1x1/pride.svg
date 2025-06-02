@@ -1,0 +1,14 @@
+<svg id="flag-icons-pride" class="fi fi-pride" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+  <metadata id="flag-icons-p2m" class="fi fi-pride">
+    <name>LGB Pride</name>
+    <code>pride</code>
+    <iso>false</iso>
+    <type>Advocacy</type>
+  </metadata>
+  <path d="M0 0h512v512H0z" style="fill:#fe0;fill-opacity:1;fill-rule:evenodd;stroke-width:.999999"/>
+  <path d="M0 0h512v170.667H0z" style="fill:#ff8d00;fill-opacity:1;fill-rule:evenodd;stroke-width:.999999"/>
+  <path d="M0 0h512v85.333H0z" style="fill:#e50000;fill-opacity:1;fill-rule:evenodd;stroke-width:.999999"/>
+  <path d="M0 256h512v256H0z" style="fill:#028121;fill-opacity:1;fill-rule:evenodd;stroke-width:.999999"/>
+  <path d="M0 341.333h512V512H0z" style="fill:#004cff;fill-opacity:1;fill-rule:evenodd;stroke-width:.999999"/>
+  <path d="M0 426.667h512V512H0z" style="fill:#708;fill-opacity:1;fill-rule:evenodd;stroke-width:.999999"/>
+</svg>
