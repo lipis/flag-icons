@@ -1,0 +1,11 @@
+<svg id="flag-icons-pansexual" class="fi fi-pansexual" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" width="640" height="480">
+  <metadata id="flag-icons-p2m" class="fi fi-pansexual">
+    <name>Pansexuality Pride</name>
+    <code>pansexual</code>
+    <iso>false</iso>
+    <type>Advocacy</type>
+  </metadata>
+  <path d="M0 0h640v480H0z" style="fill:#ffd800;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"/>
+  <path d="M0 0h640v160H0z" style="fill:#ff218c;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"/>
+  <path d="M0 320h640v160H0z" style="fill:#21b1ff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1"/>
+</svg>
