@@ -1,0 +1,12 @@
+<svg id="flag-icons-nonbinary" class="fi fi-nonbinary" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+  <metadata id="flag-icons-p2m" class="fi fi-nonbinary">
+    <name>Nonbinary Pride</name>
+    <code>nonbinary</code>
+    <iso>false</iso>
+    <type>Advocacy</type>
+  </metadata>
+  <path d="M0 0h512v512H0z" style="fill:#fff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:.999999"/>
+  <path d="M0 0h512v128H0z" style="fill:#fff433;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:.999999"/>
+  <path d="M0 256h512v256H0z" style="display:inline;fill:#9b59d0;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:.999999"/>
+  <path d="M0 384h512v128H0z" style="fill:#2d2d2d;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:.999999"/>
+</svg>
