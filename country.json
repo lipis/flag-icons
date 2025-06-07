@@ -321,7 +321,8 @@
     "flag_1x1": "flags/1x1/bv.svg",
     "flag_4x3": "flags/4x3/bv.svg",
     "iso": true,
-    "name": "Bouvet Island"
+    "name": "Bouvet Island",
+    "continent": "Oceania"
   },
   {
     "code": "bw",
@@ -470,7 +471,8 @@
     "flag_1x1": "flags/1x1/cp.svg",
     "flag_4x3": "flags/4x3/cp.svg",
     "iso": false,
-    "name": "Clipperton Island"
+    "name": "Clipperton Island",
+    "continent": "Oceania"
   },
   {
     "code": "cr",
@@ -549,7 +551,8 @@
     "flag_1x1": "flags/1x1/dg.svg",
     "flag_4x3": "flags/4x3/dg.svg",
     "iso": false,
-    "name": "Diego Garcia"
+    "name": "Diego Garcia",
+    "continent": "Oceania"
   },
   {
     "code": "dj",
@@ -982,7 +985,8 @@
     "flag_1x1": "flags/1x1/hm.svg",
     "flag_4x3": "flags/4x3/hm.svg",
     "iso": true,
-    "name": "Heard Island and McDonald Islands"
+    "name": "Heard Island and McDonald Islands",
+    "continent": "Oceania"
   },
   {
     "code": "hn",
