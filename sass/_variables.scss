@@ -3,8 +3,10 @@ $flag-icons-rect-path: "/4x3" !default;
 $flag-icons-square-path: "/1x1" !default;
 $flag-icons-use-square: true !default;
 $flag-icons-included-countries: (
-  // Keep xx first as it is often used as fallback
+
+  // Keep xx first as fallback
   "xx",
+
   // ISO Countries and Places
   "ad",
   "ae",
@@ -265,11 +267,13 @@ $flag-icons-included-countries: (
   "za",
   "zm",
   "zw",
+
   // Other Places
   "cp",
   "dg",
   "gb-nir",
   "ic",
+
   // Organisations
   "arab",
   "asean",
