@@ -1,0 +1,11 @@
+<svg id="flag-icons-bisexual" class="fi fi-bisexual" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" width="640" height="480">
+  <metadata id="flag-icons-p2m" class="fi fi-bisexual">
+    <name>Bisexual Pride</name>
+    <code>bisexual</code>
+    <iso>false</iso>
+    <type>Advocacy</type>
+  </metadata>
+  <path d="M0 0h640v480H0z" style="fill:#9b4f96;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:.999999"/>
+  <path d="M0 0h640v192H0z" style="fill:#d60270;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:.999994"/>
+  <path d="M0 288h640v192H0z" style="fill:#0038a8;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:.999994"/>
+</svg>

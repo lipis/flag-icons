@@ -1,0 +1,13 @@
+<svg id="flag-icons-lesbian" class="fi fi-lesbian" viewBox="0 0 640 480" xmlns="http://www.w3.org/2000/svg" width="640" height="480">
+  <metadata id="flag-icons-p2m" class="fi fi-lesbian">
+    <name>Lesbian Pride</name>
+    <code>lesbian</code>
+    <iso>false</iso>
+    <type>Advocacy</type>
+  </metadata>
+  <path d="M0 0h640v480H0z" style="fill:#fff;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-dasharray:none"/>
+  <path d="M0 0h640v192H0z" style="fill:#ff9a56;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-dasharray:none"/>
+  <path d="M0 0h640v96H0z" style="fill:#d52d00;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-dasharray:none"/>
+  <path d="M0 288h640v192H0z" style="fill:#d362a4;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-dasharray:none"/>
+  <path d="M0 384h640v96H0z" style="fill:#a30262;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-dasharray:none"/>
+</svg>

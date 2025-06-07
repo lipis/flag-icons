@@ -1,0 +1,10 @@
+<svg id="flag-icons-intersex" class="fi fi-intersex" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" width="512" height="512">
+  <metadata id="flag-icons-p2m" class="fi fi-intersex">
+    <name>Intersex Pride</name>
+    <code>intersex</code>
+    <iso>false</iso>
+    <type>Advocacy</type>
+  </metadata>
+  <path d="M0 0h512v512H0z" style="fill:#ffd800;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-dasharray:none"/>
+  <path d="M256 109.227A146.773 146.773 0 0 0 109.227 256 146.773 146.773 0 0 0 256 402.773 146.773 146.773 0 0 0 402.773 256 146.773 146.773 0 0 0 256 109.227m0 42.666A104.107 104.107 0 0 1 360.107 256 104.107 104.107 0 0 1 256 360.107 104.107 104.107 0 0 1 151.893 256 104.107 104.107 0 0 1 256 151.893" style="fill:#7902aa;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-dasharray:none"/>
+</svg>
