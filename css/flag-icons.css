@@ -1887,6 +1887,13 @@
   background-image: url(../flags/1x1/cefta.svg);
 }
 
+.fi-cis {
+  background-image: url(../flags/4x3/cis.svg);
+}
+.fi-cis.fis {
+  background-image: url(../flags/1x1/cis.svg);
+}
+
 .fi-eac {
   background-image: url(../flags/4x3/eac.svg);
 }
