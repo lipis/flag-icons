@@ -1,6 +1,6 @@
 # flag-icons
 
-> A curated collection of all country flags in SVG — plus the CSS for easier integration. See the [demo](https://flagicons.lipis.dev).
+> A curated collection of all _ISO 3166-1-alpha-2_ country flags in SVG — plus the CSS for easier integration. See the [demo](https://flagicons.lipis.dev).
 
 ## Install
 
