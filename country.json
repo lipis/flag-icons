@@ -1716,6 +1716,15 @@
     "name": "Qatar"
   },
   {
+    "capital": "Quebec City",
+    "code": "ca-qc",
+    "continent": "North America",
+    "flag_1x1": "flags/1x1/ca-qc.svg",
+    "flag_4x3": "flags/4x3/ca-qc.svg",
+    "iso": false,
+    "name": "Quebec"
+  },
+  {
     "capital": "Brazzaville",
     "code": "cg",
     "continent": "Africa",

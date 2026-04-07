@@ -1781,6 +1781,13 @@
   background-image: url(../flags/1x1/asean.svg);
 }
 
+.fi-ca-qc {
+  background-image: url(../flags/4x3/ca-qc.svg);
+}
+.fi-ca-qc.fis {
+  background-image: url(../flags/1x1/ca-qc.svg);
+}
+
 .fi-cefta {
   background-image: url(../flags/4x3/cefta.svg);
 }
