@@ -3,9 +3,11 @@ $flag-icons-rect-path: "/4x3" !default;
 $flag-icons-square-path: "/1x1" !default;
 $flag-icons-use-square: true !default;
 $flag-icons-included-countries: (
-  // Keep xx first as it is often used as fallback
+
+  // Keep xx first as fallback
   "xx",
 
+  // ISO Countries and Places
   "ad",
   "ae",
   "af",
@@ -74,6 +76,9 @@ $flag-icons-included-countries: (
   "eh",
   "er",
   "es",
+  "es-ct",
+  "es-ga",
+  "es-pv",
   "et",
   "fi",
   "fj",
@@ -83,6 +88,9 @@ $flag-icons-included-countries: (
   "fr",
   "ga",
   "gb",
+  "gb-eng",
+  "gb-sct",
+  "gb-wls",
   "gd",
   "ge",
   "gf",
@@ -205,6 +213,9 @@ $flag-icons-included-countries: (
   "se",
   "sg",
   "sh",
+  "sh-ac",
+  "sh-hl",
+  "sh-ta",
   "si",
   "sj",
   "sk",
@@ -250,31 +261,26 @@ $flag-icons-included-countries: (
   "vu",
   "wf",
   "ws",
+  "xk",
   "ye",
   "yt",
   "za",
   "zm",
   "zw",
-  // Other flags
+
+  // Other Places
+  "cp",
+  "dg",
+  "gb-nir",
+  "ic",
+
+  // Organisations
   "arab",
   "asean",
   "cefta",
-  "cp",
-  "dg",
+  "cis",
   "eac",
-  "es-ct",
-  "es-ga",
-  "es-pv",
   "eu",
-  "gb-eng",
-  "gb-nir",
-  "gb-sct",
-  "gb-wls",
-  "ic",
   "pc",
-  "sh-ac",
-  "sh-hl",
-  "sh-ta",
   "un",
-  "xk"
 ) !default;

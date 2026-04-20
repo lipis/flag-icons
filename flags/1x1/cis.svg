@@ -1,0 +1,16 @@
+<svg id="flag-icons-cis" class="fi fi-cis" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="512" height="512" fill="#fff">
+  <metadata id="flag-icons">
+    <name>Commonwealth of Independent States</name>
+    <code>cis</code>
+    <iso>false</iso>
+    <type>Organisation</type>
+    <continent>Europe</continent>
+  </metadata>
+  <path fill="#0073cf" d="M0 0h512v512H0Z" style="stroke-width:.999995"/>
+  <g style="stroke-width:49.2185" transform="translate(256 256)scale(.02032)">
+    <path id="a" d="M-3920 7807V984a13440 13440 0 0 1-4257-2190 560 560 0 1 1 762-813A9856 9856 0 0 0-3248 793v7014zm896 0V633a9632 9632 0 0 1-4726-3426 672 672 0 1 1 1158-663A7168 7168 0 0 0-2352 499v7308zm896 0V338a6944 6944 0 0 1-4676-5225 963 963 0 1 1 1902-94A4928 4928 0 0 0-1456 228v7579zm896 0V60a4704 4704 0 0 1-1912-8039 1120 1120 0 1 1 1347 1780A3360 3360 0 0 0-560-47v7854z" style="stroke-width:49.2185"/>
+    <use xlink:href="#a" style="stroke-width:49.2185" transform="scale(-1 1)"/>
+    <path d="M-336-17a3360 3360 0 0 0 672 0v7824h-672z" style="stroke-width:49.2185"/>
+    <circle cy="-3360" r="1344" fill="#fecb00" style="stroke-width:16.4062"/>
+  </g>
+</svg>
