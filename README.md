@@ -62,6 +62,65 @@ background-repeat: no-repeat;
 
 Which means that the flag is just going to appear in the middle of an element, so you will have to set manually the correct size of 4 by 3 ratio or if it's squared add also the `flag-icon-squared` class.
 
+### Framework Usage
+
+**Vite**
+
+Add these plugins for Vite so the svg's can be treated as components
+
+```js
+npm install --save-dev vite-plugin-svgr@4 @svgr/plugin-svgo @svgr/plugin-jsx
+```
+
+Add this to your Vite config.
+
+```js
+export default defineConfig({
+  vite: {
+    plugins: [
+      svgr({
+        include: "**/*.svg?react",
+        svgrOptions: {
+          plugins: ["@svgr/plugin-svgo", "@svgr/plugin-jsx"],
+          svgoConfig: {
+            plugins: [
+              "preset-default",
+              "removeTitle",
+              "removeDesc",
+              "removeDoctype",
+              "cleanupIds",
+            ],
+          },
+        },
+      }),
+    ],
+  },
+});
+```
+
+**React**
+
+```js
+// SomeReactComponent.tsx
+import FlagEN from "flag-icons/svg/4x3/gb.svg?react";
+```
+
+**Vue**
+
+```vue
+// SomeReactComponent.vue
+<script setup>
+import FlagEN from "flag-icons/svg/4x3/gb.svg?vue";
+</script>
+<template>
+  <FlagEN />
+</template>
+```
+
+Thanks to Doray for the great article.
+
+Link: [https://doray.me/articles/use-svgs-as-react-components-in-astro-MNUvh/](https://doray.me/articles/use-svgs-as-react-components-in-astro-MNUvh/)
+
 ## Development
 
 Run the `yarn` to install the dependencies after cloning the project and you'll be able to:
