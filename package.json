@@ -33,5 +33,9 @@
     "svgo": "svgo --pretty --indent=2 --precision=1",
     "test": "yarn prettier --list-different",
     "maven": "./maven.sh"
+  },
+  "exports": {
+    "./svg/1x1/*.svg": "./flags/1x1/*.svg",
+    "./svg/4x3/*.svg": "./flags/4x3/*.svg"
   }
 }
