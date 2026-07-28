@@ -78,7 +78,7 @@ To serve it on `localhost:8000`
 $ yarn start
 ```
 
-To have only specific countries in the css file, remove the ones that you don't need from the [`_flag-icons-list.scss`](sass/_flag-icons-list.scss) file and build it again.
+To have only specific countries in the css file, edit the `$flag-icons-included-countries` list in [`sass/_variables.scss`](https://github.com/lipis/flag-icons/blob/main/sass/_variables.scss) and build it again.
 
 ## Credits
 
