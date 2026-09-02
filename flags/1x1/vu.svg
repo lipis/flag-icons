@@ -1,15 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="flag-icons-vu" viewBox="0 0 512 512">
-  <defs>
-    <clipPath id="vu-a">
-      <path d="M0 0v475l420-195h480v-85H420Z"/>
-    </clipPath>
-  </defs>
-  <path fill="#009543" d="M0 0h512v512H0z"/>
-  <path fill="#d21034" d="M0 0h512v256H0z"/>
-  <g clip-path="url(#vu-a)" transform="scale(.56889 1.0779)">
-    <path stroke="#fdce12" stroke-width="110" d="m0 0 420 195h480v85H420L0 475"/>
-    <path fill="none" stroke="#000" stroke-width="60" d="m0 0 420 195h480m0 85H420L0 475"/>
-  </g>
+  <path fill="#000" d="M0 0h512v512H0z"/>
+  <path fill="#d21034" d="M0 0h512v213.333H256z"/>
+  <path fill="#009543" d="M0 512h512V298.667H256z"/>
+  <path fill="#fdce12" d="M0 32.539 251.086 241.778H512v28.444H251.086L0 479.461V446.921L229.106 256 0 65.079z"/>
   <g fill="#fdce12" transform="translate(-35.6 26.7)scale(.96552)">
     <path d="M106.9 283v27c23.5 0 69.7-18 69.7-76.1s-49.3-68.9-64-68.9-60.3 10.6-60.3 58c0 47.6 44.7 52 53.5 52s41.8-8 38-43.6a35.5 35.5 0 0 1-35.4 31.5c-24 0-39-17.8-39-35.4s14.6-41.2 39.9-41.2 43.8 22.5 43.8 45.1-17.8 51.5-46.2 51.5z"/>
     <g id="vu-b">
