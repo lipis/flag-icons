@@ -1,3 +1,9 @@
+# 7.6.0
+
+- Fix color bleed in Chrome (#1397)
+- Fix the white border on the Panama flag (#1440)
+- Fix the Ascension Island, Ethiopia, Yemen, Ivory Coast, New Caledonia, Burkina Faso, and Vanuatu flags (#1462, #1466, #1467, #1470, #1471, #1473, #1475)
+
 # 7.5.0
 
 - Update all flags with the latest SVGO 3.3.2 (#1367)
